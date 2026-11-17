@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio vidéo · Mot du jour</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px;
+      background: #000;
+      color: #f6ecd9;
+      font-family: -apple-system, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    }
+
+    /* ----- Les boutons du studio (cachés pendant l'enregistrement) ----- */
+    .commandes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .commandes button {
+      padding: 8px 14px;
+      font: inherit;
+      font-size: 0.9rem;
+      color: #f6ecd9;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .commandes .principal {
+      color: #0a0a0a;
+      background: linear-gradient(100deg, #ffe066, #ffb800, #ff6a00);
+      border: 0;
+      font-weight: 700;
+    }
+
+    .aide {
+      max-width: 420px;
+      margin: 0;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      text-align: center;
+      color: #9a9a9a;
+    }
+
+    body.enregistrement .commandes,
+    body.enregistrement .aide { display: none; }
+
+    /* ----- Le cadre vertical 9:16 (format TikTok, Reels, Shorts) ----- */
+    .cadre {
+      position: relative;
+      height: min(86vh, 160vw);
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8% 9%;
+      text-align: center;
+      background: #0a0a0a;
+      border-radius: 18px;
+    }
+
+    body.enregistrement .cadre {
+      height: min(100vh, 177vw);
+      border-radius: 0;
+    }
+
+    /* Lueur de braise qui respire */
+    .cadre::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -45%;
+      z-index: -1;
+      width: 160%;
+      height: 90%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(255, 106, 0, 0.45) 0%, rgba(220, 30, 10, 0.2) 40%, transparent 70%);
+      filter: blur(24px);
+      animation: braise 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes braise {
+      from { opacity: 0.7; transform: translateX(-50%) scale(1); }
+      to   { opacity: 1;   transform: translateX(-50%) scale(1.1); }
+    }
+
+    .etiquette {
+      margin: 0 0 6%;
+      font-size: clamp(0.7rem, 2.2vh, 1.1rem);
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #ffb800;
+    }
+
+    .mot {
+      margin: 0;
+      /* --echelle rétrécit les mots longs pour qu'ils tiennent sur une ligne */
+      font-size: calc(var(--echelle, 1) * clamp(2rem, 7.5vh, 5rem));
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      white-space: nowrap;
+      color: #ffb800;
+      background: linear-gradient(100deg, #ffe066 0%, #ffb800 30%, #ff6a00 60%, #ff2e1f 85%, #ffb800 100%);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: reflet 9s linear infinite;
+    }
+
+    @keyframes reflet {
+      from { background-position: 0% 50%; }
+      to   { background-position: 220% 50%; }
+    }
+
+    .trait {
+      width: 40%;
+      height: 2px;
+      margin: 6% auto;
+      border-radius: 2px;
+      background: linear-gradient(90deg, transparent, #ff2e1f, #ffc400, #ff2e1f, transparent);
+    }
+
+    .definition {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1rem, 3vh, 1.8rem);
+      line-height: 1.45;
+      color: #f6ecd9;
+    }
+
+    .langues {
+      margin: 8% 0 0;
+      font-size: clamp(0.85rem, 2.3vh, 1.3rem);
+      line-height: 1.8;
+      color: #bdb3a2;
+    }
+
+    .langues b {
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #ffb800;
+    }
+
+    .appel {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 6%;
+      margin: 0;
+      font-size: clamp(0.75rem, 2vh, 1.05rem);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #f6ecd9;
+    }
+
+    .appel span { color: #ffb800; }
+
+    /* ----- Apparitions successives pendant la vidéo ----- */
+    .etape {
+      opacity: 0;
+      transform: translateY(14px);
+      filter: blur(6px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease;
+    }
+
+    .etape.visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* Hors enregistrement, tout est visible pour préparer */
+    body:not(.enregistrement) .etape {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="commandes">
+    <button type="button" id="precedent">◀ Précédent</button>
+    <button type="button" id="suivant">Suivant ▶</button>
+    <button type="button" id="hasard">🎲 Au hasard</button>
+    <button type="button" id="lancer" class="principal">● Lancer la vidéo</button>
+  </div>
+
+  <main class="cadre" id="cadre">
+    <p class="etiquette etape" data-ordre="1">Le mot du jour</p>
+    <p class="mot etape" id="mot" data-ordre="2">…</p>
+    <div class="trait etape" data-ordre="2"></div>
+    <p class="definition etape" id="definition" data-ordre="3">…</p>
+    <p class="langues etape" data-ordre="4">
+      <b>EN</b> · <span id="anglais">…</span><br>
+      <b>ES</b> · <span id="espagnol">…</span>
+    </p>
+    <p class="appel etape" data-ordre="5">Un mot par jour pour <span>briller en 30 secondes</span> · Abonne-toi</p>
+  </main>
+
+  <p class="aide">
+    Choisis un mot, lance ton enregistreur d'écran, puis clique sur « Lancer la vidéo ».
+    La vidéo dure environ 15 secondes. Appuie sur Échap pour revenir aux boutons.
+  </p>
+
+  <script src="mots-plus.js"></script>
+  <script src="mots.js"></script>
+  <script>
+    // Commence par le mot du jour (le même que sur la page principale)
+    const aujourdhui = new Date();
+    let index = Math.floor(
+      Date.UTC(aujourdhui.getFullYear(), aujourdhui.getMonth(), aujourdhui.getDate()) / 86400000
+    ) % mots.length;
+
+    function afficherMot() {
+      const m = mots[index];
+      const motEl = document.getElementById("mot");
+      motEl.textContent = m.mot;
+      // Plus le mot est long, plus il rétrécit (au-delà de 9 lettres)
+      motEl.style.setProperty("--echelle", Math.min(1, 9 / m.mot.length).toFixed(2));
+      document.getElementById("definition").textContent = m.definition;
+      document.getElementById("anglais").textContent = m.anglais;
+      document.getElementById("espagnol").textContent = m.espagnol;
+    }
+
+    document.getElementById("precedent").addEventListener("click", function () {
+      index = (index - 1 + mots.length) % mots.length;
+      afficherMot();
+    });
+    document.getElementById("suivant").addEventListener("click", function () {
+      index = (index + 1) % mots.length;
+      afficherMot();
+    });
+    document.getElementById("hasard").addEventListener("click", function () {
+      index = Math.floor(Math.random() * mots.length);
+      afficherMot();
+    });
+
+    // ----- La voix -----
+    function parler(texte, langue) {
+      return new Promise(function (fini) {
+        if (!("speechSynthesis" in window)) { setTimeout(fini, 1500); return; }
+        const phrase = new SpeechSynthesisUtterance(texte);
+        phrase.lang = langue;
+        phrase.rate = 0.9;
+        phrase.onend = fini;
+        phrase.onerror = fini;
+        window.speechSynthesis.speak(phrase);
+      });
+    }
+
+    function attendre(ms) {
+      return new Promise(function (fini) { setTimeout(fini, ms); });
+    }
+
+    function montrer(ordre) {
+      document.querySelectorAll('.etape[data-ordre="' + ordre + '"]').forEach(function (el) {
+        el.classList.add("visible");
+      });
+    }
+
+    // ----- Le déroulé de la vidéo -----
+    let enCours = false;
+
+    async function lancer() {
+      if (enCours) return;
+      enCours = true;
+      const m = mots[index];
+      document.querySelectorAll(".etape").forEach(function (el) { el.classList.remove("visible"); });
+      document.body.classList.add("enregistrement");
+
+      await attendre(1200);
+      montrer(1);
+      await attendre(900);
+      montrer(2);
+      await parler(m.mot, "fr-FR");
+      await attendre(400);
+      montrer(3);
+      await parler(m.definition, "fr-FR");
+      await attendre(500);
+      montrer(4);
+      await parler(m.anglais, "en-GB");
+      await parler(m.espagnol, "es-ES");
+      await attendre(600);
+      montrer(5);
+      await attendre(2500);
+      enCours = false;
+    }
+
+    function arreter() {
+      window.speechSynthesis && window.speechSynthesis.cancel();
+      document.body.classList.remove("enregistrement");
+      enCours = false;
+    }
+
+    document.getElementById("lancer").addEventListener("click", lancer);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") arreter();
+    });
+
+    afficherMot();
+  </script>
+</body>
+</html>

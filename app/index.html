@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Un mot rare par jour, des citations, des pensées et un mini-quiz pour apprendre en 2 minutes.">
+  <!-- Pour l'installer comme une appli sur l'écran d'accueil -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icones/icone-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pandémonium">
+  <title>Pandémonium des mots</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="fond" aria-hidden="true"></div>
+
+  <div class="appli">
+    <!-- ===== En-tête : série et points ===== -->
+    <header class="haut">
+      <div class="marque"><em>Pandémonium</em> <span>des mots</span></div>
+      <div class="compteurs">
+        <button class="pastille bascule-version" id="bascule-version" type="button" aria-label="Passer à la version Pandémonium">😈</button>
+        <span class="pastille" title="Jours d'affilée">🔥 <b id="serie">0</b></span>
+        <span class="pastille" title="Gels de série : protègent ta série si tu rates un jour">❄️ <b id="gels">0</b></span>
+        <span class="pastille" title="Points">✦ <b id="xp">0</b></span>
+      </div>
+    </header>
+
+    <!-- ===== Onglet Aujourd'hui ===== -->
+    <section class="ecran" id="ecran-aujourdhui">
+      <div id="accueil-session">
+        <div class="salut">
+          <p class="sur-titre" id="date"></p>
+          <h1 class="titre" id="salut">Bonjour.</h1>
+          <p class="devise" id="devise">Deux minutes par jour pour <span id="devise-verbe">mieux dire</span> le monde.</p>
+        </div>
+
+        <article class="carte carte-apercu carte-hero">
+          <p class="etiquette" id="etiquette-hero">Le mot du jour</p>
+          <p class="mot-feu" id="apercu-mot">…</p>
+          <div class="trait"></div>
+          <p class="texte-doux" id="apercu-def">…</p>
+          <div class="seulement-clair">
+            <button class="bouton principal large bouton-hero" id="commencer" type="button">Commencer</button>
+            <p class="petit detail-hero">2 minutes · 7 cartes · un mini-quiz</p>
+            <p class="petit" id="deja-fait" hidden>✅ Session du jour terminée. Reviens demain pour garder ta série !<br><b id="compte-rebours"></b></p>
+          </div>
+        </article>
+
+        <!-- La version sombre : le grimoire du jour -->
+        <div class="seulement-maudit" id="grimoire"></div>
+
+        <div class="seulement-clair">
+        <div class="semaine" id="semaine"></div>
+
+        <button class="rappel-revision" id="rappel-revision" type="button" hidden></button>
+
+        <h2 class="titre-2">Au programme</h2>
+        <div class="programme" id="programme"></div>
+
+        <h2 class="titre-2">Pour briller ce soir</h2>
+        <div class="duo-conversation">
+          <button class="bouton-conversation" id="ouvrir-panne" type="button"><i>💬</i><b>Panne de conversation ?</b><span>Un sujet qui surprend, tout de suite</span></button>
+          <button class="bouton-conversation" id="ouvrir-rdv" type="button"><i>🗓️</i><b>Avant ton rendez-vous</b><span>3 sujets à retenir en chemin</span></button>
+        </div>
+
+        <div class="teaser" id="teaser"></div>
+        </div>
+      </div>
+
+      <!-- Les cartes de la session -->
+      <div id="session" hidden>
+        <div class="progression" id="progression"></div>
+        <article class="carte carte-session" id="carte"></article>
+        <div class="rangee">
+          <button class="bouton" id="precedent" type="button">◀</button>
+          <button class="bouton principal" id="suivant" type="button">Suivant</button>
+        </div>
+      </div>
+
+      <!-- Le quiz -->
+      <div id="quiz" hidden>
+        <div class="progression" id="progression-quiz"></div>
+        <article class="carte">
+          <p class="etiquette">Quel mot correspond ?</p>
+          <p class="question" id="question"></p>
+          <div class="choix" id="choix"></div>
+        </article>
+      </div>
+
+      <!-- Le résultat -->
+      <div id="resultat" hidden>
+        <article class="carte centre">
+          <p class="grand-emoji" id="resultat-emoji">🔥</p>
+          <h2 class="titre" id="resultat-titre">Bravo !</h2>
+          <p class="texte-doux" id="resultat-texte"></p>
+          <p class="gain" id="resultat-gain"></p>
+          <p class="palier" id="palier" hidden></p>
+        </article>
+        <button class="bouton large coffre" id="coffre" type="button" hidden>🎁 Ouvrir le coffre du jour</button>
+        <p class="coffre-resultat" id="coffre-resultat" hidden></p>
+        <button class="bouton principal large" id="partager" type="button">Partager le mot du jour</button>
+        <button class="bouton large" id="retour-accueil" type="button">Terminer</button>
+      </div>
+    </section>
+
+    <!-- ===== Onglet Réviser ===== -->
+    <section class="ecran" id="ecran-reviser" hidden>
+      <h1 class="titre">Réviser</h1>
+      <p class="sous-titre">Les mots reviennent juste avant que tu les oublies.</p>
+      <article class="carte">
+        <p class="etiquette">À revoir aujourd'hui</p>
+        <p class="chiffre" id="a-revoir">0</p>
+        <p class="texte-doux" id="mots-appris"></p>
+      </article>
+      <button class="bouton principal large" id="lancer-revision" type="button">Lancer une révision</button>
+      <p class="petit">Revoir tes mots du jour est toujours gratuit. En plus : 1 révision bonus par jour, illimitée avec Premium.</p>
+
+      <button class="bouton-conversation bouton-paires" id="ouvrir-paires" type="button"><i>🃏</i><b>Le jeu des paires</b><span>Retourne les cartes et retrouve chaque mot avec sa définition</span></button>
+
+      <h2 class="titre-2">Le dictionnaire 🔎</h2>
+      <input class="champ-dico" id="dico-recherche" type="search" placeholder="Un mot… ou décris quelqu'un pour trouver le mot juste" autocomplete="off" aria-label="Chercher un mot">
+      <div class="puces" id="puces-dico">
+        <button class="puce active" data-cat="tout" type="button">Tout</button>
+        <button class="puce" data-cat="utile" type="button">⭐ Soutenu</button>
+        <button class="puce" data-cat="rare" type="button">💎 Rare</button>
+        <button class="puce" data-cat="argot" type="button">🎤 Argot</button>
+        <button class="puce" data-cat="antan" type="button">⚔️ D'antan</button>
+        <button class="puce" data-cat="concepts" type="button">🧠 Concepts</button>
+        <button class="puce" data-cat="nomspropres" type="button">🏛️ Noms propres</button>
+      </div>
+      <p class="petit" id="dico-compte"></p>
+      <div id="dico-resultats" class="liste"></div>
+
+      <h2 class="titre-2">Mes favoris ♥</h2>
+      <div id="liste-favoris" class="liste"></div>
+    </section>
+
+    <!-- ===== Onglet Collection ===== -->
+    <section class="ecran" id="ecran-collection" hidden>
+      <h1 class="titre">Atelier</h1>
+      <p class="sous-titre">Joue avec les images des grands auteurs, puis invente les tiennes.</p>
+
+      <article class="carte">
+        <p class="etiquette">✍️ L'atelier poétique</p>
+        <div class="rangee">
+          <button class="bouton" id="jeu-completer" type="button">🧩 Complète l'image</button>
+          <button class="bouton" id="jeu-creer" type="button">✍️ Crée ton image</button>
+        </div>
+        <div class="zone-atelier" id="zone-atelier"></div>
+      </article>
+
+      <article class="carte">
+        <p class="etiquette">🎤 L'atelier rimes</p>
+        <p class="petit gauche">Donne tes mots (ou tire-les au sort), regarde ce qui rime, puis écris ta punchline. C'est toi qui écris : l'appli te donne seulement la matière.</p>
+        <input class="champ" id="rimes-mots" placeholder="Tes mots, séparés par des virgules (ex. : rire, rime)" maxlength="120" autocomplete="off">
+        <div class="rangee">
+          <button class="bouton" id="rimes-tirer" type="button">🎲 Tirer des mots</button>
+          <button class="bouton principal" id="rimes-chercher" type="button">Trouver les rimes</button>
+        </div>
+        <div class="zone-atelier" id="zone-rimes"></div>
+      </article>
+
+      <h2 class="titre-2">Ma collection</h2>
+      <p class="petit gauche">Ajoute tes mots, citations, pensées et inventions : ils entrent dans tes sessions.</p>
+
+      <form class="carte formulaire" id="formulaire">
+        <div class="onglets-type" role="radiogroup">
+          <label><input type="radio" name="type" value="mot" checked> Mot</label>
+          <label><input type="radio" name="type" value="citation"> Citation</label>
+          <label><input type="radio" name="type" value="pensee"> Pensée</label>
+          <label><input type="radio" name="type" value="invention"> Invention</label>
+        </div>
+        <input class="champ" id="champ-titre" placeholder="Le mot (ex. : Pantois)" maxlength="120" required>
+        <textarea class="champ" id="champ-texte" placeholder="Sa définition" maxlength="400" rows="3" required></textarea>
+        <input class="champ" id="champ-auteur" placeholder="Auteur (facultatif)" maxlength="80">
+        <button class="bouton principal large" type="submit">Ajouter à ma collection</button>
+        <p class="petit" id="limite-collection"></p>
+      </form>
+
+      <div id="liste-collection" class="liste"></div>
+    </section>
+
+    <!-- ===== Onglet Soirée ===== -->
+    <section class="ecran" id="ecran-soiree" hidden>
+      <p class="sur-titre">Mode soirée</p>
+      <h1 class="titre" id="titre-soiree">Le salon</h1>
+      <p class="sous-titre" id="sous-titre-soiree">Pose le téléphone au milieu, lis à voix haute, et que la partie commence.</p>
+
+      <div class="salons" id="salons">
+        <button class="salon actif" data-salon="amis" type="button"><i>🎉</i><b>Entre amis</b><span>Débats, paradoxes, défis</span></button>
+        <button class="salon" data-salon="conversation" type="button"><i>💬</i><b>À deux</b><span>Pour un tête-à-tête</span></button>
+        <button class="salon" data-salon="famille" type="button"><i>👨‍👩‍👧</i><b>En famille</b><span>Anciens contre jeunes</span></button>
+        <button class="salon" data-salon="theatre" type="button"><i>🎭</i><b>Théâtre</b><span>Une phrase, mille tons</span></button>
+      </div>
+
+      <button class="bouton-conversation bouton-paires bouton-pyramide" id="ouvrir-pyramide" type="button"><i>🔺</i><b id="nom-pyramide">La pyramide</b><span>15 cartes face cachée, des défis qui montent en puissance</span></button>
+
+      <div class="puces" id="puces-soiree">
+        <button class="puce active" data-genre="tout" type="button">Tout</button>
+        <button class="puce" data-genre="debat" type="button">Débat</button>
+        <button class="puce" data-genre="paradoxe" type="button">Paradoxe</button>
+        <button class="puce" data-genre="defi" type="button">Défi</button>
+        <button class="puce" data-genre="qui" type="button">Qui de nous</button>
+        <button class="puce" data-genre="devine" type="button">Devine</button>
+        <button class="puce" data-genre="galejade" type="button">Galéjade</button>
+        <button class="puce" data-genre="glissement" type="button">Glissements</button>
+        <button class="puce" data-genre="invente" type="button">Invente</button>
+        <button class="puce" data-genre="diction" type="button">Articule</button>
+        <button class="puce" data-genre="malle" type="button">La malle</button>
+      </div>
+
+      <article class="carte carte-session carte-soiree" id="carte-soiree"></article>
+      <div class="score-famille" id="score-famille" hidden>
+        <button class="camp" type="button" data-camp="anciens">👴 Les anciens <strong id="points-anciens">0</strong> <span>+1</span></button>
+        <button class="camp" type="button" data-camp="jeunes">🧒 Les jeunes <strong id="points-jeunes">0</strong> <span>+1</span></button>
+        <button class="remise" type="button" aria-label="Remettre les points à zéro">↺</button>
+      </div>
+      <button class="bouton principal large" id="sujet-suivant" type="button">Sujet suivant</button>
+      <p class="petit" id="compteur-soiree"></p>
+    </section>
+
+    <!-- ===== Onglet Profil ===== -->
+    <section class="ecran" id="ecran-profil" hidden>
+      <h1 class="titre">Profil</h1>
+      <article class="carte">
+        <p class="etiquette">Ton niveau</p>
+        <p class="niveau" id="niveau">Apprenti</p>
+        <div class="barre"><div class="barre-remplie" id="barre-niveau"></div></div>
+        <p class="petit" id="niveau-detail"></p>
+      </article>
+
+      <h2 class="titre-2">Galerie</h2>
+      <p class="petit gauche">Chaque jour, un tableau différent. Touche-en un pour le garder (Premium dans la version finale).</p>
+      <div class="galerie" id="galerie"></div>
+      <p class="petit gauche" id="credit-fond"></p>
+
+      <h2 class="titre-2">Badges</h2>
+      <div class="badges" id="badges"></div>
+
+      <article class="carte carte-premium">
+        <p class="etiquette">Premium</p>
+        <p class="texte-doux">Thèmes exclusifs, widgets, révisions et collection illimitées, catégories théâtre, philosophie et francophonie.</p>
+        <button class="bouton principal large" id="ouvrir-premium" type="button">Découvrir Premium</button>
+      </article>
+    </section>
+
+    <!-- ===== Barre de navigation ===== -->
+    <nav class="navigation">
+      <button class="nav actif" data-ecran="aujourdhui" type="button"><span>☀️</span>Aujourd'hui</button>
+      <button class="nav" data-ecran="reviser" type="button"><span>🧠</span>Réviser</button>
+      <button class="nav" data-ecran="collection" type="button"><span>✍️</span>Atelier</button>
+      <button class="nav" data-ecran="soiree" type="button"><span>🎉</span>Soirée</button>
+      <button class="nav" data-ecran="profil" type="button"><span>👤</span>Profil</button>
+    </nav>
+  </div>
+
+  <!-- ===== Fenêtre des sujets de conversation ===== -->
+  <div class="voile" id="fenetre-conversation" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-conversation" type="button" aria-label="Fermer">✕</button>
+      <div id="conversation-contenu"></div>
+    </div>
+  </div>
+
+  <!-- ===== La pyramide : 15 cartes face cachée, des défis de plus en plus forts ===== -->
+  <div class="voile" id="fenetre-pyramide" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-pyramide" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette" id="titre-pyramide">🔺 La pyramide</p>
+      <p class="petit gauche" id="regle-pyramide"></p>
+      <div class="pyramide" id="pyramide"></div>
+      <div class="defi-pyramide" id="defi-pyramide"></div>
+      <button class="bouton principal large" id="rejouer-pyramide" type="button">Nouvelle pyramide</button>
+    </div>
+  </div>
+
+  <!-- ===== Le jeu des paires : un mot, sa définition ===== -->
+  <div class="voile" id="fenetre-paires" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-paires" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette" id="titre-paires">🃏 Le jeu des paires</p>
+      <p class="petit gauche" id="paires-statut">Retourne deux cartes : un mot et sa définition.</p>
+      <div class="plateau-paires" id="plateau-paires"></div>
+      <button class="bouton principal large" id="rejouer-paires" type="button">Nouvelle partie</button>
+    </div>
+  </div>
+
+  <!-- ===== Fenêtre du dictionnaire : la carte complète d'un mot ===== -->
+  <div class="voile" id="fiche-mot" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-fiche" type="button" aria-label="Fermer">✕</button>
+      <div id="fiche-contenu"></div>
+    </div>
+  </div>
+
+  <!-- ===== Fenêtre Premium (prototype : aucun paiement) ===== -->
+  <div class="voile" id="premium" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-premium" type="button" aria-label="Fermer">✕</button>
+      <p class="mot-feu petit-feu">Premium</p>
+      <p class="texte-doux">Deviens un maître des mots.</p>
+      <ul class="avantages">
+        <li>🎨 Thèmes : Pandemonium, Enfer de Dante, Aube dorée</li>
+        <li>📱 Plusieurs widgets pour ton écran d'accueil</li>
+        <li>🧠 Révisions illimitées</li>
+        <li>✍️ Collection illimitée</li>
+        <li>🎭 Catégories : théâtre, philosophie, francophonie</li>
+      </ul>
+      <button class="offre recommandee" type="button">
+        <b>Annuel · 19,99 €</b><span>soit 1,67 € par mois · −44 %</span><i>Le plus choisi</i>
+      </button>
+      <button class="offre" type="button"><b>Mensuel · 2,99 €</b><span>sans engagement</span></button>
+      <p class="petit">Essai gratuit de 7 jours. Prototype : aucun paiement n'est réellement demandé.</p>
+    </div>
+  </div>
+
+  <!-- Le contenu (les mêmes fichiers que le site) -->
+  <script src="../mots-plus.js"></script>
+  <script src="../mots.js"></script>
+  <script src="../citations-plus.js"></script>
+  <script src="../contenus.js"></script>
+  <script src="../exemples.js"></script>
+  <script src="../exemples-plus.js"></script>
+  <script src="../tableaux.js"></script>
+  <script src="../niveaux.js"></script>
+  <script src="../illustrations.js"></script>
+  <script src="../rimes.js"></script>
+  <script src="../noms-propres.js"></script>
+  <script src="../conversation.js"></script>
+  <script src="../maudit.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

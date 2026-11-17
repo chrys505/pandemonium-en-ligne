@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aperçu téléphone</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --police: -apple-system, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+      --degrade: linear-gradient(100deg, #ffe066 0%, #ffb800 30%, #ff6a00 60%, #ff2e1f 85%, #ffb800 100%);
+      /* Taille réelle d'un iPhone (390 × 844) et taille affichée */
+      --echelle: 0.78;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 32px 16px 48px;
+      font-family: var(--police);
+      color: #f6ecd9;
+      background: radial-gradient(ellipse at 50% 120%, #3a1406 0%, #120806 45%, #050302 100%);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    .sous-titre {
+      margin: 0 0 32px;
+      text-align: center;
+      color: #bdb3a2;
+    }
+
+    .scene {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    .bloc { text-align: center; }
+
+    .legende {
+      margin: 16px 0 0;
+      font-size: 0.9rem;
+      color: #bdb3a2;
+    }
+
+    /* ----- Le cadre de l'iPhone ----- */
+    .iphone {
+      position: relative;
+      width: calc(390px * var(--echelle) + 24px);
+      height: calc(844px * var(--echelle) + 24px);
+      padding: 12px;
+      background: #1b1b1d;
+      border-radius: 56px;
+      box-shadow: 0 0 0 2px #3a3a3e, 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 120px rgba(255, 106, 0, 0.15);
+    }
+
+    .ecran {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 44px;
+      background: #000;
+    }
+
+    .ilot {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      z-index: 5;
+      width: 96px;
+      height: 28px;
+      transform: translateX(-50%);
+      background: #000;
+      border-radius: 20px;
+    }
+
+    /* L'appli, à taille réelle, réduite pour tenir dans le cadre */
+    .ecran iframe {
+      width: 390px;
+      height: 844px;
+      border: 0;
+      transform: scale(var(--echelle));
+      transform-origin: 0 0;
+    }
+
+    /* ----- L'écran d'accueil ----- */
+    .accueil {
+      position: absolute;
+      inset: 0;
+      padding: 52px 18px 0;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.55)),
+        url("images/fond.jpg") center / cover;
+    }
+
+    .barre-etat {
+      position: absolute;
+      top: 14px;
+      left: 28px;
+      right: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .widgets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .widget {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      padding: 14px;
+      text-align: left;
+      background: rgba(10, 10, 10, 0.82);
+      border: 1px solid rgba(255, 184, 0, 0.18);
+      border-radius: 22px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .widget::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -70%;
+      z-index: -1;
+      width: 160%;
+      height: 120%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(255, 106, 0, 0.45), rgba(220, 30, 10, 0.15) 45%, transparent 70%);
+      filter: blur(14px);
+    }
+
+    .widget.moyen { grid-column: span 2; min-height: 138px; }
+    .widget.petit { aspect-ratio: 1; display: flex; flex-direction: column; justify-content: space-between; }
+
+    .w-etiquette {
+      margin: 0 0 6px;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #ffb800;
+    }
+
+    .w-mot {
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      white-space: nowrap;
+      color: #ffb800;
+      background: var(--degrade);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: reflet 9s linear infinite;
+    }
+
+    @keyframes reflet {
+      from { background-position: 0% 50%; }
+      to   { background-position: 220% 50%; }
+    }
+
+    .moyen .w-mot { font-size: calc(var(--e, 1) * 1.9rem); }
+    .petit .w-mot { font-size: calc(var(--e, 1) * 1.15rem); }
+
+    .w-def {
+      margin: 8px 0 0;
+      font-family: Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      color: #f6ecd9;
+    }
+
+    .w-bas {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: #bdb3a2;
+    }
+
+    .w-serie {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    /* Les icônes d'applis */
+    .icones {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px 10px;
+      margin-top: 22px;
+    }
+
+    .icone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.62rem;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .icone i {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      font-size: 1.5rem;
+      font-style: normal;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* L'icône de notre appli */
+    .icone.notre i {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #ffb800;
+      background: radial-gradient(circle at 50% 120%, rgba(255, 106, 0, 0.7), #0a0a0a 65%);
+      border: 1px solid rgba(255, 184, 0, 0.35);
+    }
+
+    .icone.notre i span {
+      background: var(--degrade);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .dock {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 14px;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 28px;
+      backdrop-filter: blur(16px);
+    }
+
+    .dock i {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+      font-style: normal;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 13px;
+    }
+
+    @media (max-width: 420px) {
+      :root { --echelle: 0.7; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Aperçu téléphone</h1>
+  <p class="sous-titre">Le widget sur l'écran d'accueil, et l'appli qu'il ouvre.</p>
+
+  <div class="scene">
+    <!-- iPhone 1 : l'écran d'accueil avec les widgets -->
+    <div class="bloc">
+      <div class="iphone">
+        <div class="ecran">
+          <div class="ilot"></div>
+          <div class="accueil">
+            <div class="barre-etat"><span id="heure">9:41</span><span>●●● 5G ▮</span></div>
+
+            <div class="widgets">
+              <div class="widget moyen">
+                <p class="w-etiquette">Le mot du jour</p>
+                <p class="w-mot" id="w-mot">…</p>
+                <p class="w-def" id="w-def">…</p>
+              </div>
+              <div class="widget petit">
+                <p class="w-etiquette">Série</p>
+                <p class="w-serie">🔥 7</p>
+                <div class="w-bas"><span>jours</span><span>✦ 340</span></div>
+              </div>
+              <div class="widget petit">
+                <p class="w-etiquette">À réviser</p>
+                <p class="w-mot" id="w-revision">…</p>
+                <div class="w-bas"><span>3 mots</span><span>2 min</span></div>
+              </div>
+            </div>
+
+            <div class="icones">
+              <div class="icone notre"><i><span>P</span></i>Pandémonium</div>
+              <div class="icone"><i>📷</i>Photos</div>
+              <div class="icone"><i>🎵</i>Musique</div>
+              <div class="icone"><i>🗺️</i>Plans</div>
+              <div class="icone"><i>📚</i>Livres</div>
+              <div class="icone"><i>☀️</i>Météo</div>
+              <div class="icone"><i>🎮</i>Jeux</div>
+              <div class="icone"><i>⚙️</i>Réglages</div>
+            </div>
+
+            <div class="dock"><i>📞</i><i>💬</i><i>🌐</i><i>✉️</i></div>
+          </div>
+        </div>
+      </div>
+      <p class="legende">L'écran d'accueil : le widget montre le mot du jour.</p>
+    </div>
+
+    <!-- iPhone 2 : l'appli -->
+    <div class="bloc">
+      <div class="iphone">
+        <div class="ecran">
+          <div class="ilot"></div>
+          <iframe src="app/index.html" title="L'appli Pandémonium des mots"></iframe>
+        </div>
+      </div>
+      <p class="legende">L'appli : on peut cliquer dedans pour l'essayer.</p>
+    </div>
+  </div>
+
+  <script src="mots-plus.js"></script>
+  <script src="mots.js"></script>
+  <script>
+    // Le même mot du jour que dans l'appli
+    const maintenant = new Date();
+    const numeroJour = Math.floor(Date.UTC(maintenant.getFullYear(), maintenant.getMonth(), maintenant.getDate()) / 86400000);
+    const m = mots[numeroJour % mots.length];
+    const revision = mots[(numeroJour + 17) % mots.length];
+
+    function ajuster(el, texte, lettresMax) {
+      el.textContent = texte;
+      el.style.setProperty("--e", Math.min(1, lettresMax / texte.length).toFixed(2));
+    }
+
+    ajuster(document.getElementById("w-mot"), m.mot, 11);
+    document.getElementById("w-def").textContent = m.definition;
+    ajuster(document.getElementById("w-revision"), revision.mot, 8);
+    document.getElementById("heure").textContent = maintenant.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+  </script>
+</body>
+</html>

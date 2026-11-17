@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mot du jour</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="carte">
+    <p class="date" id="date">…</p>
+
+    <section class="bloc">
+      <h2 class="etiquette" id="etiquette-mot">Le mot du jour</h2>
+      <div class="categories" id="categories">
+        <button class="categorie active" data-cat="tout" type="button">Tout</button>
+        <button class="categorie" data-cat="utile" type="button">⭐ Soutenu</button>
+        <button class="categorie" data-cat="rare" type="button">💎 Rare</button>
+        <button class="categorie" data-cat="argot" type="button">🎤 Argot</button>
+        <button class="categorie" data-cat="antan" type="button">⚔️ D'antan</button>
+      </div>
+      <div class="feu">
+        <h1 class="mot" id="mot">…</h1>
+      </div>
+      <button class="bouton bouton-haut" id="hasard" type="button">🎲 Un autre, au hasard</button>
+      <p class="definition" id="definition">…</p>
+      <p class="langues">
+        <span>🇬🇧 <span id="anglais">…</span></span>
+        <span>🇪🇸 <span id="espagnol">…</span></span>
+      </p>
+      <div class="voix" id="voix">
+        <button class="bouton-voix" type="button" data-langue="fr">🔊 Écouter</button>
+        <button class="bouton-voix" type="button" data-langue="en">🔊 EN</button>
+        <button class="bouton-voix" type="button" data-langue="es">🔊 ES</button>
+      </div>
+      <div class="recherche">
+        <input class="champ-recherche" id="recherche" type="search" placeholder="🔎 Un mot… ou décris quelqu'un" autocomplete="off" aria-label="Chercher un mot">
+        <ul class="resultats" id="resultats" hidden></ul>
+      </div>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">L'expression du jour</h2>
+      <p class="expression" id="expression">…</p>
+      <p class="definition" id="sens">…</p>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">🌍 L'expression francophone du jour</h2>
+      <p class="pays" id="pays">…</p>
+      <p class="expression" id="francophone">…</p>
+      <p class="definition" id="francophone-sens">…</p>
+      <div class="voix">
+        <button class="bouton-voix" id="ecouter-accent" type="button">🔊 Écouter avec l'accent</button>
+      </div>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">La citation du jour</h2>
+      <blockquote class="citation" id="citation">…</blockquote>
+      <p class="auteur" id="auteur"></p>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">🦉 La pensée philosophique du jour</h2>
+      <blockquote class="citation" id="philosophie">…</blockquote>
+      <p class="auteur" id="philosophe"></p>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">🪶 Le petit poème du jour</h2>
+      <blockquote class="citation poeme" id="poeme">…</blockquote>
+      <p class="auteur" id="poete"></p>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">🎶 Ça sonne bien</h2>
+      <p class="pays" id="sonore-type">…</p>
+      <blockquote class="citation poeme" id="sonore">…</blockquote>
+      <p class="auteur" id="sonore-info"></p>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">🏛️ Le nom propre du jour</h2>
+      <img class="oeuvre" id="nom-propre-image" alt="" hidden>
+      <p class="expression" id="nom-propre">…</p>
+      <p class="pays" id="nom-propre-qui"></p>
+      <p class="definition" id="nom-propre-anecdote"></p>
+      <p class="auteur" id="nom-propre-credit"></p>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">🎭 La réplique du jour</h2>
+      <blockquote class="citation" id="replique">…</blockquote>
+      <p class="auteur" id="piece"></p>
+    </section>
+
+    <hr class="separateur">
+
+    <section class="bloc">
+      <h2 class="etiquette">🖼️ Le peintre né un jour comme aujourd'hui</h2>
+      <img class="oeuvre" id="oeuvre-image" alt="" hidden>
+      <p class="expression" id="oeuvre">Recherche en cours…</p>
+      <p class="auteur" id="peintre"></p>
+    </section>
+
+    <p class="source">Peintre du jour : trouvé chaque jour dans Wikidata (il faut Internet).</p>
+  </main>
+
+  <p class="credit" id="credit" hidden>Fond : John Martin, <em>Pandemonium</em> (1841), domaine public</p>
+
+  <script src="mots-plus.js"></script>
+  <script src="mots.js"></script>
+  <script src="citations-plus.js"></script>
+  <script src="contenus.js"></script>
+  <script src="niveaux.js"></script>
+  <script src="noms-propres.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

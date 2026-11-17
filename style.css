@@ -1,0 +1,335 @@
+/* Couleurs du site */
+:root {
+  --or: #e8c27a;
+  --creme: #f6ecd9;
+  --texte-doux: #d9c9ad;
+  --carte: rgba(18, 10, 8, 0.72);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--creme);
+  background-color: #120806;
+  /* 1. voile sombre pour bien lire  2. le tableau (images/fond.jpg)  3. fond de secours façon ciel de feu */
+  background-image:
+    linear-gradient(rgba(10, 5, 4, 0.45), rgba(10, 5, 4, 0.65)),
+    url("images/fond.jpg"),
+    radial-gradient(ellipse at 50% 85%, #c2410c 0%, #7c1d0a 30%, #2a0d07 60%, #0b0504 100%);
+  background-size: cover, cover, cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.carte {
+  width: 100%;
+  max-width: 560px;
+  padding: 32px 28px;
+  border: 1px solid rgba(232, 194, 122, 0.35);
+  border-radius: 16px;
+  background: var(--carte);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.date {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+}
+
+.etiquette {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--or);
+}
+
+/* ----- Le mot du jour : noir, jaune, rouge, version moderne et épurée ----- */
+.feu {
+  position: relative;
+  display: block;
+  margin: 0 0 18px;
+  padding: 40px 24px 36px;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 184, 0, 0.18);
+  border-radius: 18px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Une lueur de braise, douce et floue, qui respire lentement sous le mot */
+.feu::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -70%;
+  z-index: -1;
+  width: 130%;
+  height: 130%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(255, 106, 0, 0.42) 0%, rgba(220, 30, 10, 0.18) 38%, transparent 68%);
+  filter: blur(18px);
+  animation: braise 6s ease-in-out infinite alternate;
+}
+
+/* Un fin trait lumineux sous le mot */
+.feu::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  bottom: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #ff2e1f, #ffc400, #ff2e1f, transparent);
+  opacity: 0.85;
+}
+
+@keyframes braise {
+  0%   { opacity: 0.75; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1;    transform: translateX(-50%) scale(1.08); }
+}
+
+.mot {
+  margin: 0;
+  font-family: -apple-system, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", system-ui, "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(2.4rem, 10vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+  /* Dégradé jaune → orange → rouge, avec un reflet qui glisse lentement */
+  color: #ffb800;
+  background: linear-gradient(100deg, #ffe066 0%, #ffb800 30%, #ff6a00 60%, #ff2e1f 85%, #ffb800 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: reflet 9s linear infinite;
+}
+
+@keyframes reflet {
+  from { background-position: 0% 50%; }
+  to   { background-position: 220% 50%; }
+}
+
+/* Le mot apparaît en douceur à chaque affichage */
+.mot.surgit {
+  animation: surgir 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both, reflet 9s linear infinite;
+}
+
+@keyframes surgir {
+  0%   { opacity: 0; transform: translateY(14px); filter: blur(8px); }
+  100% { opacity: 1; transform: translateY(0);    filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feu::before, .mot, .mot.surgit { animation: none; }
+}
+
+.definition {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.langues {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  margin: 14px 0 0;
+  font-size: 1rem;
+  color: var(--texte-doux);
+}
+
+.voix {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.bouton-voix {
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--creme);
+  background: rgba(232, 194, 122, 0.12);
+  border: 1px solid rgba(232, 194, 122, 0.5);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.bouton-voix:hover { background: rgba(232, 194, 122, 0.25); }
+
+/* Les catégories de mots */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 0 14px;
+}
+
+.categorie {
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--texte-doux);
+  background: transparent;
+  border: 1px solid rgba(232, 194, 122, 0.35);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.categorie:hover { background: rgba(232, 194, 122, 0.12); }
+.categorie.active { color: #140a04; background: var(--or); border-color: var(--or); font-weight: 600; }
+
+/* Le grand bouton « au hasard », collé sous le mot */
+.bouton.bouton-haut {
+  display: block;
+  margin: 4px auto 16px;
+}
+
+/* La recherche de mot */
+.recherche {
+  margin: 14px auto 0;
+  max-width: 360px;
+  text-align: left;
+}
+
+.champ-recherche {
+  width: 100%;
+  padding: 9px 16px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--creme);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(232, 194, 122, 0.5);
+  border-radius: 999px;
+  outline: none;
+}
+
+.champ-recherche:focus { border-color: var(--or); }
+.champ-recherche::placeholder { color: var(--texte-doux); opacity: 0.8; }
+
+.resultats {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 4px;
+  max-height: 260px;
+  overflow-y: auto;
+  background: rgba(18, 10, 8, 0.95);
+  border: 1px solid rgba(232, 194, 122, 0.35);
+  border-radius: 14px;
+}
+
+.resultats li {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--texte-doux);
+  cursor: pointer;
+}
+
+.resultats li b { color: var(--creme); }
+.resultats li:hover, .resultats li.actif { background: rgba(232, 194, 122, 0.18); }
+.resultats .vide { cursor: default; font-style: italic; }
+
+.pays {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  color: var(--texte-doux);
+}
+
+.expression {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  color: var(--creme);
+}
+
+.separateur {
+  width: 60px;
+  margin: 28px auto;
+  border: 0;
+  border-top: 1px solid var(--or);
+}
+
+.citation {
+  margin: 0;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.auteur {
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  color: var(--texte-doux);
+}
+
+.ton {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--texte-doux);
+}
+
+.poeme { white-space: pre-line; }
+
+.oeuvre {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  margin: 4px auto 14px;
+  border: 1px solid rgba(232, 194, 122, 0.35);
+  border-radius: 8px;
+}
+
+.lien a {
+  color: var(--or);
+}
+
+.source {
+  margin: 24px 0 0;
+  font-size: 0.75rem;
+  color: var(--texte-doux);
+}
+
+.bouton {
+  margin-top: 28px;
+  padding: 10px 18px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--creme);
+  background: transparent;
+  border: 1px solid var(--or);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.bouton:hover { background: rgba(232, 194, 122, 0.15); }
+
+.credit {
+  margin: 16px 0 0;
+  font-size: 0.75rem;
+  color: var(--texte-doux);
+}
