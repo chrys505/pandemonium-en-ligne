@@ -191,6 +191,17 @@ afficherFrancophone(numeroDuJour);
 afficherSonore(numeroDuJour);
 afficherNomPropre(numeroDuJour);
 
+// La pensée en vedette (les failles humaines, ajoutées le 2026-11-18), les deux premiers jours
+(function () {
+  const vedettes = { "2026-11-18": "L'être humain n'est pas mal codé", "2026-11-19": "Quand tu hésites, lance une pièce" };
+  const cle = aujourdhui.getFullYear() + "-" + String(aujourdhui.getMonth() + 1).padStart(2, "0") + "-" + String(aujourdhui.getDate()).padStart(2, "0");
+  const debut = vedettes[cle];
+  const p = debut && philosophies.find(function (x) { return x.texte.indexOf(debut) === 0; });
+  if (!p) return;
+  document.getElementById("philosophie").textContent = "« " + p.texte + " »";
+  document.getElementById("philosophe").textContent = p.auteur ? "— " + p.auteur : "";
+})();
+
 // Le concept du jour : biais, lois, effets et idées qui expliquent le monde (liste partagée avec l'appli)
 // Les deux derniers ajoutés (effet de l'observateur, puis effet papillon) passent en premier jusqu'au 2026-11-20
 function afficherConcept(c) {

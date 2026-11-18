@@ -158,5 +158,13 @@ const philosophiesPlus = [
   ["Si tu laisses quelqu'un s'habituer à marcher avec des béquilles, il ne pourra plus jamais marcher sans.", ""],
   ["Les plaisirs, c'est bien quand c'est occasionnel ; à portée de main tout le temps, ça n'a plus de saveur.", ""],
   ["Ce serait donc fini à tout jamais, et aucune conscience ne pourra être recréée ?", ""],
-  ["Être complotiste de rien, c'est aussi fou que d'être complotiste de tout.", ""]
+  ["Être complotiste de rien, c'est aussi fou que d'être complotiste de tout.", ""],
+  // Les failles humaines (2026-11-18), réécrites en pensées
+  ["L'être humain n'est pas mal codé : il est codé pour survivre en groupe. Ses failles sont les traces de son besoin des autres.", ""],
+  ["Quand tu hésites, lance une pièce. Ce n'est pas elle qui décide : c'est le pincement que tu ressens en voyant le résultat. Le hasard ne choisit pas pour toi, il te révèle ce que tu voulais déjà.", ""],
+  ["Quand un groupe éclate de rire, chacun cherche du regard quelqu'un. Le rire dit ce qu'on trouve drôle ; le regard qui suit dit de qui l'on espère l'approbation.", ""],
+  ["Celui qui s'excuse met sa faute au centre ; celui qui dit « merci d'avoir patienté » met la patience de l'autre au centre. Le même retard, deux mondes.", ""],
+  ["L'esprit humain se méfie de la perfection : avouer une petite faiblesse rend plus crédible que de paraître sans faille.", ""],
+  ["Nous imitons sans le savoir ceux qui nous parlent : un hochement de tête, un regard vers la montre. L'humain est un miroir avant d'être un juge.", ""],
+  ["Sois lisible, mais ne montre jamais toutes tes cartes : la clarté inspire la confiance, la part de mystère inspire le respect.", ""]
 ];
