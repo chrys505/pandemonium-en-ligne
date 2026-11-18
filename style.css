@@ -333,3 +333,128 @@ body {
   font-size: 0.75rem;
   color: var(--texte-doux);
 }
+
+/* ===== La quintessence du jour : un écrin d'or, des étincelles qui montent ===== */
+.quintessence {
+  position: relative;
+  margin: 0 0 28px;
+  padding: 28px 22px 24px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(255, 150, 0, 0.28), transparent 65%),
+    linear-gradient(160deg, rgba(40, 26, 8, 0.92), rgba(14, 8, 6, 0.94));
+  border: 1px solid rgba(255, 205, 110, 0.6);
+  border-radius: 18px;
+  box-shadow: 0 0 36px rgba(255, 160, 0, 0.22), inset 0 1px 0 rgba(255, 240, 200, 0.15);
+  overflow: hidden;
+  isolation: isolate;
+  animation: q-pouls 3.4s ease-in-out infinite;
+}
+.quintessence[hidden] { display: none; }
+.quintessence::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 236, 170, 0.18) 50%, transparent 62%);
+  transform: translateX(-120%);
+  animation: q-reflet 5s ease-in-out infinite;
+}
+.q-alambic { margin: 0 0 4px; font-size: 2.6rem; filter: drop-shadow(0 0 16px rgba(255, 190, 40, 0.8)); animation: q-flotte 3.4s ease-in-out infinite; }
+.q-anecdote-titre {
+  margin: 4px 0 12px;
+  font-size: 1.55rem;
+  font-style: italic;
+  line-height: 1.2;
+  color: #ffe9b0;
+  text-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
+}
+.quintessence .definition { font-size: 1.05rem; }
+.q-bouton-chute { margin-top: 18px; }
+.q-chute {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #ffe9b0;
+  border-top: 1px solid rgba(255, 205, 110, 0.35);
+  animation: q-apparait 0.7s ease;
+}
+.q-sortie { margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(255, 205, 110, 0.2); }
+.q-petite-etiquette { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--or); }
+.q-defi { margin: 18px 0 0; font-size: 0.95rem; line-height: 1.5; color: var(--texte-doux); }
+.q-vers-appli { display: inline-block; margin-top: 20px; text-decoration: none; border-color: #ffd27a; box-shadow: 0 0 18px rgba(255, 180, 40, 0.3); }
+
+/* Les étincelles qui montent dans l'écrin (et une gerbe quand on révèle la chute) */
+.q-etincelle {
+  position: absolute;
+  bottom: -10px;
+  z-index: -1;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff6d8, #ffb800 55%, transparent 70%);
+  box-shadow: 0 0 10px 2px rgba(255, 180, 0, 0.6);
+  opacity: 0;
+  animation: q-monte 6s linear infinite;
+}
+.q-etincelle:nth-child(1) { left: 12%; animation-delay: 0s; }
+.q-etincelle:nth-child(2) { left: 32%; animation-delay: 1.8s; width: 3px; height: 3px; }
+.q-etincelle:nth-child(3) { left: 55%; animation-delay: 3.1s; }
+.q-etincelle:nth-child(4) { left: 74%; animation-delay: 0.9s; width: 4px; height: 4px; }
+.q-etincelle:nth-child(5) { left: 90%; animation-delay: 4.2s; width: 3px; height: 3px; }
+.q-eclat .q-etincelle { animation-duration: 2.2s; }
+.q-eclat { animation: q-eclat 1.2s ease, q-pouls 3.4s ease-in-out 1.2s infinite; }
+
+@keyframes q-monte {
+  0%   { opacity: 0; transform: translate(0, 0); }
+  15%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(14px, -420px); }
+}
+@keyframes q-pouls {
+  0%, 100% { box-shadow: 0 0 30px rgba(255, 160, 0, 0.18), inset 0 1px 0 rgba(255, 240, 200, 0.15); }
+  50%      { box-shadow: 0 0 52px rgba(255, 180, 0, 0.42), inset 0 1px 0 rgba(255, 240, 200, 0.15); }
+}
+@keyframes q-reflet { 0%, 55% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+@keyframes q-flotte { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-6px) rotate(3deg); } }
+@keyframes q-apparait { from { opacity: 0; transform: translateY(8px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes q-eclat { 0% { filter: brightness(1); } 25% { filter: brightness(1.8); } 100% { filter: brightness(1); } }
+
+/* L'élixir ultime : la tirade sur un parchemin doré */
+.q-bouton-elixir {
+  display: block;
+  margin: 22px auto 0;
+  padding: 12px 22px;
+  font-weight: bold;
+  color: #2a1700;
+  background: linear-gradient(100deg, #fff1b8, #ffd045 40%, #e8a200 70%, #fff1b8);
+  background-size: 220% 100%;
+  border: none;
+  box-shadow: 0 0 24px rgba(255, 190, 40, 0.55);
+  animation: q-or-coule 4s linear infinite;
+}
+.q-bouton-elixir:hover { background: linear-gradient(100deg, #fff1b8, #ffd045 40%, #e8a200 70%, #fff1b8); background-size: 220% 100%; filter: brightness(1.1); }
+.q-elixir {
+  margin: 20px 0 0;
+  padding: 20px 18px;
+  text-align: left;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 220, 120, 0.22), transparent 70%), rgba(60, 40, 10, 0.55);
+  border: 1px solid rgba(255, 215, 120, 0.7);
+  border-radius: 14px;
+  box-shadow: 0 0 36px rgba(255, 180, 0, 0.28);
+  animation: q-apparait 0.9s ease;
+}
+.q-elixir[hidden], .q-bouton-elixir[hidden], .q-bouton-chute[hidden] { display: none; }
+.q-tirade { margin: 0; font-size: 1.05rem; font-style: italic; line-height: 1.65; color: #fff3da; }
+.q-doree { border-color: #ffe08a; }
+.q-doree .q-etincelle { animation-duration: 1.8s; background: radial-gradient(circle, #fffbe8, #ffd045 55%, transparent 70%); }
+@media (max-width: 480px) {
+  .quintessence { padding: 24px 14px 20px; }
+  .q-elixir { padding: 16px 14px; }
+  .q-tirade { font-size: 1rem; }
+}
+@keyframes q-or-coule { from { background-position: 0% 50%; } to { background-position: 220% 50%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .quintessence, .quintessence::after, .q-alambic, .q-etincelle, .q-bouton-elixir { animation: none; }
+}

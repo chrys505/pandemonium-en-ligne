@@ -191,6 +191,37 @@ afficherFrancophone(numeroDuJour);
 afficherSonore(numeroDuJour);
 afficherNomPropre(numeroDuJour);
 
+// La quintessence du jour : une anecdote avec sa chute, un défi et une sortie de scène
+if (typeof quintessenceDuJour === "function") {
+  const q = quintessenceDuJour(numeroDuJour);
+  const motDefi = motsSansCourants()[numeroDuJour % motsSansCourants().length].mot;
+  document.getElementById("q-etiquette").textContent = "La quintessence " + (aujourdhui.getHours() >= 16 || aujourdhui.getHours() < 5 ? "du soir" : "du jour");
+  document.getElementById("q-titre").textContent = q.anecdote[0];
+  document.getElementById("q-recit").textContent = q.anecdote[1];
+  document.getElementById("q-chute").textContent = q.anecdote[2];
+  document.getElementById("q-sortie").textContent = "« " + q.sortie + " »";
+  document.getElementById("q-defi").textContent = "🎯 Le défi : " + q.defi.replace("{mot}", motDefi);
+  // L'élixir ultime : l'anecdote, le mot du jour, la réplique du jour et la sortie, en une seule tirade
+  const motTirade = motsSansCourants()[numeroDuJour % motsSansCourants().length];
+  const repliqueTirade = repliques[numeroDuJour % repliques.length];
+  document.getElementById("q-tirade").textContent = tiradeDuSoir({ anecdote: q.anecdote, mot: motTirade.mot, definition: motTirade.definition,
+    replique: repliqueTirade.texte, auteur: repliqueTirade.piece, sortie: q.sortie });
+  document.getElementById("q-bouton-elixir").addEventListener("click", function () {
+    this.hidden = true;
+    document.getElementById("q-elixir").hidden = false;
+    document.getElementById("quintessence").classList.remove("q-eclat");
+    void document.getElementById("quintessence").offsetWidth;
+    document.getElementById("quintessence").classList.add("q-eclat", "q-doree");
+  });
+  document.getElementById("q-bouton-chute").addEventListener("click", function () {
+    this.hidden = true;
+    document.getElementById("q-chute").hidden = false;
+    document.getElementById("quintessence").classList.add("q-eclat");
+  });
+} else {
+  document.getElementById("quintessence").hidden = true;
+}
+
 // Le bouton « au hasard »
 function auHasard(liste) {
   return Math.floor(Math.random() * liste.length);

@@ -52,6 +52,13 @@
           </div>
         </article>
 
+        <!-- La quintessence : six gouttes d'esprit, dans les deux versions -->
+        <button class="bouton-quintessence" id="ouvrir-quintessence" type="button">
+          <i aria-hidden="true">⚗️</i>
+          <b id="qb-titre">La quintessence du soir</b>
+          <span id="qb-sous">Six gouttes d'esprit pour briller ce soir</span>
+        </button>
+
         <!-- La version sombre : le grimoire du jour -->
         <div class="seulement-maudit" id="grimoire"></div>
 
@@ -320,7 +327,15 @@
     </div>
   </div>
 
+  <!-- ===== La quintessence : la cérémonie en plein écran ===== -->
+  <div class="quintessence" id="quintessence" hidden role="dialog" aria-modal="true" aria-label="La quintessence">
+    <canvas class="feux" id="feux" aria-hidden="true"></canvas>
+    <button class="fermer q-fermer" id="fermer-quintessence" type="button" aria-label="Fermer">✕</button>
+    <div class="q-scene" id="q-scene"></div>
+  </div>
+
   <!-- Le contenu (les mêmes fichiers que le site) -->
+  <script src="../quintessence.js"></script>
   <script src="../mots-plus.js"></script>
   <script src="../mots.js"></script>
   <script src="../citations-plus.js"></script>

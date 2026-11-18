@@ -413,6 +413,7 @@ function appliquerVersion() {
     ? "Éteins la lumière, pose le téléphone au milieu, et que les malédictions commencent."
     : "Pose le téléphone au milieu, lis à voix haute, et que la partie commence.";
   $("carte-soiree").innerHTML = ""; // le prochain sujet sera tiré dans la bonne version
+  majBoutonQuintessence();
   appliquerFond();
 }
 
@@ -457,6 +458,7 @@ function majAccueil() {
   majTeaser();
   majCompteARebours();
   majRappelRevision();
+  majBoutonQuintessence();
   if (etat.maudit) rendreMaudit(false);
   else $("etiquette-hero").textContent = "Le mot du jour";
   montrer("accueil-session");
@@ -552,6 +554,287 @@ $("ouvrir-panne").addEventListener("click", montrerPanne);
 $("ouvrir-rdv").addEventListener("click", montrerRendezVous);
 $("fermer-conversation").addEventListener("click", function () { $("fenetre-conversation").hidden = true; });
 $("fenetre-conversation").addEventListener("click", function (e) { if (e.target === $("fenetre-conversation")) $("fenetre-conversation").hidden = true; });
+
+// ---------- La quintessence : six gouttes d'esprit, distillées une à une, sous une pluie d'étincelles ----------
+const quint = { gouttes: [], i: -1, tirade: "", avant: 0 };
+
+// La fiole : elle se remplit d'or (ou de sang) à chaque goutte
+function fiole(niveau, pleine) {
+  const html = '<div class="q-fiole' + (pleine ? " q-fiole-pleine" : "") + '" aria-hidden="true">' +
+    '<div class="q-col"></div><div class="q-panse"><div class="q-liquide" style="--avant:' + quint.avant + "%;--apres:" + niveau + '%"><i></i><i></i><i></i></div></div></div>';
+  quint.avant = niveau;
+  return html;
+}
+
+function exempleDe(m) {
+  const e = (typeof exemples !== "undefined" && exemples[m.mot]) || (typeof exemplesPlus !== "undefined" && exemplesPlus[m.mot]);
+  return e && e[0] ? e[0][1] : "";
+}
+
+// Les six gouttes du jour (les mêmes toute la journée) ; « auHasardTout » : une nouvelle distillation
+function distiller(auHasardTout) {
+  const prendre = function (liste, decalage) { return auHasardTout ? auHasard(liste) : auJourDans(liste, decalage); };
+  if (etat.maudit && typeof insultesAntan !== "undefined") {
+    const insulte = motParNom(prendre(insultesAntan, 4)) || { mot: "Faquin", definition: "Homme sans valeur, impertinent." };
+    const r = prendre(rumeurs, 6), n = prendre(quintNoires, 0), h = prendre(humourNoir, 9);
+    const aPlacer = motParNom(prendre(insultesAntan, 8)) || insulte;
+    const sortieSombre = prendre(quintSortiesSombres, 3);
+    quint.tirade = tiradeDuSoir({ sombre: true, anecdote: n, mot: insulte.mot, definition: insulte.definition, humour: h, sortie: sortieSombre });
+    return [
+      { etiquette: "⚔️ L'insulte", titre: insulte.mot, texte: insulte.definition },
+      { etiquette: "🕵️ La rumeur", titre: r[0], texte: r[1], chute: r[2], nomChute: "🔦 Le fin mot" },
+      { etiquette: "☠️ L'anecdote noire", titre: n[0], texte: n[1], chute: n[2] },
+      { etiquette: "💀 L'humour noir", citation: h },
+      { etiquette: "🎯 Le défi maudit", texte: prendre(quintDefisSombres, 1).replace("{mot}", aPlacer.mot) },
+      { etiquette: "🚪 La sortie maudite", citation: sortieSombre }
+    ];
+  }
+  const rare = auHasardTout ? auHasard(motsRaresDispo()) : motRareDuJour();
+  const a = prendre(quintAnecdotes, 0);
+  const r = prendre(repliquesDispo, 5);
+  const signees = toutesLesCitations().filter(function (c) { return c.auteur && c.auteur.indexOf("confirmer") === -1; });
+  const c = prendre(signees, 11);
+  const aPlacer = auHasardTout ? auHasard(motsUtiles()) : motDuJour();
+  const sortie = prendre(quintSorties, 3);
+  quint.tirade = tiradeDuSoir({ anecdote: a, mot: rare.mot, definition: rare.definition, replique: r.texte, auteur: r.piece, sortie: sortie });
+  return [
+    { etiquette: "💎 Le mot", titre: rare.mot, texte: rare.definition, exemple: exempleDe(rare) },
+    { etiquette: "🧪 L'anecdote", titre: a[0], texte: a[1], chute: a[2] },
+    { etiquette: "🎭 La réplique", citation: r.texte, auteur: r.piece, conseil: "À dire avec le ton, au moment où personne ne l'attend." },
+    { etiquette: "🪶 La citation", citation: c.texte, auteur: c.auteur },
+    { etiquette: "🎯 Le défi du soir", texte: prendre(quintDefis, 2).replace("{mot}", aPlacer.mot), exemple: aPlacer.mot + " : " + aPlacer.definition },
+    { etiquette: "🚪 La sortie de scène", citation: sortie, conseil: "La dernière phrase avant de partir. C'est elle dont on se souviendra." }
+  ];
+}
+
+// Du soir à partir de 16 h, et jusqu'au petit matin (la nuit, c'est encore le soir)
+function soirOuJour() { const h = new Date().getHours(); return h >= 16 || h < 5 ? "du soir" : "du jour"; }
+
+function majBoutonQuintessence() {
+  $("ouvrir-quintessence").hidden = typeof quintAnecdotes === "undefined";
+  $("qb-titre").textContent = etat.maudit ? "La quintessence maudite" : "La quintessence " + soirOuJour();
+  $("qb-sous").textContent = etat.maudit ? "Six gouttes de venin, distillées pour toi" : "Six gouttes d'esprit pour briller " + (soirOuJour() === "du soir" ? "ce soir" : "aujourd'hui");
+}
+
+function rendreIntro() {
+  const titre = "Quintessence";
+  const lettres = titre.split("").map(function (l, k) { return '<span style="animation-delay:' + (0.25 + k * 0.07).toFixed(2) + 's">' + l + "</span>"; }).join("");
+  $("q-scene").innerHTML =
+    '<div class="q-intro">' +
+      '<div class="q-alambic" aria-hidden="true"><span>⚗️</span><i></i><i></i><i></i></div>' +
+      '<p class="q-sur-titre">' + echapper(maintenant.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" })) + "</p>" +
+      '<h2 class="q-titre" aria-label="' + titre + '">' + lettres + "</h2>" +
+      '<p class="q-devise">' + (etat.maudit
+        ? "Le poison le plus pur, distillé goutte à goutte : de quoi faire frémir la tablée."
+        : "La « cinquième essence » des alchimistes : ce qui reste quand on a tout distillé. Six gouttes, et tu brilleras de mille feux.") + "</p>" +
+      '<button class="bouton principal large q-distiller" id="q-commencer" type="button">' + (etat.maudit ? "🩸 Distiller le venin" : "✨ Distiller") + "</button>" +
+    "</div>";
+}
+
+function rendreGoutte() {
+  const g = quint.gouttes[quint.i];
+  const points = quint.gouttes.map(function (_, k) { return '<i class="' + (k < quint.i ? "faite" : k === quint.i ? "en-cours" : "") + '"></i>'; }).join("");
+  let corps = "";
+  if (g.titre) corps += '<p class="q-goutte-titre">' + echapper(g.titre) + "</p>";
+  if (g.texte) corps += '<p class="q-goutte-texte">' + echapper(g.texte) + "</p>";
+  if (g.citation) corps += '<blockquote class="q-goutte-citation">« ' + echapper(g.citation) + " »</blockquote>";
+  if (g.auteur) corps += '<p class="q-goutte-auteur">— ' + echapper(g.auteur) + "</p>";
+  if (g.exemple) corps += '<p class="q-goutte-exemple">' + echapper(g.exemple) + "</p>";
+  if (g.chute) corps += '<button class="bouton petit-bouton q-chute" id="q-chute" type="button">' + (g.nomChute || "✨ La chute") + "</button>";
+  if (g.conseil) corps += '<p class="q-goutte-conseil">' + echapper(g.conseil) + "</p>";
+  const derniere = quint.i === quint.gouttes.length - 1;
+  $("q-scene").innerHTML =
+    fiole(Math.round((quint.i + 1) / quint.gouttes.length * 100), false) +
+    '<div class="q-gouttes" aria-label="Goutte ' + (quint.i + 1) + " sur " + quint.gouttes.length + '">' + points + "</div>" +
+    '<article class="q-goutte" id="q-goutte">' +
+      '<p class="q-goutte-numero">Goutte ' + (quint.i + 1) + " · " + echapper(g.etiquette) + "</p>" + corps +
+    "</article>" +
+    '<div class="rangee q-rangee">' +
+      (quint.i > 0 ? '<button class="bouton" id="q-precedente" type="button">◀</button>' : "") +
+      '<button class="bouton principal" id="q-suivante" type="button">' + (derniere ? (etat.maudit ? "🩸 Le breuvage ultime" : "🍯 L'élixir ultime") : "Goutte suivante") + "</button>" +
+    "</div>";
+}
+
+function rendreFinale() {
+  let gain = "";
+  if (etat.bonusQuintessence !== aujourdhui) {
+    etat.bonusQuintessence = aujourdhui;
+    etat.xp += 5;
+    sauver();
+    majCompteurs();
+    gain = '<p class="gain">+5 ✦</p>';
+  }
+  $("q-scene").innerHTML =
+    '<div class="q-intro q-finale">' +
+      fiole(100, true) +
+      '<p class="q-sur-titre">' + (etat.maudit ? "Le breuvage est prêt" : "L'élixir est prêt") + "</p>" +
+      '<h2 class="q-titre q-titre-fini q-or">' + (etat.maudit ? "Le breuvage ultime" : "L'élixir ultime") + "</h2>" +
+      '<p class="q-devise">' + (etat.maudit
+        ? "Les six gouttes de venin, réunies en une seule tirade. Déclame-la ce soir : c'est toi qu'on craindra à table."
+        : "Les six gouttes, réunies en une seule tirade. Déclame-la ce soir : c'est toi qu'on écoutera.") + "</p>" +
+      '<article class="q-elixir"><p class="q-goutte-numero">' + (etat.maudit ? "🩸 La tirade maudite" : "🍯 La tirade du soir") + "</p>" +
+        '<p class="q-tirade">' + echapper(quint.tirade) + "</p>" +
+        '<button class="bouton petit-bouton" id="q-ecouter" type="button">🔊 L\'écouter</button></article>' +
+      '<h3 class="q-va">' + (etat.maudit ? "Va, et sème le trouble." : "Va, et brille.") + "</h3>" + gain +
+      '<button class="bouton principal large" id="q-partager" type="button">📤 Partager l\'élixir</button>' +
+      '<button class="bouton large" id="q-encore" type="button">⚗️ Une autre distillation</button>' +
+      '<button class="bouton large" id="q-revoir" type="button">Revoir les gouttes</button>' +
+      '<p class="petit" id="q-statut"></p>' +
+    "</div>";
+  $("quintessence").scrollTop = 0;
+  gerbe(innerWidth / 2, innerHeight * 0.18, 140);
+  setTimeout(function () { gerbe(innerWidth * 0.25, innerHeight * 0.3, 70); }, 350);
+  setTimeout(function () { gerbe(innerWidth * 0.75, innerHeight * 0.28, 70); }, 650);
+  pluieDOr(2800);
+}
+
+// La pluie d'or : des paillettes qui tombent du ciel pendant quelques secondes
+function pluieDOr(duree) {
+  const fin = Date.now() + (MOUVEMENT_REDUIT ? 600 : duree);
+  (function verser() {
+    if (!feux.ctx || $("quintessence").hidden || Date.now() > fin) return;
+    for (let k = 0; k < 4; k++) {
+      feux.parts.push({ x: Math.random() * feux.l, y: -10, vx: (Math.random() - 0.5) * 0.8, vy: 1.5 + Math.random() * 2.5, vie: 1,
+        usure: 0.006 + Math.random() * 0.006, taille: 0.8 + Math.random() * 1.8, gravite: 0.02, oscille: Math.random() * 6, couleur: couleurFeu() });
+    }
+    setTimeout(verser, 40);
+  })();
+}
+
+function texteAPartager() {
+  const lignes = [(etat.maudit ? "🩸 La quintessence maudite" : "⚗️ La quintessence " + soirOuJour()) + " · Pandémonium des mots", ""];
+  quint.gouttes.forEach(function (g) {
+    lignes.push(g.etiquette + " : " + (g.titre ? g.titre + ". " : "") + (g.texte || "") + (g.citation ? "« " + g.citation + " »" + (g.auteur ? " (" + g.auteur + ")" : "") : ""));
+  });
+  lignes.push("", (etat.maudit ? "🩸 Le breuvage ultime : " : "🍯 L'élixir ultime : ") + quint.tirade);
+  return lignes.join("\n");
+}
+
+function partagerQuintessence() {
+  const texte = texteAPartager();
+  const adresse = location.href.split("#")[0];
+  if (navigator.share) {
+    navigator.share({ title: "La quintessence", text: texte, url: adresse }).catch(function () {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(texte + "\n" + adresse).then(function () { $("q-statut").textContent = "✅ Copiée : il ne reste qu'à la coller."; },
+      function () { $("q-statut").textContent = "Copie impossible sur cet appareil."; });
+  }
+}
+
+function allerGoutte(n) {
+  quint.i = n;
+  rendreGoutte();
+  const carte = $("q-goutte").getBoundingClientRect();
+  gerbe(carte.left + carte.width / 2, carte.top + 30, 45);
+}
+
+function ouvrirQuintessence() {
+  quint.gouttes = distiller(false);
+  quint.i = -1;
+  quint.avant = 0;
+  $("quintessence").classList.toggle("q-maudite", !!etat.maudit);
+  $("quintessence").hidden = false;
+  document.body.classList.add("q-ouverte");
+  rendreIntro();
+  lancerFeux();
+}
+
+function fermerQuintessence() {
+  $("quintessence").hidden = true;
+  document.body.classList.remove("q-ouverte");
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  arreterFeux();
+}
+
+$("ouvrir-quintessence").addEventListener("click", ouvrirQuintessence);
+$("fermer-quintessence").addEventListener("click", fermerQuintessence);
+document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("quintessence").hidden) fermerQuintessence(); });
+
+$("q-scene").addEventListener("click", function (e) {
+  const cible = e.target.closest("button");
+  if (!cible) return;
+  if (cible.id === "q-commencer") allerGoutte(0);
+  else if (cible.id === "q-suivante") { if (quint.i < quint.gouttes.length - 1) allerGoutte(quint.i + 1); else rendreFinale(); }
+  else if (cible.id === "q-precedente") allerGoutte(quint.i - 1);
+  else if (cible.id === "q-chute") {
+    const g = quint.gouttes[quint.i];
+    cible.outerHTML = '<p class="q-goutte-chute">' + echapper(g.chute) + "</p>";
+    const r = $("q-goutte").getBoundingClientRect();
+    gerbe(r.left + r.width / 2, r.bottom - 40, 60);
+  }
+  else if (cible.id === "q-partager") partagerQuintessence();
+  else if (cible.id === "q-ecouter") parler(quint.tirade, "fr-FR");
+  else if (cible.id === "q-encore") { quint.gouttes = distiller(true); quint.avant = 0; allerGoutte(0); }
+  else if (cible.id === "q-revoir") { quint.avant = 0; allerGoutte(0); }
+});
+
+// Les feux : des braises dorées qui montent sans cesse, et des gerbes d'étincelles à chaque goutte
+const feux = { ctx: null, parts: [], anim: 0, l: 0, h: 0 };
+const MOUVEMENT_REDUIT = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function couleurFeu() {
+  const palette = etat.maudit ? ["255,59,47", "255,120,90", "200,10,20", "255,190,170"] : ["255,224,102", "255,184,0", "255,140,30", "255,246,220"];
+  return palette[Math.floor(Math.random() * palette.length)];
+}
+
+function tailleFeux() {
+  const toile = $("feux");
+  const r = Math.min(2, window.devicePixelRatio || 1);
+  feux.l = innerWidth; feux.h = innerHeight;
+  toile.width = feux.l * r; toile.height = feux.h * r;
+  toile.style.width = feux.l + "px"; toile.style.height = feux.h + "px";
+  feux.ctx = toile.getContext && toile.getContext("2d");
+  if (feux.ctx) feux.ctx.setTransform(r, 0, 0, r, 0, 0);
+}
+
+function gerbe(x, y, n) {
+  if (!feux.ctx) return;
+  const nombre = MOUVEMENT_REDUIT ? Math.round(n / 4) : n;
+  for (let k = 0; k < nombre; k++) {
+    const angle = Math.random() * Math.PI * 2, vitesse = 1.5 + Math.random() * 5;
+    feux.parts.push({ x: x, y: y, vx: Math.cos(angle) * vitesse, vy: Math.sin(angle) * vitesse - 1.5, vie: 1,
+      usure: 0.012 + Math.random() * 0.018, taille: 1 + Math.random() * 2.4, gravite: 0.06, couleur: couleurFeu() });
+  }
+}
+
+function braise() {
+  feux.parts.push({ x: Math.random() * feux.l, y: feux.h + 10, vx: (Math.random() - 0.5) * 0.4, vy: -(0.4 + Math.random() * 1.3), vie: 1,
+    usure: 0.003 + Math.random() * 0.004, taille: 0.6 + Math.random() * 1.8, gravite: 0, oscille: Math.random() * 6, couleur: couleurFeu() });
+}
+
+function boucleFeux() {
+  const c = feux.ctx;
+  if (!c) return;
+  c.clearRect(0, 0, feux.l, feux.h);
+  if (feux.parts.length < (MOUVEMENT_REDUIT ? 20 : 110) && Math.random() < 0.7) braise();
+  c.globalCompositeOperation = "lighter";
+  feux.parts = feux.parts.filter(function (p) {
+    p.vy += p.gravite; p.vx *= 0.985;
+    if (p.oscille !== undefined) { p.oscille += 0.03; p.x += Math.sin(p.oscille) * 0.3; }
+    p.x += p.vx; p.y += p.vy; p.vie -= p.usure;
+    if (p.vie <= 0) return false;
+    const rayon = p.taille * (2.5 + p.vie * 2.5);
+    const lueur = c.createRadialGradient(p.x, p.y, 0, p.x, p.y, rayon);
+    lueur.addColorStop(0, "rgba(" + p.couleur + "," + (0.9 * p.vie).toFixed(3) + ")");
+    lueur.addColorStop(1, "rgba(" + p.couleur + ",0)");
+    c.fillStyle = lueur;
+    c.beginPath(); c.arc(p.x, p.y, rayon, 0, Math.PI * 2); c.fill();
+    return true;
+  });
+  c.globalCompositeOperation = "source-over";
+  feux.anim = requestAnimationFrame(boucleFeux);
+}
+
+function lancerFeux() {
+  tailleFeux();
+  cancelAnimationFrame(feux.anim);
+  feux.parts = [];
+  for (let k = 0; k < 40; k++) { braise(); feux.parts[feux.parts.length - 1].y = Math.random() * feux.h; }
+  boucleFeux();
+}
+
+function arreterFeux() { cancelAnimationFrame(feux.anim); feux.parts = []; }
+window.addEventListener("resize", function () { if (!$("quintessence").hidden) tailleFeux(); });
 
 // ---------- La session : 4 cartes ----------
 let cartes = [];
