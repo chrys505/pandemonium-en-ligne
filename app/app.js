@@ -451,7 +451,10 @@ function majAccueil() {
   $("apercu-def").textContent = m.definition;
   const fait = !!etat.sessions[aujourdhui];
   $("deja-fait").hidden = !fait;
-  $("commencer").textContent = fait ? "Refaire la session" : "Commencer ma session";
+  $("commencer").textContent = fait ? "🍯 Reboire l'élixir" : "🍯 Boire l'élixir du jour";
+  // La fiole du jour : presque vide tant que l'élixir n'est pas bu, pleine ensuite
+  $("fiole-hero").classList.toggle("pleine", fait);
+  $("fiole-hero-liquide").style.setProperty("--apres", fait ? "100%" : "18%");
   document.querySelector(".detail-hero").hidden = fait;
   majSemaine();
   majProgramme();
@@ -554,6 +557,101 @@ $("ouvrir-panne").addEventListener("click", montrerPanne);
 $("ouvrir-rdv").addEventListener("click", montrerRendezVous);
 $("fermer-conversation").addEventListener("click", function () { $("fenetre-conversation").hidden = true; });
 $("fenetre-conversation").addEventListener("click", function (e) { if (e.target === $("fenetre-conversation")) $("fenetre-conversation").hidden = true; });
+
+// ---------- Le bruit du breuvage : glouglous, bulles et tintements, fabriqués par l'appli (aucun fichier son) ----------
+const breuvage = { ctx: null, bruit: null };
+
+function audio() {
+  if (etat.son === false) return null;
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return null;
+  try {
+    if (!breuvage.ctx) breuvage.ctx = new AC();
+    if (breuvage.ctx.state === "suspended") breuvage.ctx.resume();
+  } catch (e) { return null; }
+  return breuvage.ctx;
+}
+
+function bruitBlanc(ctx) {
+  if (breuvage.bruit) return breuvage.bruit;
+  const tampon = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.3), ctx.sampleRate);
+  const d = tampon.getChannelData(0);
+  for (let k = 0; k < d.length; k++) d[k] = Math.random() * 2 - 1;
+  return (breuvage.bruit = tampon);
+}
+
+// Une note qui s'éteint doucement
+function note(ctx, t, type, f1, f2, duree, volume) {
+  const o = ctx.createOscillator(), g = ctx.createGain();
+  o.type = type;
+  o.frequency.setValueAtTime(f1, t);
+  if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + duree * 0.8);
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(volume, t + 0.012);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + duree);
+  o.connect(g); g.connect(ctx.destination);
+  o.start(t); o.stop(t + duree + 0.02);
+}
+
+// Un « gloup » : la gorgée qui descend (une note qui plonge, et un souffle liquide)
+function gloup(ctx, t, grave) {
+  const k = grave ? 0.6 : 1;
+  note(ctx, t, "sine", 520 * k, 150 * k, 0.16, 0.32);
+  const s = ctx.createBufferSource(), filtre = ctx.createBiquadFilter(), g = ctx.createGain();
+  s.buffer = bruitBlanc(ctx);
+  filtre.type = "bandpass"; filtre.frequency.setValueAtTime(900 * k, t); filtre.frequency.exponentialRampToValueAtTime(300 * k, t + 0.12); filtre.Q.value = 4;
+  g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.18, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.13);
+  s.connect(filtre); filtre.connect(g); g.connect(ctx.destination);
+  s.start(t); s.stop(t + 0.15);
+}
+
+// Une bulle qui remonte et éclate
+function bulle(ctx, t, f) { note(ctx, t, "sine", f, f * 2.4, 0.06, 0.09); }
+
+function sonGorgee() {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.01, grave = !!etat.maudit;
+  gloup(ctx, t, grave);
+  bulle(ctx, t + 0.12, grave ? 500 : 900);
+  bulle(ctx, t + 0.19, grave ? 650 : 1250);
+}
+
+// Boire l'élixir : trois glouglous, une gerbe de bulles, puis la note divine (ou maléfique)
+function sonBoire(avecGloire) {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.02, grave = !!etat.maudit;
+  [0, 0.21, 0.42].forEach(function (d, k) { gloup(ctx, t + d, grave); bulle(ctx, t + d + 0.1, (grave ? 450 : 800) + k * 120); });
+  for (let k = 0; k < 7; k++) bulle(ctx, t + 0.62 + k * 0.045 + Math.random() * 0.03, (grave ? 600 : 1000) + Math.random() * 900);
+  if (!avecGloire) return;
+  const fin = t + 0.95;
+  if (grave) {
+    // Un accord grinçant et grave, comme un rire de sorcière au fond du chaudron
+    [110, 130.8, 155.6].forEach(function (f) { note(ctx, fin, "sawtooth", f, f * 0.97, 1.4, 0.05); });
+    note(ctx, fin + 0.05, "sine", 55, 50, 1.4, 0.18);
+  } else {
+    // Un carillon céleste
+    [1046.5, 1318.5, 1568, 2093].forEach(function (f, k) { note(ctx, fin + k * 0.07, "triangle", f, 0, 1.2, 0.07); });
+  }
+}
+
+// Le tintement de la fiole qu'on débouche
+function sonFiole() {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.01;
+  if (etat.maudit) { note(ctx, t, "sine", 880, 0, 0.7, 0.12); note(ctx, t, "sine", 932, 0, 0.7, 0.1); }
+  else { note(ctx, t, "sine", 2093, 0, 0.7, 0.12); note(ctx, t + 0.04, "sine", 2637, 0, 0.6, 0.08); }
+}
+
+function majBoutonSon() {
+  $("bascule-son").textContent = etat.son === false ? "🔇 Son coupé" : "🔊 Son activé";
+}
+$("bascule-son").addEventListener("click", function () {
+  etat.son = etat.son === false;
+  sauver();
+  majBoutonSon();
+  sonGorgee();
+});
+majBoutonSon();
 
 // ---------- La quintessence : six gouttes d'esprit, distillées une à une, sous une pluie d'étincelles ----------
 const quint = { gouttes: [], i: -1, tirade: "", avant: 0 };
@@ -686,6 +784,7 @@ function rendreFinale() {
   setTimeout(function () { gerbe(innerWidth * 0.25, innerHeight * 0.3, 70); }, 350);
   setTimeout(function () { gerbe(innerWidth * 0.75, innerHeight * 0.28, 70); }, 650);
   pluieDOr(2800);
+  sonBoire(true);
 }
 
 // La pluie d'or : des paillettes qui tombent du ciel pendant quelques secondes
@@ -726,6 +825,7 @@ function allerGoutte(n) {
   rendreGoutte();
   const carte = $("q-goutte").getBoundingClientRect();
   gerbe(carte.left + carte.width / 2, carte.top + 30, 45);
+  sonGorgee();
 }
 
 function ouvrirQuintessence() {
@@ -737,6 +837,7 @@ function ouvrirQuintessence() {
   document.body.classList.add("q-ouverte");
   rendreIntro();
   lancerFeux();
+  sonFiole();
 }
 
 function fermerQuintessence() {
@@ -1085,11 +1186,11 @@ function afficherCarte() {
   carte.style.animation = "";
   dessinerProgression($("progression"), cartes.length, position);
   $("precedent").disabled = position === 0;
-  $("suivant").textContent = position === cartes.length - 1 ? "Au quiz →" : "Suivant";
+  $("suivant").textContent = position === cartes.length - 1 ? "Au quiz →" : "Gorgée suivante";
 }
 
 function carteSuivante() {
-  if (position < cartes.length - 1) { position++; afficherCarte(); }
+  if (position < cartes.length - 1) { position++; afficherCarte(); sonGorgee(); }
   else lancerQuiz(false);
 }
 
@@ -1102,6 +1203,7 @@ $("commencer").addEventListener("click", function () {
   position = 0;
   montrer("session");
   afficherCarte();
+  sonBoire(false);
 });
 
 $("suivant").addEventListener("click", carteSuivante);
@@ -1345,8 +1447,9 @@ function finirQuiz() {
   majCompteurs();
 
   const parfait = bonnes === questions.length;
-  $("resultat-emoji").textContent = parfait ? "🔥" : (bonnes > 0 ? "✨" : "🌱");
-  $("resultat-titre").textContent = parfait ? "Parfait !" : (bonnes > 0 ? "Bien joué !" : "Ça viendra !");
+  $("resultat-emoji").textContent = parfait ? "🍯" : (bonnes > 0 ? "✨" : "🌱");
+  $("resultat-titre").textContent = parfait ? "Bu d'un trait !" : (bonnes > 0 ? "Bien joué !" : "Ça viendra !");
+  sonBoire(true);
   $("resultat-texte").textContent = bonnes + " bonne" + (bonnes > 1 ? "s" : "") + " réponse" + (bonnes > 1 ? "s" : "") + " sur " + questions.length + "." +
     (enRevision ? " Les mots ratés reviendront demain." : " Série : " + serieActuelle() + " jour" + (serieActuelle() > 1 ? "s" : "") + " d'affilée.");
   $("resultat-gain").textContent = messageGel + "+" + (etat.xp - xpAuDebut) + " ✦";

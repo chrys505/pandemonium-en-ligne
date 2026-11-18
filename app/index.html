@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#0a0804">
   <meta name="description" content="Un mot rare par jour, des citations, des pensées et un mini-quiz pour apprendre en 2 minutes.">
   <!-- Pour l'installer comme une appli sur l'écran d'accueil -->
   <link rel="manifest" href="manifest.webmanifest">
@@ -41,14 +41,18 @@
         </div>
 
         <article class="carte carte-apercu carte-hero">
+          <!-- La fiole du jour : vide le matin, pleine d'élixir une fois la session bue -->
+          <div class="fiole-hero" id="fiole-hero" aria-hidden="true">
+            <div class="q-fiole"><div class="q-col"></div><div class="q-panse"><div class="q-liquide" id="fiole-hero-liquide" style="--avant:0%;--apres:18%"><i></i><i></i><i></i></div></div></div>
+          </div>
           <p class="etiquette" id="etiquette-hero">Le mot du jour</p>
           <p class="mot-feu" id="apercu-mot">…</p>
           <div class="trait"></div>
           <p class="texte-doux" id="apercu-def">…</p>
           <div class="seulement-clair">
             <button class="bouton principal large bouton-hero" id="commencer" type="button">Commencer</button>
-            <p class="petit detail-hero">2 minutes · 7 cartes · un mini-quiz</p>
-            <p class="petit" id="deja-fait" hidden>✅ Session du jour terminée. Reviens demain pour garder ta série !<br><b id="compte-rebours"></b></p>
+            <p class="petit detail-hero">2 minutes · 7 gorgées de savoir · un mini-quiz</p>
+            <p class="petit" id="deja-fait" hidden>🍯 Élixir du jour bu jusqu'à la dernière goutte. Reviens demain pour garder ta série !<br><b id="compte-rebours"></b></p>
           </div>
         </article>
 
@@ -240,6 +244,12 @@
         <p class="niveau" id="niveau">Apprenti</p>
         <div class="barre"><div class="barre-remplie" id="barre-niveau"></div></div>
         <p class="petit" id="niveau-detail"></p>
+      </article>
+
+      <article class="carte">
+        <p class="etiquette">🔊 Le bruit du breuvage</p>
+        <p class="texte-doux">Un petit glouglou quand tu bois l'élixir, et des bulles à chaque gorgée.</p>
+        <button class="bouton large" id="bascule-son" type="button">🔊 Son activé</button>
       </article>
 
       <h2 class="titre-2">Galerie</h2>
