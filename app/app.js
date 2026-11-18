@@ -1462,9 +1462,9 @@ function lancerQuiz(revision) {
   numeroQuestion = 0;
   bonnes = 0;
   xpAuDebut = etat.xp;
-  // Le quiz grandit avec les mots à revoir : 3 questions au minimum, jusqu'à 5 (révision : jusqu'à 8)
+  // Le quiz grandit avec les mots à revoir : 3 questions au minimum, jusqu'à 5 (révision : 6 au minimum, jusqu'à 8)
   const dus = motsARevoir().length;
-  const nombre = revision ? Math.max(3, Math.min(8, dus)) : Math.max(3, Math.min(5, 1 + dus));
+  const nombre = revision ? Math.max(6, Math.min(8, dus)) : Math.max(3, Math.min(5, 1 + dus));
   questions = motsPourQuiz(nombre, !revision).map(function (m) {
     return { bonne: m, options: melanger([m].concat(mauvaisesReponses(m, 3))) };
   });
