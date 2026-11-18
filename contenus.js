@@ -338,7 +338,13 @@ const concepts = [
     exemple: "Tu transpires quand il fait chaud et tu frissonnes quand il fait froid : ton corps défend ses 37 °C." },
   { nom: "L'effet nocebo", famille: "Science",
     explication: "Le jumeau maléfique du placebo : s'attendre à ce qu'un traitement fasse du mal suffit parfois à ressentir de vrais effets indésirables.",
-    exemple: "Dans les essais cliniques, des patients qui n'ont reçu qu'une pilule de sucre se plaignent des effets secondaires annoncés dans la notice." }
+    exemple: "Dans les essais cliniques, des patients qui n'ont reçu qu'une pilule de sucre se plaignent des effets secondaires annoncés dans la notice." },
+  { nom: "L'effet papillon", famille: "Science",
+    explication: "Dans un système chaotique, un détail infime au départ peut changer toute la suite. Conséquence vertigineuse : tu ne peux jamais prouver que tu n'as eu aucune influence sur un événement. Si tu avais été ailleurs, fait d'autres gestes, déplacé un peu d'air, le monde aurait pu suivre un autre chemin. Ce raisonnement « et si… ? » porte un nom : le raisonnement contrefactuel. Il montre que tu as pu peser sur le résultat, sans jamais dire dans quel sens.",
+    exemple: "Un match de foot : si tu étais resté chez toi au lieu d'aller au stade, d'infimes choses auraient changé (un cri en moins, un supporter qui ne t'aurait pas croisé, un joueur porté par une autre clameur…). Impossible d'affirmer que le ballon aurait suivi la même trajectoire. Le nom vient du météorologue Edward Lorenz, en 1972 : « Le battement d'ailes d'un papillon au Brésil peut-il provoquer une tornade au Texas ? »" },
+  { nom: "L'effet de l'observateur", famille: "Physique",
+    explication: "En physique quantique, mesurer une particule la perturbe. Avant la mesure, elle peut se trouver dans plusieurs états à la fois (on dit « en superposition ») ; la mesure l'oblige à n'en montrer qu'un. Observer, c'est donc déjà agir. Mais cela ne vaut qu'à l'échelle des atomes : ton regard ne change pas le score d'un match.",
+    exemple: "L'expérience des fentes de Young : des électrons envoyés un par un vers deux fentes dessinent des franges, comme une vague passée par les deux fentes à la fois. Dès qu'on installe un détecteur pour savoir par où passe chacun, les franges disparaissent. Le supporter qui n'ose pas regarder les tirs au but « pour ne pas porter la poisse » fait de la superstition, pas de la physique." }
 ];
 
 // Au sens figuré : des mots au sens propre (souvent technique) qui prennent un sens imagé (écrit pour l'appli)

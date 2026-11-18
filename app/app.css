@@ -1399,6 +1399,43 @@ body.maudit .progression i.fait { box-shadow: 0 0 10px rgba(255, 30, 10, 0.6); }
 
 .voile[hidden] { display: none; }
 
+/* ----- L'image à partager ----- */
+.lien-image {
+  display: block;
+  margin: 16px auto 0;
+  padding: 6px 10px;
+  font: 600 0.88rem var(--police);
+  color: var(--jaune);
+  background: none;
+  border: 0;
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+body.maudit .lien-image { color: var(--rouge); }
+#fenetre-image .fenetre { max-height: 94vh; overflow-y: auto; text-align: center; }
+.formats-image { display: flex; justify-content: center; gap: 8px; margin: 10px 0 14px; }
+.formats-image button {
+  padding: 8px 18px;
+  font: 600 0.85rem var(--police);
+  color: var(--doux);
+  background: transparent;
+  border: 1px solid var(--bord);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.formats-image button.actif { color: #1a1206; background: var(--jaune); border-color: var(--jaune); }
+body.maudit .formats-image button.actif { color: #fff; background: var(--rouge); border-color: var(--rouge); }
+.apercu-image {
+  display: block;
+  max-width: 100%;
+  max-height: 50vh;
+  margin: 0 auto 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+#fenetre-image .bouton + .bouton { margin-top: 10px; }
+
 .fenetre {
   position: relative;
   width: 100%;

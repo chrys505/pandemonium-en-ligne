@@ -54,6 +54,7 @@
             <p class="petit detail-hero">2 minutes · 7 gorgées de savoir · un mini-quiz</p>
             <p class="petit" id="deja-fait" hidden>🍯 Élixir du jour bu jusqu'à la dernière goutte. Reviens demain pour garder ta série !<br><b id="compte-rebours"></b></p>
           </div>
+          <button class="lien-image" id="ouvrir-image" type="button">📸 En faire une image à partager</button>
         </article>
 
         <!-- La quintessence : six gouttes d'esprit, dans les deux versions -->
@@ -294,6 +295,22 @@
       <div class="pyramide" id="pyramide"></div>
       <div class="defi-pyramide" id="defi-pyramide"></div>
       <button class="bouton principal large" id="rejouer-pyramide" type="button">Nouvelle pyramide</button>
+    </div>
+  </div>
+
+  <!-- ===== L'image à partager (Instagram, TikTok…) : le mot du jour, dessiné par l'appli ===== -->
+  <div class="voile" id="fenetre-image" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-image" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">📸 L'image du jour</p>
+      <div class="formats-image" id="formats-image">
+        <button type="button" data-format="post" class="actif">Publication</button>
+        <button type="button" data-format="story">Story</button>
+      </div>
+      <img class="apercu-image" id="apercu-image" alt="L'image du mot du jour, prête à partager">
+      <button class="bouton principal large" id="partager-image" type="button">Partager sur Instagram</button>
+      <button class="bouton large" id="enregistrer-image" type="button">Enregistrer l'image</button>
+      <p class="petit">« Partager » ouvre le menu du téléphone : choisis Instagram, puis publication ou story.</p>
     </div>
   </div>
 

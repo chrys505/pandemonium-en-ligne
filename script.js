@@ -191,6 +191,26 @@ afficherFrancophone(numeroDuJour);
 afficherSonore(numeroDuJour);
 afficherNomPropre(numeroDuJour);
 
+// Le concept du jour : biais, lois, effets et idées qui expliquent le monde (liste partagée avec l'appli)
+// Les deux derniers ajoutés (effet papillon, effet de l'observateur) passent en premier jusqu'au 2026-11-20
+function afficherConcept(c) {
+  document.getElementById("concept").textContent = c.nom;
+  document.getElementById("concept-famille").textContent = c.famille;
+  document.getElementById("concept-explication").textContent = c.explication;
+  document.getElementById("concept-exemple").textContent = c.exemple || "";
+}
+if (typeof concepts !== "undefined" && concepts.length) {
+  const vedettes = { "2026-11-18": "L'effet papillon", "2026-11-19": "L'effet papillon", "2026-11-20": "L'effet de l'observateur" };
+  const cle = aujourdhui.getFullYear() + "-" + String(aujourdhui.getMonth() + 1).padStart(2, "0") + "-" + String(aujourdhui.getDate()).padStart(2, "0");
+  const vedette = vedettes[cle] && concepts.find(function (c) { return c.nom === vedettes[cle]; });
+  afficherConcept(vedette || concepts[numeroDuJour % concepts.length]);
+  document.getElementById("autre-concept").addEventListener("click", function () {
+    afficherConcept(concepts[Math.floor(Math.random() * concepts.length)]);
+  });
+} else {
+  document.getElementById("bloc-concept").hidden = true;
+}
+
 // La quintessence du jour : une anecdote avec sa chute, un défi et une sortie de scène
 if (typeof quintessenceDuJour === "function") {
   const q = quintessenceDuJour(numeroDuJour);

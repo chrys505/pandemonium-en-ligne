@@ -147,6 +147,17 @@ body {
   line-height: 1.5;
 }
 
+/* Le concept du jour : l'exemple, en retrait, sous l'explication */
+.concept-exemple {
+  margin: 14px 0 16px;
+  padding-left: 14px;
+  font-size: 1.02rem;
+  font-style: italic;
+  opacity: 0.85;
+  border-left: 2px solid rgba(245, 197, 66, 0.6);
+}
+#bloc-concept[hidden] { display: none; }
+
 .langues {
   display: flex;
   flex-wrap: wrap;

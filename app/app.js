@@ -468,6 +468,229 @@ function majAccueil() {
   montrer("accueil-session");
 }
 
+// ---------- L'image à partager : le mot du jour dans sa fiole, dessiné par l'appli (format publication ou story) ----------
+const imagePartage = { format: "post", fichier: null, url: "" };
+
+// Un texte aux lettres espacées, centré
+function texteEspace(c, texte, x, y, espace) {
+  const lettres = Array.from(texte);
+  const largeurs = lettres.map(function (l) { return c.measureText(l).width; });
+  const total = largeurs.reduce(function (a, b) { return a + b; }, 0) + espace * (lettres.length - 1);
+  let pos = x - total / 2;
+  c.textAlign = "left";
+  lettres.forEach(function (l, k) { c.fillText(l, pos, y); pos += largeurs[k] + espace; });
+  c.textAlign = "center";
+}
+
+// Couper un texte en lignes qui tiennent dans la largeur
+function envelopper(c, texte, largeur) {
+  const mots = texte.split(/\s+/), lignes = [];
+  let ligne = "";
+  mots.forEach(function (m) {
+    const essai = ligne ? ligne + " " + m : m;
+    if (c.measureText(essai).width > largeur && ligne) { lignes.push(ligne); ligne = m; }
+    else ligne = essai;
+  });
+  if (ligne) lignes.push(ligne);
+  return lignes;
+}
+
+function dessinerFioleImage(c, x, y, R, p) {
+  const col = R * 0.34, haut = R * 0.85;
+  c.save();
+  // Le halo
+  const halo = c.createRadialGradient(x, y, R * 0.3, x, y, R * 2.6);
+  halo.addColorStop(0, p.halo + "0.45)"); halo.addColorStop(1, p.halo + "0)");
+  c.fillStyle = halo; c.beginPath(); c.arc(x, y, R * 2.6, 0, Math.PI * 2); c.fill();
+  // La forme : le col et la panse
+  c.beginPath();
+  c.moveTo(x - col / 2, y - R - haut);
+  c.lineTo(x - col / 2, y - R * 0.92);
+  c.arc(x, y, R, -Math.PI / 2 - Math.asin(col / 2 / R), -Math.PI / 2 + Math.asin(col / 2 / R) + Math.PI * 2, true);
+  c.lineTo(x + col / 2, y - R - haut);
+  c.closePath();
+  c.fillStyle = "rgba(255,255,255,0.04)"; c.fill();
+  // Le liquide (60 % de la panse), avec sa lueur
+  c.save();
+  c.beginPath(); c.arc(x, y, R - 3, 0, Math.PI * 2); c.clip();
+  const niveau = y - R * 0.2;
+  const liquide = c.createLinearGradient(0, niveau, 0, y + R);
+  liquide.addColorStop(0, p.accent2); liquide.addColorStop(1, p.accent);
+  c.shadowColor = p.accent; c.shadowBlur = 50;
+  c.fillStyle = liquide;
+  c.beginPath(); c.moveTo(x - R, niveau);
+  c.quadraticCurveTo(x - R / 2, niveau - R * 0.08, x, niveau);
+  c.quadraticCurveTo(x + R / 2, niveau + R * 0.08, x + R, niveau);
+  c.lineTo(x + R, y + R); c.lineTo(x - R, y + R); c.closePath(); c.fill();
+  c.shadowBlur = 0;
+  c.fillStyle = "rgba(255,255,255,0.55)";
+  [[-0.3, 0.35, 0.07], [0.15, 0.55, 0.05], [0.35, 0.2, 0.04], [-0.05, 0.1, 0.035]].forEach(function (b) {
+    c.beginPath(); c.arc(x + b[0] * R, y + b[1] * R, b[2] * R, 0, Math.PI * 2); c.fill();
+  });
+  c.restore();
+  // Le verre : contour et reflet
+  c.strokeStyle = p.accent2; c.globalAlpha = 0.85; c.lineWidth = R * 0.035;
+  c.stroke();
+  c.globalAlpha = 0.3; c.strokeStyle = "#fff"; c.lineWidth = R * 0.05;
+  c.beginPath(); c.arc(x, y, R * 0.72, Math.PI * 1.1, Math.PI * 1.4); c.stroke();
+  c.globalAlpha = 1;
+  // Le bouchon
+  c.fillStyle = p.bouchon;
+  c.fillRect(x - col * 0.62, y - R - haut - R * 0.22, col * 1.24, R * 0.26);
+  c.restore();
+}
+
+function dessinerImagePartage(format) {
+  const W = 1080, H = format === "story" ? 1920 : 1350, story = format === "story";
+  const toile = document.createElement("canvas");
+  toile.width = W; toile.height = H;
+  const c = toile.getContext("2d");
+  const p = etat.maudit
+    ? { fond1: "#2e0707", fond2: "#060101", halo: "rgba(229,72,77,", texte: "#f6e3dc", accent: "#c8242c", accent2: "#ff8a7a", doux: "#c09f98", bouchon: "#3a1410" }
+    : { fond1: "#2a1c07", fond2: "#070502", halo: "rgba(245,197,66,", texte: "#fbf3e0", accent: "#d9a21b", accent2: "#ffe7a3", doux: "#c4b89e", bouchon: "#5a3a1c" };
+  const SERIF = '"Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif';
+  const AFFICHE = 'Didot, "Bodoni 72", "Bodoni MT", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif';
+  const SANS = '-apple-system, "SF Pro Display", "Segoe UI", system-ui, Arial, sans-serif';
+
+  // Le fond : un halo chaud au cœur de la nuit
+  c.fillStyle = p.fond2; c.fillRect(0, 0, W, H);
+  const fond = c.createRadialGradient(W / 2, H * 0.4, 0, W / 2, H * 0.4, H * 0.75);
+  fond.addColorStop(0, p.fond1); fond.addColorStop(1, p.fond2);
+  c.fillStyle = fond; c.fillRect(0, 0, W, H);
+
+  // Des paillettes (les mêmes toute la journée)
+  let graine = (numeroJour * 7919) % 233280;
+  const hasard = function () { graine = (graine * 9301 + 49297) % 233280; return graine / 233280; };
+  for (let k = 0; k < 110; k++) {
+    c.globalAlpha = 0.15 + hasard() * 0.55;
+    c.fillStyle = hasard() > 0.5 ? p.accent2 : p.accent;
+    c.beginPath(); c.arc(hasard() * W, hasard() * H, 0.8 + hasard() * 2.6, 0, Math.PI * 2); c.fill();
+  }
+  c.globalAlpha = 1;
+
+  // Le cadre doré, avec ses losanges aux coins
+  c.strokeStyle = p.accent; c.globalAlpha = 0.6; c.lineWidth = 2;
+  c.strokeRect(40, 40, W - 80, H - 80);
+  c.globalAlpha = 0.25; c.lineWidth = 1;
+  c.strokeRect(54, 54, W - 108, H - 108);
+  c.globalAlpha = 0.9; c.fillStyle = p.accent2;
+  [[40, 40], [W - 40, 40], [40, H - 40], [W - 40, H - 40]].forEach(function (pt) {
+    c.beginPath(); c.moveTo(pt[0], pt[1] - 12); c.lineTo(pt[0] + 12, pt[1]); c.lineTo(pt[0], pt[1] + 12); c.lineTo(pt[0] - 12, pt[1]); c.closePath(); c.fill();
+  });
+  c.globalAlpha = 1;
+  c.textAlign = "center"; c.textBaseline = "alphabetic";
+
+  // L'en-tête
+  const haut = story ? 250 : 135;
+  c.fillStyle = p.accent2; c.font = "600 30px " + SANS;
+  texteEspace(c, "PANDÉMONIUM DES MOTS", W / 2, haut, 7);
+  c.fillStyle = p.doux; c.font = "italic 30px " + SERIF;
+  c.fillText(maintenant.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" }), W / 2, haut + 48);
+
+  // La fiole
+  const R = story ? 120 : 82;
+  const fy = haut + 48 + R * 1.85 + (story ? 95 : 55);
+  dessinerFioleImage(c, W / 2, fy, R, p);
+
+  // L'étiquette et le mot
+  let y = fy + R + (story ? 110 : 85);
+  c.fillStyle = p.accent; c.font = "600 30px " + SANS;
+  texteEspace(c, $("etiquette-hero").textContent.replace(/^\W+\s*/u, "").toUpperCase(), W / 2, y, 6);
+  const mot = $("apercu-mot").textContent.trim();
+  const largeur = W - 220;
+  let taille = story ? 200 : 170, lignesMot;
+  do {
+    c.font = (etat.maudit ? "italic " : "") + "600 " + taille + "px " + AFFICHE;
+    lignesMot = c.measureText(mot).width <= largeur ? [mot] : envelopper(c, mot, largeur);
+    taille -= 6;
+  } while ((taille > 74 && lignesMot.some(function (l) { return c.measureText(l).width > largeur; })) || (taille > 74 && lignesMot.length > 2));
+  taille += 6;
+  const lumiere = c.createLinearGradient(0, y, 0, y + taille * lignesMot.length * 1.1);
+  lumiere.addColorStop(0, p.accent2); lumiere.addColorStop(1, p.accent);
+  c.fillStyle = lumiere; c.shadowColor = p.accent; c.shadowBlur = 45;
+  y += 40;
+  lignesMot.forEach(function (l) { y += taille * 1.02; c.fillText(l, W / 2, y); });
+  c.shadowBlur = 0;
+
+  // Le trait et son losange
+  y += story ? 70 : 55;
+  c.strokeStyle = p.accent; c.globalAlpha = 0.8; c.lineWidth = 2;
+  c.beginPath(); c.moveTo(W / 2 - 150, y); c.lineTo(W / 2 - 18, y); c.moveTo(W / 2 + 18, y); c.lineTo(W / 2 + 150, y); c.stroke();
+  c.fillStyle = p.accent2;
+  c.beginPath(); c.moveTo(W / 2, y - 9); c.lineTo(W / 2 + 9, y); c.lineTo(W / 2, y + 9); c.lineTo(W / 2 - 9, y); c.closePath(); c.fill();
+  c.globalAlpha = 1;
+
+  // La définition
+  const tailleDef = story ? 54 : 46;
+  c.fillStyle = p.texte; c.font = "italic " + tailleDef + "px " + SERIF;
+  const lignesDef = envelopper(c, $("apercu-def").textContent.trim(), W - 240).slice(0, story ? 6 : 4);
+  y += story ? 40 : 30;
+  lignesDef.forEach(function (l) { y += tailleDef * 1.38; c.fillText(l, W / 2, y); });
+
+  // Le pied de page (au-dessus de la zone cachée par Instagram en story)
+  const pied = H - (story ? 300 : 120);
+  c.fillStyle = p.accent2; c.font = "italic 36px " + SERIF;
+  c.fillText(etat.maudit ? "Une goutte de venin lettré par jour" : "Une gorgée de savoir par jour", W / 2, pied - 52);
+  c.fillStyle = p.doux; c.font = "500 26px " + SANS;
+  texteEspace(c, "chrys505.github.io/pandemonium-en-ligne", W / 2, pied, 2);
+
+  // Un exemple, s'il reste de la place
+  const m = motParNom(mot);
+  const ex = m ? exempleDe(m) : "";
+  if (ex) {
+    const tailleEx = story ? 38 : 32;
+    c.font = "italic " + tailleEx + "px " + SERIF;
+    const lignesEx = envelopper(c, "« " + ex + " »", W - 280);
+    const besoin = lignesEx.length * tailleEx * 1.4 + 50;
+    if (y + besoin < pied - 52 - 40) {
+      y += 50;
+      c.fillStyle = p.doux;
+      lignesEx.forEach(function (l) { y += tailleEx * 1.4; c.fillText(l, W / 2, y); });
+    }
+  }
+  return toile;
+}
+
+function majImagePartage() {
+  const toile = dessinerImagePartage(imagePartage.format);
+  imagePartage.url = toile.toDataURL("image/png");
+  $("apercu-image").src = imagePartage.url;
+  imagePartage.fichier = null;
+  // Le fichier est préparé d'avance : le partage doit partir tout de suite après le toucher
+  toile.toBlob(function (blob) {
+    if (!blob) return;
+    const nom = "pandemonium-" + ($("apercu-mot").textContent.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-")) + "-" + imagePartage.format + ".png";
+    try { imagePartage.fichier = new File([blob], nom, { type: "image/png" }); } catch (e) { imagePartage.fichier = null; }
+  }, "image/png");
+  document.querySelectorAll("#formats-image button").forEach(function (b) { b.classList.toggle("actif", b.dataset.format === imagePartage.format); });
+}
+
+function enregistrerImagePartage() {
+  const a = document.createElement("a");
+  a.href = imagePartage.url;
+  a.download = imagePartage.fichier ? imagePartage.fichier.name : "pandemonium-mot-du-jour.png";
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+$("ouvrir-image").addEventListener("click", function () { $("fenetre-image").hidden = false; majImagePartage(); });
+$("fermer-image").addEventListener("click", function () { $("fenetre-image").hidden = true; });
+$("fenetre-image").addEventListener("click", function (e) { if (e.target === $("fenetre-image")) $("fenetre-image").hidden = true; });
+$("formats-image").addEventListener("click", function (e) {
+  const b = e.target.closest("[data-format]");
+  if (!b || b.dataset.format === imagePartage.format) return;
+  imagePartage.format = b.dataset.format;
+  majImagePartage();
+});
+$("partager-image").addEventListener("click", function () {
+  const f = imagePartage.fichier;
+  if (f && navigator.canShare && navigator.canShare({ files: [f] })) {
+    navigator.share({ files: [f] }).catch(function () {});
+  } else {
+    enregistrerImagePartage();
+  }
+});
+$("enregistrer-image").addEventListener("click", enregistrerImagePartage);
+
 // ---------- Faire revenir les mots : c'est en les revoyant qu'on les retient ----------
 function motsARevoir() {
   return tousLesMots().filter(function (m) {
