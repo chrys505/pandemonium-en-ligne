@@ -34,7 +34,12 @@ const motsRares = new Set([
   // Liste du 2026-11-17
   "Bobèche", "Humoral", "Palingénésie", "Vergeter", "Malachite", "Narghilé", "Décrépiter", "Carlisme", "Nobiliaire",
   "Dévotieux", "Onagre", "Macaronique", "Synchronique", "Gnomique", "Ptolémaïque", "Pied-de-mouche", "Galuchat",
-  "Haquet", "Gnomon", "Papier brouillard", "Polycentrique", "Contractile", "Décrépitude", "Aède", "Brahmane"
+  "Haquet", "Gnomon", "Papier brouillard", "Polycentrique", "Contractile", "Décrépitude", "Aède", "Brahmane",
+  // Journée de lecture du 2026-11-18
+  "Platine", "Laminoir", "Salicine", "Houppe", "Infusible", "Phtisie", "Racornissement", "Épigastre", "Plexus",
+  "Hypocondres", "Lymphatique", "Ombilic", "Oisel", "Toponymie", "Nonsense", "Anglomane", "Pétrarquisant",
+  "Acanthe", "Vertugadin", "Cotte", "Senestre", "Tétin", "Rosaire", "Intussusception", "Morbifique", "Bâter",
+  "Mors", "Phlogistique", "Frugifère", "Redan", "Palissé", "Boulingrin", "Arpent", "Capucin", "Postillon"
 ]);
 
 // L'argot et la langue de rue : pas du français soutenu, mais une vraie richesse (et la langue du rap).
@@ -160,7 +165,8 @@ const motsCourants = new Set([
   "Avatar", "Sosie", "Mécène", "Subdivision", "Superlatif", "Glossaire", "Néologisme", "Scission", "Abdication",
   "Gauche", "Épigénétique", "Trivial", "Clivant", "Anachronisme", "Ambivalent", "Amalgamer", "Ésotérique",
   "Rocambolesque", "Sinistrose", "Dépréciation", "Fantasmatique", "Anticlérical", "Hédonisme", "Empoté",
-  "Oxymore", "Parasocial", "Hégémonie", "Graal", "Alchimiste"
+  "Oxymore", "Parasocial", "Hégémonie", "Graal", "Alchimiste",
+  "Anthologie", "Dissonance", "Despotisme", "Aversion", "Quaker", "Frêne", "Glaïeul", "Incisif", "Soupape"
 ]);
 
 function niveauDuMot(mot) {

@@ -67,6 +67,12 @@ const citationsPlus = [
   ["Embrassez-moi pour tous les chagrins que vous m'avez donnés, pour effacer la peine que vos joies m'ont faite.", "Honoré de Balzac"],
   ["J'avais pris l'existence au rebours : il y a toute une vie dans une heure d'amour.", "Honoré de Balzac"],
   ["Plus tard, j'essaierai de te dire mon amour ; en ce moment, je ne puis que le sentir.", "Honoré de Balzac"],
+  // Journée de lecture du 2026-11-18
+  ["Pour un mécanicien, l'univers est une machine qui veut un ouvrier ; pour la chimie, cette œuvre d'un démon qui va décomposant tout, le monde est un gaz doué de mouvement.", "Honoré de Balzac"],
+  ["Il y a certaines idées auxquelles nous autres, pauvres femmes, nous ne pouvons nous arrêter : elles nous tuent. Est-ce force d'amour ou manque de courage ?", "Honoré de Balzac"],
+  ["Ainsi le monde honore-t-il le malheur : il le tue ou le chasse, l'avilit ou le châtre.", "Honoré de Balzac"],
+  ["Ce lieu garde le secret des douleurs, il les console, les amoindrit, et jette dans l'amour je ne sais quoi de grave, de recueilli, qui rend la passion plus profonde, plus pure. Un baiser s'y agrandit.", "Honoré de Balzac"],
+  ["Mais je ne sais de quel mot flétrir une conduite aussi lâche que l'est la vôtre.", "Honoré de Balzac"],
   ["Bienvenue à Cringe City : tu as ta carte de résident.", ""]
 ];
 
@@ -120,7 +126,16 @@ const expressionsPlus = [
   ["Au débotté", "À l'improviste, sans préparation (comme on reçoit quelqu'un qui vient d'ôter ses bottes)."],
   ["Sans coup férir", "Sans combattre, sans difficulté (« férir » : frapper)."],
   ["Faire des gorges chaudes", "Se moquer ouvertement et avec plaisir de quelqu'un."],
-  ["Se mettre martel en tête", "Se faire du souci, s'inquiéter (le martel : le marteau qui cogne)."]
+  ["Se mettre martel en tête", "Se faire du souci, s'inquiéter (le martel : le marteau qui cogne)."],
+  // Journée de lecture du 2026-11-18
+  ["La médecine expectante", "La médecine qui attend : elle observe et laisse agir la nature avant d'intervenir."],
+  ["Par maints et maints…", "Par de très nombreux… (« par maints et maints détours »)."],
+  ["Le resserrement des hypocondres", "L'ancienne façon de dire l'angoisse : le ventre noué, la poitrine serrée."],
+  ["Des poumons comme des soufflets de forge", "Des poumons puissants, increvables (Balzac : « vos poumons sont aussi forts que des soufflets de forge »)."],
+  ["Mettre un mors à quelqu'un", "Le brider, le tenir en respect, comme un cheval qu'on dirige."],
+  ["Voiler ses regards", "Baisser les yeux, cacher ce qu'on ressent."],
+  ["Pâle et défait", "Blême, épuisé, les traits tirés par l'émotion ou la fatigue."],
+  ["Se teindre de pourpre", "Rougir, comme le ciel au couchant ou un visage ému."]
 ];
 
 // Pensées philosophiques : [texte, auteur]
