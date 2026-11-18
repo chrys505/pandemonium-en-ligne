@@ -192,7 +192,7 @@ afficherSonore(numeroDuJour);
 afficherNomPropre(numeroDuJour);
 
 // Le concept du jour : biais, lois, effets et idées qui expliquent le monde (liste partagée avec l'appli)
-// Les deux derniers ajoutés (effet papillon, effet de l'observateur) passent en premier jusqu'au 2026-11-20
+// Les deux derniers ajoutés (effet de l'observateur, puis effet papillon) passent en premier jusqu'au 2026-11-20
 function afficherConcept(c) {
   document.getElementById("concept").textContent = c.nom;
   document.getElementById("concept-famille").textContent = c.famille;
@@ -200,7 +200,7 @@ function afficherConcept(c) {
   document.getElementById("concept-exemple").textContent = c.exemple || "";
 }
 if (typeof concepts !== "undefined" && concepts.length) {
-  const vedettes = { "2026-11-18": "L'effet papillon", "2026-11-19": "L'effet papillon", "2026-11-20": "L'effet de l'observateur" };
+  const vedettes = { "2026-11-18": "L'effet de l'observateur", "2026-11-19": "L'effet de l'observateur", "2026-11-20": "L'effet papillon" };
   const cle = aujourdhui.getFullYear() + "-" + String(aujourdhui.getMonth() + 1).padStart(2, "0") + "-" + String(aujourdhui.getDate()).padStart(2, "0");
   const vedette = vedettes[cle] && concepts.find(function (c) { return c.nom === vedettes[cle]; });
   afficherConcept(vedette || concepts[numeroDuJour % concepts.length]);
