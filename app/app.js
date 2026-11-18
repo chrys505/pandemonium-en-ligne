@@ -427,6 +427,7 @@ $("bascule-version").addEventListener("click", function () {
   document.body.classList.add("bascule");
   appliquerVersion();
   allerA("aujourdhui");
+  sonBascule();
 });
 
 // La salutation change en direct, même quand l'appli reste ouverte (et dès qu'on y revient)
@@ -559,7 +560,7 @@ $("fermer-conversation").addEventListener("click", function () { $("fenetre-conv
 $("fenetre-conversation").addEventListener("click", function (e) { if (e.target === $("fenetre-conversation")) $("fenetre-conversation").hidden = true; });
 
 // ---------- Le bruit du breuvage : glouglous, bulles et tintements, fabriqués par l'appli (aucun fichier son) ----------
-const breuvage = { ctx: null, bruit: null };
+const breuvage = { ctx: null, bruit: null, dernier: 0 };
 
 function audio() {
   if (etat.son === false) return null;
@@ -569,6 +570,8 @@ function audio() {
     if (!breuvage.ctx) breuvage.ctx = new AC();
     if (breuvage.ctx.state === "suspended") breuvage.ctx.resume();
   } catch (e) { return null; }
+  // On retient l'instant : le petit tintement des boutons ne doit pas couvrir un son plus important
+  breuvage.dernier = performance.now();
   return breuvage.ctx;
 }
 
@@ -641,6 +644,110 @@ function sonFiole() {
   if (etat.maudit) { note(ctx, t, "sine", 880, 0, 0.7, 0.12); note(ctx, t, "sine", 932, 0, 0.7, 0.1); }
   else { note(ctx, t, "sine", 2093, 0, 0.7, 0.12); note(ctx, t + 0.04, "sine", 2637, 0, 0.6, 0.08); }
 }
+
+// Un souffle filtré : clapotis, froissement, grondement (le bruit qui glisse d'une fréquence à l'autre)
+function souffle(ctx, t, type, f1, f2, duree, volume, q) {
+  const s = ctx.createBufferSource(), filtre = ctx.createBiquadFilter(), g = ctx.createGain();
+  s.buffer = bruitBlanc(ctx);
+  s.loop = true;
+  filtre.type = type; filtre.Q.value = q || 1;
+  filtre.frequency.setValueAtTime(f1, t);
+  filtre.frequency.exponentialRampToValueAtTime(f2, t + duree * 0.9);
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(volume, t + duree * 0.25);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + duree);
+  s.connect(filtre); filtre.connect(g); g.connect(ctx.destination);
+  s.start(t); s.stop(t + duree + 0.02);
+}
+
+// Le petit tintement de verre de chaque bouton (une goutte sourde dans la version sombre)
+function sonClic() {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.005;
+  if (etat.maudit) { note(ctx, t, "sine", 330, 180, 0.12, 0.08); bulle(ctx, t + 0.04, 420); }
+  else { note(ctx, t, "sine", 1760, 0, 0.14, 0.045); note(ctx, t + 0.01, "sine", 2637, 0, 0.08, 0.025); }
+}
+
+// Changer d'onglet : le liquide qui clapote dans la fiole
+function sonOnglet() {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.005, k = etat.maudit ? 0.6 : 1;
+  souffle(ctx, t, "bandpass", 350 * k, 1100 * k, 0.22, 0.07, 3);
+  bulle(ctx, t + 0.1, (etat.maudit ? 450 : 850));
+}
+
+// Fermer une fenêtre : on rebouche la fiole
+function sonBouchon() {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.005, k = etat.maudit ? 0.7 : 1;
+  note(ctx, t, "sine", 420 * k, 90 * k, 0.08, 0.22);
+  souffle(ctx, t, "highpass", 3000, 1500, 0.05, 0.06, 0.7);
+}
+
+// Une bonne réponse : les bulles montent et tintent (un arpège d'or, ou un bouillon sombre)
+function sonJuste(retard) {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.01 + (retard || 0);
+  if (etat.maudit) {
+    [392, 466.2, 587.3].forEach(function (f, k) { note(ctx, t + k * 0.07, "triangle", f, 0, 0.35, 0.07); bulle(ctx, t + k * 0.07 + 0.03, 380 + k * 90); });
+    note(ctx, t, "sawtooth", 98, 96, 0.5, 0.025);
+  } else {
+    [784, 987.8, 1174.7, 1568].forEach(function (f, k) { note(ctx, t + k * 0.06, "triangle", f, 0, 0.32, 0.06); bulle(ctx, t + k * 0.06 + 0.02, 900 + k * 220); });
+  }
+}
+
+// Une erreur : la gorgée passe mal (un glouglou grave qui retombe)
+function sonFaux(retard) {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.01 + (retard || 0);
+  gloup(ctx, t, true);
+  if (etat.maudit) note(ctx, t + 0.08, "sawtooth", 98, 65, 0.45, 0.05);
+  else note(ctx, t + 0.08, "triangle", 233, 155, 0.4, 0.09);
+}
+
+// Des pièces d'or qui tombent dans la fiole (le coffre, les gains)
+function sonPieces(nombre) {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.01, n = nombre || 5, base = etat.maudit ? 1400 : 2400;
+  for (let k = 0; k < n; k++) {
+    const f = base + Math.random() * 1200, d = t + k * 0.075 + Math.random() * 0.03;
+    note(ctx, d, "triangle", f, 0, 0.18, 0.05);
+    note(ctx, d + 0.005, "sine", f * 1.5, 0, 0.1, 0.025);
+  }
+}
+
+// Retourner une carte : un froissement de parchemin
+function sonRetourne() {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.005;
+  souffle(ctx, t, "bandpass", 2600, 700, 0.13, 0.08, 1.2);
+}
+
+// Passer d'un monde à l'autre : la lumière divine, ou le chaudron qui gronde
+function sonBascule() {
+  const ctx = audio(); if (!ctx) return;
+  const t = ctx.currentTime + 0.01;
+  if (etat.maudit) {
+    note(ctx, t, "sawtooth", 82, 41, 1.3, 0.07);
+    note(ctx, t + 0.05, "sine", 55, 40, 1.4, 0.2);
+    souffle(ctx, t, "lowpass", 600, 150, 1.1, 0.12, 1);
+    for (let k = 0; k < 5; k++) bulle(ctx, t + 0.3 + k * 0.12 + Math.random() * 0.05, 250 + Math.random() * 250);
+  } else {
+    [523.3, 659.3, 784, 1046.5, 1318.5, 1568].forEach(function (f, k) { note(ctx, t + k * 0.055, "triangle", f, 0, 0.9, 0.055); });
+    souffle(ctx, t, "highpass", 4000, 9000, 0.9, 0.025, 0.7);
+  }
+}
+
+// Chaque bouton qui n'a pas déjà son propre son reçoit un tintement (onglets : clapotis ; « fermer » : bouchon ; « ouvrir » : fiole)
+document.addEventListener("click", function (e) {
+  if (performance.now() - breuvage.dernier < 150) return;
+  const el = e.target.closest("button, a, [role='button']");
+  if (!el || el.disabled) return;
+  if (el.classList.contains("nav")) sonOnglet();
+  else if (/^fermer/.test(el.id)) sonBouchon();
+  else if (/^ouvrir/.test(el.id)) sonFiole();
+  else sonClic();
+});
 
 function majBoutonSon() {
   $("bascule-son").textContent = etat.son === false ? "🔇 Son coupé" : "🔊 Son activé";
@@ -1404,6 +1511,7 @@ async function repondre(bouton, option, q) {
     if (b.textContent === q.bonne.mot) b.classList.add("bon");
   });
   if (!juste) bouton.classList.add("faux");
+  if (juste) sonJuste(); else sonFaux();
   noterReponse(q.bonne, juste);
   await attendre(juste ? 700 : 1400);
   numeroQuestion++;
@@ -1482,6 +1590,7 @@ $("coffre").addEventListener("click", function () {
   $("coffre").hidden = true;
   $("coffre-resultat").textContent = texte;
   $("coffre-resultat").hidden = false;
+  sonPieces(gain === 100 ? 16 : (gain === 25 ? 9 : 5));
   if (gain === 100) feterAvecDesBraises();
 });
 
@@ -1694,6 +1803,7 @@ function jouerCompleter() {
         if (x.textContent === img.mot) x.classList.add("bon");
       });
       if (!juste) b.classList.add("faux");
+      if (juste) sonJuste(); else sonFaux();
       zone.querySelector(".trou").textContent = img.mot;
       if (juste) { etat.xp += 5; sauver(); majCompteurs(); }
       $("suite-atelier").innerHTML =
@@ -2397,6 +2507,7 @@ function nouvellePartiePaires() {
 function retournerPaire(b, c) {
   if (paires.bloque || b.classList.contains("retournee")) return;
   b.classList.add("retournee");
+  sonRetourne();
   paires.retournees.push({ b: b, c: c });
   if (paires.retournees.length < 2) return;
   paires.coups++;
@@ -2409,9 +2520,10 @@ function retournerPaire(b, c) {
     paires.trouvees++;
     entrerEnRevision(a.c.m.mot);
     $("paires-statut").textContent = "✨ " + a.c.m.mot + " : " + a.c.m.definition;
-    if (paires.trouvees === NB_PAIRES) finirPaires();
-    else sauver();
+    if (paires.trouvees === NB_PAIRES) { finirPaires(); sonBoire(true); }
+    else { sauver(); sonJuste(0.15); }
   } else {
+    sonFaux(0.35);
     paires.bloque = true;
     setTimeout(function () {
       a.b.classList.remove("retournee");
@@ -2559,6 +2671,7 @@ function retournerPyramide(b) {
   const unite = etat.maudit ? (mise > 1 ? " gorgées ou gages" : " gorgée ou gage") : (mise > 1 ? " points" : " point");
   b.querySelector(".pyr-recto").innerHTML = d.icone + "<small>" + mise + "</small>";
   b.classList.add("retournee");
+  sonRetourne();
   $("defi-pyramide").innerHTML =
     '<p class="etiquette">' + d.icone + " " + echapper(d.titre) + ' · mise : ' + mise + unite + "</p>" +
     '<p class="soiree-texte petite-soiree">' + echapper(d.texte) + "</p>" +
@@ -2568,6 +2681,7 @@ function retournerPyramide(b) {
     '<button class="bouton petit-bouton" type="button" data-gage="1">🎲 Tirer un gage</button></div>';
   if (!document.querySelector(".carte-pyramide:not(.retournee)")) {
     $("defi-pyramide").innerHTML += '<p class="coffre-resultat">🏆 Sommet atteint ! Comptez vos ' + (etat.maudit ? "verres… et vos gages." : "points.") + "</p>";
+    sonBoire(true);
   }
 }
 
