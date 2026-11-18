@@ -350,7 +350,7 @@ function salutation(d) {
   // [version claire, version sombre]
   const m = etat.maudit ? 1 : 0;
   if (t >= s.lever - 30 && t < s.lever + 30) return ["Belle aurore.", "Sale aurore."][m];
-  if (t >= s.lever + 30 && t < 12 * 60) return ["Belle matinée.", "Sale matinée."][m];
+  if (t >= s.lever + 30 && t < 12 * 60) return ["Le jour point, belle matinée.", "Le jour point, sale matinée."][m];
   if (t >= 12 * 60 && t < s.coucher - 30) return ["Bel après-midi.", "Sale journée."][m];
   if (t >= s.coucher - 30 && t < s.coucher + 30) return ["Beau crépuscule.", "Sale crépuscule."][m];
   if (t >= s.coucher + 30 && t < 23 * 60) return ["Belle soirée.", "Sale soirée."][m];
