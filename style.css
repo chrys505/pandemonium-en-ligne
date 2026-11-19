@@ -319,6 +319,16 @@ body {
   color: var(--or);
 }
 
+/* La signature : la direction artistique en une phrase */
+.signature {
+  margin: -4px 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--texte-doux);
+}
+
 .source {
   margin: 24px 0 0;
   font-size: 0.75rem;

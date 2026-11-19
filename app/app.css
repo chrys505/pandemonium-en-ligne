@@ -244,6 +244,16 @@ body.romantique .bouton.principal {
   color: var(--doux);
 }
 
+/* La signature : la direction artistique en une phrase */
+.signature {
+  margin: 6px 0 0;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--doux);
+  opacity: 0.8;
+}
+
 /* Dans la version sombre, « maudire » s'enflamme */
 body.maudit .devise span { color: var(--jaune); font-weight: 600; }
 

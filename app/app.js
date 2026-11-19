@@ -423,6 +423,9 @@ $("grimoire").addEventListener("click", function (e) {
 function appliquerVersion() {
   document.body.classList.toggle("maudit", !!etat.maudit);
   $("devise-verbe").textContent = etat.maudit ? "maudire" : "mieux dire";
+  $("signature").textContent = etat.maudit
+    ? "Pris de passion pour la lecture, je vous sers un concentré de mots : un poison somptueux."
+    : "Pris de passion pour la lecture, je vous sers un concentré de mots : un breuvage somptueux.";
   $("bascule-version").textContent = etat.maudit ? "☀️" : "😈";
   $("bascule-version").setAttribute("aria-label", etat.maudit ? "Revenir à la version claire" : "Passer à la version Pandémonium");
   $("titre-soiree").textContent = etat.maudit ? "L'antre" : "Le salon";
