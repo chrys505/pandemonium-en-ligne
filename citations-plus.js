@@ -73,7 +73,18 @@ const citationsPlus = [
   ["Ainsi le monde honore-t-il le malheur : il le tue ou le chasse, l'avilit ou le châtre.", "Honoré de Balzac"],
   ["Ce lieu garde le secret des douleurs, il les console, les amoindrit, et jette dans l'amour je ne sais quoi de grave, de recueilli, qui rend la passion plus profonde, plus pure. Un baiser s'y agrandit.", "Honoré de Balzac"],
   ["Mais je ne sais de quel mot flétrir une conduite aussi lâche que l'est la vôtre.", "Honoré de Balzac"],
-  ["Bienvenue à Cringe City : tu as ta carte de résident.", ""]
+  ["Bienvenue à Cringe City : tu as ta carte de résident.", ""],
+  // Note iPhone du 2026-11-20
+  ["Cette fluide créature voltigeait dans les airs comme un mot vainement cherché qui court dans la mémoire sans se laisser saisir.", "Honoré de Balzac (à confirmer)"],
+  ["L'auteur ne s'inquiétait pas plus de ces transpositions qu'un architecte ne s'enquiert de la place où sont apportées dans le chantier les pierres dont il doit faire un monument.", "Introduction à La Comédie humaine de Balzac (à confirmer)"],
+  ["Et le bonheur lui colora son existence comme l'était ce boudoir blanc et rose.", "Honoré de Balzac, La Fille aux yeux d'or (à confirmer)"],
+  ["J'aurais voulu te faire éprouver toutes les douleurs que tu me lègues.", "Honoré de Balzac, La Fille aux yeux d'or (à confirmer)"],
+  ["Allons au jeu, peut-être aurai-je le bonheur de perdre.", "Honoré de Balzac (à confirmer)"],
+  ["La haine est un tonique.", "Honoré de Balzac (à confirmer)"],
+  ["La beauté n'est que la promesse du bonheur.", "Stendhal, De l'amour"],
+  ["Toute doctrine contient un canevas de comédie dont on ne sait où il commence ni où il finit.", "Italo Calvino (à confirmer)"],
+  ["Comme une voie lactée constellée de sentiments.", "Italo Calvino, à propos de Stendhal (à confirmer)"],
+  ["Dans cette géographie intérieure, Paris est le point équidistant entre Londres et Milan.", "Italo Calvino, à propos de Stendhal (à confirmer)"]
 ];
 
 // Expressions : [expression, sens]
@@ -135,7 +146,31 @@ const expressionsPlus = [
   ["Mettre un mors à quelqu'un", "Le brider, le tenir en respect, comme un cheval qu'on dirige."],
   ["Voiler ses regards", "Baisser les yeux, cacher ce qu'on ressent."],
   ["Pâle et défait", "Blême, épuisé, les traits tirés par l'émotion ou la fatigue."],
-  ["Se teindre de pourpre", "Rougir, comme le ciel au couchant ou un visage ému."]
+  ["Se teindre de pourpre", "Rougir, comme le ciel au couchant ou un visage ému."],
+  // Note iPhone du 2026-11-20
+  ["Comme dit l'adage", "Comme le dit la sagesse populaire, une formule ancienne."],
+  ["Aux antipodes de", "À l'exact opposé de."],
+  ["Avoir la baraka", "Avoir de la chance, être protégé par le sort."],
+  ["Au bas mot", "Au minimum, en comptant au plus bas."],
+  ["Gras comme un cent de clous", "Très maigre (on le dit par moquerie, à l'envers)."],
+  ["Faire une neuvaine", "Prier neuf jours de suite pour obtenir une grâce."],
+  ["Voilà le serein qui tombe", "L'humidité du soir tombe après une belle journée : il est temps de rentrer."],
+  ["En grande pompe", "Avec beaucoup d'apparat, de solennité."],
+  ["Si cela vous duit", "Vieux : si cela vous convient, si cela vous plaît."],
+  ["S'atteler à la tâche", "Se mettre au travail avec énergie."],
+  ["Prendre à tâche de", "S'appliquer à, s'efforcer de."],
+  ["Pousser au noir", "Exagérer le côté sombre des choses (« des plaisanteries poussées au noir »)."],
+  ["Peu ou prou", "Plus ou moins, à peu de chose près."],
+  ["Tant et si bien que", "À tel point que, si bien qu'à la fin."],
+  ["Passer au crible", "Examiner dans les moindres détails."],
+  ["La palme revient à", "Le premier rang, la victoire revient à."],
+  ["Se faire le porte-drapeau de", "Devenir le représentant, le défenseur le plus visible d'une cause."],
+  ["Un pays de cocagne", "Un lieu imaginaire où tout abonde sans effort."],
+  ["Une justice à deux vitesses", "Une justice qui ne traite pas de la même façon les puissants et les faibles."],
+  ["Une mise en abyme", "Une œuvre qui se reflète à l'intérieur d'elle-même, comme un tableau dans le tableau."],
+  ["Aller au charbon", "Se mettre au travail, même pénible, sans rechigner."],
+  ["Propre sur soi", "Bien mis, soigné de sa personne."],
+  ["Ô combien !", "Et à quel point ! (pour insister avec emphase)."]
 ];
 
 // Pensées philosophiques : [texte, auteur]
