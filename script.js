@@ -191,9 +191,9 @@ afficherFrancophone(numeroDuJour);
 afficherSonore(numeroDuJour);
 afficherNomPropre(numeroDuJour);
 
-// La pensée en vedette (les failles humaines, ajoutées le 2026-11-18), les deux premiers jours
+// La pensée en vedette les premiers jours après son ajout (failles humaines le 2026-11-18, haine de soi le 2026-11-19)
 (function () {
-  const vedettes = { "2026-11-18": "L'être humain n'est pas mal codé", "2026-11-19": "Quand tu hésites, lance une pièce" };
+  const vedettes = { "2026-11-18": "L'être humain n'est pas mal codé", "2026-11-19": "Se haïr au point de bâtir", "2026-11-20": "On ne devient pas quelqu'un d'autre", "2026-11-21": "Quand tu hésites, lance une pièce" };
   const cle = aujourdhui.getFullYear() + "-" + String(aujourdhui.getMonth() + 1).padStart(2, "0") + "-" + String(aujourdhui.getDate()).padStart(2, "0");
   const debut = vedettes[cle];
   const p = debut && philosophies.find(function (x) { return x.texte.indexOf(debut) === 0; });

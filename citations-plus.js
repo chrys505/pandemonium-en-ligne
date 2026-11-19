@@ -166,5 +166,8 @@ const philosophiesPlus = [
   ["Celui qui s'excuse met sa faute au centre ; celui qui dit « merci d'avoir patienté » met la patience de l'autre au centre. Le même retard, deux mondes.", ""],
   ["L'esprit humain se méfie de la perfection : avouer une petite faiblesse rend plus crédible que de paraître sans faille.", ""],
   ["Nous imitons sans le savoir ceux qui nous parlent : un hochement de tête, un regard vers la montre. L'humain est un miroir avant d'être un juge.", ""],
-  ["Sois lisible, mais ne montre jamais toutes tes cartes : la clarté inspire la confiance, la part de mystère inspire le respect.", ""]
+  ["Sois lisible, mais ne montre jamais toutes tes cartes : la clarté inspire la confiance, la part de mystère inspire le respect.", ""],
+  // La haine de soi qui bâtit (2026-11-19), réécrite en pensée
+  ["Se haïr au point de bâtir toute sa vie pour devenir quelqu'un d'aimable : voilà une haine bien étrange, qui travaille sans relâche pour celui qu'elle méprise. Et si l'œuvre réussit, l'homme admiré devra tout à l'homme détesté.", ""],
+  ["On ne devient pas quelqu'un d'autre : on devient enfin quelqu'un qui peut remercier celui qu'il a été.", ""]
 ];
