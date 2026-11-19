@@ -213,6 +213,7 @@
       </div>
 
       <button class="bouton-conversation bouton-paires bouton-pyramide" id="ouvrir-pyramide" type="button"><i>🔺</i><b id="nom-pyramide">La pyramide</b><span>15 cartes face cachée, des défis qui montent en puissance</span></button>
+      <button class="bouton-conversation bouton-paires bouton-pyramide" id="ouvrir-duel" type="button"><i>⚔️</i><b>Le duel d'insultes</b><span>À deux, face à face : la plus belle pique l'emporte, le public tranche</span></button>
       <button class="bouton-conversation bouton-paires bouton-pyramide" id="ouvrir-garou" type="button"><i>🐺</i><b>Le loup-garou maudit</b><span>De 5 à 16 joueurs : l'appli distribue les rôles et raconte la nuit</span></button>
 
       <div class="puces" id="puces-soiree">
@@ -297,6 +298,15 @@
       <div class="pyramide" id="pyramide"></div>
       <div class="defi-pyramide" id="defi-pyramide"></div>
       <button class="bouton principal large" id="rejouer-pyramide" type="button">Nouvelle pyramide</button>
+    </div>
+  </div>
+
+  <!-- ===== Le duel d'insultes : deux duellistes, des bottes lettrées, le public tranche ===== -->
+  <div class="voile" id="fenetre-duel" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-duel" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">⚔️ Le duel d'insultes</p>
+      <div class="duel" id="duel"></div>
     </div>
   </div>
 

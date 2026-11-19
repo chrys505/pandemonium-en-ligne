@@ -2950,6 +2950,103 @@ $("rejouer-pyramide").addEventListener("click", nouvellePyramide);
 $("fermer-pyramide").addEventListener("click", function () { $("fenetre-pyramide").hidden = true; });
 $("fenetre-pyramide").addEventListener("click", function (e) { if (e.target === $("fenetre-pyramide")) $("fenetre-pyramide").hidden = true; });
 
+// ---------- Le duel d'insultes : chacun choisit sa botte, la déclame, et le public tranche ----------
+const duel = { noms: ["", ""], manches: 3, manche: 1, tour: 0, scores: [0, 0], cartes: [], arme: "", premier: 0 };
+const titresDuel = ["Grand Maraud de la soirée", "Prince des Faquins", "Maître d'armes de la langue", "Fine lame du verbe", "Cyrano du salon"];
+
+function nomDuel(i) { return duel.noms[i] || (i === 0 ? "Duelliste d'or" : "Duelliste de sang"); }
+
+// Trois armes au choix : une botte de duel, un clash, et une insulte d'antan à justifier
+function armesDuel() {
+  const a = [];
+  if (typeof bottesDuel !== "undefined") a.push({ genre: "🤺 Botte", texte: auHasard(bottesDuel) });
+  if (typeof clashs !== "undefined") a.push({ genre: "🗡️ Clash", texte: auHasard(clashs) });
+  if (typeof insultesAntan !== "undefined") {
+    const w = motParNom(auHasard(insultesAntan)) || { mot: "Maraud", definition: "Coquin, vaurien." };
+    a.push({ genre: "📜 Insulte d'antan", texte: "Va, " + w.mot.toLowerCase() + " !", aide: w.definition + " Puis dis-lui pourquoi, en une phrase de ton cru." });
+  }
+  return a;
+}
+
+function rendreDuel(phase) {
+  const z = $("duel");
+  const qui = (duel.premier + duel.tour) % 2;
+  const tableau = '<div class="duel-score"><span>' + echapper(nomDuel(0)) + " <b>" + duel.scores[0] + "</b></span><i>⚔️</i><span><b>" + duel.scores[1] + "</b> " + echapper(nomDuel(1)) + "</span></div>";
+  if (phase === "reglage") {
+    z.innerHTML =
+      '<p class="petit gauche">Deux duellistes face à face, le public autour. À chaque manche, chacun choisit une arme, la déclame avec panache, les yeux dans les yeux. Le public désigne la plus belle touche.</p>' +
+      '<label class="duel-champ">⚜️ Premier duelliste<input id="duel-nom-0" maxlength="20" placeholder="Duelliste d\'or" value="' + echapper(duel.noms[0]) + '"></label>' +
+      '<label class="duel-champ">🩸 Second duelliste<input id="duel-nom-1" maxlength="20" placeholder="Duelliste de sang" value="' + echapper(duel.noms[1]) + '"></label>' +
+      '<div class="garou-nombre"><button class="bouton petit-bouton' + (duel.manches === 3 ? " actif" : "") + '" type="button" data-duel="m3">3 manches</button>' +
+      '<button class="bouton petit-bouton' + (duel.manches === 5 ? " actif" : "") + '" type="button" data-duel="m5">5 manches</button></div>' +
+      '<button class="bouton principal large" type="button" data-duel="engarde">⚔️ En garde !</button>';
+  } else if (phase === "armes") {
+    duel.cartes = armesDuel();
+    z.innerHTML = tableau +
+      '<p class="petit">Manche ' + duel.manche + " sur " + duel.manches + "</p>" +
+      '<p class="grimoire-titre">À toi, ' + echapper(nomDuel(qui)) + " : choisis ton arme</p>" +
+      duel.cartes.map(function (c, i) {
+        return '<button class="duel-arme" type="button" data-arme="' + i + '"><span class="etiquette">' + c.genre + "</span>" + echapper(c.texte) + "</button>";
+      }).join("") +
+      '<button class="bouton large" type="button" data-duel="improvise">✍️ J\'improvise ma propre botte</button>';
+  } else if (phase === "tirade") {
+    const c = duel.arme;
+    z.innerHTML = tableau +
+      '<p class="petit">' + echapper(nomDuel(qui)) + ", lève-toi et déclame :</p>" +
+      '<p class="citation-grande duel-tirade">' + (c ? echapper(c.texte) : "Ta propre botte, de ton cru : surprends-nous.") + "</p>" +
+      (c && c.aide ? '<p class="texte-doux">' + echapper(c.aide) + "</p>" : "") +
+      '<p class="petit">Du panache : le ton, le regard, la pause avant la chute. Pas de rire !</p>' +
+      '<button class="bouton principal large" type="button" data-duel="touche">🎯 Touché ! À l\'adversaire</button>';
+  } else if (phase === "vote") {
+    z.innerHTML = tableau +
+      '<p class="grimoire-titre">Le public tranche</p>' +
+      '<p class="texte-doux">Qui a porté la plus belle touche dans cette manche ? Levez la main, puis touchez le vainqueur.</p>' +
+      '<div class="actions-pyramide"><button class="bouton principal" type="button" data-vote="0">⚜️ ' + echapper(nomDuel(0)) + "</button>" +
+      '<button class="bouton principal" type="button" data-vote="1">🩸 ' + echapper(nomDuel(1)) + "</button>" +
+      '<button class="bouton" type="button" data-vote="egalite">🤝 Égalité</button></div>';
+  } else if (phase === "fin") {
+    const egal = duel.scores[0] === duel.scores[1];
+    const g = duel.scores[0] > duel.scores[1] ? 0 : 1;
+    z.innerHTML = tableau +
+      '<div class="garou-role"><span class="garou-icone">' + (egal ? "🤝" : "👑") + "</span>" +
+      (egal
+        ? '<p class="grimoire-titre">Égalité parfaite</p><p class="texte-doux">Deux lames de même trempe. L\'honneur est sauf… pour cette fois.</p>'
+        : '<p class="grimoire-titre">' + echapper(nomDuel(g)) + " l'emporte !</p><p class=\"texte-doux\">Sacré « " + auHasard(titresDuel) + " ». " + echapper(nomDuel(1 - g)) + " rengaine sa langue et boit la coupe de la défaite.</p>") +
+      "</div>" +
+      '<div class="actions-pyramide"><button class="bouton principal" type="button" data-duel="revanche">🔥 Revanche !</button>' +
+      '<button class="bouton" type="button" data-duel="reglage">↺ Nouveaux duellistes</button></div>';
+  }
+}
+
+function lancerManchesDuel() { duel.manche = 1; duel.tour = 0; duel.scores = [0, 0]; duel.premier = Math.random() < 0.5 ? 0 : 1; rendreDuel("armes"); }
+
+$("duel").addEventListener("click", function (ev) {
+  const arme = ev.target.closest("[data-arme]");
+  if (arme) { duel.arme = duel.cartes[+arme.dataset.arme]; sonRetourne(); rendreDuel("tirade"); return; }
+  const v = ev.target.closest("[data-vote]");
+  if (v) {
+    if (v.dataset.vote !== "egalite") { duel.scores[+v.dataset.vote]++; sonJuste(0); }
+    if (duel.manche >= duel.manches) { sonBoire(true); rendreDuel("fin"); return; }
+    duel.manche++; duel.tour = 0; duel.premier = 1 - duel.premier; rendreDuel("armes");
+    return;
+  }
+  const b = ev.target.closest("[data-duel]");
+  if (!b) return;
+  const a = b.dataset.duel;
+  if (a === "m3" || a === "m5") { duel.noms = [$("duel-nom-0").value.trim(), $("duel-nom-1").value.trim()]; duel.manches = a === "m3" ? 3 : 5; rendreDuel("reglage"); }
+  else if (a === "engarde") { duel.noms = [$("duel-nom-0").value.trim(), $("duel-nom-1").value.trim()]; sonBascule(); lancerManchesDuel(); }
+  else if (a === "improvise") { duel.arme = null; rendreDuel("tirade"); }
+  else if (a === "touche") {
+    if (duel.tour === 0) { duel.tour = 1; rendreDuel("armes"); }
+    else rendreDuel("vote");
+  }
+  else if (a === "revanche") lancerManchesDuel();
+  else if (a === "reglage") rendreDuel("reglage");
+});
+$("ouvrir-duel").addEventListener("click", function () { rendreDuel("reglage"); $("fenetre-duel").hidden = false; });
+$("fermer-duel").addEventListener("click", function () { $("fenetre-duel").hidden = true; });
+$("fenetre-duel").addEventListener("click", function (e) { if (e.target === $("fenetre-duel")) $("fenetre-duel").hidden = true; });
+
 // ---------- Le loup-garou maudit : l'appli distribue les rôles, puis elle mène la partie ----------
 const rolesGarou = {
   loup: ["🐺", "Loup-garou", "Chaque nuit, avec les autres loups, tu dévores un villageois. Le jour, tu mens avec aplomb. Tu gagnes quand les loups sont aussi nombreux que les vivants."],

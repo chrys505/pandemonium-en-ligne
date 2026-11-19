@@ -198,6 +198,24 @@ const clashs = [
   "Ta vie est un roman de gare : on te lit en diagonale et on t'oublie sur le quai."
 ];
 
+// Les bottes du duel d'insultes : des piques à déclamer avec panache, dans l'esprit de Cyrano (ajoutées le 2026-11-20)
+const bottesDuel = [
+  "Monsieur, votre esprit est comme votre épée : rouillé, émoussé, et toujours au fourreau.",
+  "Je vous provoquerais bien en duel d'esprit, mais je ne me bats pas contre un homme désarmé.",
+  "Votre conversation a la profondeur d'une flaque un jour de sécheresse.",
+  "Si j'avais voulu entendre braire, j'aurais visité l'écurie : on y parle mieux.",
+  "Vous avez la grâce d'un piano qui tombe d'un troisième étage.",
+  "Vous êtes la preuve qu'on peut parler sans rien dire, et durer sans exister.",
+  "Molière vous aurait adoré : il cherchait justement un modèle pour son prochain Fâcheux.",
+  "Votre panache tiendrait dans un dé à coudre, et il resterait de la place pour votre courage.",
+  "Vous maniez les mots comme un bœuf manie la dentelle.",
+  "On vous a prêté de l'esprit ; il serait temps de le rendre, avec les intérêts.",
+  "Vous êtes un roman dont on lit la quatrième de couverture, et cela suffit amplement.",
+  "Fuyez, malheureux : même votre ombre a demandé à changer de camp.",
+  "Vos arguments sont comme des chandelles mouillées : ils fument, ils puent, et ils n'éclairent rien.",
+  "Je vous répondrais bien, mais on m'a appris à ne pas frapper ce qui est déjà à terre."
+];
+
 // L'humour noir : la mort, le cimetière et le désespoir, avec le sourire
 const humourNoir = [
   "Mon grand-père est mort paisiblement dans son sommeil. Pas comme les passagers de son bus, qui hurlaient.",
