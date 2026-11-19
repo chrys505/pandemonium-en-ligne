@@ -373,6 +373,7 @@ function rendreMaudit(auHasardTout) {
   const antan = motParNom(prendre(insultesAntan, 0)) || { mot: "Maraud", definition: "Coquin, vaurien." };
   const rue = motParNom(prendre(insultesArgot, 3)) || { mot: "Tocard", definition: "Nul, minable." };
   const r = prendre(rumeurs, 1), d = prendre(dictateurs, 2), h = prendre(humourNoir, 5);
+  const f = typeof filmsHorreur !== "undefined" ? prendre(filmsHorreur, 7) : null;
   $("etiquette-hero").textContent = "⚔️ L'insulte du jour";
   $("apercu-mot").textContent = antan.mot;
   $("apercu-mot").style.setProperty("--echelle", echelle(antan.mot));
@@ -387,6 +388,14 @@ function rendreMaudit(auHasardTout) {
       '<p class="grimoire-titre">' + echapper(d[0]) + "</p>" +
       '<p class="texte-doux">' + echapper(d[1]) + "</p>" +
       '<p class="grimoire-revers"><b>Le revers</b> · ' + echapper(d[2]) + "</p></article>" +
+    (f ? '<article class="carte carte-grimoire"><p class="etiquette">🎬 Le film d\'horreur</p>' +
+      '<p class="grimoire-titre">' + echapper(f[0]) + "</p>" +
+      '<p class="texte-doux">' + echapper(f[1]) + "</p>" +
+      '<button class="bouton petit-bouton reveler" type="button" data-coulisse="' + echapper(f[2]) + '">🕯️ En coulisse</button></article>' : "") +
+    (typeof clashs !== "undefined" ? '<article class="carte carte-grimoire"><p class="etiquette">🗡️ Le clash du jour</p>' +
+      '<p class="texte-doux">Ta mission : lance-le à quelqu\'un, les yeux dans les yeux, sans sourire.</p>' +
+      '<p class="citation-grande" id="clash-texte">' + echapper(prendre(clashs, 4)) + "</p>" +
+      '<button class="bouton petit-bouton" type="button" id="autre-clash">🔥 Un autre clash</button></article>' : "") +
     '<article class="carte carte-grimoire"><p class="etiquette">💀 Humour noir</p>' +
       '<p class="citation-grande">' + echapper(h) + "</p></article>" +
     '<article class="carte carte-grimoire"><p class="etiquette">🎤 L\'insulte de la rue</p>' +
@@ -399,6 +408,15 @@ function rendreMaudit(auHasardTout) {
 $("grimoire").addEventListener("click", function (e) {
   const fin = e.target.closest("[data-fin-mot]");
   if (fin) { fin.outerHTML = '<p class="grimoire-revers"><b>Le fin mot</b> · ' + echapper(fin.dataset.finMot) + "</p>"; return; }
+  const coulisse = e.target.closest("[data-coulisse]");
+  if (coulisse) { coulisse.outerHTML = '<p class="grimoire-revers"><b>En coulisse</b> · ' + echapper(coulisse.dataset.coulisse) + "</p>"; return; }
+  if (e.target.closest("#autre-clash")) {
+    const actuel = $("clash-texte").textContent;
+    let nouveau = auHasard(clashs);
+    while (clashs.length > 1 && nouveau === actuel) nouveau = auHasard(clashs);
+    $("clash-texte").textContent = nouveau;
+    return;
+  }
   if (e.target.closest("#encore-maudit")) { rendreMaudit(true); $("grimoire").scrollIntoView({ behavior: "smooth" }); }
 });
 
@@ -2928,6 +2946,138 @@ $("ouvrir-pyramide").addEventListener("click", function () { nouvellePyramide();
 $("rejouer-pyramide").addEventListener("click", nouvellePyramide);
 $("fermer-pyramide").addEventListener("click", function () { $("fenetre-pyramide").hidden = true; });
 $("fenetre-pyramide").addEventListener("click", function (e) { if (e.target === $("fenetre-pyramide")) $("fenetre-pyramide").hidden = true; });
+
+// ---------- Le loup-garou maudit : l'appli distribue les rôles, puis elle mène la partie ----------
+const rolesGarou = {
+  loup: ["🐺", "Loup-garou", "Chaque nuit, avec les autres loups, tu dévores un villageois. Le jour, tu mens avec aplomb. Tu gagnes quand les loups sont aussi nombreux que les vivants."],
+  voyante: ["🔮", "La voyante", "Chaque nuit, tu désignes un joueur et le meneur te montre en silence s'il est loup. Aide le village sans te faire repérer."],
+  sorciere: ["🧪", "La sorcière", "Tu as deux fioles : un élixir de vie pour sauver la victime de la nuit, et un poison pour tuer qui tu veux. Chacune ne sert qu'une fois."],
+  chasseur: ["🏹", "Le chasseur", "Si tu meurs, de nuit comme de jour, tu tires une dernière flèche : tu emportes quelqu'un avec toi dans la tombe."],
+  villageois: ["🕯️", "Villageois", "Tu n'as que ta langue et ta jugeote. Démasque les loups au grand jour, et vote pour les pendre."]
+};
+const garouCrepuscules = [
+  "La lune se lève, ronde et pâle comme un linceul. Les volets claquent, le village s'endort.",
+  "Le brouillard monte du cimetière. Quelque part, un chien hurle, puis se tait d'un coup.",
+  "Les cloches sonnent minuit, une de trop. Personne n'ose compter.",
+  "La forêt respire. Les chandelles s'éteignent une à une, sans un souffle de vent.",
+  "Le corbeau s'est posé sur le clocher. Il attend. Il sait.",
+  "Ce soir, la lune est rousse. Les anciens disaient que c'est la couleur de la faim."
+];
+const garouAubes = [
+  "Le coq n'a pas chanté ce matin. Il a vu quelque chose.",
+  "On a retrouvé des traces de griffes sur la porte de l'église, et la neige est rouge devant le puits.",
+  "Une odeur de fer et de terre mouillée flotte sur la place. Le village se réveille… presque en entier.",
+  "Le boulanger a trouvé un sabot dans le pétrin. Juste un sabot.",
+  "Les corbeaux tournent au-dessus d'une maison. Ils ne tournent jamais pour rien.",
+  "La rosée a un goût de sang. Quelqu'un ne descendra pas déjeuner."
+];
+const garou = { joueurs: 8, roles: [], tour: 0, devoile: false, etape: 0, nuit: 0, minuteur: null };
+
+function compositionGarou(n) {
+  const loups = n <= 6 ? 1 : n <= 11 ? 2 : 3;
+  const r = [];
+  for (let i = 0; i < loups; i++) r.push("loup");
+  r.push("voyante");
+  if (n >= 6) r.push("sorciere");
+  if (n >= 7) r.push("chasseur");
+  while (r.length < n) r.push("villageois");
+  for (let i = r.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = r[i]; r[i] = r[j]; r[j] = t; }
+  return r;
+}
+
+function compteGarou(roles) {
+  const c = {};
+  roles.forEach(function (x) { c[x] = (c[x] || 0) + 1; });
+  return Object.keys(rolesGarou).filter(function (k) { return c[k]; })
+    .map(function (k) { return rolesGarou[k][0] + " " + rolesGarou[k][1] + (c[k] > 1 ? " × " + c[k] : ""); }).join(" · ");
+}
+
+function arreterMinuteurGarou() { if (garou.minuteur) { clearInterval(garou.minuteur); garou.minuteur = null; } }
+
+// Les étapes d'une nuit, puis du jour, lues à voix haute par le meneur
+function etapesGarou() {
+  const a = garou.roles;
+  const e = [
+    { titre: "🌕 Nuit " + garou.nuit, texte: auHasard(garouCrepuscules) + " Tout le monde ferme les yeux." }
+  ];
+  if (a.indexOf("voyante") !== -1) e.push({ titre: "🔮 La voyante", texte: "Voyante, ouvre les yeux. Désigne du doigt celui dont tu veux connaître l'âme. (Meneur : montre-lui en silence, pouce en haut si c'est un loup.) Voyante, referme les yeux." });
+  e.push({ titre: "🐺 Les loups", texte: "Loups-garous, ouvrez les yeux. Reconnaissez-vous, et choisissez en silence votre victime de la nuit. (Meneur : retiens-la.) Loups, refermez les yeux, et essuyez vos babines." });
+  if (a.indexOf("sorciere") !== -1) e.push({ titre: "🧪 La sorcière", texte: "Sorcière, ouvre les yeux. (Meneur : montre-lui la victime.) Veux-tu verser ton élixir de vie pour la sauver ? Veux-tu verser ton poison sur quelqu'un ? Sorcière, referme les yeux." });
+  e.push({ titre: "🌫️ L'aube", texte: auHasard(garouAubes) + " Tout le monde ouvre les yeux. (Meneur : annonce qui est mort cette nuit, et la victime retourne sa carte. Si c'est le chasseur, il tire sa dernière flèche.)" });
+  e.push({ titre: "⚖️ Le procès", texte: "Le village a trois minutes pour démasquer les loups. Accusez, défendez-vous, mentez. Puis, au signal, tout le monde pointe du doigt un suspect : le plus désigné est pendu et révèle son rôle.", minuteur: 180 });
+  e.push({ titre: "⚰️ Le verdict", texte: "Les villageois gagnent quand le dernier loup est mort. Les loups gagnent quand ils sont aussi nombreux que les vivants. Sinon… la nuit retombe." });
+  return e;
+}
+
+function rendreGarou(phase) {
+  arreterMinuteurGarou();
+  const z = $("garou");
+  if (phase === "reglage") {
+    z.innerHTML =
+      '<p class="petit gauche">Il faut un meneur, qui ne joue pas : il tient le téléphone et lit l\'histoire à voix haute. Les autres jouent.</p>' +
+      '<div class="garou-nombre"><button class="bouton petit-bouton" type="button" data-garou="moins" aria-label="Un joueur de moins">−</button>' +
+      "<strong>" + garou.joueurs + " joueurs</strong>" +
+      '<button class="bouton petit-bouton" type="button" data-garou="plus" aria-label="Un joueur de plus">+</button></div>' +
+      '<p class="petit">Rôles tirés au sort parmi : ' + compteGarou(compositionGarou(garou.joueurs).sort()) + "</p>" +
+      '<button class="bouton principal large" type="button" data-garou="distribuer">🃏 Distribuer les rôles</button>';
+  } else if (phase === "distribution") {
+    const r = rolesGarou[garou.roles[garou.tour]];
+    z.innerHTML = garou.devoile
+      ? '<div class="garou-role"><span class="garou-icone">' + r[0] + '</span><p class="grimoire-titre">' + echapper(r[1]) + '</p><p class="texte-doux">' + echapper(r[2]) + "</p></div>" +
+        '<button class="bouton principal large" type="button" data-garou="cacher">🙈 J\'ai retenu, je cache</button>'
+      : '<p class="garou-tour">Joueur ' + (garou.tour + 1) + " sur " + garou.joueurs + "</p>" +
+        '<p class="petit">Prends le téléphone, cache l\'écran aux autres, puis touche le bouton.</p>' +
+        '<button class="bouton principal large" type="button" data-garou="voir">👁️ Voir mon rôle</button>';
+  } else if (phase === "partie") {
+    const etapes = etapesGarou.cache || (etapesGarou.cache = etapesGarou());
+    const e = etapes[garou.etape];
+    z.innerHTML =
+      '<p class="petit">Meneur, lis à voix haute · étape ' + (garou.etape + 1) + " sur " + etapes.length + "</p>" +
+      '<p class="grimoire-titre">' + e.titre + "</p>" +
+      '<p class="citation-grande garou-recit">' + echapper(e.texte) + "</p>" +
+      (e.minuteur ? '<p class="garou-chrono" id="garou-chrono">3:00</p><button class="bouton petit-bouton" type="button" data-garou="chrono">⏳ Lancer le sablier</button>' : "") +
+      '<div class="actions-pyramide">' +
+      (garou.etape < etapes.length - 1
+        ? '<button class="bouton principal" type="button" data-garou="suivant">Étape suivante</button>'
+        : '<button class="bouton principal" type="button" data-garou="nuit">🌕 La nuit retombe</button>') +
+      '<button class="bouton" type="button" data-garou="roles">📜 Les rôles</button>' +
+      '<button class="bouton" type="button" data-garou="reglage">↺ Nouvelle partie</button></div>' +
+      '<p class="petit gauche" id="garou-roles" hidden>Dans cette partie : ' + compteGarou(garou.roles.slice().sort()) + ".</p>";
+  }
+}
+
+$("garou").addEventListener("click", function (ev) {
+  const b = ev.target.closest("[data-garou]");
+  if (!b) return;
+  const a = b.dataset.garou;
+  if (a === "moins" || a === "plus") { garou.joueurs = Math.max(5, Math.min(16, garou.joueurs + (a === "plus" ? 1 : -1))); rendreGarou("reglage"); }
+  else if (a === "reglage") rendreGarou("reglage");
+  else if (a === "distribuer") { garou.roles = compositionGarou(garou.joueurs); garou.tour = 0; garou.devoile = false; rendreGarou("distribution"); }
+  else if (a === "voir") { garou.devoile = true; sonRetourne(); rendreGarou("distribution"); }
+  else if (a === "cacher") {
+    garou.devoile = false; garou.tour++;
+    if (garou.tour < garou.joueurs) rendreGarou("distribution");
+    else { garou.nuit = 1; garou.etape = 0; etapesGarou.cache = null; rendreGarou("partie"); }
+  }
+  else if (a === "suivant") { garou.etape++; rendreGarou("partie"); }
+  else if (a === "nuit") { garou.nuit++; garou.etape = 0; etapesGarou.cache = null; sonBascule(); rendreGarou("partie"); }
+  else if (a === "roles") { $("garou-roles").hidden = !$("garou-roles").hidden; }
+  else if (a === "chrono") {
+    arreterMinuteurGarou();
+    let reste = 180;
+    b.hidden = true;
+    garou.minuteur = setInterval(function () {
+      reste--;
+      const c = $("garou-chrono");
+      if (!c) { arreterMinuteurGarou(); return; }
+      c.textContent = Math.floor(reste / 60) + ":" + String(reste % 60).padStart(2, "0");
+      if (reste <= 0) { arreterMinuteurGarou(); c.textContent = "⚖️ Votez !"; sonFaux(0); }
+    }, 1000);
+  }
+});
+$("ouvrir-garou").addEventListener("click", function () { rendreGarou("reglage"); $("fenetre-garou").hidden = false; });
+$("fermer-garou").addEventListener("click", function () { arreterMinuteurGarou(); $("fenetre-garou").hidden = true; });
+$("fenetre-garou").addEventListener("click", function (e) { if (e.target === $("fenetre-garou")) { arreterMinuteurGarou(); $("fenetre-garou").hidden = true; } });
 
 $("ouvrir-paires").addEventListener("click", function () {
   nouvellePartiePaires();

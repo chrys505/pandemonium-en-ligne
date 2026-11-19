@@ -1080,6 +1080,17 @@ body.maudit .progression i.fait { box-shadow: 0 0 10px rgba(255, 30, 10, 0.6); }
 
 /* La fenêtre de la pyramide peut être haute : on la laisse défiler */
 #fenetre-pyramide .fenetre { max-height: 92vh; overflow-y: auto; }
+
+/* ----- Le loup-garou maudit ----- */
+#fenetre-garou .fenetre { max-height: 92vh; overflow-y: auto; }
+.garou { text-align: center; }
+.garou-nombre { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 16px 0 8px; font-size: 1.3rem; }
+.garou-nombre .petit-bouton { min-width: 48px; font-size: 1.3rem; }
+.garou-tour { font-size: 1.4rem; font-weight: 700; margin: 18px 0 6px; }
+.garou-role { padding: 10px 0 6px; }
+.garou-icone { display: block; font-size: 4rem; line-height: 1.2; }
+.garou-recit { margin: 10px 0; }
+.garou-chrono { font-size: 2.2rem; font-weight: 700; margin: 8px 0; font-variant-numeric: tabular-nums; }
 #dico-resultats .element:active { transform: scale(0.99); }
 #fiche-contenu .actions-carte { flex-wrap: wrap; }
 

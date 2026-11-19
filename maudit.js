@@ -115,6 +115,89 @@ const dictateurs = [
     "En 1937, ses soldats massacrèrent des milliers d'Haïtiens à la frontière. Il fut abattu dans une embuscade en 1961."]
 ];
 
+// Les films d'horreur : une anecdote de tournage vraie, puis un frisson de coulisse (ajoutés le 2026-11-19)
+// [film, l'anecdote, en coulisse]
+const filmsHorreur = [
+  ["Nosferatu, de Murnau (1922)",
+    "C'était une adaptation pirate de Dracula : Murnau avait juste changé le nom du comte en Orlok.",
+    "La veuve de Bram Stoker gagna son procès, et la justice ordonna de détruire toutes les copies. Quelques-unes survécurent : le vampire, lui aussi, a refusé de mourir."],
+  ["Les Diaboliques, de Clouzot (1955)",
+    "Clouzot aurait acheté les droits du roman de Boileau et Narcejac quelques heures seulement avant Alfred Hitchcock.",
+    "À la fin du film, un carton supplie les spectateurs de ne pas révéler la fin à leurs amis. Hitchcock retint la leçon pour Psychose."],
+  ["Psychose, d'Alfred Hitchcock (1960)",
+    "Le sang de la scène de la douche est du sirop de chocolat : en noir et blanc, il rendait mieux que le faux sang.",
+    "Pour garder la fin secrète, Hitchcock fit racheter un maximum d'exemplaires du roman, et interdit l'entrée des salles une fois le film commencé."],
+  ["Les Yeux sans visage, de Georges Franju (1960)",
+    "Au festival d'Édimbourg, plusieurs spectateurs s'évanouirent pendant la scène de la greffe de visage.",
+    "Franju aurait commenté : « Maintenant je sais pourquoi les Écossais portent des kilts. »"],
+  ["Les Oiseaux, d'Alfred Hitchcock (1963)",
+    "Pour la scène du grenier, Tippi Hedren croyait affronter des oiseaux mécaniques. On lui lança de vrais goélands et corbeaux, pendant cinq jours.",
+    "Un oiseau la blessa près de l'œil ; un médecin finit par exiger une semaine de repos."],
+  ["Rosemary's Baby, de Roman Polanski (1968)",
+    "L'immeuble maudit du film est le Dakota, un vrai bâtiment de New York, au bord de Central Park.",
+    "Douze ans plus tard, John Lennon, qui y habitait, fut assassiné devant son entrée."],
+  ["La Nuit des morts-vivants, de George Romero (1968)",
+    "Le distributeur changea le titre au dernier moment et oublia de réimprimer la mention de droits d'auteur.",
+    "Le film tomba aussitôt dans le domaine public : les zombies appartiennent à tout le monde."],
+  ["L'Exorciste, de William Friedkin (1973)",
+    "La chambre de la petite possédée était réfrigérée pour que l'on voie la buée sortir des bouches. Et le vomi vert ? De la soupe aux pois.",
+    "Friedkin tirait parfois au pistolet à blanc sur le plateau pour faire sursauter ses acteurs. Un incendie ravagea ensuite le décor de la maison, sauf… la chambre."],
+  ["Massacre à la tronçonneuse, de Tobe Hooper (1974)",
+    "Le film se présentait comme une histoire vraie. C'était faux, même s'il s'inspirait de loin du tueur Ed Gein.",
+    "Ed Gein avait déjà inspiré Psychose : un seul fermier du Wisconsin a nourri deux légendes du cinéma."],
+  ["Les Dents de la mer, de Steven Spielberg (1975)",
+    "Le requin mécanique, surnommé Bruce comme l'avocat de Spielberg, tombait sans cesse en panne dans l'eau salée.",
+    "Faute de requin, Spielberg dut le suggérer au lieu de le montrer. La peur de ce qu'on ne voit pas a fait le chef-d'œuvre."],
+  ["Halloween, de John Carpenter (1978)",
+    "Le masque de Michael Myers est un masque du capitaine Kirk de Star Trek, acheté environ deux dollars et peint en blanc.",
+    "Le film fut tourné en vingt jours, au printemps, en Californie : on peignait de fausses feuilles mortes pour faire l'automne."],
+  ["Alien, de Ridley Scott (1979)",
+    "Pour la scène où la créature jaillit d'une poitrine, les acteurs ne savaient pas exactement ce qui allait arriver.",
+    "Veronica Cartwright reçut un jet de faux sang en plein visage : son cri d'horreur est authentique."],
+  ["Shining, de Stanley Kubrick (1980)",
+    "Le roman de Jack, « All work and no play makes Jack a dull boy », fut retapé pour chaque langue. En français : « Un \"Tiens\" vaut mieux que deux \"Tu l'auras\" ».",
+    "La scène de l'escalier avec la batte demanda 127 prises, un record. Et Jack Nicholson, ancien pompier volontaire, cassait les portes si vite qu'il fallut en fabriquer de plus solides."],
+  ["Poltergeist, de Tobe Hooper (1982)",
+    "Dans la scène de la piscine boueuse, les squelettes qui remontent à la surface étaient de vrais squelettes humains.",
+    "C'était moins cher que des faux. L'actrice JoBeth Williams ne l'apprit qu'après le tournage."],
+  ["Le Silence des agneaux, de Jonathan Demme (1991)",
+    "Anthony Hopkins n'apparaît qu'environ seize minutes à l'écran.",
+    "Seize minutes lui ont suffi pour l'Oscar du meilleur acteur : Hannibal Lecter ne cligne presque jamais des yeux."],
+  ["Ring, de Hideo Nakata (1998)",
+    "La démarche saccadée de Sadako, qui sort du puits puis de la télévision, a été filmée à l'envers.",
+    "L'actrice, formée au théâtre kabuki, marchait à reculons ; passée à l'endroit, la scène devient contre nature."],
+  ["Le Projet Blair Witch (1999)",
+    "Les trois acteurs furent lâchés seuls dans la forêt, guidés par des messages cachés, avec un peu moins de nourriture chaque jour.",
+    "Tourné pour environ 60 000 dollars, le film en rapporta près de 250 millions : l'un des films les plus rentables de l'histoire."]
+];
+
+// Le clash : une pique virulente à lancer, à la manière des joutes d'antan (ajoutés le 2026-11-19)
+// On vise l'esprit, jamais le physique ni les origines : on blesse avec du style, pas avec du mépris
+const clashs = [
+  "Tu as la conversation d'un parapluie fermé : on t'emporte par prudence, on ne t'ouvre jamais.",
+  "Si la bêtise était un art, tu serais exposé au Louvre, entre deux vigiles.",
+  "Tes idées sont comme les trains de banlieue : rares, en retard, et elles finissent toujours au terminus.",
+  "Je t'écouterais bien, mais j'ai déjà entendu le silence : il disait des choses plus intéressantes.",
+  "Tu n'es pas inutile : tu sers d'exemple à ce qu'il ne faut pas faire.",
+  "Ton cerveau a posé ses congés à ta naissance, et il n'est jamais revenu.",
+  "Tu as l'éloquence d'une porte qui grince : on t'entend, on regrette, on graisse.",
+  "Tu es la preuve vivante que l'évolution accepte aussi les marches arrière.",
+  "Même ton ombre prend ses distances quand le soleil se couche.",
+  "Tu parles beaucoup pour quelqu'un qui n'a rien à déclarer, même à la douane.",
+  "Tu es comme un lundi : personne ne t'a demandé, et tout le monde te subit.",
+  "Ta répartie arrive toujours trois jours après, par lettre recommandée.",
+  "Si l'ennui avait un visage, il te demanderait de lui rendre le sien.",
+  "Tu as le charisme d'une huître en grève.",
+  "Ton avis, c'est comme la notice d'un meuble suédois : il manque toujours une pièce, et personne ne le lit.",
+  "Tu n'as pas inventé la poudre, mais tu as dû souffler sur la mèche par erreur.",
+  "Je ne t'insulte pas : je te décris, et c'est pire.",
+  "Tu es un brouillon que l'on a oublié de recopier au propre.",
+  "Quand tu entres dans une pièce, l'intelligence moyenne baisse ; quand tu en sors, la lumière revient.",
+  "Tu ressembles à une rumeur : on ne sait pas d'où tu viens, et personne n'a envie d'y croire.",
+  "Tu as l'audace d'un mouton qui se prend pour le berger.",
+  "Ta vie est un roman de gare : on te lit en diagonale et on t'oublie sur le quai."
+];
+
 // L'humour noir : la mort, le cimetière et le désespoir, avec le sourire
 const humourNoir = [
   "Mon grand-père est mort paisiblement dans son sommeil. Pas comme les passagers de son bus, qui hurlaient.",

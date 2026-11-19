@@ -212,6 +212,7 @@
       </div>
 
       <button class="bouton-conversation bouton-paires bouton-pyramide" id="ouvrir-pyramide" type="button"><i>🔺</i><b id="nom-pyramide">La pyramide</b><span>15 cartes face cachée, des défis qui montent en puissance</span></button>
+      <button class="bouton-conversation bouton-paires bouton-pyramide" id="ouvrir-garou" type="button"><i>🐺</i><b>Le loup-garou maudit</b><span>De 5 à 16 joueurs : l'appli distribue les rôles et raconte la nuit</span></button>
 
       <div class="puces" id="puces-soiree">
         <button class="puce active" data-genre="tout" type="button">Tout</button>
@@ -295,6 +296,15 @@
       <div class="pyramide" id="pyramide"></div>
       <div class="defi-pyramide" id="defi-pyramide"></div>
       <button class="bouton principal large" id="rejouer-pyramide" type="button">Nouvelle pyramide</button>
+    </div>
+  </div>
+
+  <!-- ===== Le loup-garou, version horreur : on distribue les rôles en passant le téléphone, puis l'appli mène la partie ===== -->
+  <div class="voile" id="fenetre-garou" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-garou" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">🐺 Le loup-garou maudit</p>
+      <div class="garou" id="garou"></div>
     </div>
   </div>
 
