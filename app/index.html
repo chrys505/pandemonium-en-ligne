@@ -162,6 +162,12 @@
       <h1 class="titre">Atelier</h1>
       <p class="sous-titre">Joue avec les images des grands auteurs, puis invente les tiennes.</p>
 
+      <button class="bouton-quintessence bouton-alambic" id="ouvrir-sublimer" type="button">
+        <i aria-hidden="true">✒️</i>
+        <b>Sublimer</b>
+        <span>Écris ton message comme il vient : l'appli le rend élégant, poétique ou romantique, à envoyer</span>
+      </button>
+
       <button class="bouton-quintessence bouton-alambic" id="ouvrir-alambic" type="button">
         <i aria-hidden="true">⚗️</i>
         <b>L'alambic</b>
@@ -338,6 +344,28 @@
     </div>
   </div>
 
+  <!-- ===== Sublimer : ton message, en plus beau (rien ne part sans toi) ===== -->
+  <div class="voile" id="fenetre-sublimer" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-sublimer" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">✒️ Sublimer</p>
+      <div class="sublimer" id="sublimer">
+        <textarea class="champ" id="sublime-texte" rows="3" maxlength="600" placeholder="Ton message, tel qu'il te vient… (ex. : dispo demain pour un café ?)" aria-label="Ton message"></textarea>
+        <div class="tons-sublime" id="sublime-tons"></div>
+        <div class="curseur-sublime">
+          <label for="sublime-degre">Degré : <b id="sublime-degre-nom">Raffiné</b></label>
+          <input type="range" id="sublime-degre" min="1" max="3" step="1" value="2">
+          <div class="graduations"><span>Délicat</span><span>Raffiné</span><span>Grandiloquent</span></div>
+        </div>
+        <div class="formats-image tu-vous">
+          <button type="button" id="sublime-tu">Tutoyer</button>
+          <button type="button" id="sublime-vous">Vouvoyer</button>
+        </div>
+        <div id="sublime-resultat"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== La tirade du jour : le texte, le jeu, puis le tournage face caméra (rien ne quitte le téléphone sans toi) ===== -->
   <div class="voile" id="fenetre-tirade" hidden>
     <div class="fenetre">
@@ -461,6 +489,7 @@
   <script src="../noms-propres.js"></script>
   <script src="../conversation.js"></script>
   <script src="../maudit.js"></script>
+  <script src="../sublimer.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

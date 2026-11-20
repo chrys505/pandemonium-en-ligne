@@ -2111,6 +2111,38 @@ body.maudit .q-liquide::before { background: #ff8a7d; }
 
 .widget-creature .texte-doux { font-size: 1rem; line-height: 1.5; }
 
+/* ===== Sublimer (v53) ===== */
+#fenetre-sublimer .fenetre { max-height: 92vh; overflow-y: auto; }
+.sublimer { text-align: center; }
+.tons-sublime { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; }
+.ton-sublime {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 6px;
+  border-radius: 14px; border: 1px solid var(--bord); background: rgba(255, 255, 255, 0.04);
+  color: var(--creme); font: inherit; cursor: pointer;
+}
+.ton-sublime i { font-style: normal; font-size: 1.4rem; }
+.ton-sublime b { font-family: var(--affiche); font-size: 1.05rem; color: var(--jaune); }
+.ton-sublime span { font-size: 0.7rem; color: var(--doux); line-height: 1.25; }
+.ton-sublime.actif { border: 2px solid transparent; background: linear-gradient(var(--carte), var(--carte)) padding-box, var(--degrade) border-box; box-shadow: 0 0 18px var(--bord); }
+.curseur-sublime { margin: 8px 0 4px; }
+.curseur-sublime label { font-size: 0.9rem; color: var(--doux); }
+.curseur-sublime label b { color: var(--jaune); font-family: var(--affiche); font-size: 1.1rem; }
+.curseur-sublime input[type="range"] { width: 100%; accent-color: var(--jaune); margin: 8px 0 2px; }
+.graduations { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--doux); }
+.tu-vous { margin: 10px 0; }
+.proposition-sublime {
+  margin: 10px 0; padding: 12px 14px; text-align: left; cursor: pointer;
+  border-radius: 16px; border: 1px solid var(--bord); background: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.proposition-sublime.choisie { border-color: var(--jaune); box-shadow: 0 0 18px var(--bord); }
+.texte-sublime { font-family: var(--serif); font-size: 1.08rem; line-height: 1.55; margin: 6px 0 0; color: var(--creme); }
+.mot-sublime {
+  font: inherit; color: var(--jaune); background: none; border: 0; padding: 0; cursor: pointer;
+  text-decoration: underline dotted; text-underline-offset: 3px;
+}
+#sublime-final { font-family: var(--serif); font-size: 1rem; line-height: 1.5; }
+
 /* ===== L'alambic (v51) ===== */
 .bouton-alambic { margin: 6px 0 16px; }
 #fenetre-alambic .fenetre { max-height: 92vh; overflow-y: auto; }

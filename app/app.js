@@ -587,6 +587,7 @@ function mesuresTitres() {
     tirades: etat.tiradesJouees || 0,
     elixirsLegendaires: (etat.elixirs || []).filter(function (x) { return x.rang === 4; }).length,
     collection: (etat.collection || []).length,
+    sublimes: etat.sublimes || 0,
     xp: etat.xp || 0
   };
 }
@@ -615,6 +616,8 @@ const TITRES = [
   ["quintessence", "🌟", "Quintessence pure", "Distiller un élixir légendaire", 4, "elixirsLegendaires", 1],
   ["tragedien", "🎭", "Tragédien du salon", "Te filmer en train de jouer une tirade", 2, "tirades", 1],
   ["comedien", "🏟️", "Sociétaire de la Comédie", "Te filmer dans 10 tirades", 4, "tirades", 10],
+  ["plume", "🪶", "Plume galante", "Envoyer ton premier message sublimé", 1, "sublimes", 1],
+  ["cyrano", "✒️", "Âme de Cyrano", "Envoyer 25 messages sublimés", 3, "sublimes", 25],
   ["collection", "💎", "Collectionneur d'âmes", "Garder 5 trésors dans ta collection", 2, "collection", 5],
   ["esprit", "✦", "Riche en esprit", "Gagner 500 points", 2, "xp", 500],
   ["maitre", "👑", "Maître des fioles", "Gagner 2 000 points", 3, "xp", 2000]
@@ -925,6 +928,194 @@ $("alambic").addEventListener("click", function (e) {
 $("ouvrir-alambic").addEventListener("click", function () { tirerIngredients(); alambic.phase = "choix"; rendreAlambic(); $("fenetre-alambic").hidden = false; });
 $("fermer-alambic").addEventListener("click", function () { $("fenetre-alambic").hidden = true; });
 $("fenetre-alambic").addEventListener("click", function (e) { if (e.target === $("fenetre-alambic")) $("fenetre-alambic").hidden = true; });
+
+// ---------- Sublimer : ton message, en plus beau (sans IA, avec le recueil de sublimer.js) ----------
+const sublime = { ton: "romantique", degre: 2, vous: null, tirage: 0, propositions: [], choisie: 0 };
+
+// {forme tu|forme vous}, {moment}, {objet}, {dobjet}
+function remplirTournure(t, ctx) {
+  return t.replace(/\{([^{}|]*)\|([^{}]*)\}/g, function (_, tu, vous) { return ctx.vous ? vous : tu; })
+    .replace(/\{moment\}/g, ctx.moment).replace(/\{objet\}/g, ctx.objet).replace(/\{dobjet\}/g, ctx.dobjet)
+    .replace(/\s+([,.])/g, "$1").replace(/ {2,}/g, " ");
+}
+
+function lireMessage(texte) {
+  const brut = sansAccents(texte).replace(/’/g, "'");
+  const intentions = SUBLIMER_INTENTIONS.filter(function (i) { return i.motif.test(brut); }).map(function (i) { return i.id; });
+  // « désolé d'être en retard » : le retard suffit ; « merci, ok » : le merci suffit
+  const retirer = function (id) { const i = intentions.indexOf(id); if (i !== -1) intentions.splice(i, 1); };
+  if (intentions.indexOf("retard") !== -1) retirer("excuse");
+  if (intentions.length > 1) retirer("confirmation");
+  const moment = SUBLIMER_MOMENTS.find(function (m) { return m[0].test(brut); });
+  const heure = brut.match(/\b(\d{1,2}) ?h ?(\d{2})?\b/);
+  const objet = SUBLIMER_OBJETS.find(function (o) { return o[0].test(brut); });
+  return {
+    intentions: intentions,
+    salut: SUBLIMER_SALUT.test(brut),
+    auRevoir: SUBLIMER_AU_REVOIR.test(brut),
+    moment: moment ? moment[1] : "",
+    heure: heure ? "à " + heure[1] + " h" + (heure[2] || "") : "",
+    objet: objet,
+    vous: /\b(vous|votre|vos)\b/.test(brut)
+  };
+}
+
+// Ton message, mot à mot, rehaussé selon le degré
+function rehausser(texte, degre) {
+  let t = texte.trim().replace(/\s+/g, " ").replace(/’/g, "'")
+    .replace(/\bt'es\b/gi, "tu es").replace(/\bt'as\b/gi, "tu as").replace(/\bj'suis\b|\bchui\b|\bjsuis\b/gi, "je suis")
+    .replace(/\by'a\b|\by a\b/gi, "il y a").replace(/(^|\s)c(?=\s)/gi, "$1c'est").replace(/\bc koi\b/gi, "qu'est-ce que c'est");
+  // « super », « trop », « grave » devant un autre mot : ce sont des intensifs (« super cool » → « fort délicieux »)
+  const INTENSIFS = ["vraiment", "fort", "prodigieusement"];
+  t = t.replace(/([A-Za-zÀ-ÿ]+)(?=(\s+[A-Za-zÀ-ÿ])?)/g, function (mot, _, suite) {
+    const s = sansAccents(mot);
+    if (suite && (s === "super" || s === "trop" || s === "grave")) return INTENSIFS[degre - 1];
+    const remplace = SUBLIMER_MOTS[s];
+    return remplace ? remplace[degre - 1] : mot;
+  });
+  t = t.replace(/\s+([,.!?;:])/g, function (_, p) { return /[!?;:]/.test(p) ? " " + p : p; })
+    .replace(/ {2,}/g, " ").replace(/^[\s,.]+/, "").trim();
+  if (!t) return "";
+  t = t.charAt(0).toUpperCase() + t.slice(1);
+  if (!/[.!?…]$/.test(t)) t += ".";
+  return t;
+}
+
+function composerSublime(texte) {
+  const lu = lireMessage(texte);
+  const ton = sublime.ton, d = sublime.degre;
+  const vous = sublime.vous === null ? (lu.vous || ton === "pro") : sublime.vous;
+  const objet = lu.objet || [null].concat(SUBLIMER_OBJET_DEFAUT[ton]);
+  const momentTexte = [lu.moment, lu.heure].filter(Boolean).join(" ") || SUBLIMER_MOMENT_DEFAUT[ton];
+  const ctx = { vous: vous, moment: momentTexte, objet: objet[1], dobjet: objet[2] };
+  const intentions = lu.intentions.length ? lu.intentions : (lu.salut ? ["salut"] : []);
+  const rehausse = rehausser(texte, d);
+  const props = [];
+  for (let n = 0; n < 2; n++) {
+    const k = sublime.tirage + n;
+    const pick = function (liste, decal) { return liste.length ? remplirTournure(liste[(k + (decal || 0)) % liste.length], ctx) : ""; };
+    // En pro, si l'on prend déjà des nouvelles, l'ouverture reste un simple « Bonjour, » (pas deux « J'espère… »)
+    const ouvrir = (ton === "pro" && intentions.indexOf("nouvelles") !== -1) ? "Bonjour,"
+      : (lu.salut || d >= 2 || ton === "pro") ? pick(SUBLIMER_OUVERTURES[ton][d]) : "";
+    const fermer = (lu.auRevoir || d >= 2 || ton === "pro") ? pick(SUBLIMER_FERMETURES[ton][d], 1) : "";
+    const corps = intentions.length
+      ? intentions.map(function (id, i) { return pick(SUBLIMER_TOURNURES[id][ton][d], i); }).join(" ")
+      : rehausse;
+    props.push([ouvrir, corps, fermer].filter(Boolean).join("\n\n"));
+  }
+  if (intentions.length && rehausse) props.push(rehausse);
+  // Pas deux propositions identiques
+  return { lu: lu, vous: vous, reconnu: intentions.length > 0, propositions: props.filter(function (p, i) { return p && props.indexOf(p) === i; }) };
+}
+
+// Les mots de l'appli présents dans la proposition : soulignés, avec leur définition
+let indexMotsSublime = null;
+function motsDeLAppliDans(texte) {
+  if (!indexMotsSublime) {
+    indexMotsSublime = {};
+    tousLesMots().forEach(function (m) {
+      if (!m.mot || /\s/.test(m.mot) || m.mot.length < 5 || categorieDe(m) === "courant") return;
+      indexMotsSublime[m.mot.toLowerCase()] = m;
+    });
+  }
+  // Comparaison avec les accents (sinon « faites » deviendrait « faîte ») ; on accepte le pluriel
+  const trouves = [];
+  (texte.match(/[A-Za-zÀ-ÿ-]+/g) || []).forEach(function (w) {
+    const s = w.toLowerCase();
+    const m = indexMotsSublime[s] || indexMotsSublime[s.replace(/s$/, "")];
+    if (m && trouves.indexOf(m) === -1) trouves.push(m);
+  });
+  return trouves;
+}
+
+function htmlProposition(texte, mots) {
+  let html = echapper(texte);
+  mots.forEach(function (m) {
+    const racine = m.mot.toLowerCase();
+    html = html.replace(/[A-Za-zÀ-ÿ-]+/g, function (w) {
+      const s = w.toLowerCase();
+      return (s === racine || s.replace(/s$/, "") === racine)
+        ? '<button type="button" class="mot-sublime" data-mot="' + echapper(m.mot) + '">' + w + "</button>" : w;
+    });
+  });
+  return html.replace(/\n/g, "<br>");
+}
+
+function rendreSublimer() {
+  const z = $("sublimer");
+  const texte = ($("sublime-texte").value || "").trim();
+  $("sublime-tons").innerHTML = SUBLIMER_TONS.map(function (t) {
+    return '<button type="button" class="ton-sublime' + (t.id === sublime.ton ? " actif" : "") + '" data-ton="' + t.id + '"><i>' + t.icone + "</i><b>" + t.nom + "</b><span>" + t.aide + "</span></button>";
+  }).join("");
+  $("sublime-degre-nom").textContent = SUBLIMER_DEGRES[sublime.degre];
+  const res = $("sublime-resultat");
+  if (!texte) { res.innerHTML = '<p class="petit">Écris ton message tel qu\'il te vient, même en SMS (« dispo demain pour un café ? »).</p>'; return; }
+  const c = composerSublime(texte);
+  sublime.propositions = c.propositions;
+  sublime.choisie = Math.min(sublime.choisie, c.propositions.length - 1);
+  $("sublime-tu").classList.toggle("actif", !c.vous);
+  $("sublime-vous").classList.toggle("actif", c.vous);
+  res.innerHTML =
+    (c.reconnu ? "" : '<p class="petit">Je n\'ai pas reconnu de tournure précise (invitation, merci, excuse…) : voici ton message rehaussé.</p>') +
+    c.propositions.map(function (p, i) {
+      const mots = motsDeLAppliDans(p);
+      return '<div class="proposition-sublime' + (i === sublime.choisie ? " choisie" : "") + '" data-prop="' + i + '">' +
+        '<p class="ct-rang">' + (i === c.propositions.length - 1 && c.reconnu && c.propositions.length > 2 ? "Ton message, rehaussé" : "Proposition " + (i + 1)) + "</p>" +
+        '<p class="texte-sublime">' + htmlProposition(p, mots) + "</p>" +
+        (mots.length ? '<p class="petit">Mots de l\'appli : ' + mots.map(function (m) { return echapper(m.mot); }).join(", ") + " (touche-les)</p>" : "") +
+        "</div>";
+    }).join("") +
+    '<p class="petit gauche">Touche une proposition pour la choisir, puis retouche-la si tu veux avant de l\'envoyer.</p>' +
+    '<textarea class="champ" id="sublime-final" rows="5" maxlength="1200" aria-label="Le message à envoyer">' + echapper(c.propositions[sublime.choisie] || "") + "</textarea>" +
+    '<div class="actions-pyramide">' +
+    '<button class="bouton principal" type="button" id="sublime-envoyer">📤 Envoyer</button>' +
+    '<button class="bouton" type="button" id="sublime-copier">📋 Copier</button>' +
+    '<button class="bouton" type="button" id="sublime-autre">🎲 D\'autres tournures</button></div>' +
+    '<p class="petit">Relis avant d\'envoyer : c\'est toi qui signes. Et un compliment touche d\'autant plus qu\'il est sincère.</p>';
+}
+
+// Le message part : ses beaux mots entrent dans les révisions, et la plume gagne en renommée
+function messageSublimeParti() {
+  const texte = $("sublime-final").value;
+  motsDeLAppliDans(texte).forEach(function (m) { entrerEnRevision(m.mot); });
+  etat.sublimes = (etat.sublimes || 0) + 1;
+  etat.xp += 3;
+  sauver();
+  $("xp").textContent = etat.xp;
+  sonBoire(false);
+  setTimeout(verifierTitres, 1200);
+}
+
+$("sublimer").addEventListener("input", function (e) {
+  if (e.target.id === "sublime-texte") { sublime.choisie = 0; rendreSublimer(); }
+  else if (e.target.id === "sublime-degre") { sublime.degre = Number(e.target.value); sublime.choisie = 0; sonGorgee(); rendreSublimer(); }
+});
+$("sublimer").addEventListener("click", function (e) {
+  const b = e.target.closest("button, .proposition-sublime");
+  if (!b) return;
+  if (b.classList.contains("mot-sublime")) {
+    const m = tousLesMots().find(function (x) { return x.mot === b.dataset.mot; });
+    if (m) { ouvrirFiche(m); }
+    return;
+  }
+  if (b.dataset.ton) { sublime.ton = b.dataset.ton; sublime.choisie = 0; sonClic(); rendreSublimer(); return; }
+  if (b.classList.contains("proposition-sublime")) { sublime.choisie = Number(b.dataset.prop); rendreSublimer(); return; }
+  if (b.id === "sublime-tu" || b.id === "sublime-vous") { sublime.vous = b.id === "sublime-vous"; rendreSublimer(); return; }
+  if (b.id === "sublime-autre") { sublime.tirage++; sonFiole(); rendreSublimer(); return; }
+  if (b.id === "sublime-copier") {
+    const t = $("sublime-final").value;
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { $("sublime-copier").textContent = "✅ Copié !"; messageSublimeParti(); }).catch(function () {});
+    return;
+  }
+  if (b.id === "sublime-envoyer") {
+    const t = $("sublime-final").value;
+    if (navigator.share) navigator.share({ text: t }).then(messageSublimeParti).catch(function () {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { $("sublime-envoyer").textContent = "✅ Copié, colle-le dans ta messagerie"; messageSublimeParti(); });
+  }
+});
+$("ouvrir-sublimer").addEventListener("click", function () { rendreSublimer(); $("fenetre-sublimer").hidden = false; sonFiole(); });
+$("fermer-sublimer").addEventListener("click", function () { $("fenetre-sublimer").hidden = true; });
+$("fenetre-sublimer").addEventListener("click", function (e) { if (e.target === $("fenetre-sublimer")) $("fenetre-sublimer").hidden = true; });
 
 // ---------- La tirade du jour : un grand texte du théâtre, à jouer face caméra ----------
 const tiradesDispo = typeof tirades !== "undefined" ? tirades : [];
