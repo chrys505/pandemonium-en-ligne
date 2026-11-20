@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Le Fil · Pandémonium des mots</title>
+  <link rel="icon" href="icones/icone-192.png">
+  <style>
+    /* ===== Le Fil : le scroll culture, version test (même direction artistique que l'appli) ===== */
+    :root {
+      --noir: #0a0a0a; --creme: #fbf3e0; --doux: #c4b89e; --jaune: #f5c542; --orange: #d9a21b;
+      --bord: rgba(245, 197, 66, 0.22);
+      --degrade: linear-gradient(100deg, #fff6d8 0%, #ffd56b 22%, #f5c542 45%, #b8860b 70%, #fff1b8 100%);
+      --police: -apple-system, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --affiche: Didot, "Bodoni 72", "Bodoni MT", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    body.maudit {
+      --jaune: #ff3b2f; --orange: #c1121f; --creme: #f2e4e1; --doux: #b49390; --bord: rgba(255, 40, 30, 0.26);
+      --degrade: linear-gradient(100deg, #ffb3a7 0%, #ff3b2f 30%, #9d0208 60%, #ff3b2f 85%, #ffb3a7 100%);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--noir); color: var(--creme); font-family: var(--police); -webkit-tap-highlight-color: transparent; overscroll-behavior: none; }
+    .fil { height: 100dvh; overflow-y: scroll; scroll-snap-type: y mandatory; scrollbar-width: none; }
+    .fil::-webkit-scrollbar { display: none; }
+
+    .haut {
+      position: fixed; z-index: 10; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center;
+      padding: calc(env(safe-area-inset-top) + 12px) 18px 12px; background: linear-gradient(rgba(0,0,0,0.75), transparent); pointer-events: none;
+    }
+    .haut a, .haut button { pointer-events: auto; }
+    .marque { font-family: var(--affiche); font-size: 1.15rem; font-style: italic; text-decoration: none; color: var(--creme); }
+    .marque span { background: var(--degrade); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .gorgees { padding: 6px 12px; border-radius: 999px; background: rgba(0,0,0,0.5); border: 1px solid var(--bord); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+
+    .carte {
+      position: relative; height: 100dvh; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center; padding: 90px 74px 110px 24px;
+      background: radial-gradient(ellipse at 30% 25%, var(--lueur, rgba(245,197,66,0.16)), transparent 60%), radial-gradient(ellipse at 80% 90%, rgba(255,255,255,0.05), transparent 55%), #0b0907;
+    }
+    body.maudit .carte { background: radial-gradient(ellipse at 30% 25%, rgba(255, 40, 30, 0.2), transparent 60%), #0d0404; }
+    .carte > * { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .carte.visible > * { opacity: 1; transform: none; }
+    .carte.visible > *:nth-child(2) { transition-delay: 0.12s; } .carte.visible > *:nth-child(3) { transition-delay: 0.24s; }
+    .carte.visible > *:nth-child(4) { transition-delay: 0.36s; } .carte.visible > *:nth-child(5) { transition-delay: 0.48s; }
+    .etiquette { margin: 0 0 14px; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--jaune); font-weight: 700; }
+    .grand { margin: 0 0 16px; font-family: var(--affiche); font-size: clamp(2.6rem, 12vw, 4.4rem); line-height: 1.02;
+      background: var(--degrade); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: reflet 5s linear infinite; }
+    .moyen { margin: 0 0 16px; font-family: var(--affiche); font-size: clamp(1.8rem, 8vw, 2.6rem); line-height: 1.12; }
+    .citation { margin: 0 0 16px; font-family: var(--serif); font-style: italic; font-size: clamp(1.5rem, 6.5vw, 2.1rem); line-height: 1.35; }
+    .texte { margin: 0 0 14px; font-family: var(--serif); font-size: 1.18rem; line-height: 1.55; color: var(--creme); }
+    .doux { margin: 0 0 12px; font-size: 0.95rem; line-height: 1.5; color: var(--doux); }
+    .auteur { margin: 0; font-size: 0.95rem; color: var(--jaune); }
+    .icone { font-size: 4.2rem; margin: 0 0 6px; filter: drop-shadow(0 0 22px var(--jaune)); }
+    .puces { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+    .puces span { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--bord); font-family: var(--serif); background: rgba(255,255,255,0.05); }
+    .reveler { align-self: flex-start; margin-top: 4px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--bord); background: rgba(255,255,255,0.06); color: var(--creme); font: inherit; cursor: pointer; }
+    .vf { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+    .vf button { padding: 16px 8px; border: none; border-radius: 16px; font: inherit; font-weight: 700; font-size: 1.05rem; color: #fff; cursor: pointer; }
+    .vf .v { background: linear-gradient(135deg, #2f9e6e, #1d6b4a); } .vf .f { background: linear-gradient(135deg, #c43a3f, #7d1d22); }
+    .verdict { margin-top: 12px; padding: 12px 14px; border-left: 3px solid var(--jaune); border-radius: 0 12px 12px 0; background: rgba(255,255,255,0.05); font-size: 1rem; line-height: 1.5; }
+
+    /* La colonne d'actions, comme sur les réseaux */
+    .actions { position: absolute; right: 12px; bottom: 120px; display: flex; flex-direction: column; gap: 20px; align-items: center; opacity: 1 !important; transform: none !important; }
+    .actions button { width: 52px; border: none; background: none; color: var(--creme); font: inherit; font-size: 0.72rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .actions i { font-style: normal; font-size: 1.9rem; width: 52px; height: 52px; display: grid; place-content: center; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid var(--bord); transition: transform 0.2s ease; }
+    .actions button:active i { transform: scale(0.88); }
+    .actions .bu i { background: var(--degrade); box-shadow: 0 0 18px var(--jaune); }
+
+    /* Double toucher : une fiole jaillit */
+    .gorgee { position: absolute; z-index: 5; font-size: 5rem; pointer-events: none; transform: translate(-50%, -50%); animation: gorgee 0.9s ease-out forwards; filter: drop-shadow(0 0 20px var(--jaune)); opacity: 1 !important; }
+    @keyframes gorgee { 0% { transform: translate(-50%, -50%) scale(0.3) rotate(-20deg); opacity: 0; } 30% { transform: translate(-50%, -60%) scale(1.25) rotate(8deg); opacity: 1; } 100% { transform: translate(-50%, -140%) scale(0.9); opacity: 0; } }
+    @keyframes reflet { to { background-position: 200% center; } }
+
+    .indice { position: fixed; z-index: 10; bottom: calc(env(safe-area-inset-bottom) + 18px); left: 0; right: 0; text-align: center; font-size: 0.85rem; color: var(--doux); pointer-events: none; animation: indice 2s ease-in-out infinite; }
+    @keyframes indice { 0%, 100% { transform: translateY(0); opacity: 0.6; } 50% { transform: translateY(-6px); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .grand, .indice, .gorgee { animation: none; } .carte > * { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="haut">
+    <a class="marque" href="./"><span>Pandémonium</span> · le Fil</a>
+    <span class="gorgees" id="gorgees">🧪 0 gorgée</span>
+  </header>
+  <main class="fil" id="fil" aria-label="Le fil des savoirs"></main>
+  <p class="indice" id="indice">↑ Glisse vers le haut · double-touche pour boire</p>
+
+  <script src="../mots-plus.js"></script>
+  <script src="../mots.js"></script>
+  <script src="../citations-plus.js"></script>
+  <script src="../contenus.js"></script>
+  <script src="../maudit.js"></script>
+  <script>
+  // ===== Le Fil : un scroll culture infini, carte après carte =====
+  const $ = function (id) { return document.getElementById(id); };
+  const echapper = function (t) { return String(t == null ? "" : t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  const auHasard = function (l) { return l[Math.floor(Math.random() * l.length)]; };
+  const dispo = function (nom) { try { return eval(nom); } catch (e) { return null; } };
+
+  // La version claire ou sombre, comme dans l'appli
+  let maudit = false;
+  try { maudit = !!(JSON.parse(localStorage.getItem("pandemonium-des-mots") || "{}").maudit); } catch (e) {}
+  document.body.classList.toggle("maudit", maudit);
+
+  const tousMots = [].concat(
+    (dispo("mots") || []).map(function (m) { return { mot: m.mot, definition: m.definition }; }),
+    (dispo("motsPlus") || []).map(function (m) { return { mot: m[0], definition: m[1] }; })
+  ).filter(function (m) { return m.definition; });
+
+  // Chaque type de carte : une façon de servir une gorgée de savoir
+  const TYPES = {
+    mot: function () { const m = auHasard(tousMots); return { lueur: "rgba(245,197,66,0.18)", html:
+      '<p class="etiquette">💎 Le mot</p><p class="grand">' + echapper(m.mot) + '</p><p class="texte">' + echapper(m.definition) + "</p>", partage: m.mot + " : " + m.definition }; },
+    concept: function () { const c = auHasard(dispo("concepts") || []); return { lueur: "rgba(120,170,255,0.16)", html:
+      '<p class="etiquette">🧠 ' + echapper(c.famille) + '</p><p class="moyen">' + echapper(c.nom) + '</p><p class="texte">' + echapper(c.explication) + "</p>" +
+      (c.exemple ? '<p class="doux">' + echapper(c.exemple) + "</p>" : ""), partage: c.nom + " : " + c.explication }; },
+    citation: function () { const c = auHasard((dispo("citationsPlus") || []).filter(function (x) { return x[1] && x[1].indexOf("confirmer") === -1; })); return { lueur: "rgba(255,210,140,0.14)", html:
+      '<p class="etiquette">📜 La citation</p><p class="citation">« ' + echapper(c[0]) + ' »</p><p class="auteur">— ' + echapper(c[1]) + "</p>", partage: "« " + c[0] + " » — " + c[1] }; },
+    expression: function () { const e = auHasard(dispo("expressionsPlus") || []); return { lueur: "rgba(200,140,255,0.14)", html:
+      '<p class="etiquette">💬 L\'expression</p><p class="moyen">« ' + echapper(e[0]) + ' »</p><p class="texte">' + echapper(e[1]) + "</p>", partage: "« " + e[0] + " » : " + e[1] }; },
+    pensee: function () { const p = auHasard(dispo("philosophiesPlus") || []); return { lueur: "rgba(255,240,200,0.12)", html:
+      '<p class="etiquette">🕯️ La pensée</p><p class="citation">' + echapper(p[0]) + "</p>" + (p[1] ? '<p class="auteur">— ' + echapper(p[1]) + "</p>" : ""), partage: p[0] }; },
+    creature: function () { const b = auHasard(dispo("bestiaire") || []); return { lueur: "rgba(80,220,160,0.14)", html:
+      '<p class="etiquette">🐉 Le bestiaire · ' + echapper(b.origine) + '</p><p class="icone">' + b.icone + '</p><p class="moyen">' + echapper(b.nom) + '</p><p class="texte">' + echapper(b.legende) + "</p>" +
+      '<button class="reveler" type="button" data-reveler="' + echapper(b.savais) + '">✨ Le savais-tu ?</button>', partage: b.nom + " : " + b.legende }; },
+    sort: function () { const s = auHasard(dispo("sortileges") || []); return { lueur: "rgba(245,197,66,0.2)", html:
+      '<p class="etiquette">🪄 Le sortilège · du ' + echapper(s.langue) + '</p><p class="grand">' + echapper(s.formule) + '</p><p class="doux">' + echapper(s.sens) + "</p>" +
+      '<div class="puces">' + s.mots.map(function (m) { return "<span>" + echapper(m) + "</span>"; }).join("") + '</div><p class="texte">' + echapper(s.secret) + "</p>", partage: s.formule + " (" + s.sens + ") : " + s.mots.join(", ") }; },
+    vraifaux: function () { const a = auHasard(dispo("vraiOuGalejade") || []); return { lueur: "rgba(255,120,120,0.14)", html:
+      '<p class="etiquette">🎭 Vrai ou galéjade ?</p><p class="moyen">' + echapper(a[0]) + "</p>" +
+      '<div class="vf" data-vrai="' + (a[1] ? 1 : 0) + '" data-explication="' + echapper(a[2]) + '"><button class="v" type="button" data-rep="1">✅ Vrai</button><button class="f" type="button" data-rep="0">🎭 Galéjade</button></div>', partage: "Vrai ou galéjade ? " + a[0] }; },
+    tirade: function () { const t = auHasard(dispo("tirades") || []); return { lueur: "rgba(255,170,90,0.16)", html:
+      '<p class="etiquette">🎭 La tirade · ' + echapper(t.personnage) + '</p><p class="citation">' + echapper(t.texte).replace(/\n/g, "<br>") + '</p><p class="auteur">' + echapper(t.oeuvre) + " · " + echapper(t.auteur) + "</p>", partage: t.texte.split("\n")[0] + " — " + t.auteur }; },
+    film: function () { const f = auHasard(dispo("filmsHorreur") || []); return { lueur: "rgba(255,40,40,0.16)", html:
+      '<p class="etiquette">🎬 Le film d\'horreur</p><p class="moyen">' + echapper(f[0]) + '</p><p class="texte">' + echapper(f[1]) + "</p>" +
+      '<button class="reveler" type="button" data-reveler="' + echapper(f[2]) + '">🕯️ En coulisse</button>', partage: f[0] + " : " + f[1] }; }
+  };
+  // Le dosage du fil : beaucoup de mots, des concepts, des surprises
+  const DOSAGE = ["mot", "mot", "mot", "concept", "concept", "citation", "expression", "pensee", "creature", "sort", "vraifaux", "vraifaux", "tirade"].concat(maudit ? ["film", "film"] : ["film"]);
+  let dernierType = "";
+
+  function nouvelleCarte() {
+    let type, essai = 0, c = null;
+    do { type = auHasard(DOSAGE); essai++; } while (type === dernierType && essai < 10);
+    dernierType = type;
+    try { c = TYPES[type](); } catch (e) { c = TYPES.mot(); }
+    const s = document.createElement("section");
+    s.className = "carte";
+    s.style.setProperty("--lueur", c.lueur);
+    s.dataset.partage = c.partage;
+    s.innerHTML = c.html +
+      '<div class="actions"><button type="button" data-action="boire"><i>🧪</i><span>Boire</span></button>' +
+      '<button type="button" data-action="partager"><i>📤</i><span>Partager</span></button>' +
+      '<button type="button" data-action="appli"><i>⚗️</i><span>L\'appli</span></button></div>';
+    $("fil").appendChild(s);
+    observateur.observe(s);
+  }
+
+  // Une carte entre à l'écran : elle s'anime ; à l'approche de la fin, on en ajoute
+  const observateur = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("visible");
+      const cartes = $("fil").children;
+      if (e.target === cartes[cartes.length - 2] || e.target === cartes[cartes.length - 1]) for (let i = 0; i < 4; i++) nouvelleCarte();
+      if (e.target !== cartes[0]) $("indice").style.display = "none";
+    });
+  }, { threshold: 0.6 });
+
+  // Les gorgées du jour : le compteur de savoir bu
+  const jour = new Date().toISOString().slice(0, 10);
+  let compte = 0;
+  try { const g = JSON.parse(localStorage.getItem("fil-gorgees") || "{}"); compte = g.jour === jour ? g.n : 0; } catch (e) {}
+  function majCompte() { $("gorgees").textContent = "🧪 " + compte + " gorgée" + (compte > 1 ? "s" : ""); try { localStorage.setItem("fil-gorgees", JSON.stringify({ jour: jour, n: compte })); } catch (e) {} }
+  majCompte();
+
+  let ctx = null;
+  function glouglou() {
+    try {
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      const t = ctx.currentTime;
+      [0, 0.09, 0.18].forEach(function (d, k) {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = "sine"; o.frequency.setValueAtTime(maudit ? 260 - k * 30 : 420 + k * 90, t + d); o.frequency.exponentialRampToValueAtTime(maudit ? 120 : 900 + k * 150, t + d + 0.08);
+        g.gain.setValueAtTime(0.0001, t + d); g.gain.exponentialRampToValueAtTime(0.18, t + d + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + d + 0.1);
+        o.connect(g).connect(ctx.destination); o.start(t + d); o.stop(t + d + 0.12);
+      });
+    } catch (e) {}
+  }
+
+  function boire(carte, x, y) {
+    const f = document.createElement("span");
+    f.className = "gorgee"; f.textContent = maudit ? "🩸" : "🧪";
+    f.style.left = x + "px"; f.style.top = y + "px";
+    carte.appendChild(f); setTimeout(function () { f.remove(); }, 900);
+    glouglou();
+    if (navigator.vibrate) { try { navigator.vibrate(12); } catch (e) {} }
+    const b = carte.querySelector('[data-action="boire"]');
+    if (!b.classList.contains("bu")) { b.classList.add("bu"); compte++; majCompte(); }
+  }
+
+  let dernierToucher = 0;
+  $("fil").addEventListener("click", function (e) {
+    const carte = e.target.closest(".carte");
+    if (!carte) return;
+    const a = e.target.closest("[data-action]");
+    if (a) {
+      if (a.dataset.action === "boire") { const r = a.getBoundingClientRect(); boire(carte, r.left - 40, r.top); }
+      if (a.dataset.action === "partager") {
+        const texte = carte.dataset.partage + "\n\n⚗️ Pandémonium des mots\nhttps://chrys505.github.io/pandemonium-en-ligne/app/fil.html";
+        if (navigator.share) navigator.share({ text: texte }).catch(function () {});
+        else if (navigator.clipboard) navigator.clipboard.writeText(texte).then(function () { a.querySelector("span").textContent = "Copié !"; });
+      }
+      if (a.dataset.action === "appli") location.href = "./";
+      return;
+    }
+    const rev = e.target.closest("[data-reveler]");
+    if (rev) { rev.outerHTML = '<p class="verdict">' + echapper(rev.dataset.reveler) + "</p>"; return; }
+    const rep = e.target.closest("[data-rep]");
+    if (rep) {
+      const vf = rep.closest(".vf");
+      const juste = rep.dataset.rep === vf.dataset.vrai;
+      vf.outerHTML = '<p class="verdict">' + (juste ? "✅ Bien vu ! " : "❌ Raté ! ") + echapper(vf.dataset.explication) + "</p>";
+      if (juste) boire(carte, e.clientX, e.clientY);
+      return;
+    }
+    // Double toucher n'importe où sur la carte : on boit
+    const maintenant = Date.now();
+    if (maintenant - dernierToucher < 320) boire(carte, e.clientX, e.clientY);
+    dernierToucher = maintenant;
+  });
+
+  for (let i = 0; i < 5; i++) nouvelleCarte();
+  </script>
+</body>
+</html>
