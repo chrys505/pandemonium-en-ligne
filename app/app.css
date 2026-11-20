@@ -1903,3 +1903,117 @@ body.maudit .q-liquide::before { background: #ff8a7d; }
   *, *::before { animation: none !important; transition: none !important; }
   .q-titre span { opacity: 1; }
 }
+
+/* ===== Les petits plaisirs : étincelles au toucher, flamme vivante, widgets (v48) ===== */
+.etincelle-doigt {
+  position: fixed; z-index: 9999; pointer-events: none;
+  width: var(--taille); height: var(--taille); margin: calc(var(--taille) / -2) 0 0 calc(var(--taille) / -2);
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffbe6 0%, var(--jaune) 45%, transparent 75%);
+  box-shadow: 0 0 8px var(--jaune);
+  animation: etincelle-jaillit 0.7s cubic-bezier(.2,.8,.3,1) forwards;
+}
+@keyframes etincelle-jaillit {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--dx), calc(var(--dy) + 22px)) scale(0.2); opacity: 0; }
+}
+
+/* La flamme de la série vacille */
+.flamme { animation: flamme-vacille 2.4s ease-in-out infinite; }
+@keyframes flamme-vacille {
+  0%, 100% { box-shadow: 0 0 0 rgba(255, 140, 40, 0); }
+  50% { box-shadow: 0 0 14px rgba(255, 150, 40, 0.45); }
+}
+
+.widgets { display: grid; gap: 14px; margin: 14px 0 6px; }
+.widget {
+  position: relative; overflow: hidden;
+  padding: 18px; border-radius: 22px;
+  background: var(--carte); border: 1px solid var(--bord);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+}
+/* Un reflet de verre passe lentement sur chaque widget */
+.widget::after {
+  content: ""; position: absolute; inset: -40% auto -40% -60%; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 240, 200, 0.07), transparent);
+  transform: rotate(12deg); animation: widget-reflet 7s ease-in-out infinite; pointer-events: none;
+}
+@keyframes widget-reflet { 0%, 60% { left: -60%; } 100% { left: 130%; } }
+
+/* --- La fiole mystère --- */
+.widget-mystere { cursor: pointer; }
+.mystere-fiole { position: relative; width: 74px; height: 104px; margin: 6px auto 10px; animation: q-flotte 3.2s ease-in-out infinite; }
+.mystere-bouchon { position: absolute; left: 50%; top: 0; width: 22px; height: 14px; margin-left: -11px; border-radius: 4px 4px 2px 2px; background: linear-gradient(#a0703c, #6b4520); }
+.mystere-verre {
+  position: absolute; left: 50%; bottom: 0; width: 70px; height: 84px; margin-left: -35px;
+  border-radius: 40% 40% 46% 46% / 30% 30% 60% 60%;
+  border: 2px solid rgba(255, 240, 200, 0.5);
+  background: radial-gradient(circle at 50% 75%, var(--jaune), var(--orange) 55%, rgba(0, 0, 0, 0.4) 100%);
+  box-shadow: 0 0 26px var(--bord), inset 0 -10px 20px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+.mystere-verre i {
+  position: absolute; bottom: -10px; width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75); animation: mystere-bulle 2.6s ease-in infinite;
+}
+.mystere-verre i:nth-child(1) { left: 20%; animation-delay: 0s; }
+.mystere-verre i:nth-child(2) { left: 45%; animation-delay: 0.7s; width: 5px; height: 5px; }
+.mystere-verre i:nth-child(3) { left: 65%; animation-delay: 1.3s; }
+.mystere-verre i:nth-child(4) { left: 35%; animation-delay: 1.9s; width: 4px; height: 4px; }
+@keyframes mystere-bulle { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-90px); opacity: 0; } }
+.widget-mystere.secoue .mystere-fiole { animation: mystere-secousse 0.18s ease-in-out 5; }
+@keyframes mystere-secousse { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-16deg) translateX(-4px); } 75% { transform: rotate(16deg) translateX(4px); } }
+.widget-mystere.ouverte { animation: mystere-ouvre 0.6s ease-out; text-align: left; }
+@keyframes mystere-ouvre { from { transform: scale(0.94); opacity: 0.3; } to { transform: scale(1); opacity: 1; } }
+.mystere-titre { font-family: var(--serif); font-size: 1.35rem; }
+.mystere-rebours { margin-top: 12px; text-align: center; }
+.mystere-rebours b { font-variant-numeric: tabular-nums; color: var(--jaune); }
+.widget-mystere.legendaire {
+  border-color: transparent;
+  background: linear-gradient(var(--carte), var(--carte)) padding-box, var(--degrade) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 0 30px var(--bord);
+}
+.widget-mystere.legendaire .mystere-titre {
+  background: var(--degrade); background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: reflet 3s linear infinite;
+}
+
+/* --- La bibliothèque des savoirs --- */
+.widget-biblio { text-align: left; }
+.biblio-haut { display: flex; align-items: center; gap: 16px; }
+.anneau {
+  --pc: 0; flex: 0 0 auto; width: 86px; height: 86px; border-radius: 50%;
+  display: grid; place-content: center; text-align: center;
+  background:
+    radial-gradient(closest-side, rgba(10, 8, 6, 0.92) 78%, transparent 80%),
+    conic-gradient(var(--jaune) calc(var(--pc) * 1%), rgba(255, 255, 255, 0.08) 0);
+  box-shadow: 0 0 18px var(--bord);
+  animation: anneau-pouls 3s ease-in-out infinite;
+}
+.anneau b { font-size: 1.15rem; line-height: 1; }
+.anneau span { font-size: 0.7rem; color: var(--doux); }
+@keyframes anneau-pouls { 0%, 100% { box-shadow: 0 0 10px var(--bord); } 50% { box-shadow: 0 0 24px var(--bord); } }
+.biblio-chiffres { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 14px 0 12px; }
+.biblio-chiffres span { padding: 8px 10px; border-radius: 12px; background: rgba(255, 255, 255, 0.04); font-size: 0.85rem; color: var(--doux); }
+.biblio-chiffres b { color: var(--creme); font-size: 1.05rem; }
+.biblio-recherche input {
+  width: 100%; padding: 12px 14px; border-radius: 14px;
+  border: 1px solid var(--bord); background: rgba(0, 0, 0, 0.3); color: var(--creme); font: inherit; font-size: 1rem;
+}
+.biblio-recherche input:focus { outline: none; border-color: var(--jaune); box-shadow: 0 0 0 3px var(--bord); }
+
+/* --- Le fil des savoirs --- */
+.widget-fil { text-align: left; cursor: pointer; min-height: 150px; }
+.fil-point { display: inline-block; width: 7px; height: 7px; margin-left: 6px; border-radius: 50%; background: var(--jaune); vertical-align: middle; animation: fil-clignote 1.6s ease-in-out infinite; }
+@keyframes fil-clignote { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+.fil-entre { animation: fil-entre 0.7s ease-out; }
+@keyframes fil-entre { from { opacity: 0; transform: translateY(8px); filter: blur(3px); } to { opacity: 1; transform: none; filter: none; } }
+.fil-etiquette { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--jaune); }
+.fil-titre { margin: 6px 0 4px; font-family: var(--serif); font-size: 1.15rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .flamme, .widget::after, .mystere-fiole, .mystere-verre i, .anneau, .fil-point { animation: none; }
+}

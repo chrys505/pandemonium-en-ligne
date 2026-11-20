@@ -484,10 +484,135 @@ function majAccueil() {
   majCompteARebours();
   majRappelRevision();
   majBoutonQuintessence();
+  majWidgets();
   if (etat.maudit) rendreMaudit(false);
   else $("etiquette-hero").textContent = "Le mot du jour";
   montrer("accueil-session");
 }
+
+// ---------- Les widgets de l'accueil : regrouper nos savoirs, y accéder, les développer ----------
+function deuxPhrases(texte) {
+  const p = String(texte || "").match(/[^.!?]+[.!?]+/g) || [texte];
+  return p.slice(0, 2).join("").trim();
+}
+
+// Un trésor tiré au hasard dans tout ce que l'appli contient
+function tresorAuHasard() {
+  const tirages = [
+    function () { const m = auHasard(motsRaresDispo()); return { etiquette: "💎 Mot rare", titre: m.mot, texte: m.definition, mot: m.mot }; },
+    function () { const c = auHasard(conceptsDispo); return { etiquette: "🧠 Concept · " + c.famille, titre: c.nom, texte: deuxPhrases(c.explication) }; },
+    function () { const c = auHasard(toutesLesCitations()); return { etiquette: "📜 Citation", titre: "« " + c.texte + " »", texte: c.auteur || "" }; },
+    function () { const e = auHasard(expressionsPlus); return { etiquette: "💬 Expression", titre: e[0], texte: e[1] }; }
+  ];
+  if (etat.maudit && typeof filmsHorreur !== "undefined") {
+    tirages.push(function () { const f = auHasard(filmsHorreur); return { etiquette: "🎬 Film d'horreur", titre: f[0], texte: f[1] }; });
+    tirages.push(function () { const r = auHasard(rumeurs); return { etiquette: "🕵️ Rumeur", titre: r[0], texte: r[2] }; });
+  }
+  return auHasard(tirages)();
+}
+
+function reboursMinuit() {
+  const minuit = new Date(); minuit.setHours(24, 0, 0, 0);
+  const s = Math.max(0, Math.floor((minuit - new Date()) / 1000));
+  return Math.floor(s / 3600) + " h " + String(Math.floor(s % 3600 / 60)).padStart(2, "0") + " min " + String(s % 60).padStart(2, "0") + " s";
+}
+
+function widgetMystere() {
+  const m = etat.mystere && etat.mystere.jour === aujourdhui ? etat.mystere.tresor : null;
+  if (!m) {
+    return '<article class="widget widget-mystere" id="widget-mystere" role="button" tabindex="0">' +
+      '<p class="etiquette">🔮 La fiole mystère</p>' +
+      '<div class="mystere-fiole" aria-hidden="true"><span class="mystere-bouchon"></span><span class="mystere-verre"><i></i><i></i><i></i><i></i></span></div>' +
+      '<p class="grimoire-titre">Secoue-la : un trésor t\'attend</p>' +
+      '<p class="petit">Une seule par jour. Parfois, une goutte légendaire…</p></article>';
+  }
+  return '<article class="widget widget-mystere ouverte' + (m.legendaire ? " legendaire" : "") + '">' +
+    '<p class="etiquette">' + (m.legendaire ? "✨ Goutte légendaire · " : "🔮 ") + echapper(m.etiquette) + "</p>" +
+    '<p class="grimoire-titre mystere-titre">' + echapper(m.titre) + "</p>" +
+    '<p class="texte-doux">' + echapper(m.texte) + "</p>" +
+    (m.mot ? '<button class="bouton petit-bouton" type="button" data-chercher="' + echapper(m.mot) + '">🔎 Voir dans le dictionnaire</button>' : "") +
+    '<p class="petit mystere-rebours">⏳ Prochaine fiole dans <b id="mystere-rebours">' + reboursMinuit() + "</b></p></article>";
+}
+
+function widgetBibliotheque() {
+  const total = tousLesMots().length;
+  const bus = Object.keys(etat.boites || {}).length;
+  const pc = total ? Math.min(100, Math.round(bus / total * 1000) / 10) : 0;
+  const nb = function (n, mot) { return "<span><b>" + n + "</b> " + mot + "</span>"; };
+  return '<article class="widget widget-biblio">' +
+    '<div class="biblio-haut"><div class="anneau" style="--pc:' + pc + '"><b>' + pc + '%</b><span>bus</span></div>' +
+    '<div><p class="etiquette">🏛️ La bibliothèque des savoirs</p>' +
+    '<p class="grimoire-titre">' + bus + " mot" + (bus > 1 ? "s" : "") + " bu" + (bus > 1 ? "s" : "") + " sur " + total + "</p>" +
+    '<p class="petit gauche">Chaque élixir bu remplit un peu plus la bibliothèque.</p></div></div>' +
+    '<div class="biblio-chiffres">' + nb(conceptsDispo.length, "concepts") + nb(toutesLesCitations().length, "citations") +
+      nb(typeof expressionsPlus !== "undefined" ? expressionsPlus.length : 0, "expressions") +
+      nb(typeof nomsPropres !== "undefined" && nomsPropres.length ? nomsPropres.length : motsRaresDispo().length, typeof nomsPropres !== "undefined" && nomsPropres.length ? "noms propres" : "mots rares") + "</div>" +
+    '<form class="biblio-recherche" id="biblio-recherche"><input type="search" id="biblio-champ" placeholder="🔎 Cherche dans tous nos savoirs…" autocomplete="off" aria-label="Chercher dans tous nos savoirs"></form>' +
+    "</article>";
+}
+
+function widgetFil() {
+  return '<article class="widget widget-fil" id="widget-fil" role="button" tabindex="0" aria-live="polite">' +
+    '<p class="etiquette">🌀 Le fil des savoirs <span class="fil-point"></span></p><div class="fil-contenu" id="fil-contenu"></div></article>';
+}
+
+function majFil() {
+  const z = $("fil-contenu");
+  if (!z) return;
+  const t = tresorAuHasard();
+  z.classList.remove("fil-entre");
+  void z.offsetWidth;
+  z.innerHTML = '<span class="fil-etiquette">' + echapper(t.etiquette) + "</span>" +
+    '<p class="fil-titre">' + echapper(t.titre) + "</p>" + '<p class="petit gauche">' + echapper(t.texte) + "</p>";
+  z.classList.add("fil-entre");
+}
+
+function majWidgets() {
+  $("widgets").innerHTML = widgetMystere() + widgetBibliotheque() + widgetFil();
+  majFil();
+}
+
+// Le fil défile tout seul ; le compte à rebours de la fiole tourne à la seconde
+setInterval(function () { if (!document.hidden && !$("ecran-aujourdhui").hidden) majFil(); }, 8000);
+setInterval(function () { const r = $("mystere-rebours"); if (r) r.textContent = reboursMinuit(); }, 1000);
+
+function chercherDansLeDico(q) {
+  allerA("reviser");
+  $("dico-recherche").value = q;
+  majDico();
+  setTimeout(function () { $("dico-recherche").scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+}
+
+$("widgets").addEventListener("click", function (e) {
+  const ch = e.target.closest("[data-chercher]");
+  if (ch) { chercherDansLeDico(ch.dataset.chercher); return; }
+  if (e.target.closest("#widget-fil")) { majFil(); return; }
+  const f = e.target.closest("#widget-mystere");
+  if (!f || f.classList.contains("secoue")) return;
+  f.classList.add("secoue");
+  sonFiole();
+  setTimeout(function () {
+    const t = tresorAuHasard();
+    t.legendaire = Math.random() < 0.125;
+    etat.mystere = { jour: aujourdhui, tresor: t };
+    etat.xp += t.legendaire ? 20 : 5;
+    sauver();
+    $("xp").textContent = etat.xp;
+    sonBoire(t.legendaire);
+    if (t.legendaire) feterAvecDesBraises();
+    $("widgets").querySelector(".widget-mystere").outerHTML = widgetMystere();
+    const r = f.getBoundingClientRect();
+    etincellesAuToucher(r.left + r.width / 2, r.top + 60, t.legendaire ? 30 : 16);
+  }, 900);
+});
+$("widgets").addEventListener("keydown", function (e) {
+  if ((e.key === "Enter" || e.key === " ") && e.target.closest("[role='button']")) { e.preventDefault(); e.target.click(); }
+});
+$("widgets").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const q = $("biblio-champ").value.trim();
+  if (q) chercherDansLeDico(q);
+});
 
 // ---------- L'image à partager : le mot du jour dans sa fiole, dessiné par l'appli (format publication ou story) ----------
 const imagePartage = { format: "post", fichier: null, url: "" };
@@ -983,6 +1108,31 @@ function sonBascule() {
 }
 
 // Chaque bouton qui n'a pas déjà son propre son reçoit un tintement (onglets : clapotis ; « fermer » : bouchon ; « ouvrir » : fiole)
+// Des étincelles d'or (ou des braises de sang) jaillissent sous le doigt
+const sansMouvement = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function etincellesAuToucher(x, y, nombre) {
+  if (sansMouvement || (!x && !y)) return;
+  for (let i = 0; i < (nombre || 9); i++) {
+    const s = document.createElement("span");
+    s.className = "etincelle-doigt";
+    const angle = Math.random() * Math.PI * 2, force = 26 + Math.random() * 46;
+    s.style.left = x + "px";
+    s.style.top = y + "px";
+    s.style.setProperty("--dx", Math.cos(angle) * force + "px");
+    s.style.setProperty("--dy", Math.sin(angle) * force - 14 + "px");
+    s.style.setProperty("--taille", (3 + Math.random() * 4) + "px");
+    document.body.appendChild(s);
+    setTimeout(function () { s.remove(); }, 750);
+  }
+}
+document.addEventListener("click", function (e) {
+  const cible = e.target.closest("button, a, [role='button'], .widget");
+  if (!cible) return;
+  etincellesAuToucher(e.clientX, e.clientY);
+  // Une vibration toute légère (sur les téléphones qui le permettent), sauf si le son est coupé
+  if (etat.son !== false && navigator.vibrate) { try { navigator.vibrate(8); } catch (err) { /* tant pis */ } }
+}, true);
+
 document.addEventListener("click", function (e) {
   if (performance.now() - breuvage.dernier < 150) return;
   const el = e.target.closest("button, a, [role='button']");
