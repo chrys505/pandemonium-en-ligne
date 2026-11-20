@@ -2277,3 +2277,35 @@ body.maudit .q-liquide::before { background: #ff8a7d; }
 .galej-vrai { background: linear-gradient(135deg, #2f9e6e, #1d6b4a); }
 .galej-faux { background: linear-gradient(135deg, #c43a3f, #7d1d22); }
 .galej-vrai:active, .galej-faux:active { transform: scale(0.97); }
+
+/* ===== Le Roman de l'Alchimiste (v56) ===== */
+.widget-roman { text-align: left; border: 2px solid transparent; background: linear-gradient(var(--carte), var(--carte)) padding-box, var(--degrade) border-box; }
+.roman-w-ep { margin: 6px 0; font-family: var(--affiche); font-size: 1.3rem; }
+.roman-w-extrait { font-family: var(--serif); font-style: italic; }
+.widget-roman .bouton { margin-top: 8px; }
+#fenetre-roman .fenetre { max-height: 94vh; overflow-y: auto; }
+.fenetre-roman { background: radial-gradient(ellipse at 50% 0%, rgba(255, 220, 150, 0.08), transparent 60%), var(--carte); }
+.roman { text-align: left; }
+.roman-titre { margin: 4px 0 14px; font-family: var(--affiche); font-size: 1.6rem; line-height: 1.2; }
+.roman-p {
+  margin: 0 0 14px; font-family: var(--serif); font-size: 1.08rem; line-height: 1.65; color: var(--creme);
+  opacity: 0; animation: roman-encre 0.9s ease-out forwards; animation-delay: calc(var(--k) * 0.6s);
+}
+.roman-p.fixe { opacity: 1; animation: none; }
+.roman-titre + .roman-p::first-letter { float: left; font-family: var(--affiche); font-size: 3.2rem; line-height: 0.9; margin: 4px 8px 0 0; color: var(--jaune); }
+@keyframes roman-encre { from { opacity: 0; filter: blur(3px); transform: translateY(6px); } to { opacity: 1; filter: none; transform: none; } }
+.roman-voie { padding: 10px 12px; border-left: 3px solid var(--jaune); border-radius: 0 10px 10px 0; background: rgba(255, 255, 255, 0.04); font-style: italic; }
+.roman-voie.voie-rouge { border-left-color: #e5484d; }
+.roman-action { margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--bord); opacity: 0; animation: roman-encre 0.8s ease-out 2.2s forwards; }
+.roman-invite { margin: 0 0 8px; font-family: var(--serif); font-size: 1.1rem; font-weight: 700; }
+.roman-replique { width: 100%; font-family: var(--serif); font-size: 1.05rem; font-style: italic; }
+.roman-choix { display: grid; gap: 10px; }
+.roman-bouton { padding: 14px; border-radius: 14px; border: 1px solid var(--bord); color: #fff; font-family: var(--serif); font-size: 1.02rem; text-align: left; cursor: pointer; }
+.roman-bouton.voie-or { background: linear-gradient(135deg, rgba(245, 197, 66, 0.35), rgba(120, 85, 10, 0.4)); }
+.roman-bouton.voie-rouge { background: linear-gradient(135deg, rgba(229, 72, 77, 0.4), rgba(90, 10, 15, 0.5)); }
+.roman-ta-replique { margin: 6px 0 12px; padding: 12px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.05); font-family: var(--serif); font-size: 1.05rem; font-style: italic; }
+.roman-ta-replique.voie-rouge { border-left: 3px solid #e5484d; } .roman-ta-replique.voie-or { border-left: 3px solid var(--jaune); }
+.roman-suspense { margin: 6px 0 10px; font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--jaune); animation: roman-encre 1.2s ease-out; }
+.roman-relu { margin: 8px 0; padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.04); }
+.roman-relu summary { cursor: pointer; font-family: var(--serif); font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .roman-p, .roman-action { opacity: 1; animation: none; } }

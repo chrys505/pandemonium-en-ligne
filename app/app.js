@@ -588,6 +588,7 @@ function mesuresTitres() {
     tourRecord: etat.tourRecord || 0,
     pendus: etat.pendusGagnes || 0,
     galej: etat.galejRecord || 0,
+    roman: (etat.roman && etat.roman.lus) || 0,
     elixirsLegendaires: (etat.elixirs || []).filter(function (x) { return x.rang === 4; }).length,
     collection: (etat.collection || []).length,
     sublimes: etat.sublimes || 0,
@@ -617,6 +618,8 @@ const TITRES = [
   ["distillateur", "⚗️", "Distillateur", "Distiller ton premier élixir dans l'alambic", 1, "elixirs", 1],
   ["alchimiste", "🧪", "Alchimiste du verbe", "Distiller 10 élixirs", 3, "elixirs", 10],
   ["quintessence", "🌟", "Quintessence pure", "Distiller un élixir légendaire", 4, "elixirsLegendaires", 1],
+  ["lecteur", "📜", "Lecteur de feuilleton", "Vivre le premier épisode du Roman de l'Alchimiste", 1, "roman", 1],
+  ["heros1", "🏛️", "Héros du Livre I", "Terminer le Livre I du Roman de l'Alchimiste", 3, "roman", 10],
   ["grimpeur", "🧗", "Grimpeur de la Tour", "Atteindre l'étage 5 de la Tour", 2, "tourRecord", 5],
   ["pourfendeur", "🗡️", "Pourfendeur de boss", "Atteindre l'étage 10 de la Tour", 3, "tourRecord", 10],
   ["conquerant", "🏰", "Conquérant de la Tour", "Atteindre l'étage 20 de la Tour", 4, "tourRecord", 20],
@@ -1289,6 +1292,117 @@ $("ouvrir-tirade").addEventListener("click", function () { scene.t = tiradeDuJou
 $("fermer-tirade").addEventListener("click", function () { $("fenetre-tirade").hidden = true; });
 $("fenetre-tirade").addEventListener("click", function (e) { if (e.target === $("fenetre-tirade")) $("fenetre-tirade").hidden = true; });
 
+// ---------- 📜 Le Roman de l'Alchimiste : un épisode par jour, débloqué par le mot du jour ----------
+const romanDispo = typeof feuilleton !== "undefined" ? feuilleton : null;
+function etatRoman() { return etat.roman || (etat.roman = { lus: 0, dernierJour: "", voie: "", repliques: {} }); }
+function episodeDispo() {
+  const r = etatRoman();
+  if (!romanDispo || r.lus >= romanDispo.episodes.length) return null;
+  return r.dernierJour === aujourdhui ? null : r.lus;
+}
+
+function widgetRoman() {
+  if (!romanDispo) return "";
+  const r = etatRoman(), n = romanDispo.episodes.length, i = episodeDispo();
+  let corps;
+  if (r.lus >= n) corps = '<p class="grimoire-titre">Livre I terminé</p><p class="petit">Le Livre II se distille… Relis ton roman en attendant.</p>';
+  else if (i !== null) {
+    const ep = romanDispo.episodes[i];
+    corps = '<p class="roman-w-ep">Épisode ' + (i + 1) + " · " + echapper(ep.titre) + "</p>" +
+      '<p class="texte-doux gauche roman-w-extrait">' + echapper(ep.texte[0].slice(0, 120)) + "…</p>" +
+      '<button class="bouton principal" type="button" data-roman="lire">📖 Lire l\'épisode ' + (i + 1) + "</button>";
+  } else {
+    const prochain = romanDispo.episodes[r.lus];
+    corps = '<p class="roman-w-ep">Épisode ' + (r.lus + 1) + " · " + echapper(prochain.titre) + "</p>" +
+      '<p class="petit">⏳ La suite paraît dans <b class="roman-rebours">' + reboursMinuit() + "</b></p>";
+  }
+  return '<article class="widget widget-roman" id="widget-roman">' +
+    '<p class="etiquette">📜 Le Roman de l\'Alchimiste · ' + Math.min(r.lus, n) + " / " + n + "</p>" + corps +
+    (r.lus ? '<button class="bouton petit-bouton" type="button" data-roman="relire">Relire ton roman</button>' : "") + "</article>";
+}
+setInterval(function () { document.querySelectorAll(".roman-rebours").forEach(function (x) { x.textContent = reboursMinuit(); }); }, 1000);
+
+function paragraphesEpisode(ep, voie) {
+  return ep.texte.map(function (p, k) { return '<p class="roman-p" style="--k:' + k + '">' + echapper(p) + "</p>"; }).join("") +
+    (ep.voie && voie && ep.voie[voie] ? '<p class="roman-p roman-voie voie-' + voie + '" style="--k:' + ep.texte.length + '">' + echapper(ep.voie[voie]) + "</p>" : "");
+}
+
+function lireEpisode(i) {
+  const ep = romanDispo.episodes[i], r = etatRoman();
+  const m = motDuJour();
+  let action;
+  if (ep.choix) {
+    action = '<p class="roman-invite">Que fais-tu ?</p><div class="roman-choix">' + ep.choix.map(function (c) {
+      return '<button class="roman-bouton voie-' + c.voie + '" type="button" data-voie="' + c.voie + '">' + echapper(c.texte) + "</button>";
+    }).join("") + "</div>";
+  } else {
+    action = '<p class="roman-invite">✍️ ' + echapper(ep.replique) + "</p>" +
+      '<p class="petit">Pour que l\'histoire continue, ta réplique doit contenir le mot du jour : <b>' + echapper(m.mot) + "</b> (" + echapper(m.definition) + ")</p>" +
+      '<textarea class="champ roman-replique" id="roman-replique" rows="3" maxlength="300" placeholder="« … »"></textarea>' +
+      '<p class="petit" id="roman-etat">Le mot du jour n\'y est pas encore.</p>' +
+      '<button class="bouton principal large" type="button" id="roman-signer" disabled>🪶 Signer ma réplique</button>';
+  }
+  $("roman").innerHTML =
+    '<p class="etiquette">' + echapper(romanDispo.livre) + "</p>" +
+    '<p class="roman-titre">Épisode ' + (i + 1) + " · " + echapper(ep.titre) + "</p>" +
+    paragraphesEpisode(ep, r.voie) + '<div class="roman-action">' + action + "</div>";
+  $("fenetre-roman").querySelector(".fenetre").scrollTop = 0;
+}
+
+function finirEpisode(i, contenu) {
+  const ep = romanDispo.episodes[i], r = etatRoman();
+  if (ep.choix) { r.voie = contenu; r.repliques[i] = "→ " + ep.choix.filter(function (c) { return c.voie === contenu; })[0].texte; }
+  else r.repliques[i] = contenu;
+  r.lus = i + 1; r.dernierJour = aujourdhui;
+  etat.xp += 15; sauver(); $("xp").textContent = etat.xp;
+  sonBoire(i === romanDispo.episodes.length - 1);
+  if (i === romanDispo.episodes.length - 1) feterAvecDesBraises();
+  $("roman").querySelector(".roman-action").innerHTML =
+    (ep.choix ? '<p class="roman-ta-replique voie-' + contenu + '">' + echapper(r.repliques[i]) + "</p>" : '<p class="roman-ta-replique">« ' + echapper(contenu) + " »</p>") +
+    '<p class="roman-suspense">' + echapper(ep.suspense) + "</p>" +
+    (i + 1 < romanDispo.episodes.length
+      ? '<p class="petit">À suivre… L\'épisode ' + (i + 2) + ' paraît dans <b class="roman-rebours">' + reboursMinuit() + "</b></p>"
+      : '<p class="petit">Le Livre II se distille. Merci d\'avoir vécu le Livre I.</p>') +
+    '<button class="bouton large" type="button" data-roman="fermer">Refermer le livre</button>';
+  setTimeout(verifierTitres, 1800);
+}
+
+function relireRoman() {
+  const r = etatRoman();
+  $("roman").innerHTML =
+    '<p class="etiquette">📖 Ton roman · ' + echapper(romanDispo.livre) + "</p>" +
+    romanDispo.episodes.slice(0, r.lus).map(function (ep, i) {
+      return '<details class="roman-relu"><summary>Épisode ' + (i + 1) + " · " + echapper(ep.titre) + "</summary>" +
+        ep.texte.map(function (p) { return '<p class="roman-p fixe">' + echapper(p) + "</p>"; }).join("") +
+        '<p class="roman-ta-replique">' + echapper(r.repliques[i] || "") + "</p>" +
+        '<p class="roman-suspense">' + echapper(ep.suspense) + "</p></details>";
+    }).join("");
+}
+
+$("roman").addEventListener("input", function (e) {
+  if (e.target.id !== "roman-replique") return;
+  const t = e.target.value.trim(), m = motDuJour();
+  const ok = motPresent(m.mot, t), assez = t.split(/\s+/).length >= 4;
+  $("roman-signer").disabled = !(ok && assez);
+  $("roman-etat").textContent = !ok ? "Le mot du jour n'y est pas encore." : !assez ? "Le mot y est ! Encore quelques mots pour une vraie réplique." : "✅ Parfait : signe ta réplique.";
+});
+$("roman").addEventListener("click", function (e) {
+  const v = e.target.closest("[data-voie]");
+  const i = etatRoman().lus;
+  if (v) { finirEpisode(i, v.dataset.voie); return; }
+  if (e.target.closest("#roman-signer")) { finirEpisode(i, $("roman-replique").value.trim()); return; }
+  const b = e.target.closest("[data-roman]");
+  if (b && b.dataset.roman === "fermer") { $("fenetre-roman").hidden = true; majWidgets(); }
+});
+$("widgets").addEventListener("click", function (e) {
+  const b = e.target.closest("[data-roman]");
+  if (!b) return;
+  if (b.dataset.roman === "lire" && episodeDispo() !== null) { lireEpisode(episodeDispo()); $("fenetre-roman").hidden = false; sonFiole(); }
+  else if (b.dataset.roman === "relire") { relireRoman(); $("fenetre-roman").hidden = false; }
+});
+$("fermer-roman").addEventListener("click", function () { $("fenetre-roman").hidden = true; majWidgets(); });
+$("fenetre-roman").addEventListener("click", function (e) { if (e.target === $("fenetre-roman")) { $("fenetre-roman").hidden = true; majWidgets(); } });
+
 // ---------- 🗼 La Tour du Pandémonium : un combat de mots, étage par étage ----------
 // Un hasard « à graine » : la tour du jour est la même pour tout le monde
 function hasardGraine(graine) {
@@ -1664,7 +1778,7 @@ $("fermer-galejade").addEventListener("click", fermerGalejade);
 $("fenetre-galejade").addEventListener("click", function (e) { if (e.target === $("fenetre-galejade")) fermerGalejade(); });
 
 function majWidgets() {
-  $("widgets").innerHTML = widgetMystere() + widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetFil();
+  $("widgets").innerHTML = widgetRoman() + widgetMystere() +widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetFil();
   majFil();
 }
 

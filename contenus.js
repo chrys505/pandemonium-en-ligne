@@ -851,3 +851,113 @@ const sortileges = [
     mots: ["dragon", "dragonnade", "estragon"],
     secret: "L'estragon vient du latin dracunculus, « petit dragon » : on croyait qu'il guérissait des morsures de serpent." }
 ];
+
+// ----- Le Roman de l'Alchimiste : un feuilleton, un épisode par jour (Livre I, écrit le 2026-11-21) -----
+// { titre, texte: [paragraphes], voie: { or, rouge } (paragraphe selon la voie choisie), suspense,
+//   replique: « à qui on répond » (il faut y placer le mot du jour) OU choix: [{ voie, texte }] }
+const feuilleton = {
+  livre: "Livre I · La Fiole de l'Arsenal",
+  episodes: [
+    { titre: "La fiole sous la pluie",
+      texte: [
+        "Paris, juillet 1830. La diligence te dépose place du Châtelet sous une pluie tiède qui sent le crottin et la Seine. Dans ta poche, deux choses : une lettre de ton oncle Ézéchiel Morvan, apothicaire rue de la Huchette, qui te supplie de venir « sans tarder ni parler à quiconque », et une petite fiole qu'il t'a envoyée, bouchée de cire noire.",
+        "Autour du bouchon, un ruban de papier, de son écriture fine et penchée : « Ne l'ouvre jamais avant d'avoir trouvé les sept mots. »",
+        "Rue de la Huchette, la boutique est close. Sur la porte, les scellés de la police. Une voisine en bonnet, un panier de poireaux au bras, te dévisage : « Le vieux Morvan ? Mort hier soir, mon pauvre. On l'a trouvé raide derrière son comptoir, les yeux grands ouverts… comme s'il avait vu le diable. »"
+      ],
+      suspense: "Tu n'as pas le temps de répondre : une main glacée se referme sur ton bras.",
+      replique: "Avant cela, que réponds-tu à la voisine ?" },
+    { titre: "Gaspard la Belette",
+      texte: [
+        "La main appartient à un gamin d'une douzaine d'années, maigre comme un clou, une casquette trop grande sur des yeux trop vifs. Il ne s'excuse pas : il essayait de te voler ta bourse, et il a échoué, voilà tout.",
+        "« Gaspard, dit-il. On m'appelle la Belette. Ton oncle, il me donnait du sirop de violette quand j'avais la toux. » Il baisse la voix. « Cette nuit, j'ai vu des hommes en cape noire sortir de sa boutique. Trois. Ils portaient une cornue gravée sur leur broche. »",
+        "Il te tend la main, paume ouverte. Pour la suite de l'histoire, il faudra payer."
+      ],
+      suspense: "Et là-haut, derrière les volets de la boutique scellée, une chandelle vient de s'allumer.",
+      choix: [
+        { voie: "or", texte: "🪙 Lui donner une pièce et gagner un allié" },
+        { voie: "rouge", texte: "🩸 Le menacer de le livrer à la police" }
+      ] },
+    { titre: "La boutique scellée",
+      texte: [
+        "À la nuit tombée, Gaspard te fait passer par le soupirail de la cave. L'odeur te saute à la gorge : soufre, camphre, poussière de siècles. Sur les étagères, des centaines de bocaux étiquetés de la main de ton oncle : « Larmes de mandragore », « Sel gemme de Salzbourg », « Cendre de phénix (douteux) ».",
+        "Une marche de l'escalier sonne creux. Dessous, un grimoire relié de cuir rouge. Sur la première page, sept lignes vides, et une seule formule écrite à l'encre dorée : « Lux ». La lumière. Le premier des sept mots.",
+        "Au plafond, la chandelle aperçue tout à l'heure fait danser des ombres. Quelqu'un est là-haut."
+      ],
+      voie: {
+        or: "Gaspard te glisse à l'oreille : « T'en fais pas. Pour une pièce, la Belette ne lâche personne. »",
+        rouge: "Gaspard reste à distance, l'œil mauvais. Tu sens qu'il pourrait filer au premier danger… ou te vendre au premier venu."
+      },
+      suspense: "Une voix descend l'escalier, calme et tranchante : « Je savais bien que le neveu finirait par venir. »",
+      replique: "Que lances-tu vers l'escalier, le grimoire serré contre toi ?" },
+    { titre: "Clémence des quais",
+      texte: [
+        "La voix appartient à une jeune femme en robe gris souris, des lunettes rondes sur le nez et un pistolet de duel à la main. Clémence Dufresne, bouquiniste sur le quai des Grands-Augustins. Ton oncle lui achetait ses vieux traités d'alchimie, et elle venait, dit-elle, récupérer « ce qui ne doit pas tomber entre de mauvaises mains ».",
+        "Elle baisse son arme en voyant le grimoire. « La Société de la Cornue Noire, murmure-t-elle. Ils cherchent la Quintessence : un élixir qui donnerait le mot juste. Celui qui le boit peut convaincre n'importe qui de n'importe quoi. Un roi, une foule, un juge. »",
+        "Elle te regarde longuement. « Prouve-moi que tu es bien son neveu, et pas un de leurs espions. »"
+      ],
+      suspense: "Le lendemain, sur les murs du quai, une affiche fraîche : « RÉCOMPENSE. On recherche le neveu Morvan, soupçonné du meurtre de son oncle. »",
+      replique: "Comment convaincs-tu Clémence ?" },
+    { titre: "Accusé",
+      texte: [
+        "Te voilà recherché dans tout Paris. Clémence te cache entre deux caisses de livres, dans sa boîte verte du quai. Par une fente, tu vois passer les gendarmes, le nez en l'air, et les badauds qui lisent l'affiche à voix haute en se régalant.",
+        "Gaspard surgit, essoufflé : « C'est le comte de Valmorne qui paie la police. Un grand seigneur, hôtel particulier au faubourg Saint-Germain. Sur sa chevalière… la cornue. »",
+        "Clémence pâlit. Toi, tu serres la fiole. Elle est tiède, comme vivante."
+      ],
+      suspense: "Une voiture noire aux rideaux tirés s'arrête juste devant la boîte. La portière s'ouvre.",
+      choix: [
+        { voie: "or", texte: "📚 Rester caché et laisser Clémence parler" },
+        { voie: "rouge", texte: "⚔️ Sortir et affronter celui qui descend" }
+      ] },
+    { titre: "Le comte de Valmorne",
+      texte: [
+        "L'homme qui descend est d'une élégance de lame : redingote prune, gants gris perle, une canne à pommeau d'argent en forme de cornue. Il sourit comme on referme un piège. « Monsieur Morvan. Enfin. »",
+        "Il parle doucement, sans jamais hausser le ton, et c'est pire. « Je vous propose un marché d'honnête homme. La fiole contre votre liberté. Les affiches disparaîtront demain matin. » Puis, du bout des lèvres : « Votre oncle n'est pas mort comme vous le croyez. »",
+        "Il remonte en voiture. « Vous avez jusqu'à minuit. »"
+      ],
+      voie: {
+        or: "Clémence, restée devant toi, n'a pas tremblé une seconde. Le comte l'a saluée avec une ironie glacée, comme on salue un adversaire digne de soi.",
+        rouge: "Tu t'étais planté devant lui, le menton haut. Il t'a toisé avec un intérêt nouveau : « De la rage. Bien. La rage se dresse, comme les chiens. »"
+      },
+      suspense: "Quand la voiture s'éloigne, Gaspard tend le doigt vers le grimoire : une deuxième ligne vient d'apparaître, comme écrite à l'encre invisible.",
+      replique: "Avant qu'il ne parte, que réponds-tu au comte ?" },
+    { titre: "La barrière d'Enfer",
+      texte: [
+        "Le deuxième mot est « Nekros ». La cité des morts. Clémence comprend la première : les catacombes, sous Paris, dont l'entrée se trouve à la barrière d'Enfer. Ça ne s'invente pas.",
+        "Vous descendez à la lueur d'une lanterne. Des murs entiers de crânes et de tibias, rangés comme des livres dans une bibliothèque infinie. Sur une plaque, gravé au burin, un message de ton oncle : « Neveu, si tu lis ceci, suis l'eau qui ne voit jamais le jour. »",
+        "Au loin, un clapotis. Une rivière souterraine."
+      ],
+      suspense: "Soudain, la lanterne s'éteint. Dans le noir complet, quelque chose respire. Quelque chose de très grand.",
+      replique: "Dans le noir, pour rassurer Gaspard qui tremble, que lui dis-tu ?" },
+    { titre: "La Vouivre de la Bièvre",
+      texte: [
+        "Une lueur rouge s'allume, d'abord comme une braise, puis comme un soleil couchant. C'est une escarboucle, enchâssée au front d'un serpent ailé, long comme trois fiacres. La Vouivre. Elle s'est enroulée dans le lit de la Bièvre, la rivière que Paris a recouverte et oubliée.",
+        "Sa voix est un bruissement d'écailles : « Les hommes ne me disent que des mensonges ou des prières. Dis-moi une parole vraie, petit alchimiste, et je te dirai où dort ton oncle. »",
+        "Clémence te serre le bras. Gaspard ne respire plus."
+      ],
+      suspense: "La Vouivre approche sa tête si près que tu sens la chaleur de l'escarboucle sur ta joue. Elle attend.",
+      replique: "Quelle parole vraie offres-tu à la Vouivre ?" },
+    { titre: "Les Trois Glorieuses",
+      texte: [
+        "La Vouivre a tenu parole : ton oncle est vivant, prisonnier dans l'hôtel de Valmorne. Et elle a soufflé un troisième mot : « Pyr ». Le feu.",
+        "Quand vous remontez à la surface, Paris a pris feu, lui aussi. Le roi Charles X a signé des ordonnances qui étranglent la presse, et le peuple s'est soulevé. Pavés arrachés, barricades, drapeaux tricolores aux fenêtres : ce sont les journées de juillet, les Trois Glorieuses.",
+        "Dans la fumée, tu reconnais une voiture noire aux rideaux tirés qui fonce vers le faubourg Saint-Germain. À la portière, une main ridée s'agrippe. Ton oncle."
+      ],
+      suspense: "Un coup de feu claque. Gaspard s'effondre sur les pavés.",
+      choix: [
+        { voie: "or", texte: "🛡️ Rester auprès de Gaspard avec les insurgés de la barricade" },
+        { voie: "rouge", texte: "🔥 Laisser Gaspard à Clémence et poursuivre seul la voiture" }
+      ] },
+    { titre: "L'hôtel de Valmorne",
+      texte: [
+        "Gaspard n'est qu'éraflé à l'épaule : il jure comme un charretier, signe qu'il vivra. Cette nuit-là, pendant que Paris se bat, vous forcez la grille de l'hôtel de Valmorne.",
+        "Au sous-sol, un laboratoire de marbre noir. Des alambics hauts comme des orgues. Et au centre, enchaîné à un fauteuil, maigre, barbu, mais vivant : ton oncle Ézéchiel. Devant lui, le comte, qui t'attendait.",
+        "« Ouvrez la fiole, dit Valmorne avec douceur, et votre oncle rentre chez lui. » Ton oncle hurle : « Jamais ! Il manque quatre mots ! Si tu l'ouvres maintenant, elle… »"
+      ],
+      voie: {
+        or: "Derrière toi, Clémence et Gaspard tiennent la porte, et dans la rue montent les chants des insurgés que vous avez aidés : vous n'êtes pas seuls.",
+        rouge: "Tu es venu seul. Une colère froide monte en toi, et la fiole, dans ta main, vire lentement au rouge sang."
+      },
+      suspense: "La fiole se met à briller entre tes doigts, toute seule, de plus en plus fort. Le comte recule d'un pas. Pour la première fois, il a peur. FIN DU LIVRE I.",
+      replique: "Que réponds-tu au comte de Valmorne, la fiole brûlante à la main ?" }
+  ]
+};
