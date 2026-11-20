@@ -84,7 +84,10 @@ const citationsPlus = [
   ["La beauté n'est que la promesse du bonheur.", "Stendhal, De l'amour"],
   ["Toute doctrine contient un canevas de comédie dont on ne sait où il commence ni où il finit.", "Italo Calvino (à confirmer)"],
   ["Comme une voie lactée constellée de sentiments.", "Italo Calvino, à propos de Stendhal (à confirmer)"],
-  ["Dans cette géographie intérieure, Paris est le point équidistant entre Londres et Milan.", "Italo Calvino, à propos de Stendhal (à confirmer)"]
+  ["Dans cette géographie intérieure, Paris est le point équidistant entre Londres et Milan.", "Italo Calvino, à propos de Stendhal (à confirmer)"],
+  // Note iPhone du 2026-11-21
+  ["On échoue toujours à parler de ce qu'on aime.", "Roland Barthes, à propos de Stendhal"],
+  ["À la typologie des extérieurs correspond celle des intérieurs.", "(auteur à confirmer)"]
 ];
 
 // Expressions : [expression, sens]
@@ -170,7 +173,20 @@ const expressionsPlus = [
   ["Une mise en abyme", "Une œuvre qui se reflète à l'intérieur d'elle-même, comme un tableau dans le tableau."],
   ["Aller au charbon", "Se mettre au travail, même pénible, sans rechigner."],
   ["Propre sur soi", "Bien mis, soigné de sa personne."],
-  ["Ô combien !", "Et à quel point ! (pour insister avec emphase)."]
+  ["Ô combien !", "Et à quel point ! (pour insister avec emphase)."],
+  // Note iPhone du 2026-11-21
+  ["Eu égard à", "En tenant compte de, en considération de."],
+  ["Je parle sous votre contrôle", "Formule polie devant un expert : je m'avance, mais corrigez-moi si je me trompe."],
+  ["Dusses-tu", "Même si tu devais (« Je le dirai, dusses-tu m'en vouloir »)."],
+  ["Non tant… que…", "Moins pour… que pour… (« non tant par goût que par devoir »)."],
+  ["C'est en cela que réside", "C'est précisément là que se trouve (le cœur de l'affaire)."],
+  ["Je ne suis pas outillé pour", "Je n'ai pas les connaissances ou les moyens pour juger de cela."],
+  ["Un deus ex machina", "Un dénouement providentiel et invraisemblable, comme un dieu descendu sur scène par une machine."],
+  ["L'esprit de caste", "L'attachement étroit aux intérêts et aux préjugés de son milieu."],
+  ["Un chasseur de dot", "Un homme qui cherche à épouser une femme pour sa fortune."],
+  ["Faire piètre figure", "Se montrer médiocre, décevoir."],
+  ["Le feu aux poudres", "Ce qui déclenche brutalement une crise (« mettre le feu aux poudres »). À ne pas mélanger avec la goutte d'eau qui fait déborder le vase !"],
+  ["À l'entour", "Vieux : aux alentours, tout autour."]
 ];
 
 // Pensées philosophiques : [texte, auteur]
