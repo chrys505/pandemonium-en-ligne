@@ -305,7 +305,7 @@ function allerA(nom) {
   if (nom === "aujourdhui") majAccueil();
   if (nom === "reviser") majReviser();
   if (nom === "collection") majCollection();
-  if (nom === "profil") { majProfil(); majGalerie(); }
+  if (nom === "profil") { majProfil(); majGalerie(); verifierTitres(); majGrimoireTitres(); }
   if (nom === "soiree" && !$("carte-soiree").innerHTML) nouveauSujet(false);
   window.scrollTo(0, 0);
 }
@@ -484,6 +484,7 @@ function majAccueil() {
   majCompteARebours();
   majRappelRevision();
   majBoutonQuintessence();
+  verifierTitres();
   majWidgets();
   if (etat.maudit) rendreMaudit(false);
   else $("etiquette-hero").textContent = "Le mot du jour";
@@ -567,8 +568,127 @@ function majFil() {
   z.classList.add("fil-entre");
 }
 
+// ---------- Le grimoire des titres : des exploits mesurés, des titres gardés pour toujours ----------
+// [id, icône, titre, exploit, rang (1 bronze, 2 argent, 3 or, 4 légendaire), mesure, objectif]
+function mesuresTitres() {
+  return {
+    sessions: Object.keys(etat.sessions || {}).length,
+    bus: Object.keys(etat.boites || {}).length,
+    serie: Math.max(serieActuelle(), etat.serieRecord || 0),
+    fioles: etat.fioles || 0,
+    legendaires: etat.legendaires || 0,
+    duels: etat.duels || 0,
+    garous: etat.garous || 0,
+    collection: (etat.collection || []).length,
+    xp: etat.xp || 0
+  };
+}
+const TITRES = [
+  ["apprenti", "⚗️", "Apprenti alchimiste", "Boire ton premier élixir", 1, "sessions", 1],
+  ["gouteur", "🍷", "Goûteur de mots", "Boire 10 mots", 1, "bus", 10],
+  ["lettre", "🕯️", "Lettré de taverne", "Boire 50 mots", 2, "bus", 50],
+  ["alexandrie", "🏛️", "Bibliothécaire d'Alexandrie", "Boire 200 mots", 3, "bus", 200],
+  ["gardien", "📜", "Gardien du grand grimoire", "Boire 500 mots", 4, "bus", 500],
+  ["habitue", "🍯", "Habitué de l'officine", "Boire l'élixir 10 jours", 2, "sessions", 10],
+  ["flamme", "🔥", "Flamme vacillante", "3 jours d'affilée", 1, "serie", 3],
+  ["feusacre", "☄️", "Feu sacré", "7 jours d'affilée", 2, "serie", 7],
+  ["vestale", "🌋", "Vestale éternelle", "30 jours d'affilée", 4, "serie", 30],
+  ["fele", "🔮", "Fiole fêlée", "Secouer ta première fiole mystère", 1, "fioles", 1],
+  ["chasseur", "🧪", "Chasseur de quintessences", "Secouer 10 fioles mystère", 2, "fioles", 10],
+  ["elu", "✨", "Élu des dieux", "Trouver une goutte légendaire", 3, "legendaires", 1],
+  ["finelame", "🤺", "Fine lame", "Mener un duel d'insultes jusqu'au bout", 1, "duels", 1],
+  ["maraud", "⚔️", "Grand Maraud", "Mener 5 duels d'insultes", 3, "duels", 5],
+  ["meneur", "🐺", "Meneur de la nuit", "Lancer une partie de loup-garou", 2, "garous", 1],
+  ["collection", "💎", "Collectionneur d'âmes", "Garder 5 trésors dans ta collection", 2, "collection", 5],
+  ["esprit", "✦", "Riche en esprit", "Gagner 500 points", 2, "xp", 500],
+  ["maitre", "👑", "Maître des fioles", "Gagner 2 000 points", 3, "xp", 2000]
+];
+const TITRE_SUPREME = ["archimage", "🌌", "Archimage du Pandémonium", "Débloquer tous les autres titres", 4];
+const RANGS = ["", "Bronze", "Argent", "Or", "Légendaire"];
+
+function titresObtenus() { return etat.titres || (etat.titres = {}); }
+
+// Vérifie les exploits ; annonce le premier titre nouvellement gagné (les autres suivront à la fermeture)
+const fileTitres = [];
+function verifierTitres() {
+  const m = mesuresTitres(), obtenus = titresObtenus();
+  etat.serieRecord = m.serie;
+  TITRES.forEach(function (t) {
+    if (!obtenus[t[0]] && m[t[5]] >= t[6]) { obtenus[t[0]] = aujourdhui; fileTitres.push(t); }
+  });
+  if (!obtenus.archimage && TITRES.every(function (t) { return obtenus[t[0]]; })) { obtenus.archimage = aujourdhui; fileTitres.push(TITRE_SUPREME); }
+  sauver();
+  if (fileTitres.length && $("fenetre-titre").hidden) annoncerTitre();
+}
+
+function annoncerTitre() {
+  const t = fileTitres.shift();
+  if (!t) return;
+  $("titre-sceau").textContent = t[1];
+  $("titre-sceau").className = "titre-sceau rang-" + t[4];
+  $("titre-nom").textContent = t[2];
+  $("titre-exploit").textContent = RANGS[t[4]] + " · " + t[3];
+  $("fenetre-titre").hidden = false;
+  sonBoire(true);
+  feterAvecDesBraises();
+}
+$("fermer-titre").addEventListener("click", function () {
+  $("fenetre-titre").hidden = true;
+  if (fileTitres.length) setTimeout(annoncerTitre, 400);
+  else { majWidgets(); if (!$("ecran-profil").hidden) majGrimoireTitres(); }
+});
+
+function titreActuel() {
+  const obtenus = titresObtenus();
+  const tous = TITRES.concat([TITRE_SUPREME]).filter(function (t) { return obtenus[t[0]]; });
+  tous.sort(function (a, b) { return b[4] - a[4] || (obtenus[b[0]] > obtenus[a[0]] ? 1 : -1); });
+  return tous[0] || null;
+}
+
+// Le prochain titre à portée : celui qu'il reste le moins de chemin à parcourir
+function prochainTitre() {
+  const m = mesuresTitres(), obtenus = titresObtenus();
+  const restants = TITRES.filter(function (t) { return !obtenus[t[0]]; });
+  restants.sort(function (a, b) { return (m[b[5]] / b[6]) - (m[a[5]] / a[6]); });
+  const t = restants[0];
+  return t ? { t: t, fait: Math.min(m[t[5]], t[6]) } : null;
+}
+
+function widgetTitre() {
+  const a = titreActuel(), p = prochainTitre();
+  const n = Object.keys(titresObtenus()).length;
+  return '<article class="widget widget-titre" id="widget-titre" role="button" tabindex="0">' +
+    '<p class="etiquette">📖 Ton titre · ' + n + " / " + (TITRES.length + 1) + "</p>" +
+    '<div class="wt-ligne"><span class="titre-sceau mini rang-' + (a ? a[4] : 0) + '">' + (a ? a[1] : "🔒") + "</span>" +
+    '<p class="wt-nom">' + (a ? echapper(a[2]) : "Aucun titre… pour l'instant") + "</p></div>" +
+    (p ? '<p class="petit gauche">Prochain : <b>' + p.t[1] + " " + echapper(p.t[2]) + "</b> · " + echapper(p.t[3]) + "</p>" +
+      '<div class="barre wt-barre"><div class="barre-remplie" style="width:' + Math.round(p.fait / p.t[6] * 100) + '%"></div></div>' +
+      '<p class="petit">' + p.fait + " / " + p.t[6] + "</p>" : '<p class="petit">Tous les titres sont à toi. Respect.</p>') +
+    "</article>";
+}
+
+function majGrimoireTitres() {
+  const m = mesuresTitres(), obtenus = titresObtenus();
+  const tous = TITRES.concat([TITRE_SUPREME]);
+  $("grimoire-titres-compte").textContent = Object.keys(obtenus).length + " titre(s) sur " + tous.length + ". Chaque titre gagné est gardé pour toujours.";
+  $("grimoire-titres").innerHTML = tous.map(function (t) {
+    const ok = !!obtenus[t[0]];
+    const fait = t[5] ? Math.min(m[t[5]], t[6]) : Object.keys(obtenus).filter(function (k) { return k !== "archimage"; }).length;
+    const but = t[6] || TITRES.length;
+    return '<div class="carte-titre' + (ok ? " obtenu" : "") + " rang-" + t[4] + '">' +
+      '<span class="titre-sceau rang-' + t[4] + '">' + (ok ? t[1] : "🔒") + "</span>" +
+      "<b>" + echapper(t[2]) + "</b><span class=\"ct-rang\">" + RANGS[t[4]] + "</span>" +
+      '<p class="petit">' + echapper(t[3]) + "</p>" +
+      (ok ? '<p class="petit ct-date">Gagné le ' + new Date(obtenus[t[0]]).toLocaleDateString("fr-FR", { day: "numeric", month: "long" }) + "</p>"
+          : '<div class="barre"><div class="barre-remplie" style="width:' + Math.round(fait / but * 100) + '%"></div></div><p class="petit">' + fait + " / " + but + "</p>") +
+      "</div>";
+  }).join("");
+}
+
+$("widgets").addEventListener("click", function (e) { if (e.target.closest("#widget-titre")) allerA("profil"); });
+
 function majWidgets() {
-  $("widgets").innerHTML = widgetMystere() + widgetBibliotheque() + widgetFil();
+  $("widgets").innerHTML = widgetMystere() + widgetTitre() + widgetBibliotheque() + widgetFil();
   majFil();
 }
 
@@ -595,6 +715,8 @@ $("widgets").addEventListener("click", function (e) {
     const t = tresorAuHasard();
     t.legendaire = Math.random() < 0.125;
     etat.mystere = { jour: aujourdhui, tresor: t };
+    etat.fioles = (etat.fioles || 0) + 1;
+    if (t.legendaire) etat.legendaires = (etat.legendaires || 0) + 1;
     etat.xp += t.legendaire ? 20 : 5;
     sauver();
     $("xp").textContent = etat.xp;
@@ -603,6 +725,7 @@ $("widgets").addEventListener("click", function (e) {
     $("widgets").querySelector(".widget-mystere").outerHTML = widgetMystere();
     const r = f.getBoundingClientRect();
     etincellesAuToucher(r.left + r.width / 2, r.top + 60, t.legendaire ? 30 : 16);
+    setTimeout(verifierTitres, 1500);
   }, 900);
 });
 $("widgets").addEventListener("keydown", function (e) {
@@ -3176,7 +3299,11 @@ $("duel").addEventListener("click", function (ev) {
   const v = ev.target.closest("[data-vote]");
   if (v) {
     if (v.dataset.vote !== "egalite") { duel.scores[+v.dataset.vote]++; sonJuste(0); }
-    if (duel.manche >= duel.manches) { sonBoire(true); rendreDuel("fin"); return; }
+    if (duel.manche >= duel.manches) {
+      sonBoire(true); rendreDuel("fin");
+      etat.duels = (etat.duels || 0) + 1; sauver(); setTimeout(verifierTitres, 1800);
+      return;
+    }
     duel.manche++; duel.tour = 0; duel.premier = 1 - duel.premier; rendreDuel("armes");
     return;
   }
@@ -3307,7 +3434,10 @@ $("garou").addEventListener("click", function (ev) {
   else if (a === "cacher") {
     garou.devoile = false; garou.tour++;
     if (garou.tour < garou.joueurs) rendreGarou("distribution");
-    else { garou.nuit = 1; garou.etape = 0; etapesGarou.cache = null; rendreGarou("partie"); }
+    else {
+      garou.nuit = 1; garou.etape = 0; etapesGarou.cache = null; rendreGarou("partie");
+      etat.garous = (etat.garous || 0) + 1; sauver(); setTimeout(verifierTitres, 600);
+    }
   }
   else if (a === "suivant") { garou.etape++; rendreGarou("partie"); }
   else if (a === "nuit") { garou.nuit++; garou.etape = 0; etapesGarou.cache = null; sonBascule(); rendreGarou("partie"); }

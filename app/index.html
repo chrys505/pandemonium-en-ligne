@@ -253,6 +253,11 @@
         <p class="petit" id="niveau-detail"></p>
       </article>
 
+      <!-- Le grimoire des titres : chaque exploit débloque un titre, gardé pour toujours -->
+      <h2 class="titre-2">📖 Le grimoire des titres</h2>
+      <p class="petit gauche" id="grimoire-titres-compte"></p>
+      <div class="grimoire-titres" id="grimoire-titres"></div>
+
       <article class="carte">
         <p class="etiquette">🔊 Le bruit du breuvage</p>
         <p class="texte-doux">Un petit glouglou quand tu bois l'élixir, et des bulles à chaque gorgée.</p>
@@ -301,6 +306,17 @@
       <div class="pyramide" id="pyramide"></div>
       <div class="defi-pyramide" id="defi-pyramide"></div>
       <button class="bouton principal large" id="rejouer-pyramide" type="button">Nouvelle pyramide</button>
+    </div>
+  </div>
+
+  <!-- ===== L'annonce d'un nouveau titre ===== -->
+  <div class="voile" id="fenetre-titre" hidden>
+    <div class="fenetre fenetre-titre">
+      <p class="etiquette">🏆 Nouveau titre débloqué</p>
+      <div class="titre-sceau" id="titre-sceau"></div>
+      <p class="titre-nom" id="titre-nom"></p>
+      <p class="texte-doux" id="titre-exploit"></p>
+      <button class="bouton principal large" id="fermer-titre" type="button">Je le porte avec fierté</button>
     </div>
   </div>
 

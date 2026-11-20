@@ -2017,3 +2017,52 @@ body.maudit .q-liquide::before { background: #ff8a7d; }
 @media (prefers-reduced-motion: reduce) {
   .flamme, .widget::after, .mystere-fiole, .mystere-verre i, .anneau, .fil-point { animation: none; }
 }
+
+/* ===== Le grimoire des titres (v49) ===== */
+#fenetre-titre { z-index: 200; }
+.fenetre-titre { text-align: center; }
+.titre-sceau {
+  display: inline-grid; place-content: center;
+  width: 92px; height: 92px; margin: 14px auto 8px; border-radius: 50%;
+  font-size: 2.6rem; line-height: 1;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.35), transparent 45%), var(--sceau, #555);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.35), 0 0 22px var(--lueur, transparent);
+}
+.titre-sceau.rang-0 { --sceau: #3a3530; filter: grayscale(1); }
+.titre-sceau.rang-1 { --sceau: linear-gradient(135deg, #e3a76f, #8a5226); --lueur: rgba(205, 127, 50, 0.4); }
+.titre-sceau.rang-2 { --sceau: linear-gradient(135deg, #f4f4f4, #8d96a0); --lueur: rgba(220, 225, 235, 0.45); }
+.titre-sceau.rang-3 { --sceau: linear-gradient(135deg, #ffe58a, #b8860b); --lueur: rgba(245, 197, 66, 0.6); }
+.titre-sceau.rang-4 { --sceau: conic-gradient(from 0deg, #ff6ad5, #ffd56b, #6ae3ff, #b06aff, #ff6ad5); --lueur: rgba(200, 120, 255, 0.6); animation: sceau-legende 4s linear infinite; }
+@keyframes sceau-legende { 0%, 100% { box-shadow: 0 0 0 3px rgba(0,0,0,.35), 0 0 18px rgba(255, 106, 213, .6); } 50% { box-shadow: 0 0 0 3px rgba(0,0,0,.35), 0 0 30px rgba(106, 227, 255, .7); } }
+#fenetre-titre:not([hidden]) .titre-sceau { animation: sceau-arrive 0.9s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes sceau-arrive { 0% { transform: scale(0) rotate(-200deg); } 100% { transform: scale(1) rotate(0); } }
+.titre-nom {
+  margin: 4px 0 6px; font-family: var(--affiche); font-size: 1.7rem;
+  background: var(--degrade); background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: reflet 3s linear infinite;
+}
+
+.grimoire-titres { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.carte-titre {
+  padding: 12px 10px; border-radius: 18px; text-align: center;
+  background: var(--carte); border: 1px solid var(--bord); opacity: 0.62;
+}
+.carte-titre.obtenu { opacity: 1; box-shadow: 0 0 16px var(--bord); }
+.carte-titre .titre-sceau { width: 56px; height: 56px; font-size: 1.6rem; margin: 2px auto 6px; }
+.carte-titre:not(.obtenu) .titre-sceau { --sceau: #2c2824; filter: grayscale(1); box-shadow: none; animation: none; }
+.carte-titre b { display: block; font-family: var(--serif); font-size: 0.98rem; line-height: 1.2; }
+.ct-rang { display: block; margin: 2px 0; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--jaune); }
+.carte-titre .petit { margin: 4px 0 0; }
+.carte-titre .barre { margin-top: 6px; height: 6px; }
+.ct-date { color: var(--jaune); }
+
+.widget-titre { text-align: left; cursor: pointer; }
+.wt-ligne { display: flex; align-items: center; gap: 12px; margin: 4px 0 8px; }
+.titre-sceau.mini { width: 54px; height: 54px; font-size: 1.5rem; margin: 0; flex: 0 0 auto; }
+.wt-nom { margin: 0; font-family: var(--serif); font-size: 1.3rem; }
+.wt-barre { height: 8px; margin-top: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .titre-sceau, .titre-nom { animation: none !important; }
+}
