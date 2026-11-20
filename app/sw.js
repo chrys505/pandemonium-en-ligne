@@ -1,10 +1,11 @@
 // Le « service worker » : il garde une copie de l'appli sur le téléphone pour qu'elle marche sans Internet.
 // Quand on modifie l'appli, on change ce numéro pour que les téléphones prennent la nouvelle version.
-const VERSION = "pandemonium-v56";
+const VERSION = "pandemonium-v57";
 
 const FICHIERS = [
   "./",
   "./index.html",
+  "./fil.html",
   "./app.css",
   "./app.js",
   "./manifest.webmanifest",

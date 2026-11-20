@@ -295,10 +295,24 @@ function feterAvecDesBraises() {
 }
 
 // ---------- Navigation entre les onglets ----------
+// Le Fil : l'écran principal, un scroll culture plein écran (la page fil.html, glissée dans l'appli)
+let themeDuFil = null;
+// Appelée par le Fil : chaque gorgée bue rapporte un point
+function gorgeeDuFil() { etat.xp += 1; sauver(); $("xp").textContent = etat.xp; }
+function ouvrirFil() {
+  const cadre = $("fil-cadre");
+  const theme = etat.maudit ? "maudit" : "clair";
+  if (!cadre.getAttribute("src") || cadre.getAttribute("src") === "about:blank") cadre.setAttribute("src", "fil.html?integre=1");
+  else if (themeDuFil !== theme) { sauver(); try { cadre.contentWindow.location.reload(); } catch (e) { cadre.setAttribute("src", "fil.html?integre=1"); } }
+  themeDuFil = theme;
+}
+
 function allerA(nom) {
-  ["aujourdhui", "reviser", "collection", "soiree", "profil"].forEach(function (n) {
+  ["fil", "aujourdhui", "reviser", "collection", "soiree", "profil"].forEach(function (n) {
     $("ecran-" + n).hidden = (n !== nom);
   });
+  document.body.classList.toggle("sur-le-fil", nom === "fil");
+  if (nom === "fil") ouvrirFil();
   document.querySelectorAll(".nav").forEach(function (b) {
     b.classList.toggle("actif", b.dataset.ecran === nom);
   });
@@ -4755,4 +4769,4 @@ appliquerVersion();
 chercherPeintre();
 majFormulaire();
 majCompteurs();
-allerA("aujourdhui");
+allerA("fil");

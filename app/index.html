@@ -31,6 +31,11 @@
       </div>
     </header>
 
+    <!-- ===== Onglet Fil : le scroll culture, écran principal ===== -->
+    <section class="ecran ecran-fil" id="ecran-fil" hidden>
+      <iframe class="fil-cadre" id="fil-cadre" title="Le Fil des savoirs" src="about:blank"></iframe>
+    </section>
+
     <!-- ===== Onglet Aujourd'hui ===== -->
     <section class="ecran" id="ecran-aujourdhui">
       <div id="accueil-session">
@@ -316,7 +321,8 @@
 
     <!-- ===== Barre de navigation ===== -->
     <nav class="navigation">
-      <button class="nav actif" data-ecran="aujourdhui" type="button"><span>☀️</span>Aujourd'hui</button>
+      <button class="nav actif" data-ecran="fil" type="button"><span>🌀</span>Fil</button>
+      <button class="nav" data-ecran="aujourdhui" type="button"><span>☀️</span>Aujourd'hui</button>
       <button class="nav" data-ecran="reviser" type="button"><span>🧠</span>Réviser</button>
       <button class="nav" data-ecran="collection" type="button"><span>✍️</span>Atelier</button>
       <button class="nav" data-ecran="soiree" type="button"><span>🎉</span>Soirée</button>

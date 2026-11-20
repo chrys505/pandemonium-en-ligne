@@ -75,12 +75,16 @@
 
     .indice { position: fixed; z-index: 10; bottom: calc(env(safe-area-inset-bottom) + 18px); left: 0; right: 0; text-align: center; font-size: 0.85rem; color: var(--doux); pointer-events: none; animation: indice 2s ease-in-out infinite; }
     @keyframes indice { 0%, 100% { transform: translateY(0); opacity: 0.6; } 50% { transform: translateY(-6px); opacity: 1; } }
+    /* Dans l'appli : la barre du bas de l'appli est juste dessous, on resserre un peu */
+    .integre .carte { padding-bottom: 70px; }
+    .integre .actions { bottom: 70px; }
+    .integre .indice { bottom: 12px; }
     @media (prefers-reduced-motion: reduce) { .grand, .indice, .gorgee { animation: none; } .carte > * { transition: none; } }
   </style>
 </head>
 <body>
   <header class="haut">
-    <a class="marque" href="./"><span>Pandémonium</span> · le Fil</a>
+    <a class="marque" href="./" target="_top"><span>Pandémonium</span> · le Fil</a>
     <span class="gorgees" id="gorgees">🧪 0 gorgée</span>
   </header>
   <main class="fil" id="fil" aria-label="Le fil des savoirs"></main>
@@ -97,6 +101,11 @@
   const echapper = function (t) { return String(t == null ? "" : t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   const auHasard = function (l) { return l[Math.floor(Math.random() * l.length)]; };
   const dispo = function (nom) { try { return eval(nom); } catch (e) { return null; } };
+
+  // Glissé dans l'appli (onglet Fil) : on parle à l'appli qui nous contient
+  const integre = /integre=1/.test(location.search) && window.parent !== window;
+  const appli = function () { try { return integre && typeof window.parent.allerA === "function" ? window.parent : null; } catch (e) { return null; } };
+  if (integre) document.documentElement.classList.add("integre");
 
   // La version claire ou sombre, comme dans l'appli
   let maudit = false;
@@ -197,7 +206,12 @@
     glouglou();
     if (navigator.vibrate) { try { navigator.vibrate(12); } catch (e) {} }
     const b = carte.querySelector('[data-action="boire"]');
-    if (!b.classList.contains("bu")) { b.classList.add("bu"); compte++; majCompte(); }
+    if (!b.classList.contains("bu")) {
+      b.classList.add("bu"); compte++; majCompte();
+      // Chaque gorgée rapporte un point ✦ dans l'appli
+      const p = appli();
+      if (p && typeof p.gorgeeDuFil === "function") { try { p.gorgeeDuFil(); } catch (e) {} }
+    }
   }
 
   let dernierToucher = 0;
@@ -212,7 +226,7 @@
         if (navigator.share) navigator.share({ text: texte }).catch(function () {});
         else if (navigator.clipboard) navigator.clipboard.writeText(texte).then(function () { a.querySelector("span").textContent = "Copié !"; });
       }
-      if (a.dataset.action === "appli") location.href = "./";
+      if (a.dataset.action === "appli") { const p = appli(); if (p) p.allerA("aujourdhui"); else window.top.location.href = "./"; }
       return;
     }
     const rev = e.target.closest("[data-reveler]");
