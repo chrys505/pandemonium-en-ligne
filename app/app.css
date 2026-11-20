@@ -2066,3 +2066,47 @@ body.maudit .q-liquide::before { background: #ff8a7d; }
 @media (prefers-reduced-motion: reduce) {
   .titre-sceau, .titre-nom { animation: none !important; }
 }
+
+/* ===== La magie : sortilège et créature du jour (v50) ===== */
+.widget-sort, .widget-creature { text-align: center; }
+.sort-formule {
+  margin: 8px 0 2px; font-family: var(--affiche); font-size: 3rem; font-style: italic; letter-spacing: 0.06em;
+  background: var(--degrade); background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 12px var(--bord));
+  animation: reflet 4s linear infinite, sort-respire 3s ease-in-out infinite;
+}
+@keyframes sort-respire { 0%, 100% { filter: drop-shadow(0 0 6px var(--bord)); } 50% { filter: drop-shadow(0 0 18px var(--jaune)); } }
+.sort-formule.mini { display: block; font-size: 1.5rem; margin: 6px 0 2px; }
+.sort-mots { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 12px 0; }
+.sort-mots span {
+  padding: 6px 12px; border-radius: 999px; border: 1px solid var(--bord); background: rgba(255, 255, 255, 0.05);
+  font-family: var(--serif); font-size: 1rem;
+  opacity: 0; animation: sort-mot 0.5s ease-out forwards; animation-delay: calc(var(--i) * 0.18s);
+}
+@keyframes sort-mot { from { opacity: 0; transform: translateY(10px) scale(0.8); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+.widget-sort .grimoire-revers, .widget-creature .grimoire-revers { margin-top: 10px; }
+
+.creature-ombre { margin: 6px 0 4px; }
+.creature-ombre .titre-sceau { width: 84px; height: 84px; font-size: 2.6rem; margin: 0 auto; }
+.widget-creature:not(.capturee) .creature-ombre .titre-sceau { animation: q-flotte 3s ease-in-out infinite; }
+.widget-creature:not(.capturee) .creature-icone { filter: brightness(0) drop-shadow(0 0 6px rgba(255, 255, 255, 0.7)); }
+.widget-creature.capturee .creature-ombre .titre-sceau { animation: sceau-arrive 0.9s cubic-bezier(.2, 1.6, .4, 1); }
+.creature-nom { margin: 6px 0 0; font-family: var(--affiche); font-size: 1.6rem; }
+.widget-creature:not(.capturee) .creature-nom { filter: blur(0.5px); opacity: 0.85; }
+.widget-creature.rang-4 { border-color: transparent; background: linear-gradient(var(--carte), var(--carte)) padding-box, var(--degrade) border-box; border: 2px solid transparent; }
+
+/* Pendant le sort : la carte tremble et s'illumine */
+.magie-en-cours { animation: magie-tremble 0.12s linear 6; box-shadow: 0 0 40px var(--jaune); }
+@keyframes magie-tremble { 0%, 100% { transform: translate(0); } 25% { transform: translate(-2px, 1px); } 75% { transform: translate(2px, -1px); } }
+
+.collection-magie { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+.collection-magie .carte-titre { padding: 10px 6px; }
+.collection-magie .titre-sceau { width: 46px; height: 46px; font-size: 1.4rem; }
+.collection-magie b { font-size: 0.85rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sort-formule, .sort-mots span, .creature-ombre .titre-sceau, .magie-en-cours { animation: none !important; opacity: 1; }
+}
+
+.widget-creature .texte-doux { font-size: 1rem; line-height: 1.5; }

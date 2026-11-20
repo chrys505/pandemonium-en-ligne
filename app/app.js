@@ -305,7 +305,7 @@ function allerA(nom) {
   if (nom === "aujourdhui") majAccueil();
   if (nom === "reviser") majReviser();
   if (nom === "collection") majCollection();
-  if (nom === "profil") { majProfil(); majGalerie(); verifierTitres(); majGrimoireTitres(); }
+  if (nom === "profil") { majProfil(); majGalerie(); verifierTitres(); majGrimoireTitres(); majCollectionsMagie(); }
   if (nom === "soiree" && !$("carte-soiree").innerHTML) nouveauSujet(false);
   window.scrollTo(0, 0);
 }
@@ -505,6 +505,8 @@ function tresorAuHasard() {
     function () { const c = auHasard(toutesLesCitations()); return { etiquette: "📜 Citation", titre: "« " + c.texte + " »", texte: c.auteur || "" }; },
     function () { const e = auHasard(expressionsPlus); return { etiquette: "💬 Expression", titre: e[0], texte: e[1] }; }
   ];
+  if (typeof bestiaire !== "undefined") tirages.push(function () { const c = auHasard(bestiaire); return { etiquette: "🐉 Bestiaire · " + c.origine, titre: c.icone + " " + c.nom, texte: c.savais }; });
+  if (typeof sortileges !== "undefined") tirages.push(function () { const s = auHasard(sortileges); return { etiquette: "🪄 Sortilège · " + s.langue, titre: s.formule + " : " + s.sens, texte: s.mots.join(", ") + ". " + s.secret }; });
   if (etat.maudit && typeof filmsHorreur !== "undefined") {
     tirages.push(function () { const f = auHasard(filmsHorreur); return { etiquette: "🎬 Film d'horreur", titre: f[0], texte: f[1] }; });
     tirages.push(function () { const r = auHasard(rumeurs); return { etiquette: "🕵️ Rumeur", titre: r[0], texte: r[2] }; });
@@ -579,6 +581,8 @@ function mesuresTitres() {
     legendaires: etat.legendaires || 0,
     duels: etat.duels || 0,
     garous: etat.garous || 0,
+    creatures: Object.keys(etat.bestiaire || {}).length,
+    sorts: Object.keys(etat.sorts || {}).length,
     collection: (etat.collection || []).length,
     xp: etat.xp || 0
   };
@@ -599,6 +603,10 @@ const TITRES = [
   ["finelame", "🤺", "Fine lame", "Mener un duel d'insultes jusqu'au bout", 1, "duels", 1],
   ["maraud", "⚔️", "Grand Maraud", "Mener 5 duels d'insultes", 3, "duels", 5],
   ["meneur", "🐺", "Meneur de la nuit", "Lancer une partie de loup-garou", 2, "garous", 1],
+  ["dompteur", "🕸️", "Apprenti dompteur", "Capturer 3 créatures du bestiaire", 1, "creatures", 3],
+  ["bestiaire", "🐉", "Maître du bestiaire", "Capturer les 15 créatures", 4, "creatures", 15],
+  ["sorcier", "🪄", "Apprenti sorcier", "Apprendre 3 sortilèges", 1, "sorts", 3],
+  ["mage", "📿", "Mage des racines", "Apprendre 10 sortilèges", 3, "sorts", 10],
   ["collection", "💎", "Collectionneur d'âmes", "Garder 5 trésors dans ta collection", 2, "collection", 5],
   ["esprit", "✦", "Riche en esprit", "Gagner 500 points", 2, "xp", 500],
   ["maitre", "👑", "Maître des fioles", "Gagner 2 000 points", 3, "xp", 2000]
@@ -687,8 +695,94 @@ function majGrimoireTitres() {
 
 $("widgets").addEventListener("click", function (e) { if (e.target.closest("#widget-titre")) allerA("profil"); });
 
+// ---------- La magie : la créature du jour à capturer, le sortilège du jour à lancer ----------
+const bestiaireDispo = typeof bestiaire !== "undefined" ? bestiaire : [];
+const sortilegesDispo = typeof sortileges !== "undefined" ? sortileges : [];
+function creatureDuJour() { return auJourDans(bestiaireDispo, 13); }
+function sortDuJour() { return auJourDans(sortilegesDispo, 17); }
+
+function widgetCreature() {
+  const c = creatureDuJour();
+  if (!c) return "";
+  const prise = !!(etat.bestiaire || {})[c.nom];
+  const n = Object.keys(etat.bestiaire || {}).length;
+  return '<article class="widget widget-creature' + (prise ? " capturee" : "") + " rang-" + c.rang + '" id="widget-creature">' +
+    '<p class="etiquette">🐉 La créature du jour · ' + RANGS[c.rang] + "</p>" +
+    '<div class="creature-ombre" aria-hidden="true"><span class="titre-sceau rang-' + c.rang + '"><span class="creature-icone">' + c.icone + "</span></span></div>" +
+    '<p class="creature-nom">' + echapper(c.nom) + "</p>" +
+    '<p class="petit">' + echapper(c.origine) + "</p>" +
+    (prise
+      ? '<p class="texte-doux gauche">' + echapper(c.legende) + '</p><p class="grimoire-revers gauche"><b>Le savais-tu ?</b> · ' + echapper(c.savais) + "</p>"
+      : '<button class="bouton principal" type="button" id="capturer-creature">🕸️ Capturer la créature</button>') +
+    '<p class="petit">Ton bestiaire : ' + n + " / " + bestiaireDispo.length + "</p></article>";
+}
+
+function widgetSort() {
+  const s = sortDuJour();
+  if (!s) return "";
+  const appris = !!(etat.sorts || {})[s.formule];
+  return '<article class="widget widget-sort' + (appris ? " lance" : "") + '" id="widget-sort">' +
+    '<p class="etiquette">🪄 Le sortilège du jour · ' + RANGS[s.rang] + "</p>" +
+    '<p class="sort-formule">' + echapper(s.formule) + "</p>" +
+    '<p class="petit">Du ' + echapper(s.langue) + " : " + echapper(s.sens) + "</p>" +
+    (appris
+      ? '<div class="sort-mots">' + s.mots.map(function (m, i) { return '<span style="--i:' + i + '">' + echapper(m) + "</span>"; }).join("") + "</div>" +
+        '<p class="grimoire-revers gauche"><b>Le secret</b> · ' + echapper(s.secret) + "</p>"
+      : '<button class="bouton principal" type="button" id="lancer-sort">🪄 Lancer le sort</button><p class="petit">et révèle les mots qu\'il a engendrés</p>') +
+    '<p class="petit">Tes sortilèges : ' + Object.keys(etat.sorts || {}).length + " / " + sortilegesDispo.length + "</p></article>";
+}
+
+$("widgets").addEventListener("click", function (e) {
+  const bouton = e.target.closest("#capturer-creature, #lancer-sort");
+  if (!bouton) return;
+  const carte = bouton.closest(".widget");
+  const r = carte.getBoundingClientRect();
+  carte.classList.add("magie-en-cours");
+  bouton.disabled = true;
+  sonFiole();
+  setTimeout(function () {
+    if (bouton.id === "capturer-creature") {
+      const c = creatureDuJour();
+      etat.bestiaire = etat.bestiaire || {}; etat.bestiaire[c.nom] = aujourdhui;
+      etat.xp += 5 * c.rang;
+      carte.outerHTML = widgetCreature();
+      sonBoire(c.rang >= 3);
+      if (c.rang === 4) feterAvecDesBraises();
+    } else {
+      const s = sortDuJour();
+      etat.sorts = etat.sorts || {}; etat.sorts[s.formule] = aujourdhui;
+      etat.xp += 5 * s.rang;
+      carte.outerHTML = widgetSort();
+      sonBoire(s.rang >= 3);
+      if (s.rang === 4) feterAvecDesBraises();
+    }
+    sauver();
+    $("xp").textContent = etat.xp;
+    etincellesAuToucher(r.left + r.width / 2, r.top + 90, 26);
+    setTimeout(verifierTitres, 1400);
+  }, 700);
+});
+
+function majCollectionsMagie() {
+  const b = etat.bestiaire || {}, s = etat.sorts || {};
+  $("bestiaire-compte").textContent = Object.keys(b).length + " créature(s) sur " + bestiaireDispo.length + ". Une nouvelle créature passe chaque jour sur l'accueil : capture-la !";
+  $("profil-bestiaire").innerHTML = bestiaireDispo.map(function (c) {
+    const ok = !!b[c.nom];
+    return '<div class="carte-titre' + (ok ? " obtenu" : "") + '"><span class="titre-sceau rang-' + c.rang + '">' + (ok ? c.icone : "❔") + "</span>" +
+      "<b>" + (ok ? echapper(c.nom) : "???") + '</b><span class="ct-rang">' + RANGS[c.rang] + "</span>" +
+      (ok ? '<p class="petit">' + echapper(c.origine) + "</p>" : "") + "</div>";
+  }).join("");
+  $("sorts-compte").textContent = Object.keys(s).length + " sortilège(s) sur " + sortilegesDispo.length + ". Un nouveau sort chaque jour sur l'accueil.";
+  $("profil-sorts").innerHTML = sortilegesDispo.map(function (x) {
+    const ok = !!s[x.formule];
+    return '<div class="carte-titre' + (ok ? " obtenu" : "") + '"><span class="sort-formule mini">' + (ok ? echapper(x.formule) : "???") + "</span>" +
+      '<span class="ct-rang">' + RANGS[x.rang] + "</span>" +
+      (ok ? '<p class="petit">' + echapper(x.sens) + "</p><p class=\"petit\">" + echapper(x.mots.slice(0, 3).join(", ")) + "…</p>" : "") + "</div>";
+  }).join("");
+}
+
 function majWidgets() {
-  $("widgets").innerHTML = widgetMystere() + widgetTitre() + widgetBibliotheque() + widgetFil();
+  $("widgets").innerHTML = widgetMystere() + widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetFil();
   majFil();
 }
 
