@@ -584,6 +584,7 @@ function mesuresTitres() {
     creatures: Object.keys(etat.bestiaire || {}).length,
     sorts: Object.keys(etat.sorts || {}).length,
     elixirs: (etat.elixirs || []).length,
+    tirades: etat.tiradesJouees || 0,
     elixirsLegendaires: (etat.elixirs || []).filter(function (x) { return x.rang === 4; }).length,
     collection: (etat.collection || []).length,
     xp: etat.xp || 0
@@ -612,6 +613,8 @@ const TITRES = [
   ["distillateur", "⚗️", "Distillateur", "Distiller ton premier élixir dans l'alambic", 1, "elixirs", 1],
   ["alchimiste", "🧪", "Alchimiste du verbe", "Distiller 10 élixirs", 3, "elixirs", 10],
   ["quintessence", "🌟", "Quintessence pure", "Distiller un élixir légendaire", 4, "elixirsLegendaires", 1],
+  ["tragedien", "🎭", "Tragédien du salon", "Te filmer en train de jouer une tirade", 2, "tirades", 1],
+  ["comedien", "🏟️", "Sociétaire de la Comédie", "Te filmer dans 10 tirades", 4, "tirades", 10],
   ["collection", "💎", "Collectionneur d'âmes", "Garder 5 trésors dans ta collection", 2, "collection", 5],
   ["esprit", "✦", "Riche en esprit", "Gagner 500 points", 2, "xp", 500],
   ["maitre", "👑", "Maître des fioles", "Gagner 2 000 points", 3, "xp", 2000]
@@ -922,6 +925,170 @@ $("alambic").addEventListener("click", function (e) {
 $("ouvrir-alambic").addEventListener("click", function () { tirerIngredients(); alambic.phase = "choix"; rendreAlambic(); $("fenetre-alambic").hidden = false; });
 $("fermer-alambic").addEventListener("click", function () { $("fenetre-alambic").hidden = true; });
 $("fenetre-alambic").addEventListener("click", function (e) { if (e.target === $("fenetre-alambic")) $("fenetre-alambic").hidden = true; });
+
+// ---------- La tirade du jour : un grand texte du théâtre, à jouer face caméra ----------
+const tiradesDispo = typeof tirades !== "undefined" ? tirades : [];
+const scene = { t: null, flux: null, enregistreur: null, morceaux: [], fichier: null, url: "", chrono: null, debut: 0 };
+
+function tiradeDuJour() {
+  const liste = etat.maudit ? tiradesDispo.filter(function (x) { return x.sombre; }) : tiradesDispo;
+  return auJourDans(liste.length ? liste : tiradesDispo, 23);
+}
+
+function rendreTirade() {
+  const t = scene.t;
+  $("tirade").innerHTML =
+    '<p class="grimoire-titre">' + echapper(t.personnage) + "</p>" +
+    '<p class="petit">' + echapper(t.oeuvre) + " · " + echapper(t.auteur) + "</p>" +
+    '<p class="citation-grande tirade-texte">' + echapper(t.texte).replace(/\n/g, "<br>") + "</p>" +
+    '<p class="texte-doux gauche"><b>La scène</b> · ' + echapper(t.contexte) + "</p>" +
+    '<p class="grimoire-revers gauche"><b>🎬 Comment la jouer</b> · ' + echapper(t.jeu) + "</p>" +
+    '<div class="actions-pyramide"><button class="bouton principal" type="button" id="tourner-tirade">🎬 Me filmer</button>' +
+    '<button class="bouton" type="button" id="autre-tirade">🎲 Une autre tirade</button></div>' +
+    '<p class="petit">La caméra filme ici, sur ton téléphone. Rien n\'est envoyé tant que tu ne partages pas toi-même.</p>';
+}
+
+function couperCamera() {
+  clearInterval(scene.chrono);
+  if (scene.enregistreur && scene.enregistreur.state !== "inactive") { scene.enregistreur.onstop = null; scene.enregistreur.stop(); }
+  if (scene.flux) scene.flux.getTracks().forEach(function (p) { p.stop(); });
+  scene.flux = null; scene.enregistreur = null;
+  $("plateau-video").srcObject = null;
+}
+
+function fermerPlateau() {
+  couperCamera();
+  if (scene.url) { URL.revokeObjectURL(scene.url); scene.url = ""; }
+  $("plateau-video").removeAttribute("src");
+  $("plateau").hidden = true;
+}
+
+function actionsPlateau(html) { $("plateau-actions").innerHTML = html; }
+
+async function ouvrirPlateau() {
+  $("plateau").hidden = false;
+  $("prompteur").innerHTML = "<b>" + echapper(scene.t.personnage) + "</b><br>" + echapper(scene.t.texte).replace(/\n/g, "<br>");
+  $("plateau-decompte").textContent = "";
+  $("plateau-chrono").hidden = true;
+  const v = $("plateau-video");
+  v.muted = true; v.controls = false; v.classList.add("miroir");
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || typeof MediaRecorder === "undefined") {
+    actionsPlateau('<p class="petit">Ce navigateur ne permet pas de filmer ici. Garde ce prompteur à l\'écran et filme-toi avec l\'appareil photo d\'un autre téléphone.</p><button class="bouton" type="button" id="plateau-fermer">Fermer</button>');
+    return;
+  }
+  actionsPlateau('<p class="petit">Autorise la caméra et le micro pour te filmer…</p><button class="bouton" type="button" id="plateau-fermer">Annuler</button>');
+  try {
+    scene.flux = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user", width: { ideal: 1080 }, height: { ideal: 1920 } }, audio: true });
+  } catch (err) {
+    actionsPlateau('<p class="petit">La caméra n\'a pas pu s\'ouvrir (accès refusé ou indisponible). Tu peux l\'autoriser dans les réglages du navigateur, ou garder ce prompteur et te filmer autrement.</p><button class="bouton" type="button" id="plateau-fermer">Fermer</button>');
+    return;
+  }
+  if ($("plateau").hidden) { couperCamera(); return; }
+  v.srcObject = scene.flux;
+  actionsPlateau('<button class="bouton-rec" type="button" id="plateau-rec" aria-label="Lancer l\'enregistrement"></button><button class="bouton" type="button" id="plateau-fermer">Fermer</button>');
+}
+
+function lancerTournage() {
+  let n = 3;
+  actionsPlateau("");
+  $("plateau-decompte").textContent = n;
+  sonClic();
+  const tic = setInterval(function () {
+    n--;
+    if (n > 0) { $("plateau-decompte").textContent = n; sonClic(); return; }
+    clearInterval(tic);
+    $("plateau-decompte").textContent = "";
+    demarrerEnregistrement();
+  }, 900);
+}
+
+function demarrerEnregistrement() {
+  const types = ["video/mp4", "video/webm;codecs=vp9,opus", "video/webm"];
+  const type = types.find(function (x) { return MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(x); }) || "";
+  try { scene.enregistreur = new MediaRecorder(scene.flux, type ? { mimeType: type } : undefined); }
+  catch (err) { actionsPlateau('<p class="petit">L\'enregistrement n\'est pas possible sur ce navigateur.</p><button class="bouton" type="button" id="plateau-fermer">Fermer</button>'); return; }
+  scene.morceaux = [];
+  scene.enregistreur.ondataavailable = function (e) { if (e.data && e.data.size) scene.morceaux.push(e.data); };
+  scene.enregistreur.onstop = finTournage;
+  scene.enregistreur.start(250);
+  scene.debut = Date.now();
+  $("plateau-chrono").hidden = false;
+  scene.chrono = setInterval(function () {
+    const s = Math.floor((Date.now() - scene.debut) / 1000);
+    $("plateau-chrono").textContent = "● " + Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+    $("prompteur").scrollTop = Math.max(0, (Date.now() - scene.debut) / 1000 - 2) * 14;
+    if (s >= 180) arreterTournage();
+  }, 250);
+  // Le prompteur défile doucement pendant la prise
+  const p = $("prompteur"); p.scrollTop = 0;
+  p.classList.add("defile");
+  actionsPlateau('<button class="bouton-rec en-cours" type="button" id="plateau-stop" aria-label="Arrêter l\'enregistrement"></button>');
+}
+
+function arreterTournage() {
+  clearInterval(scene.chrono);
+  if (scene.enregistreur && scene.enregistreur.state !== "inactive") scene.enregistreur.stop();
+}
+
+function finTournage() {
+  $("prompteur").classList.remove("defile");
+  $("plateau-chrono").hidden = true;
+  const type = (scene.enregistreur && scene.enregistreur.mimeType) || "video/webm";
+  const ext = type.indexOf("mp4") !== -1 ? "mp4" : "webm";
+  const blob = new Blob(scene.morceaux, { type: type.split(";")[0] });
+  if (scene.flux) scene.flux.getTracks().forEach(function (p) { p.stop(); });
+  scene.flux = null;
+  scene.fichier = new File([blob], "tirade-" + sansAccents(scene.t.personnage).toLowerCase().replace(/[^a-z]+/g, "-") + "." + ext, { type: blob.type });
+  if (scene.url) URL.revokeObjectURL(scene.url);
+  scene.url = URL.createObjectURL(blob);
+  const v = $("plateau-video");
+  v.srcObject = null; v.src = scene.url; v.muted = false; v.controls = true; v.loop = true; v.classList.remove("miroir");
+  v.play().catch(function () {});
+  etat.tiradesJouees = (etat.tiradesJouees || 0) + 1;
+  etat.xp += 15;
+  sauver();
+  $("xp").textContent = etat.xp;
+  sonBoire(true);
+  actionsPlateau('<button class="bouton principal" type="button" id="plateau-partager">📤 Partager</button>' +
+    '<button class="bouton" type="button" id="plateau-enregistrer">💾 Enregistrer</button>' +
+    '<button class="bouton" type="button" id="plateau-refaire">↺ Refaire</button>' +
+    '<button class="bouton" type="button" id="plateau-fermer">Fermer</button>');
+  setTimeout(verifierTitres, 1500);
+}
+
+function legendeTirade() {
+  return "🎭 « " + scene.t.texte.split("\n")[0] + " » — " + scene.t.personnage + ", " + scene.t.oeuvre + ", " + scene.t.auteur +
+    "\n\nLa tirade du jour, avec Pandémonium des mots ⚗️\n#théâtre #languefrançaise #" + sansAccents(scene.t.auteur).replace(/[^A-Za-z]/g, "");
+}
+
+$("plateau-actions").addEventListener("click", function (e) {
+  const id = e.target.closest("button") && e.target.closest("button").id;
+  if (id === "plateau-fermer") fermerPlateau();
+  else if (id === "plateau-rec") lancerTournage();
+  else if (id === "plateau-stop") arreterTournage();
+  else if (id === "plateau-refaire") { fermerPlateau(); ouvrirPlateau(); }
+  else if (id === "plateau-enregistrer") {
+    const a = document.createElement("a"); a.href = scene.url; a.download = scene.fichier.name; document.body.appendChild(a); a.click(); a.remove();
+  }
+  else if (id === "plateau-partager") {
+    if (navigator.canShare && navigator.canShare({ files: [scene.fichier] })) {
+      navigator.share({ files: [scene.fichier], text: legendeTirade() }).catch(function () {});
+    } else {
+      const a = document.createElement("a"); a.href = scene.url; a.download = scene.fichier.name; document.body.appendChild(a); a.click(); a.remove();
+      if (navigator.clipboard) navigator.clipboard.writeText(legendeTirade()).catch(function () {});
+      e.target.textContent = "💾 Vidéo enregistrée, légende copiée";
+    }
+  }
+});
+
+$("tirade").addEventListener("click", function (e) {
+  const id = e.target.closest("button") && e.target.closest("button").id;
+  if (id === "autre-tirade") { scene.t = auHasard(tiradesDispo.filter(function (x) { return x !== scene.t; })); rendreTirade(); }
+  else if (id === "tourner-tirade") { $("fenetre-tirade").hidden = true; ouvrirPlateau(); }
+});
+$("ouvrir-tirade").addEventListener("click", function () { scene.t = tiradeDuJour(); rendreTirade(); $("fenetre-tirade").hidden = false; });
+$("fermer-tirade").addEventListener("click", function () { $("fenetre-tirade").hidden = true; });
+$("fenetre-tirade").addEventListener("click", function (e) { if (e.target === $("fenetre-tirade")) $("fenetre-tirade").hidden = true; });
 
 function majWidgets() {
   $("widgets").innerHTML = widgetMystere() + widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetFil();

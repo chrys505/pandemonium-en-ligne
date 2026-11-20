@@ -747,7 +747,6 @@ const motsPlus = [
   ["Chelou", "Louche, bizarre (verlan de « louche »).", "shady", "raro"],
   ["Vénère", "Énervé (verlan de « énervé »).", "pissed off", "cabreado"],
   ["Ouf", "Fou, incroyable (verlan de « fou »).", "crazy", "flipante"],
-  ["Pécho", "Attraper ; séduire quelqu'un (verlan de « choper »).", "to pull", "ligar"],
   ["Bader", "Déprimer, avoir un coup de blues (de l'anglais bad).", "to feel down", "estar de bajón"],
   // Jurons et insultes d'antan (catégorie à part : voir motsAntan dans niveaux.js)
   ["Palsambleu", "Juron d'autrefois, version adoucie de « par le sang de Dieu » (on évitait de jurer sur Dieu).", "zounds!", "¡rediez!"],

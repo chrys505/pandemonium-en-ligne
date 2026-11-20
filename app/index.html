@@ -168,6 +168,12 @@
         <span>Trois mots rares à distiller en une phrase : bronze, argent, or… ou légendaire</span>
       </button>
 
+      <button class="bouton-quintessence bouton-alambic" id="ouvrir-tirade" type="button">
+        <i aria-hidden="true">🎭</i>
+        <b>La tirade du jour</b>
+        <span>Un grand texte du théâtre, à jouer face caméra pour TikTok, Reels ou Shorts</span>
+      </button>
+
       <article class="carte">
         <p class="etiquette">✍️ L'atelier poétique</p>
         <div class="rangee">
@@ -330,6 +336,22 @@
       <p class="etiquette">⚗️ L'alambic</p>
       <div class="alambic" id="alambic"></div>
     </div>
+  </div>
+
+  <!-- ===== La tirade du jour : le texte, le jeu, puis le tournage face caméra (rien ne quitte le téléphone sans toi) ===== -->
+  <div class="voile" id="fenetre-tirade" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-tirade" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">🎭 La tirade du jour</p>
+      <div id="tirade"></div>
+    </div>
+  </div>
+  <div class="plateau" id="plateau" hidden>
+    <video class="plateau-video" id="plateau-video" playsinline muted autoplay></video>
+    <div class="prompteur" id="prompteur"></div>
+    <p class="plateau-decompte" id="plateau-decompte"></p>
+    <p class="plateau-chrono" id="plateau-chrono" hidden>● 0:00</p>
+    <div class="plateau-actions" id="plateau-actions"></div>
   </div>
 
   <!-- ===== L'annonce d'un nouveau titre ===== -->
