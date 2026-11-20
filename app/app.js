@@ -583,6 +583,8 @@ function mesuresTitres() {
     garous: etat.garous || 0,
     creatures: Object.keys(etat.bestiaire || {}).length,
     sorts: Object.keys(etat.sorts || {}).length,
+    elixirs: (etat.elixirs || []).length,
+    elixirsLegendaires: (etat.elixirs || []).filter(function (x) { return x.rang === 4; }).length,
     collection: (etat.collection || []).length,
     xp: etat.xp || 0
   };
@@ -607,6 +609,9 @@ const TITRES = [
   ["bestiaire", "🐉", "Maître du bestiaire", "Capturer les 15 créatures", 4, "creatures", 15],
   ["sorcier", "🪄", "Apprenti sorcier", "Apprendre 3 sortilèges", 1, "sorts", 3],
   ["mage", "📿", "Mage des racines", "Apprendre 10 sortilèges", 3, "sorts", 10],
+  ["distillateur", "⚗️", "Distillateur", "Distiller ton premier élixir dans l'alambic", 1, "elixirs", 1],
+  ["alchimiste", "🧪", "Alchimiste du verbe", "Distiller 10 élixirs", 3, "elixirs", 10],
+  ["quintessence", "🌟", "Quintessence pure", "Distiller un élixir légendaire", 4, "elixirsLegendaires", 1],
   ["collection", "💎", "Collectionneur d'âmes", "Garder 5 trésors dans ta collection", 2, "collection", 5],
   ["esprit", "✦", "Riche en esprit", "Gagner 500 points", 2, "xp", 500],
   ["maitre", "👑", "Maître des fioles", "Gagner 2 000 points", 3, "xp", 2000]
@@ -780,6 +785,143 @@ function majCollectionsMagie() {
       (ok ? '<p class="petit">' + echapper(x.sens) + "</p><p class=\"petit\">" + echapper(x.mots.slice(0, 3).join(", ")) + "…</p>" : "") + "</div>";
   }).join("");
 }
+
+// ---------- L'alambic : trois mots rares (et un ingrédient d'or) distillés en une phrase ----------
+const alambic = { ingredients: [], or: null, phase: "choix" };
+
+function tirerIngredients() {
+  const pris = [], liste = motsRaresDispo();
+  while (pris.length < 4 && pris.length < liste.length) {
+    const m = auHasard(liste);
+    if (pris.indexOf(m) === -1) pris.push(m);
+  }
+  alambic.ingredients = pris.slice(0, 3);
+  alambic.or = pris[3] || null;
+}
+
+// Le mot est-il dans la phrase ? On compare sans accents, sur la racine (pour accepter les accords et conjugaisons)
+function racineDe(mot) {
+  const m = sansAccents(mot.toLowerCase()).replace(/^(s'|se |l'|la |le |un |une )/, "").replace(/\(.*\)/, "").trim();
+  const premier = m.split(/[\s]+/)[0];
+  return premier.length <= 5 ? premier : premier.slice(0, Math.max(5, premier.length - 2));
+}
+function motPresent(mot, phrase) { return sansAccents(phrase.toLowerCase()).indexOf(racineDe(mot)) !== -1; }
+
+function rangElixir(phrase) {
+  const tous = alambic.ingredients.every(function (m) { return motPresent(m.mot, phrase); });
+  if (!tous) return 0;
+  const longueur = phrase.trim().split(/\s+/).length;
+  const or = alambic.or && motPresent(alambic.or.mot, phrase);
+  if (or && longueur >= 20) return 4;
+  if (or && longueur >= 12) return 3;
+  if (longueur >= 12) return 2;
+  return 1;
+}
+
+function rendreAlambic() {
+  const z = $("alambic");
+  const elixirs = etat.elixirs || [];
+  if (alambic.phase === "choix") {
+    z.innerHTML =
+      '<p class="petit gauche">Verse ces trois mots rares dans l\'alambic, puis distille-les en une seule phrase de ton cru. Plus elle est riche, plus l\'élixir est rare.</p>' +
+      '<div class="ingredients">' + alambic.ingredients.map(function (m, i) {
+        return '<div class="ingredient" style="--i:' + i + '"><b>' + echapper(m.mot) + '</b><span>' + echapper(m.definition) + "</span></div>";
+      }).join("") +
+      (alambic.or ? '<div class="ingredient ingredient-or" style="--i:3"><em>✨ Ingrédient d\'or, facultatif</em><b>' + echapper(alambic.or.mot) + "</b><span>" + echapper(alambic.or.definition) + "</span></div>" : "") +
+      "</div>" +
+      '<div class="actions-pyramide"><button class="bouton principal" type="button" id="verser-alambic">⚗️ Verser dans l\'alambic</button>' +
+      '<button class="bouton" type="button" id="autres-ingredients">🎲 Autres ingrédients</button></div>' +
+      '<p class="petit rangs-alambic">🥉 les 3 mots · 🥈 + 12 mots ou plus · 🥇 + l\'ingrédient d\'or · 🌟 + 20 mots ou plus</p>' +
+      (elixirs.length ? '<p class="petit">Tes élixirs : ' + elixirs.length + "</p>" : "");
+  } else if (alambic.phase === "ecrire") {
+    z.innerHTML =
+      '<div class="cornue" aria-hidden="true"><span class="cornue-panse"><i></i><i></i><i></i><i></i><i></i></span><span class="cornue-col"></span></div>' +
+      '<div class="jauges" id="jauges">' + alambic.ingredients.concat(alambic.or ? [alambic.or] : []).map(function (m, i) {
+        return '<span class="jauge' + (i === 3 ? " jauge-or" : "") + '" data-jauge="' + i + '">' + echapper(m.mot) + "</span>";
+      }).join("") + "</div>" +
+      '<textarea class="champ phrase-alambic" id="phrase-alambic" rows="4" maxlength="400" placeholder="Ta phrase, avec les trois mots…"></textarea>' +
+      '<p class="petit" id="rang-alambic">Il manque encore des ingrédients.</p>' +
+      '<button class="bouton principal large" type="button" id="distiller" disabled>🔥 Distiller</button>';
+    $("phrase-alambic").focus();
+  } else if (alambic.phase === "resultat") {
+    const e = elixirs[0];
+    z.innerHTML =
+      '<div class="elixir-resultat rang-' + e.rang + '">' +
+      '<span class="titre-sceau rang-' + e.rang + '">' + ["", "🥉", "🥈", "🥇", "🌟"][e.rang] + "</span>" +
+      '<p class="ct-rang">' + ["", "Élixir de bronze", "Élixir d'argent", "Élixir d'or", "Élixir légendaire"][e.rang] + "</p>" +
+      '<p class="citation-grande">« ' + echapper(e.phrase) + " »</p>" +
+      '<p class="petit">Ingrédients : ' + echapper(e.mots.join(" · ")) + "</p></div>" +
+      '<div class="actions-pyramide"><button class="bouton principal" type="button" id="partager-elixir">📤 Partager</button>' +
+      '<button class="bouton" type="button" id="nouvel-elixir">⚗️ Nouvel élixir</button></div>' +
+      '<p class="petit">Gardé dans tes élixirs (' + elixirs.length + ").</p>" +
+      (elixirs.length > 1 ? '<div class="mes-elixirs">' + elixirs.slice(1, 6).map(function (x) {
+        return '<p class="mon-elixir"><span>' + ["", "🥉", "🥈", "🥇", "🌟"][x.rang] + "</span> " + echapper(x.phrase) + "</p>";
+      }).join("") + "</div>" : "");
+  }
+}
+
+function majJaugesAlambic() {
+  const phrase = $("phrase-alambic").value;
+  alambic.ingredients.concat(alambic.or ? [alambic.or] : []).forEach(function (m, i) {
+    const j = document.querySelector('[data-jauge="' + i + '"]');
+    const ok = motPresent(m.mot, phrase);
+    if (ok && !j.classList.contains("versee")) {
+      const ctx = audio();
+      if (ctx) { const t = ctx.currentTime + 0.01; gloup(ctx, t, !!etat.maudit); bulle(ctx, t + 0.1, 700 + i * 180); }
+      etincellesAuToucher(j.getBoundingClientRect().left + j.offsetWidth / 2, j.getBoundingClientRect().top + 10, 10);
+    }
+    j.classList.toggle("versee", ok);
+  });
+  const r = rangElixir(phrase);
+  $("distiller").disabled = r === 0;
+  const n = phrase.trim() ? phrase.trim().split(/\s+/).length : 0;
+  $("rang-alambic").textContent = r === 0
+    ? "Il manque encore des ingrédients. (" + n + " mots)"
+    : ["", "🥉 Élixir de bronze", "🥈 Élixir d'argent", "🥇 Élixir d'or", "🌟 Élixir légendaire"][r] + " · " + n + " mots" + (r < 4 ? " · tu peux encore l'enrichir" : " !");
+  document.querySelector(".cornue").style.setProperty("--niveau", (alambic.ingredients.concat(alambic.or ? [alambic.or] : []).filter(function (m) { return motPresent(m.mot, phrase); }).length / (alambic.or ? 4 : 3) * 100) + "%");
+}
+
+$("alambic").addEventListener("input", function (e) { if (e.target.id === "phrase-alambic") majJaugesAlambic(); });
+$("alambic").addEventListener("click", function (e) {
+  const id = e.target.closest("button") && e.target.closest("button").id;
+  if (id === "autres-ingredients") { tirerIngredients(); rendreAlambic(); }
+  else if (id === "verser-alambic") {
+    sonFiole();
+    document.querySelectorAll(".ingredient").forEach(function (x) { x.classList.add("tombe"); });
+    setTimeout(function () { alambic.phase = "ecrire"; rendreAlambic(); sonGorgee(); }, 650);
+  }
+  else if (id === "distiller") {
+    const phrase = $("phrase-alambic").value.trim();
+    const r = rangElixir(phrase);
+    if (!r) return;
+    document.querySelector(".cornue").classList.add("bout");
+    $("distiller").disabled = true;
+    sonFiole();
+    setTimeout(function () {
+      etat.elixirs = etat.elixirs || [];
+      etat.elixirs.unshift({ phrase: phrase, rang: r, mots: alambic.ingredients.concat(alambic.or && motPresent(alambic.or.mot, phrase) ? [alambic.or] : []).map(function (m) { return m.mot; }), date: aujourdhui });
+      etat.elixirs = etat.elixirs.slice(0, 200);
+      etat.xp += 5 * r;
+      sauver();
+      $("xp").textContent = etat.xp;
+      alambic.phase = "resultat";
+      rendreAlambic();
+      sonBoire(r >= 3);
+      if (r >= 3) feterAvecDesBraises();
+      setTimeout(verifierTitres, 1500);
+    }, 1100);
+  }
+  else if (id === "nouvel-elixir") { tirerIngredients(); alambic.phase = "choix"; rendreAlambic(); }
+  else if (id === "partager-elixir") {
+    const x = etat.elixirs[0];
+    const texte = "« " + x.phrase + " »\n\n⚗️ Distillé dans l'alambic de Pandémonium des mots (" + x.mots.join(", ") + ")\nhttps://chrys505.github.io/pandemonium-en-ligne/app/";
+    if (navigator.share) navigator.share({ text: texte }).catch(function () {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(texte).then(function () { $("partager-elixir").textContent = "✅ Copié !"; });
+  }
+});
+$("ouvrir-alambic").addEventListener("click", function () { tirerIngredients(); alambic.phase = "choix"; rendreAlambic(); $("fenetre-alambic").hidden = false; });
+$("fermer-alambic").addEventListener("click", function () { $("fenetre-alambic").hidden = true; });
+$("fenetre-alambic").addEventListener("click", function (e) { if (e.target === $("fenetre-alambic")) $("fenetre-alambic").hidden = true; });
 
 function majWidgets() {
   $("widgets").innerHTML = widgetMystere() + widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetFil();
