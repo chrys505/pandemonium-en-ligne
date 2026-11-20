@@ -585,6 +585,9 @@ function mesuresTitres() {
     sorts: Object.keys(etat.sorts || {}).length,
     elixirs: (etat.elixirs || []).length,
     tirades: etat.tiradesJouees || 0,
+    tourRecord: etat.tourRecord || 0,
+    pendus: etat.pendusGagnes || 0,
+    galej: etat.galejRecord || 0,
     elixirsLegendaires: (etat.elixirs || []).filter(function (x) { return x.rang === 4; }).length,
     collection: (etat.collection || []).length,
     sublimes: etat.sublimes || 0,
@@ -614,6 +617,11 @@ const TITRES = [
   ["distillateur", "⚗️", "Distillateur", "Distiller ton premier élixir dans l'alambic", 1, "elixirs", 1],
   ["alchimiste", "🧪", "Alchimiste du verbe", "Distiller 10 élixirs", 3, "elixirs", 10],
   ["quintessence", "🌟", "Quintessence pure", "Distiller un élixir légendaire", 4, "elixirsLegendaires", 1],
+  ["grimpeur", "🧗", "Grimpeur de la Tour", "Atteindre l'étage 5 de la Tour", 2, "tourRecord", 5],
+  ["pourfendeur", "🗡️", "Pourfendeur de boss", "Atteindre l'étage 10 de la Tour", 3, "tourRecord", 10],
+  ["conquerant", "🏰", "Conquérant de la Tour", "Atteindre l'étage 20 de la Tour", 4, "tourRecord", 20],
+  ["bourreau", "🪢", "Bourreau des mots", "Sauver 5 condamnés au pendu", 2, "pendus", 5],
+  ["limier", "🔍", "Limier des galéjades", "Faire 10 sur 10 à Vrai ou galéjade", 3, "galej", 10],
   ["tragedien", "🎭", "Tragédien du salon", "Te filmer en train de jouer une tirade", 2, "tirades", 1],
   ["comedien", "🏟️", "Sociétaire de la Comédie", "Te filmer dans 10 tirades", 4, "tirades", 10],
   ["plume", "🪶", "Plume galante", "Envoyer ton premier message sublimé", 1, "sublimes", 1],
@@ -1280,6 +1288,380 @@ $("tirade").addEventListener("click", function (e) {
 $("ouvrir-tirade").addEventListener("click", function () { scene.t = tiradeDuJour(); rendreTirade(); $("fenetre-tirade").hidden = false; });
 $("fermer-tirade").addEventListener("click", function () { $("fenetre-tirade").hidden = true; });
 $("fenetre-tirade").addEventListener("click", function (e) { if (e.target === $("fenetre-tirade")) $("fenetre-tirade").hidden = true; });
+
+// ---------- 🗼 La Tour du Pandémonium : un combat de mots, étage par étage ----------
+// Un hasard « à graine » : la tour du jour est la même pour tout le monde
+function hasardGraine(graine) {
+  let a = graine >>> 0;
+  return function () { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+const tour = { etage: 1, coeurs: 3, combo: 0, pv: 0, pvMax: 0, monstre: null, q: null, vision: 0, sablier: 0, rage: false, duJour: false, rnd: Math.random, minuteur: null, restant: 0, debutQ: 0, fin: false };
+function tPioche(liste) { return liste[Math.floor(tour.rnd() * liste.length)]; }
+function tMelange(liste) { const l = liste.slice(); for (let i = l.length - 1; i > 0; i--) { const j = Math.floor(tour.rnd() * (i + 1)); const x = l[i]; l[i] = l[j]; l[j] = x; } return l; }
+
+const FIOLES_TOUR = [
+  { id: "vie", icone: "❤️", nom: "Élixir de vie", effet: "+1 cœur (5 au plus)" },
+  { id: "vision", icone: "👁️", nom: "Fiole de vision", effet: "Fait disparaître une mauvaise réponse (2 fois)" },
+  { id: "sablier", icone: "⏳", nom: "Sablier", effet: "+5 secondes sur les 5 prochaines questions" },
+  { id: "rage", icone: "⚡", nom: "Philtre de rage", effet: "Coups doublés contre le prochain monstre" }
+];
+
+function motsTour() { return tousLesMots().filter(function (m) { return m.definition && m.definition.length < 150; }); }
+
+// Une question de combat : trois réponses, une seule juste
+function questionTour() {
+  const mots = motsTour();
+  const types = ["def", "def", "mot", "mot"];
+  if (sortilegesDispo.length) types.push("sort");
+  if (bestiaireDispo.length) types.push("bete");
+  if (typeof expressionsPlus !== "undefined") types.push("expr");
+  const type = tPioche(types);
+  const autres = function (liste, juste, cle) {
+    const r = [];
+    while (r.length < 2) { const x = tPioche(liste); const v = cle ? cle(x) : x; if (v !== juste && r.indexOf(v) === -1) r.push(v); }
+    return r;
+  };
+  if (type === "def") {
+    const m = tPioche(mots);
+    return { intitule: "Quel mot correspond à cette définition ?", sujet: m.definition, juste: m.mot, choix: tMelange([m.mot].concat(autres(mots, m.mot, function (x) { return x.mot; }))) };
+  }
+  if (type === "mot") {
+    const m = tPioche(mots);
+    return { intitule: "Que veut dire ce mot ?", sujet: m.mot, juste: m.definition, choix: tMelange([m.definition].concat(autres(mots, m.definition, function (x) { return x.definition; }))), longs: true };
+  }
+  if (type === "sort") {
+    const s = tPioche(sortilegesDispo);
+    const juste = tPioche(s.mots);
+    const faux = autres(sortilegesDispo.filter(function (x) { return x !== s; }), juste, function (x) { return tPioche(x.mots); });
+    return { intitule: "Quel mot descend du sortilège « " + s.formule + " » (" + s.sens + ") ?", sujet: "🪄 " + s.formule, juste: juste, choix: tMelange([juste].concat(faux)) };
+  }
+  if (type === "bete") {
+    const b = tPioche(bestiaireDispo);
+    return { intitule: "D'où vient la légende de cette créature ?", sujet: b.icone + " " + b.nom, juste: b.origine, choix: tMelange([b.origine].concat(autres(bestiaireDispo, b.origine, function (x) { return x.origine; }))) };
+  }
+  const e = tPioche(expressionsPlus);
+  return { intitule: "Que veut dire cette expression ?", sujet: "« " + e[0] + " »", juste: e[1], choix: tMelange([e[1]].concat(autres(expressionsPlus, e[1], function (x) { return x[1]; }))), longs: true };
+}
+
+function monstreTour(etage) {
+  const boss = etage % 5 === 0;
+  const rangVoulu = boss ? (etage >= 15 ? 4 : 3) : (etage >= 12 ? 2 : 1);
+  let liste = bestiaireDispo.filter(function (b) { return boss ? b.rang >= rangVoulu : b.rang <= Math.max(2, rangVoulu); });
+  if (!liste.length) liste = bestiaireDispo;
+  const b = tPioche(liste);
+  const pv = boss ? 6 + Math.floor(etage / 3) : 2 + Math.floor(etage / 3);
+  return { b: b, boss: boss, pv: pv };
+}
+
+function rangTour(etage) { return etage >= 20 ? 4 : etage >= 10 ? 3 : etage >= 5 ? 2 : 1; }
+
+function coeursTour() { let h = ""; for (let i = 0; i < tour.coeurs; i++) h += "❤️"; return h || "🖤"; }
+
+function entreeTour() {
+  const jour = etat.tourJour && etat.tourJour.jour === aujourdhui ? etat.tourJour : null;
+  $("tour").innerHTML =
+    '<p class="etiquette">🗼 La Tour du Pandémonium</p>' +
+    '<div class="tour-silhouette" aria-hidden="true">🗼</div>' +
+    '<p class="texte-doux">Chaque étage, une créature te barre la route. Réponds juste pour frapper, vite pour frapper fort, enchaîne pour les combos. Trois erreurs… et c\'est la chute.</p>' +
+    '<p class="petit">Ton record : <b>étage ' + (etat.tourRecord || 0) + "</b>" + (jour ? " · Tour du jour : étage " + jour.etage : "") + "</p>" +
+    '<div class="actions-pyramide"><button class="bouton principal" type="button" data-tour="jour">🗓️ La tour du jour</button>' +
+    '<button class="bouton" type="button" data-tour="libre">🎲 Tour libre</button></div>' +
+    '<p class="petit">La tour du jour est la même pour tout le monde : compare ton étage avec tes amis !</p>';
+}
+
+function lancerTour(duJour) {
+  tour.duJour = duJour;
+  tour.rnd = duJour ? hasardGraine(Number(aujourdhui.replace(/-/g, "")) * 7 + 13) : Math.random;
+  tour.etage = 1; tour.coeurs = 3; tour.combo = 0; tour.vision = 0; tour.sablier = 0; tour.rage = false; tour.fin = false;
+  nouveauMonstreTour();
+}
+
+function nouveauMonstreTour() {
+  const m = monstreTour(tour.etage);
+  tour.monstre = m; tour.pv = m.pv; tour.pvMax = m.pv;
+  if (m.boss) { const ctx = audio(); if (ctx) { const t = ctx.currentTime + 0.02; note(ctx, t, "sawtooth", 110, 55, 0.6, 0.12); note(ctx, t + 0.25, "sawtooth", 98, 49, 0.7, 0.12); } }
+  questionSuivanteTour();
+}
+
+function questionSuivanteTour() {
+  tour.q = questionTour();
+  rendreCombatTour();
+  const duree = 10 + (tour.sablier > 0 ? 5 : 0);
+  if (tour.sablier > 0) tour.sablier--;
+  tour.restant = duree; tour.debutQ = Date.now();
+  clearInterval(tour.minuteur);
+  tour.minuteur = setInterval(function () {
+    const reste = Math.max(0, duree - (Date.now() - tour.debutQ) / 1000);
+    const b = $("tour-temps"); if (b) b.style.width = (reste / duree * 100) + "%";
+    if (reste <= 0) { clearInterval(tour.minuteur); repondreTour(null); }
+  }, 100);
+}
+
+function rendreCombatTour() {
+  const m = tour.monstre, q = tour.q;
+  $("tour").innerHTML =
+    '<div class="tour-haut"><span class="tour-etage">Étage ' + tour.etage + (m.boss ? " · BOSS" : "") + '</span><span class="tour-coeurs">' + coeursTour() + "</span></div>" +
+    '<div class="tour-monstre' + (m.boss ? " boss" : "") + '" id="tour-monstre"><span class="titre-sceau rang-' + m.b.rang + '">' + m.b.icone + "</span>" +
+    '<p class="tour-nom">' + echapper(m.b.nom) + "</p>" +
+    '<div class="tour-pv"><div style="width:' + (tour.pv / tour.pvMax * 100) + '%"></div></div>' +
+    (tour.combo >= 2 ? '<p class="tour-combo">🔥 Combo ×' + tour.combo + "</p>" : "") + (tour.rage ? '<p class="tour-combo">⚡ Rage</p>' : "") + "</div>" +
+    '<div class="tour-temps-fond"><div class="tour-temps" id="tour-temps"></div></div>' +
+    '<p class="petit">' + echapper(q.intitule) + "</p>" +
+    '<p class="tour-sujet">' + echapper(q.sujet) + "</p>" +
+    '<div class="tour-choix' + (q.longs ? " longs" : "") + '">' + q.choix.map(function (c, i) {
+      return '<button class="tour-reponse" type="button" data-rep="' + i + '">' + echapper(c) + "</button>";
+    }).join("") + "</div>" +
+    (tour.vision > 0 ? '<button class="bouton petit-bouton" type="button" data-tour="vision">👁️ Vision (' + tour.vision + ")</button>" : "");
+}
+
+function degatFlottant(texte, classe) {
+  const m = $("tour-monstre"); if (!m) return;
+  const d = document.createElement("span"); d.className = "tour-degat " + (classe || ""); d.textContent = texte;
+  m.appendChild(d); setTimeout(function () { d.remove(); }, 900);
+}
+
+function repondreTour(i) {
+  if (tour.fin || !tour.q) return;
+  clearInterval(tour.minuteur);
+  const q = tour.q; tour.q = null;
+  const boutons = document.querySelectorAll(".tour-reponse");
+  boutons.forEach(function (b, k) { b.disabled = true; if (q.choix[k] === q.juste) b.classList.add("juste"); });
+  const juste = i !== null && q.choix[i] === q.juste;
+  if (juste) {
+    tour.combo++;
+    const vite = (Date.now() - tour.debutQ) / 1000 < 4;
+    let degat = 1 + (vite ? 1 : 0);
+    if (tour.combo >= 3) degat *= 2;
+    if (tour.rage) degat *= 2;
+    tour.pv = Math.max(0, tour.pv - degat);
+    sonJuste(0);
+    const mon = $("tour-monstre"); if (mon) mon.classList.add("touche");
+    degatFlottant("−" + degat + (vite ? " ⚡" : ""));
+    const barre = document.querySelector(".tour-pv div"); if (barre) barre.style.width = (tour.pv / tour.pvMax * 100) + "%";
+  } else {
+    if (i !== null) boutons[i].classList.add("faux");
+    tour.combo = 0; tour.coeurs--;
+    sonFaux(0);
+    $("fenetre-tour").querySelector(".fenetre").classList.add("frappe");
+    setTimeout(function () { const f = $("fenetre-tour").querySelector(".fenetre"); if (f) f.classList.remove("frappe"); }, 450);
+    degatFlottant(i === null ? "⏳ Trop lent !" : "💔", "rate");
+  }
+  setTimeout(function () {
+    if (tour.coeurs <= 0) return finTour();
+    if (tour.pv <= 0) return victoireEtage();
+    questionSuivanteTour();
+  }, juste ? 650 : 1300);
+}
+
+function victoireEtage() {
+  const m = tour.monstre;
+  tour.rage = false;
+  sonBoire(m.boss);
+  if (m.boss) feterAvecDesBraises();
+  const r = $("tour").getBoundingClientRect(); etincellesAuToucher(r.left + r.width / 2, r.top + 120, m.boss ? 30 : 14);
+  const offre = tMelange(FIOLES_TOUR).slice(0, 3);
+  $("tour").innerHTML =
+    '<p class="etiquette">🗼 Étage ' + tour.etage + " conquis</p>" +
+    '<span class="titre-sceau rang-' + m.b.rang + '">' + m.b.icone + "</span>" +
+    '<p class="grimoire-titre">' + echapper(m.b.nom) + " est terrassé" + (/^La |^Mélusine/.test(m.b.nom) ? "e" : "") + " !</p>" +
+    '<p class="petit gauche"><b>Le savais-tu ?</b> ' + echapper(m.b.savais) + "</p>" +
+    '<p class="texte-doux">Choisis une fiole pour la suite :</p>' +
+    '<div class="tour-fioles">' + offre.map(function (f) {
+      return '<button class="tour-fiole" type="button" data-fiole="' + f.id + '"><i>' + f.icone + "</i><b>" + f.nom + "</b><span>" + f.effet + "</span></button>";
+    }).join("") + "</div>";
+}
+
+function finTour() {
+  tour.fin = true;
+  clearInterval(tour.minuteur);
+  const atteint = tour.etage;
+  const record = atteint > (etat.tourRecord || 0);
+  if (record) etat.tourRecord = atteint;
+  if (tour.duJour) etat.tourJour = { jour: aujourdhui, etage: Math.max(atteint, etat.tourJour && etat.tourJour.jour === aujourdhui ? etat.tourJour.etage : 0) };
+  etat.xp += atteint * 3;
+  sauver();
+  $("xp").textContent = etat.xp;
+  const rang = rangTour(atteint);
+  sonBoire(record);
+  if (record) feterAvecDesBraises();
+  $("tour").innerHTML =
+    '<p class="etiquette">🗼 La chute</p>' +
+    '<span class="titre-sceau rang-' + rang + '">' + ["", "🥉", "🥈", "🥇", "🌟"][rang] + "</span>" +
+    '<p class="titre-nom">Étage ' + atteint + "</p>" +
+    '<p class="texte-doux">' + (record ? "🏆 Nouveau record !" : "Ton record : étage " + (etat.tourRecord || 0)) + " · +" + atteint * 3 + " ✦</p>" +
+    (tour.duJour ? '<p class="petit">Tour du jour (' + new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long" }) + ")</p>" : "") +
+    '<div class="actions-pyramide"><button class="bouton principal" type="button" data-tour="partager">📤 Défier mes amis</button>' +
+    '<button class="bouton" type="button" data-tour="' + (tour.duJour ? "jour" : "libre") + '">🔥 Remonter</button>' +
+    '<button class="bouton" type="button" data-tour="entree">🗼 Accueil de la tour</button></div>';
+  setTimeout(verifierTitres, 1500);
+}
+
+$("tour").addEventListener("click", function (e) {
+  const r = e.target.closest("[data-rep]");
+  if (r) { repondreTour(+r.dataset.rep); return; }
+  const f = e.target.closest("[data-fiole]");
+  if (f) {
+    const id = f.dataset.fiole;
+    if (id === "vie") tour.coeurs = Math.min(5, tour.coeurs + 1);
+    if (id === "vision") tour.vision += 2;
+    if (id === "sablier") tour.sablier += 5;
+    if (id === "rage") tour.rage = true;
+    sonFiole();
+    tour.etage++;
+    nouveauMonstreTour();
+    return;
+  }
+  const b = e.target.closest("[data-tour]");
+  if (!b) return;
+  const a = b.dataset.tour;
+  if (a === "jour") lancerTour(true);
+  else if (a === "libre") lancerTour(false);
+  else if (a === "entree") entreeTour();
+  else if (a === "vision" && tour.q && tour.vision > 0) {
+    const fausses = []; document.querySelectorAll(".tour-reponse").forEach(function (x, k) { if (tour.q.choix[k] !== tour.q.juste && !x.disabled) fausses.push(x); });
+    if (fausses.length > 1) { const x = fausses[Math.floor(Math.random() * fausses.length)]; x.disabled = true; x.classList.add("efface"); tour.vision--; b.textContent = "👁️ Vision (" + tour.vision + ")"; if (!tour.vision) b.remove(); }
+  }
+  else if (a === "partager") {
+    const texte = "🗼 J'ai atteint l'étage " + tour.etage + " de la Tour du Pandémonium" + (tour.duJour ? " (tour du " + new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long" }) + ")" : "") + ". Et toi, jusqu'où montes-tu ?\nhttps://chrys505.github.io/pandemonium-en-ligne/app/";
+    if (navigator.share) navigator.share({ text: texte }).catch(function () {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(texte).then(function () { b.textContent = "✅ Copié !"; });
+  }
+});
+function fermerTour() { clearInterval(tour.minuteur); tour.fin = true; $("fenetre-tour").hidden = true; majTourSous(); }
+function majTourSous() { if (etat.tourRecord) $("tour-sous").textContent = "Ton record : étage " + etat.tourRecord + ". Monte plus haut et terrasse les créatures avec tes mots"; }
+majTourSous();
+$("ouvrir-tour").addEventListener("click", function () { entreeTour(); $("fenetre-tour").hidden = false; });
+$("fermer-tour").addEventListener("click", fermerTour);
+$("fenetre-tour").addEventListener("click", function (e) { if (e.target === $("fenetre-tour")) fermerTour(); });
+
+// ---------- 🪢 Le pendu de la potence : un mot rare, lettre par lettre ----------
+const pendu = { mot: null, lettres: [], erreurs: 0, indice: false, fini: false };
+const ERREURS_MAX = 7;
+function lettresDe(mot) { return sansAccents(mot).toUpperCase(); }
+
+function nouveauPendu() {
+  const liste = motsRaresDispo().filter(function (m) { return /^[A-Za-zÀ-ÿ]{5,11}$/.test(m.mot); });
+  pendu.mot = auHasard(liste.length ? liste : motsRaresDispo());
+  pendu.lettres = []; pendu.erreurs = 0; pendu.indice = false; pendu.fini = false;
+  rendrePendu();
+}
+
+function dessinPendu(n) {
+  const traits = [
+    '<line x1="10" y1="140" x2="110" y2="140"/>', '<line x1="30" y1="140" x2="30" y2="12"/>', '<line x1="30" y1="12" x2="90" y2="12"/><line x1="30" y1="34" x2="52" y2="12"/>',
+    '<line x1="90" y1="12" x2="90" y2="32"/>', '<circle cx="90" cy="44" r="12"/>', '<line x1="90" y1="56" x2="90" y2="96"/><line x1="90" y1="66" x2="74" y2="82"/><line x1="90" y1="66" x2="106" y2="82"/>',
+    '<line x1="90" y1="96" x2="76" y2="122"/><line x1="90" y1="96" x2="104" y2="122"/>'
+  ];
+  return '<svg class="potence" viewBox="0 0 120 150" aria-hidden="true">' + traits.slice(0, n).join("") + "</svg>";
+}
+
+function rendrePendu() {
+  const cible = lettresDe(pendu.mot.mot);
+  const gagne = cible.split("").every(function (l) { return !/[A-Z]/.test(l) || pendu.lettres.indexOf(l) !== -1; });
+  const perdu = pendu.erreurs >= ERREURS_MAX;
+  const affiche = pendu.mot.mot.split("").map(function (c, i) {
+    const l = cible[i];
+    return /[A-Z]/.test(l) && pendu.lettres.indexOf(l) === -1 && !perdu ? "<span>_</span>" : "<span" + (perdu && pendu.lettres.indexOf(l) === -1 ? ' class="rate"' : "") + ">" + echapper(c.toUpperCase()) + "</span>";
+  }).join("");
+  let html = dessinPendu(pendu.erreurs) +
+    '<p class="pendu-mot">' + affiche + "</p>" +
+    '<p class="petit">' + (ERREURS_MAX - pendu.erreurs) + " erreur(s) avant la corde</p>";
+  if (gagne || perdu) {
+    if (!pendu.fini) {
+      pendu.fini = true;
+      if (gagne) { etat.pendusGagnes = (etat.pendusGagnes || 0) + 1; etat.xp += 10; sauver(); $("xp").textContent = etat.xp; sonBoire(true); setTimeout(verifierTitres, 1500); }
+      else sonFaux(0);
+    }
+    html += '<p class="grimoire-titre">' + (gagne ? "🎉 Sauvé de justesse !" : "☠️ Pendu haut et court…") + "</p>" +
+      '<p class="texte-doux"><b>' + echapper(pendu.mot.mot) + "</b> : " + echapper(pendu.mot.definition) + "</p>" +
+      '<button class="bouton principal large" type="button" id="pendu-encore">🪢 Un autre condamné</button>';
+  } else {
+    html += (pendu.indice ? '<p class="texte-doux">💡 ' + echapper(pendu.mot.definition) + "</p>" : '<button class="bouton petit-bouton" type="button" id="pendu-indice">💡 Indice (la définition, contre une erreur)</button>') +
+      '<div class="clavier">' + "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(function (l) {
+        const jouee = pendu.lettres.indexOf(l) !== -1;
+        return '<button type="button" data-lettre="' + l + '"' + (jouee ? " disabled" : "") + ' class="' + (jouee ? (cible.indexOf(l) !== -1 ? "bonne" : "mauvaise") : "") + '">' + l + "</button>";
+      }).join("") + "</div>";
+  }
+  $("pendu").innerHTML = html;
+}
+
+$("pendu").addEventListener("click", function (e) {
+  const l = e.target.closest("[data-lettre]");
+  if (l && !pendu.fini) {
+    const x = l.dataset.lettre;
+    if (pendu.lettres.indexOf(x) === -1) {
+      pendu.lettres.push(x);
+      if (lettresDe(pendu.mot.mot).indexOf(x) === -1) { pendu.erreurs++; sonFaux(0); } else sonJuste(0);
+    }
+    rendrePendu(); return;
+  }
+  if (e.target.closest("#pendu-indice")) { pendu.indice = true; pendu.erreurs++; rendrePendu(); return; }
+  if (e.target.closest("#pendu-encore")) nouveauPendu();
+});
+$("ouvrir-pendu").addEventListener("click", function () { nouveauPendu(); $("fenetre-pendu").hidden = false; });
+$("fermer-pendu").addEventListener("click", function () { $("fenetre-pendu").hidden = true; });
+$("fenetre-pendu").addEventListener("click", function (e) { if (e.target === $("fenetre-pendu")) $("fenetre-pendu").hidden = true; });
+
+// ---------- 🎭 Vrai ou galéjade ? 10 affirmations, 5 secondes chacune ----------
+const galej = { liste: [], i: 0, score: 0, serie: 0, minuteur: null, debut: 0, repondu: false };
+function lancerGalejade() {
+  const base = (typeof vraiOuGalejade !== "undefined" ? vraiOuGalejade : []).slice();
+  for (let i = base.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const x = base[i]; base[i] = base[j]; base[j] = x; }
+  galej.liste = base.slice(0, 10); galej.i = 0; galej.score = 0; galej.serie = 0;
+  questionGalejade();
+}
+function questionGalejade() {
+  const a = galej.liste[galej.i];
+  galej.repondu = false;
+  $("galejade").innerHTML =
+    '<p class="petit">Affirmation ' + (galej.i + 1) + " / " + galej.liste.length + " · Score " + galej.score + (galej.serie >= 2 ? " · 🔥 ×" + galej.serie : "") + "</p>" +
+    '<div class="tour-temps-fond"><div class="tour-temps" id="galej-temps"></div></div>' +
+    '<p class="galej-affirmation">' + echapper(a[0]) + "</p>" +
+    '<div class="galej-boutons"><button class="galej-vrai" type="button" data-galej="1">✅ Vrai</button><button class="galej-faux" type="button" data-galej="0">🎭 Galéjade</button></div>';
+  galej.debut = Date.now();
+  clearInterval(galej.minuteur);
+  galej.minuteur = setInterval(function () {
+    const reste = Math.max(0, 5 - (Date.now() - galej.debut) / 1000);
+    const b = $("galej-temps"); if (b) b.style.width = (reste / 5 * 100) + "%";
+    if (reste <= 0) { clearInterval(galej.minuteur); repondreGalejade(null); }
+  }, 100);
+}
+function repondreGalejade(choix) {
+  if (galej.repondu) return;
+  galej.repondu = true;
+  clearInterval(galej.minuteur);
+  const a = galej.liste[galej.i];
+  const juste = choix !== null && (choix === 1) === a[1];
+  if (juste) { galej.score++; galej.serie++; sonJuste(0); } else { galej.serie = 0; sonFaux(0); }
+  $("galejade").querySelector(".galej-boutons").outerHTML =
+    '<p class="grimoire-titre">' + (choix === null ? "⏳ Trop tard !" : juste ? "✅ Bien vu !" : "❌ Raté !") + "</p>" +
+    '<p class="grimoire-revers gauche">' + echapper(a[2]) + "</p>" +
+    '<button class="bouton principal large" type="button" id="galej-suite">' + (galej.i + 1 < galej.liste.length ? "Suivante →" : "Voir mon score") + "</button>";
+}
+function finGalejade() {
+  const s = galej.score, n = galej.liste.length;
+  const rang = s >= 10 ? 4 : s >= 8 ? 3 : s >= 6 ? 2 : 1;
+  if (s > (etat.galejRecord || 0)) etat.galejRecord = s;
+  etat.xp += s * 2; sauver(); $("xp").textContent = etat.xp;
+  sonBoire(rang >= 3); if (rang === 4) feterAvecDesBraises();
+  $("galejade").innerHTML =
+    '<span class="titre-sceau rang-' + rang + '">' + ["", "🥉", "🥈", "🥇", "🌟"][rang] + "</span>" +
+    '<p class="titre-nom">' + s + " / " + n + "</p>" +
+    '<p class="texte-doux">' + (rang === 4 ? "Rien ne t'échappe : détecteur de galéjades infaillible !" : rang === 3 ? "Fin limier : on ne te la fait pas." : rang === 2 ? "Pas mal, mais quelques galéjades t'ont roulé." : "Les galéjadeurs se frottent les mains…") + "</p>" +
+    '<p class="petit">Ton record : ' + (etat.galejRecord || s) + " / " + n + " · +" + s * 2 + " ✦</p>" +
+    '<button class="bouton principal large" type="button" id="galej-rejouer">🎭 Rejouer</button>';
+  setTimeout(verifierTitres, 1500);
+}
+$("galejade").addEventListener("click", function (e) {
+  const b = e.target.closest("[data-galej]");
+  if (b) { repondreGalejade(+b.dataset.galej); return; }
+  if (e.target.closest("#galej-suite")) { galej.i++; if (galej.i < galej.liste.length) questionGalejade(); else finGalejade(); return; }
+  if (e.target.closest("#galej-rejouer")) lancerGalejade();
+});
+function fermerGalejade() { clearInterval(galej.minuteur); galej.repondu = true; $("fenetre-galejade").hidden = true; }
+$("ouvrir-galejade").addEventListener("click", function () { lancerGalejade(); $("fenetre-galejade").hidden = false; });
+$("fermer-galejade").addEventListener("click", fermerGalejade);
+$("fenetre-galejade").addEventListener("click", function (e) { if (e.target === $("fenetre-galejade")) fermerGalejade(); });
 
 function majWidgets() {
   $("widgets").innerHTML = widgetMystere() + widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetFil();

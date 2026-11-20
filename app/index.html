@@ -137,6 +137,15 @@
       <button class="bouton principal large" id="lancer-revision" type="button">Lancer une révision</button>
       <p class="petit">Revoir tes mots du jour est toujours gratuit. En plus : 1 révision bonus par jour, illimitée avec Premium.</p>
 
+      <button class="bouton-quintessence bouton-tour" id="ouvrir-tour" type="button">
+        <i aria-hidden="true">🗼</i>
+        <b>La Tour du Pandémonium</b>
+        <span id="tour-sous">Monte étage par étage et terrasse les créatures avec tes mots</span>
+      </button>
+      <div class="duo-conversation">
+        <button class="bouton-conversation" id="ouvrir-pendu" type="button"><i>🪢</i><b>Le pendu de la potence</b><span>Un mot rare, lettre par lettre</span></button>
+        <button class="bouton-conversation" id="ouvrir-galejade" type="button"><i>🎭</i><b>Vrai ou galéjade ?</b><span>5 secondes pour démasquer le faux</span></button>
+      </div>
       <button class="bouton-conversation bouton-paires" id="ouvrir-paires" type="button"><i>🃏</i><b>Le jeu des paires</b><span>Retourne les cartes et retrouve chaque mot avec sa définition</span></button>
 
       <h2 class="titre-2">Le dictionnaire 🔎</h2>
@@ -380,6 +389,28 @@
     <p class="plateau-decompte" id="plateau-decompte"></p>
     <p class="plateau-chrono" id="plateau-chrono" hidden>● 0:00</p>
     <div class="plateau-actions" id="plateau-actions"></div>
+  </div>
+
+  <!-- ===== Les jeux : la Tour, le pendu, vrai ou galéjade ===== -->
+  <div class="voile" id="fenetre-tour" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-tour" type="button" aria-label="Fermer">✕</button>
+      <div class="tour" id="tour"></div>
+    </div>
+  </div>
+  <div class="voile" id="fenetre-pendu" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-pendu" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">🪢 Le pendu de la potence</p>
+      <div class="pendu" id="pendu"></div>
+    </div>
+  </div>
+  <div class="voile" id="fenetre-galejade" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-galejade" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">🎭 Vrai ou galéjade ?</p>
+      <div class="galejade" id="galejade"></div>
+    </div>
   </div>
 
   <!-- ===== L'annonce d'un nouveau titre ===== -->

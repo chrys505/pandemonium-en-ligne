@@ -703,6 +703,40 @@ const tirades = [
     jeu: "La liste des défauts, rapide et amère. Puis une pause. Et la fin, doucement, avec tendresse.", sombre: false }
 ];
 
+// ----- Vrai ou galéjade ? Des faits vrais et étonnants, et des idées reçues fausses (ajouté le 2026-11-21) -----
+// [affirmation, vrai ?, explication]
+const vraiOuGalejade = [
+  ["Napoléon était un homme minuscule, d'à peine 1,50 m.", false, "Galéjade ! Il mesurait environ 1,69 m, dans la moyenne de son temps. La légende vient de la propagande anglaise et de la confusion entre pouces français et anglais."],
+  ["Les Vikings portaient des casques à cornes au combat.", false, "Galéjade ! Aucun casque viking à cornes n'a été retrouvé. L'image vient des costumes d'opéra de Wagner, au XIXᵉ siècle."],
+  ["Au Moyen Âge, on croyait que la Terre était plate.", false, "Galéjade ! Les savants médiévaux savaient qu'elle était ronde. Ce mythe a été inventé au XIXᵉ siècle."],
+  ["La Grande Muraille de Chine se voit à l'œil nu depuis la Lune.", false, "Galéjade ! Elle est bien trop étroite : même depuis l'orbite basse, on la distingue à peine."],
+  ["Marie-Antoinette a lancé : « Qu'ils mangent de la brioche ! »", false, "Galéjade ! Aucune preuve. Rousseau prête déjà la formule à « une grande princesse » alors que Marie-Antoinette n'était qu'une enfant."],
+  ["Le poisson rouge n'a que trois secondes de mémoire.", false, "Galéjade ! Il peut se souvenir de choses pendant des mois."],
+  ["Les chauves-souris sont aveugles.", false, "Galéjade ! Elles voient, certaines très bien. L'écholocation s'ajoute à leur vue."],
+  ["Einstein était nul en mathématiques à l'école.", false, "Galéjade ! Il excellait en mathématiques dès l'adolescence."],
+  ["La foudre ne tombe jamais deux fois au même endroit.", false, "Galéjade ! La tour Eiffel est frappée plusieurs fois par an."],
+  ["Molière est mort sur scène, en pleine représentation du Malade imaginaire.", false, "Galéjade, mais de peu ! Il a été pris d'un malaise sur scène lors de la quatrième représentation, et il est mort quelques heures plus tard, chez lui."],
+  ["Les taureaux chargent parce que la couleur rouge les énerve.", false, "Galéjade ! Ils distinguent mal le rouge : c'est le mouvement de la cape qui les excite."],
+  ["Les autruches enfouissent la tête dans le sable quand elles ont peur.", false, "Galéjade ! Elles se couchent à plat au sol, ce qui de loin donne cette impression."],
+  ["Nous n'utilisons que 10 % de notre cerveau.", false, "Galéjade ! L'imagerie médicale montre que presque toutes les zones du cerveau servent."],
+  ["Le Penseur de Rodin représente un philosophe grec.", false, "Galéjade ! À l'origine, il représentait Dante, méditant au-dessus de la Porte de l'Enfer."],
+  ["Cléopâtre a vécu plus près de l'invention de l'iPhone que de la construction de la grande pyramide de Khéops.", true, "Vrai ! La pyramide date d'environ 2560 av. J.-C., Cléopâtre est morte en 30 av. J.-C."],
+  ["Les pieuvres ont trois cœurs.", true, "Vrai ! Deux cœurs pompent le sang vers les branchies, le troisième vers le reste du corps. Et leur sang est bleu."],
+  ["L'université d'Oxford est plus ancienne que l'Empire aztèque.", true, "Vrai ! On y enseignait dès 1096 ; la cité aztèque de Tenochtitlan a été fondée en 1325."],
+  ["Le règne de Louis XIV a duré 72 ans.", true, "Vrai ! De 1643 à 1715 : le plus long règne de l'histoire de France."],
+  ["Sur Vénus, un jour dure plus longtemps qu'une année.", true, "Vrai ! Vénus tourne si lentement sur elle-même qu'elle fait le tour du Soleil avant de finir un tour complet."],
+  ["Les wombats font des crottes en forme de cube.", true, "Vrai ! Leur intestin façonne ces petits cubes, qui ne roulent pas et marquent leur territoire."],
+  ["La tour Eiffel grandit d'une quinzaine de centimètres en été.", true, "Vrai ! Le fer se dilate avec la chaleur."],
+  ["Napoléon a été attaqué par une horde de lapins.", true, "Vrai ! En 1807, lors d'une chasse, les centaines de lapins lâchés pour lui se sont rués sur l'Empereur, qui dut battre en retraite."],
+  ["Il existe plus de façons de mélanger un jeu de 52 cartes que d'atomes sur Terre.", true, "Vrai ! Il y a environ 8 suivi de 67 zéros façons de les ordonner : chaque mélange bien fait est sans doute unique dans l'histoire."],
+  ["Les requins existaient avant les arbres.", true, "Vrai ! Les requins ont environ 450 millions d'années, les premiers arbres environ 385 millions."],
+  ["En 1919, une vague de mélasse a déferlé dans les rues de Boston.", true, "Vrai ! Une cuve géante s'est rompue : un flot sucré de plusieurs mètres de haut a fait 21 morts."],
+  ["Le requin du Groenland peut vivre près de quatre siècles.", true, "Vrai ! C'est le vertébré à la plus longue vie connue."],
+  ["Le mot « cravate » vient des Croates.", true, "Vrai ! Les cavaliers croates au service de Louis XIII portaient un foulard noué au cou, qui fit fureur à Paris."],
+  ["Le mot « bistro » viendrait des soldats russes qui criaient « bystro » (vite !) en 1814.", false, "Galéjade, probablement ! C'est une jolie légende, mais le mot n'apparaît qu'à la fin du XIXᵉ siècle : son origine reste discutée."],
+  ["Victor Hugo a voulu que le corbillard des pauvres l'emmène à sa dernière demeure.", true, "Vrai ! Selon son testament, il fut conduit au Panthéon dans un humble corbillard, suivi par près de deux millions de personnes."]
+];
+
 // ----- Le bestiaire fabuleux : des créatures des légendes, avec leur rang de rareté (ajouté le 2026-11-20) -----
 // { nom, icone, origine, rang (1 bronze, 2 argent, 3 or, 4 légendaire), legende, savais }
 const bestiaire = [

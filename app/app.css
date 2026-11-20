@@ -2220,3 +2220,60 @@ body.maudit .q-liquide::before { background: #ff8a7d; }
 .bouton-rec.en-cours { background: #e5484d; border-radius: 50%; position: relative; animation: rec-pouls 1.2s ease-in-out infinite; }
 .bouton-rec.en-cours::after { content: ""; position: absolute; inset: 22px; border-radius: 4px; background: #fff; }
 @keyframes rec-pouls { 0%, 100% { box-shadow: 0 0 10px rgba(229, 72, 77, 0.5); } 50% { box-shadow: 0 0 30px rgba(229, 72, 77, 0.9); } }
+
+/* ===== Les jeux : la Tour, le pendu, vrai ou galéjade (v55) ===== */
+.bouton-tour { margin: 0 0 12px; }
+#fenetre-tour .fenetre, #fenetre-pendu .fenetre, #fenetre-galejade .fenetre { max-height: 94vh; overflow-y: auto; }
+.tour, .pendu, .galejade { text-align: center; }
+.tour-silhouette { font-size: 4.5rem; margin: 6px 0; filter: drop-shadow(0 0 18px var(--jaune)); animation: q-flotte 3s ease-in-out infinite; }
+.tour-haut { display: flex; justify-content: space-between; align-items: center; margin: 2px 34px 6px 0; }
+.tour-etage { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--jaune); font-weight: 700; }
+.tour-coeurs { font-size: 1.1rem; letter-spacing: 2px; }
+.tour-monstre { position: relative; padding: 4px 0 6px; }
+.tour-monstre .titre-sceau { width: 86px; height: 86px; font-size: 2.6rem; margin: 2px auto; animation: q-flotte 2.6s ease-in-out infinite; }
+.tour-monstre.boss .titre-sceau { width: 110px; height: 110px; font-size: 3.4rem; }
+.tour-monstre.touche .titre-sceau { animation: monstre-touche 0.35s ease; }
+@keyframes monstre-touche { 0% { transform: translateX(0); filter: brightness(1); } 30% { transform: translateX(-8px) rotate(-6deg); filter: brightness(2.2); } 60% { transform: translateX(6px); } 100% { transform: none; filter: none; } }
+.tour-nom { margin: 4px 0; font-family: var(--affiche); font-size: 1.3rem; }
+.tour-pv { width: 70%; height: 10px; margin: 4px auto; border-radius: 6px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
+.tour-pv div { height: 100%; background: linear-gradient(90deg, #e5484d, #ff9a3c); transition: width 0.35s ease; }
+.tour-combo { margin: 4px 0 0; font-weight: 700; color: var(--jaune); animation: fil-clignote 1s ease-in-out infinite; }
+.tour-degat { position: absolute; left: 50%; top: 30px; transform: translateX(-50%); font-size: 1.8rem; font-weight: 800; color: #ffd56b; text-shadow: 0 0 10px #000; pointer-events: none; animation: degat-monte 0.9s ease-out forwards; }
+.tour-degat.rate { color: #ff6b6b; font-size: 1.3rem; }
+@keyframes degat-monte { from { opacity: 1; transform: translate(-50%, 0) scale(1.2); } to { opacity: 0; transform: translate(-50%, -50px) scale(0.9); } }
+.tour-temps-fond { height: 6px; margin: 8px 0; border-radius: 4px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+.tour-temps { height: 100%; width: 100%; background: var(--degrade); transition: width 0.1s linear; }
+.tour-sujet { margin: 6px 0 12px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.4; }
+.tour-choix { display: grid; gap: 8px; }
+.tour-reponse {
+  padding: 13px 12px; border-radius: 14px; border: 1px solid var(--bord); background: rgba(255, 255, 255, 0.05);
+  color: inherit; font-family: var(--serif); font-size: 1.1rem; cursor: pointer; transition: transform 0.1s ease;
+}
+.tour-choix.longs .tour-reponse { font-family: var(--police); font-size: 0.92rem; text-align: left; }
+.tour-reponse:active { transform: scale(0.97); }
+.tour-reponse.juste { border-color: #3ecf8e; background: rgba(62, 207, 142, 0.2); }
+.tour-reponse.faux { border-color: #e5484d; background: rgba(229, 72, 77, 0.22); }
+.tour-reponse.efface { opacity: 0.15; }
+.fenetre.frappe { animation: frappe-ecran 0.4s ease; }
+@keyframes frappe-ecran { 0%, 100% { transform: none; box-shadow: none; } 25% { transform: translateX(-8px); box-shadow: inset 0 0 60px rgba(229, 72, 77, 0.6); } 75% { transform: translateX(8px); } }
+.tour-fioles { display: grid; gap: 8px; margin-top: 10px; }
+.tour-fiole { display: grid; grid-template-columns: 40px 1fr; grid-template-rows: auto auto; align-items: center; padding: 10px 12px; text-align: left; border-radius: 14px; border: 1px solid var(--bord); background: rgba(255, 255, 255, 0.05); color: inherit; cursor: pointer; }
+.tour-fiole i { grid-row: span 2; font-style: normal; font-size: 1.6rem; }
+.tour-fiole b { font-family: var(--serif); }
+.tour-fiole span { font-size: 0.82rem; color: var(--doux); }
+
+.potence { width: 140px; height: 170px; margin: 0 auto; display: block; stroke: var(--jaune); stroke-width: 4; stroke-linecap: round; fill: none; filter: drop-shadow(0 0 6px var(--bord)); }
+.pendu-mot { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 10px 0 4px; font-family: var(--affiche); font-size: 1.7rem; }
+.pendu-mot span { min-width: 18px; }
+.pendu-mot span.rate { color: #e5484d; }
+.clavier { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 12px; }
+.clavier button { padding: 10px 0; border-radius: 10px; border: 1px solid var(--bord); background: rgba(255, 255, 255, 0.06); color: inherit; font-weight: 700; font-size: 1rem; cursor: pointer; }
+.clavier button.bonne { background: rgba(62, 207, 142, 0.25); opacity: 0.6; }
+.clavier button.mauvaise { background: rgba(229, 72, 77, 0.2); opacity: 0.35; }
+
+.galej-affirmation { margin: 14px 0; font-family: var(--serif); font-size: 1.35rem; line-height: 1.45; min-height: 90px; }
+.galej-boutons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.galej-vrai, .galej-faux { padding: 16px 10px; border-radius: 16px; border: none; font-size: 1.1rem; font-weight: 700; cursor: pointer; color: #fff; }
+.galej-vrai { background: linear-gradient(135deg, #2f9e6e, #1d6b4a); }
+.galej-faux { background: linear-gradient(135deg, #c43a3f, #7d1d22); }
+.galej-vrai:active, .galej-faux:active { transform: scale(0.97); }
