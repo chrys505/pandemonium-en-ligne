@@ -2348,3 +2348,11 @@ body.sur-le-fil { overflow: hidden; }
 @keyframes alliance-arrive { from { transform: scale(0.7); opacity: 0; } to { transform: none; opacity: 1; } }
 .alliance-carte.vide { visibility: hidden; }
 body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
+
+/* ===== Le loup-garou : le défi des mots (v62) ===== */
+.garou-mot { margin: 10px 0; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--bord); background: rgba(255, 255, 255, 0.05); }
+.garou-mot .etiquette { margin-bottom: 4px; }
+.garou-mot-nom { margin: 0 0 4px; font-family: var(--affiche); font-size: 1.8rem; }
+.garou-mot.secret { border: 2px dashed #e5484d; background: rgba(229, 72, 77, 0.1); }
+.garou-mot.public { border-color: var(--jaune); }
+.garou-mot.revele { border-color: #e5484d; }

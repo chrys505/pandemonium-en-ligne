@@ -4556,17 +4556,32 @@ function compteGarou(roles) {
 function arreterMinuteurGarou() { if (garou.minuteur) { clearInterval(garou.minuteur); garou.minuteur = null; } }
 
 // Les étapes d'une nuit, puis du jour, lues à voix haute par le meneur
+// Le défi des mots : un mot de passe secret pour les loups, un mot public pour brouiller les pistes
+function deuxMotsGarou() {
+  const liste = motsRaresDispo().filter(function (m) { return m.definition && /^[A-Za-zÀ-ÿ-]{5,13}$/.test(m.mot); });
+  const a = auHasard(liste); let b = auHasard(liste);
+  while (b === a && liste.length > 1) b = auHasard(liste);
+  return { loups: a, village: b };
+}
+function encartMot(icone, titre, m, classe) {
+  return '<div class="garou-mot ' + classe + '"><p class="etiquette">' + icone + " " + titre + '</p><p class="garou-mot-nom">' + echapper(m.mot) + '</p><p class="petit">' + echapper(m.definition) + "</p></div>";
+}
+
 function etapesGarou() {
   const a = garou.roles;
+  const mots = garou.mots = deuxMotsGarou();
   const e = [
     { titre: "🌕 Nuit " + garou.nuit, texte: auHasard(garouCrepuscules) + " Tout le monde ferme les yeux." }
   ];
   if (a.indexOf("voyante") !== -1) e.push({ titre: "🔮 La voyante", texte: "Voyante, ouvre les yeux. Désigne du doigt celui dont tu veux connaître l'âme. (Meneur : montre-lui en silence, pouce en haut si c'est un loup.) Voyante, referme les yeux." });
-  e.push({ titre: "🐺 Les loups", texte: "Loups-garous, ouvrez les yeux. Reconnaissez-vous, et choisissez en silence votre victime de la nuit. (Meneur : retiens-la.) Loups, refermez les yeux, et essuyez vos babines." });
+  e.push({ titre: "🐺 Les loups", texte: "Loups-garous, ouvrez les yeux. Reconnaissez-vous, et choisissez en silence votre victime de la nuit. (Meneur : retiens-la, puis tourne l'écran vers les loups pour leur montrer le mot de passe.) Demain, au procès, vous devrez le glisser dans vos phrases sans vous faire prendre. Loups, refermez les yeux, et essuyez vos babines.",
+    encart: encartMot("🤫", "Mot de passe des loups · secret", mots.loups, "secret") });
   if (a.indexOf("sorciere") !== -1) e.push({ titre: "🧪 La sorcière", texte: "Sorcière, ouvre les yeux. (Meneur : montre-lui la victime.) Veux-tu verser ton élixir de vie pour la sauver ? Veux-tu verser ton poison sur quelqu'un ? Sorcière, referme les yeux." });
-  e.push({ titre: "🌫️ L'aube", texte: auHasard(garouAubes) + " Tout le monde ouvre les yeux. (Meneur : annonce qui est mort cette nuit, et la victime retourne sa carte. Si c'est le chasseur, il tire sa dernière flèche.)" });
-  e.push({ titre: "⚖️ Le procès", texte: "Le village a trois minutes pour démasquer les loups. Accusez, défendez-vous, mentez. Puis, au signal, tout le monde pointe du doigt un suspect : le plus désigné est pendu et révèle son rôle.", minuteur: 180 });
-  e.push({ titre: "⚰️ Le verdict", texte: "Les villageois gagnent quand le dernier loup est mort. Les loups gagnent quand ils sont aussi nombreux que les vivants. Sinon… la nuit retombe." });
+  e.push({ titre: "🌫️ L'aube", texte: auHasard(garouAubes) + " Tout le monde ouvre les yeux. (Meneur : annonce qui est mort cette nuit, et la victime retourne sa carte. Si c'est le chasseur, il tire sa dernière flèche.) Puis lis à voix haute le mot du village : chacun peut l'employer pour brouiller les pistes.",
+    encart: encartMot("📣", "Mot du village · public", mots.village, "public") });
+  e.push({ titre: "⚖️ Le procès", texte: "Le village a trois minutes pour démasquer les loups. Accusez, défendez-vous, mentez. Les loups doivent glisser leur mot de passe dans une phrase. Si tu crois l'entendre, crie « Mot de passe ! » en désignant celui qui vient de parler : si c'était bien le mot secret, ce loup est pendu sur-le-champ ; sinon, tu te tais jusqu'au vote. Au signal, tout le monde pointe du doigt un suspect : le plus désigné est pendu et révèle son rôle.", minuteur: 180 });
+  e.push({ titre: "⚰️ Le verdict", texte: "Meneur, révèle à tous le mot de passe des loups, ci-dessous. Si aucun loup n'a réussi à le placer, les loups ne pourront pas tuer la nuit prochaine. Les villageois gagnent quand le dernier loup est mort ; les loups gagnent quand ils sont aussi nombreux que les vivants. Sinon… la nuit retombe.",
+    encart: encartMot("🔓", "Le mot de passe était", mots.loups, "revele") });
   return e;
 }
 
@@ -4596,6 +4611,7 @@ function rendreGarou(phase) {
       '<p class="petit">Meneur, lis à voix haute · étape ' + (garou.etape + 1) + " sur " + etapes.length + "</p>" +
       '<p class="grimoire-titre">' + e.titre + "</p>" +
       '<p class="citation-grande garou-recit">' + echapper(e.texte) + "</p>" +
+      (e.encart || "") +
       (e.minuteur ? '<p class="garou-chrono" id="garou-chrono">3:00</p><button class="bouton petit-bouton" type="button" data-garou="chrono">⏳ Lancer le sablier</button>' : "") +
       '<div class="actions-pyramide">' +
       (garou.etape < etapes.length - 1
