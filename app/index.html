@@ -151,7 +151,7 @@
         <button class="bouton-conversation" id="ouvrir-pendu" type="button"><i>🪢</i><b>Le pendu de la potence</b><span>Un mot rare, lettre par lettre</span></button>
         <button class="bouton-conversation" id="ouvrir-galejade" type="button"><i>🎭</i><b>Vrai ou galéjade ?</b><span>5 secondes pour démasquer le faux</span></button>
       </div>
-      <button class="bouton-conversation bouton-paires" id="ouvrir-paires" type="button"><i>🃏</i><b>Le jeu des paires</b><span>Retourne les cartes et retrouve chaque mot avec sa définition</span></button>
+      <button class="bouton-conversation bouton-paires" id="ouvrir-paires" type="button"><i>🔗</i><b>Les alliances</b><span id="paires-sous">60 secondes pour relier un maximum de mots à leur définition</span></button>
 
       <h2 class="titre-2">Le dictionnaire 🔎</h2>
       <input class="champ-dico" id="dico-recherche" type="search" placeholder="Un mot… ou décris quelqu'un pour trouver le mot juste" autocomplete="off" aria-label="Chercher un mot">
@@ -476,10 +476,8 @@
   <div class="voile" id="fenetre-paires" hidden>
     <div class="fenetre">
       <button class="fermer" id="fermer-paires" type="button" aria-label="Fermer">✕</button>
-      <p class="etiquette" id="titre-paires">🃏 Le jeu des paires</p>
-      <p class="petit gauche" id="paires-statut">Retourne deux cartes : un mot et sa définition.</p>
-      <div class="plateau-paires" id="plateau-paires"></div>
-      <button class="bouton principal large" id="rejouer-paires" type="button">Nouvelle partie</button>
+      <p class="etiquette" id="titre-paires">🔗 Les alliances</p>
+      <div class="alliances" id="alliances"></div>
     </div>
   </div>
 

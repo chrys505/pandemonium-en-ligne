@@ -603,6 +603,7 @@ function mesuresTitres() {
     pendus: etat.pendusGagnes || 0,
     galej: etat.galejRecord || 0,
     roman: (etat.roman && etat.roman.lus) || 0,
+    alliances: etat.pairesRecord || 0,
     elixirsLegendaires: (etat.elixirs || []).filter(function (x) { return x.rang === 4; }).length,
     collection: (etat.collection || []).length,
     sublimes: etat.sublimes || 0,
@@ -634,6 +635,8 @@ const TITRES = [
   ["quintessence", "🌟", "Quintessence pure", "Distiller un élixir légendaire", 4, "elixirsLegendaires", 1],
   ["lecteur", "📜", "Lecteur de feuilleton", "Vivre le premier épisode du Roman de l'Alchimiste", 1, "roman", 1],
   ["heros1", "🏛️", "Héros du Livre I", "Terminer le Livre I du Roman de l'Alchimiste", 3, "roman", 10],
+  ["allie", "🔗", "Faiseur d'alliances", "Relier 15 alliances en une partie", 2, "alliances", 15],
+  ["entremetteur", "💍", "Grand entremetteur des mots", "Relier 25 alliances en une partie", 4, "alliances", 25],
   ["grimpeur", "🧗", "Grimpeur de la Tour", "Atteindre l'étage 5 de la Tour", 2, "tourRecord", 5],
   ["pourfendeur", "🗡️", "Pourfendeur de boss", "Atteindre l'étage 10 de la Tour", 3, "tourRecord", 10],
   ["conquerant", "🏰", "Conquérant de la Tour", "Atteindre l'étage 20 de la Tour", 4, "tourRecord", 20],
@@ -4082,8 +4085,6 @@ function majDicoConcepts(q) {
 const conceptsRetournes = new Set();
 
 // ---------- Le jeu des paires : retrouver chaque mot avec sa définition ----------
-const NB_PAIRES = 6;
-let paires = { retournees: [], trouvees: 0, coups: 0, bloque: false };
 
 function definitionCourte(m) {
   // Le mot ne doit pas apparaître dans sa propre définition : il est remplacé par « … »
@@ -4092,81 +4093,160 @@ function definitionCourte(m) {
   return d.length > 70 ? d.slice(0, 68).replace(/\s+\S*$/, "") + "…" : d;
 }
 
-function nouvellePartiePaires() {
-  // D'abord les mots à revoir ou déjà vus (le jeu sert la mémorisation), puis des mots du jour au hasard
-  const choisis = [];
+// ---------- 🔗 Les alliances : relier un maximum de mots à leur définition en 60 secondes ----------
+const LIGNES_ALLIANCE = 5, DUREE_ALLIANCE = 60;
+const alliance = { file: [], gauche: [], droite: [], choixG: null, choixD: null, score: 0, paires: 0, combo: 0, erreurs: 0, fin: 0, minuteur: null, fini: true, vus: [] };
+
+function reserveAlliances() {
+  // D'abord les mots à revoir ou déjà vus (le jeu sert la mémorisation), puis des mots au hasard
+  const melange = function (l) { return l.slice().sort(function () { return Math.random() - 0.5; }); };
   const vus = motsARevoir().concat(motsDejaVus()).filter(function (m) { return !m.perso; });
-  // Version sombre : les paires maudites, uniquement des insultes d'antan et d'argot
-  const reserve = etat.maudit && insultesDisponibles().length
-    ? insultesDisponibles().sort(function () { return Math.random() - 0.5; })
-    : vus.sort(function () { return Math.random() - 0.5; })
-      .concat(motsUtiles().slice().sort(function () { return Math.random() - 0.5; }));
-  $("titre-paires").textContent = etat.maudit ? "😈 Les paires maudites" : "🃏 Le jeu des paires";
-  reserve.forEach(function (m) {
-    if (choisis.length < NB_PAIRES && choisis.indexOf(m) === -1 && m.definition) choisis.push(m);
+  // Version sombre : les alliances maudites, des insultes d'antan et d'argot
+  const base = etat.maudit && insultesDisponibles().length ? melange(insultesDisponibles())
+    : melange(vus).concat(melange(motsUtiles())).concat(melange(motsRaresDispo()));
+  const pris = [], defs = {};
+  base.forEach(function (m) {
+    if (!m.definition || pris.indexOf(m) !== -1) return;
+    const d = definitionCourte(m);
+    if (defs[d]) return;
+    defs[d] = true; pris.push(m);
   });
-  const cartesJeu = [];
-  choisis.forEach(function (m, i) {
-    cartesJeu.push({ paire: i, texte: m.mot, sorte: "mot", m: m });
-    cartesJeu.push({ paire: i, texte: definitionCourte(m), sorte: "def", m: m });
-  });
-  cartesJeu.sort(function () { return Math.random() - 0.5; });
-  paires = { retournees: [], trouvees: 0, coups: 0, bloque: false };
-  const plateau = $("plateau-paires");
-  plateau.innerHTML = "";
-  cartesJeu.forEach(function (c) {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "carte-paire " + c.sorte;
-    b.innerHTML = '<span class="paire-dos"><i>❦</i></span><span class="paire-recto">' + echapper(c.texte) + "</span>";
-    b.addEventListener("click", function () { retournerPaire(b, c); });
-    plateau.appendChild(b);
-  });
-  $("paires-statut").textContent = "Retourne deux cartes : un mot et sa définition.";
+  return pris;
 }
 
-function retournerPaire(b, c) {
-  if (paires.bloque || b.classList.contains("retournee")) return;
-  b.classList.add("retournee");
-  sonRetourne();
-  paires.retournees.push({ b: b, c: c });
-  if (paires.retournees.length < 2) return;
-  paires.coups++;
-  const a = paires.retournees[0], z = paires.retournees[1];
-  paires.retournees = [];
-  if (a.c.paire === z.c.paire) {
-    // Une paire trouvée : le mot entre dans les révisions
-    a.b.classList.add("trouvee");
-    z.b.classList.add("trouvee");
-    paires.trouvees++;
-    entrerEnRevision(a.c.m.mot);
-    $("paires-statut").textContent = "✨ " + a.c.m.mot + " : " + a.c.m.definition;
-    if (paires.trouvees === NB_PAIRES) { finirPaires(); sonBoire(true); }
-    else { sauver(); sonJuste(0.15); }
-  } else {
-    sonFaux(0.35);
-    paires.bloque = true;
+function rangAlliances(n) { return n >= 23 ? 4 : n >= 15 ? 3 : n >= 8 ? 2 : 1; }
+function majPairesSous() { if (etat.pairesRecord) $("paires-sous").textContent = "Ton record : " + etat.pairesRecord + " alliances. Relie plus vite !"; }
+majPairesSous();
+
+function entreeAlliances() {
+  $("titre-paires").textContent = etat.maudit ? "😈 Les alliances maudites" : "🔗 Les alliances";
+  $("alliances").innerHTML =
+    '<div class="alliance-intro"><p class="alliance-chaine" aria-hidden="true">🔗</p>' +
+    '<p class="texte-doux">Touche un mot, puis sa définition. Chaque alliance s\'envole et une autre arrive. Enchaîne les bonnes réponses pour le combo ; une erreur coûte 3 secondes.</p>' +
+    '<p class="petit">Ton record : <b>' + (etat.pairesRecord || 0) + "</b> alliances en 60 secondes</p>" +
+    '<button class="bouton principal large" type="button" data-alliance="go">⏱️ C\'est parti !</button></div>';
+}
+
+function piocherAlliance() { return alliance.file.shift() || null; }
+
+function lancerAlliances() {
+  alliance.file = reserveAlliances();
+  alliance.gauche = []; alliance.droite = []; alliance.vus = [];
+  for (let i = 0; i < LIGNES_ALLIANCE; i++) { const m = piocherAlliance(); if (!m) break; alliance.gauche.push(m); alliance.droite.push(m); }
+  alliance.droite.sort(function () { return Math.random() - 0.5; });
+  alliance.choixG = null; alliance.choixD = null; alliance.score = 0; alliance.paires = 0; alliance.combo = 0; alliance.erreurs = 0; alliance.fini = false;
+  alliance.fin = Date.now() + DUREE_ALLIANCE * 1000;
+  rendreAlliances();
+  sonBascule();
+  clearInterval(alliance.minuteur);
+  alliance.minuteur = setInterval(tictacAlliances, 100);
+}
+
+function tictacAlliances() {
+  const reste = Math.max(0, (alliance.fin - Date.now()) / 1000);
+  const b = $("alliance-temps"), t = $("alliance-secondes");
+  if (b) { b.style.width = (reste / DUREE_ALLIANCE * 100) + "%"; b.classList.toggle("presse", reste < 10); }
+  if (t) t.textContent = Math.ceil(reste) + " s";
+  if (reste <= 0) finirAlliances();
+}
+
+function carteAlliance(m, cote, i) {
+  if (!m) return '<span class="alliance-carte vide"></span>';
+  const texte = cote === "g" ? m.mot : definitionCourte(m);
+  const choisi = (cote === "g" ? alliance.choixG : alliance.choixD) === i;
+  return '<button class="alliance-carte ' + (cote === "g" ? "mot" : "def") + (choisi ? " choisie" : "") + '" type="button" data-cote="' + cote + '" data-i="' + i + '">' + echapper(texte) + "</button>";
+}
+
+function rendreAlliances() {
+  $("alliances").innerHTML =
+    '<div class="alliance-haut"><span>✦ <b id="alliance-score">' + alliance.score + "</b></span>" +
+      '<span class="alliance-combo" id="alliance-combo">' + (alliance.combo >= 2 ? "🔥 ×" + Math.min(5, alliance.combo) : "") + "</span>" +
+      '<span id="alliance-secondes">' + Math.ceil(Math.max(0, (alliance.fin - Date.now()) / 1000)) + " s</span></div>" +
+    '<div class="tour-temps-fond"><div class="tour-temps" id="alliance-temps"></div></div>' +
+    '<div class="alliance-grille">' +
+      '<div class="alliance-colonne">' + alliance.gauche.map(function (m, i) { return carteAlliance(m, "g", i); }).join("") + "</div>" +
+      '<div class="alliance-colonne">' + alliance.droite.map(function (m, i) { return carteAlliance(m, "d", i); }).join("") + "</div>" +
+    "</div>";
+}
+
+function essayerAlliance() {
+  if (alliance.choixG === null || alliance.choixD === null) return;
+  const g = alliance.gauche[alliance.choixG], d = alliance.droite[alliance.choixD];
+  const bg = document.querySelector('[data-cote="g"][data-i="' + alliance.choixG + '"]');
+  const bd = document.querySelector('[data-cote="d"][data-i="' + alliance.choixD + '"]');
+  const ig = alliance.choixG, id = alliance.choixD;
+  alliance.choixG = null; alliance.choixD = null;
+  if (g === d) {
+    alliance.combo++; alliance.paires++;
+    const gain = Math.min(5, Math.max(1, alliance.combo));
+    alliance.score += gain;
+    alliance.vus.push(g);
+    sonJuste(0);
+    bg.classList.add("alliee"); bd.classList.add("alliee");
+    const r = bd.getBoundingClientRect(); etincellesAuToucher(r.left + r.width / 2, r.top + r.height / 2, 8 + gain * 2);
+    $("alliance-score").textContent = alliance.score;
+    $("alliance-combo").textContent = alliance.combo >= 2 ? "🔥 ×" + Math.min(5, alliance.combo) : "";
+    // L'alliance s'envole, une nouvelle arrive à sa place
     setTimeout(function () {
-      a.b.classList.remove("retournee");
-      z.b.classList.remove("retournee");
-      paires.bloque = false;
-    }, 1100);
+      if (alliance.fini) return;
+      const nouveau = piocherAlliance();
+      alliance.gauche[ig] = nouveau; alliance.droite[id] = nouveau;
+      // La nouvelle définition n'arrive jamais en face de son mot : on l'échange avec une autre ligne
+      if (nouveau && alliance.droite.length > 1) {
+        const lignes = alliance.droite.map(function (_, k) { return k; }).filter(function (k) { return k !== ig && alliance.gauche[k] !== alliance.droite[id]; });
+        if (lignes.length) {
+          const j = lignes[Math.floor(Math.random() * lignes.length)];
+          const x = alliance.droite[j]; alliance.droite[j] = alliance.droite[id]; alliance.droite[id] = x;
+        }
+      }
+      if (!alliance.gauche.some(Boolean)) return finirAlliances();
+      rendreAlliances(); tictacAlliances();
+      document.querySelectorAll(".alliance-carte").forEach(function (c) {
+        if (alliance.gauche[+c.dataset.i] === nouveau && c.dataset.cote === "g" || alliance.droite[+c.dataset.i] === nouveau && c.dataset.cote === "d") c.classList.add("arrive");
+      });
+    }, 380);
+  } else {
+    alliance.combo = 0; alliance.erreurs++;
+    alliance.fin -= 3000;
+    sonFaux(0);
+    bg.classList.add("rate"); bd.classList.add("rate");
+    $("alliance-combo").textContent = "−3 s";
+    setTimeout(function () { if (!alliance.fini) { bg.classList.remove("rate", "choisie"); bd.classList.remove("rate", "choisie"); $("alliance-combo").textContent = ""; } }, 450);
   }
 }
 
-function finirPaires() {
-  const parfait = paires.coups <= NB_PAIRES + 3;
-  let message = (parfait ? "🏆 Mémoire d'éléphant ! " : "🎉 Toutes les paires trouvées ! ") + paires.coups + " coups.";
-  // Un bonus par jour
-  if (etat.bonusPaires !== aujourdhui) {
-    etat.bonusPaires = aujourdhui;
-    etat.xp += 10;
-    majCompteurs();
-    message += " +10 ✦";
-  }
-  sauver();
-  $("paires-statut").textContent = message + " Ces mots reviendront dans tes révisions.";
+function finirAlliances() {
+  if (alliance.fini) return;
+  alliance.fini = true;
+  clearInterval(alliance.minuteur);
+  const n = alliance.paires, record = n > (etat.pairesRecord || 0);
+  if (record) etat.pairesRecord = n;
+  alliance.vus.forEach(function (m) { if (!m.perso) entrerEnRevision(m.mot); });
+  etat.xp += alliance.score;
+  sauver(); majCompteurs();
+  const rang = rangAlliances(n);
+  sonBoire(record || rang >= 3);
+  if (record && n >= 8) feterAvecDesBraises();
+  $("alliances").innerHTML =
+    '<div class="alliance-intro"><span class="titre-sceau rang-' + rang + '">' + ["", "🥉", "🥈", "🥇", "🌟"][rang] + "</span>" +
+    '<p class="titre-nom">' + n + " alliance" + (n > 1 ? "s" : "") + "</p>" +
+    '<p class="texte-doux">' + (record ? "🏆 Nouveau record ! " : "Ton record : " + (etat.pairesRecord || 0) + ". ") + "+" + alliance.score + " ✦ · " + alliance.erreurs + " erreur" + (alliance.erreurs > 1 ? "s" : "") + "</p>" +
+    (alliance.vus.length ? '<p class="petit gauche">Tes alliances, qui reviendront dans tes révisions : ' + alliance.vus.map(function (m) { return "<b>" + echapper(m.mot) + "</b>"; }).join(" · ") + "</p>" : "") +
+    '<button class="bouton principal large" type="button" data-alliance="go">🔥 Encore !</button></div>';
+  setTimeout(verifierTitres, 1500);
 }
+
+$("alliances").addEventListener("click", function (e) {
+  if (e.target.closest('[data-alliance="go"]')) { lancerAlliances(); return; }
+  const c = e.target.closest(".alliance-carte:not(.vide)");
+  if (!c || alliance.fini || c.classList.contains("alliee")) return;
+  const i = +c.dataset.i;
+  if (c.dataset.cote === "g") alliance.choixG = alliance.choixG === i ? null : i;
+  else alliance.choixD = alliance.choixD === i ? null : i;
+  document.querySelectorAll('.alliance-carte[data-cote="' + c.dataset.cote + '"]').forEach(function (x) { x.classList.toggle("choisie", +x.dataset.i === (c.dataset.cote === "g" ? alliance.choixG : alliance.choixD)); });
+  sonClic();
+  essayerAlliance();
+});
 
 // ---------- La pyramide : 15 cartes face cachée (5 rangées), des défis qui montent en puissance ----------
 // En bas, la mise vaut 1 ; au sommet, 5. Version gentille : des points et des gages. Version sombre : des gorgées ou des gages.
@@ -4564,12 +4644,12 @@ $("fermer-garou").addEventListener("click", function () { arreterMinuteurGarou()
 $("fenetre-garou").addEventListener("click", function (e) { if (e.target === $("fenetre-garou")) { arreterMinuteurGarou(); $("fenetre-garou").hidden = true; } });
 
 $("ouvrir-paires").addEventListener("click", function () {
-  nouvellePartiePaires();
+  entreeAlliances();
   $("fenetre-paires").hidden = false;
 });
-$("rejouer-paires").addEventListener("click", nouvellePartiePaires);
-$("fermer-paires").addEventListener("click", function () { $("fenetre-paires").hidden = true; });
-$("fenetre-paires").addEventListener("click", function (e) { if (e.target === $("fenetre-paires")) $("fenetre-paires").hidden = true; });
+function fermerAlliances() { clearInterval(alliance.minuteur); alliance.fini = true; $("fenetre-paires").hidden = true; majPairesSous(); }
+$("fermer-paires").addEventListener("click", fermerAlliances);
+$("fenetre-paires").addEventListener("click", function (e) { if (e.target === $("fenetre-paires")) fermerAlliances(); });
 
 function ouvrirFicheConcept(c) {
   motFiche = { concept: c };

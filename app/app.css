@@ -2320,3 +2320,31 @@ body.maudit .q-liquide::before { background: #ff8a7d; }
 .fil-cadre { display: block; width: 100%; height: 100%; border: 0; background: #0a0a0a; }
 .navigation { z-index: 20; }
 body.sur-le-fil { overflow: hidden; }
+
+/* ===== Les alliances, le nouveau jeu des paires (v61) ===== */
+.alliances { text-align: center; }
+.alliance-intro { padding: 6px 0; }
+.alliance-chaine { font-size: 4rem; margin: 4px 0; filter: drop-shadow(0 0 18px var(--jaune)); animation: q-flotte 3s ease-in-out infinite; }
+.alliance-haut { display: flex; justify-content: space-between; align-items: center; margin: 0 34px 4px 0; font-size: 1rem; font-variant-numeric: tabular-nums; }
+.alliance-haut b { font-size: 1.3rem; color: var(--jaune); }
+.alliance-combo { font-weight: 800; color: var(--jaune); animation: fil-clignote 0.8s ease-in-out infinite; }
+.tour-temps.presse { background: linear-gradient(90deg, #e5484d, #ff9a3c); }
+.alliance-grille { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 8px; margin-top: 10px; }
+.alliance-colonne { display: grid; grid-auto-rows: minmax(64px, auto); gap: 8px; }
+.alliance-carte {
+  display: flex; align-items: center; justify-content: center; padding: 8px 10px; min-height: 64px;
+  border-radius: 14px; border: 1px solid var(--bord); background: rgba(255, 255, 255, 0.05); color: inherit;
+  cursor: pointer; transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.alliance-carte.mot { font-family: var(--affiche); font-size: 1.12rem; }
+.alliance-carte.def { font-size: 0.8rem; line-height: 1.3; text-align: left; justify-content: flex-start; }
+.alliance-carte:active { transform: scale(0.96); }
+.alliance-carte.choisie { border-color: var(--jaune); background: rgba(245, 197, 66, 0.18); box-shadow: 0 0 14px var(--bord); }
+.alliance-carte.alliee { animation: alliance-envol 0.38s ease-in forwards; border-color: #3ecf8e; background: rgba(62, 207, 142, 0.3); }
+@keyframes alliance-envol { to { transform: scale(1.08) translateY(-10px); opacity: 0; } }
+.alliance-carte.rate { animation: alliance-rate 0.4s ease; border-color: #e5484d; background: rgba(229, 72, 77, 0.25); }
+@keyframes alliance-rate { 0%, 100% { transform: none; } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.alliance-carte.arrive { animation: alliance-arrive 0.35s ease-out; }
+@keyframes alliance-arrive { from { transform: scale(0.7); opacity: 0; } to { transform: none; opacity: 1; } }
+.alliance-carte.vide { visibility: hidden; }
+body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
