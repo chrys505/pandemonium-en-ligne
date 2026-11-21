@@ -87,7 +87,9 @@ const citationsPlus = [
   ["Dans cette géographie intérieure, Paris est le point équidistant entre Londres et Milan.", "Italo Calvino, à propos de Stendhal (à confirmer)"],
   // Note iPhone du 2026-11-21
   ["On échoue toujours à parler de ce qu'on aime.", "Roland Barthes, à propos de Stendhal"],
-  ["À la typologie des extérieurs correspond celle des intérieurs.", "(auteur à confirmer)"]
+  ["À la typologie des extérieurs correspond celle des intérieurs.", "(auteur à confirmer)"],
+  ["La politique est un luxe de pays solvable.", "(auteur à confirmer)"],
+  ["On aime mieux paraître savant que de reconnaître ce qu'on ignore.", "Jean-Jacques Rousseau (formulation à confirmer)"]
 ];
 
 // Expressions : [expression, sens]
@@ -186,7 +188,22 @@ const expressionsPlus = [
   ["Un chasseur de dot", "Un homme qui cherche à épouser une femme pour sa fortune."],
   ["Faire piètre figure", "Se montrer médiocre, décevoir."],
   ["Le feu aux poudres", "Ce qui déclenche brutalement une crise (« mettre le feu aux poudres »). À ne pas mélanger avec la goutte d'eau qui fait déborder le vase !"],
-  ["À l'entour", "Vieux : aux alentours, tout autour."]
+  ["À l'entour", "Vieux : aux alentours, tout autour."],
+  ["Défrayer la chronique", "Faire beaucoup parler de soi, souvent par un scandale."],
+  ["Mettre l'emphase sur", "Insister sur, mettre en avant (tournure venue de l'anglais ; on dit aussi « mettre l'accent sur »)."],
+  ["Mettre le curseur", "Choisir le point d'équilibre, le niveau jusqu'où l'on va (« ça dépend où l'on met le curseur »)."],
+  ["La patte de", "Le style reconnaissable d'un artiste (« on reconnaît la patte de Balzac »)."],
+  ["Être sujet à", "Être exposé à, avoir tendance à (« sujet au vertige »)."],
+  ["Être à son comble", "Atteindre son plus haut degré."],
+  ["Une bulle spéculative", "Des prix qui montent bien au-delà de la valeur réelle, jusqu'à éclater."],
+  ["À l'ingénu", "Avec naïveté, comme un ingénu (d'après L'Ingénu de Voltaire)."],
+  ["Une femme-écran", "Chez Stendhal : une femme qu'on courtise pour cacher son véritable amour."],
+  ["Fût-il, fût-elle", "Même s'il était, même si elle était (« une figure géométrique, fût-elle complexe »)."],
+  ["Il s'ensuit que", "Il en résulte que, par conséquent."],
+  ["À la hâte", "Très vite, sans prendre le temps."],
+  ["En vain", "Pour rien, sans résultat."],
+  ["Cela lui ôtait la voix", "L'émotion l'empêchait de parler."],
+  ["Asseoir un ouvrage", "Le fonder solidement, en poser les bases."]
 ];
 
 // Pensées philosophiques : [texte, auteur]

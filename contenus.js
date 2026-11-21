@@ -339,6 +339,13 @@ const concepts = [
   { nom: "L'effet nocebo", famille: "Science",
     explication: "Le jumeau maléfique du placebo : s'attendre à ce qu'un traitement fasse du mal suffit parfois à ressentir de vrais effets indésirables.",
     exemple: "Dans les essais cliniques, des patients qui n'ont reçu qu'une pilule de sucre se plaignent des effets secondaires annoncés dans la notice." },
+  // Note iPhone du 2026-11-21
+  { nom: "La prohairesis", famille: "Philosophie",
+    explication: "Pour le stoïcien Épictète, ancien esclave devenu philosophe, il y a ce qui dépend de nous et ce qui n'en dépend pas. Ce qui dépend de nous tient en un mot grec : la prohairesis, notre faculté de choisir, de juger et de vouloir. Le corps, la fortune, la réputation peuvent nous être arrachés ; elle, jamais.",
+    exemple: "On peut t'insulter, te ruiner, t'enfermer : personne ne peut décider à ta place de ce que tu en penses. « Ce qui trouble les hommes, ce ne sont pas les choses, mais les jugements qu'ils portent sur les choses. »" },
+  { nom: "La bulle spéculative", famille: "Économie",
+    explication: "Quand on achète quelque chose non pour ce qu'il vaut mais parce qu'on pense le revendre plus cher, les prix s'envolent au-delà de toute valeur réelle. Tant que de nouveaux acheteurs arrivent, la bulle gonfle ; le jour où ils manquent, elle éclate et les derniers arrivés perdent tout.",
+    exemple: "La tulipomanie, en Hollande, en 1637 : un seul bulbe de tulipe rare se vendait, dit-on, le prix d'une maison d'Amsterdam. En quelques jours, les cours se sont effondrés." },
   // Note iPhone du 2026-11-20
   { nom: "La cristallisation", famille: "Littérature",
     explication: "Dans De l'amour (1822), Stendhal compare l'amour à un rameau jeté dans les mines de sel de Salzbourg : quelques mois plus tard, il ressort couvert de cristaux étincelants. L'amoureux fait pareil avec l'être aimé : il le couvre de perfections imaginaires, jusqu'à transformer un défaut en charme.",
