@@ -203,7 +203,14 @@ const expressionsPlus = [
   ["À la hâte", "Très vite, sans prendre le temps."],
   ["En vain", "Pour rien, sans résultat."],
   ["Cela lui ôtait la voix", "L'émotion l'empêchait de parler."],
-  ["Asseoir un ouvrage", "Le fonder solidement, en poser les bases."]
+  ["Asseoir un ouvrage", "Le fonder solidement, en poser les bases."],
+  ["Pendre la crémaillère", "Fêter son installation dans un nouveau logement."],
+  ["Prendre la poudre d'escampette", "S'enfuir sans demander son reste."],
+  ["Jouer son va-tout", "Tout risquer sur un dernier coup."],
+  ["Mettre sur un piédestal", "Idolâtrer quelqu'un, le placer au-dessus de tous."],
+  ["Être orfèvre en la matière", "S'y connaître parfaitement."],
+  ["Au détriment de", "En causant du tort à."],
+  ["C'est le panard !", "Familier : c'est le pied, un plaisir total."]
 ];
 
 // Pensées philosophiques : [texte, auteur]

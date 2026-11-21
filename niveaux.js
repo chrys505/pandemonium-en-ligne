@@ -47,7 +47,7 @@ const motsRares = new Set([
 const motsArgot = new Set([
   "Nachave", "Binette", "Gamberger", "Tanner", "Torgnole", "Bourlinguer", "Peuchère",
   "Daron", "Poucave", "Chouraver", "Marave", "Gadjo", "Narvalo", "Michto", "Pénave", "Seum",
-  "Zbeul", "Flouze", "Thune", "Blase", "Bled", "Tchatche", "Chelou", "Vénère", "Ouf", "Bader", "Zinzin", "Tocard", "Boloss", "Mytho", "Bouffon", "Charo"
+  "Zbeul", "Flouze", "Thune", "Blase", "Bled", "Tchatche", "Chelou", "Vénère", "Ouf", "Bader", "Castagne", "Niaque", "Panard", "Pétoche", "Pognon", "Tarpin", "Roupillon", "Zinzin", "Tocard", "Boloss", "Mytho", "Bouffon", "Charo"
 ]);
 
 // Les jurons et insultes d'antan : des interjections et des injures savoureuses d'autrefois.
