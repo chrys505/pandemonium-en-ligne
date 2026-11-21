@@ -80,5 +80,10 @@ const nomsPropres = [
   { nom: "Harpagon", qui: "L'avare de Molière",
     anecdote: "Dans L'Avare (1668), ce vieux bourgeois aime son argent plus que ses enfants. Quand on lui vole sa cassette, il crie : « Au voleur ! Au voleur ! À l'assassin ! » Son nom est devenu un nom commun : un harpagon, c'est un grippe-sou." },
   { nom: "Gargantua", qui: "Le géant glouton de Rabelais",
-    anecdote: "Ce géant naît en criant « À boire ! À boire ! » et il faut 17 913 vaches pour l'allaiter. Derrière la farce, Rabelais défend une éducation humaniste. Un repas « gargantuesque », c'est un festin énorme." }
+    anecdote: "Ce géant naît en criant « À boire ! À boire ! » et il faut 17 913 vaches pour l'allaiter. Derrière la farce, Rabelais défend une éducation humaniste. Un repas « gargantuesque », c'est un festin énorme." },
+  // Ajoutés le 2026-11-21 (lus dans « Pourquoi lire les classiques » d'Italo Calvino)
+  { nom: "Monsieur Boffin", qui: "Le « boueux doré » de Dickens",
+    anecdote: "Dans L'Ami commun (1865), le brave Noddy Boffin, ancien employé d'un marchand d'ordures, hérite d'une fortune. Il semble alors devenir un avare sordide… mais ce n'est qu'une comédie, jouée pour donner une leçon à une jeune fille trop vénale. Calvino admirait ce roman foisonnant de Dickens." },
+  { nom: "Cassilis", qui: "Le narrateur du Pavillon sur les dunes de Stevenson",
+    anecdote: "Dans cette nouvelle de 1880, Frank Cassilis, vagabond solitaire, retrouve son ancien ami Northmour dans un pavillon isolé au bord de la mer d'Écosse. Ils y protègent un banquier ruiné, d'une avarice sordide, que poursuivent des conjurés carbonari venus d'Italie. Calvino y voyait un modèle de récit d'aventure parfait." }
 ];

@@ -1135,5 +1135,9 @@ const motsPlus = [
   ["S'avérer", "Se révéler, apparaître comme (« un endroit qui s'avère charmant »).", "to prove", "resultar"],
   ["Brodé", "Orné de broderies (« des figures brodées »).", "embroidered", "bordado"],
   ["Sexophobie", "Peur ou hostilité envers la sexualité.", "sexophobia", "sexofobia"],
-  ["Bestiaire", "Recueil d'animaux réels ou fabuleux, souvent enluminé, au Moyen Âge.", "bestiary", "bestiario"]
+  ["Bestiaire", "Recueil d'animaux réels ou fabuleux, souvent enluminé, au Moyen Âge.", "bestiary", "bestiario"],
+  // Les mots retrouvés grâce à leurs sources (Calvino, Balzac), 2026-11-21
+  ["Dévorant", "Qui dévore, qui consume (« une faim dévorante », « une passion dévorante »).", "consuming", "devorador"],
+  ["Ariostesque", "À la manière de l'Arioste, poète du Roland furieux : fantaisie chevaleresque, ironie légère, aventures qui s'entrelacent.", "Ariostean", "ariostesco"],
+  ["Abduction", "En logique, raisonnement qui part d'un indice pour deviner l'explication la plus probable, comme un détective (mot du philosophe Peirce).", "abduction", "abducción"]
 ];
