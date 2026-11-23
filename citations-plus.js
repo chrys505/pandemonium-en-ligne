@@ -217,7 +217,8 @@ const expressionsPlus = [
   ["Être reconnu par ses pairs", "Être estimé par ceux qui font le même métier, les seuls juges vraiment compétents."],
   ["Brûler d'amour", "Aimer avec passion."],
   ["Faire belek", "Argot : faire attention."],
-  ["La complicité par abstention", "Le fait de laisser commettre un tort qu'on aurait pu empêcher, en ne faisant rien."]
+  ["La complicité par abstention", "Le fait de laisser commettre un tort qu'on aurait pu empêcher, en ne faisant rien."],
+  ["L'effet Kiss Cool", "Un second effet, inattendu, qui arrive après le premier (d'après la publicité d'un bonbon des années 1990 et son « double effet »)."]
 ];
 
 // Pensées philosophiques : [texte, auteur]
