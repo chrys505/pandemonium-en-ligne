@@ -1792,7 +1792,7 @@ $("fermer-galejade").addEventListener("click", fermerGalejade);
 $("fenetre-galejade").addEventListener("click", function (e) { if (e.target === $("fenetre-galejade")) fermerGalejade(); });
 
 function majWidgets() {
-  $("widgets").innerHTML = widgetRoman() + widgetMystere() +widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetFil();
+  $("widgets").innerHTML = widgetRoman() + widgetMystere() +widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetLivre() + widgetFil();
   majFil();
 }
 
@@ -4874,6 +4874,115 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
 }
 
 // ---------- Démarrage ----------
+
+// ===== Que lire ensuite ? (livres.js) : des livres choisis à la main, selon les thèmes qu'on aime =====
+let vueLivres = "conseils";
+function livresDispo() { return typeof livres !== "undefined" ? livres : []; }
+function anneeLivre(a) { return a < 0 ? "vers " + (-a) + " av. J.-C." : (a < 200 ? "vers " + a : String(a)); }
+function livresPourToi() {
+  const themes = etat.themesLivres || [];
+  const lus = etat.livresLus || [];
+  return livresDispo().filter(function (l) { return lus.indexOf(l.titre) === -1; }).map(function (l) {
+    const communs = l.themes.filter(function (t) { return themes.indexOf(t) !== -1; }).length;
+    return { l: l, score: (themes.length ? communs * 2 : 1) + (l.carnet === "liste" ? 1 : 0) };
+  }).filter(function (x) { return !themes.length || x.score >= 2; })
+    .sort(function (a, b) { return b.score - a.score || ((a.l.titre.length * 7 + numeroJour) % 13) - ((b.l.titre.length * 7 + numeroJour) % 13); })
+    .map(function (x) { return x.l; });
+}
+
+function widgetLivre() {
+  const liste = livresPourToi();
+  if (!liste.length) return "";
+  const l = liste[numeroJour % Math.min(liste.length, 8)];
+  const phrase = (l.accroche.match(/^.*?[.!?…](\s|$)/) || [l.accroche])[0].trim();
+  return '<article class="widget widget-livre" id="widget-livre" role="button" tabindex="0">' +
+    '<p class="etiquette">📚 Le livre du jour' + (l.carnet === "liste" ? " · sur ta liste" : "") + "</p>" +
+    '<p class="grimoire-titre">' + echapper(l.titre) + '</p><p class="petit">' + echapper(l.auteur) + "</p>" +
+    '<p class="texte-doux">' + echapper(phrase) + "</p>" +
+    '<p class="petit">Touche pour la suite, et d\'autres livres selon tes thèmes →</p></article>';
+}
+
+function carteLivre(l) {
+  const pile = (etat.livresPile || []).indexOf(l.titre) !== -1;
+  const lu = (etat.livresLus || []).indexOf(l.titre) !== -1;
+  const badge = l.carnet === "lu" ? '<span class="livre-badge">📓 Lu et pillé pour le carnet</span>' :
+    (l.carnet === "liste" ? '<span class="livre-badge">📌 Sur ta liste à lire</span>' : "");
+  const themes = l.themes.map(function (t) { const d = themesLivres.find(function (x) { return x[0] === t; }); return d ? d[1] : ""; }).join(" ");
+  return '<article class="livre">' + badge +
+    '<p class="livre-titre">' + echapper(l.titre) + "</p>" +
+    '<p class="livre-auteur">' + echapper(l.auteur) + " · " + anneeLivre(l.annee) + " · " + l.format + " " + themes + "</p>" +
+    '<p class="livre-accroche">' + echapper(l.accroche) + "</p>" +
+    (l.siTuAimes ? '<p class="fiche-part"><b>💫 Si tu aimes</b> ' + echapper(l.siTuAimes) + "</p>" : "") +
+    (l.entree ? '<p class="fiche-part"><b>🚪 Par où entrer</b> ' + echapper(l.entree) + "</p>" : "") +
+    (l.liens && l.liens.length ? '<p class="fiche-part"><b>🔗 Dans l\'appli</b> ' + l.liens.map(function (m) {
+      return '<button class="puce livre-lien" type="button" data-lien="' + echapper(m) + '">' + echapper(m) + "</button>";
+    }).join(" ") + "</p>" : "") +
+    '<div class="actions-carte">' +
+      '<button class="bouton petit-bouton" type="button" data-pile="' + echapper(l.titre) + '">' + (pile ? "📌 Dans ma pile" : "📌 Je le note") + "</button>" +
+      '<button class="bouton petit-bouton" type="button" data-lu="' + echapper(l.titre) + '">' + (lu ? "✓ Lu" : "Je l'ai lu") + "</button>" +
+    "</div></article>";
+}
+
+function rendreLivres() {
+  const choisis = etat.themesLivres || [];
+  $("livres-themes").innerHTML = themesLivres.map(function (t) {
+    return '<button class="puce' + (choisis.indexOf(t[0]) !== -1 ? " active" : "") + '" type="button" data-theme="' + t[0] + '">' + t[1] + " " + echapper(t[2]) + "</button>";
+  }).join("");
+  document.querySelectorAll(".livres-onglets .puce").forEach(function (p) { p.classList.toggle("active", p.dataset.vue === vueLivres); });
+  let liste, vide;
+  if (vueLivres === "pile") {
+    liste = livresDispo().filter(function (l) { return (etat.livresPile || []).indexOf(l.titre) !== -1; });
+    vide = "Ta pile est vide. Note un livre qui te fait envie avec 📌 : il t'attendra ici.";
+  } else if (vueLivres === "lus") {
+    liste = livresDispo().filter(function (l) { return (etat.livresLus || []).indexOf(l.titre) !== -1; });
+    vide = "Pas encore de livre coché. Chaque livre lu rapporte 20 ✦.";
+  } else {
+    liste = livresPourToi();
+    vide = "Aucun livre pour ce mélange de thèmes… pour l'instant. Essaie d'en ajouter un autre.";
+  }
+  $("livres-liste").innerHTML = liste.length ? liste.map(carteLivre).join("") : '<p class="petit">' + vide + "</p>";
+}
+
+function ouvrirLivres() { vueLivres = "conseils"; rendreLivres(); $("fenetre-livres").hidden = false; $("livres-liste").scrollTop = 0; }
+$("widgets").addEventListener("click", function (e) { if (e.target.closest("#widget-livre")) ouvrirLivres(); });
+$("widgets").addEventListener("keydown", function (e) { if (e.key === "Enter" && e.target.closest("#widget-livre")) ouvrirLivres(); });
+$("fermer-livres").addEventListener("click", function () { $("fenetre-livres").hidden = true; majWidgets(); });
+$("fenetre-livres").addEventListener("click", function (e) {
+  if (e.target === $("fenetre-livres")) { $("fenetre-livres").hidden = true; majWidgets(); return; }
+  const b = e.target.closest("button");
+  if (!b) return;
+  const basculer = function (cle, valeur) {
+    etat[cle] = etat[cle] || [];
+    const i = etat[cle].indexOf(valeur);
+    if (i === -1) etat[cle].push(valeur); else etat[cle].splice(i, 1);
+    return i === -1;
+  };
+  if (b.dataset.theme) { basculer("themesLivres", b.dataset.theme); vueLivres = "conseils"; }
+  else if (b.dataset.vue) vueLivres = b.dataset.vue;
+  else if (b.dataset.pile) basculer("livresPile", b.dataset.pile);
+  else if (b.dataset.lu) {
+    const ajoute = basculer("livresLus", b.dataset.lu);
+    if (ajoute) {
+      const i = (etat.livresPile || []).indexOf(b.dataset.lu);
+      if (i !== -1) etat.livresPile.splice(i, 1);
+      etat.livresRecompenses = etat.livresRecompenses || [];
+      if (etat.livresRecompenses.indexOf(b.dataset.lu) === -1) {
+        etat.livresRecompenses.push(b.dataset.lu);
+        etat.xp += 20; $("xp").textContent = etat.xp;
+        sonBoire(true);
+        const r = b.getBoundingClientRect(); etincellesAuToucher(r.left + r.width / 2, r.top, 24);
+      }
+    }
+  } else if (b.dataset.lien) {
+    const m = tousLesMots().find(function (x) { return x.mot === b.dataset.lien; });
+    if (m) return ouvrirFiche(m);
+    const c = conceptsDispo.find(function (x) { return x.nom === b.dataset.lien; });
+    if (c) ouvrirFicheConcept(c);
+    return;
+  } else return;
+  sauver();
+  rendreLivres();
+});
 appliquerVersion();
 chercherPeintre();
 majFormulaire();

@@ -424,6 +424,17 @@
       <div class="galejade" id="galejade"></div>
     </div>
   </div>
+  <!-- ===== Que lire ensuite ? Des livres choisis à la main, selon les thèmes qu'on aime ===== -->
+  <div class="voile" id="fenetre-livres" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-livres" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">📚 Que lire ensuite ?</p>
+      <p class="petit">Touche les thèmes qui te font vibrer : la pile se compose pour toi.</p>
+      <div class="puces livres-themes" id="livres-themes"></div>
+      <div class="livres-onglets"><button class="puce active" type="button" data-vue="conseils">✨ Pour toi</button><button class="puce" type="button" data-vue="pile">📌 Ma pile</button><button class="puce" type="button" data-vue="lus">✓ Lus</button></div>
+      <div class="livres-liste" id="livres-liste"></div>
+    </div>
+  </div>
 
   <!-- ===== L'annonce d'un nouveau titre ===== -->
   <div class="voile" id="fenetre-titre" hidden>
@@ -525,6 +536,7 @@
   <script src="../exemples-plus.js"></script>
   <script src="../fiches.js"></script>
   <script src="../carnet.js"></script>
+  <script src="../livres.js"></script>
   <script src="../tableaux.js"></script>
   <script src="../niveaux.js"></script>
   <script src="../illustrations.js"></script>

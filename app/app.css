@@ -2382,3 +2382,30 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
   text-align: right;
   opacity: 0.75;
 }
+
+/* Que lire ensuite ? Les livres choisis à la main */
+.livres-themes { flex-wrap: wrap; overflow: visible; gap: 8px; }
+.livres-onglets { display: flex; gap: 8px; margin: 6px 0 12px; }
+.livres-liste { display: grid; gap: 14px; text-align: left; }
+.livre {
+  position: relative;
+  padding: 16px 16px 12px;
+  border-left: 3px solid var(--jaune);
+  border-radius: 4px 14px 14px 4px;
+  background: color-mix(in srgb, var(--jaune) 6%, transparent);
+}
+.livre-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 2px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #140a04;
+  background: var(--jaune);
+  border-radius: 999px;
+}
+.livre-titre { margin: 0; font-family: var(--serif); font-size: 1.3rem; font-weight: 700; line-height: 1.25; }
+.livre-auteur { margin: 4px 0 12px; font-size: 0.82rem; opacity: 0.75; }
+.livre-accroche { margin: 0 0 12px; font-family: var(--serif); font-size: 1.02rem; line-height: 1.6; }
+.livre-lien { padding: 3px 10px; font-size: 0.78rem; }
+.widget-livre { cursor: pointer; text-align: left; }
