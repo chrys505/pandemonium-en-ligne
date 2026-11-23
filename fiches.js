@@ -1,1230 +1,1116 @@
-// Les fiches enrichies : une explication vivante, chaque sens avec son exemple, et une astuce pour retenir.
-// Format : "Mot": { clair: "…", sens: [["Étiquette du sens", "Explication", "Exemple"], …], retenir: "…" }
+// Les fiches « faites main » : pas une définition de plus, mais une scène, comme dans un carnet.
+// Format : "Mot": { scene: "…", aussi?: "l'autre sens", degainer?: "quand le placer", piege?: "…", origine?: "…" }
+// Chaque fiche a sa forme : on ne remplit que ce qui vaut la peine d'être dit pour ce mot-là.
 // Textes originaux, écrits pour l'appli. La définition courte (mots.js, mots-plus.js) reste pour les jeux.
 const fiches = {
   "Opprobre": {
-    clair: "C'est la honte qui ne reste pas dans ta tête : elle est sur la place publique. Tout le monde te montre du doigt.",
-    sens: [
-      ["La honte publique", "Le mépris de tout un groupe envers quelqu'un.", "Après le scandale, l'opprobre est tombé sur toute la famille."],
-      ["Ce qui fait honte", "La personne ou la chose qui déshonore les autres.", "Ce tricheur est l'opprobre de son club."]
-    ],
-    retenir: "On « jette l'opprobre » sur quelqu'un, comme on lui jetterait de la boue. Attention : c'est un nom masculin, « un opprobre »."
+    scene: "Le village entier qui se tait quand tu passes, les rideaux qui bougent, les regards en coin à la boulangerie. La honte, mais pas celle qu'on garde pour soi : celle que les autres te collent sur le dos, en public.",
+    degainer: "Quand un scandale éclabousse toute une famille : « Ce procès a jeté l'opprobre sur leur nom. »",
+    piege: "C'est un nom masculin : « un opprobre », « l'opprobre est tombé ».",
   },
   "Histrion": {
-    clair: "Le comédien qui en fait des tonnes. Et, par extension, quiconque transforme tout en spectacle pour se faire voir.",
-    sens: [
-      ["Au théâtre", "Un acteur médiocre, qui surjoue.", "Cet histrion hurlait chaque réplique comme si sa vie en dépendait."],
-      ["Au figuré", "Quelqu'un qui joue la comédie en public, souvent pour manipuler.", "Sur les plateaux télé, l'histrion fait le show et oublie le fond."]
-    ],
-    retenir: "Les histrions étaient les acteurs bouffons de la Rome antique. Proche de « cabotin »."
+    scene: "Ce comédien qui roule des yeux, hurle chaque réplique et attend les applaudissements avant même d'avoir fini. Dans la Rome antique, c'était le bouffon des tréteaux. Aujourd'hui, c'est aussi ce politicien qui transforme chaque plateau télé en numéro de cirque.",
+    degainer: "Devant quelqu'un qui joue la comédie pour qu'on le regarde, plutôt que pour dire quelque chose.",
   },
   "Prolixe": {
-    clair: "Celui qui met trois pages là où trois lignes suffisaient. Le contraire de « concis ».",
-    sens: [
-      ["À l'oral", "Qui parle trop longtemps, avec trop de détails.", "Prolixe, l'oncle Marc a raconté son voyage pendant tout le repas."],
-      ["À l'écrit", "Un texte trop long, qui se répète.", "Son mail prolixe noyait la seule info utile au milieu du douzième paragraphe."]
-    ],
-    retenir: "Pense à « prolonger » : le prolixe prolonge tout. Son contraire : laconique."
+    scene: "Tu demandes à ton oncle comment s'est passé son voyage. Quarante minutes plus tard, il en est encore à l'escale à Francfort. Il est prolixe : il met trois pages là où trois lignes suffisaient.",
+    aussi: "Ça marche pour l'écrit : un mail prolixe, un roman prolixe.",
+    degainer: "Pour te moquer gentiment de toi-même : « Pardon, je suis un peu prolixe ce soir. »",
   },
   "Falot": {
-    clair: "Une personne si effacée qu'on oublie qu'elle était là. Pas méchante : juste sans relief.",
-    sens: [
-      ["Une personne", "Sans éclat, sans caractère.", "Le héros du film est si falot qu'on s'attache au méchant."],
-      ["Ancien nom", "Une grosse lanterne (d'où l'idée d'une lumière faible).", "Le gardien avançait dans la cour, un falot à la main."]
-    ],
-    retenir: "Une lumière de falot éclaire peu : une personne falote brille peu."
+    scene: "Au dîner, il y avait Marc, Sophie, les cousins… et quelqu'un d'autre, mais personne n'arrive à se souvenir de qui. C'est le falot : pas méchant, pas désagréable, juste sans relief, comme une lumière qui éclaire à peine.",
+    origine: "Un falot, c'était une grosse lanterne. Une lumière de falot, ça n'éblouit personne : une personne falote non plus.",
   },
   "Chantre": {
-    clair: "Celui qui « chante » les louanges d'une idée, d'un pays, d'une cause, à qui veut l'entendre.",
-    sens: [
-      ["Au figuré", "Un défenseur enthousiaste d'une cause.", "Elle s'est faite la chantre du vélo en ville."],
-      ["À l'église", "Le chanteur qui dirige les chants pendant l'office.", "Le chantre entonna le psaume, et toute l'assemblée suivit."]
-    ],
-    retenir: "Chantre vient de « chanter ». On dit « se faire le chantre de… »."
+    scene: "Elle ne te parle que de ça : le vélo en ville, le vélo pour la santé, le vélo contre la pollution. À chaque dîner, elle chante ses louanges. C'est la chantre du vélo.",
+    aussi: "À l'église, le chantre est celui qui lance et dirige les chants.",
+    degainer: "« Se faire le chantre de… » : défendre une cause avec passion, presque en chantant.",
   },
   "Capillotracté": {
-    clair: "Une explication tellement forcée qu'on a dû la tirer par les cheveux pour la faire tenir debout.",
-    sens: [
-      ["Un raisonnement", "Peu crédible, construit de travers.", "Ta théorie sur le complot des pigeons est un peu capillotractée."]
-    ],
-    retenir: "C'est du latin pour rire : « capillus » (cheveu) + « tractus » (tiré). Mot familier et savant à la fois."
+    scene: "Ton pote t'explique que s'il est en retard, c'est à cause de la pleine lune, qui a perturbé son réveil, qui a fait sonner sa voisine, qui… Stop. C'est capillotracté : tiré par les cheveux, au sens propre, mais en latin pour rire.",
+    origine: "« Capillus », le cheveu, et « tractus », tiré. Un mot savant qui se moque des raisonnements forcés.",
   },
   "Pernicieux": {
-    clair: "Le mal qui ne se voit pas venir. Il agit en douce, et quand on le remarque, les dégâts sont faits.",
-    sens: [
-      ["Une influence", "Nuisible, mais de manière cachée.", "Le pernicieux, avec les réseaux, c'est qu'on se compare sans s'en rendre compte."],
-      ["En médecine", "Une maladie grave, qui évolue mal.", "L'anémie pernicieuse était autrefois mortelle."]
-    ],
-    retenir: "Différent de « délétère » : le délétère est toxique, le pernicieux est toxique ET sournois."
+    scene: "Le mal qui ne fait pas de bruit. Tu ne le vois pas venir : une petite habitude, une petite remarque, un petit doute… et un jour, les dégâts sont là. Se comparer aux autres sur les réseaux, par exemple : pas grave sur le moment, pernicieux sur la durée.",
+    piege: "Ne le confonds pas avec « délétère » : le délétère est toxique, le pernicieux est toxique ET sournois.",
   },
   "Débonnaire": {
-    clair: "Le grand-père qu'on n'arrive jamais à fâcher. Gentil jusqu'à en être un peu trop indulgent.",
-    sens: [
-      ["Le caractère", "Doux, bienveillant, peu sévère.", "Le prof débonnaire laissait passer les retards avec un sourire."],
-      ["Un air", "Qui a l'air paisible et accommodant.", "Sous ses airs débonnaires, le commissaire n'oubliait rien."]
-    ],
-    retenir: "À l'origine « de bonne aire », de bonne race. Louis le Pieux était surnommé « le Débonnaire »."
+    scene: "Le grand-père qu'on n'arrive jamais à fâcher. Tu casses un vase, il hausse les épaules. Tu arrives en retard, il te sert un café. Doux, bienveillant, presque trop indulgent.",
+    degainer: "« Sous ses airs débonnaires… » : la formule parfaite pour quelqu'un de gentil en apparence mais redoutable.",
+    origine: "Autrefois « de bonne aire », de bonne race. Un roi carolingien était surnommé « le Débonnaire ».",
   },
   "Délétère": {
-    clair: "Quelque chose qui empoisonne, littéralement ou au figuré. Un air, une ambiance, une relation.",
-    sens: [
-      ["Au sens propre", "Toxique pour la santé.", "Les mineurs respiraient des gaz délétères."],
-      ["Au figuré", "Qui pourrit les relations, le moral.", "Une ambiance délétère régnait dans l'équipe depuis la réorganisation."]
-    ],
-    retenir: "On l'emploie très souvent avec « climat » ou « ambiance »."
+    scene: "Tu entres dans l'open space et tu le sens tout de suite : personne ne se parle, les sourires sont crispés, les portes claquent. L'ambiance est délétère. Elle empoisonne doucement tout le monde.",
+    aussi: "Au sens propre, un gaz délétère est toxique : celui que respiraient les mineurs dans les galeries.",
+    degainer: "Presque toujours avec « climat » ou « ambiance ».",
   },
   "Tergiverser": {
-    clair: "Tourner autour du pot pour éviter de choisir. On repousse, on hésite, on change de sujet.",
-    sens: [
-      ["Hésiter", "Faire des détours pour ne pas décider.", "Arrête de tergiverser : on prend la pizza ou les sushis ?"]
-    ],
-    retenir: "Du latin « tergum vertere » : tourner le dos. Celui qui tergiverse tourne le dos à la décision."
+    scene: "« On prend la pizza ? Ou les sushis ? Non, attends… Tu préfères quoi, toi ? » Vingt minutes plus tard, toujours rien de commandé. Tu tergiverses : tu fais des détours pour ne pas trancher.",
+    origine: "Du latin « tergum vertere », tourner le dos. Celui qui tergiverse tourne le dos à la décision.",
   },
   "Pantois": {
-    clair: "Tellement surpris qu'on reste la bouche ouverte, incapable de répondre.",
-    sens: [
-      ["Stupéfait", "Sans voix devant une surprise.", "Quand elle a annoncé qu'elle partait vivre au Japon, toute la tablée est restée pantoise."]
-    ],
-    retenir: "Presque toujours avec « rester » ou « laisser » : « ça m'a laissé pantois »."
+    scene: "Elle pose sa fourchette et annonce : « Je pars vivre au Japon le mois prochain. » Silence. Ta mère a la bouche entrouverte, ton père n'a plus de mots. Toute la tablée est restée pantoise.",
+    degainer: "Presque toujours avec « rester » ou « laisser » : « Ça m'a laissé pantois. »",
   },
   "Outrecuidance": {
-    clair: "Se croire tellement au-dessus des autres qu'on se permet tout, même l'impolitesse.",
-    sens: [
-      ["L'arrogance", "Une confiance en soi démesurée et insolente.", "Il a eu l'outrecuidance de corriger le chef devant ses propres clients."]
-    ],
-    retenir: "« Outre » (au-delà) + « cuider » (croire, en ancien français) : se croire au-delà de ce qu'on est."
+    scene: "Le stagiaire arrivé lundi qui corrige le chef devant ses propres clients. Ce n'est pas seulement de l'assurance : c'est se croire tellement au-dessus qu'on se permet l'impolitesse.",
+    degainer: "« Il a eu l'outrecuidance de… » : la tournure classique, toujours suivie d'un acte qui fait hausser les sourcils.",
+    origine: "« Outre » (au-delà) et « cuider » (croire, en ancien français) : se croire au-delà de ce qu'on est.",
   },
   "Narquois": {
-    clair: "Le petit sourire en coin de quelqu'un qui se moque de toi sans le dire.",
-    sens: [
-      ["Moqueur", "Ironique, avec une pointe de malice.", "« Alors, ce régime ? », demanda-t-il d'un ton narquois en voyant mon assiette."]
-    ],
-    retenir: "Un air, un sourire, un ton narquois : c'est souvent dans le regard que ça se voit."
+    scene: "Tu reprends du dessert alors que tu as annoncé ton régime le matin même. Ton frère ne dit rien. Il te regarde juste, un petit sourire en coin. Ce sourire-là est narquois.",
+    degainer: "Un air, un ton, un sourire narquois : c'est souvent dans le regard que ça se passe.",
   },
   "Désuétude": {
-    clair: "Ce qui ne sert plus parce que plus personne ne le fait. Comme une vieille coutume oubliée au grenier.",
-    sens: [
-      ["Une habitude", "L'abandon d'un usage.", "Le baisemain est tombé en désuétude."],
-      ["En droit", "Une loi jamais abrogée, mais plus appliquée.", "Cette vieille loi existe encore, mais elle est tombée en désuétude."]
-    ],
-    retenir: "L'expression reine : « tomber en désuétude ». L'adjectif : désuet, désuète."
+    scene: "Le baisemain, le vouvoiement des parents, les cartes postales de vacances… Personne ne les a interdits : on a simplement arrêté de les faire. Ils sont tombés en désuétude, comme un vieux manteau oublié au grenier.",
+    aussi: "En droit, une loi peut tomber en désuétude : jamais abrogée, mais plus appliquée.",
+    degainer: "L'expression reine : « tomber en désuétude ». Et l'adjectif : désuet.",
   },
   "Vitupérer": {
-    clair: "Pester haut et fort, avec rage, contre quelqu'un ou quelque chose.",
-    sens: [
-      ["Protester", "Crier sa colère.", "Il vitupère contre les embouteillages chaque matin."],
-      ["Blâmer", "Critiquer durement quelqu'un.", "Le critique vitupéra le film dans sa chronique."]
-    ],
-    retenir: "On dit « vitupérer contre » en usage courant ; « vitupérer quelqu'un » est plus littéraire."
+    scene: "Chaque matin, coincé dans les bouchons, il frappe le volant et vitupère contre les feux rouges, les cyclistes, le maire et la météo. Pas un murmure : une vraie colère à voix haute.",
+    piege: "En usage courant, on dit « vitupérer contre quelque chose ». « Vitupérer quelqu'un » est plus littéraire.",
   },
   "Valétudinaire": {
-    clair: "Toujours un rhume, une migraine, un mal de dos : la santé qui ne tient jamais bien.",
-    sens: [
-      ["La santé", "Souvent malade, fragile.", "Ma grand-tante, valétudinaire, ne sortait jamais sans son châle."]
-    ],
-    retenir: "Ironie du latin : « valetudo » voulait dire la santé, bonne ou mauvaise."
+    scene: "Un rhume en novembre, une migraine en décembre, le dos en janvier. Ta grand-tante ne sort jamais sans son châle et son petit flacon de pastilles. Elle est valétudinaire : la santé qui ne tient jamais bien.",
+    origine: "Ironie du latin : « valetudo » voulait dire la santé, la bonne comme la mauvaise.",
   },
   "Doléances": {
-    clair: "La liste de ce qui ne va pas, qu'on présente à quelqu'un qui pourrait y remédier.",
-    sens: [
-      ["Des plaintes", "Des réclamations exprimées à une autorité.", "Les habitants ont présenté leurs doléances au maire."],
-      ["En histoire", "Les cahiers de doléances de 1789, où le peuple écrivait ses griefs au roi.", "Les cahiers de doléances ont préparé la Révolution."]
-    ],
-    retenir: "Presque toujours au pluriel. Même famille que « se douloir », souffrir."
+    scene: "La réunion de copropriété : l'ascenseur en panne, les poubelles qui débordent, le voisin du 3e qui joue de la batterie. Chacun arrive avec sa liste. Ce sont des doléances : des plaintes qu'on adresse à quelqu'un qui pourrait y remédier.",
+    origine: "En 1789, les Français ont rédigé des « cahiers de doléances » pour le roi. On connaît la suite.",
   },
   "Fatuité": {
-    clair: "Être tellement content de soi qu'on en devient ridicule aux yeux des autres.",
-    sens: [
-      ["La vanité", "Satisfaction excessive de soi.", "Avec fatuité, il expliquait le football à un ancien champion du monde."]
-    ],
-    retenir: "La fatuité, c'est le défaut du « fat ». Les deux viennent du latin « fatuus », sot."
+    scene: "Il explique le football à un ancien champion du monde. Il corrige la prononciation d'un Italien sur un mot italien. Il est tellement content de lui qu'il en devient ridicule : c'est la fatuité.",
+    origine: "Le défaut du « fat ». Les deux viennent du latin « fatuus », sot.",
   },
   "Contingence": {
-    clair: "Ce qui aurait pu ne pas arriver. Le hasard, les petites circonstances de la vie.",
-    sens: [
-      ["En philosophie", "Ce qui peut être ou ne pas être, par opposition au nécessaire.", "Notre rencontre relève de la pure contingence."],
-      ["Au quotidien", "Les détails pratiques, les obligations matérielles.", "Les contingences du quotidien (le loyer, les courses) l'éloignaient de son roman."]
-    ],
-    retenir: "Contingent = pas obligé d'être. Son contraire : nécessaire."
+    scene: "Si tu avais raté ce bus, tu ne l'aurais jamais rencontré. Votre histoire tient à ça : une minute de retard. C'est la contingence, ce qui aurait très bien pu ne pas arriver.",
+    aussi: "Au pluriel, les « contingences », ce sont les petits soucis concrets : le loyer, les courses, les papiers.",
+    degainer: "En philosophie, le contingent s'oppose au nécessaire.",
   },
   "Sardonique": {
-    clair: "Le rire du méchant de film : moqueur, froid, qui se réjouit du malheur des autres.",
-    sens: [
-      ["Un rire, un air", "Moqueur et cruel.", "Le méchant éclata d'un rire sardonique en voyant le héros enfermé."]
-    ],
-    retenir: "Légende antique : une plante de Sardaigne donnait aux mourants une grimace qui ressemblait à un rire."
+    scene: "Le méchant du film a enfin enfermé le héros. Il se retourne lentement et éclate d'un rire froid, sans joie, qui se réjouit du malheur. Ce rire-là est sardonique.",
+    origine: "Dans l'Antiquité, une plante de Sardaigne figeait le visage des mourants dans une grimace qui ressemblait à un rire.",
   },
   "Folâtrer": {
-    clair: "S'amuser sans but, gaiement, comme un chiot dans l'herbe.",
-    sens: [
-      ["Jouer", "S'amuser légèrement, sans sérieux.", "Les enfants folâtraient dans le jardin pendant que les adultes discutaient."]
-    ],
-    retenir: "Même famille que « fou » et « folâtre » (gai, léger)."
+    scene: "Un dimanche de printemps, les enfants courent dans l'herbe sans but, se roulent par terre, rient pour rien. Ils folâtrent, comme des chiots lâchés dans un jardin.",
+    degainer: "Pour des adultes aussi : « Au lieu de réviser, il folâtrait au soleil. »",
   },
   "Sommité": {
-    clair: "Une star de son domaine, quelqu'un que tous les spécialistes respectent.",
-    sens: [
-      ["Une personne", "Quelqu'un d'éminent dans sa discipline.", "Ce chirurgien est une sommité de la cardiologie."],
-      ["En botanique", "Le sommet d'une plante.", "On cueille les sommités fleuries de la lavande."]
-    ],
-    retenir: "La sommité est au sommet. Souvent : « une sommité de la médecine »."
+    scene: "Quand les autres chirurgiens ont un cas impossible, c'est elle qu'ils appellent. Elle est au sommet de sa discipline : une sommité.",
+    aussi: "En botanique, les « sommités fleuries » sont les extrémités des plantes, celles qu'on cueille pour les tisanes.",
   },
   "Sobriquet": {
-    clair: "Le surnom qu'on te colle, souvent pour se moquer d'un trait de caractère ou d'un physique.",
-    sens: [
-      ["Un surnom", "Familier, souvent moqueur.", "À cause de sa lenteur, on lui avait donné le sobriquet de « Tortue »."]
-    ],
-    retenir: "Un surnom peut être tendre ; un sobriquet a presque toujours une pointe de moquerie."
+    scene: "Au collège, il était lent et un peu rêveur. Quelqu'un l'a appelé « la Tortue », et c'est resté jusqu'au bac. Un sobriquet, c'est ce surnom qu'on te colle, rarement pour te faire plaisir.",
+    piege: "Un surnom peut être tendre ; un sobriquet a presque toujours une pointe de moquerie.",
   },
   "Apocryphe": {
-    clair: "Un texte, une citation ou une histoire dont on ne peut pas prouver l'origine. Peut-être faux.",
-    sens: [
-      ["Un texte", "Dont l'auteur ou l'authenticité est douteux.", "Cette citation attribuée à Einstein est apocryphe : il ne l'a jamais dite."],
-      ["En religion", "Les livres non reconnus dans la Bible officielle.", "Les évangiles apocryphes racontent l'enfance de Jésus."]
-    ],
-    retenir: "Très pratique sur Internet : la plupart des citations virales sont apocryphes."
+    scene: "Tu vois passer sur les réseaux une belle phrase signée Einstein. Sauf qu'Einstein ne l'a jamais dite ni écrite. La citation est apocryphe : son origine ne tient pas.",
+    aussi: "En religion, les évangiles apocryphes sont ceux que l'Église n'a pas retenus dans la Bible.",
+    degainer: "Très utile sur Internet, où la moitié des citations virales sont apocryphes.",
   },
   "Cantilène": {
-    clair: "Une chanson douce et un peu triste, qu'on fredonne presque malgré soi.",
-    sens: [
-      ["Un chant", "Simple, mélodieux, mélancolique.", "Elle chantait une cantilène pour endormir son bébé."],
-      ["Péjoratif", "Une plainte qu'on répète sans cesse.", "Toujours la même cantilène : « C'était mieux avant »."]
-    ],
-    retenir: "Même racine que « chanter » (« cantare » en latin)."
+    scene: "La berceuse qu'une grand-mère fredonne à mi-voix, toujours la même, un peu triste, presque sans paroles. C'est une cantilène.",
+    aussi: "Avec ironie, c'est la rengaine qu'on entend sans arrêt : « Toujours la même cantilène : c'était mieux avant. »",
   },
   "Coercitif": {
-    clair: "Ce qui force à obéir, par la menace, la sanction ou la contrainte.",
-    sens: [
-      ["En droit", "Une mesure qui impose une obligation.", "L'État a pris des mesures coercitives contre les pollueurs."],
-      ["Dans une relation", "Un contrôle qui prive l'autre de sa liberté.", "Le contrôle coercitif peut exister sans aucun coup."]
-    ],
-    retenir: "La coercition, c'est la contrainte. Contraire : incitatif."
+    scene: "Pas de discussion possible : une amende, une interdiction, une menace. Ce qui est coercitif t'oblige à obéir, que tu le veuilles ou non.",
+    aussi: "On parle aujourd'hui de « contrôle coercitif » dans un couple : contrôler l'argent, les sorties, le téléphone de l'autre, parfois sans un seul coup.",
   },
   "Coterie": {
-    clair: "Un petit cercle fermé qui se serre les coudes et regarde les autres de haut.",
-    sens: [
-      ["Un groupe", "Un clan qui défend ses intérêts.", "Le festival était tenu par une coterie de critiques parisiens."]
-    ],
-    retenir: "Toujours péjoratif. Plus fermé et intrigant qu'une « bande »."
+    scene: "Au festival, c'est toujours la même petite bande qui se donne les prix, se cite, se félicite, et regarde les autres de haut. Une coterie : un cercle fermé qui défend ses intérêts.",
+    piege: "Toujours péjoratif. Une coterie, c'est plus fermé et plus calculateur qu'une simple bande d'amis.",
   },
   "Emphase": {
-    clair: "Parler avec trop de grandeur, comme un acteur de tragédie, même pour annoncer qu'il pleut.",
-    sens: [
-      ["Le style", "Une manière pompeuse et exagérée.", "Il a annoncé avec emphase qu'il avait réparé le grille-pain."],
-      ["En grammaire", "Une mise en relief d'un mot dans la phrase.", "« Lui, je ne l'aime pas » : l'emphase porte sur « lui »."]
-    ],
-    retenir: "En anglais « emphasis » veut juste dire « insister » : en français, c'est souvent un excès."
+    scene: "« Mesdames et messieurs, j'ai l'immense honneur de vous annoncer… que le grille-pain est réparé. » Il parle avec emphase : beaucoup trop de grandeur pour pas grand-chose.",
+    aussi: "En grammaire, l'emphase met un mot en relief : « Lui, je ne l'aime pas. »",
+    piege: "Faux ami : en anglais, « emphasis » veut juste dire « insister ». En français, c'est souvent un excès.",
   },
   "Ergoter": {
-    clair: "Pinailler sur chaque virgule pour gagner une dispute, ou juste pour ne pas avoir tort.",
-    sens: [
-      ["Chicaner", "Contester des détails sans importance.", "On ne va pas ergoter pour deux euros sur l'addition !"]
-    ],
-    retenir: "Vient du latin « ergo » (donc), mot préféré des raisonneurs."
+    scene: "L'addition fait 84 euros. Il sort sa calculette, conteste le prix du café, demande si le pain était compris. On ne va pas ergoter pour deux euros, si ?",
+    origine: "Du latin « ergo », donc : le mot préféré de ceux qui veulent toujours avoir le dernier mot.",
   },
   "Exhalaison": {
-    clair: "Ce qui s'échappe dans l'air : un parfum de fleur, une vapeur, une odeur d'égout.",
-    sens: [
-      ["Agréable", "Une odeur qui flotte.", "Les exhalaisons du pain chaud envahissaient la rue."],
-      ["Désagréable", "Une vapeur nauséabonde.", "Les exhalaisons du marais incommodaient le village."]
-    ],
-    retenir: "Même famille qu'« exhaler » et « haleine »."
+    scene: "Tu passes devant la boulangerie à six heures du matin : le pain chaud t'enveloppe. Dix mètres plus loin, la bouche d'égout. Deux exhalaisons, la meilleure et la pire.",
+    origine: "Même famille qu'« exhaler » et qu'« haleine ».",
   },
   "Extatique": {
-    clair: "Transporté de joie au point d'oublier le reste du monde.",
-    sens: [
-      ["La joie", "Qui exprime un bonheur intense.", "Elle a ouvert sa lettre d'admission, extatique."],
-      ["En religion", "Qui est en extase mystique.", "Le saint est représenté extatique, les yeux levés au ciel."]
-    ],
-    retenir: "L'extase, c'est « sortir de soi » en grec. Ne pas confondre avec « statique »."
+    scene: "Elle ouvre la lettre d'admission, la relit trois fois, puis lève les yeux, le visage illuminé, comme absente au monde. Elle est extatique, transportée de joie.",
+    aussi: "Dans l'art religieux, les saints sont souvent peints extatiques, les yeux levés au ciel.",
+    piege: "À ne pas confondre avec « statique », qui veut dire immobile.",
   },
   "Fabliau": {
-    clair: "Une petite histoire drôle et souvent grivoise, racontée en vers au Moyen Âge.",
-    sens: [
-      ["En littérature", "Un conte comique en vers, du XIIe au XIVe siècle.", "Dans ce fabliau, un paysan rusé dupe un prêtre avare."]
-    ],
-    retenir: "Les fabliaux sont les ancêtres des sketchs : maris trompés, curés gourmands, vilains malins."
+    scene: "Un paysan malin, un curé gourmand, un mari trompé, et une chute qui fait rire toute la place du marché. Au Moyen Âge, on racontait ces petites histoires en vers : les fabliaux, ancêtres de nos sketchs.",
   },
   "Farder": {
-    clair: "Mettre du maquillage, sur un visage ou sur la vérité.",
-    sens: [
-      ["Au sens propre", "Maquiller.", "La comédienne se farde avant d'entrer en scène."],
-      ["Au figuré", "Embellir, déguiser la réalité.", "Le rapport fardait les chiffres pour rassurer les actionnaires."]
-    ],
-    retenir: "Le fard, c'est le maquillage. Parler « sans fard », c'est parler franchement."
+    scene: "Avant d'entrer en scène, la comédienne se farde : poudre, rouge, khôl. Le rapport annuel aussi se farde : on arrange les chiffres pour qu'ils aient bonne mine.",
+    degainer: "Parler « sans fard », c'est parler franchement, sans maquiller la vérité.",
   },
   "Faste": {
-    clair: "Deux mots en un : le nom, c'est le luxe éclatant ; l'adjectif, c'est la bonne période.",
-    sens: [
-      ["Nom", "Luxe, apparat, déploiement de richesse.", "Le mariage fut célébré avec un faste royal."],
-      ["Adjectif", "Favorable, heureux.", "Les années 2000 furent une période faste pour le groupe."]
-    ],
-    retenir: "Son contraire comme adjectif : « néfaste ». Jour faste, jour néfaste."
+    scene: "Deux mots qui se cachent sous le même habit. Le nom, c'est le luxe éclatant d'un mariage royal, les dorures, les lustres. L'adjectif, c'est la bonne période, celle où tout réussit.",
+    degainer: "« Une année faste » : une année où tout a marché.",
+    piege: "Son contraire comme adjectif, c'est « néfaste ». Jour faste, jour néfaste.",
   },
   "Fat": {
-    clair: "Le prétentieux qui se regarde dans chaque vitrine. On prononce le t : « fatte ».",
-    sens: [
-      ["Adjectif ou nom", "Vaniteux et sot.", "Ce fat se croyait irrésistible."]
-    ],
-    retenir: "Rien à voir avec l'anglais « fat » (gros). Le défaut du fat : la fatuité."
+    scene: "Il se recoiffe dans chaque vitrine et se croit irrésistible. Il est fat : vaniteux et un peu sot à la fois.",
+    piege: "On prononce le t : « fatte ». Et rien à voir avec l'anglais « fat » (gros).",
   },
   "Fruste": {
-    clair: "Brut, mal dégrossi : une manière, un objet ou une personne sans raffinement.",
-    sens: [
-      ["Une personne", "Rude, peu éduquée.", "Sous ses manières frustes, c'était un homme d'une grande bonté."],
-      ["Un objet", "Simple, rudimentaire, usé.", "Une cabane fruste, quatre planches et un toit."]
-    ],
-    retenir: "Piège : on écrit FRUSTE, pas « frustre ». Ça n'a rien à voir avec « frustré »."
+    scene: "Imagine une vieille table de ferme : pas vernie, pas poncée, des nœuds dans le bois, mais elle a vu passer trois générations. C'est ça, être fruste : brut, sans finition, et pas forcément moins bon pour autant. Ça se dit d'un objet, d'une manière d'être, ou de ce cousin qui mange avec les doigts au mariage mais qui sera le premier à t'aider à déménager.",
+    degainer: "Quand quelqu'un a le cœur sur la main et les manières d'un ours : « Un peu fruste, mais en or. »",
+    piege: "Presque tout le monde dit « frustre ». Ça n'a rien à voir avec « frustré » : il n'y a pas de r après le t.",
   },
   "Galéjade": {
-    clair: "Une histoire énorme qu'on raconte avec aplomb pour faire rire, typique de Marseille.",
-    sens: [
-      ["Une blague", "Un récit inventé ou exagéré.", "Son poisson « grand comme une barque » ? Une galéjade, évidemment."]
-    ],
-    retenir: "Le verbe : galéjer. On pense à la sardine qui a bouché le port de Marseille."
+    scene: "« Le poisson que j'ai pêché ce matin ? Grand comme la barque, je te jure ! » Sur le port, tout le monde sourit. C'est une galéjade : une histoire énorme racontée avec aplomb, juste pour le plaisir.",
+    origine: "Un mot de Provence. Le verbe, c'est « galéjer ». Et la légende veut qu'une sardine ait un jour bouché le port de Marseille.",
   },
   "Galvauder": {
-    clair: "Abîmer quelque chose de précieux en l'utilisant n'importe comment, jusqu'à ce qu'il ne veuille plus rien dire.",
-    sens: [
-      ["Un mot, une idée", "Le vider de son sens par l'abus.", "Le mot « génie » est tellement galvaudé qu'on l'emploie pour un influenceur."],
-      ["Un talent", "Le gâcher.", "Il a galvaudé son talent dans des rôles indignes de lui."]
-    ],
-    retenir: "Un mot galvaudé, c'est un mot usé jusqu'à la corde."
+    scene: "« Génie », « légende », « incroyable » : à force de les mettre partout, ces mots ne veulent plus rien dire. On les a galvaudés, usés jusqu'à la corde.",
+    aussi: "On galvaude aussi un talent quand on le gâche dans des choses indignes de lui.",
   },
   "Gascon": {
-    clair: "Habitant de la Gascogne, mais aussi, en littérature, le fanfaron qui en rajoute toujours.",
-    sens: [
-      ["Géographie", "De la Gascogne, dans le sud-ouest.", "D'Artagnan est un cadet gascon."],
-      ["Littéraire", "Vantard.", "Une promesse de Gascon : beaucoup de mots, peu d'actes."]
-    ],
-    retenir: "Cyrano et d'Artagnan ont fait la légende des Gascons panachés et hâbleurs."
+    scene: "D'Artagnan, Cyrano : grande gueule, panache, et un peu d'exagération dans chaque récit. En littérature, le Gascon, c'est le fanfaron sympathique.",
+    degainer: "« Une promesse de Gascon » : beaucoup de mots, peu d'actes.",
   },
   "Glose": {
-    clair: "Le petit commentaire griffonné dans la marge pour expliquer un passage difficile.",
-    sens: [
-      ["Explication", "Note qui éclaire un mot ou un texte.", "Les étudiants médiévaux couvraient leurs manuscrits de gloses."],
-      ["Commentaire malveillant", "Bavardage, critique.", "Ses vacances aux Maldives ont alimenté les gloses du bureau."]
-    ],
-    retenir: "Gloser sur quelque chose, c'est le commenter longuement. « Glossaire » est de la même famille."
+    scene: "Dans les vieux manuscrits, les marges sont couvertes de petites notes griffonnées pour expliquer un passage difficile. Ce sont des gloses.",
+    aussi: "Au bureau, les gloses, ce sont aussi les commentaires (pas toujours bienveillants) sur les vacances d'un collègue.",
+    origine: "Le « glossaire » est de la même famille.",
   },
   "Hâbleur": {
-    clair: "Celui qui raconte ses exploits en les gonflant à chaque fois.",
-    sens: [
-      ["Vantard", "Qui parle beaucoup et exagère.", "Hâbleur, il prétendait avoir dîné avec trois présidents."]
-    ],
-    retenir: "De l'espagnol « hablar », parler. Le hâbleur parle… surtout de lui."
+    scene: "La première fois, il avait croisé une star dans un aéroport. La deuxième fois, ils avaient pris un verre. La troisième, ils étaient amis d'enfance. Le hâbleur gonfle ses histoires à chaque fois qu'il les raconte.",
+    origine: "De l'espagnol « hablar », parler. Le hâbleur parle… surtout de lui.",
   },
   "Hâve": {
-    clair: "Le visage creusé et blême de quelqu'un qui n'a ni mangé ni dormi.",
-    sens: [
-      ["Un visage", "Pâle, maigre, épuisé.", "Les naufragés, hâves, furent enfin recueillis."]
-    ],
-    retenir: "Un mot très court, très littéraire. Le h est aspiré : « le hâve visage »."
+    scene: "Trois jours perdus en mer. Quand les sauveteurs les ont recueillis, les naufragés avaient le visage creusé, gris, les yeux enfoncés. Ils étaient hâves.",
+    degainer: "Un mot court et très littéraire, pour un visage marqué par la faim, la fatigue ou la maladie.",
   },
   "Immuable": {
-    clair: "Ce qui ne bouge pas, ne change jamais, quoi qu'il arrive.",
-    sens: [
-      ["Constant", "Qui reste toujours identique.", "Chaque dimanche, son immuable rituel : croissant, journal, sieste."],
-      ["En philosophie", "Ce qui échappe au temps.", "Platon cherchait les vérités immuables."]
-    ],
-    retenir: "« Im » (pas) + « muable » (qui change) : pense à « mutation »."
+    scene: "Chaque dimanche depuis trente ans : croissant, journal, sieste. Il pleut, il neige, la Terre tremble : son rituel ne bouge pas. Il est immuable.",
+    origine: "« Im » (pas) et « muable » (qui change), comme dans « mutation ».",
   },
   "Imprécation": {
-    clair: "Une malédiction lancée à voix haute, avec solennité et colère.",
-    sens: [
-      ["Malédiction", "Souhait de malheur contre quelqu'un.", "La sorcière lança une imprécation contre le village."],
-      ["En rhétorique", "Une figure où l'on appelle le malheur sur l'adversaire.", "Les imprécations de Camille, dans Horace, sont célèbres."]
-    ],
-    retenir: "Une insulte vise à blesser ; une imprécation appelle le malheur."
+    scene: "Chassée du village, la vieille femme se retourne sur le chemin, lève le bras et crie : « Que vos récoltes pourrissent ! » Ce n'est pas une insulte : c'est une imprécation, une malédiction lancée avec solennité.",
+    piege: "Une insulte veut blesser ; une imprécation appelle le malheur.",
   },
   "Ingénu": {
-    clair: "Quelqu'un d'une innocence touchante, qui dit ce qu'il pense sans calcul.",
-    sens: [
-      ["Le caractère", "Naïf et sincère.", "Avec une question ingénue, l'enfant mit tout le monde mal à l'aise."],
-      ["Au théâtre", "Le rôle de la jeune fille naïve (« l'ingénue »).", "Elle a commencé sa carrière en jouant les ingénues."]
-    ],
-    retenir: "Voltaire a écrit « L'Ingénu », un Huron qui découvre la France avec un regard neuf."
+    scene: "Pendant le repas de famille, l'enfant demande à voix haute pourquoi tonton ne parle plus à tata. Il ne pense pas à mal, il demande vraiment. C'est une question ingénue : naïve et sincère.",
+    aussi: "Au théâtre, « l'ingénue » est le rôle de la jeune fille candide.",
+    origine: "Voltaire a écrit « L'Ingénu » : un jeune Huron qui découvre la France avec un regard tout neuf.",
   },
   "Liturgie": {
-    clair: "Le déroulé officiel d'une cérémonie religieuse : les gestes, les chants, les mots.",
-    sens: [
-      ["En religion", "Les rites d'un culte.", "La liturgie de Pâques suit un ordre précis."],
-      ["Au figuré", "Un rituel répété avec solennité.", "Le match du dimanche est devenu une liturgie familiale."]
-    ],
-    retenir: "L'adjectif : liturgique. Au figuré, ça donne une touche d'ironie."
+    scene: "À l'église, chaque geste a sa place : les chants, les prières, l'ordre de la messe. C'est la liturgie. Et chez toi, le match du dimanche, avec le même fauteuil et les mêmes chips, est devenu une liturgie familiale.",
+    degainer: "Au figuré, le mot apporte une touche d'ironie à un rituel du quotidien.",
   },
   "Magnanime": {
-    clair: "Avoir une grande âme : pardonner quand on pourrait se venger.",
-    sens: [
-      ["Généreux", "Qui pardonne avec noblesse.", "Magnanime, la championne a consolé son adversaire battue."]
-    ],
-    retenir: "« Magna » (grande) + « anima » (âme). Le nom : magnanimité."
+    scene: "Elle vient de remporter la finale. Au lieu de célébrer, elle traverse le court pour consoler son adversaire en larmes. Elle est magnanime : elle a une grande âme.",
+    origine: "« Magna » (grande) et « anima » (âme).",
   },
   "Prosaïque": {
-    clair: "Les choses concrètes et banales, sans aucune poésie.",
-    sens: [
-      ["Terre à terre", "Banal, matériel.", "Après la demande en mariage, retour au prosaïque : qui sort la poubelle ?"],
-      ["En littérature", "Qui manque d'élan poétique.", "Ses vers sont prosaïques, on dirait une liste de courses."]
-    ],
-    retenir: "Vient de « prose » : ce qui ne s'élève pas jusqu'à la poésie."
+    scene: "La demande en mariage était parfaite : coucher de soleil, violons, larmes de joie. Puis, sur le chemin du retour : « Au fait, qui sort la poubelle ce soir ? » Retour au prosaïque.",
+    origine: "De « prose » : ce qui ne s'élève jamais jusqu'à la poésie.",
   },
   "Psalmodier": {
-    clair: "Réciter sur un ton qui ne monte ni ne descend, comme un moine chante les psaumes.",
-    sens: [
-      ["Réciter", "Chanter les psaumes sur une seule note.", "Les moines psalmodiaient dans la chapelle."],
-      ["Au figuré", "Parler de façon monotone.", "Le conférencier psalmodiait ses diapos, et la salle s'endormait."]
-    ],
-    retenir: "Même famille que « psaume »."
+    scene: "Le conférencier lit ses diapositives d'une voix qui ne monte jamais, ne descend jamais. Au troisième rang, quelqu'un s'endort. Il psalmodie, comme un moine qui chante les psaumes sur une seule note.",
   },
   "Roué": {
-    clair: "Le malin sans scrupules, qui connaît tous les tours pour arriver à ses fins.",
-    sens: [
-      ["Rusé", "Habile et sans morale.", "Ce négociateur roué obtient toujours ce qu'il veut."],
-      ["En histoire", "Le débauché du XVIIIe siècle, compagnon du Régent.", "Les roués du Régent menaient une vie de plaisirs."]
-    ],
-    retenir: "Ils méritaient « le supplice de la roue », disait-on. D'où le nom !"
+    scene: "Il connaît tous les tours : flatter au bon moment, promettre sans s'engager, faire croire que l'idée vient de toi. Un négociateur roué : habile et sans scrupules.",
+    origine: "Au XVIIIe siècle, les compagnons de débauche du Régent méritaient, disait-on, « le supplice de la roue ». On les a appelés les roués.",
   },
   "Taxonomie": {
-    clair: "L'art de ranger le monde dans des cases bien nommées, comme les tiroirs d'un grand cabinet.",
-    sens: [
-      ["En biologie", "La science de la classification du vivant.", "La taxonomie range le loup dans la famille des canidés."],
-      ["Ailleurs", "Tout système de classement.", "Le site utilise une taxonomie de 40 catégories de produits."]
-    ],
-    retenir: "Du grec « taxis » (ordre) et « nomos » (loi)."
+    scene: "Imagine un immense cabinet en bois avec des milliers de petits tiroirs étiquetés. Chaque être vivant a le sien : règne, famille, genre, espèce. C'est la taxonomie, l'art de ranger le monde.",
+    aussi: "Hors de la biologie, c'est tout système de classement : les rayons d'un site de vente, par exemple.",
   },
   "Trivial": {
-    clair: "Un mot à trois visages : banal, évident ou vulgaire selon qui l'emploie.",
-    sens: [
-      ["Banal", "Ordinaire, sans intérêt.", "Ils parlaient de sujets triviaux : la météo, le trafic."],
-      ["En maths", "Évident, sans difficulté.", "La solution x = 0 est triviale."],
-      ["Vulgaire", "Grossier, inconvenant.", "Sa blague triviale a jeté un froid."]
-    ],
-    retenir: "Du latin « trivium », le carrefour : ce qu'on entend à tous les coins de rue."
+    scene: "Un mot à trois visages. Pour ta grand-mère, une blague triviale est vulgaire. Pour ton prof de maths, une solution triviale est évidente. Et pour tout le monde, parler de choses triviales, c'est parler de la météo.",
+    origine: "Du latin « trivium », le carrefour : ce qu'on entend à tous les coins de rue.",
   },
   "Alcôve": {
-    clair: "Le coin où l'on cache le lit, et par extension tout ce qui touche à la vie amoureuse.",
-    sens: [
-      ["Architecture", "Un renfoncement dans une chambre pour le lit.", "Le lit était dissimulé dans une alcôve derrière un rideau."],
-      ["Au figuré", "La vie intime, les secrets d'amour.", "Les secrets d'alcôve de la cour de Versailles."]
-    ],
-    retenir: "De l'arabe « al-qubba », la petite pièce voûtée."
+    scene: "Dans les vieilles maisons, le lit était caché dans un renfoncement, derrière un rideau. Ce petit coin d'intimité s'appelle une alcôve. Les « secrets d'alcôve », ce sont donc les secrets d'amour.",
+    origine: "De l'arabe « al-qubba », la petite pièce voûtée.",
   },
   "Allègre": {
-    clair: "Le pas léger et la bonne humeur de quelqu'un pour qui tout va bien.",
-    sens: [
-      ["Joyeux", "Plein d'entrain.", "Elle partit d'un pas allègre au marché."]
-    ],
-    retenir: "L'allégresse, c'est la grande joie. En musique, « allegro » : vif."
+    scene: "Samedi matin, il fait beau, le marché t'attend, tu n'as rien de prévu. Tu marches d'un pas allègre : vif, léger, de bonne humeur.",
+    origine: "La même famille que l'allégresse, et que l'« allegro » des musiciens.",
   },
   "Cacochyme": {
-    clair: "Le vieillard (souvent imaginaire) qui tousse, boite et se plaint de tout. Toujours un peu moqueur.",
-    sens: [
-      ["Avec humour", "De santé chancelante.", "Je ne suis pas encore un vieillard cacochyme, je peux porter mon sac !"]
-    ],
-    retenir: "Vient du grec : « mauvaises humeurs » (les liquides du corps selon la vieille médecine)."
+    scene: "« Laisse, je vais porter ton sac. — Je ne suis pas encore un vieillard cacochyme ! » Le mot évoque le vieil homme qui tousse, boite et se plaint de tout, mais on l'emploie presque toujours pour rire.",
+    origine: "Du grec : « mauvaises humeurs », les liquides du corps selon la médecine d'autrefois.",
   },
   "Chicaneur": {
-    clair: "Celui qui transforme chaque détail en procès.",
-    sens: [
-      ["Querelleur", "Qui cherche la petite bête.", "Chicaneur, il conteste chaque ligne de la facture."]
-    ],
-    retenir: "La chicane : une dispute pour rien. Et une chicane, c'est aussi un passage en zigzag."
+    scene: "Il conteste chaque ligne de la facture, chaque article du règlement, chaque règle du Monopoly. Le chicaneur transforme le moindre détail en procès.",
+    aussi: "Sur un circuit automobile, une chicane, c'est un passage en zigzag. Le chicaneur, lui, fait zigzaguer les conversations.",
   },
   "Claustral": {
-    clair: "Ce qui rappelle le cloître : le silence, l'isolement, la vie à l'écart du monde.",
-    sens: [
-      ["Religieux", "Qui concerne le cloître.", "La vie claustrale suit le rythme des prières."],
-      ["Au figuré", "Retiré, austère.", "Il menait une existence claustrale dans son appartement."]
-    ],
-    retenir: "Même famille que « claustrophobie », la peur d'être enfermé."
+    scene: "Les volets fermés, le silence, les journées toutes pareilles, sans voir personne. Il mène une vie claustrale, comme un moine dans son cloître.",
+    origine: "La même famille que « claustrophobie », la peur d'être enfermé.",
   },
   "Déjeté": {
-    clair: "Penché, tordu, sorti de son axe : un mur, un arbre ou un corps fatigué.",
-    sens: [
-      ["Un objet", "Déformé, dévié.", "Une vieille clôture déjetée par le vent."],
-      ["Familier", "Abîmé, en mauvais état (pour une personne).", "Après cette nuit blanche, il était tout déjeté."]
-    ],
-    retenir: "« Jeté » de côté : ce qui n'est plus droit."
+    scene: "La vieille clôture du jardin, penchée par des années de vent. L'arbre au bord de la falaise, tordu vers la mer. Ils sont déjetés : sortis de leur axe.",
+    aussi: "En familier, après une nuit blanche, on peut se sentir « tout déjeté ».",
   },
   "Gastrolâtre": {
-    clair: "Celui pour qui manger est une religion, et le ventre un dieu.",
-    sens: [
-      ["Gourmand", "Qui vit pour son estomac.", "Gastrolâtre assumé, il planifie ses vacances selon les restaurants."]
-    ],
-    retenir: "Rabelais l'a popularisé : « gaster » (ventre) + « latreia » (adoration)."
+    scene: "Il choisit ses vacances selon les restaurants, parle de son dernier repas comme d'une œuvre d'art, et planifie le dîner pendant le déjeuner. Le gastrolâtre fait de son ventre un dieu.",
+    origine: "Rabelais l'a rendu célèbre : « gaster » (le ventre) et « latreia » (l'adoration).",
   },
   "Grabat": {
-    clair: "Le lit du pauvre : une paillasse, un matelas défoncé.",
-    sens: [
-      ["Un lit", "Misérable, rudimentaire.", "Le malade gisait sur un grabat dans un coin de la mansarde."]
-    ],
-    retenir: "Souvent : « sur son grabat », pour évoquer la misère ou l'agonie."
+    scene: "Une mansarde glacée, une paillasse posée à même le sol, une couverture trouée. Ce n'est pas un lit, c'est un grabat.",
+    degainer: "Souvent dans les romans du XIXe siècle : « sur son grabat », pour dire la misère ou les derniers jours d'un malade.",
   },
   "Guigner": {
-    clair: "Lorgner en douce ce qu'on aimerait bien avoir.",
-    sens: [
-      ["Regarder", "Du coin de l'œil.", "Il guignait la copie de son voisin."],
-      ["Convoiter", "Désirer discrètement.", "Elle guigne ce poste depuis des mois."]
-    ],
-    retenir: "Rien à voir avec la guigne (la malchance)… quoique, à force de guigner, on peut l'attraper."
+    scene: "Pendant le contrôle, il guigne la copie de son voisin, du coin de l'œil, l'air de rien. Et au bureau, elle guigne le poste de sa responsable depuis des mois.",
+    piege: "Rien à voir avec la guigne (la malchance)… quoique, à force de guigner, on finit parfois par l'attraper.",
   },
   "Incurie": {
-    clair: "Ne s'occuper de rien, laisser tout se dégrader par négligence.",
-    sens: [
-      ["Négligence", "Un manque total de soin.", "Le pont s'est effondré par l'incurie des autorités."]
-    ],
-    retenir: "« In » (pas) + « cura » (soin). Plus grave que « négligence »."
+    scene: "Personne n'a repeint, personne n'a réparé, personne n'a signalé les fissures. Et un jour, le pont s'est effondré. Ce n'est pas un accident : c'est l'incurie, un manque total de soin.",
+    origine: "« In » (pas) et « cura » (le soin). Plus grave que « négligence ».",
   },
   "Ineffable": {
-    clair: "Une émotion si forte ou si belle qu'aucun mot n'arrive à la dire.",
-    sens: [
-      ["Indicible", "Qu'on ne peut pas exprimer.", "Devant la mer au lever du jour, un bonheur ineffable."],
-      ["Ironique", "Tellement ridicule qu'on ne sait plus quoi dire.", "L'ineffable conseiller nous a encore pondu une réforme."]
-    ],
-    retenir: "Du latin « fari », parler : ce qu'on ne peut pas dire."
+    scene: "La mer au lever du jour, le premier cri d'un bébé, une musique qui te serre la gorge. Tu cherches les mots et aucun ne suffit. C'est ineffable.",
+    aussi: "Avec ironie, on dit « l'ineffable » de quelqu'un dont le ridicule dépasse les mots.",
   },
   "Minauder": {
-    clair: "Faire des mimiques et des petites manières pour séduire ou attendrir.",
-    sens: [
-      ["Coquetterie", "Prendre des airs affectés.", "Elle minaudait devant le photographe."]
-    ],
-    retenir: "Les minauderies, ce sont ces petits gestes faussement mignons."
+    scene: "Les yeux qui papillonnent, la petite voix, la mèche qu'on remet derrière l'oreille pour la photo. Elle minaude : elle prend des manières faussement mignonnes pour plaire.",
   },
   "Pavoiser": {
-    clair: "Sortir les drapeaux : sur les façades, ou dans sa propre attitude quand on est fier.",
-    sens: [
-      ["Décorer", "Orner de drapeaux.", "La mairie était pavoisée pour le 14 Juillet."],
-      ["Au figuré", "Se réjouir bruyamment.", "Il n'y a pas de quoi pavoiser : on a gagné un match sur dix."]
-    ],
-    retenir: "Le pavois, c'était le grand bouclier sur lequel on hissait le roi."
+    scene: "Le 14 Juillet, la mairie sort les drapeaux. Ton équipe gagne un match sur dix, et ton frère sort les drapeaux aussi. Il n'y a vraiment pas de quoi pavoiser !",
+    origine: "Le pavois était un grand bouclier sur lequel on hissait les rois francs pour les acclamer.",
   },
   "Pensum": {
-    clair: "La corvée qu'on traîne comme un boulet : un travail long, ennuyeux, obligé.",
-    sens: [
-      ["Corvée", "Travail pénible.", "Remplir sa déclaration d'impôts, quel pensum !"],
-      ["À l'école, autrefois", "Une punition écrite.", "Il copia cent fois sa phrase en guise de pensum."]
-    ],
-    retenir: "On prononce « pin-somme ». Un mot latin : la tâche à peser, à faire."
+    scene: "Remplir sa déclaration d'impôts, trier quinze ans de papiers, relire un rapport de quatre-vingts pages. Long, ennuyeux, obligatoire : un pensum.",
+    aussi: "À l'école d'autrefois, c'était une punition écrite : copier cent fois la même phrase.",
+    piege: "On prononce « pin-somme ».",
   },
   "Persiflage": {
-    clair: "Se moquer de quelqu'un tout en ayant l'air poli, avec élégance et ironie.",
-    sens: [
-      ["Moquerie", "Raillerie légère et fine.", "Son persiflage amusait la salle et vexait l'orateur."]
-    ],
-    retenir: "Le verbe : persifler. Pense à « siffler » : on siffle quelqu'un, mais en douceur."
+    scene: "Il ne t'insulte jamais. Il te complimente, mais avec un ton si appuyé que toute la salle comprend qu'il se moque. C'est du persiflage : une moquerie élégante, enrobée de politesse.",
+    origine: "Pense à « siffler » : on siffle quelqu'un, mais tout en douceur.",
   },
   "Saurien": {
-    clair: "Un lézard, ou un animal qui y ressemble. Le mot évoque aussi un regard froid et immobile.",
-    sens: [
-      ["Zoologie", "Reptile du groupe des lézards.", "L'iguane est un saurien."],
-      ["Au figuré", "Une allure de reptile, froide.", "Il nous fixait de son œil de saurien."]
-    ],
-    retenir: "Du grec « sauros », lézard, comme dans « dinosaure »."
+    scene: "L'iguane immobile sur sa pierre, au soleil, qui te fixe sans cligner des yeux. C'est un saurien, de la famille des lézards.",
+    aussi: "Au figuré, un regard de saurien est froid, immobile et un peu inquiétant.",
+    origine: "Du grec « sauros », le lézard, comme dans « dinosaure ».",
   },
   "Superfluité": {
-    clair: "Ce qu'on a en trop et dont on pourrait se passer.",
-    sens: [
-      ["Le superflu", "Une chose inutile.", "Il a vendu toutes ses superfluités pour voyager léger."]
-    ],
-    retenir: "Voltaire : « Le superflu, chose très nécessaire. »"
+    scene: "Le troisième set de tasses, les câbles dont tu ne sais plus à quoi ils servent, les vêtements jamais portés. Le jour du déménagement, tu découvres toutes tes superfluités.",
+    degainer: "Voltaire, avec malice : « Le superflu, chose très nécessaire. »",
   },
   "Sylphe": {
-    clair: "Un génie de l'air, léger et invisible, dans les vieilles légendes.",
-    sens: [
-      ["Légende", "Esprit aérien.", "Les sylphes dansaient, dit-on, dans la brume du matin."],
-      ["Au figuré", "Une personne très gracieuse et légère (au féminin : sylphide).", "La danseuse semblait une sylphide."]
-    ],
-    retenir: "Au féminin, « sylphide » s'emploie pour une femme mince et gracieuse."
+    scene: "Dans les vieilles légendes, les sylphes sont des esprits de l'air, invisibles et légers, qui dansent dans la brume du matin.",
+    aussi: "Au féminin, une « sylphide », c'est une femme d'une grâce aérienne, comme une danseuse qui semble ne pas toucher le sol.",
   },
   "Télescoper": {
-    clair: "Deux choses qui se rentrent dedans : des voitures, ou des idées.",
-    sens: [
-      ["Un choc", "Heurter violemment.", "Le camion a télescopé trois voitures."],
-      ["Au figuré", "Mêler des éléments qui n'ont rien à voir.", "Dans ce roman, passé et présent se télescopent."]
-    ],
-    retenir: "Comme les tubes d'une longue-vue qui rentrent les uns dans les autres."
+    scene: "Sur l'autoroute, le camion freine trop tard et télescope trois voitures. Dans un bon roman, le passé et le présent se télescopent aussi : ils se rentrent dedans.",
+    origine: "Comme les tubes d'une longue-vue, qui rentrent les uns dans les autres.",
   },
   "Thésauriser": {
-    clair: "Mettre de l'argent de côté sans jamais le dépenser, comme un dragon sur son trésor.",
-    sens: [
-      ["Économie", "Accumuler de l'argent sans le faire circuler.", "En période de crise, les ménages thésaurisent."],
-      ["Au figuré", "Accumuler pour garder.", "Elle thésaurise les souvenirs comme d'autres les timbres."]
-    ],
-    retenir: "Même racine que « trésor » (« thesaurus »)."
+    scene: "Le dragon couché sur son tas d'or, qui ne dépense jamais une pièce. Ou ton oncle qui cache ses billets dans une boîte à chaussures. Ils thésaurisent : ils amassent sans jamais faire circuler.",
+    origine: "La même racine que « trésor » (« thesaurus »).",
   },
   "Verdeur": {
-    clair: "La vigueur pleine de sève de la jeunesse, ou d'un vieil homme qui a gardé sa pêche.",
-    sens: [
-      ["Vitalité", "Vigueur, énergie.", "Malgré ses 80 ans, il garde une verdeur étonnante."],
-      ["Le langage", "Crudité, liberté de ton.", "La verdeur de son langage choquait les salons."],
-      ["Un vin", "Acidité d'un vin jeune.", "Ce vin a encore de la verdeur."]
-    ],
-    retenir: "Le vert de la sève. On dit aussi « une vieillesse verte »."
+    scene: "Quatre-vingts ans, et il grimpe encore aux arbres pour cueillir les cerises. Il a gardé la verdeur de sa jeunesse : la sève, la vigueur.",
+    aussi: "La verdeur du langage, c'est sa crudité. Et un vin qui a de la verdeur est encore un peu acide.",
   },
 
-  // Série 2 (2026-11-23)
+  // Série 2
   "S'absoudre": {
-    clair: "Se laver soi-même d'une faute : décider qu'on n'est plus coupable, à tort ou à raison.",
-    sens: [
-      ["Se pardonner", "Se libérer de sa culpabilité.", "Il s'est absous un peu vite de ses mensonges."],
-      ["Absoudre quelqu'un", "En religion ou en justice, déclarer pardonné ou non coupable.", "Le prêtre l'absout de ses péchés ; le tribunal l'a absous."]
-    ],
-    retenir: "Piège de conjugaison : absous au masculin, absoute au féminin (pas « absout »)."
+    scene: "Il a menti, il le sait. Mais après une nuit de réflexion, il décide que « tout le monde fait pareil » et se sent beaucoup mieux. Il s'est absous tout seul, sans demander l'avis de personne.",
+    aussi: "Absoudre quelqu'un, c'est le pardonner (le prêtre) ou le déclarer non coupable (le tribunal).",
+    piege: "Absous au masculin, absoute au féminin. Jamais « absout ».",
   },
   "Allégation": {
-    clair: "Ce qu'on affirme sans l'avoir encore prouvé. Ça peut être vrai… ou pas.",
-    sens: [["Affirmation", "Une déclaration avancée sans preuve.", "Ces allégations de tricherie n'ont jamais été démontrées."]],
-    retenir: "Très utilisé en justice et dans les médias : une allégation attend sa preuve."
+    scene: "« Selon une source proche du dossier, le ministre aurait… » Rien n'est prouvé, mais c'est dit. Une allégation attend encore sa preuve, et elle peut tomber à l'eau.",
+    degainer: "Pour rappeler à quelqu'un que ce qu'il raconte n'est pas encore un fait.",
   },
   "Amalgamer": {
-    clair: "Mettre dans le même sac des choses ou des gens qui n'ont rien à voir.",
-    sens: [
-      ["Au figuré", "Confondre abusivement.", "Il ne faut pas amalgamer quelques casseurs avec tous les manifestants."],
-      ["Au sens propre", "Mélanger des matières en un tout.", "Le dentiste amalgame le mercure et l'argent."]
-    ],
-    retenir: "« Faire un amalgame », c'est généraliser à tort."
+    scene: "Trois casseurs dans une manifestation de dix mille personnes, et le lendemain on entend : « Les manifestants ont tout cassé. » C'est amalgamer : mettre tout le monde dans le même sac.",
+    aussi: "Au sens propre, le dentiste amalgame des métaux pour boucher une carie.",
   },
   "Ambivalent": {
-    clair: "Aimer et détester à la fois. Avoir deux sentiments contraires sur la même chose.",
-    sens: [
-      ["Sentiments", "Partagé entre deux émotions opposées.", "Elle a un rapport ambivalent à sa ville natale : elle la fuit et la regrette."],
-      ["Une chose", "Qui a deux aspects, deux valeurs.", "Les réseaux sociaux sont ambivalents : ils relient et isolent."]
-    ],
-    retenir: "« Ambi » = les deux (comme ambidextre)."
+    scene: "Ta ville natale : tu l'as fuie dès tes dix-huit ans, et pourtant ton cœur se serre à chaque fois que tu y reviens. Ce que tu ressens pour elle est ambivalent : deux sentiments contraires, en même temps.",
+    origine: "« Ambi », les deux, comme dans « ambidextre ».",
   },
   "Anachronisme": {
-    clair: "Une montre au poignet d'un chevalier : quelque chose qui n'est pas à sa place dans le temps.",
-    sens: [
-      ["Une erreur", "Placer une chose à une époque où elle n'existait pas.", "Un téléphone dans un film sur Napoléon, quel anachronisme !"],
-      ["Une survivance", "Ce qui est dépassé, d'un autre âge.", "Le fax est devenu un anachronisme."]
-    ],
-    retenir: "« Ana » (en arrière) + « chronos » (temps)."
+    scene: "Dans un film sur Napoléon, un figurant porte une montre au poignet. Les spectateurs les plus attentifs l'ont repéré tout de suite : un anachronisme, une chose qui n'est pas à sa place dans le temps.",
+    aussi: "Le fax au bureau, en 2026 ? C'est un anachronisme aussi : un vestige d'une autre époque.",
   },
   "Apothicaire": {
-    clair: "Le pharmacien d'autrefois, entouré de pots de poudres, d'herbes et d'onguents.",
-    sens: [
-      ["Le métier", "Celui qui préparait et vendait les remèdes.", "L'apothicaire broyait des herbes dans son mortier."],
-      ["Expression", "« Un compte d'apothicaire » : un calcul compliqué et pointilleux.", "Le partage de l'addition a tourné au compte d'apothicaire."]
-    ],
-    retenir: "Les apothicaires gonflaient leurs factures, d'où les « comptes d'apothicaire »."
+    scene: "Une boutique sombre aux murs couverts de pots en faïence, une odeur d'herbes séchées, un homme qui broie des poudres dans un mortier. C'est l'apothicaire, le pharmacien d'autrefois.",
+    degainer: "« Un compte d'apothicaire » : un partage d'addition qui tourne au calcul interminable.",
   },
   "Assertion": {
-    clair: "Une phrase qu'on présente comme vraie, avec assurance.",
-    sens: [["Affirmation", "Ce qu'on avance comme vrai.", "Son assertion selon laquelle la Terre est plate a fait rire la classe."]],
-    retenir: "Une assertion affirme ; une allégation affirme sans preuve."
+    scene: "« La Terre est plate. » Il le dit avec aplomb, sans sourciller, comme une évidence. C'est une assertion : une phrase qu'on présente comme vraie, qu'elle le soit ou non.",
+    piege: "Une assertion affirme ; une allégation affirme sans preuve.",
   },
   "Auguste": {
-    clair: "Si majestueux qu'on baisse un peu la voix. Et aussi… le clown au nez rouge !",
-    sens: [
-      ["Adjectif", "Noble, majestueux, qui impose le respect.", "L'auguste assemblée se leva à l'entrée du roi."],
-      ["Au cirque", "Le clown maladroit qui fait rire, face au clown blanc.", "L'auguste trébucha et tout le chapiteau éclata de rire."]
-    ],
-    retenir: "Vient de l'empereur Auguste. Le clown porte ce nom par ironie."
+    scene: "Quand le roi entre, l'auguste assemblée se lève dans un silence parfait : majestueux. Mais sous le chapiteau, l'auguste, c'est le clown au nez rouge qui trébuche sur ses grandes chaussures.",
+    origine: "Du nom de l'empereur Auguste. Le clown l'a reçu par ironie.",
   },
   "Bringuebalant": {
-    clair: "Qui tremble, cliquette et menace de tomber à chaque pas.",
-    sens: [["Branlant", "Qui tient mal, secoué.", "On a traversé la campagne dans un vieux bus bringuebalant."]],
-    retenir: "On dit aussi « brinquebalant ». Le son du mot imite le cahot."
+    scene: "Le vieux bus de campagne qui grince à chaque virage, les vitres qui tremblent, le siège qui se décroche. Tout y est bringuebalant : rien ne tient vraiment.",
+    origine: "On écrit aussi « brinquebalant ». Le mot fait le bruit du cahot quand on le prononce.",
   },
   "Cathartique": {
-    clair: "Ce qui fait sortir ce qu'on gardait en soi, et qui soulage après.",
-    sens: [
-      ["Psychologie", "Qui libère des émotions refoulées.", "Pleurer devant ce film a été cathartique."],
-      ["Théâtre", "Chez Aristote, la tragédie purge les passions du spectateur.", "La tragédie a une fonction cathartique."]
-    ],
-    retenir: "La catharsis : la « purification » en grec."
+    scene: "Tu as pleuré tout le long du film, et en sortant tu te sens étrangement léger. Ce qui était coincé en toi est sorti. C'était cathartique.",
+    origine: "La « catharsis », la purification en grec. Aristote pensait que la tragédie purgeait les passions du spectateur.",
   },
   "Cantonné": {
-    clair: "Coincé dans une case dont on n'arrive pas à sortir.",
-    sens: [
-      ["Limité", "Réduit à un rôle, un domaine.", "Longtemps cantonnée aux seconds rôles, elle explose enfin."],
-      ["Armée", "Des troupes installées dans un lieu.", "Le régiment était cantonné au village."]
-    ],
-    retenir: "Un canton, c'est un petit territoire : on y est cantonné."
+    scene: "Vingt ans à jouer la meilleure amie de l'héroïne, jamais l'héroïne elle-même. Elle était cantonnée aux seconds rôles, enfermée dans une case.",
+    origine: "Un canton est un petit territoire : on y est cantonné.",
   },
   "Châtier": {
-    clair: "Punir sévèrement… ou polir son style jusqu'à ce qu'il soit impeccable.",
-    sens: [
-      ["Punir", "Infliger une punition.", "Le roi châtia les traîtres."],
-      ["Le langage", "Soigner, épurer son expression.", "Il parle une langue châtiée, sans un mot de travers."]
-    ],
-    retenir: "Proverbe : « Qui aime bien châtie bien »."
+    scene: "Le roi châtie les traîtres. Mais l'écrivain, lui, châtie son style : il relit, il coupe, il polit jusqu'à ce que chaque phrase soit impeccable.",
+    degainer: "« Une langue châtiée » : un français soigné, sans un mot de travers.",
+    origine: "Le proverbe : « Qui aime bien châtie bien. »",
   },
   "Chérubin": {
-    clair: "Le petit ange joufflu des tableaux, et l'enfant adorable qui lui ressemble.",
-    sens: [
-      ["Religion et art", "Ange représenté en enfant ailé.", "Des chérubins dorés ornent le plafond de l'église."],
-      ["Un enfant", "Mignon, à la tête d'ange.", "Leur chérubin dort enfin, après trois histoires."]
-    ],
-    retenir: "Dans la Bible, les chérubins sont pourtant des anges puissants, pas des bébés !"
+    scene: "Les petits anges joufflus aux joues roses qui volettent au plafond des églises. Et, par ressemblance, le bébé qui dort enfin après trois histoires : « Notre chérubin. »",
+    piege: "Dans la Bible, les chérubins sont pourtant des anges puissants, rien à voir avec des bébés.",
   },
   "Clivant": {
-    clair: "Un sujet qui coupe une salle en deux : on est pour ou contre, sans milieu.",
-    sens: [["Qui divise", "Qui sépare les opinions en camps opposés.", "La pizza à l'ananas, sujet clivant par excellence."]],
-    retenir: "Le clivage, en géologie, c'est la ligne où une roche se fend."
+    scene: "Lance « la pizza à l'ananas » à un dîner et regarde la table se couper en deux camps. Un sujet clivant ne laisse pas de place au milieu.",
+    origine: "Le clivage, en géologie, est la ligne où une roche se fend.",
   },
   "Confins": {
-    clair: "Le bout du bout, là où un territoire se termine.",
-    sens: [
-      ["Géographie", "Les limites extrêmes d'un territoire.", "Ils vivent aux confins de la Mongolie."],
-      ["Au figuré", "La limite entre deux domaines.", "Aux confins de la science et du rêve."]
-    ],
-    retenir: "Toujours au pluriel. Même famille que « confiner »."
+    scene: "Là où la route s'arrête, là où les cartes deviennent floues : aux confins de la Mongolie, aux confins du monde connu.",
+    aussi: "Au figuré, la frontière entre deux domaines : « aux confins de la science et du rêve ».",
+    piege: "Toujours au pluriel.",
   },
   "Consensus": {
-    clair: "Le moment où tout le monde finit par être d'accord, ou presque.",
-    sens: [["Accord", "Accord général d'un groupe.", "Après deux heures de débat, un consensus s'est dégagé : on va au resto."]],
-    retenir: "L'adjectif « consensuel » est parfois péjoratif : fade, qui ne fâche personne."
+    scene: "Deux heures de débat entre amis pour savoir où dîner. Puis quelqu'un dit « italien ? », et tout le monde hoche la tête. Un consensus s'est dégagé.",
+    piege: "« Consensuel » est parfois péjoratif : fade, fait pour ne fâcher personne.",
   },
   "Crépiter": {
-    clair: "Le petit bruit sec et répété du feu de bois, de la pluie sur une tôle ou des applaudissements.",
-    sens: [["Le son", "Faire une suite de petits claquements.", "Les bûches crépitaient dans la cheminée."]],
-    retenir: "Un mot qui imite son propre bruit (une onomatopée cachée)."
+    scene: "Le soir, au chalet : les bûches qui crépitent dans la cheminée, la pluie qui crépite sur le toit de tôle. Un petit bruit sec, répété, presque rassurant.",
+    degainer: "Les applaudissements crépitent aussi, quand ils partent de partout à la fois.",
   },
   "Décharné": {
-    clair: "Si maigre qu'on devine les os sous la peau.",
-    sens: [
-      ["Un corps", "Très maigre.", "Le chien errant, décharné, cherchait à manger."],
-      ["Un paysage", "Dénudé, sans végétation.", "Les arbres décharnés de l'hiver."]
-    ],
-    retenir: "« Dé » + « chair » : qui a perdu sa chair."
+    scene: "Le chien errant qui rôde près des poubelles : on voit ses côtes sous le pelage. Il est décharné, il n'a plus que la peau sur les os.",
+    aussi: "Un arbre décharné, en hiver, n'a plus une seule feuille.",
   },
   "Détonner": {
-    clair: "Être la note fausse du tableau : ne pas aller avec le reste.",
-    sens: [
-      ["Ne pas s'accorder", "Contraster de façon choquante.", "Son costume fluo détonnait au milieu des tenues noires."],
-      ["En musique", "Chanter faux.", "Le choriste détonnait à chaque refrain."]
-    ],
-    retenir: "Piège : détoNNer (le ton) ≠ déToner (exploser, la détonation)."
+    scene: "Un enterrement, tout le monde en noir… et lui, avec sa chemise hawaïenne. Il détonne : il est la note fausse du tableau.",
+    piege: "DétoNNer (le ton, avec deux n) n'a rien à voir avec déToner (exploser, la détonation).",
   },
   "Discordance": {
-    clair: "Quand les choses ne s'accordent pas : des sons, des avis, des versions.",
-    sens: [
-      ["Désaccord", "Différence entre des versions.", "Les enquêteurs ont relevé des discordances dans son témoignage."],
-      ["Musique", "Sons qui ne s'harmonisent pas.", "La discordance des violons faisait grincer des dents."]
-    ],
-    retenir: "Contraire : concordance. Même famille que « discorde »."
+    scene: "À 20 h il était chez lui, à 20 h 15 il était au bar, et à 20 h 30 il ne se souvient plus. Les enquêteurs relèvent des discordances : ses versions ne collent pas entre elles.",
+    aussi: "En musique, la discordance, c'est quand les sons ne s'accordent pas et font grincer les dents.",
   },
   "Éberlué": {
-    clair: "Les yeux ronds, la bouche ouverte : tellement surpris qu'on n'y croit pas.",
-    sens: [["Stupéfait", "Ébahi, abasourdi.", "Éberlué, il regarda son chat ouvrir la porte du frigo."]],
-    retenir: "Proche de « pantois » ; éberlué insiste sur le regard incrédule."
+    scene: "Tu rentres et tu trouves ton chat en train d'ouvrir le frigo tout seul. Tu restes planté là, les yeux ronds : éberlué.",
   },
   "Échine": {
-    clair: "Le dos, la colonne : et au figuré, la fierté qu'on garde droite ou qu'on courbe.",
-    sens: [
-      ["Le corps", "La colonne vertébrale.", "Un frisson lui parcourut l'échine."],
-      ["Au figuré", "« Courber l'échine » : se soumettre.", "Il refusa de courber l'échine devant son patron."]
-    ],
-    retenir: "« Avoir l'échine souple » : être servile, obséquieux."
+    scene: "Un frisson te parcourt l'échine quand la porte grince dans la maison vide. Ton échine, c'est ton dos, ta colonne.",
+    degainer: "« Courber l'échine » : se soumettre. « Refuser de courber l'échine » : garder sa fierté.",
   },
   "Écroué": {
-    clair: "Inscrit au registre de la prison : enfermé officiellement.",
-    sens: [["Emprisonné", "Mis en détention.", "Le suspect a été écroué hier soir."]],
-    retenir: "L'écrou, c'est le registre d'entrée de la prison (rien à voir avec la vis)."
+    scene: "Au journal de 20 heures : « Le suspect a été écroué hier soir. » Traduction : il dort en prison, et son nom est inscrit au registre d'entrée.",
+    origine: "L'écrou, c'est justement ce registre de la prison. Rien à voir avec la vis.",
   },
   "Enclin": {
-    clair: "Avoir un penchant naturel pour quelque chose, comme une pente qu'on descend facilement.",
-    sens: [["Tendance", "Porté à faire quelque chose.", "Fatigué, il est enclin à tout voir en noir."]],
-    retenir: "Toujours suivi de « à ». Même idée que « incliné »."
+    scene: "Quand il est fatigué, il voit tout en noir. Il est enclin au pessimisme, comme une pente sur laquelle il glisse naturellement.",
+    piege: "Toujours suivi de « à » : « enclin à pardonner », « enclin à exagérer ».",
   },
   "Éolien": {
-    clair: "Tout ce qui vient du vent, ou qui est aussi léger que lui.",
-    sens: [
-      ["Le vent", "Mû par le vent.", "Un parc éolien tourne au large de la côte."],
-      ["Poétique", "Léger, aérien, mélodieux.", "La harpe éolienne chante quand le vent passe."]
-    ],
-    retenir: "Éole, le dieu grec des vents."
+    scene: "Au large, les grandes hélices blanches tournent lentement : un parc éolien. Tout ce qui est éolien vient du vent.",
+    origine: "Éole, le dieu grec des vents, qui les gardait enfermés dans une outre.",
   },
   "Épigraphe": {
-    clair: "La petite citation en tête d'un livre qui donne le ton avant même la première page.",
-    sens: [
-      ["Littérature", "Citation placée en tête d'un ouvrage.", "Le roman s'ouvre sur une épigraphe de Baudelaire."],
-      ["Architecture", "Inscription sur un monument.", "L'épigraphe gravée au fronton indique la date."]
-    ],
-    retenir: "Ne pas confondre avec l'épitaphe (sur une tombe) ni l'exergue."
+    scene: "Tu ouvres un roman, et avant même le premier chapitre, une phrase de Baudelaire en italique. Elle donne le ton du livre entier : c'est l'épigraphe.",
+    piege: "À ne pas confondre avec l'épitaphe, qui est gravée sur une tombe.",
   },
   "Épître": {
-    clair: "Une lettre, mais avec de l'allure : longue, soignée, souvent publique.",
-    sens: [
-      ["Religion", "Les lettres des apôtres dans le Nouveau Testament.", "On lut l'épître de saint Paul."],
-      ["Avec humour", "Une lettre interminable.", "Il m'a envoyé une épître de six pages pour s'excuser."]
-    ],
-    retenir: "Un accent circonflexe sur le i, souvenir du s latin (epistola)."
+    scene: "Il voulait s'excuser. Il t'a envoyé six pages, avec des citations et un post-scriptum. Ce n'est plus une lettre, c'est une épître.",
+    aussi: "Dans le Nouveau Testament, les épîtres sont les lettres des apôtres.",
   },
   "Ériger": {
-    clair: "Dresser bien haut : une statue, ou une idée qu'on élève au rang de règle.",
-    sens: [
-      ["Construire", "Élever un monument.", "On érigea une statue en son honneur."],
-      ["Ériger en", "Faire passer pour, élever au rang de.", "Il a érigé la paresse en art de vivre."]
-    ],
-    retenir: "« S'ériger en juge » : se donner soi-même le droit de juger."
+    scene: "Sur la place, on érige une statue en son honneur. Et dans son salon, il a érigé la sieste en art de vivre.",
+    degainer: "« S'ériger en juge » : se donner soi-même le droit de juger les autres.",
   },
   "Exhaustif": {
-    clair: "Qui fait le tour complet, sans rien oublier.",
-    sens: [["Complet", "Qui traite tout le sujet.", "Voici la liste exhaustive des ingrédients."]],
-    retenir: "Vient d'« épuiser » : on épuise le sujet."
+    scene: "Avant de partir en randonnée, elle fait la liste : gourde, lampe, pansements, crème solaire, chaussettes de rechange… Rien n'est oublié. Sa liste est exhaustive.",
+    origine: "Du latin « épuiser » : on épuise le sujet jusqu'au bout.",
   },
   "Fac-similé": {
-    clair: "La copie si fidèle d'un document qu'on la confondrait avec l'original.",
-    sens: [["Copie", "Reproduction exacte.", "Le musée expose un fac-similé du manuscrit, l'original est trop fragile."]],
-    retenir: "Latin « fac simile » : fais semblable. Le mot « fax » en vient."
+    scene: "Au musée, derrière la vitrine, le manuscrit original de Victor Hugo ? Non : un fac-similé, une copie si fidèle qu'on jurerait voir l'encre encore fraîche. L'original est trop fragile pour être exposé.",
+    origine: "Du latin « fac simile », fais semblable. Le mot « fax » en vient.",
   },
   "Factieux": {
-    clair: "Le comploteur qui forme un clan pour renverser le pouvoir.",
-    sens: [["Rebelle", "Qui fomente des troubles contre l'État.", "Les factieux ont tenté de s'emparer du palais."]],
-    retenir: "Une faction, c'est un groupe rebelle."
+    scene: "Une nuit, un petit groupe d'officiers tente de s'emparer du palais. Ils ne représentent qu'eux-mêmes, mais veulent renverser le pouvoir. Ce sont des factieux.",
+    origine: "Une faction, c'est un groupe qui se sépare pour comploter.",
   },
   "Faire fi de": {
-    clair: "Balayer d'un revers de main, comme si ça n'existait pas.",
-    sens: [["Mépriser", "Ne pas tenir compte.", "Faisant fi des conseils, il est parti sans parapluie."]],
-    retenir: "« Fi ! » était une interjection de dégoût, comme « pouah ! »."
+    scene: "La météo annonçait l'orage, sa mère lui avait dit de prendre un parapluie. Faisant fi de tous les conseils, il est parti en t-shirt.",
+    origine: "« Fi ! » était une exclamation de dégoût, comme « pouah ! ».",
   },
   "Félonie": {
-    clair: "La pire des trahisons : celle envers quelqu'un à qui on avait juré fidélité.",
-    sens: [
-      ["Moyen Âge", "Trahison d'un vassal envers son seigneur.", "Le chevalier fut banni pour félonie."],
-      ["Aujourd'hui", "Déloyauté, traîtrise.", "Passer chez le club rival ? Une félonie pour les supporters !"]
-    ],
-    retenir: "Le traître s'appelle un félon."
+    scene: "Au Moyen Âge, le chevalier avait juré fidélité à son seigneur. Il l'a vendu à l'ennemi. Ce n'est pas une simple trahison : c'est une félonie.",
+    degainer: "Pour un joueur qui part chez le club rival, les supporters crient à la félonie.",
   },
   "Se fourvoyer": {
-    clair: "Partir dans la mauvaise direction, sur la route ou dans ses idées.",
-    sens: [["Se tromper", "Faire fausse route.", "Les enquêteurs se sont fourvoyés pendant des mois."]],
-    retenir: "« Hors de la voie » : fors + voie."
+    scene: "Pendant des mois, les enquêteurs ont suivi la mauvaise piste, interrogé les mauvaises personnes. Ils se sont fourvoyés : ils ont fait fausse route.",
+    origine: "« Fors », hors de, et « voie » : sortir du bon chemin.",
   },
   "Fustiger": {
-    clair: "Fouetter avec les mots : critiquer avec une grande violence.",
-    sens: [
-      ["Critiquer", "Blâmer durement.", "L'éditorial fustige l'incompétence du gouvernement."],
-      ["Ancien sens", "Frapper à coups de bâton.", "Le coupable fut fustigé sur la place."]
-    ],
-    retenir: "Du latin « fustis », le bâton."
+    scene: "Le lendemain de la catastrophe, l'éditorial ne mâche pas ses mots : incompétence, mensonges, lâcheté. Il fustige le gouvernement, comme on fouetterait avec des mots.",
+    origine: "Du latin « fustis », le bâton. Autrefois, fustiger, c'était frapper.",
   },
   "Gérontocratie": {
-    clair: "Quand ce sont toujours les plus vieux qui décident de tout.",
-    sens: [["Pouvoir", "Gouvernement par les anciens.", "Ce parti est une gérontocratie : la moyenne d'âge du bureau est de 75 ans."]],
-    retenir: "« Géronto » (vieillard, comme gériatrie) + « cratie » (pouvoir)."
+    scene: "Le bureau du parti a une moyenne d'âge de soixante-quinze ans, et le plus jeune attend son tour depuis vingt ans. C'est une gérontocratie : le pouvoir aux plus vieux.",
+    origine: "« Géronto », le vieillard (comme dans gériatrie), et « cratie », le pouvoir.",
   },
   "Grabataire": {
-    clair: "Le malade qui ne peut plus quitter son lit.",
-    sens: [["Alité", "Qui ne peut plus se lever.", "Sa grand-mère, grabataire, recevait les visites dans sa chambre."]],
-    retenir: "Même famille que « grabat », le lit misérable."
+    scene: "Sa grand-mère ne quitte plus son lit. On lui apporte ses repas, on lui fait la lecture, on reçoit les visites dans sa chambre. Elle est grabataire.",
   },
   "Grief": {
-    clair: "Ce qu'on reproche à quelqu'un, le motif de la plainte.",
-    sens: [["Reproche", "Motif de plainte.", "Elle a exposé tous ses griefs contre son voisin."]],
-    retenir: "« Faire grief à quelqu'un de quelque chose » : le lui reprocher."
+    scene: "La réunion de famille tourne mal : chacun ressort ses griefs, le cadeau oublié, la remarque de 2012, l'héritage de tante Lucie. Les reproches qu'on garde au chaud depuis des années.",
+    degainer: "« Faire grief à quelqu'un de quelque chose » : le lui reprocher.",
   },
   "Hétéroclite": {
-    clair: "Un bric-à-brac d'éléments qui n'ont rien à faire ensemble.",
-    sens: [["Disparate", "Fait d'éléments très différents.", "Une collection hétéroclite : un casque viking, une théière et un vinyle."]],
-    retenir: "« Hétéro » = autre, différent."
+    scene: "Dans la vitrine du brocanteur : un casque viking, une théière anglaise, un vinyle de disco et un crâne de vache. Une collection hétéroclite, où rien ne va avec rien.",
   },
   "Hymen": {
-    clair: "Un mot poétique pour le mariage, venu du dieu grec des noces.",
-    sens: [
-      ["Poétique", "Le mariage.", "Les deux familles célébrèrent l'hymen des jeunes gens."],
-      ["Anatomie", "Une membrane du corps féminin.", "Le mot a aussi un sens médical."]
-    ],
-    retenir: "Hyménée est un synonyme encore plus poétique."
+    scene: "Dans les vieux romans, on ne se marie pas : on célèbre l'hymen des jeunes gens. Le mot est poétique et vient d'Hymen, le dieu grec des noces.",
+    aussi: "Le mot a aussi un sens médical, en anatomie.",
   },
   "Incoercible": {
-    clair: "Impossible à retenir, à contenir : un fou rire, une envie, une toux.",
-    sens: [["Irrépressible", "Qu'on ne peut maîtriser.", "Un fou rire incoercible le prit en pleine réunion."]],
-    retenir: "Le contraire de coercitif : rien ne peut le contraindre."
+    scene: "En pleine réunion sérieuse, un collègue fait une grimace et tu sens le fou rire monter. Tu serres les dents, tu te pinces : rien à faire. Il est incoercible.",
+    origine: "Le contraire de « coercitif » : aucune contrainte ne peut le retenir.",
   },
   "Infamant": {
-    clair: "Ce qui salit la réputation, laisse une marque de honte.",
-    sens: [["Déshonorant", "Qui couvre d'infamie.", "Une accusation infamante, même fausse, laisse des traces."]],
-    retenir: "L'infamie, c'est la honte extrême (la « mauvaise fama », renommée)."
+    scene: "Même blanchi par la justice, il ne s'en est jamais remis. L'accusation était infamante : elle a laissé une marque de honte sur son nom.",
   },
   "Injonction": {
-    clair: "Un ordre pressant, qui ne laisse pas le choix.",
-    sens: [
-      ["Ordre", "Commandement formel.", "Il a reçu une injonction de quitter les lieux."],
-      ["Société", "Une pression sociale à faire ou être quelque chose.", "L'injonction au bonheur sur les réseaux épuise."]
-    ],
-    retenir: "« Injonction paradoxale » : « Sois spontané ! » (impossible à respecter)."
+    scene: "« Sois heureux, mince, productif, détendu, et souris sur les photos. » Les réseaux sont pleins d'injonctions : des ordres qui ne disent pas leur nom.",
+    degainer: "« Une injonction paradoxale » : « Sois spontané ! », un ordre impossible à respecter.",
   },
   "Ineptie": {
-    clair: "Une bêtise tellement grosse qu'on ne sait pas par où la prendre.",
-    sens: [["Absurdité", "Propos ou acte stupide.", "Dire que les poissons ne dorment jamais ? Une ineptie."]],
-    retenir: "L'adjectif : inepte. On prononce « i-nèp-si »."
+    scene: "« Les poissons rouges n'ont que trois secondes de mémoire. » Une ineptie, mille fois répétée, et pourtant fausse.",
+    piege: "On prononce « i-nèp-si ».",
   },
   "Intangible": {
-    clair: "Qu'on ne peut pas toucher : soit parce que c'est immatériel, soit parce que c'est sacré.",
-    sens: [
-      ["Immatériel", "Qui ne se touche pas.", "La réputation est un bien intangible."],
-      ["Inviolable", "Qu'on ne doit pas modifier.", "Pour lui, la sieste est un principe intangible."]
-    ],
-    retenir: "« Tangere » = toucher (comme tangible, contact)."
+    scene: "Ta réputation, ta confiance, ton savoir : tu ne peux pas les toucher, et pourtant ils valent plus que tout le reste. Ce sont des biens intangibles.",
+    aussi: "Ça veut aussi dire « sacré, qu'on ne modifie pas » : « Chez lui, la sieste est un principe intangible. »",
   },
   "Irrévérencieux": {
-    clair: "Qui ne s'incline devant rien : impertinent, souvent pour faire rire.",
-    sens: [["Impertinent", "Qui manque de respect.", "Un humoriste irrévérencieux qui se moque des puissants."]],
-    retenir: "La révérence, c'est le salut respectueux. Irrévérencieux : sans salut."
+    scene: "Devant le président, l'humoriste fait une blague sur sa cravate. La salle s'étrangle de rire. Il est irrévérencieux : il ne s'incline devant personne.",
+    origine: "La révérence, c'est le salut respectueux. L'irrévérencieux ne fait pas la révérence.",
   },
   "Larcin": {
-    clair: "Un petit vol, sans violence, presque discret.",
-    sens: [["Vol", "Petit vol, chapardage.", "Son larcin : trois pommes dans le verger du voisin."]],
-    retenir: "Plus léger que « vol » : on parle de larcin pour les petites choses."
+    scene: "Trois pommes chapardées dans le verger du voisin, en rentrant de l'école. Un larcin : un tout petit vol, presque une bêtise d'enfant.",
   },
   "Libelliste": {
-    clair: "L'auteur de pamphlets courts et piquants, souvent pour attaquer quelqu'un.",
-    sens: [["Écrivain satirique", "Auteur de libelles.", "Les libellistes du XVIIIe siècle ridiculisaient la reine."]],
-    retenir: "Un libelle, c'est un petit écrit diffamatoire."
+    scene: "Au XVIIIe siècle, sous le manteau, circulaient de petits textes anonymes qui ridiculisaient la reine. Leurs auteurs étaient des libellistes, l'ancêtre des comptes anonymes qui balancent des rumeurs.",
   },
   "Lie": {
-    clair: "Le dépôt au fond de la bouteille, et au figuré, ce que certains méprisent comme « le fond » de la société.",
-    sens: [
-      ["Le vin", "Le dépôt au fond d'un tonneau.", "Ne secoue pas la bouteille, tu vas remuer la lie."],
-      ["Au figuré", "Le plus bas, le plus vil.", "« La lie de l'humanité », disait-il avec mépris."],
-      ["Expression", "« Boire la coupe jusqu'à la lie » : subir jusqu'au bout.", "Il a bu le calice jusqu'à la lie."]
-    ],
-    retenir: "La couleur « lie-de-vin » : un rouge violacé."
+    scene: "Au fond de la bouteille de vin, il reste un dépôt sombre qu'on évite de verser : la lie. Et quand quelqu'un parle de « la lie de la société », il parle des gens avec un mépris terrible.",
+    degainer: "« Boire le calice jusqu'à la lie » : subir une épreuve jusqu'au bout.",
   },
   "Lorgnon": {
-    clair: "Les lunettes sans branches qu'on tenait devant ses yeux d'un air savant.",
-    sens: [["Lunettes", "Verres tenus à la main ou pincés sur le nez.", "Le notaire ajusta son lorgnon pour lire le testament."]],
-    retenir: "Même famille que « lorgner », regarder avec insistance."
+    scene: "Le vieux notaire sort de sa poche une paire de verres sans branches, les tient devant ses yeux, et se penche sur le testament. C'est un lorgnon.",
+    origine: "De la même famille que « lorgner », regarder avec insistance.",
   },
   "Macrocosme": {
-    clair: "L'univers entier vu comme un grand tout, dont l'homme serait le reflet en miniature.",
-    sens: [["L'univers", "Le monde dans son ensemble.", "Pour les alchimistes, l'homme est un microcosme qui reflète le macrocosme."]],
-    retenir: "« Macro » (grand) + « cosmos » (monde). Le petit : microcosme."
+    scene: "Pour les alchimistes, ton corps est un petit univers qui reflète le grand. Le grand, c'est le macrocosme, l'univers entier vu comme un tout.",
+    origine: "« Macro », grand, et « cosmos », le monde. Le petit s'appelle microcosme.",
   },
   "Magnificence": {
-    clair: "Une splendeur qui coupe le souffle, ou une générosité de prince.",
-    sens: [
-      ["Splendeur", "Beauté grandiose.", "La magnificence de la galerie des Glaces."],
-      ["Générosité", "Libéralité fastueuse.", "Il reçut ses invités avec magnificence."]
-    ],
-    retenir: "Même famille que magnifique, magnanime."
+    scene: "Tu entres dans la galerie des Glaces : les lustres, les dorures, la lumière qui rebondit partout. Tu restes bouche bée devant tant de magnificence.",
+    aussi: "C'est aussi la générosité d'un prince qui reçoit ses invités sans compter.",
   },
   "Métastase": {
-    clair: "Quand un mal se propage loin de son point de départ.",
-    sens: [
-      ["Médecine", "Foyer secondaire d'un cancer.", "Le médecin cherche d'éventuelles métastases."],
-      ["Au figuré", "Propagation d'un mal.", "La corruption a fait des métastases dans toute l'administration."]
-    ],
-    retenir: "En grec : « déplacement »."
+    scene: "Un mot dur, qu'on entend dans les couloirs des hôpitaux : quand une maladie se propage loin de son point de départ.",
+    aussi: "Au figuré, un mal qui s'étend : « La corruption a fait des métastases dans toute l'administration. »",
   },
   "Occlusion": {
-    clair: "Une fermeture, un bouchon : là où plus rien ne passe.",
-    sens: [
-      ["Médecine", "Blocage d'un conduit.", "Une occlusion intestinale nécessite une opération."],
-      ["Phonétique", "Fermeture de la bouche pour prononcer p, t, k.", "Le p demande une occlusion des lèvres."]
-    ],
-    retenir: "Même famille qu'« occlure », fermer."
+    scene: "Rien ne passe plus : le conduit est bouché. C'est une occlusion, un mot qu'on croise surtout chez le médecin.",
+    aussi: "Pour prononcer un p, tes lèvres se ferment complètement : c'est aussi une occlusion.",
   },
   "Omerta": {
-    clair: "La loi du silence : personne ne parle, par peur ou par loyauté.",
-    sens: [
-      ["Mafia", "Le code du silence.", "L'omerta protège les parrains."],
-      ["Au figuré", "Silence imposé dans un groupe.", "Une omerta régnait sur le harcèlement dans l'entreprise."]
-    ],
-    retenir: "Mot italien du sud. « Briser l'omerta » : oser parler."
+    scene: "Tout le monde dans l'entreprise savait, et personne ne parlait, par peur ou par habitude. C'est l'omerta : la loi du silence.",
+    origine: "Un mot venu du sud de l'Italie, celui de la mafia. « Briser l'omerta », c'est oser parler.",
   },
   "Onirique": {
-    clair: "Qui ressemble à un rêve : étrange, flottant, irréel.",
-    sens: [["Le rêve", "Qui évoque le rêve.", "Ce film aux images oniriques ressemble à un rêve éveillé."]],
-    retenir: "Du grec « oneiros », le rêve."
+    scene: "Des baleines qui volent au-dessus d'une ville, des escaliers qui ne mènent nulle part, une lumière violette. Le film a des images oniriques : on se croirait dans un rêve.",
+    origine: "Du grec « oneiros », le rêve.",
   },
   "Oxymore": {
-    clair: "Coller deux mots contraires pour créer une image saisissante.",
-    sens: [["Figure de style", "Alliance de deux termes opposés.", "« Un silence assourdissant » : un oxymore."]],
-    retenir: "Le mot est lui-même un oxymore : en grec, « pointu-émoussé »."
+    scene: "« Un silence assourdissant », « une obscure clarté », « un doux poison ». Deux mots qui se battent, et de leur combat naît une image qui frappe.",
+    origine: "Le mot est lui-même un oxymore : en grec, il veut dire « pointu-émoussé ».",
   },
   "Parasocial": {
-    clair: "Avoir l'impression de connaître quelqu'un qu'on suit sur un écran, alors qu'il ignore qu'on existe.",
-    sens: [["Relation", "Lien affectif à sens unique avec une célébrité.", "Pleurer la rupture d'un youtubeur, c'est une relation parasociale."]],
-    retenir: "« Para » = à côté : une relation à côté du vrai lien social."
+    scene: "Tu connais son chat, son plat préféré et le prénom de sa mère. Tu as pleuré à l'annonce de sa rupture. Lui, il ne sait pas que tu existes. C'est une relation parasociale.",
+    degainer: "Pour mettre un mot sur cet attachement aux streamers, influenceurs ou célébrités qu'on suit tous les jours.",
   },
   "Parfaire": {
-    clair: "Donner la dernière touche pour que ce soit parfait.",
-    sens: [["Achever", "Compléter, perfectionner.", "Elle a passé un an à Madrid pour parfaire son espagnol."]],
-    retenir: "Se conjugue comme faire."
+    scene: "Elle parlait déjà bien espagnol. Elle est partie un an à Madrid pour le parfaire : donner la dernière touche.",
   },
   "Pérégrination": {
-    clair: "Un long voyage plein de détours, d'étapes et d'aventures.",
-    sens: [["Voyage", "Allées et venues, périple.", "Il nous a raconté ses pérégrinations en Amérique du Sud."]],
-    retenir: "Le pèlerin vient du même mot latin (peregrinus, étranger)."
+    scene: "Un bus raté au Pérou, une nuit dans un monastère, une rencontre dans un train bolivien. Il nous raconte ses pérégrinations : un voyage plein de détours et d'aventures.",
+    origine: "La même racine que « pèlerin » (« peregrinus », l'étranger).",
   },
   "Peuchère": {
-    clair: "Le soupir du Midi : pitié, tendresse ou étonnement, selon le ton.",
-    sens: [["Exclamation", "Pour plaindre ou s'étonner.", "Peuchère, il a encore perdu ses clés !"]],
-    retenir: "Du provençal « pecaire », pécheur."
+    scene: "« Peuchère, il a encore perdu ses clés ! » Avec l'accent du Midi, c'est un soupir qui veut tout dire : de la pitié, de la tendresse, un peu d'étonnement.",
+    origine: "Du provençal « pecaire », pécheur.",
   },
   "Phraséologie": {
-    clair: "La manière de tourner ses phrases, et parfois l'art de parler pour ne rien dire.",
-    sens: [
-      ["Le style", "Tournures propres à quelqu'un ou à un milieu.", "La phraséologie juridique est déroutante."],
-      ["Péjoratif", "Discours creux et ronflant.", "Derrière la phraséologie du discours, aucune mesure concrète."]
-    ],
-    retenir: "La « langue de bois » est une phraséologie."
+    scene: "« Nous allons mettre en œuvre une dynamique de transformation au service de l'ensemble des parties prenantes. » Beaucoup de mots, aucune idée. C'est de la phraséologie.",
+    aussi: "Plus neutre, c'est la façon de tourner les phrases propre à un milieu : la phraséologie juridique, médicale…",
   },
   "Pourparlers": {
-    clair: "Les discussions qui préparent un accord, avant de signer.",
-    sens: [["Négociations", "Échanges préliminaires.", "Les pourparlers de paix ont repris à Genève."]],
-    retenir: "Toujours au pluriel. « Entrer en pourparlers »."
+    scene: "Avant de signer quoi que ce soit, les deux camps se retrouvent autour d'une table, discutent, tâtent le terrain. Ce sont les pourparlers.",
+    piege: "Toujours au pluriel.",
   },
   "Pudibond": {
-    clair: "Si gêné par tout ce qui touche au corps qu'il rougit pour un rien.",
-    sens: [["Pudique à l'excès", "Qui s'effarouche facilement.", "Une tante pudibonde qui couvre les statues nues."]],
-    retenir: "Un mot moqueur. Proche de « prude »."
+    scene: "Sa tante couvre les statues nues du jardin avec des draps et change de chaîne à la moindre scène de baiser. Elle est pudibonde : gênée par tout ce qui touche au corps.",
+    degainer: "Un mot qui se moque toujours un peu.",
   },
   "Rétropédaler": {
-    clair: "Faire marche arrière sur ce qu'on a dit ou décidé.",
-    sens: [["Revenir en arrière", "Se dédire, reculer.", "Face au tollé, le ministre a rétropédalé."]],
-    retenir: "L'image du vélo : on pédale à l'envers."
+    scene: "Lundi, le ministre annonce une nouvelle taxe. Mardi, tollé général. Mercredi : « J'ai été mal compris. » Il rétropédale.",
+    origine: "L'image du vélo dont on pédale à l'envers.",
   },
   "Saprelotte": {
-    clair: "Un juron de grand-père, rigolo et sans méchanceté.",
-    sens: [["Juron", "Exclamation de surprise ou de colère.", "Saprelotte ! J'ai oublié le gâteau dans le four !"]],
-    retenir: "Une déformation de « sacré nom »."
+    scene: "« Saprelotte ! J'ai oublié le gâteau dans le four ! » Un juron de grand-père, qui fait sourire plus qu'il ne choque.",
+    origine: "Une déformation de « sacré nom », pour jurer sans jurer.",
   },
   "Somatique": {
-    clair: "Ce qui touche au corps, par opposition à l'esprit.",
-    sens: [["Le corps", "Qui concerne le corps.", "Le stress peut avoir des effets somatiques : maux de ventre, insomnies."]],
-    retenir: "« Psychosomatique » : quand l'esprit rend le corps malade."
+    scene: "La veille de l'examen, tu as mal au ventre sans être malade. Le stress se manifeste dans ton corps : ce sont des symptômes somatiques.",
+    degainer: "« Psychosomatique » : quand c'est l'esprit qui rend le corps malade.",
   },
   "Spoliation": {
-    clair: "Dépouiller quelqu'un de ce qui lui appartient, par la force ou par la ruse.",
-    sens: [["Dépossession", "Vol légalisé ou injuste.", "Les familles réclament la restitution des œuvres issues de spoliations."]],
-    retenir: "Le verbe : spolier. Rien à voir avec « spoiler » !"
+    scene: "Pendant la guerre, des familles ont été dépouillées de leurs tableaux, de leurs maisons, de leurs commerces. Aujourd'hui encore, leurs descendants réclament les œuvres issues de ces spoliations.",
+    piege: "Le verbe, c'est « spolier ». Rien à voir avec « spoiler » !",
   },
   "Suave": {
-    clair: "D'une douceur qui caresse : un parfum, une voix, une musique.",
-    sens: [["Doux", "Agréable aux sens.", "Une voix suave annonça le départ du train."]],
-    retenir: "La suavité. Parfois ironique : un ton suave qui cache un piège."
+    scene: "Dans la gare, une voix douce et veloutée annonce le départ du train. Elle est suave : elle caresse l'oreille.",
+    aussi: "Parfois ironique : un ton suave qui cache un piège.",
   },
   "Subversif": {
-    clair: "Ce qui ébranle l'ordre établi, en douce ou ouvertement.",
-    sens: [["Contestataire", "Qui menace l'ordre, les valeurs en place.", "Ce livre fut interdit pour ses idées subversives."]],
-    retenir: "« Subvertir » : renverser par en dessous."
+    scene: "Au XVIIIe siècle, on cachait certains livres sous le manteau parce qu'ils se moquaient du roi et de l'Église. Ils étaient subversifs : ils ébranlaient l'ordre établi.",
+    origine: "« Subvertir », c'est renverser par en dessous.",
   },
   "Tanner": {
-    clair: "Insister encore et encore, jusqu'à ce que l'autre craque. Et aussi : traiter le cuir.",
-    sens: [
-      ["Familier", "Harceler, importuner.", "Les enfants m'ont tanné toute la journée pour une glace."],
-      ["Artisanat", "Transformer une peau en cuir.", "Le tanneur tanne les peaux au bord de la rivière."]
-    ],
-    retenir: "Peau tannée : brunie, durcie, comme du cuir."
+    scene: "« On peut avoir une glace ? Allez, une glace ! S'il te plaît ! » Les enfants t'ont tanné toute la journée. Tu as fini par céder.",
+    aussi: "Le tanneur, lui, tanne les peaux pour en faire du cuir. Une peau tannée par le soleil est brunie et durcie.",
   },
   "Tellurique": {
-    clair: "Qui vient de la Terre, du sol, des profondeurs.",
-    sens: [
-      ["Géologie", "Lié à la terre : « secousse tellurique », un séisme.", "Une secousse tellurique a été ressentie cette nuit."],
-      ["Astronomie", "Planète rocheuse comme la Terre.", "Mars est une planète tellurique."]
-    ],
-    retenir: "Tellus, la déesse romaine de la Terre."
+    scene: "Trois heures du matin, les verres tremblent dans le placard. Une secousse tellurique : la Terre elle-même a bougé.",
+    aussi: "Mars et Vénus sont des planètes telluriques, rocheuses comme la nôtre.",
+    origine: "Tellus, la déesse romaine de la Terre.",
   },
   "Tiraillé": {
-    clair: "Tiré de deux côtés à la fois, sans savoir lequel choisir.",
-    sens: [["Partagé", "Déchiré entre deux choix.", "Tiraillée entre son job et sa passion, elle hésite."]],
-    retenir: "On peut aussi avoir des tiraillements d'estomac."
+    scene: "D'un côté, le job stable et le salaire. De l'autre, la passion qui l'appelle depuis des années. Elle est tiraillée : tirée des deux côtés à la fois.",
   },
   "Torgnole": {
-    clair: "Une bonne gifle, dans le langage familier.",
-    sens: [["Familier", "Gifle, coup.", "Il s'est pris une torgnole en pleine figure."]],
-    retenir: "Synonymes savoureux : beigne, baffe, mandale, taloche."
+    scene: "Dans les films de cape et d'épée, la torgnole part avant le duel. Une bonne gifle, en langage familier.",
+    degainer: "Ses cousines : la beigne, la baffe, la mandale, la taloche.",
   },
   "Versatile": {
-    clair: "Qui change d'avis comme de chemise.",
-    sens: [["Changeant", "Inconstant, instable.", "Le public est versatile : adulé hier, oublié demain."]],
-    retenir: "Faux ami ! En anglais, « versatile » veut dire polyvalent."
+    scene: "Adulé lundi, conspué mercredi, oublié vendredi. Le public est versatile : il change d'avis comme de chemise.",
+    piege: "Faux ami ! En anglais, « versatile » veut dire polyvalent. En français, c'est un défaut.",
   },
   "Acrasie": {
-    clair: "Savoir ce qui est bon pour soi… et faire exactement l'inverse.",
-    sens: [["Philosophie", "Faiblesse de la volonté.", "Je sais que je dois dormir, mais je scrolle : c'est l'acrasie."]],
-    retenir: "Les Grecs se demandaient déjà comment c'était possible (Socrate, Aristote)."
+    scene: "Il est une heure du matin. Tu sais que tu dois dormir. Tu le sais très bien. Et pourtant ton pouce continue de faire défiler l'écran. C'est l'acrasie : savoir ce qui est bon pour soi, et faire l'inverse.",
+    origine: "Socrate et Aristote se demandaient déjà comment c'était possible.",
   },
   "Allégresse": {
-    clair: "Une joie qui déborde et se partage, qui donne envie de danser.",
-    sens: [["Joie", "Joie vive et collective.", "La victoire fut accueillie dans l'allégresse générale."]],
-    retenir: "Même famille qu'« allègre »."
+    scene: "Le but de la victoire à la dernière minute : des inconnus s'embrassent, les klaxons hurlent, toute la ville danse. C'est l'allégresse, une joie qui déborde et se partage.",
   },
   "Aplomb": {
-    clair: "Être sûr de soi, droit dans ses bottes : parfois avec culot.",
-    sens: [
-      ["Assurance", "Confiance en soi.", "Elle répond aux questions avec un aplomb admirable."],
-      ["Culot", "Audace effrontée.", "Quel aplomb de mentir en le regardant dans les yeux !"],
-      ["Technique", "La verticale.", "Le mur n'est pas d'aplomb."]
-    ],
-    retenir: "Le fil à plomb mesure la verticale : se tenir d'aplomb, c'est être droit."
+    scene: "Interrogée devant toute la classe, elle répond sans trembler, droite comme un I. Elle a de l'aplomb. Lui, en revanche, ment en te regardant dans les yeux : quel aplomb !",
+    aussi: "Pour le maçon, un mur d'aplomb est bien vertical.",
+    origine: "Le fil à plomb mesure la verticale : avoir de l'aplomb, c'est tenir droit.",
   },
   "Appétence": {
-    clair: "Un goût, une attirance naturelle pour quelque chose.",
-    sens: [["Attirance", "Envie, inclination.", "Il a une appétence pour les vieilles pierres."]],
-    retenir: "Même famille qu'« appétit »."
+    scene: "Il ne peut pas passer devant une vieille église sans entrer, ni devant une ruine sans s'arrêter. Il a une appétence pour les vieilles pierres : une attirance naturelle.",
+    origine: "La même famille que l'appétit.",
   },
   "Archaïque": {
-    clair: "Venu d'un temps très ancien, et souvent dépassé aujourd'hui.",
-    sens: [
-      ["Ancien", "Qui appartient à un passé lointain.", "La Grèce archaïque précède l'âge classique."],
-      ["Dépassé", "Désuet, obsolète.", "Ce règlement est archaïque."]
-    ],
-    retenir: "Un archaïsme : un mot ou un usage ancien."
+    scene: "Le règlement de l'école interdit encore les stylos à bille. Il date de 1952. Il est archaïque : sorti d'un autre temps.",
+    aussi: "En histoire, la Grèce archaïque est la période qui précède l'âge classique.",
   },
   "Binette": {
-    clair: "Une tête, une frimousse, en familier et souvent avec tendresse.",
-    sens: [
-      ["Familier", "Visage.", "T'as vu sa binette quand il a ouvert le cadeau ?"],
-      ["Jardinage", "Outil pour biner la terre.", "Elle a sarclé le potager à la binette."]
-    ],
-    retenir: "Au Québec, une « binette » est un smiley !"
+    scene: "« T'as vu sa binette quand il a ouvert le cadeau ? » Une binette, c'est une tête, une frimousse, dit avec tendresse ou moquerie.",
+    aussi: "Au jardin, c'est l'outil qui sert à biner la terre. Et au Québec, une binette, c'est un émoji !",
   },
   "Bourlinguer": {
-    clair: "Rouler sa bosse aux quatre coins du monde, vivre mille aventures.",
-    sens: [["Voyager", "Voyager beaucoup.", "Il a bourlingué sur tous les océans avant de s'installer."]],
-    retenir: "À l'origine, un bateau qui « bourlingue » avance péniblement contre le vent."
+    scene: "Marin, cuisinier en Australie, guide en Patagonie : à cinquante ans, il a bourlingué sur tous les continents avant de s'installer dans un petit village.",
+    origine: "À l'origine, un bateau qui bourlingue avance péniblement contre le vent et la houle.",
   },
   "Bravade": {
-    clair: "Le défi lancé pour montrer qu'on n'a pas peur, souvent par orgueil.",
-    sens: [["Provocation", "Fanfaronnade, défi.", "Par bravade, il a sauté dans l'eau glacée."]],
-    retenir: "Plus d'esbroufe que de vrai courage."
+    scene: "Personne ne lui demandait rien. Mais devant les copains, il a sauté dans le lac glacé en janvier. Pure bravade : un défi pour montrer qu'il n'avait pas peur.",
   },
   "Calomnie": {
-    clair: "Un mensonge qu'on répand exprès pour salir quelqu'un.",
-    sens: [["Diffamation", "Accusation mensongère.", "La calomnie s'est répandue plus vite que le démenti."]],
-    retenir: "Beaumarchais : « Calomniez, calomniez, il en restera toujours quelque chose. »"
+    scene: "Une rumeur lancée un lundi, et le vendredi tout le quartier y croit. Le démenti, lui, ne fera jamais autant de bruit. C'est la force de la calomnie.",
+    origine: "Beaumarchais l'a dit mieux que personne : « Calomniez, calomniez, il en restera toujours quelque chose. »",
   },
   "Carabiné": {
-    clair: "Extrêmement fort, violent, au point de mettre KO.",
-    sens: [["Intense", "Très fort.", "J'ai une migraine carabinée."]],
-    retenir: "Comme un coup de carabine."
+    scene: "Le lendemain de la soirée, une migraine carabinée : comme un coup de carabine dans les tempes.",
+    degainer: "Un rhume carabiné, une facture carabinée : tout ce qui est très fort.",
   },
   "Coalition": {
-    clair: "Plusieurs camps qui s'unissent contre un adversaire commun.",
-    sens: [["Alliance", "Union temporaire.", "Une coalition de pays s'est formée."]],
-    retenir: "Souvent temporaire : on s'allie le temps de gagner."
+    scene: "Trois petits partis qui se détestaient hier s'allient aujourd'hui contre le grand favori. C'est une coalition : une union de circonstance contre un adversaire commun.",
   },
   "Conspuer": {
-    clair: "Huer quelqu'un publiquement, le couvrir de sifflets.",
-    sens: [["Huer", "Manifester son mépris bruyamment.", "L'arbitre fut conspué par tout le stade."]],
-    retenir: "Du latin « conspuere », cracher sur."
+    scene: "L'arbitre siffle un penalty imaginaire. Quarante mille personnes se lèvent et le couvrent de sifflets. Il est conspué.",
+    origine: "Du latin « conspuere », cracher sur.",
   },
   "Dogme": {
-    clair: "Une vérité qu'on n'a pas le droit de discuter.",
-    sens: [
-      ["Religion", "Vérité de foi.", "Le dogme de la Trinité."],
-      ["Au figuré", "Une idée imposée comme indiscutable.", "Le « toujours plus » est devenu un dogme."]
-    ],
-    retenir: "Dogmatique : qui affirme sans accepter la discussion."
+    scene: "« On a toujours fait comme ça. » Personne ne sait pourquoi, mais personne n'ose discuter. C'est devenu un dogme.",
+    aussi: "En religion, un dogme est une vérité de foi.",
+    degainer: "Dogmatique : quelqu'un qui affirme sans jamais accepter la discussion.",
   },
   "Embruns": {
-    clair: "La poussière d'eau salée que le vent arrache aux vagues.",
-    sens: [["La mer", "Fines gouttelettes portées par le vent.", "Les embruns nous fouettaient le visage sur la jetée."]],
-    retenir: "Presque toujours au pluriel."
+    scene: "Sur la jetée, un jour de tempête, le vent arrache aux vagues une fine poussière d'eau salée qui te pique le visage. Ce sont les embruns.",
+    piege: "Presque toujours au pluriel.",
   },
   "Effluves": {
-    clair: "Des odeurs qui flottent et arrivent jusqu'à vous.",
-    sens: [["Odeurs", "Émanations, bonnes ou mauvaises.", "Des effluves de café chaud montaient de la cuisine."]],
-    retenir: "Masculin : « des effluves enivrants »."
+    scene: "Le dimanche matin, des effluves de café et de pain grillé montent de la cuisine jusqu'à ta chambre. Tu te lèves sans qu'on ait besoin de t'appeler.",
+    piege: "C'est un nom masculin : « des effluves enivrants ».",
   },
   "Embaumer": {
-    clair: "Remplir l'air d'un parfum… ou préserver un corps.",
-    sens: [
-      ["Parfumer", "Sentir très bon.", "Le lilas embaume tout le jardin."],
-      ["Conserver", "Traiter un corps pour qu'il ne se décompose pas.", "Les Égyptiens embaumaient les pharaons."]
-    ],
-    retenir: "Le baume, substance parfumée, est à l'origine des deux sens."
+    scene: "En mai, le lilas embaume tout le jardin. Mais les Égyptiens embaumaient aussi leurs pharaons, pour que le corps traverse les siècles.",
+    origine: "Le baume, une substance parfumée, est derrière les deux sens.",
   },
   "Endémique": {
-    clair: "Ce qui est propre à un endroit, ou qui revient sans cesse comme une maladie chronique.",
-    sens: [
-      ["Biologie", "Espèce qu'on ne trouve qu'à un endroit.", "Le lémurien est endémique de Madagascar."],
-      ["Au figuré", "Mal permanent.", "Le chômage est endémique dans la région."]
-    ],
-    retenir: "Différent d'« épidémique » (qui éclate puis passe)."
+    scene: "Le lémurien ne vit nulle part ailleurs qu'à Madagascar. Il est endémique de l'île.",
+    aussi: "Au figuré, un mal endémique ne disparaît jamais : « Le chômage est endémique dans la région. »",
+    piege: "Différent d'« épidémique » : une épidémie éclate puis passe.",
   },
   "Envenimer": {
-    clair: "Mettre du poison dans une situation déjà tendue.",
-    sens: [["Aggraver", "Rendre plus vif un conflit.", "Ses remarques ont envenimé la dispute."]],
-    retenir: "Une plaie envenimée s'infecte ; une querelle aussi."
+    scene: "La dispute allait se calmer. Puis il a ajouté : « De toute façon, ta mère pense pareil. » Il a envenimé les choses : il a mis du poison dans la plaie.",
   },
   "Ésotérique": {
-    clair: "Réservé à quelques initiés, mystérieux pour les autres.",
-    sens: [
-      ["Occulte", "Lié aux savoirs secrets.", "Des livres ésotériques sur l'alchimie."],
-      ["Incompréhensible", "Obscur pour le non-spécialiste.", "Son exposé était ésotérique pour toute la salle."]
-    ],
-    retenir: "Contraire : exotérique (ouvert à tous)."
+    scene: "Des grimoires d'alchimie, des symboles cachés, un savoir réservé à quelques initiés. Tout ça est ésotérique.",
+    aussi: "Au quotidien : un exposé si technique que personne dans la salle n'a rien compris était « un peu ésotérique ».",
+    piege: "Son contraire, « exotérique », veut dire accessible à tous.",
   },
   "Exproprier": {
-    clair: "Forcer quelqu'un à céder son bien, au nom de l'intérêt public.",
-    sens: [["Droit", "Retirer une propriété.", "Les maisons ont été expropriées pour construire l'autoroute."]],
-    retenir: "« Ex » (hors de) + propriété."
+    scene: "La famille vivait là depuis trois générations. Mais l'autoroute devait passer par leur jardin, et l'État les a expropriés, contre une indemnité.",
   },
   "Hégémonie": {
-    clair: "Être le chef incontesté qui domine tous les autres.",
-    sens: [["Domination", "Suprématie d'un groupe, d'un pays.", "L'hégémonie de ce géant du numérique inquiète."]],
-    retenir: "Du grec « hêgemôn », le chef."
+    scene: "Un seul moteur de recherche, un seul réseau social, une seule boutique en ligne pour tout le monde. L'hégémonie, c'est la domination sans rival.",
+    origine: "Du grec « hêgemôn », le chef.",
   },
   "Illusoire": {
-    clair: "Qui a l'air réel, mais s'évapore quand on s'en approche.",
-    sens: [["Trompeur", "Qui ne repose sur rien de réel.", "Espérer finir ce dossier ce soir est illusoire."]],
-    retenir: "Même famille qu'illusion."
+    scene: "Finir ce dossier ce soir, ranger tout l'appartement, et aller au sport ? C'est illusoire, et tu le sais.",
   },
   "Inopinément": {
-    clair: "Sans prévenir, comme un invité qui sonne à l'improviste.",
-    sens: [["Par surprise", "De manière imprévue.", "Il est arrivé inopinément au milieu du dîner."]],
-    retenir: "L'adjectif : inopiné (une visite inopinée)."
+    scene: "Le dîner était calme quand la sonnette a retenti : ton oncle, arrivé inopinément, une valise à la main.",
+    degainer: "L'adjectif : « une visite inopinée ».",
   },
   "Malléable": {
-    clair: "Qui se façonne facilement : un métal, une pâte, ou une personne trop influençable.",
-    sens: [
-      ["Matière", "Qui se travaille sans casser.", "L'or est très malléable."],
-      ["Personne", "Qui se laisse influencer.", "Un esprit jeune est malléable."]
-    ],
-    retenir: "Le maillet du forgeron : « malleus »."
+    scene: "L'or est si malléable qu'on peut l'aplatir en feuilles plus fines qu'un cheveu. Un jeune esprit aussi est malléable : il se laisse façonner.",
+    origine: "Le maillet du forgeron : « malleus ».",
   },
   "Mascarade": {
-    clair: "Un spectacle hypocrite où chacun fait semblant.",
-    sens: [
-      ["Au figuré", "Mise en scène trompeuse.", "Ce procès n'était qu'une mascarade."],
-      ["Fête", "Défilé de personnes masquées.", "La mascarade du carnaval."]
-    ],
-    retenir: "Le masque est au cœur du mot."
+    scene: "Le verdict était décidé avant l'audience, les témoins avaient appris leur texte. Ce procès n'était qu'une mascarade.",
+    aussi: "Au carnaval, une mascarade est un défilé de personnes masquées.",
   },
   "Mégalomane": {
-    clair: "Celui qui se voit en génie, en empereur, en sauveur du monde.",
-    sens: [["Orgueil démesuré", "Qui a la folie des grandeurs.", "Ce patron mégalomane a fait poser son portrait dans chaque bureau."]],
-    retenir: "Familièrement : « mégalo ». « Mega » = grand."
+    scene: "Il a fait accrocher son portrait dans chaque bureau et rebaptiser la cantine à son nom. Le patron est mégalomane : il a la folie des grandeurs.",
+    degainer: "En familier : « mégalo ».",
   },
   "Missive": {
-    clair: "Une lettre, dit avec un peu de solennité ou d'humour.",
-    sens: [["Lettre", "Message écrit.", "J'ai reçu une longue missive de ma grand-tante."]],
-    retenir: "De « missus », envoyé."
+    scene: "Une enveloppe épaisse, une écriture penchée, un timbre ancien : ta grand-tante t'a envoyé une missive de quatre pages.",
+    degainer: "Pour parler d'une lettre avec un peu de solennité, ou d'humour.",
   },
   "Neuroplasticité": {
-    clair: "La capacité du cerveau à se recâbler quand on apprend : il n'est jamais figé.",
-    sens: [["Science", "Le cerveau change avec l'expérience.", "Grâce à la neuroplasticité, on peut apprendre une langue à tout âge."]],
-    retenir: "Chaque mot appris ici sculpte ton cerveau !"
+    scene: "Chaque fois que tu apprends un mot, ton cerveau tisse de nouvelles connexions. Il n'est jamais figé : à vingt, cinquante ou quatre-vingts ans, il se recâble. C'est la neuroplasticité.",
+    degainer: "Ce mot-là, en le lisant, tu viens d'en faire l'expérience.",
   },
   "Pérenne": {
-    clair: "Fait pour durer, pas pour passer.",
-    sens: [["Durable", "Qui dure longtemps.", "Ils cherchent une solution pérenne, pas un pansement."]],
-    retenir: "Une plante pérenne revient chaque année."
+    scene: "Un pansement sur la fuite, ça tient une semaine. Ils cherchent une solution pérenne : faite pour durer.",
+    aussi: "Au jardin, une plante pérenne revient chaque année.",
   },
   "Polarisé": {
-    clair: "Coupé en deux camps qui s'éloignent, comme les deux pôles d'un aimant.",
-    sens: [
-      ["Société", "Divisé en camps opposés.", "Le débat public est de plus en plus polarisé."],
-      ["Familier", "Obsédé par une seule chose.", "Il est polarisé sur son régime."],
-      ["Physique", "Lumière ou électricité orientée.", "Des lunettes à verres polarisés."]
-    ],
-    retenir: "Deux pôles, deux extrêmes, rien au milieu."
+    scene: "Sur chaque sujet, deux camps qui se crient dessus et plus personne au milieu. Le débat est polarisé, comme les deux pôles d'un aimant.",
+    aussi: "En familier, être polarisé sur quelque chose, c'est n'avoir plus que ça en tête. Et des lunettes polarisées filtrent les reflets.",
   },
   "Programmatique": {
-    clair: "Qui annonce un programme, une ligne directrice.",
-    sens: [["Projet", "Qui expose un programme.", "Un discours programmatique détaillant les réformes à venir."]],
-    retenir: "Un titre programmatique annonce tout le livre."
+    scene: "Dès les premières phrases, elle annonce tout : les trois réformes, le calendrier, les moyens. C'est un discours programmatique, qui expose un programme.",
   },
   "Risible": {
-    clair: "Tellement ridicule qu'on a envie de rire, souvent avec mépris.",
-    sens: [["Ridicule", "Qui prête à rire.", "Son excuse était risible : son chien aurait mangé sa clé USB."]],
-    retenir: "Ne pas confondre avec « drôle » : le risible, on se moque de lui."
-  }
+    scene: "« Mon chien a mangé ma clé USB. » Le professeur ne rit pas avec lui : il rit de lui. Son excuse est risible.",
+    piege: "Ce qui est drôle fait rire avec soi ; ce qui est risible fait rire de soi.",
+  },
+
+  // Série 3
+  "Ronchon": {
+    scene: "Pas de café ce matin, la machine est en panne. Et le voilà ronchon jusqu'à midi : il grommelle contre la pluie, le bus, l'univers.",
+    degainer: "Le verbe : « ronchonner ». Un mot qui grogne quand on le dit.",
+  },
+  "Sous-jacent": {
+    scene: "Ils se disputent pour la vaisselle. Mais tout le monde sent bien que ce n'est pas vraiment la vaisselle. Il y a un malaise sous-jacent, caché sous la surface.",
+    origine: "« Jacent », qui est couché : couché en dessous.",
+  },
+  "Tatillon": {
+    scene: "Ton billet est un peu froissé. Le contrôleur le retourne, le lisse, l'observe à la lumière, puis te demande une pièce d'identité. Il est tatillon : pointilleux sur chaque détail.",
+  },
+  "Acerbe": {
+    scene: "« Un premier roman qui aurait gagné à rester un premier brouillon. » La critique est acerbe : elle pique comme du citron sur une plaie.",
+  },
+  "Affres": {
+    scene: "Le doute, la page blanche, les nuits à tourner en rond. Tout écrivain connaît les affres de la création : des tourments vécus de l'intérieur.",
+    piege: "Toujours au pluriel : « les affres de la jalousie », « les affres de la mort ».",
+  },
+  "Ahuri": {
+    scene: "Réveillé en sursaut au terminus, il regarde autour de lui, ne reconnaît rien, ne sait plus quel jour on est. Il a l'air ahuri.",
+    degainer: "Une insulte gentille, à l'ancienne : « Espèce d'ahuri ! »",
+  },
+  "Ankylosé": {
+    scene: "Six heures de train coincé contre la fenêtre. À l'arrivée, tu te lèves et tes jambes ne répondent plus : elles sont ankylosées.",
+    aussi: "Au figuré : « une administration ankylosée par les habitudes », raide et incapable de bouger.",
+  },
+  "Antinomique": {
+    scene: "« Liberté totale » et « surveillance totale » : on ne peut pas avoir les deux. Ces idées sont antinomiques.",
+    origine: "« Anti » et « nomos », la loi : deux lois qui se contredisent.",
+  },
+  "Âprement": {
+    scene: "Quatre-vingt-dixième minute, le score est nul, chaque ballon se dispute comme le dernier. Le titre est âprement disputé, sans que personne ne lâche rien.",
+  },
+  "Austère": {
+    scene: "Une chambre de moine : un lit, une chaise, un crucifix, des murs blancs. Pas un tableau, pas une couleur. Le lieu est austère.",
+    aussi: "Une personne austère ne sourit pas beaucoup. Et une « politique d'austérité » oblige à se serrer la ceinture.",
+  },
+  "Balivernes": {
+    scene: "« J'ai pas pu venir parce que mon horoscope me le déconseillait. » Assez de balivernes : dis-moi la vérité !",
+    degainer: "Ses cousines : les sornettes, les fadaises, les billevesées.",
+  },
+  "Baroque": {
+    scene: "Entre dans une église de Rome : des anges qui débordent des murs, de l'or partout, des colonnes qui tournent sur elles-mêmes. C'est l'art baroque, l'art de l'excès.",
+    aussi: "Au quotidien, une idée baroque est franchement bizarre : fêter Noël en juillet, par exemple.",
+    origine: "Du portugais « barroco », une perle de forme irrégulière.",
+  },
+  "Blafard": {
+    scene: "La lumière d'un néon à trois heures du matin dans un couloir d'hôpital. La lune sur un cimetière. Une pâleur sans vie : blafarde.",
+  },
+  "Boutade": {
+    scene: "« Je ne suis pas en retard, c'est vous qui êtes en avance. » Il le dit en souriant, personne n'est vexé. C'est une boutade : un trait d'esprit lancé en passant.",
+  },
+  "Bribes": {
+    scene: "À travers la cloison, tu n'entends que des bribes de leur dispute : « …jamais… », « …ta mère… », « …le chien ! ». Des petits morceaux, sans le reste.",
+    piege: "Presque toujours au pluriel.",
+  },
+  "Brimades": {
+    scene: "Le nouveau doit porter les plateaux de tout le monde, chanter à la cantine, ranger les vestiaires. Ce ne sont pas des blagues : ce sont des brimades, des humiliations imposées par plus fort que soi.",
+  },
+  "Burlesque": {
+    scene: "Une peau de banane, puis deux, puis toute la salle de bal qui glisse en même temps. Le comique est si exagéré qu'il en devient absurde : c'est burlesque.",
+    aussi: "Au cinéma, le burlesque, c'est le genre des films muets de Charlie Chaplin et Buster Keaton.",
+  },
+  "Masure": {
+    scene: "Le toit percé, les volets qui pendent, des ronces jusqu'aux fenêtres. Ils l'ont achetée pour une bouchée de pain : une vieille masure qu'ils retapent pierre par pierre.",
+  },
+  "Chafouin": {
+    scene: "Un visage étroit, des yeux qui ne te regardent jamais en face, un petit sourire en coin. Il a l'air chafouin : rusé et sournois.",
+    aussi: "Depuis peu, on l'emploie aussi pour dire « un peu contrarié » : « Il est chafouin depuis qu'on a oublié son anniversaire. »",
+  },
+  "Chevrotant": {
+    scene: "La vieille dame se lève pour remercier l'assemblée. L'émotion est trop forte : sa voix tremble, se casse, repart. Une voix chevrotante, comme celle d'une chèvre.",
+  },
+  "Chuinter": {
+    scene: "La bouilloire chuinte doucement sur le feu, la cocotte-minute aussi. Un petit bruit sourd et sifflant.",
+    aussi: "Quelqu'un qui chuinte prononce les s comme des ch : « un chaucichon ». Et la chouette, elle, chuinte pour de vrai : c'est son cri.",
+  },
+  "Colporter": {
+    scene: "Elle sait tout sur tout le monde, et tout le monde finit par savoir ce qu'elle sait. Elle colporte les rumeurs de porte en porte.",
+    origine: "Autrefois, le colporteur vendait des almanachs de village en village, sa marchandise accrochée au cou.",
+  },
+  "Conjurer": {
+    scene: "« Je t'en conjure, ne lui dis rien ! » Ici, conjurer veut dire supplier. Mais les sorcières, elles, dansent pour conjurer le mauvais sort : pour l'éloigner.",
+    aussi: "Et des conjurés, ce sont des comploteurs qui se réunissent la nuit.",
+  },
+  "Différend": {
+    scene: "Les deux voisins ne se parlent plus depuis trois ans à cause de la hauteur de la haie. Ils ont un différend : un désaccord précis, qu'il faudra régler un jour.",
+    piege: "Le nom s'écrit avec un d : un différenD. L'adjectif avec un t : différenT.",
+  },
+  "Courtiser": {
+    scene: "Des fleurs chaque semaine, des lettres, des invitations refusées puis enfin acceptées. Il l'a courtisée pendant un an avant le premier rendez-vous.",
+    aussi: "En campagne électorale, les candidats courtisent les électeurs indécis.",
+    origine: "Vient de la cour du roi, où l'on flattait pour obtenir des faveurs.",
+  },
+  "Cuistrerie": {
+    scene: "Citer du latin à la machine à café, corriger la prononciation des autres, glisser « comme le disait Spinoza » à propos de la photocopieuse. C'est de la cuistrerie : un savoir étalé pour écraser.",
+  },
+  "Déplorer": {
+    scene: "Dans le communiqué de la mairie : « Nous déplorons le manque de places en crèche. » On le regrette profondément, et on le dit publiquement.",
+    aussi: "Après un accident : « On déplore trois blessés. » Le mot vient de « pleurer ».",
+  },
+  "Déprécié": {
+    scene: "Sa voiture neuve a perdu un tiers de sa valeur en sortant du garage. Elle s'est dépréciée.",
+    aussi: "Une personne peut se sentir dépréciée quand on ne reconnaît pas ce qu'elle vaut.",
+  },
+  "Désappointement": {
+    scene: "Il espérait le vélo. Il ouvre le paquet : des chaussettes. Il dit merci, mais son désappointement se lit sur son visage.",
+  },
+  "Désarroi": {
+    scene: "L'usine ferme, l'annonce tombe un lundi matin. Les ouvriers restent sur le parking, sans savoir quoi faire, quoi dire, où aller. C'est le désarroi.",
+    origine: "L'« arroi », c'était l'ordre, l'équipement. Le désarroi, c'est quand tout est sens dessus dessous.",
+  },
+  "Digression": {
+    scene: "Il commence à raconter son voyage, puis parle de son chat, de la recette de sa grand-mère, de la météo de 1998… « Mais je digresse ! » Une digression, c'est un détour dans le récit.",
+  },
+  "Dissemblable": {
+    scene: "Ce sont des jumeaux. Pourtant l'un est grand et bavard, l'autre petit et silencieux. Ils sont étonnamment dissemblables.",
+  },
+  "Dissension": {
+    scene: "Dans le groupe, on ne se dispute plus pour le resto : on ne se parle plus. Des dissensions sont apparues, et le groupe se fissure.",
+    piege: "Plus fort qu'un « différend » : ce n'est pas deux personnes, c'est tout le groupe qui se divise.",
+  },
+  "Échafauder": {
+    scene: "Il gagnera au loto, achètera un bateau, ouvrira un restaurant sur une île… Il échafaude des plans, étage par étage, comme on monte un échafaudage.",
+    degainer: "Souvent avec une pointe d'ironie : des plans aussi fragiles qu'un échafaudage.",
+  },
+  "Échoir": {
+    scene: "Personne ne voulait faire le discours. On a tiré au sort, et la tâche lui est échue.",
+    aussi: "Un loyer échoit le 1er du mois : il arrive à échéance.",
+  },
+  "Éclectique": {
+    scene: "Dans sa playlist, un concerto de Mozart, un morceau de rap, une chanson réaliste et un générique de dessin animé. Ses goûts sont éclectiques.",
+    origine: "Du grec « choisir » : l'éclectique choisit un peu partout.",
+  },
+  "Écrin": {
+    scene: "La bague brille sur son coussin de velours, dans sa petite boîte. Cette boîte, c'est l'écrin. Et un village perdu dans les collines est « un écrin de verdure ».",
+    degainer: "« Un écrin de verdure » : la formule préférée des brochures touristiques.",
+  },
+  "Émailler": {
+    scene: "La journée a été émaillée d'incidents : le café renversé, le métro bloqué, la réunion annulée. Des petits événements semés un peu partout, comme des pierres brillantes dans un tissu.",
+    aussi: "Au sens propre, on émaille une casserole en la recouvrant d'émail.",
+  },
+  "Empreint de": {
+    scene: "Son discours d'adieu était empreint d'émotion : on la sentait dans chaque mot, chaque silence.",
+    piege: "Empreint (marqué) ne s'écrit pas comme emprunt (ce qu'on emprunte).",
+  },
+  "Engranger": {
+    scene: "Avant l'orage, les paysans rentrent le blé dans la grange. Et en championnat, l'équipe engrange les victoires, une à une, comme une réserve.",
+  },
+  "Escarre": {
+    scene: "À l'hôpital, les soignants retournent régulièrement les patients qui ne peuvent plus bouger. Sinon, la peau s'abîme là où le corps appuie : ce sont les escarres.",
+    piege: "C'est un nom féminin : « une escarre ».",
+  },
+  "Escarmouche": {
+    scene: "Pas une bataille, juste quelques coups échangés à la frontière. Et à l'Assemblée, une petite pique entre deux ministres. Des escarmouches : des accrochages rapides.",
+  },
+  "Estropier": {
+    scene: "La chute de cheval l'a estropié pour la vie. Mais la secrétaire, elle, estropie ton nom à chaque appel : elle l'écorche.",
+  },
+  "Étriller": {
+    scene: "Six à zéro. L'équipe s'est fait étriller. Le lendemain, la presse a étrillé l'entraîneur à son tour.",
+    origine: "L'étrille est une brosse en fer avec laquelle on frotte les chevaux. Sans douceur.",
+  },
+  "Fantasmagorie": {
+    scene: "Au XVIIIe siècle, dans une salle obscure, une lanterne magique fait apparaître des fantômes sur la fumée. Les spectateurs hurlent. C'était une fantasmagorie, un spectacle d'illusions.",
+    aussi: "Aujourd'hui : une ville illuminée à Noël peut être une fantasmagorie de couleurs.",
+  },
+  "Farfelu": {
+    scene: "Son projet : ouvrir un bar à chats sur une péniche, avec des concerts de harpe. C'est farfelu, mais on a un peu envie d'y aller.",
+  },
+  "Rocambolesque": {
+    scene: "Une évasion en hélicoptère, un faux passeport, une perruque, une poursuite en scooter. L'histoire est tellement rocambolesque qu'on la croirait inventée.",
+    origine: "Rocambole était le héros d'un feuilleton du XIXe siècle, aux aventures toutes plus invraisemblables les unes que les autres.",
+  },
+  "Félon": {
+    scene: "Le château tenait depuis des mois. Puis quelqu'un, de l'intérieur, a livré les plans à l'ennemi. Le félon, c'est celui qui trahit sa parole.",
+  },
+  "Flibustier": {
+    scene: "Dans la mer des Caraïbes, les flibustiers attaquaient les galions espagnols chargés d'or. Aujourd'hui, un flibustier, c'est plutôt un filou qui t'arnaque avec le sourire.",
+  },
+  "Fluet": {
+    scene: "Une silhouette mince, presque fragile, une voix fluette qui demande son chemin. On a envie de la protéger d'un coup de vent.",
+  },
+  "Fortuit": {
+    scene: "Vingt ans sans se voir, et vous vous retrouvez assis côte à côte dans le même avion. Une rencontre fortuite : un pur hasard.",
+    origine: "De Fortuna, la déesse du hasard.",
+  },
+  "Frivole": {
+    scene: "Les vêtements, les potins, la couleur des serviettes : des conversations frivoles, légères, sans conséquence. Et parfois, c'est exactement ce dont on a besoin.",
+  },
+  "Galvaniser": {
+    scene: "Mi-temps, trois buts de retard. L'entraîneur entre dans le vestiaire, parle cinq minutes, et l'équipe ressort transformée. Il les a galvanisés.",
+    origine: "Galvani, un savant italien, faisait bouger des grenouilles mortes avec de l'électricité. D'où l'idée d'un choc qui ranime.",
+  },
+  "Gamberger": {
+    scene: "Trois heures du matin, les yeux grands ouverts, à retourner sa proposition dans tous les sens. Tu as gambergé toute la nuit.",
+  },
+  "Glaner": {
+    scene: "Après la moisson, les femmes ramassaient les épis oubliés dans les champs. Aujourd'hui, tu glanes des infos ici et là, sur un forum, dans un article, auprès d'un ami.",
+    origine: "« Les Glaneuses », de Millet, est l'un des tableaux les plus célèbres du XIXe siècle.",
+  },
+  "Goguenard": {
+    scene: "Tu rates ton troisième créneau devant la terrasse du café. Un vieux monsieur te regarde, les bras croisés, un sourire en coin. Il est goguenard.",
+  },
+  "Graillon": {
+    scene: "La friteuse du voisin du dessous tourne depuis midi. Toute la cage d'escalier sent le graillon, et tes vêtements aussi.",
+  },
+  "Hagard": {
+    scene: "Ils sortent des décombres, couverts de poussière, les yeux grands ouverts mais comme vides. Leur regard est hagard : affolé et perdu à la fois.",
+  },
+  "Hédonisme": {
+    scene: "Une sieste au soleil, un bon vin, un livre, des amis. Pas de grand projet : le plaisir comme boussole. C'est l'hédonisme.",
+    origine: "Du grec « hêdonê », le plaisir. Épicure en était un adepte… modéré.",
+  },
+  "Humer": {
+    scene: "Il fait tourner le vin dans son verre, ferme les yeux, et respire longuement. Il hume, avant même de goûter.",
+  },
+  "Imputable": {
+    scene: "La voiture a quitté la route. Le rapport est clair : l'accident est imputable au verglas, pas au conducteur.",
+    degainer: "Le verbe, « imputer », veut dire attribuer une faute ou une dépense à quelqu'un.",
+  },
+  "Impérissable": {
+    scene: "Des années plus tard, tu te souviens encore de chaque chanson, de chaque visage, de l'odeur de l'herbe. Ce concert t'a laissé un souvenir impérissable.",
+  },
+  "Implacable": {
+    scene: "Le chronomètre, la marée, la logique d'un bon raisonnement : rien ne les arrête, rien ne les attendrit. Ils sont implacables.",
+    origine: "« Placare », apaiser : l'implacable ne s'apaise jamais.",
+  },
+  "Incommensurable": {
+    scene: "Tellement grand qu'on ne trouve pas de règle assez longue pour le mesurer. Une joie incommensurable… ou, avec humour, une bêtise incommensurable.",
+  },
+  "Indéfectible": {
+    scene: "Ils se sont rencontrés en CP. Déménagements, disputes, mariages, trente ans ont passé : ils s'appellent encore chaque dimanche. Leur amitié est indéfectible.",
+  },
+  "Indubitablement": {
+    scene: "Tu as goûté tous les croissants du quartier. Celui-là, c'est le meilleur. Indubitablement. Sans le moindre doute.",
+  },
+  "Inéluctable": {
+    scene: "Les jours raccourcissent, les feuilles tombent, la rentrée approche. La fin de l'été est inéluctable : on ne peut rien contre elle.",
+    origine: "Du latin « luctari », lutter : ce contre quoi on ne peut pas lutter.",
+  },
+  "Insipide": {
+    scene: "Une soupe de cantine sans sel ni poivre. Ou un film où il ne se passe rien pendant deux heures. Les deux sont insipides : sans saveur.",
+  },
+  "Interstice": {
+    scene: "Un matin d'été, un rayon de soleil passe par l'interstice des volets et vient se poser sur ton oreiller.",
+  },
+  "Intrinsèque": {
+    scene: "Une pièce d'or garde sa valeur même si tout le monde la trouve démodée : sa valeur est intrinsèque, elle fait partie d'elle-même.",
+    piege: "Son contraire, « extrinsèque », désigne ce qui vient de l'extérieur.",
+  },
+  "Lancinant": {
+    scene: "Une douleur dans la mâchoire, qui revient par élancements, toute la nuit. Ou une question qui tourne en boucle : et si j'avais dit oui ? Les deux sont lancinantes.",
+  },
+  "Limbes": {
+    scene: "Le projet n'est pas abandonné, mais il n'avance plus. Il flotte quelque part, entre deux réunions. Il est dans les limbes.",
+    aussi: "Dans la tradition chrétienne, les limbes étaient le séjour des âmes des enfants morts sans baptême.",
+  },
+  "Liminalité": {
+    scene: "Un aéroport à quatre heures du matin : tu n'es plus parti, pas encore arrivé, entre deux fuseaux horaires et deux vies. C'est la liminalité.",
+    origine: "« Limen », le seuil, en latin.",
+  },
+  "Nébuleux": {
+    scene: "Tu lui demandes comment il compte rembourser. Sa réponse : « On verra, il y a des pistes, ça devrait aller. » C'est nébuleux, flou comme un ciel couvert.",
+    aussi: "En astronomie, une nébuleuse est un immense nuage de gaz et de poussières.",
+  },
+  "Notoire": {
+    scene: "Tout le monde le sait, personne ne le croit plus : c'est un menteur notoire.",
+    degainer: "« Il est de notoriété publique que… » : tout le monde est au courant.",
+  },
+  "Oisiveté": {
+    scene: "Après quarante ans de travail, il savoure enfin son oisiveté : pas d'horaire, pas de réveil, rien d'autre à faire que regarder passer les nuages.",
+    origine: "Le proverbe la condamne (« l'oisiveté est mère de tous les vices »), mais les philosophes de l'Antiquité en faisaient un art.",
+  },
+  "Orée": {
+    scene: "Une petite cabane, là où les champs s'arrêtent et où les arbres commencent : à l'orée du bois.",
+    degainer: "« À l'orée du XXIe siècle » : une façon élégante de dire « au début ».",
+  },
+  "Palabres": {
+    scene: "Deux heures de réunion, quinze avis différents, toujours aucune décision. « Assez de palabres, on vote ! »",
+    origine: "En Afrique de l'Ouest, l'« arbre à palabres » est un lieu où l'on discute ensemble des affaires du village.",
+  },
+  "Palliatif": {
+    scene: "Du scotch sur le tuyau qui fuit : ça tient, pour l'instant. Ce n'est pas une réparation, c'est un palliatif.",
+    aussi: "Les soins palliatifs soulagent la douleur des malades en fin de vie.",
+  },
+  "Pantagruélique": {
+    scene: "Le repas de Noël chez ta grand-mère : sept plats, trois desserts, et une deuxième tournée de fromage. Un repas pantagruélique.",
+    origine: "Pantagruel est le géant affamé des romans de Rabelais.",
+  },
+  "Pédant": {
+    scene: "« En fait, on ne dit pas “au final”, c'est un barbarisme. » Il corrige tout le monde, cite des auteurs à chaque phrase, et soupire quand on ne connaît pas. Il est pédant.",
+  },
+  "Perplexe": {
+    scene: "Le mode d'emploi du meuble est en japonais, il reste trois vis et l'armoire penche. Tu te grattes la tête, perplexe.",
+  },
+  "Pilori": {
+    scene: "Au Moyen Âge, on attachait les condamnés à un poteau, sur la place du marché, pour que tout le monde vienne se moquer d'eux. C'était le pilori. Aujourd'hui, il suffit parfois d'un tweet.",
+    degainer: "« Clouer quelqu'un au pilori » : le livrer au mépris de tous.",
+  },
+  "Pittoresque": {
+    scene: "Des volets bleus, une fontaine sur la place, un vieux monsieur qui joue aux boules. Le village est pittoresque : il donne envie de le peindre.",
+    origine: "De l'italien « pittore », le peintre.",
+  },
+  "Pompeux": {
+    scene: "Fanfare, discours de vingt minutes et ruban tricolore… pour inaugurer un rond-point. La cérémonie était pompeuse.",
+  },
+  "Porte-étendard": {
+    scene: "Elle n'a pas inventé la cause animale, mais c'est elle qu'on voit partout, en première ligne, à défendre les bêtes. Elle en est devenue le porte-étendard.",
+    origine: "À l'armée, le porte-étendard marchait en tête du défilé avec le drapeau.",
+  },
+  "Pourvoir": {
+    scene: "Depuis la mort de son père, il pourvoit aux besoins de toute la famille. Et sur l'annonce : « Poste de directeur à pourvoir », c'est-à-dire à remplir.",
+    piege: "Au passé simple : « il pourvut », pas « il pourvit ».",
+  },
+  "Précepte": {
+    scene: "Sa grand-mère lui a transmis un seul précepte, qu'il applique depuis toujours : ne jamais se coucher fâché.",
+  },
+  "Prérogative": {
+    scene: "Dissoudre l'Assemblée, accorder une grâce : le président peut le faire, et lui seul. Ce sont ses prérogatives.",
+  },
+  "Proférer": {
+    scene: "Avant de claquer la porte, il a proféré des menaces que tout l'étage a entendues.",
+    degainer: "Presque toujours avec des mots négatifs : menaces, injures, jurons.",
+  },
+  "Prodiguer": {
+    scene: "Elle a trente ans de métier, et elle prodigue ses conseils à tous les nouveaux, sans compter, sans rien attendre en retour.",
+    origine: "La même famille que « l'enfant prodigue », celui qui avait tout dépensé.",
+  },
+  "Puritain": {
+    scene: "Dans sa famille, on ne parlait jamais d'amour, on ne dansait pas, on ne riait pas trop fort à table. Une éducation puritaine.",
+    origine: "Les Puritains étaient des protestants anglais très stricts. Certains sont partis fonder des colonies en Amérique.",
+  },
+  "Racoleur": {
+    scene: "« Vous ne croirez JAMAIS ce qui est arrivé à cette star ! » Un titre racoleur : il t'attire avec des moyens faciles.",
+  },
+  "Récrimination": {
+    scene: "Le bruit des voisins, la poussière, le facteur en retard, la mairie qui ne fait rien : il ne s'arrête jamais. Ses récriminations lassent tout le quartier.",
+  },
+  "Recéler": {
+    scene: "Ce vieux grenier recèle des trésors : des lettres d'amour, une épée, des photos de famille jamais vues.",
+    aussi: "En droit, recéler, c'est garder des objets volés. Le receleur revend le butin.",
+  },
+  "Renfrogné": {
+    scene: "Les bras croisés, les sourcils froncés, le regard fixé sur son assiette. Il est resté renfrogné tout le repas, sans dire pourquoi.",
+  },
+  "Révulser": {
+    scene: "L'injustice le révulse. Il ne peut pas la voir sans avoir un haut-le-cœur, comme si tout se retournait à l'intérieur.",
+    aussi: "Des yeux révulsés sont tournés vers le haut, souvent avant un évanouissement.",
+  },
+  "Rictus": {
+    scene: "Il essaie de sourire pour la photo, mais il a mal au dos. Résultat : un rictus, une grimace crispée qui ressemble vaguement à un sourire.",
+  },
+  "Saltimbanque": {
+    scene: "Sur la place du village, ils montent leurs tréteaux, jonglent, font des acrobaties et repartent le lendemain. Les saltimbanques.",
+    origine: "De l'italien « saltare in banco », sauter sur l'estrade.",
+  },
+  "Sciemment": {
+    scene: "Ce n'était pas un oubli. Il savait très bien ce qu'il faisait : il a sciemment caché l'information.",
+    piege: "On prononce « si-a-man ».",
+  },
+  "Sermonner": {
+    scene: "Rentré à trois heures du matin, il a eu droit à une heure de sermon dans la cuisine. Sa mère l'a sermonné, comme un prêtre du haut de sa chaire.",
+  },
+  "Sidération": {
+    scene: "La nouvelle tombe, et tu restes là. Tu ne peux plus bouger, plus penser, plus parler. Ce n'est pas de la faiblesse : c'est la sidération, une réaction du corps face au choc.",
+    origine: "À l'origine : être frappé par les astres (« sidus », l'étoile).",
+  },
+  "Simagrées": {
+    scene: "Les soupirs, les yeux au ciel, la main sur le front. « Arrête tes simagrées et dis-moi ce que tu veux. »",
+    piege: "Toujours au pluriel.",
+  },
+  "Sommation": {
+    scene: "Un courrier recommandé : « Vous êtes sommé de payer sous huit jours. » C'est une sommation, le dernier avertissement avant que les choses ne se gâtent.",
+    aussi: "Avant de disperser une foule, la police fait aussi des sommations.",
+  },
+  "Sordide": {
+    scene: "Une chambre au fond d'une impasse, le papier peint décollé, l'odeur de moisi. Et dans le journal, une histoire d'héritage entre frères qui finit au tribunal. Les deux sont sordides : sales, et moralement répugnantes.",
+  },
 };

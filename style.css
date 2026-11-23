@@ -483,8 +483,8 @@ body {
 /* La fiche enrichie du mot : en clair, les sens avec leurs exemples, l'astuce */
 .fiche-site { margin: 16px 0 4px; text-align: left; }
 .fiche-site[hidden] { display: none; }
-.fiche-site .fiche-clair { margin: 0 0 14px; font-size: 1.05rem; line-height: 1.55; font-style: italic; }
-.fiche-site .fiche-sens { margin: 0 0 4px; line-height: 1.5; }
-.fiche-site .fiche-sens b { color: var(--or); }
-.fiche-site .fiche-exemple { margin: 0 0 12px; padding-left: 12px; border-left: 2px solid var(--or); font-style: italic; color: var(--texte-doux); }
-.fiche-site .fiche-retenir { margin: 14px 0 0; padding: 10px 12px; font-size: 0.95rem; line-height: 1.5; border-radius: 12px; background: rgba(232, 194, 122, 0.12); }
+.fiche-site { padding: 14px 16px 10px; border-left: 3px solid var(--or); border-radius: 4px 14px 14px 4px; background: rgba(232, 194, 122, 0.07); }
+.fiche-site .fiche-scene { margin: 0 0 12px; font-size: 1.05rem; line-height: 1.6; }
+.fiche-site .fiche-part { margin: 0 0 8px; font-size: 0.95rem; line-height: 1.5; }
+.fiche-site .fiche-part b { color: var(--or); }
+.fiche-site .fiche-carnet { margin: 10px 0 0; font-size: 0.85rem; font-style: italic; text-align: right; opacity: 0.75; }

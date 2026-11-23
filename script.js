@@ -137,7 +137,8 @@ function motsSansCourants() {
   return liste.length ? liste : mots;
 }
 
-// La fiche enrichie (fiches.js) : en clair, les sens avec leurs exemples, l'astuce
+// La fiche « faite main » (fiches.js) : une scène, puis selon le mot : quand le dégainer, l'autre sens,
+// le piège, d'où il vient, et le jour où il est entré au carnet (carnet.js)
 function afficherFiche(mot) {
   const zone = document.getElementById("fiche-site");
   const f = typeof fiches !== "undefined" && fiches[mot];
@@ -145,14 +146,15 @@ function afficherFiche(mot) {
   zone.textContent = "";
   if (!f) return;
   const ligne = function (classe, texte) { const p = document.createElement("p"); p.className = classe; p.textContent = texte; zone.appendChild(p); return p; };
-  ligne("fiche-clair", f.clair);
-  (f.sens || []).forEach(function (s, i) {
-    const tete = ligne("fiche-sens", "");
-    const b = document.createElement("b"); b.textContent = (f.sens.length > 1 ? (i + 1) + ". " : "") + s[0] + " : "; tete.appendChild(b);
-    tete.appendChild(document.createTextNode(s[1]));
-    if (s[2]) ligne("fiche-exemple", "« " + s[2] + " »");
+  ligne("fiche-scene", f.scene);
+  [["aussi", "↪ Et aussi"], ["degainer", "🎯 À dégainer"], ["piege", "⚠️ Le piège"], ["origine", "🌿 D'où il vient"]].forEach(function (p) {
+    if (!f[p[0]]) return;
+    const el = ligne("fiche-part", "");
+    const b = document.createElement("b"); b.textContent = p[1] + " "; el.appendChild(b);
+    el.appendChild(document.createTextNode(f[p[0]]));
   });
-  if (f.retenir) ligne("fiche-retenir", "💡 Pour retenir : " + f.retenir);
+  const date = typeof carnet !== "undefined" && carnet[mot];
+  if (date) ligne("fiche-carnet", "📓 Entré au carnet le " + date);
 }
 
 function afficherMot(m) {

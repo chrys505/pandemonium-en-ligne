@@ -2770,17 +2770,19 @@ function vuDansLeMot(mot) {
   return '<p class="vu-dans"><span class="sens">🎬 Vu dans</span>' + echapper(vuDans[mot]) + "</p>";
 }
 
-// La fiche enrichie (fiches.js) : l'explication vivante, chaque sens avec son exemple, l'astuce pour retenir
+// La fiche « faite main » (fiches.js) : une scène plutôt qu'une définition, puis, selon le mot,
+// quand le dégainer, l'autre sens, le piège, d'où il vient, et le jour où il est entré au carnet (carnet.js)
+const PARTIES_FICHE = [["aussi", "↪", "Et aussi"], ["degainer", "🎯", "À dégainer"], ["piege", "⚠️", "Le piège"], ["origine", "🌿", "D'où il vient"]];
 function ficheDuMot(mot) {
   const f = typeof fiches !== "undefined" && fiches[mot];
   if (!f) return "";
+  const date = typeof carnet !== "undefined" && carnet[mot];
   return '<div class="fiche-riche">' +
-    '<p class="fiche-clair"><span class="etiquette-petite">En clair</span>' + echapper(f.clair) + "</p>" +
-    (f.sens || []).map(function (s, i) {
-      return '<div class="fiche-sens"><p class="fiche-sens-tete"><span class="sens">' + (f.sens.length > 1 ? (i + 1) + ". " : "") + echapper(s[0]) + "</span>" + echapper(s[1]) + "</p>" +
-        (s[2] ? '<p class="exemple">« ' + echapper(s[2]) + " »</p>" : "") + "</div>";
+    '<p class="fiche-scene">' + echapper(f.scene) + "</p>" +
+    PARTIES_FICHE.filter(function (p) { return f[p[0]]; }).map(function (p) {
+      return '<p class="fiche-part"><b>' + p[1] + " " + p[2] + "</b> " + echapper(f[p[0]]) + "</p>";
     }).join("") +
-    (f.retenir ? '<p class="fiche-retenir">💡 <b>Pour retenir :</b> ' + echapper(f.retenir) + "</p>" : "") +
+    (date ? '<p class="fiche-carnet">📓 Entré au carnet le ' + echapper(date) + "</p>" : "") +
     "</div>";
 }
 

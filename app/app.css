@@ -2357,33 +2357,28 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 .garou-mot.public { border-color: var(--jaune); }
 .garou-mot.revele { border-color: #e5484d; }
 
-/* La fiche enrichie d'un mot : en clair, les sens avec leurs exemples, l'astuce */
+/* La fiche « faite main » : une scène comme dans un carnet, puis les petites notes en marge */
 .fiche-riche {
   margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--bord);
+  padding: 16px 16px 12px;
   text-align: left;
+  border-left: 3px solid var(--jaune);
+  border-radius: 4px 14px 14px 4px;
+  background: color-mix(in srgb, var(--jaune) 6%, transparent);
 }
-.fiche-clair {
-  margin: 0 0 16px;
+.fiche-scene {
+  margin: 0 0 14px;
   font-family: var(--serif);
   font-size: 1.08rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
-.fiche-clair .etiquette-petite { display: block; }
-.fiche-sens { margin: 0 0 14px; }
-.fiche-sens-tete { margin: 0 0 4px; font-size: 0.95rem; line-height: 1.5; }
-.fiche-sens .exemple {
-  margin: 0;
-  padding-left: 12px;
-  border-left: 2px solid var(--jaune);
-  opacity: 0.9;
-}
-.fiche-retenir {
-  margin: 16px 0 0;
-  padding: 10px 12px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  background: color-mix(in srgb, var(--jaune) 12%, transparent);
-  border-radius: 12px;
+.fiche-part { margin: 0 0 10px; font-size: 0.93rem; line-height: 1.5; }
+.fiche-part b { font-weight: 700; color: var(--jaune); }
+.fiche-carnet {
+  margin: 12px 0 0;
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: right;
+  opacity: 0.75;
 }

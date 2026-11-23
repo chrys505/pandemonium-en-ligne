@@ -119,14 +119,12 @@
     (dispo("motsPlus") || []).map(function (m) { return { mot: m[0], definition: m[1] }; })
   ).filter(function (m) { return m.definition; });
 
-  // La fiche enrichie (fiches.js) : l'image vivante et un exemple, en bref pour le Fil
+  // La fiche « faite main » (fiches.js) : la scène, et le moment où dégainer le mot
   const fichesFil = dispo("fiches") || {};
   function ficheFil(mot) {
     const f = fichesFil[mot];
     if (!f) return "";
-    const s = (f.sens || [])[0];
-    return '<p class="doux">' + echapper(f.clair) + "</p>" + (s && s[2] ? '<p class="doux"><i>« ' + echapper(s[2]) + " »</i></p>" : "") +
-      ((f.sens || []).length > 1 ? '<p class="doux">✦ ' + f.sens.length + " sens à découvrir dans le dictionnaire de l'appli</p>" : "");
+    return '<p class="doux">' + echapper(f.scene) + "</p>" + (f.degainer ? '<p class="doux"><i>🎯 ' + echapper(f.degainer) + "</i></p>" : "");
   }
 
   // Chaque type de carte : une façon de servir une gorgée de savoir
