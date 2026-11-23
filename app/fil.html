@@ -92,6 +92,7 @@
 
   <script src="../mots-plus.js"></script>
   <script src="../mots.js"></script>
+  <script src="../fiches.js"></script>
   <script src="../citations-plus.js"></script>
   <script src="../contenus.js"></script>
   <script src="../maudit.js"></script>
@@ -118,10 +119,20 @@
     (dispo("motsPlus") || []).map(function (m) { return { mot: m[0], definition: m[1] }; })
   ).filter(function (m) { return m.definition; });
 
+  // La fiche enrichie (fiches.js) : l'image vivante et un exemple, en bref pour le Fil
+  const fichesFil = dispo("fiches") || {};
+  function ficheFil(mot) {
+    const f = fichesFil[mot];
+    if (!f) return "";
+    const s = (f.sens || [])[0];
+    return '<p class="doux">' + echapper(f.clair) + "</p>" + (s && s[2] ? '<p class="doux"><i>« ' + echapper(s[2]) + " »</i></p>" : "") +
+      ((f.sens || []).length > 1 ? '<p class="doux">✦ ' + f.sens.length + " sens à découvrir dans le dictionnaire de l'appli</p>" : "");
+  }
+
   // Chaque type de carte : une façon de servir une gorgée de savoir
   const TYPES = {
     mot: function () { const m = auHasard(tousMots); return { lueur: "rgba(245,197,66,0.18)", html:
-      '<p class="etiquette">💎 Le mot</p><p class="grand">' + echapper(m.mot) + '</p><p class="texte">' + echapper(m.definition) + "</p>", partage: m.mot + " : " + m.definition }; },
+      '<p class="etiquette">💎 Le mot</p><p class="grand">' + echapper(m.mot) + '</p><p class="texte">' + echapper(m.definition) + "</p>" + ficheFil(m.mot), partage: m.mot + " : " + m.definition }; },
     concept: function () { const c = auHasard(dispo("concepts") || []); return { lueur: "rgba(120,170,255,0.16)", html:
       '<p class="etiquette">🧠 ' + echapper(c.famille) + '</p><p class="moyen">' + echapper(c.nom) + '</p><p class="texte">' + echapper(c.explication) + "</p>" +
       (c.exemple ? '<p class="doux">' + echapper(c.exemple) + "</p>" : ""), partage: c.nom + " : " + c.explication }; },

@@ -2770,17 +2770,31 @@ function vuDansLeMot(mot) {
   return '<p class="vu-dans"><span class="sens">🎬 Vu dans</span>' + echapper(vuDans[mot]) + "</p>";
 }
 
+// La fiche enrichie (fiches.js) : l'explication vivante, chaque sens avec son exemple, l'astuce pour retenir
+function ficheDuMot(mot) {
+  const f = typeof fiches !== "undefined" && fiches[mot];
+  if (!f) return "";
+  return '<div class="fiche-riche">' +
+    '<p class="fiche-clair"><span class="etiquette-petite">En clair</span>' + echapper(f.clair) + "</p>" +
+    (f.sens || []).map(function (s, i) {
+      return '<div class="fiche-sens"><p class="fiche-sens-tete"><span class="sens">' + (f.sens.length > 1 ? (i + 1) + ". " : "") + echapper(s[0]) + "</span>" + echapper(s[1]) + "</p>" +
+        (s[2] ? '<p class="exemple">« ' + echapper(s[2]) + " »</p>" : "") + "</div>";
+    }).join("") +
+    (f.retenir ? '<p class="fiche-retenir">💡 <b>Pour retenir :</b> ' + echapper(f.retenir) + "</p>" : "") +
+    "</div>";
+}
+
 function rendreCarte(c) {
   const d = c.donnee;
   if (c.type === "rare" || c.type === "argot" || c.type === "antan") {
-    const liste = (typeof exemples !== "undefined" && exemples[d.mot]) || [];
+    const liste = ficheDuMot(d.mot) ? [] : ((typeof exemples !== "undefined" && exemples[d.mot]) || []);
     const argot = c.type === "argot";
     const titres = { rare: "💎 Le mot rare du jour · bonus", argot: "🎤 Le mot de la rue · argot", antan: "⚔️ Juron ou insulte d'antan" };
     const notes = { rare: "Un mot pour briller… ou pour les curieux.", argot: "Pas du français soutenu, mais une vraie richesse de la langue.", antan: "Pour pester avec panache, sans vexer personne… ou presque." };
     return '<p class="etiquette">' + titres[c.type] + "</p>" + imageDuMot(d.mot) +
       '<p class="mot-feu" style="--echelle:' + echelle(d.mot) + '">' + echapper(d.mot) + "</p>" +
       '<div class="trait"></div>' +
-      '<p class="texte-doux">' + echapper(d.definition) + "</p>" + vuDansLeMot(d.mot) +
+      '<p class="texte-doux">' + echapper(d.definition) + "</p>" + ficheDuMot(d.mot) + vuDansLeMot(d.mot) +
       (d.anglais ? '<p class="langues"><b>EN</b> · ' + echapper(d.anglais) + "<br><b>ES</b> · " + echapper(d.espagnol) + "</p>" : "") +
       (liste.length ? '<div class="exemples"><p class="etiquette-petite">En situation</p>' + liste.map(function (e) {
         return '<p class="exemple"><span class="sens">' + echapper(e[0]) + "</span>" + echapper(e[1]) + "</p>";
@@ -2792,7 +2806,7 @@ function rendreCarte(c) {
     const favori = etat.favoris.indexOf(d.mot) !== -1;
     const langues = d.anglais ? '<p class="langues"><b>EN</b> · ' + echapper(d.anglais) + "<br><b>ES</b> · " + echapper(d.espagnol) + "</p>" : "";
     // Les phrases d'exemple, rangées par sens (exemples.js)
-    const liste = ((typeof exemples !== "undefined" && exemples[d.mot]) || []).slice();
+    const liste = ficheDuMot(d.mot) ? [] : ((typeof exemples !== "undefined" && exemples[d.mot]) || []).slice();
     if (d.exemplePerso) liste.unshift(["Ton invention 🎨", d.exemplePerso]);
     const phrases = liste.length ? '<div class="exemples"><p class="etiquette-petite">En situation</p>' +
       liste.map(function (e) {
@@ -2801,7 +2815,7 @@ function rendreCarte(c) {
     return '<p class="etiquette">Le mot du jour' + (d.invention ? " · ton invention" : (d.perso ? " · de ta collection" : " · ⭐ utile au quotidien")) + "</p>" + imageDuMot(d.mot) +
       '<p class="mot-feu" style="--echelle:' + echelle(d.mot) + '">' + echapper(d.mot) + "</p>" +
       '<div class="trait"></div>' +
-      '<p class="texte-doux">' + echapper(d.definition) + "</p>" + vuDansLeMot(d.mot) + langues + phrases +
+      '<p class="texte-doux">' + echapper(d.definition) + "</p>" + ficheDuMot(d.mot) + vuDansLeMot(d.mot) + langues + phrases +
       '<div class="actions-carte">' +
       '<button class="bouton petit-bouton" data-action="ecouter" type="button">🔊 Écouter</button>' +
       '<button class="bouton petit-bouton" data-action="favori" type="button">' + (favori ? "♥ Favori" : "♡ Favori") + "</button>" +

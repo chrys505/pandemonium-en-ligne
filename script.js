@@ -137,6 +137,24 @@ function motsSansCourants() {
   return liste.length ? liste : mots;
 }
 
+// La fiche enrichie (fiches.js) : en clair, les sens avec leurs exemples, l'astuce
+function afficherFiche(mot) {
+  const zone = document.getElementById("fiche-site");
+  const f = typeof fiches !== "undefined" && fiches[mot];
+  zone.hidden = !f;
+  zone.textContent = "";
+  if (!f) return;
+  const ligne = function (classe, texte) { const p = document.createElement("p"); p.className = classe; p.textContent = texte; zone.appendChild(p); return p; };
+  ligne("fiche-clair", f.clair);
+  (f.sens || []).forEach(function (s, i) {
+    const tete = ligne("fiche-sens", "");
+    const b = document.createElement("b"); b.textContent = (f.sens.length > 1 ? (i + 1) + ". " : "") + s[0] + " : "; tete.appendChild(b);
+    tete.appendChild(document.createTextNode(s[1]));
+    if (s[2]) ligne("fiche-exemple", "« " + s[2] + " »");
+  });
+  if (f.retenir) ligne("fiche-retenir", "💡 Pour retenir : " + f.retenir);
+}
+
 function afficherMot(m) {
   document.getElementById("etiquette-mot").textContent = premierAffichage ? "Le mot du jour" : TITRES_CATEGORIES[categorieDuMot(m)];
   premierAffichage = false;
@@ -147,6 +165,7 @@ function afficherMot(m) {
   void motEl.offsetWidth;
   motEl.classList.add("surgit");
   document.getElementById("definition").textContent = m.definition;
+  afficherFiche(m.mot);
   document.getElementById("anglais").textContent = m.anglais;
   document.getElementById("espagnol").textContent = m.espagnol;
   motAffiche = m;

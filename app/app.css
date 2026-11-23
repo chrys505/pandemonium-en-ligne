@@ -2356,3 +2356,34 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 .garou-mot.secret { border: 2px dashed #e5484d; background: rgba(229, 72, 77, 0.1); }
 .garou-mot.public { border-color: var(--jaune); }
 .garou-mot.revele { border-color: #e5484d; }
+
+/* La fiche enrichie d'un mot : en clair, les sens avec leurs exemples, l'astuce */
+.fiche-riche {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--bord);
+  text-align: left;
+}
+.fiche-clair {
+  margin: 0 0 16px;
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+.fiche-clair .etiquette-petite { display: block; }
+.fiche-sens { margin: 0 0 14px; }
+.fiche-sens-tete { margin: 0 0 4px; font-size: 0.95rem; line-height: 1.5; }
+.fiche-sens .exemple {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--jaune);
+  opacity: 0.9;
+}
+.fiche-retenir {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: color-mix(in srgb, var(--jaune) 12%, transparent);
+  border-radius: 12px;
+}

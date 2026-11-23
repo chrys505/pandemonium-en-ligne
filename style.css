@@ -479,3 +479,12 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .quintessence, .quintessence::after, .q-alambic, .q-etincelle, .q-bouton-elixir { animation: none; }
 }
+
+/* La fiche enrichie du mot : en clair, les sens avec leurs exemples, l'astuce */
+.fiche-site { margin: 16px 0 4px; text-align: left; }
+.fiche-site[hidden] { display: none; }
+.fiche-site .fiche-clair { margin: 0 0 14px; font-size: 1.05rem; line-height: 1.55; font-style: italic; }
+.fiche-site .fiche-sens { margin: 0 0 4px; line-height: 1.5; }
+.fiche-site .fiche-sens b { color: var(--or); }
+.fiche-site .fiche-exemple { margin: 0 0 12px; padding-left: 12px; border-left: 2px solid var(--or); font-style: italic; color: var(--texte-doux); }
+.fiche-site .fiche-retenir { margin: 14px 0 0; padding: 10px 12px; font-size: 0.95rem; line-height: 1.5; border-radius: 12px; background: rgba(232, 194, 122, 0.12); }
