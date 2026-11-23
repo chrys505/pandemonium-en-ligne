@@ -339,6 +339,13 @@ const concepts = [
   { nom: "L'effet nocebo", famille: "Science",
     explication: "Le jumeau maléfique du placebo : s'attendre à ce qu'un traitement fasse du mal suffit parfois à ressentir de vrais effets indésirables.",
     exemple: "Dans les essais cliniques, des patients qui n'ont reçu qu'une pilule de sucre se plaignent des effets secondaires annoncés dans la notice." },
+  // Note du 2026-11-23
+  { nom: "L'effet bouba-kiki", famille: "Psychologie",
+    explication: "Montre deux formes, l'une ronde et douce, l'autre hérissée de pointes, et demande laquelle s'appelle « bouba » et laquelle « kiki » : presque tout le monde, quelle que soit sa langue, donne « bouba » à la ronde et « kiki » à la pointue. Notre cerveau relie spontanément les sons et les formes : c'est une correspondance entre les sens, dite « crossmodale ».",
+    exemple: "Le psychologue Wolfgang Köhler l'a observé dès 1929 avec « maluma » et « takete ». Les marques s'en servent : un nom aux sons ronds pour un yaourt, des sons secs et pointus pour une boisson pétillante." },
+  { nom: "La martingale", famille: "Mathématiques",
+    explication: "Au casino, la martingale classique consiste à doubler sa mise après chaque perte : au premier gain, on récupère tout et on empoche la mise de départ. Sur le papier, c'est infaillible ; en réalité, une série de pertes suffit à atteindre le plafond de la table ou le fond de la poche. La « martingale inversée » double au contraire après chaque gain.",
+    exemple: "Dix pertes d'affilée à la roulette, ce n'est pas si rare : en partant d'un euro, il faudrait miser 1 024 euros au onzième coup… pour gagner un seul euro." },
   // Note iPhone du 2026-11-21
   { nom: "La prohairesis", famille: "Philosophie",
     explication: "Pour le stoïcien Épictète, ancien esclave devenu philosophe, il y a ce qui dépend de nous et ce qui n'en dépend pas. Ce qui dépend de nous tient en un mot grec : la prohairesis, notre faculté de choisir, de juger et de vouloir. Le corps, la fortune, la réputation peuvent nous être arrachés ; elle, jamais.",

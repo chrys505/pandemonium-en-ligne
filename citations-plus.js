@@ -210,7 +210,14 @@ const expressionsPlus = [
   ["Mettre sur un piédestal", "Idolâtrer quelqu'un, le placer au-dessus de tous."],
   ["Être orfèvre en la matière", "S'y connaître parfaitement."],
   ["Au détriment de", "En causant du tort à."],
-  ["C'est le panard !", "Familier : c'est le pied, un plaisir total."]
+  ["C'est le panard !", "Familier : c'est le pied, un plaisir total."],
+  // Note du 2026-11-23
+  ["Je n'en puis plus", "Je n'en peux plus (tournure soutenue)."],
+  ["Avoir le vent en poupe", "Être favorisé par les circonstances, réussir."],
+  ["Être reconnu par ses pairs", "Être estimé par ceux qui font le même métier, les seuls juges vraiment compétents."],
+  ["Brûler d'amour", "Aimer avec passion."],
+  ["Faire belek", "Argot : faire attention."],
+  ["La complicité par abstention", "Le fait de laisser commettre un tort qu'on aurait pu empêcher, en ne faisant rien."]
 ];
 
 // Pensées philosophiques : [texte, auteur]
@@ -244,5 +251,8 @@ const philosophiesPlus = [
   ["Sois lisible, mais ne montre jamais toutes tes cartes : la clarté inspire la confiance, la part de mystère inspire le respect.", ""],
   // La haine de soi qui bâtit (2026-11-19), réécrite en pensée
   ["Se haïr au point de bâtir toute sa vie pour devenir quelqu'un d'aimable : voilà une haine bien étrange, qui travaille sans relâche pour celui qu'elle méprise. Et si l'œuvre réussit, l'homme admiré devra tout à l'homme détesté.", ""],
-  ["On ne devient pas quelqu'un d'autre : on devient enfin quelqu'un qui peut remercier celui qu'il a été.", ""]
+  ["On ne devient pas quelqu'un d'autre : on devient enfin quelqu'un qui peut remercier celui qu'il a été.", ""],
+  // Note du 2026-11-23
+  ["Je n'ai pas peur de mourir : j'ai peur de mourir sans avoir rien accompli.", ""],
+  ["Celui qui vous fait un retour sur votre travail compte souvent autant que le retour lui-même.", ""]
 ];
