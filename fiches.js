@@ -1113,4 +1113,376 @@ const fiches = {
   "Sordide": {
     scene: "Une chambre au fond d'une impasse, le papier peint décollé, l'odeur de moisi. Et dans le journal, une histoire d'héritage entre frères qui finit au tribunal. Les deux sont sordides : sales, et moralement répugnantes.",
   },
+
+  // Série 4
+  "Sournois": {
+    scene: "Il te sourit en face, et dès que tu as tourné le dos, il raconte à tout le bureau que tu es incompétent. Le sournois n'attaque jamais de front.",
+    aussi: "Un mal peut être sournois aussi : une douleur sournoise s'installe sans prévenir.",
+  },
+  "Substantifique moelle": {
+    scene: "Tu as lu trois cents pages, tu en retiens trois idées, mais ce sont les bonnes. Tu as tiré la substantifique moelle du livre : ce qu'il a de meilleur, de plus nourrissant.",
+    origine: "Rabelais, dans le prologue de Gargantua : il compare le lecteur à un chien qui ronge un os pour en sucer la moelle.",
+  },
+  "Supputation": {
+    scene: "« S'il a dit ça à Julie, c'est sûrement qu'il veut partir, donc que… » Trois heures de supputations entre amis pour une phrase de deux mots. Des calculs, des hypothèses, et aucune certitude.",
+  },
+  "Syllogisme": {
+    scene: "Tous les hommes sont mortels. Socrate est un homme. Donc Socrate est mortel. Trois marches, et on arrive à une conclusion inévitable : c'est un syllogisme.",
+    piege: "Gare au faux syllogisme : « Tous les chats sont mortels. Socrate est mortel. Donc Socrate est un chat. »",
+    origine: "Aristote l'a mis au point il y a plus de deux mille ans.",
+  },
+  "Tournebouler": {
+    scene: "Cette lettre l'a tourneboulé : il relit chaque ligne, se lève, se rassoit, ne sait plus ce qu'il ressent. Tout est sens dessus dessous dans sa tête.",
+  },
+  "Turlupiner": {
+    scene: "Tu as fermé la porte à clé ? Sûrement. Mais tu n'en es pas certain, et ça te turlupine pendant tout le trajet. Une petite idée qui gratte, qui tracasse, sans vouloir te lâcher.",
+    origine: "Turlupin était un comédien farceur du XVIIe siècle.",
+  },
+  "Vénéneux": {
+    scene: "Un champignon magnifique au pied du chêne, rouge à pois blancs. Ne le cueille pas : il est vénéneux, il contient du poison.",
+    piege: "Une plante ou un champignon est vénéneux (on s'empoisonne en le mangeant). Un serpent est venimeux (il t'injecte son venin).",
+  },
+  "Vipérin": {
+    scene: "Elle ne dit jamais de gros mots. Mais chaque petite phrase est calculée pour piquer là où ça fait mal. Elle a une langue vipérine.",
+    degainer: "Presque toujours dans l'expression « une langue de vipère », ou « vipérine ».",
+  },
+  "Vociférer": {
+    scene: "Le client hurle dans la boutique, rouge de colère, le doigt tendu vers le vendeur. Il vocifère : il crie des injures à pleine voix.",
+  },
+  "Véhémence": {
+    scene: "Elle a défendu son projet avec une telle véhémence que personne n'a osé la contredire. Une force passionnée, presque violente, dans chaque mot.",
+  },
+  "Velléité": {
+    scene: "Chaque 1er janvier, il s'inscrit à la salle de sport. Il y va deux fois. Ce n'est pas une volonté, c'est une velléité : une petite intention qui ne passe jamais à l'action.",
+    degainer: "L'adjectif « velléitaire » : quelqu'un qui commence tout et ne finit rien.",
+  },
+  "Célérité": {
+    scene: "Tu commandes le soir, le colis est sur ton palier le lendemain matin. Quelle célérité !",
+    degainer: "Un mot soutenu pour remercier quelqu'un de sa rapidité : « Merci pour votre célérité. »",
+  },
+  "Attester": {
+    scene: "Le médecin signe un papier : il atteste que tu étais bien malade ce jour-là. Attester, c'est certifier, avec sa signature ou sa parole.",
+    aussi: "Un mot attesté dans la langue est un mot dont on a trouvé des traces écrites.",
+  },
+  "Bocage": {
+    scene: "En Normandie ou en Bretagne : des petits champs bordés de haies épaisses, de talus et d'arbres, des chemins creux entre les deux. C'est le bocage.",
+  },
+  "Idiome": {
+    scene: "Entre jumeaux, entre amis d'enfance, dans un village de montagne : un parler à eux, avec des mots qu'eux seuls comprennent. C'est un idiome.",
+    piege: "Rien à voir avec « idiot ». En anglais, « idiom » veut dire expression toute faite.",
+  },
+  "S'impatroniser": {
+    scene: "Il est venu dîner un soir. Trois semaines plus tard, il a sa brosse à dents dans la salle de bains et choisit les programmes télé. Il s'est impatronisé : il s'est installé en maître.",
+  },
+  "Abortif": {
+    scene: "Un mot qu'on croise d'abord en médecine, pour un produit qui interrompt une grossesse.",
+    aussi: "Au figuré, un projet abortif est un projet mort-né, qui n'aboutit jamais.",
+  },
+  "Ostéologie": {
+    scene: "Dans le laboratoire, un squelette entier attend sur la table. L'ostéologue examine chaque os pour savoir l'âge, le sexe, les maladies de la personne. C'est l'ostéologie, la science des os.",
+    origine: "Du grec « osteon », l'os, comme dans ostéopathe.",
+  },
+  "Exhalation": {
+    scene: "Inspire… et expire lentement. Ce long souffle qui sort de toi, c'est l'exhalation.",
+    piege: "Ne pas confondre avec l'exhalaison, qui est l'odeur ou la vapeur qui se dégage.",
+  },
+  "Mulâtre": {
+    scene: "Un mot qu'on croise dans les romans anciens, écrits à l'époque de l'esclavage et des colonies. Il désignait une personne née d'un parent blanc et d'un parent noir, et il vient de « mulet » : il porte donc en lui le mépris raciste de cette époque.",
+    degainer: "À comprendre quand on le lit, jamais à employer. Aujourd'hui, on dit « métis ».",
+  },
+  "Prôneur": {
+    scene: "Il ne parle que de son régime miracle, de sa méthode, de son coach. Le prôneur vante sa trouvaille à tout le monde, avec insistance.",
+    origine: "Le prône, c'est le sermon du dimanche : le prôneur prêche.",
+  },
+  "Messeoir": {
+    scene: "« Un peu d'audace ne vous messied pas, mademoiselle. » Dans les salons d'autrefois, messeoir voulait dire ne pas convenir, ne pas aller bien.",
+    degainer: "Presque toujours à la forme négative, pour un compliment élégant : « Cela ne vous messied pas. »",
+  },
+  "Dénoter": {
+    scene: "Il range ses chaussettes par couleur et ses livres par taille. Ça dénote un certain goût de l'ordre : ça le révèle, sans qu'il le dise.",
+  },
+  "Séditieux": {
+    scene: "Des tracts glissés sous les portes la nuit, des appels à prendre les armes contre le roi. Ce sont des écrits séditieux : ils appellent ouvertement à la révolte.",
+  },
+  "Pamphlétaire": {
+    scene: "Quelques pages, une plume trempée dans le vitriol, et un puissant ridiculisé dans tout Paris. Le pamphlétaire écrit court et frappe fort.",
+  },
+  "Arriéré": {
+    scene: "Trois mois de loyer impayés : ce sont des arriérés, une dette en retard.",
+    aussi: "Comme adjectif, c'est dépassé, en retard sur son époque. Pour une personne, le mot est blessant : mieux vaut l'éviter.",
+  },
+  "Sornettes": {
+    scene: "« J'ai vu un OVNI au-dessus de la boulangerie, il m'a fait coucou. » Sornettes ! Des histoires sans queue ni tête.",
+  },
+  "Cahute": {
+    scene: "Trois planches, une tôle, une porte qui ferme mal : la cahute du jardinier au fond du potager. Un abri de fortune.",
+  },
+  "Contentieux": {
+    scene: "Les deux familles ne se parlent plus depuis l'histoire du mur mitoyen. Il y a un vieux contentieux entre elles : un conflit jamais réglé.",
+    aussi: "Dans une entreprise, le service contentieux s'occupe des litiges qui vont devant la justice.",
+  },
+  "Figure de proue": {
+    scene: "À l'avant des grands voiliers, une statue de sirène ou de guerrier fend les vagues la première. Dans un mouvement, la figure de proue est la personnalité qu'on voit en premier, celle qui incarne la cause.",
+  },
+  "Répudier": {
+    scene: "Les dettes du grand-père dépassent ce qu'il possédait. Ses petits-enfants préfèrent répudier la succession : refuser l'héritage.",
+    aussi: "Dans certaines sociétés anciennes, un mari pouvait répudier sa femme. Et au figuré, on répudie les idées de sa jeunesse.",
+  },
+  "Grimer": {
+    scene: "Dans la loge, la maquilleuse creuse les rides, blanchit les cheveux, ajoute une cicatrice. En une heure, la jeune actrice a soixante-dix ans. On l'a grimée.",
+  },
+  "Guilleret": {
+    scene: "Il siffle en marchant, salue les voisins, fait un petit saut au-dessus d'une flaque. Ce matin, il est tout guilleret.",
+  },
+  "Méphitique": {
+    scene: "Le vieux puits, la cave jamais aérée, les égouts : un air qui empeste et qui pourrait bien te rendre malade. Un air méphitique.",
+    origine: "Méphitis était la déesse romaine des vapeurs empoisonnées.",
+  },
+  "Mausolée": {
+    scene: "Un tombeau si grand qu'on pourrait y habiter. Le Taj Mahal, en Inde, est un mausolée : un empereur l'a fait construire pour son épouse morte.",
+    origine: "Mausole, roi d'Asie Mineure, s'est fait construire un tombeau si spectaculaire qu'il compte parmi les Sept Merveilles du monde.",
+  },
+  "Pinacle": {
+    scene: "Hier encore inconnue, elle est aujourd'hui portée au pinacle : tous les journaux l'adorent, on la cite partout. Elle est au sommet.",
+    piege: "Plus on monte au pinacle, plus la chute est rude : la presse adore aussi faire redescendre.",
+  },
+  "Rédimer": {
+    scene: "Dans les vieux récits, le héros cherche à rédimer sa faute : par un sacrifice, un acte de courage, une vie entière à réparer. Se racheter.",
+    degainer: "La rédemption, c'est le même mot.",
+  },
+  "Apoplexie": {
+    scene: "Dans les romans du XIXe siècle, le vieux baron devient rouge, porte la main à son cœur et s'écroule : il est frappé d'apoplexie, une perte de connaissance brutale.",
+    aussi: "Avec humour : « En voyant la facture, il a failli faire une apoplexie. »",
+  },
+  "Ablution": {
+    scene: "Avant la prière, il se lave les mains, le visage, les pieds, toujours dans le même ordre. Ce sont ses ablutions.",
+    aussi: "Avec humour, tes « ablutions matinales », c'est ta douche.",
+  },
+  "Timoré": {
+    scene: "Il n'ose ni demander une augmentation, ni goûter un plat nouveau, ni prendre la parole en réunion. Il est timoré : la peur de mal faire le retient toujours.",
+  },
+  "Toiser": {
+    scene: "Elle entre dans la boutique de luxe en baskets. La vendeuse la regarde des pieds à la tête, lentement, sans un sourire. Elle la toise : elle la mesure du regard, de haut.",
+    origine: "La toise était une ancienne mesure de longueur. On toisait les gens pour les mesurer, puis pour les juger.",
+  },
+  "Véloce": {
+    scene: "Le guépard bondit, et en trois secondes il est déjà loin. Véloce : rapide et agile à la fois.",
+    origine: "Le vélo vient de là : le vélocipède avance avec les pieds, rapidement.",
+  },
+  "Hirsute": {
+    scene: "Il sort de sa tente après trois jours de festival : cheveux dressés dans tous les sens, barbe en broussaille. Il est hirsute.",
+  },
+  "Inique": {
+    scene: "Le plus pauvre paie l'amende, le plus riche s'en sort avec un sourire. Ce jugement est inique : profondément injuste.",
+    degainer: "Le nom : une iniquité.",
+  },
+  "Sagacité": {
+    scene: "Un seul coup d'œil sur la scène, et le détective a compris : la tasse encore tiède, la fenêtre entrouverte. La sagacité, c'est l'esprit qui comprend vite et juste.",
+  },
+  "Diligence": {
+    scene: "Elle a traité ton dossier en une heure, sans une erreur. Elle a fait preuve de diligence : rapide et soigneuse.",
+    aussi: "Dans les westerns, la diligence est aussi la voiture à chevaux attaquée par les bandits.",
+  },
+  "Cabale": {
+    scene: "Des rumeurs lancées en même temps par plusieurs personnes, des sifflets organisés à la première d'une pièce. Ce n'est pas un hasard : c'est une cabale, un complot pour faire tomber quelqu'un.",
+  },
+  "Obvier": {
+    scene: "Pour obvier aux embouteillages du vendredi, il part le jeudi soir. Obvier, c'est prendre les devants pour qu'un problème n'arrive pas.",
+    piege: "On obvie « à » quelque chose.",
+  },
+  "Pluralisme": {
+    scene: "Des journaux de gauche, de droite, du centre, des religions et des cultures différentes qui cohabitent : c'est le pluralisme, la coexistence de plusieurs voix.",
+  },
+  "Exergue": {
+    scene: "Dans son rapport, elle a mis en exergue un seul chiffre, en gros, en haut de la page. Mettre en exergue, c'est mettre en valeur, bien en évidence.",
+    aussi: "C'est aussi la citation placée en tête d'un livre, comme une épigraphe.",
+  },
+  "Dessein": {
+    scene: "Il ne s'est pas assis à côté d'elle par hasard. C'était à dessein : il avait un projet, une intention bien précise.",
+    piege: "Dessein (l'intention) ne s'écrit pas comme dessin (le crayon).",
+  },
+  "Feudataire": {
+    scene: "Au Moyen Âge, le seigneur confiait une terre à un vassal. En échange, celui-ci lui devait fidélité et service. Le vassal était son feudataire.",
+    origine: "La même famille que « féodal » et « fief ».",
+  },
+  "Exhorter": {
+    scene: "Sur le banc de touche, l'entraîneur se lève, frappe dans ses mains : « Allez ! On y croit ! » Il exhorte ses joueurs à se battre.",
+  },
+  "Nébuleuse": {
+    scene: "Au télescope, une tache de lumière colorée dans le noir : un nuage géant de gaz et de poussières où naissent les étoiles. C'est une nébuleuse.",
+    aussi: "Au figuré : un ensemble flou, aux contours mal définis. « Une nébuleuse de petits groupes. »",
+  },
+  "Férir": {
+    scene: "La forteresse s'est rendue avant même que les assaillants n'arrivent. Ils l'ont prise sans coup férir : sans combattre, sans aucun effort.",
+    piege: "Le verbe ne survit plus que dans cette expression. Il voulait dire « frapper ».",
+  },
+  "Fomenter": {
+    scene: "Dans l'arrière-salle d'une taverne, à voix basse, ils préparent la révolte de demain. Ils fomentent des troubles.",
+  },
+  "S'enticher": {
+    scene: "Il y a une semaine, elle ne connaissait pas le jazz. Aujourd'hui, elle ne jure que par lui et achète des vinyles. Elle s'en est entichée, d'un coup.",
+    degainer: "Souvent avec une pointe d'ironie : on se doute que ça ne durera pas.",
+  },
+  "Affable": {
+    scene: "La concierge te salue par ton prénom, prend des nouvelles de ta mère, t'aide avec tes courses. Elle est affable : aimable et accueillante.",
+  },
+  "Faîte": {
+    scene: "Tout en haut du toit, sur la ligne qui le couronne, un merle chante. Il est sur le faîte. Et au figuré, une carrière peut atteindre son faîte : son sommet.",
+    piege: "Avec un accent circonflexe, comme sur « fête ».",
+  },
+  "Peccadille": {
+    scene: "Un biscuit volé dans la boîte, un retard de cinq minutes. Une peccadille : une toute petite faute, pas de quoi en faire une histoire.",
+  },
+  "Ressentiment": {
+    scene: "Il ne lui a jamais pardonné ce mot prononcé il y a dix ans. Il n'en parle pas, mais il le garde en lui, intact. C'est du ressentiment.",
+  },
+  "Tribulation": {
+    scene: "Le train annulé, la valise perdue, l'hôtel complet : il nous raconte en riant les tribulations de son voyage.",
+    degainer: "Presque toujours au pluriel.",
+  },
+  "Émoi": {
+    scene: "Une lettre anonyme arrive à la mairie, et c'est tout le village qui est en émoi. Un trouble, une émotion vive, qui se répand.",
+  },
+  "Indicible": {
+    scene: "Certaines douleurs, certaines joies dépassent les mots. Les survivants parlent d'une horreur indicible : impossible à raconter.",
+    degainer: "Proche d'« ineffable », mais plus souvent utilisé pour la souffrance.",
+  },
+  "Éluder": {
+    scene: "« Et ton travail, ça avance ? — Tiens, tu as vu le temps qu'il fait ? » Il élude la question : il l'esquive habilement.",
+  },
+  "Polype": {
+    scene: "Au fond de la mer, de minuscules animaux mous construisent ensemble les récifs de corail. Ce sont des polypes.",
+    aussi: "Chez le médecin, un polype est une petite excroissance bénigne.",
+  },
+  "Amnistie": {
+    scene: "Une loi est votée, et des condamnations sont effacées comme si elles n'avaient jamais existé. C'est une amnistie.",
+    origine: "La même famille qu'« amnésie » : l'oubli.",
+  },
+  "Diocèse": {
+    scene: "Chaque évêque a son territoire, avec ses paroisses et ses églises. C'est son diocèse.",
+  },
+  "Diaphane": {
+    scene: "Un rideau de soie si fin que la lumière du matin passe au travers. Une peau si pâle qu'on devine les veines. Diaphane.",
+  },
+  "Omnipotent": {
+    scene: "Il décide de tout, contrôle tout, signe tout. Dans son entreprise, le patron est omnipotent : tout-puissant.",
+    origine: "« Omni », tout, et « potens », qui peut.",
+  },
+  "Sollicitude": {
+    scene: "Elle t'apporte une soupe quand tu es malade, t'envoie un message pour savoir si tu es bien rentré. Sa sollicitude te touche : une attention douce, un peu inquiète.",
+  },
+  "Péricliter": {
+    scene: "Les clients se font rares, les étagères se vident, la vitrine se ternit. Le petit commerce périclite : il décline, il va à sa perte.",
+  },
+  "Postérité": {
+    scene: "Il ne sera pas célèbre de son vivant, mais il est sûr d'une chose : la postérité lui rendra justice. Les générations futures, et la mémoire qu'on leur laisse.",
+  },
+  "Incidemment": {
+    scene: "Au milieu de la conversation sur les vacances, il glisse, incidemment, qu'il a démissionné. En passant, comme un détail.",
+  },
+  "Fulminer": {
+    scene: "Il a appris qu'on l'avait doublé pour la promotion. Il fulmine dans son bureau, il tape du poing, il menace de tout faire sauter.",
+    origine: "Du latin « fulmen », la foudre.",
+  },
+  "Volubile": {
+    scene: "Elle enchaîne les phrases sans respirer, saute d'un sujet à l'autre, et tu n'arrives pas à placer un mot. Elle est volubile.",
+  },
+  "Exaction": {
+    scene: "Des soldats qui pillent les villages, des fonctionnaires qui rackettent les habitants. Ce sont des exactions : des violences et des abus commis par ceux qui ont le pouvoir.",
+  },
+  "Leitmotiv": {
+    scene: "Dans le film, la même musique revient chaque fois que le méchant apparaît. Et chez ta grand-mère, le même leitmotiv : « Couvre-toi, tu vas attraper froid. »",
+    origine: "Un mot allemand venu de l'opéra de Wagner : le « motif conducteur ».",
+  },
+  "Adultérer": {
+    scene: "Du miel coupé au sirop de sucre, un vin allongé d'eau. On l'a adultéré : on l'a falsifié en le mélangeant.",
+  },
+  "Agoniste": {
+    scene: "Quand tu plies le bras, le biceps se contracte : c'est l'agoniste. Le triceps, de l'autre côté, se relâche : c'est l'antagoniste.",
+  },
+  "Séculier": {
+    scene: "Le prêtre de ta paroisse vit dans le monde, au milieu des gens : c'est un prêtre séculier. Le moine, lui, vit à l'écart, dans son monastère.",
+    aussi: "Plus largement, séculier veut dire civil, non religieux : le « bras séculier », c'est la justice ordinaire.",
+  },
+  "Laïus": {
+    scene: "On lui a demandé de dire deux mots pour le pot de départ. Vingt minutes plus tard, il est toujours là. Son laïus est interminable.",
+  },
+  "Ascèse": {
+    scene: "Lever à cinq heures, pas de sucre, pas d'écran, une heure de méditation. Il s'impose une ascèse : une discipline stricte, faite de privations choisies.",
+  },
+  "Manichéen": {
+    scene: "Dans ce film, les gentils sont tout gentils et les méchants tout méchants. Aucune nuance : c'est manichéen.",
+    origine: "Mani, un prophète perse, enseignait que le monde est un combat entre le Bien et le Mal.",
+  },
+  "Iconoclaste": {
+    scene: "Elle met de la musique électronique dans un opéra de Mozart et du ketchup sur un plat de grand chef. Elle est iconoclaste : elle bouscule les traditions.",
+    origine: "À l'origine, les iconoclastes détruisaient les images religieuses : « briseurs d'icônes ».",
+  },
+  "Gavroche": {
+    scene: "Un gamin des rues, gouailleur, débrouillard, qui n'a peur de rien et se moque des puissants. On dit encore « un gavroche » pour un enfant de Paris effronté.",
+    origine: "Gavroche est un personnage des Misérables de Victor Hugo, qui chante sur les barricades.",
+  },
+  "Concomitant": {
+    scene: "Il a commencé à boire du café le jour même où il a commencé à mal dormir. Les deux sont concomitants : ils arrivent en même temps. Reste à savoir si l'un cause l'autre.",
+  },
+  "Probité": {
+    scene: "Il trouve un portefeuille plein de billets dans la rue et le rapporte, au centime près. Sa probité est sans faille : une honnêteté irréprochable.",
+  },
+  "Irrémissiblement": {
+    scene: "Il a franchi la ligne, et il le sait : il est irrémissiblement perdu à ses yeux. Sans retour, sans pardon possible.",
+  },
+  "Récuser": {
+    scene: "L'avocat se lève : ce juge connaît l'accusé, il ne peut pas être impartial. Il le récuse : il refuse qu'il juge l'affaire.",
+    aussi: "On récuse aussi un argument : on conteste sa valeur.",
+  },
+  "Sinistrose": {
+    scene: "Les informations du soir, la météo grise, la facture d'électricité. Tout le monde déprime, tout le monde dit que tout va mal. C'est la sinistrose, un pessimisme qui se propage.",
+  },
+  "Prélat": {
+    scene: "Évêques, archevêques, cardinaux en robe pourpre : les hauts dignitaires de l'Église sont des prélats.",
+  },
+  "Reddition": {
+    scene: "Le drapeau blanc monte au-dessus de la forteresse. Les soldats sortent, les armes baissées. C'est la reddition.",
+    piege: "Ne pas confondre avec « rédaction ».",
+  },
+  "Impérieux": {
+    scene: "Un ton qui ne laisse pas le choix : « Tu restes ici. » Ou un besoin qui ne peut pas attendre : une envie impérieuse de dormir. Impérieux, c'est ce qui commande.",
+  },
+  "Providence": {
+    scene: "Tu n'as plus un sou, et le matin même, tu trouves un billet dans une vieille poche. C'est la providence : une chance inespérée, presque un cadeau du ciel.",
+    aussi: "Pour les croyants, la Providence est la sagesse de Dieu qui gouverne le monde.",
+  },
+  "Nécromancien": {
+    scene: "Dans la crypte, à la lueur des bougies, il trace un cercle sur le sol et appelle les morts pour qu'ils lui révèlent l'avenir. C'est le nécromancien.",
+    origine: "Du grec « nekros », le mort, et « manteia », la divination.",
+  },
+  "Archange": {
+    scene: "Au-dessus des anges, les archanges : Michel qui terrasse le dragon, Gabriel qui porte les grandes annonces.",
+  },
+  "Sépulcre": {
+    scene: "Une pierre lourde, une crypte silencieuse, une plaque presque effacée. Le sépulcre est le tombeau, dit avec solennité.",
+    degainer: "« Un silence de sépulcre » : un silence de mort.",
+  },
+  "Despote": {
+    scene: "Il gouverne seul, ne rend de comptes à personne, fait taire ceux qui le contestent. C'est un despote.",
+    aussi: "En famille aussi : « un petit despote » qui fait la loi à la maison.",
+  },
+  "Chimérique": {
+    scene: "Un château en Espagne, une fortune faite en un an sans travailler. Ce projet est chimérique : il n'existe que dans les rêves.",
+    origine: "La Chimère, monstre de la mythologie grecque à tête de lion, corps de chèvre et queue de serpent.",
+  },
+  "Absolution": {
+    scene: "Au confessionnal, le prêtre écoute, puis prononce les mots qui lavent la faute. C'est l'absolution, le pardon.",
+  },
+  "Succube": {
+    scene: "Dans les légendes du Moyen Âge, un démon prend l'apparence d'une femme d'une beauté irrésistible et visite les hommes dans leur sommeil. C'est la succube.",
+  },
+  "Fiducie": {
+    scene: "Tu confies tes biens à quelqu'un de confiance, qui les gère pour toi selon des règles précises. C'est une fiducie, un contrat fondé sur la confiance.",
+    origine: "Du latin « fiducia », la confiance.",
+  },
+  "Monolithe": {
+    scene: "Un bloc de pierre immense, d'une seule pièce, dressé au milieu de la plaine depuis des milliers d'années. C'est un monolithe.",
+    aussi: "Au figuré, un parti ou un groupe monolithique forme un bloc uni, sans aucune voix discordante.",
+  },
 };
