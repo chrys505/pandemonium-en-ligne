@@ -47,7 +47,7 @@ const motsRares = new Set([
 const motsArgot = new Set([
   "Nachave", "Binette", "Gamberger", "Tanner", "Torgnole", "Bourlinguer", "Peuchère",
   "Daron", "Poucave", "Chouraver", "Marave", "Gadjo", "Narvalo", "Michto", "Pénave", "Seum",
-  "Zbeul", "Flouze", "Thune", "Blase", "Bled", "Tchatche", "Chelou", "Vénère", "Ouf", "Bader", "Castagne", "Niaque", "Panard", "Pétoche", "Pognon", "Tarpin", "Roupillon", "Belek", "Zinzin", "Tocard", "Boloss", "Mytho", "Bouffon", "Charo"
+  "Zbeul", "Flouze", "Thune", "Blase", "Bled", "Tchatche", "Chelou", "Vénère", "Ouf", "Bader", "Castagne", "Niaque", "Panard", "Pétoche", "Pognon", "Tarpin", "Roupillon", "Belek", "Zinzin", "Tchi", "Tocard", "Boloss", "Mytho", "Bouffon", "Charo"
 ]);
 
 // Les jurons et insultes d'antan : des interjections et des injures savoureuses d'autrefois.
@@ -55,7 +55,7 @@ const motsAntan = new Set([
   "Saprelotte", "Palsambleu", "Morbleu", "Parbleu", "Diantre", "Fichtre", "Ventre-saint-gris", "Saperlipopette",
   "Maraud", "Faquin", "Gredin", "Malandrin", "Pendard", "Bélître", "Butor", "Gougnafier", "Paltoquet",
   "Olibrius", "Malotru", "Goujat", "Pignouf", "Sacripant", "Bachi-bouzouk", "Scélérat", "Jean-foutre",
-  "Félon", "Cuistrerie", "Renégat"
+  "Félon", "Cuistrerie", "Renégat", "Carogne"
 ]);
 
 // ---------- Le mot juste : on décrit avec ses mots, on obtient les mots qui correspondent ----------

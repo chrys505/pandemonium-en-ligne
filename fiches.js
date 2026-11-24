@@ -2226,4 +2226,357 @@ const fiches = {
   "Liard": {
     scene: "Une pièce de cuivre de rien du tout, sous l'Ancien Régime. « Il n'a pas un traître liard » : il n'a pas un sou.",
   },
+
+  // Série 7
+  "Prouesse": {
+    scene: "Autrefois, c'était le chevalier qui terrassait seul dix ennemis. Aujourd'hui, c'est ton neveu qui a rangé sa chambre sans qu'on le lui demande. Une prouesse : un exploit, petit ou grand.",
+  },
+  "Congédier": {
+    scene: "Le patron le convoque, lui tend une enveloppe, et lui montre la porte. Il l'a congédié : renvoyé.",
+    aussi: "On congédie aussi un visiteur trop bavard : « Il est tard, je ne vous retiens pas. »",
+  },
+  "Métacognition": {
+    scene: "Tu relis ta leçon trois fois et tu te dis : « Attends, est-ce que je comprends vraiment, ou est-ce que je reconnais juste les mots ? » Penser à sa propre façon de penser, c'est la métacognition.",
+    degainer: "C'est exactement ce que fait le jeu « Réviser » : vérifier ce que tu sais vraiment.",
+  },
+  "Antiphrase": {
+    scene: "Il renverse son café sur sa chemise blanche, juste avant l'entretien. « Bravo, magnifique, quelle journée ! » Il dit le contraire de ce qu'il pense, et tout le monde comprend : c'est une antiphrase.",
+  },
+  "Brahmane": {
+    scene: "Dans la société hindoue traditionnelle, en haut de l'échelle, les prêtres et les lettrés qui gardaient les textes sacrés. Ce sont les brahmanes.",
+    degainer: "Dans « Siddhartha » de Hermann Hesse, le héros est un jeune brahmane qui quitte tout.",
+  },
+  "Bobèche": {
+    scene: "Sur le chandelier, autour de la bougie, une petite coupelle recueille la cire qui coule. C'est la bobèche.",
+    aussi: "En argot ancien, la bobèche, c'était la tête : « se monter la bobèche », se faire des idées.",
+  },
+  "Bilieux": {
+    scene: "Dès le réveil, il trouve à redire au café, au journal et au soleil. Il est bilieux : sombre, irritable, toujours prêt à s'emporter.",
+    origine: "Les médecins d'autrefois pensaient que trop de bile rendait coléreux. C'est la théorie des humeurs.",
+  },
+  "Stigmate": {
+    scene: "Les façades criblées d'impacts, des décennies après la guerre : la ville en porte encore les stigmates. Des marques qui ne s'effacent pas.",
+    aussi: "Au pluriel, les stigmates sont aussi les plaies du Christ, apparues selon la tradition sur le corps de certains saints.",
+  },
+  "Déguenillé": {
+    scene: "Sur le parvis de l'église, un enfant en vêtements troués, la chemise en lambeaux, tend la main. Il est déguenillé.",
+  },
+  "Fangeux": {
+    scene: "Les chevaux peinent sur le chemin fangeux, enfoncés jusqu'aux genoux. Plein de boue.",
+    aussi: "Au figuré, une affaire fangeuse est sale, abjecte.",
+  },
+  "Humoral": {
+    scene: "Le sang, la bile jaune, la bile noire, le flegme : pendant des siècles, les médecins pensaient que ces quatre humeurs gouvernaient la santé et le caractère. Une médecine humorale.",
+  },
+  "Languissamment": {
+    scene: "Étendue sur le divan, elle tourne languissamment les pages d'un roman, sans vraiment lire. Mollement, avec une langueur de dimanche après-midi.",
+  },
+  "Coter": {
+    scene: "Chez l'antiquaire, chaque objet a son étiquette : on l'a coté, on lui a donné un prix.",
+    aussi: "« Être bien coté », c'est être estimé. Et en Bourse, une action cotée a un prix public.",
+  },
+  "Amphitryon": {
+    scene: "Il a préparé le repas, ouvert les meilleures bouteilles, et veille à ce que chaque verre soit plein. C'est notre amphitryon : l'hôte qui régale.",
+    origine: "Molière, dans « Amphitryon » : « Le véritable Amphitryon est l'Amphitryon où l'on dîne. »",
+  },
+  "Saturnales": {
+    scene: "À Rome, en décembre, pendant quelques jours, tout était à l'envers : les esclaves étaient servis par leurs maîtres, on jouait, on buvait. C'étaient les Saturnales.",
+    aussi: "Au figuré, une période de fête et de désordre : « les saturnales du Nouvel An ».",
+  },
+  "Courroucer": {
+    scene: "La nouvelle du mensonge parvient aux oreilles du roi. Son visage se ferme, sa voix tonne : il est courroucé.",
+    degainer: "Un mot de tragédie pour dire « fâché », parfait pour dramatiser avec humour : « Mon chat est courroucé, je lui ai servi des croquettes au poulet. »",
+  },
+  "Lambris": {
+    scene: "Des murs couverts de boiseries sculptées et dorées, des plafonds peints. Ce sont les lambris.",
+    degainer: "« Sous les lambris dorés » : dans le luxe des palais du pouvoir.",
+  },
+  "Tonnant": {
+    scene: "« Silence ! » Une voix tonnante résonne dans la salle, et tout le monde se fige.",
+  },
+  "Palingénésie": {
+    scene: "Les saisons qui reviennent, les civilisations qui renaissent de leurs cendres. Certains philosophes imaginaient le monde comme une suite de renaissances : la palingénésie.",
+    origine: "Du grec « palin », de nouveau, et « genesis », naissance.",
+  },
+  "Perron": {
+    scene: "Trois marches de pierre devant la porte du château. Les mariés y posent pour la photo, et les invités attendent en bas. C'est le perron.",
+  },
+  "Vestibule": {
+    scene: "Tu pousses la porte, tu enlèves ton manteau, tu poses tes clés. Tu es dans le vestibule, la pièce d'entrée.",
+  },
+  "Croître": {
+    scene: "La graine devient pousse, la pousse devient arbre. Elle croît.",
+    piege: "Croître garde son accent circonflexe pour ne pas le confondre avec croire : « il croît » (il grandit), « il croit » (il pense).",
+  },
+  "Morne": {
+    scene: "Un dimanche de novembre, la pluie, une plaine sans arbre, et un silence où personne n'a envie de parler. Tout est morne.",
+  },
+  "Marmiton": {
+    scene: "Dans les cuisines du château, le petit apprenti épluche les oignons, récure les marmites et court chercher le sel. C'est le marmiton.",
+  },
+  "Vétille": {
+    scene: "Ils se disputent depuis une heure pour savoir qui a oublié d'acheter le pain. Une vétille ! Une chose sans importance.",
+  },
+  "Vergeter": {
+    scene: "Avant de sortir, le valet brosse le manteau de son maître avec une petite brosse dure. Il le vergète.",
+  },
+  "Émérite": {
+    scene: "Elle monte à cheval depuis quarante ans : elle franchit les obstacles sans même y penser. Une cavalière émérite.",
+    aussi: "Un « professeur émérite » est un professeur retraité qui garde son titre, en hommage à sa carrière.",
+  },
+  "Étiolé": {
+    scene: "Une plante oubliée dans un placard pousse quand même, mais toute pâle et frêle, à la recherche de la lumière. Elle est étiolée.",
+    aussi: "Au figuré, un enthousiasme qui s'étiole perd sa vigueur peu à peu.",
+  },
+  "Malachite": {
+    scene: "Une pierre d'un vert profond, veinée comme du bois. Les tsars de Russie en ont fait des salons entiers.",
+  },
+  "Amoindrir": {
+    scene: "« Oui, il a gagné, mais il avait de la chance. » Il cherche à amoindrir son mérite : à le rendre plus petit.",
+  },
+  "Amenuiser": {
+    scene: "Le temps passe, les secours n'arrivent pas, et les chances de retrouver les randonneurs s'amenuisent : elles diminuent peu à peu.",
+  },
+  "Narghilé": {
+    scene: "Dans un café d'Istanbul, la fumée passe dans un vase d'eau qui glougloute avant d'arriver à la bouche. C'est le narghilé, qu'on appelle aussi chicha.",
+  },
+  "Prédicateur": {
+    scene: "Du haut de la chaire, il tonne contre les vices et appelle au repentir. C'est le prédicateur.",
+  },
+  "Apostat": {
+    scene: "Il a abandonné la religion de son enfance, ou le parti qu'il a défendu toute sa vie. Pour ceux qu'il a quittés, c'est un apostat.",
+  },
+  "Renégat": {
+    scene: "Il a trahi les siens pour passer à l'ennemi. Pour son ancien camp, c'est un renégat.",
+    origine: "Du XVIe au XVIIIe siècle, on appelait renégats les chrétiens passés à l'islam qui rejoignaient les corsaires de la Méditerranée.",
+  },
+  "Passementerie": {
+    scene: "Les galons dorés d'un uniforme, les franges d'un rideau, les glands au bout d'un cordon. Toute cette parure s'appelle la passementerie.",
+  },
+  "Décrépitude": {
+    scene: "Le vieux manoir : les volets qui pendent, le lierre qui dévore les murs, le toit qui s'effondre. Il tombe en décrépitude.",
+  },
+  "Décrépiter": {
+    scene: "Jette une pincée de gros sel dans le feu : il éclate en petits craquements. Il décrépite.",
+    piege: "Rien à voir avec décrépit : ici, c'est le bruit du sel qui éclate.",
+  },
+  "Pétulant": {
+    scene: "Elle parle avec les mains, saute de sa chaise, rit fort, invente dix projets par minute. Elle est pétulante : une vivacité qui déborde.",
+  },
+  "Vénal": {
+    scene: "Pour un peu d'argent, ce juge rend le verdict qu'on lui demande. Il est vénal : il se vend.",
+  },
+  "Œillade": {
+    scene: "À travers la salle, un regard rapide, complice, un sourire à peine esquissé. Une œillade.",
+  },
+  "Repaître": {
+    scene: "Le loup se repaît de sa proie : il se nourrit avec avidité.",
+    aussi: "Au figuré, « se repaître d'illusions », c'est s'en nourrir, s'y complaire.",
+  },
+  "Paître": {
+    scene: "Les moutons paissent tranquillement dans la prairie : ils broutent.",
+    degainer: "« Envoyer paître quelqu'un » : le renvoyer sans ménagement.",
+  },
+  "Impunément": {
+    scene: "Il triche depuis des années, impunément : sans jamais être puni.",
+  },
+  "Carlisme": {
+    scene: "Dans l'Espagne du XIXe siècle, des guerres civiles ont éclaté pour savoir qui devait régner : les partisans de don Carlos, frère du roi défunt, contre ceux de sa nièce Isabelle. C'est le carlisme.",
+  },
+  "Nobiliaire": {
+    scene: "Comte, marquis, baron : ce sont des titres nobiliaires.",
+  },
+  "Grisette": {
+    scene: "Paris, XIXe siècle : une jeune couturière en robe d'étoffe grise, coquette, rieuse, qui fait battre le cœur des étudiants. C'est la grisette des romans de Balzac.",
+  },
+  "Laudanum": {
+    scene: "Une teinture d'opium, quelques gouttes dans un verre d'eau pour calmer la douleur ou l'insomnie. Au XIXe siècle, bien des écrivains en prenaient, parfois jusqu'à la dépendance.",
+  },
+  "Synchrone": {
+    scene: "Les nageuses plongent, tournent et ressortent exactement au même moment, au même rythme. Elles sont synchrones.",
+  },
+  "Contractile": {
+    scene: "Le cœur se serre et se relâche des dizaines de fois par minute, toute une vie. C'est un muscle contractile.",
+  },
+  "Hardiesse": {
+    scene: "Il a osé interrompre le roi pour défendre son ami. Une hardiesse qui aurait pu lui coûter la tête.",
+  },
+  "Mutin": {
+    scene: "Un petit sourire en coin, un clin d'œil, une moue espiègle : un air mutin.",
+    aussi: "Autrefois, les mutins étaient des marins révoltés contre leur capitaine.",
+  },
+  "Dévotieux": {
+    scene: "Agenouillée chaque matin à l'église, elle prie avec une ardeur dévotieuse.",
+    degainer: "Un mot vieilli, qu'on croise dans les romans anciens.",
+  },
+  "Onagre": {
+    scene: "Dans les plaines d'Asie, un âne sauvage galope plus vite qu'un cheval. C'est l'onagre.",
+    aussi: "Les Romains ont donné son nom à une catapulte, qui ruait comme l'animal en lançant ses pierres.",
+  },
+  "Héraldique": {
+    scene: "Un lion d'or sur fond rouge, trois fleurs de lys, une tour d'argent. Chaque blason se lit comme un texte : c'est l'héraldique, la science des armoiries.",
+  },
+  "Macaronique": {
+    scene: "« Ego sum le patron de cette maisonus ! » Du faux latin mélangé au français, pour faire rire. C'est du latin macaronique.",
+  },
+  "Affabulation": {
+    scene: "Il a sauvé un enfant de la noyade, rencontré une star et gagné au loto, tout ça la même semaine. Ce n'est plus un récit, c'est de l'affabulation.",
+  },
+  "Septentrional": {
+    scene: "La Norvège, la Suède, la Finlande : l'Europe septentrionale, celle du nord.",
+    origine: "Du latin « septem triones », les sept bœufs : les sept étoiles de la Grande Ourse, qui indiquent le nord.",
+  },
+  "Carolingien": {
+    scene: "Charlemagne, couronné empereur à Rome en l'an 800, et ses descendants. C'est la dynastie carolingienne.",
+  },
+  "Réprouver": {
+    scene: "Ses parents réprouvent son choix : ils le désapprouvent fortement.",
+    aussi: "Un réprouvé est rejeté par tous, ou damné.",
+  },
+  "Épigone": {
+    scene: "Après le génie, viennent les imitateurs : ils reprennent son style, ses tics, sans jamais retrouver l'étincelle. Ce sont ses épigones.",
+  },
+  "Élisabéthain": {
+    scene: "Londres, fin du XVIe siècle : les théâtres en bois, Shakespeare qui écrit Hamlet. C'est le théâtre élisabéthain, sous le règne d'Élisabeth Ire.",
+  },
+  "Tronqué": {
+    scene: "« Il a dit qu'il détestait les enfants. » Oui, mais il avait ajouté : « qui crient au cinéma ». La citation est tronquée : il en manque une partie.",
+  },
+  "Césure": {
+    scene: "« Rodrigue, as-tu du cœur ? // Tout autre que mon père… » Au milieu de l'alexandrin, après la sixième syllabe, une petite pause. C'est la césure.",
+  },
+  "Aède": {
+    scene: "Dans la Grèce antique, un poète aveugle s'assoit près du feu, prend sa lyre, et chante pendant des heures la guerre de Troie. C'est l'aède.",
+    origine: "Homère en est la figure légendaire.",
+  },
+  "S'atteler": {
+    scene: "On attelle le cheval à la charrette. Et toi, ce matin, tu t'attelles enfin au rangement du garage : tu t'y mets, avec énergie.",
+  },
+  "Polycentrique": {
+    scene: "Pas une seule capitale qui décide de tout, mais plusieurs villes, plusieurs centres de pouvoir. Le pays est polycentrique.",
+  },
+  "Synchronique": {
+    scene: "Une photo de la langue française aujourd'hui, à un instant précis, sans se demander d'où viennent les mots. C'est une étude synchronique.",
+    piege: "Le contraire, diachronique, étudie l'évolution dans le temps.",
+  },
+  "Gnomique": {
+    scene: "« Qui sème le vent récolte la tempête. » Une vérité morale en une phrase, facile à retenir. C'est de la poésie gnomique.",
+  },
+  "Péroraison": {
+    scene: "L'avocat se lève pour la dernière partie de sa plaidoirie, la voix vibrante, la main sur le cœur. C'est la péroraison : la conclusion du discours.",
+    aussi: "Avec ironie, c'est une fin de discours pompeuse et interminable.",
+  },
+  "Ptolémaïque": {
+    scene: "La Terre immobile au centre, et autour d'elle, le Soleil, la Lune et les planètes qui tournent. Pendant plus de mille ans, c'était l'univers ptolémaïque, jusqu'à Copernic.",
+  },
+  "Canevas": {
+    scene: "Une grosse toile quadrillée sur laquelle la grand-mère brode un bouquet de roses. C'est le canevas.",
+    aussi: "Au figuré, le canevas est la trame d'un récit ou d'un projet, avant de le remplir.",
+  },
+  "Sarabande": {
+    scene: "Une danse lente et grave de la cour de Louis XIV. Et dans ta tête, au moment de faire les comptes, une sarabande de chiffres qui tournent sans fin.",
+  },
+  "Se mouvoir": {
+    scene: "La danseuse se meut avec une grâce qui fait oublier qu'elle a un corps : elle se déplace comme portée par l'air.",
+  },
+  "Convoler": {
+    scene: "Après quinze ans de vie commune, ils ont enfin décidé de convoler en justes noces : de se marier.",
+    degainer: "Toujours avec un petit sourire.",
+  },
+  "Versification": {
+    scene: "Compter les syllabes, placer la rime, respecter la césure : c'est la versification, l'art de construire des vers.",
+  },
+  "Pied-de-mouche": {
+    scene: "Dans un traitement de texte, ce petit signe ¶ qui marque la fin d'un paragraphe : c'est le pied-de-mouche.",
+    piege: "À ne pas confondre avec les « pattes de mouche » : une écriture minuscule et illisible.",
+  },
+  "Patère": {
+    scene: "Dans l'entrée, accrochés au mur, des crochets où pendent les manteaux et les chapeaux. Ce sont des patères.",
+  },
+  "Jésuitique": {
+    scene: "Il ne ment pas vraiment, il arrange la vérité avec des raisonnements si habiles qu'on ne sait plus où est le faux. Un raisonnement jésuitique.",
+    origine: "Une allusion polémique, née des querelles du XVIIe siècle contre les jésuites.",
+  },
+  "Colifichet": {
+    scene: "Des porte-clés, des petits bibelots en plastique, des bracelets de fête foraine. Des colifichets : des babioles sans valeur.",
+  },
+  "Paraphe": {
+    scene: "Le notaire te demande de mettre tes initiales en bas de chaque page du contrat. C'est ton paraphe.",
+  },
+  "Pontife": {
+    scene: "Le souverain pontife, c'est le pape. Mais le pontife, c'est aussi ce critique qui parle de tout avec suffisance, comme s'il détenait la vérité.",
+  },
+  "Entomologiste": {
+    scene: "Une loupe, un filet à papillons, des boîtes pleines de scarabées épinglés. L'entomologiste étudie les insectes.",
+  },
+  "Nomenclature": {
+    scene: "Chaque plante, chaque animal, chaque élément chimique a son nom bien rangé dans une grande liste. C'est la nomenclature.",
+  },
+  "Huppé": {
+    scene: "La huppe de la mésange, ces plumes dressées sur la tête. Et dans les beaux quartiers, des gens huppés : riches et de haut rang.",
+  },
+  "Galuchat": {
+    scene: "Une peau de raie au grain perlé, comme de minuscules billes : on en recouvre les étuis de luxe et les poignées de sabres japonais. C'est le galuchat.",
+  },
+  "Chevrier": {
+    scene: "Dans la montagne, au son des clochettes, un homme conduit son troupeau de chèvres vers les alpages. C'est le chevrier.",
+  },
+  "Haquet": {
+    scene: "Dans les rues pavées du vieux Paris, une longue charrette étroite, sans rebords, chargée de tonneaux de vin. C'est un haquet.",
+  },
+  "Agate": {
+    scene: "Une pierre tranchée qui révèle des cercles de couleurs, comme les cernes d'un arbre. C'est l'agate.",
+    aussi: "Dans la cour de récré, une agate, c'est aussi une belle bille de verre.",
+  },
+  "Potence": {
+    scene: "Sur la place, la potence attend le condamné. Un instrument de pendaison.",
+    aussi: "Plus paisiblement, une potence est aussi un support en équerre, comme celui d'une lampe d'atelier.",
+  },
+  "Cavalièrement": {
+    scene: "Il l'a quittée par un simple texto, sans un mot de plus. Il l'a traitée cavalièrement : avec une désinvolture impolie.",
+  },
+  "Papier brouillard": {
+    scene: "Au temps des plumes et de l'encre, on posait un papier épais et doux sur la page pour boire l'encre avant qu'elle ne tache. C'est le papier brouillard, le buvard.",
+  },
+  "Glaise": {
+    scene: "Les mains du potier dans une terre grise, humide et collante, qui prend forme sur le tour. C'est la glaise.",
+  },
+  "Gnomon": {
+    scene: "Sur le cadran solaire, une tige plantée au centre projette son ombre sur les heures. C'est le gnomon.",
+  },
+  "Tocard": {
+    scene: "Aux courses, le cheval que personne ne joue, celui qui finit toujours dernier. Et par extension, celui qu'on trouve nul : un tocard.",
+    degainer: "Argot, à garder pour les copains.",
+  },
+  "Boloss": {
+    scene: "Dans la cour, le naïf qu'on se permet de racketter ou de ridiculiser, parce qu'il ne réagit pas. En argot, c'est le boloss.",
+    degainer: "Argot de cour de récré, qui a fait le tour de la France dans les années 2000.",
+  },
+  "Mytho": {
+    scene: "Il a été pilote de chasse, mannequin, et il a joué au foot avec une star. Tout le monde le sait : c'est un mytho.",
+    origine: "De « mythomane », celui qui invente sans cesse des histoires.",
+  },
+  "Bouffon": {
+    scene: "Autrefois, à la cour, le fou du roi faisait rire et avait le droit de tout dire. Aujourd'hui, en argot, un bouffon, c'est celui qu'on ne prend pas au sérieux.",
+  },
+  "Charo": {
+    scene: "En soirée, il colle tout le monde, enchaîne les phrases de drague lourdes et ne comprend pas quand on lui dit non. En argot, c'est un charo.",
+    origine: "De « charognard », qui tourne autour de sa proie.",
+  },
+  "Zinzin": {
+    scene: "Il parle à ses plantes, dort avec un casque de vélo, et collectionne les bouchons de liège. Il est un peu zinzin : bizarre, un peu fou.",
+    aussi: "En Bourse, « les zinzins », ce sont les investisseurs institutionnels : les banques, les assurances.",
+  },
+  "Soupape": {
+    scene: "Sur la cocotte-minute, un petit clapet siffle et laisse échapper la vapeur avant que tout n'explose. C'est la soupape.",
+    aussi: "Au figuré, le sport, la musique, une balade : une soupape de sécurité pour relâcher la pression.",
+  },
+  "Chiquenaude": {
+    scene: "Un doigt replié, une détente, et la petite boule de papier traverse la table. Une chiquenaude.",
+    aussi: "Au figuré, la petite impulsion qui met tout en branle : « Il a suffi d'une chiquenaude pour lancer sa carrière. »",
+  },
+  "Platine": {
+    scene: "Le vinyle tourne sur la platine, le bras se pose délicatement sur le sillon.",
+    aussi: "C'est aussi le plateau d'un microscope, où l'on pose la lame. Et le platine (au masculin) est un métal précieux.",
+  },
 };

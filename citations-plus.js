@@ -89,7 +89,10 @@ const citationsPlus = [
   ["On échoue toujours à parler de ce qu'on aime.", "Roland Barthes, à propos de Stendhal"],
   ["À la typologie des extérieurs correspond celle des intérieurs.", "(auteur à confirmer)"],
   ["La politique est un luxe de pays solvable.", "(auteur à confirmer)"],
-  ["On aime mieux paraître savant que de reconnaître ce qu'on ignore.", "Jean-Jacques Rousseau (formulation à confirmer)"]
+  ["On aime mieux paraître savant que de reconnaître ce qu'on ignore.", "Jean-Jacques Rousseau (formulation à confirmer)"],
+  ["Quand un maître ne songe pas à ce qu'il fait, une servante bien sensée est en droit de le redresser.", "Molière, Le Malade imaginaire (Toinette)"],
+  ["Les arbres tardifs sont ceux qui portent les meilleurs fruits.", "Molière, Le Malade imaginaire (Monsieur Diafoirus)"],
+  ["On grave sur le marbre bien plus malaisément que sur le sable ; mais les choses y sont conservées bien plus longtemps.", "Molière, Le Malade imaginaire (Monsieur Diafoirus)"]
 ];
 
 // Expressions : [expression, sens]
@@ -218,7 +221,17 @@ const expressionsPlus = [
   ["Brûler d'amour", "Aimer avec passion."],
   ["Faire belek", "Argot : faire attention."],
   ["La complicité par abstention", "Le fait de laisser commettre un tort qu'on aurait pu empêcher, en ne faisant rien."],
-  ["L'effet Kiss Cool", "Un second effet, inattendu, qui arrive après le premier (d'après la publicité d'un bonbon des années 1990 et son « double effet »)."]
+  ["L'effet Kiss Cool", "Un second effet, inattendu, qui arrive après le premier (d'après la publicité d'un bonbon des années 1990 et son « double effet »)."],
+  ["Un coup de Trafalgar", "Un coup dur, une catastrophe soudaine (d'après la défaite navale française de 1805 face à Nelson)."],
+  ["Broyer du noir", "Ruminer des idées sombres, être déprimé."],
+  ["De but en blanc", "Brusquement, sans préparation (« on ne parle pas comme cela de but en blanc »)."],
+  ["Tout son soûl", "Autant qu'on veut, jusqu'à satiété (« dormir tout son soûl »)."],
+  ["Savoir gré", "Être reconnaissant (« je vous en sais bon gré »)."],
+  ["Être bien aise", "Être content, satisfait (« j'en suis bien aise »)."],
+  ["Ne pas en démordre", "S'obstiner, refuser de changer d'avis."],
+  ["Saisir au collet", "Attraper quelqu'un par le col pour l'arrêter."],
+  ["Rester coi", "Rester muet de surprise ou d'embarras."],
+  ["Un secret de Polichinelle", "Un prétendu secret que tout le monde connaît."]
 ];
 
 // Pensées philosophiques : [texte, auteur]
