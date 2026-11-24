@@ -3967,4 +3967,340 @@ const fiches = {
   "Revêtir": {
     scene: "Le juge revêt sa robe noire avant d'entrer dans la salle. Et l'affaire, elle, revêt une importance capitale : elle prend cet aspect.",
   },
+
+  // Série 12
+  "Étreinte": {
+    scene: "Sur le quai de la gare, après deux ans d'absence, ils se serrent si fort qu'ils en oublient le train. Une étreinte.",
+  },
+  "Intériorité": {
+    scene: "Il ne dit presque rien, mais le roman nous fait entendre tout ce qui bouillonne en lui : ses doutes, ses peurs, ses rêves. Son intériorité.",
+  },
+  "Halo": {
+    scene: "Les soirs de brume, un cercle de lumière pâle entoure la lune et chaque réverbère. Un halo.",
+    aussi: "Au figuré, une star avance dans un halo de mystère.",
+  },
+  "Informe": {
+    scene: "Une masse de pâte à modeler écrasée par un enfant, une silhouette dans le brouillard. Informe : sans forme nette.",
+  },
+  "Piété": {
+    scene: "Chaque matin, à genoux devant la petite statue, elle prie. Sa piété est discrète et profonde.",
+    aussi: "La « piété filiale », c'est l'amour respectueux d'un enfant pour ses parents.",
+  },
+  "Cruauté": {
+    scene: "Le chat qui joue longtemps avec la souris avant de l'achever. La cruauté : le goût de faire souffrir.",
+  },
+  "Étoffe": {
+    scene: "Chez le tailleur, il touche les rouleaux de laine, de soie, de velours. Des étoffes.",
+    degainer: "« Avoir l'étoffe d'un chef » : avoir les qualités qu'il faut.",
+  },
+  "Tsigane": {
+    scene: "Au coin du feu, un violon s'emballe, de plus en plus vite, et tout le monde se met à danser. La musique tsigane.",
+    origine: "Les Tsiganes sont un peuple venu de l'Inde il y a des siècles, dispersé dans toute l'Europe.",
+  },
+  "Affect": {
+    scene: "En psychologie, tes émotions, tes sentiments, ce que tu ressens avant même de le penser : tes affects.",
+  },
+  "Comble": {
+    scene: "Il arrive en retard à son propre mariage, et en plus il a oublié les alliances. C'est le comble !",
+    aussi: "Les combles, au pluriel, ce sont aussi les greniers sous le toit.",
+  },
+  "Transcender": {
+    scene: "Sur scène, le chanteur fatigué disparaît : la musique le porte, le dépasse, l'élève. Elle le transcende.",
+  },
+  "Dévoué": {
+    scene: "Trente ans au service de la même famille, toujours présente, toujours fidèle. Une gouvernante dévouée.",
+  },
+  "Chahuter": {
+    scene: "Le prof tourne le dos : boulettes de papier, bruits d'animaux, rires étouffés. La classe chahute.",
+  },
+  "Unanimité": {
+    scene: "« Qui est pour la pizza ? » Toutes les mains se lèvent. Adopté à l'unanimité.",
+    degainer: "« Il ne fait pas l'unanimité » : certains l'aiment, d'autres non.",
+  },
+  "Charrette": {
+    scene: "Une petite voiture à deux roues tirée par un âne.",
+    aussi: "Au bureau, « être en charrette », c'est travailler toute la nuit pour finir à temps. Et « une charrette », c'est aussi une vague de licenciements.",
+  },
+  "Burn-out": {
+    scene: "Des mois à tout donner, à dormir mal, à ne jamais dire non. Puis un matin, impossible de se lever. Le burn-out : un épuisement profond causé par le travail.",
+  },
+  "Vérolé": {
+    scene: "Autrefois, un visage vérolé portait les traces de la variole. Aujourd'hui, en familier, un fichier vérolé est infecté par un virus.",
+  },
+  "Différenciant": {
+    scene: "Cent boulangeries dans la ville, mais la sienne a un four à bois. C'est son atout différenciant.",
+  },
+  "Marginal": {
+    scene: "Un détail marginal dans le rapport, une note en bas de page. Secondaire.",
+    aussi: "Une personne marginale vit à l'écart des normes de la société.",
+  },
+  "Néoclassique": {
+    scene: "L'Arc de triomphe, la Madeleine à Paris : des colonnes, des frontons, comme dans la Rome antique. C'est le style néoclassique, à la mode sous Napoléon.",
+  },
+  "Contrecoup": {
+    scene: "La banque fait faillite à New York. Par contrecoup, une petite usine ferme en Bretagne.",
+  },
+  "Extrapoler": {
+    scene: "Il a vu deux Parisiens pressés, et il en conclut que tous les Parisiens sont désagréables. Il extrapole.",
+  },
+  "Hyperbole": {
+    scene: "« Je meurs de faim ! », « Je t'ai dit mille fois ! » Personne ne meurt, personne n'a compté. C'est une hyperbole : on exagère pour frapper.",
+  },
+  "Hyperboliser": {
+    scene: "Un petit rhume devient « la pire grippe de sa vie ». Il hyperbolise tout.",
+  },
+  "Hypocrisie": {
+    scene: "Il donne des leçons de générosité et ne laisse jamais de pourboire. Quelle hypocrisie !",
+  },
+  "Culpabilité": {
+    scene: "Il a oublié l'anniversaire de sa mère. Toute la soirée, une petite voix lui reproche. La culpabilité.",
+  },
+  "Libéral": {
+    scene: "Des parents libéraux laissent leurs enfants choisir. Un donateur libéral donne sans compter.",
+    aussi: "En politique et en économie, le mot désigne une doctrine qui défend les libertés individuelles et le libre marché.",
+  },
+  "Subliminal": {
+    scene: "Une image glissée dans un film, si brève que tu ne la vois pas consciemment. Et pourtant, elle t'a marqué. Un message subliminal.",
+  },
+  "Privatif": {
+    scene: "« In- » dans « inutile », « dé- » dans « défaire », « a- » dans « amoral » : ces préfixes privatifs disent le manque ou le contraire.",
+    aussi: "Un jardin privatif est réservé à un seul logement.",
+  },
+  "Rhétorique": {
+    scene: "Le bon avocat ne dit pas seulement la vérité : il la construit, il choisit ses mots, son rythme, ses silences. C'est la rhétorique.",
+    aussi: "Péjoratif : « Tout ça, c'est de la rhétorique » : de beaux discours vides.",
+  },
+  "Solvable": {
+    scene: "Avant de prêter, la banque vérifie que tu pourras rembourser. Que tu es solvable.",
+  },
+  "Prohairesis": {
+    scene: "La pluie, le trafic, l'avis des autres : ça ne dépend pas de toi. Ta façon d'y répondre, si. Cette faculté de choisir, Épictète l'appelait la prohairesis.",
+  },
+  "Interjection": {
+    scene: "« Ah ! », « Hélas ! », « Aïe ! », « Fichtre ! » Des petits mots qui jaillissent avec l'émotion. Des interjections.",
+  },
+  "Voluptueux": {
+    scene: "Un bain chaud, un carré de chocolat qui fond, des draps de soie. Un plaisir voluptueux, raffiné.",
+  },
+  "Travestissement": {
+    scene: "Au carnaval, le travestissement est roi : masques, perruques, costumes. Et au figuré, travestir la vérité, c'est la déguiser.",
+  },
+  "Fugitif": {
+    scene: "Le prisonnier évadé court dans la forêt : c'est un fugitif. Et l'arc-en-ciel, qui disparaît après cinq minutes, est un phénomène fugitif.",
+  },
+  "Dériseur": {
+    scene: "Un vieux mot pour celui qui tourne tout en dérision, qui se moque de tout et de tous.",
+  },
+  "Rossinien": {
+    scene: "L'orchestre accélère, monte, monte encore, avec des violons qui pétillent. Un crescendo rossinien.",
+    origine: "Rossini, compositeur italien du « Barbier de Séville », célèbre pour ses crescendos endiablés.",
+  },
+  "Parqué": {
+    scene: "Dans le car, trente touristes parqués comme des moutons. Enfermés à l'étroit.",
+  },
+  "Mantra": {
+    scene: "En méditation, une syllabe répétée doucement, encore et encore. Un mantra.",
+    aussi: "Au quotidien : « Un jour à la fois », c'est son mantra.",
+  },
+  "Doter": {
+    scene: "La mairie a doté l'école d'une bibliothèque toute neuve. Elle l'en a pourvue.",
+    aussi: "Autrefois, on dotait sa fille : on lui donnait une dot pour son mariage.",
+  },
+  "Cuber": {
+    scene: "Le forestier mesure les troncs pour calculer le volume de bois. Il les cube.",
+  },
+  "Accabler": {
+    scene: "Le soleil de plomb l'accable. Et ses collègues l'accablent de reproches : ils l'écrasent sous leur poids.",
+  },
+  "Corrupteur": {
+    scene: "Dans les romans moraux, il entraîne le jeune homme innocent vers le jeu, l'alcool et la débauche. Le corrupteur.",
+  },
+  "Sentinelle": {
+    scene: "Devant la tour, un soldat monte la garde toute la nuit, fusil à l'épaule. La sentinelle.",
+  },
+  "Savamment": {
+    scene: "Un peu de sel, un peu de sucre, une pincée de piment : un plat savamment dosé.",
+  },
+  "Grailler": {
+    scene: "« On va grailler ? J'ai trop la dalle. » Manger, en argot.",
+  },
+  "Lège": {
+    scene: "Un navire lège rentre au port sans cargaison, léger et haut sur l'eau.",
+    aussi: "Par extension, lège veut dire faible : « une concurrence assez lège ».",
+  },
+  "Protestantisme": {
+    scene: "Au XVIe siècle, Luther puis Calvin contestent l'autorité du pape et appellent à revenir à la Bible. De cette Réforme naît le protestantisme.",
+  },
+  "Syphilis": {
+    scene: "Une maladie qui a terrifié l'Europe pendant des siècles. Dans « Candide », Pangloss en est rongé, et il trouve encore le moyen de dire que tout est pour le mieux.",
+  },
+  "Écaillé": {
+    scene: "La vieille porte bleue de la maison de vacances, dont la peinture part en petites plaques. Écaillée.",
+  },
+  "Providentiel": {
+    scene: "Panne d'essence au milieu de nulle part, et soudain une dépanneuse surgit. Une arrivée providentielle.",
+  },
+  "Pédagogue": {
+    scene: "Elle prend un sujet impossible et te le rend limpide, avec patience et une bonne histoire. Une vraie pédagogue.",
+  },
+  "Leibnizien": {
+    scene: "« Nous vivons dans le meilleur des mondes possibles. » C'est l'idée leibnizienne, dont Voltaire se moque dans « Candide ».",
+  },
+  "Antifinaliste": {
+    scene: "Le monde n'a pas de but caché, rien n'est écrit d'avance : les choses arrivent, c'est tout. Une pensée antifinaliste.",
+  },
+  "Allègrement": {
+    scene: "Il traverse la ville allègrement, en sifflotant. Mais attention : il dépasse aussi allègrement son budget, avec un peu trop de légèreté.",
+  },
+  "Exalter": {
+    scene: "Le poète exalte la beauté de la mer. Et la victoire exalte toute la ville : elle l'enthousiasme.",
+  },
+  "Cristallin": {
+    scene: "L'eau d'un torrent de montagne, si pure qu'on voit chaque caillou au fond. Cristalline.",
+    aussi: "Une voix cristalline est claire et pure.",
+  },
+  "Sémantique": {
+    scene: "« Ce n'est pas un mensonge, c'est une vérité arrangée. » Ce n'est qu'une question de sémantique : de sens des mots.",
+  },
+  "Se rassasier": {
+    scene: "Après la longue marche, il mange, et mange encore, jusqu'à être enfin rassasié.",
+  },
+  "Fragmentation": {
+    scene: "Le vase tombe et éclate en mille morceaux. Et l'attention, entre les notifications, se fragmente aussi.",
+  },
+  "Polynymie": {
+    scene: "Le poète portugais Pessoa écrivait sous des dizaines de noms, chacun avec sa vie, son style, sa biographie. La polynymie.",
+  },
+  "Fresque": {
+    scene: "Au plafond de la chapelle Sixtine, Michel-Ange a peint sur l'enduit encore frais. Une fresque.",
+    aussi: "Au figuré, un grand roman qui embrasse toute une époque est une fresque.",
+  },
+  "Spécificité": {
+    scene: "La raclette, le reblochon, la tartiflette : chaque région a sa spécificité, ce qui n'appartient qu'à elle.",
+  },
+  "Gradation": {
+    scene: "« Va, cours, vole, et nous venge ! » Chaque verbe va plus vite que le précédent. C'est une gradation.",
+  },
+  "Sommaire": {
+    scene: "Au début du livre, la liste des chapitres : le sommaire.",
+    aussi: "Comme adjectif : court, expéditif. « Une justice sommaire » ne prend pas le temps d'examiner.",
+  },
+  "Topographique": {
+    scene: "Les collines, les rivières, les chemins, tout dessiné avec précision. Une carte topographique.",
+  },
+  "Ferveur": {
+    scene: "Le stade entier qui chante pour son équipe sous la pluie. Une ferveur brûlante.",
+  },
+  "S'avérer": {
+    scene: "Le petit hôtel paraissait miteux sur les photos. Il s'est avéré charmant.",
+    piege: "« S'avérer vrai » est un pléonasme : avérer veut déjà dire « vrai ».",
+  },
+  "Brodé": {
+    scene: "Sur le mouchoir de la grand-mère, des initiales brodées au fil bleu, point par point.",
+  },
+  "Sexophobie": {
+    scene: "La peur, le malaise ou l'hostilité devant tout ce qui touche à la sexualité. La sexophobie.",
+  },
+  "Bestiaire": {
+    scene: "Au Moyen Âge, de grands livres enluminés décrivaient les animaux, vrais ou fabuleux : le lion, la licorne, le pélican. Des bestiaires.",
+    degainer: "L'appli a le sien, plein de créatures à découvrir.",
+  },
+  "Dévorant": {
+    scene: "Une faim dévorante après la piscine. Une passion dévorante, qui consume tout le reste.",
+  },
+  "Ariostesque": {
+    scene: "Des chevaliers qui volent sur des hippogriffes, des fous qui vont chercher leur raison sur la Lune, des aventures qui s'entrelacent avec ironie. Une fantaisie ariostesque.",
+    origine: "D'après l'Arioste, l'auteur du Roland furieux, que Calvino adorait.",
+  },
+  "Abduction": {
+    scene: "Le gazon est mouillé. Il a dû pleuvoir cette nuit. Partir d'un indice pour deviner l'explication la plus probable : c'est l'abduction, le raisonnement du détective.",
+  },
+  "Abdiquer": {
+    scene: "Le roi retire sa couronne et la pose sur la table. Il abdique.",
+    aussi: "Au figuré, abdiquer, c'est renoncer : « Il a abdiqué devant les difficultés. »",
+  },
+  "Absolutiste": {
+    scene: "« L'État, c'est moi. » Un roi qui ne rend de comptes à personne. Un régime absolutiste.",
+  },
+  "Abscisse": {
+    scene: "Sur le graphique, la ligne horizontale en bas : l'abscisse. La ligne verticale : l'ordonnée.",
+  },
+  "Adéquation": {
+    scene: "Il aime les animaux, il est devenu vétérinaire. Une adéquation parfaite entre ce qu'il est et ce qu'il fait.",
+  },
+  "Affranchir": {
+    scene: "Le maître signe un papier : l'esclave est libre. Il l'a affranchi.",
+    aussi: "Affranchir une lettre, c'est payer le timbre. Et en argot, « affranchir quelqu'un », c'est le mettre au courant.",
+  },
+  "Affûté": {
+    scene: "Le couteau du chef, aiguisé au point de trancher une tomate sans l'écraser. Affûté. Et après une bonne nuit, ton esprit l'est aussi.",
+  },
+  "Aliénant": {
+    scene: "Le même geste, huit heures par jour, sur une chaîne d'usine, sans jamais savoir à quoi il sert. Un travail aliénant.",
+  },
+  "Allitération": {
+    scene: "« Pour qui sont ces serpents qui sifflent sur vos têtes ? » Les s qui se répètent font entendre les serpents. C'est une allitération.",
+    origine: "Racine, dans « Andromaque ».",
+  },
+  "Amadouer": {
+    scene: "Un sourire, un compliment, une part de gâteau : il essaie d'amadouer sa mère avant d'annoncer la mauvaise note.",
+  },
+  "Amoncellement": {
+    scene: "Sur son bureau, des piles de papiers, de livres et de tasses vides. Un amoncellement.",
+  },
+  "Anathème": {
+    scene: "Au Moyen Âge, l'Église chasse un hérétique de la communauté des croyants. Elle jette l'anathème sur lui.",
+    aussi: "Aujourd'hui, « jeter l'anathème », c'est condamner solennellement.",
+  },
+  "Ânonner": {
+    scene: "« Le… pe… petit… cha… chat… » L'enfant lit en butant sur chaque syllabe. Il ânonne.",
+  },
+  "Anticléricalisme": {
+    scene: "Au XIXe siècle, dans les cafés, on caricature les curés et on refuse qu'ils dirigent l'école. L'anticléricalisme.",
+  },
+  "Antonyme": {
+    scene: "Chaud et froid. Grand et petit. Jour et nuit. Des antonymes : des mots de sens contraire.",
+  },
+  "Apogée": {
+    scene: "La victoire en finale, le stade debout, son nom en une de tous les journaux. L'apogée de sa carrière.",
+  },
+  "Arborescence": {
+    scene: "Dans ton ordinateur, un dossier contient des dossiers, qui en contiennent d'autres. Une arborescence, comme les branches d'un arbre.",
+  },
+  "Ardemment": {
+    scene: "Elle souhaite ardemment réussir ce concours : de tout son cœur, avec passion.",
+  },
+  "Autodérision": {
+    scene: "« Moi, danser ? J'ai le rythme d'un frigo. » Se moquer de soi avant que les autres ne le fassent. L'autodérision.",
+  },
+  "Badinage": {
+    scene: "Des mots légers, des taquineries, un peu de galanterie, rien de grave. Le badinage.",
+  },
+  "Barbarisme": {
+    scene: "« Ils croivent », « vous faisez », « malgré que » : des mots déformés. Des barbarismes.",
+  },
+  "Bas-relief": {
+    scene: "Sur le mur du monument, des soldats sculptés qui se détachent à peine de la pierre. Un bas-relief.",
+  },
+  "Bluffeur": {
+    scene: "Il n'a qu'une paire de deux, mais il mise tout en souriant. Au poker, c'est un bluffeur redoutable.",
+  },
+  "Boursouflure": {
+    scene: "Une cloque sur la peinture, une enflure sur la peau. Et dans un discours, des grands mots qui gonflent sans rien dire : de la boursouflure.",
+  },
+  "Brassage": {
+    scene: "Dans le marché de la ville, des épices d'Afrique, des fruits d'Asie, des langues de partout. Un brassage des cultures.",
+  },
+  "Cajoleur": {
+    scene: "Il se colle à toi, te fait des yeux doux et te dit que tu es la meilleure… juste avant de demander un service. Cajoleur.",
+  },
+  "Calomnier": {
+    scene: "Elle a inventé de toutes pièces une histoire de vol pour salir son collègue. Elle l'a calomnié.",
+  },
+  "Candeur": {
+    scene: "« Pourquoi le monsieur dort dans la rue ? » La question d'un enfant, posée avec toute sa candeur : une innocence sans méfiance.",
+  },
+  "Carillonner": {
+    scene: "Dimanche matin, les cloches de l'église carillonnent pour le mariage. Et la voisine carillonne la nouvelle à tout le quartier.",
+  },
 };
