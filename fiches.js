@@ -2933,4 +2933,352 @@ const fiches = {
     scene: "Les gamins sont rentrés, et en dix minutes, le salon est un champ de bataille. Ils ont foutu le zbeul.",
     origine: "De l'arabe.",
   },
+
+  // Série 9
+  "Flouze": {
+    scene: "« T'as du flouze pour le resto ? » L'argent, en argot.",
+    origine: "De l'arabe « flous ».",
+  },
+  "Thune": {
+    scene: "« J'ai pas une thune ce mois-ci. » L'argent, encore. Au XIXe siècle, une thune était une pièce de cinq francs.",
+  },
+  "Blase": {
+    scene: "« C'est quoi ton blase ? » Ton nom, ton surnom, dans le vieil argot des voyous.",
+  },
+  "Bled": {
+    scene: "Un village perdu sans boulangerie, où le bus passe deux fois par semaine : un bled. Et pour beaucoup, « le bled », c'est aussi le pays d'origine de la famille, où l'on retourne l'été.",
+    origine: "De l'arabe « bilad », le pays.",
+  },
+  "Tchatche": {
+    scene: "Il vendrait du sable dans le désert : il parle, il charme, il ne s'arrête jamais. Il a la tchatche.",
+  },
+  "Chelou": {
+    scene: "Un type qui rôde devant l'immeuble depuis une heure, capuche sur la tête. C'est chelou.",
+    origine: "Le verlan de « louche » : on retourne les syllabes.",
+  },
+  "Vénère": {
+    scene: "Il a attendu le bus quarante minutes sous la pluie, et il est passé plein. Il est vénère.",
+    origine: "Le verlan d'« énervé ».",
+  },
+  "Ouf": {
+    scene: "« Ce concert, c'était ouf ! » Incroyable, dingue.",
+    origine: "Le verlan de « fou ».",
+  },
+  "Bader": {
+    scene: "Dimanche soir, la pluie, le travail demain : il bade. Un coup de blues.",
+    origine: "De l'anglais « bad ».",
+  },
+  "Palsambleu": {
+    scene: "« Palsambleu, monsieur, vous m'insultez ! » Un juron de mousquetaire, adouci pour ne pas jurer sur le sang de Dieu.",
+  },
+  "Morbleu": {
+    scene: "« Morbleu ! Le traître m'a échappé ! » « Mort de Dieu », déguisé en « bleu » pour éviter le blasphème.",
+  },
+  "Parbleu": {
+    scene: "« Tu viendras ? — Parbleu ! » Évidemment ! Un juron de bonne humeur, adouci de « par Dieu ».",
+  },
+  "Diantre": {
+    scene: "« Diantre, que c'est cher ! » Le diable, mais déguisé en mot poli.",
+  },
+  "Fichtre": {
+    scene: "Tu découvres la facture du garagiste : « Fichtre ! » De l'étonnement, avec un soupçon d'admiration.",
+  },
+  "Ventre-saint-gris": {
+    scene: "Le juron favori du roi Henri IV, le « bon roi » qui voulait une poule au pot dans chaque marmite le dimanche.",
+  },
+  "Saperlipopette": {
+    scene: "« Saperlipopette, j'ai encore perdu mes lunettes ! » Un juron qui fait sourire, cousin de saprelotte.",
+  },
+  "Maraud": {
+    scene: "« Hors d'ici, maraud ! » Dans les comédies de Molière, le maître chasse le valet coquin d'un coup de canne. Un vaurien.",
+  },
+  "Faquin": {
+    scene: "Il se prend pour un grand seigneur, et ce n'est qu'un homme de rien. « Faquin ! » : méprisable et prétentieux.",
+  },
+  "Gredin": {
+    scene: "« Ah, le gredin, il m'a volé ma montre ! » Un malhonnête, une crapule.",
+  },
+  "Malandrin": {
+    scene: "Sur les routes du Moyen Âge, dans la forêt, des brigands attendaient les voyageurs. Les malandrins.",
+  },
+  "Pendard": {
+    scene: "« Pendard ! » crie le vieil homme au valet qui l'a trompé. Un vaurien qui mériterait la corde.",
+  },
+  "Bélître": {
+    scene: "« Va-t'en, bélître ! » Un gueux, un homme de rien, dans la bouche des seigneurs d'autrefois.",
+  },
+  "Butor": {
+    scene: "Il bouscule tout le monde et ne s'excuse jamais. Quel butor !",
+    aussi: "Le butor est aussi un oiseau des marais, au cri sourd comme un mugissement.",
+  },
+  "Gougnafier": {
+    scene: "Il a monté l'étagère de travers et a cassé deux verres en le faisant. Un gougnafier : un bon à rien.",
+  },
+  "Paltoquet": {
+    scene: "Petit, prétentieux et parfaitement insignifiant, il donne des ordres à tout le monde. Un paltoquet.",
+  },
+  "Olibrius": {
+    scene: "Chapeau melon, chaussettes dépareillées, il fait des discours aux pigeons. Un drôle d'olibrius.",
+  },
+  "Malotru": {
+    scene: "Il mâche la bouche ouverte, coupe la parole et rote à table. Un malotru : un mal élevé.",
+  },
+  "Goujat": {
+    scene: "Il lui a laissé payer l'addition et a passé la soirée à regarder son téléphone. Un goujat : sans aucune délicatesse.",
+  },
+  "Pignouf": {
+    scene: "Il jette ses papiers par terre et parle fort au cinéma. Un pignouf : un rustre.",
+  },
+  "Sacripant": {
+    scene: "« Ah, le petit sacripant ! » Le chenapan qui a mangé tous les gâteaux et nie, la bouche pleine de crème.",
+    origine: "Sacripant est un personnage du Roland furieux de l'Arioste.",
+  },
+  "Bachi-bouzouk": {
+    scene: "« Bachi-bouzouk ! » Une insulte rendue célèbre par le capitaine Haddock, le grand ami de Tintin.",
+    origine: "À l'origine, les bachi-bouzouks étaient des soldats irréguliers de l'Empire ottoman.",
+  },
+  "Scélérat": {
+    scene: "« Ah, le scélérat ! » Celui qui a commis un crime et n'en a aucun remords.",
+  },
+  "Jean-foutre": {
+    scene: "Il promet tout, ne tient rien, et disparaît au premier problème. Un jean-foutre : à qui on ne peut pas se fier.",
+  },
+  "Galvaudé": {
+    scene: "« Incroyable », « légendaire », « génial » : à force de les coller partout, ces mots sont galvaudés. Ils ne veulent plus rien dire.",
+  },
+  "Probant": {
+    scene: "Trois études, mille patients, des résultats clairs. Les preuves sont probantes : elles convainquent.",
+  },
+  "Phrénologie": {
+    scene: "Au XIXe siècle, des savants palpaient les bosses du crâne pour y lire le génie, la ruse ou le crime. La phrénologie était une fausse science.",
+    degainer: "C'est de là que vient « avoir la bosse des maths ».",
+  },
+  "Épigénétique": {
+    scene: "Deux jumeaux ont exactement le même ADN. Pourtant, avec les années, leur santé diverge : le stress, l'alimentation, le sport ont allumé ou éteint certains gènes. C'est l'épigénétique.",
+  },
+  "Commissure": {
+    scene: "Au coin de ses lèvres, un léger pli remonte : elle sourit sans le vouloir. La commissure des lèvres la trahit.",
+  },
+  "Gastrolâtrie": {
+    scene: "Il planifie son week-end autour d'un seul restaurant et parle de son dessert comme d'une révélation. C'est la gastrolâtrie : le culte du ventre.",
+  },
+  "Acuité": {
+    scene: "L'aigle repère un lapin à un kilomètre. Et le détective remarque le détail que personne n'a vu. Une acuité impressionnante : un sens, un esprit d'une finesse aiguë.",
+  },
+  "S'arroger": {
+    scene: "Personne ne l'a élu, personne ne l'a nommé. Il s'est arrogé le droit de décider pour tout le monde.",
+  },
+  "Abscons": {
+    scene: "Un mode d'emploi traduit trois fois, un contrat écrit pour ne pas être compris. Un texte abscons : obscur.",
+  },
+  "Décorum": {
+    scene: "Les tapis rouges, les uniformes, les discours, les petits fours. Tout le décorum d'une cérémonie officielle, parfois plus impressionnant que ce qu'on célèbre.",
+  },
+  "Sylvothérapie": {
+    scene: "Une heure en forêt, les mains sur l'écorce d'un chêne, à respirer lentement. La sylvothérapie promet du calme au contact des arbres.",
+  },
+  "Adage": {
+    scene: "« Comme dit l'adage, qui va lentement va sûrement. » Une vieille formule de sagesse, transmise de génération en génération.",
+  },
+  "Pampre": {
+    scene: "Sous la tonnelle, les rameaux de vigne chargés de feuilles et de grappes dorées. Ce sont les pampres.",
+  },
+  "Lutin": {
+    scene: "Dans les contes, un petit génie espiègle qui cache tes clés et noue les crins des chevaux la nuit. C'est un lutin.",
+    aussi: "Comme adjectif, lutin veut dire malicieux et vif : « un air lutin ».",
+  },
+  "Langes": {
+    scene: "Autrefois, on enveloppait les nouveau-nés serrés dans des linges, de la tête aux pieds. Les langes.",
+    degainer: "« Dans les langes » : à ses tout débuts.",
+  },
+  "Rusticité": {
+    scene: "Une table en bois brut, un pain de campagne, des manières franches et un peu rudes. Le charme de la rusticité.",
+  },
+  "Teiller": {
+    scene: "Dans les fermes d'autrefois, on battait les tiges de lin pour en détacher la fibre, qui deviendrait du fil. On teillait le lin.",
+  },
+  "Purpurin": {
+    scene: "En septembre, les grappes purpurines pendent sous les feuilles de vigne : d'un rouge pourpre, profond.",
+  },
+  "Lustre": {
+    scene: "Le grand chandelier de cristal au plafond du salon, c'est un lustre. Et l'éclat d'un meuble bien ciré, c'est aussi son lustre.",
+    aussi: "Un lustre, c'est enfin une période de cinq ans : « depuis des lustres », depuis très longtemps.",
+  },
+  "Plantureux": {
+    scene: "Un repas plantureux, une récolte plantureuse : de l'abondance, à profusion.",
+  },
+  "Capucinade": {
+    scene: "« Il faut être sage, mes enfants, et obéir à vos parents… » Un sermon plat, prévisible, sans aucune étincelle. Une capucinade.",
+  },
+  "Bistre": {
+    scene: "Un brun noirâtre, la couleur de la suie. Après un été au soleil, le marin a le teint bistre.",
+  },
+  "Damné": {
+    scene: "Pour les croyants, le damné est condamné à l'enfer pour l'éternité. Et dans la bouche de ta grand-mère : « Cette damnée machine ne marche jamais ! »",
+  },
+  "Baraka": {
+    scene: "Trois fois, il a échappé de justesse à l'accident. Il a la baraka : une chance qui le protège.",
+    origine: "De l'arabe : la bénédiction.",
+  },
+  "Neuvaine": {
+    scene: "Neuf jours de suite, la même prière, pour demander une guérison, un miracle. C'est une neuvaine.",
+  },
+  "Serein": {
+    scene: "Après une belle journée d'été, au coucher du soleil, une humidité fine tombe sur le jardin. « Rentrons, voilà le serein. »",
+    aussi: "Comme adjectif, serein veut dire calme, paisible : « un ciel serein ».",
+  },
+  "Tonique": {
+    scene: "Une douche froide, un air de montagne, une musique entraînante : tout ce qui réveille et fortifie est tonique.",
+    degainer: "Balzac le dit d'une passion : même la haine peut être un tonique.",
+  },
+  "Tracassier": {
+    scene: "Il vérifie à quelle heure tu arrives, combien de temps dure ta pause, si ton bureau est bien rangé. Un chef tracassier : qui embête pour des riens.",
+  },
+  "Opiniâtre": {
+    scene: "Elle a recommencé son examen quatre fois, et l'a réussi la cinquième. Opiniâtre : elle ne lâche jamais.",
+    aussi: "Une toux opiniâtre, elle, refuse de partir.",
+  },
+  "Quinte": {
+    scene: "En plein concert, un spectateur est pris d'une toux violente, interminable, qu'il n'arrive pas à arrêter. Une quinte de toux.",
+  },
+  "Trappiste": {
+    scene: "Lever à trois heures, silence presque total, travail des champs et prière. Les moines trappistes mènent une vie d'une grande austérité.",
+    aussi: "Ils sont aussi connus pour leurs bières et leurs fromages.",
+  },
+  "Gaillardement": {
+    scene: "À quatre-vingts ans, il gravit la colline gaillardement, en sifflotant, devant les jeunes essoufflés.",
+  },
+  "Endimanché": {
+    scene: "Costume trop serré, chaussures cirées, cheveux plaqués : le petit garçon se tient raide à la communion de sa cousine. Il est endimanché.",
+  },
+  "Réprimer": {
+    scene: "Pendant l'enterrement, il sent un fou rire monter. Il serre les lèvres, il le réprime.",
+    aussi: "Réprimer une révolte, c'est l'étouffer par la force.",
+  },
+  "Effarouché": {
+    scene: "Le faon lève la tête au moindre bruit, prêt à bondir dans les fourrés. Il est effarouché.",
+  },
+  "Ménétrier": {
+    scene: "Aux noces du village, sur une estrade de fortune, le violoneux fait danser tout le monde jusqu'à l'aube. C'est le ménétrier.",
+  },
+  "Grimaud": {
+    scene: "Un vieux mot pour un air chagrin, renfrogné, maussade. Autrefois, on traitait aussi de grimaud un mauvais écrivain.",
+  },
+  "Racornir": {
+    scene: "Le cuir oublié au soleil se dessèche et se ratatine. La vie a racorni son cœur, comme de la corne.",
+  },
+  "Morceler": {
+    scene: "À chaque héritage, le grand domaine est partagé entre les enfants, puis les petits-enfants. Il a été morcelé en petites parcelles.",
+  },
+  "Abolir": {
+    scene: "Une loi votée, et l'esclavage n'existe plus aux yeux du droit. On l'a aboli.",
+  },
+  "Dichotomie": {
+    scene: "Le corps d'un côté, l'esprit de l'autre. Le bien, le mal. Une dichotomie coupe le monde en deux camps opposés.",
+  },
+  "Basquine": {
+    scene: "Une jupe ample, brodée, qui tournoie dans les danses espagnoles et basques. La basquine.",
+  },
+  "Lascif": {
+    scene: "Une danse lente, des hanches qui ondulent, un regard qui s'attarde. Le mouvement est lascif : il évoque les plaisirs des sens.",
+  },
+  "Rutilant": {
+    scene: "La voiture de collection sort du garage, rouge vif, chromes étincelants. Elle est rutilante.",
+  },
+  "Argentin": {
+    scene: "Un rire clair et pur, comme une cuillère d'argent contre un verre de cristal. Un rire argentin.",
+    piege: "Rien à voir avec l'Argentine, même si le mot argentin désigne aussi ses habitants.",
+  },
+  "Guttural": {
+    scene: "Une voix qui vient du fond de la gorge, grave et rauque, comme un grondement. Une voix gutturale.",
+  },
+  "Pervenche": {
+    scene: "Au printemps, dans les sous-bois, de petites fleurs bleu-mauve tapissent le sol. Ce sont des pervenches.",
+    aussi: "Et les yeux pervenche ont cette couleur douce.",
+  },
+  "Râle": {
+    scene: "Dans la chambre silencieuse, un souffle rauque, lent, qui s'arrête parfois. Le râle des derniers instants.",
+    aussi: "Le râle est aussi un oiseau des marais.",
+  },
+  "Ondine": {
+    scene: "Dans les légendes germaniques, une nymphe aux longs cheveux vit au fond des lacs et attire les chevaliers. C'est l'ondine.",
+  },
+  "Sylphide": {
+    scene: "Un génie féminin de l'air, léger comme une brume. Et la danseuse étoile qui semble flotter au-dessus de la scène : une sylphide.",
+  },
+  "Vaudeville": {
+    scene: "Un amant caché dans le placard, un mari qui rentre plus tôt, une porte qui claque, un quiproquo de plus. C'est un vaudeville.",
+  },
+  "Voltiger": {
+    scene: "Un papillon voltige de fleur en fleur sans jamais se poser vraiment. Et les feuilles mortes voltigent dans le vent d'automne.",
+  },
+  "Paillardise": {
+    scene: "Les chansons de fin de banquet, grivoises et joyeuses, qu'on chante en tapant sur la table. La paillardise.",
+  },
+  "Dialectique": {
+    scene: "Une idée, puis son contraire, puis de leur choc naît une troisième idée, plus riche. C'est la dialectique : l'art de penser en confrontant les opposés.",
+  },
+  "Mouvoir": {
+    scene: "Le vent meut les ailes du moulin. Et dans un roman, ce sont les passions qui meuvent les personnages : elles les font agir.",
+  },
+  "Dandy": {
+    scene: "Gilet de soie, canne à pommeau, mot d'esprit toujours prêt. Pour lui, l'élégance n'est pas un détail : c'est un art de vivre. C'est un dandy.",
+    origine: "Baudelaire et Oscar Wilde en ont fait une figure littéraire.",
+  },
+  "Duire": {
+    scene: "« Si cela vous duit, monsieur. » Un très vieux mot pour dire « convenir, plaire ».",
+  },
+  "Inanité": {
+    scene: "Trois heures de réunion pour décider de la couleur des trombones. L'inanité de la chose saute aux yeux : vaine, vide, inutile.",
+  },
+  "Lubie": {
+    scene: "Hier, il voulait apprendre le cor de chasse. Aujourd'hui, élever des escargots. Encore une lubie : un caprice soudain.",
+  },
+  "Méritoire": {
+    scene: "Il a appris à lire à soixante-dix ans. C'est méritoire : digne d'éloge.",
+  },
+  "Dévergondage": {
+    scene: "Des nuits de fête, des excès, et plus aucune retenue. Dans les romans moralisateurs, c'est le dévergondage.",
+  },
+  "Pâture": {
+    scene: "Le pré où les vaches broutent, c'est une pâture. Et les livres, pour un esprit curieux, sont une pâture inépuisable.",
+    degainer: "« Jeter en pâture » : livrer quelqu'un à la curiosité ou à la méchanceté du public.",
+  },
+  "Tintamarre": {
+    scene: "Les casseroles, les klaxons, les cris, la fanfare qui joue faux. Un tintamarre à rendre fou.",
+  },
+  "Charivari": {
+    scene: "Autrefois, quand un vieux veuf épousait une jeune fille, les villageois venaient faire un vacarme de casseroles sous leurs fenêtres. C'était le charivari.",
+  },
+  "Orpiment": {
+    scene: "Un minéral jaune d'or, éclatant, que les peintres broyaient pour leurs pigments. Mais attention : c'est de l'arsenic.",
+  },
+  "Pâtre": {
+    scene: "Sur la colline, appuyé sur son bâton, il garde son troupeau en jouant de la flûte. Le pâtre des poèmes antiques.",
+  },
+  "Poindre": {
+    scene: "À l'horizon, une lueur pâle : le jour commence à poindre. Et dans ta tête, une idée point doucement.",
+  },
+  "Essaim": {
+    scene: "Un nuage d'abeilles qui bourdonne autour de la reine. Un essaim. Et à la sortie de l'école, un essaim d'enfants s'éparpille dans la rue.",
+  },
+  "Hypocras": {
+    scene: "Au banquet du château, on sert un vin chaud, sucré au miel, parfumé de cannelle et de gingembre. L'hypocras du Moyen Âge.",
+  },
+  "Bombance": {
+    scene: "Le soir de la victoire, toute la troupe fait bombance : un festin, des chants, du vin à volonté.",
+  },
+  "Éthéré": {
+    scene: "Une musique si légère, si pure, qu'elle semble ne pas toucher terre. Éthérée.",
+  },
+  "Galvanique": {
+    scene: "Au XIXe siècle, on parlait de « fluide galvanique » pour l'électricité née d'une réaction chimique, comme dans une pile.",
+  },
+  "Cicérone": {
+    scene: "À Rome, un vieil homme t'emmène dans les ruelles, te raconte chaque fontaine et chaque légende. C'est ton cicérone.",
+    origine: "D'après Cicéron, le grand orateur romain : les guides parlaient autant que lui.",
+  },
+  "Esquisse": {
+    scene: "Quelques traits de crayon, rapides, qui donnent déjà l'idée du tableau à venir. C'est l'esquisse.",
+  },
 };
