@@ -2579,4 +2579,358 @@ const fiches = {
     scene: "Le vinyle tourne sur la platine, le bras se pose délicatement sur le sillon.",
     aussi: "C'est aussi le plateau d'un microscope, où l'on pose la lame. Et le platine (au masculin) est un métal précieux.",
   },
+
+  // Série 8
+  "Mugir": {
+    scene: "Dans le pré, la vache lève la tête et pousse un long cri grave. Elle mugit. Et la nuit de tempête, c'est le vent qui mugit dans la cheminée.",
+  },
+  "Laminoir": {
+    scene: "À l'usine, deux énormes cylindres écrasent une barre de métal rougeoyante jusqu'à en faire une feuille fine. C'est le laminoir.",
+    degainer: "« Passer au laminoir » : se faire broyer, écraser, par une épreuve ou une critique.",
+  },
+  "Salicine": {
+    scene: "Depuis l'Antiquité, on mâchait de l'écorce de saule contre la fièvre et la douleur. La substance amère qui agit, c'est la salicine : l'ancêtre de l'aspirine.",
+    origine: "Du latin « salix », le saule.",
+  },
+  "Houppe": {
+    scene: "Le petit pompon de duvet pour se poudrer le visage, la touffe de plumes sur la tête d'un oiseau. C'est une houppe.",
+    aussi: "Riquet à la houppe, le prince laid mais spirituel du conte de Perrault, en portait une sur la tête.",
+  },
+  "Infusible": {
+    scene: "Le creuset du forgeron résiste à la chaleur du four sans jamais fondre. Il est infusible.",
+    piege: "Rien à voir avec l'infusion de tisane : ici, fondre, c'est la fusion.",
+  },
+  "Incarnat": {
+    scene: "Elle rougit, et un rouge vif et frais lui monte aux joues. L'incarnat de ses joues la trahit.",
+  },
+  "Phtisie": {
+    scene: "Une toux qui ne guérit pas, des joues creuses, une pâleur de cire. Dans les romans du XIXe siècle, les héroïnes romantiques mouraient de phtisie : la tuberculose.",
+    piege: "On prononce « ftizi ».",
+  },
+  "Éclectisme": {
+    scene: "Dans sa bibliothèque, Platon côtoie des mangas, des livres de cuisine et un traité d'astronomie. Son éclectisme est réjouissant : il puise partout.",
+  },
+  "Pyrrhonien": {
+    scene: "« Tu es sûr que le soleil se lèvera demain ? Comment peux-tu le savoir ? » Il doute de tout, même de ses doutes. C'est un pyrrhonien.",
+    origine: "Pyrrhon, philosophe grec qui conseillait de suspendre son jugement sur tout.",
+  },
+  "Racornissement": {
+    scene: "Un vieux morceau de cuir oublié au soleil devient dur, sec, ratatiné, comme de la corne. Au fil des années, son cœur a connu le même racornissement.",
+  },
+  "Se récrier": {
+    scene: "« Moi ? Paresseux ? Jamais de la vie ! » À peine l'accusation lancée, il se récrie : il proteste haut et fort.",
+  },
+  "Épigastre": {
+    scene: "Juste sous les côtes, au milieu, ce creux où tu sens le trac avant un examen. C'est l'épigastre.",
+  },
+  "Plexus": {
+    scene: "Un coup au creux du ventre, et tu as le souffle coupé. Tu as été touché au plexus solaire, un entrelacs de nerfs en forme de soleil.",
+  },
+  "Monomanie": {
+    scene: "Il ne parle que de trains. Au petit-déjeuner, au mariage de sa sœur, à l'enterrement de son oncle : des trains. C'est une monomanie, une idée fixe.",
+  },
+  "Fêlure": {
+    scene: "Une fine ligne sur la tasse, presque invisible, mais elle est là. Et sous le sourire, une fêlure : une blessure intime que personne ne voit.",
+  },
+  "Hypocondres": {
+    scene: "Les médecins anciens pensaient que la mélancolie naissait sous les côtes, de chaque côté du ventre : dans les hypocondres.",
+    origine: "C'est de là que vient « hypocondriaque » : celui qui s'inquiète sans cesse de sa santé.",
+  },
+  "Prostration": {
+    scene: "Après l'annonce, il reste assis, le regard vide, incapable de bouger ou de parler. Il est en pleine prostration.",
+  },
+  "Lymphatique": {
+    scene: "Mou, lent, toujours fatigué, il traîne les pieds et bâille à midi. Les médecins d'autrefois l'auraient dit de tempérament lymphatique.",
+    aussi: "En médecine, le système lymphatique transporte la lymphe dans le corps.",
+  },
+  "Ombilic": {
+    scene: "Le nombril, en langage savant. Et Delphes, pour les Grecs, était l'ombilic du monde : son centre.",
+  },
+  "Sis": {
+    scene: "« Une maison sise au 12, rue des Lilas. » Chez le notaire, on n'est pas situé : on est sis.",
+  },
+  "S'égailler": {
+    scene: "La cloche sonne, la porte s'ouvre, et les enfants s'égaillent dans la cour comme une volée de moineaux.",
+    piege: "Rien à voir avec « s'égayer » : on se disperse, on ne s'amuse pas.",
+  },
+  "Nasse": {
+    scene: "Un panier en osier en forme d'entonnoir : le poisson entre facilement, mais ne trouve jamais la sortie. C'est une nasse.",
+    aussi: "Au figuré, une nasse est un piège dont on ne peut pas sortir.",
+  },
+  "Soupente": {
+    scene: "Sous l'escalier ou sous le toit, un petit réduit où l'on cache les balais, les valises et les vieux cartons. C'est la soupente.",
+  },
+  "Baldaquin": {
+    scene: "Un grand lit de château, avec quatre colonnes et un toit de velours rouge d'où tombent des rideaux. Un lit à baldaquin.",
+  },
+  "Anthologie": {
+    scene: "Les plus beaux poèmes d'amour de la langue française, choisis un à un et réunis en un seul livre. C'est une anthologie.",
+    origine: "Du grec : « cueillette de fleurs ».",
+  },
+  "Oisel": {
+    scene: "Chez les poètes de la Renaissance, le petit oiseau qui chante au printemps s'appelle l'oisel.",
+  },
+  "Toponymie": {
+    scene: "Pourquoi « Montmartre » ? Le mont des martyrs. Pourquoi « Fontainebleau » ? Une fontaine. La toponymie raconte l'histoire cachée dans les noms de lieux.",
+  },
+  "Nonsense": {
+    scene: "Un chat qui disparaît en ne laissant que son sourire, un chapelier qui fête son non-anniversaire. L'absurde à l'anglaise, logique et fou à la fois : le nonsense.",
+    origine: "Lewis Carroll et Edward Lear en sont les maîtres.",
+  },
+  "Anglomane": {
+    scene: "Il boit son thé à 17 heures, dit « indeed » à chaque phrase et porte du tweed en plein été. Il est anglomane.",
+  },
+  "Pétrarquisant": {
+    scene: "« Je brûle et je gèle, je vis et je meurs. » L'amour dit en contradictions brûlantes, à la manière du poète italien Pétrarque. Un poème pétrarquisant.",
+  },
+  "Choir": {
+    scene: "Épuisé, il se laisse choir dans le fauteuil. Choir, c'est tomber, en plus élégant.",
+    degainer: "« Laisser choir quelqu'un » : le laisser tomber, l'abandonner.",
+  },
+  "Flexueux": {
+    scene: "Une rivière qui serpente en courbes douces dans la vallée. Son cours est flexueux.",
+  },
+  "Acanthe": {
+    scene: "Lève les yeux vers le chapiteau d'une colonne grecque : ces grandes feuilles sculptées et découpées sont des feuilles d'acanthe.",
+  },
+  "Prodrome": {
+    scene: "La fièvre légère, les courbatures : les prodromes de la grippe. Et le grondement lointain, le prodrome de l'orage. Un signe qui annonce ce qui vient.",
+  },
+  "Vertugadin": {
+    scene: "Sous la robe d'une reine du XVIe siècle, un cerceau qui fait bouffer la jupe sur les hanches comme une cloche. C'est le vertugadin.",
+  },
+  "Cotte": {
+    scene: "Le chevalier enfile sa cotte de mailles : des milliers de petits anneaux de fer entrelacés, lourds et froids.",
+  },
+  "Casuistique": {
+    scene: "Mentir est mal, sauf pour sauver une vie, sauf si la vie est celle d'un méchant, sauf si… À force de distinguer les cas, on finit par tout justifier. C'est la casuistique.",
+  },
+  "Truculent": {
+    scene: "Il parle fort, jure avec saveur, raconte des histoires énormes et rit à s'en décrocher la mâchoire. Un personnage truculent : haut en couleur.",
+  },
+  "Pourfendre": {
+    scene: "D'un coup d'épée, le chevalier pourfend le dragon. Et l'éditorialiste, lui, pourfend les hypocrites : il les attaque avec fougue.",
+  },
+  "Senestre": {
+    scene: "À gauche, en vieux français. Sur un blason, la senestre, c'est le côté gauche de l'écu (la droite, c'est dextre).",
+    origine: "La même famille que « sinistre » : la gauche était le côté de mauvais augure.",
+  },
+  "Tétin": {
+    scene: "Un vieux mot pour le bout du sein. Au XVIe siècle, le poète Clément Marot lui a consacré un « blason » célèbre, un poème qui chante une partie du corps.",
+  },
+  "Bévue": {
+    scene: "Il appelle sa nouvelle compagne par le prénom de son ex, devant toute la famille. Une bévue monumentale.",
+  },
+  "Rosaire": {
+    scene: "Assise au fond de l'église, la vieille dame fait glisser entre ses doigts les grains d'un grand chapelet, en murmurant une prière à chacun. C'est son rosaire.",
+  },
+  "Assentiment": {
+    scene: "Il regarde son père, qui hoche lentement la tête. Il a son assentiment : son accord.",
+  },
+  "Aigreur": {
+    scene: "« Bravo, tu as réussi, toi au moins. » Les mots sont gentils, mais le ton est amer. Il répond avec aigreur.",
+    aussi: "Les aigreurs d'estomac, elles, sont des remontées acides.",
+  },
+  "Saillir": {
+    scene: "Sous la colère, les veines saillent sur son front : elles ressortent, elles font relief.",
+  },
+  "Despotisme": {
+    scene: "Un seul homme décide, tous obéissent, et personne n'a de recours. C'est le despotisme.",
+    degainer: "Au XVIIIe siècle, on parlait de « despotisme éclairé » pour des rois absolus qui se voulaient amis des philosophes.",
+  },
+  "Ostracisme": {
+    scene: "Depuis qu'il a parlé à la direction, plus personne ne mange avec lui à la cantine. Il subit l'ostracisme de ses collègues.",
+    origine: "À Athènes, on écrivait sur un tesson de poterie (« ostrakon ») le nom de celui qu'on voulait bannir pour dix ans.",
+  },
+  "Intussusception": {
+    scene: "Un mot de biologiste : la nourriture qui pénètre au cœur des tissus vivants pour les faire grandir. Balzac l'emploie pour un savoir qu'on assimile si profondément qu'il devient presque une intuition.",
+  },
+  "Morbifique": {
+    scene: "Les miasmes, l'air vicié, l'eau croupie : tout ce qui, pour les médecins anciens, était morbifique, cause de maladie.",
+  },
+  "Ilote": {
+    scene: "À Sparte, des esclaves appartenant à l'État cultivaient les terres pendant que les citoyens s'entraînaient à la guerre. Ce sont les ilotes.",
+    aussi: "Au figuré, un ilote est une personne réduite à la misère et à la servitude.",
+  },
+  "Paria": {
+    scene: "Depuis le scandale, plus personne ne l'invite, ne lui répond, ne le salue. Il est devenu un paria.",
+    origine: "En Inde, le mot désignait ceux qu'on plaçait hors de toute caste.",
+  },
+  "Bâter": {
+    scene: "Avant le départ, le muletier charge l'âne : il le bâte, il pose sur son dos la selle qui porte les sacs.",
+    degainer: "« Un âne bâté » : un ignorant complet.",
+  },
+  "Mors": {
+    scene: "La pièce de métal dans la bouche du cheval, reliée aux rênes : en tirant dessus, le cavalier le dirige. C'est le mors.",
+    degainer: "« Prendre le mors aux dents » : s'emballer, foncer sans plus rien écouter.",
+  },
+  "Quinteux": {
+    scene: "Un jour charmant, le lendemain odieux, sans qu'on sache pourquoi. Il est quinteux : d'humeur capricieuse.",
+    aussi: "C'est aussi celui qui a des quintes de toux.",
+  },
+  "Châtrer": {
+    scene: "Castrer un animal, en langage ancien. Et au figuré, châtrer un texte, c'est le couper au point de lui retirer toute sa force.",
+  },
+  "Quaker": {
+    scene: "Des vêtements simples, pas de prêtres, des réunions en silence où chacun parle quand l'esprit le pousse, et un refus de la guerre. Ce sont les quakers, nés en Angleterre au XVIIe siècle.",
+  },
+  "S'astreindre": {
+    scene: "Chaque matin, même fatigué, même sous la pluie, il s'astreint à courir trente minutes. Il s'y oblige.",
+  },
+  "Phlogistique": {
+    scene: "Pour les chimistes d'avant Lavoisier, ce qui brûle perd un fluide invisible, le phlogistique. Lavoisier a montré que c'était l'inverse : la combustion prend de l'oxygène.",
+  },
+  "Complexion": {
+    scene: "Fragile, robuste, ardente, délicate : la complexion, c'est la constitution du corps et du tempérament.",
+  },
+  "Inféodé": {
+    scene: "Ce journal répète mot pour mot tout ce que dit son propriétaire. Il lui est inféodé : entièrement soumis.",
+    origine: "À l'origine, une terre inféodée était donnée en fief à un vassal.",
+  },
+  "Indolent": {
+    scene: "Allongé au soleil, il laisse passer les heures. Le moindre effort lui semble une montagne. Il est indolent.",
+  },
+  "Promontoire": {
+    scene: "Une pointe de roche haute qui s'avance dans la mer, battue par les vagues, avec un phare au bout. C'est un promontoire.",
+  },
+  "Glapir": {
+    scene: "La nuit, dans le bois, un cri aigu et bref : le renard glapit. Et le petit chien du voisin aussi, à chaque passage du facteur.",
+  },
+  "Factice": {
+    scene: "Elle rit à toutes les blagues, sourit à tout le monde, mais quelque chose sonne faux. Sa gaieté est factice.",
+  },
+  "Prescience": {
+    scene: "Elle a refusé de monter dans l'avion sans savoir pourquoi. Ce jour-là, il y a eu un orage terrible. Une prescience : comme si elle avait su avant.",
+  },
+  "Artificieux": {
+    scene: "Des sourires calculés, des mensonges habiles, des pièges bien posés. Un esprit artificieux : plein de ruse.",
+  },
+  "Circonspect": {
+    scene: "Avant de signer, il relit chaque ligne, pose trois questions, et demande un délai. Il est circonspect : prudent.",
+  },
+  "Incisif": {
+    scene: "Trois phrases, pas une de plus, et l'argument de l'adversaire s'effondre. Son style est incisif : tranchant.",
+    aussi: "Les incisives sont tes dents de devant, celles qui coupent.",
+  },
+  "Postillon": {
+    scene: "Il parle avec passion, si près de toi que tu reçois quelques gouttes de salive. Des postillons !",
+    aussi: "Autrefois, le postillon était le cocher qui menait les chevaux de la diligence.",
+  },
+  "Défait": {
+    scene: "Il sort de l'hôpital après une nuit blanche, pâle, les traits tirés, les yeux rouges. Il a le visage défait.",
+  },
+  "Aversion": {
+    scene: "Les araignées, le bruit de la craie sur le tableau, les gens qui mâchent la bouche ouverte. Il a une aversion pour tout ça : un dégoût profond.",
+  },
+  "Dissonance": {
+    scene: "Au milieu de la mélodie, deux notes qui grincent ensemble. Une dissonance.",
+    degainer: "La « dissonance cognitive » : quand on fait le contraire de ce qu'on croit, et qu'on s'arrange pour ne pas le voir.",
+  },
+  "Frugifère": {
+    scene: "Les branches du vieux pommier ploient sous les fruits. L'arbre est frugifère : il porte des fruits.",
+  },
+  "Évasé": {
+    scene: "Une coupe de champagne, une jupe qui s'élargit vers le bas, un vase en forme de tulipe ouverte. Tout ce qui s'élargit vers l'ouverture est évasé.",
+  },
+  "Anfractuosité": {
+    scene: "Dans la falaise, une cavité irrégulière où niche une mouette. Une anfractuosité.",
+  },
+  "Redan": {
+    scene: "Le long des remparts, le mur avance et recule en dents de scie, pour que les défenseurs puissent tirer sur les côtés. Ce sont des redans.",
+  },
+  "Palissé": {
+    scene: "Les poiriers sont attachés contre le mur du potager, leurs branches étalées comme des bras. Ce sont des arbres palissés.",
+  },
+  "Glaïeul": {
+    scene: "De longues tiges dressées, couvertes de fleurs du bas jusqu'en haut, rouges, roses ou blanches. Ce sont des glaïeuls.",
+  },
+  "Frêne": {
+    scene: "Un grand arbre au bois clair, dur et souple, dont on faisait les manches d'outils et les arcs. C'est le frêne.",
+  },
+  "Boulingrin": {
+    scene: "Dans le parc du château, un parterre de gazon parfaitement tondu, entouré de bordures. C'est le boulingrin.",
+    origine: "De l'anglais « bowling green », la pelouse où l'on joue aux boules.",
+  },
+  "Arpent": {
+    scene: "« Il possède quelques arpents de vigne au flanc du coteau. » Une ancienne mesure de terre, environ un demi-hectare.",
+  },
+  "Vaporeux": {
+    scene: "Un matin de brume, les collines sont floues, comme peintes à l'aquarelle. Le paysage est vaporeux.",
+    aussi: "Une robe vaporeuse est légère, aérienne.",
+  },
+  "Antédiluvien": {
+    scene: "Le téléphone de son grand-père : à clapet, sans écran couleur, avec une antenne. Il est antédiluvien.",
+    origine: "Littéralement : d'avant le Déluge.",
+  },
+  "Irisé": {
+    scene: "Une bulle de savon au soleil, une flaque d'essence, la gorge d'un pigeon : des reflets aux couleurs de l'arc-en-ciel. Irisés.",
+  },
+  "Rocailleux": {
+    scene: "Un chemin de montagne plein de cailloux qui roulent sous les pieds. Et la voix du vieux chanteur, rugueuse et grave : rocailleuse.",
+  },
+  "Capucin": {
+    scene: "Un moine franciscain en robe brune avec un long capuchon pointu. C'est un capucin.",
+    aussi: "Le cappuccino lui doit son nom, par sa couleur. Et un capucin, c'est aussi un petit singe d'Amérique.",
+  },
+  "Emprunté": {
+    scene: "Au mariage, il ne sait pas quoi faire de ses mains, se tient trop droit, sourit trop. Il a l'air emprunté : raide de gêne.",
+  },
+  "Gauche": {
+    scene: "Il renverse son verre, se cogne à la porte, ne sait pas comment dire bonjour. Il est gauche : maladroit.",
+    origine: "La main gauche était jugée la moins habile : d'où ce sens.",
+  },
+  "Pataud": {
+    scene: "Le chiot aux grosses pattes qui trébuche sur ses propres oreilles. Il est pataud : lourd et maladroit.",
+  },
+  "Empoté": {
+    scene: "Il met dix minutes à ouvrir un pot de confiture et finit par le faire tomber. Qu'il est empoté !",
+  },
+  "Malhabile": {
+    scene: "Une main malhabile qui tremble en enfilant une aiguille. Qui manque d'adresse.",
+  },
+  "Godiche": {
+    scene: "Elle reste plantée là, la bouche ouverte, sans savoir quoi dire ni quoi faire. Un peu godiche : maladroite et un peu niaise.",
+  },
+  "Balourd": {
+    scene: "Il marche sur les pieds de tout le monde et dit exactement ce qu'il ne faut pas dire. Un balourd : lourd de corps et d'esprit.",
+  },
+  "Daron": {
+    scene: "« Mon daron rentre à 19 heures, faut que je range avant. » Le daron, c'est le père ; la daronne, la mère.",
+    origine: "Un argot très ancien : les voleurs du XVIIIe siècle l'employaient déjà.",
+  },
+  "Poucave": {
+    scene: "Il a tout raconté au surveillant. Dans la cour, la nouvelle fait le tour : c'est une poucave, une balance.",
+    origine: "Du romani, la langue des Roms.",
+  },
+  "Chouraver": {
+    scene: "« On m'a chouravé mon vélo ! » Volé, en argot.",
+    origine: "Du romani.",
+  },
+  "Marave": {
+    scene: "« Viens pas me chercher ou je te marave. » Te frapper, en argot.",
+    origine: "Du romani.",
+  },
+  "Gadjo": {
+    scene: "Pour les Roms, le gadjo, c'est celui qui n'est pas rom. Puis le mot est passé dans l'argot pour dire « un gars ».",
+    degainer: "Au féminin : une gadji.",
+  },
+  "Narvalo": {
+    scene: "« T'es un narvalo, toi ! » Un fou, un idiot, en argot.",
+    origine: "Du romani.",
+  },
+  "Michto": {
+    scene: "En romani, michto voulait dire « beau, bien ». En argot d'aujourd'hui, une michto, c'est quelqu'un qui s'intéresse surtout à ton argent.",
+  },
+  "Pénave": {
+    scene: "« Viens, j'te pénave un truc. » Je te dis, je te raconte, en argot.",
+    origine: "Du romani « phenav », je dis.",
+  },
+  "Seum": {
+    scene: "Battu au dernier moment, à la dernière seconde du match. Il a le seum : la rage, la frustration.",
+    origine: "De l'arabe « sèmm », le venin.",
+  },
+  "Zbeul": {
+    scene: "Les gamins sont rentrés, et en dix minutes, le salon est un champ de bataille. Ils ont foutu le zbeul.",
+    origine: "De l'arabe.",
+  },
 };
