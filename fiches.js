@@ -1485,4 +1485,364 @@ const fiches = {
     scene: "Un bloc de pierre immense, d'une seule pièce, dressé au milieu de la plaine depuis des milliers d'années. C'est un monolithe.",
     aussi: "Au figuré, un parti ou un groupe monolithique forme un bloc uni, sans aucune voix discordante.",
   },
+
+  // Série 5
+  "Élider": {
+    scene: "Personne ne dit « le ami » ni « je aime ». La voyelle saute d'elle-même et laisse une apostrophe à sa place : l'ami, j'aime. On l'a élidée.",
+    aussi: "Au figuré, élider une question, c'est la faire disparaître discrètement de la discussion.",
+  },
+  "Hoirie": {
+    scene: "Chez le notaire, un mot qui sent la poussière des vieux actes : l'hoirie, c'est l'héritage.",
+    degainer: "« Une avance d'hoirie » : de l'argent donné par un parent de son vivant, à valoir sur l'héritage.",
+  },
+  "Cénobite": {
+    scene: "Les moines qui mangent ensemble, prient ensemble et dorment sous le même toit sont des cénobites. Celui qui part seul dans le désert, lui, est un ermite.",
+    origine: "Du grec « koinos bios », la vie en commun.",
+  },
+  "Bigotisme": {
+    scene: "Elle compte les signes de croix de ses voisins à la messe et juge ceux qui n'y vont pas. Ce n'est pas de la foi, c'est du bigotisme : une dévotion étroite qui surveille les autres.",
+  },
+  "Villégiature": {
+    scene: "Une maison louée au bord de la mer, des journées sans horaire, une chaise longue à l'ombre. Ils sont en villégiature.",
+    degainer: "Un mot délicieusement rétro pour dire « en vacances ».",
+  },
+  "Tacite": {
+    scene: "Personne ne l'a jamais dit, mais tout le monde le sait : le premier qui se lève fait le café. C'est un accord tacite.",
+    aussi: "En droit, la « tacite reconduction » renouvelle un contrat si personne ne dit non.",
+  },
+  "Démagogue": {
+    scene: "« Moins d'impôts, plus de vacances, et tout sera gratuit ! » Il dit à la foule exactement ce qu'elle veut entendre, même ce qu'il ne pourra jamais tenir. C'est un démagogue.",
+    origine: "Du grec : celui qui « mène le peuple ».",
+  },
+  "Alexithymie": {
+    scene: "« Ça va ? — Je sais pas. » Pas par pudeur : il ne sait vraiment pas mettre de nom sur ce qu'il ressent. L'alexithymie, c'est cette difficulté à identifier et dire ses émotions.",
+    origine: "Du grec : « sans mots pour les émotions ».",
+  },
+  "Myriade": {
+    scene: "Allongé dans un champ, loin des villes, tu lèves les yeux : une myriade d'étoiles. Tellement qu'on renonce à compter.",
+    origine: "En grec, « myrias » voulait dire dix mille.",
+  },
+  "Vitrifier": {
+    scene: "Le sable chauffé à très haute température devient du verre : on le vitrifie. Et un regard glacial peut vitrifier toute une salle.",
+    aussi: "Sur un parquet, on passe un vitrificateur pour le rendre brillant et dur.",
+  },
+  "Malingre": {
+    scene: "Un enfant maigre, pâle, toujours enrhumé, qui flotte dans ses vêtements. On le dit malingre.",
+  },
+  "Dépréciation": {
+    scene: "La voiture neuve perd un quart de sa valeur dès la première année. C'est la dépréciation.",
+    aussi: "On parle aussi de la dépréciation d'une monnaie, ou d'une personne qu'on rabaisse.",
+  },
+  "Éructer": {
+    scene: "Après trois bières, il éructe bruyamment. Et quand il est en colère, il éructe des insultes, comme on rote : sans retenue.",
+  },
+  "Colloque": {
+    scene: "Trois jours dans un amphithéâtre, des spécialistes venus du monde entier qui présentent leurs recherches sur un même sujet. C'est un colloque.",
+  },
+  "Obturation": {
+    scene: "Le dentiste nettoie la carie et la bouche avec une pâte blanche. C'est une obturation.",
+    aussi: "En photo, l'obturateur s'ouvre et se ferme pour laisser entrer la lumière.",
+  },
+  "Élucider": {
+    scene: "Personne ne comprenait comment le voleur était entré. Puis l'enquêtrice remarque la trappe sous le tapis. Le mystère est élucidé.",
+    origine: "Du latin « lucidus », clair, comme « lucide ».",
+  },
+  "Furibond": {
+    scene: "Il sort du garage, la facture à la main, rouge, les yeux exorbités. Il est furibond.",
+  },
+  "Belligérant": {
+    scene: "Deux pays en guerre s'assoient enfin à la même table. Les belligérants négocient une trêve.",
+    degainer: "Pour un enfant qui se dispute avec son frère, avec humour : « Les belligérants sont priés de passer à table. »",
+  },
+  "Soliloque": {
+    scene: "Seule dans sa cuisine, elle parle à voix haute : « Bon, où j'ai mis mes clés… et pourquoi je suis venue ici ? » C'est un soliloque.",
+    aussi: "Au théâtre, c'est un monologue où le personnage pense tout haut.",
+  },
+  "Loisible": {
+    scene: "« Il vous est loisible de partir avant la fin. » Traduction : vous avez le droit, personne ne vous retient.",
+  },
+  "Cariatide": {
+    scene: "Sur l'Acropole d'Athènes, six statues de femmes portent le toit d'un temple sur leur tête, depuis plus de deux mille ans. Ce sont les cariatides.",
+  },
+  "Polypier": {
+    scene: "Un récif de corail, c'est une immense cité : des millions de petits polypes qui ont bâti ensemble un squelette commun. Ce squelette s'appelle le polypier.",
+  },
+  "Métonymie": {
+    scene: "« On boit un verre ? » Tu ne vas pas boire le verre, mais ce qu'il contient. « Lire un Zola », c'est lire un livre de Zola. La métonymie désigne une chose par une autre qui lui est liée.",
+  },
+  "Gloser": {
+    scene: "Elle a mis une robe rouge au mariage, et toute la soirée, les tantes ont glosé sur ce choix. Commenter longuement, souvent pour critiquer.",
+  },
+  "Archaïsme": {
+    scene: "« Icelle », « jadis », « occire » : des mots d'un autre temps, qu'on n'emploie plus. Ce sont des archaïsmes.",
+    degainer: "Pour faire sourire, glisse un archaïsme bien choisi : « Je vais de ce pas occire ce moustique. »",
+  },
+  "Quidam": {
+    scene: "« Un quidam s'est garé devant mon portail. » Quelqu'un, n'importe qui, dont on ne connaît pas le nom.",
+    piege: "On prononce « ki-dam ».",
+  },
+  "Vivisection": {
+    scene: "Un mot dur, de laboratoire : opérer un animal vivant pour la recherche. Il a provoqué de grands débats sur la souffrance animale.",
+  },
+  "Tératologique": {
+    scene: "Dans les cabinets de curiosités d'autrefois, des bocaux de formol conservaient des veaux à deux têtes. La tératologie, c'est l'étude des malformations.",
+    aussi: "Au figuré, tératologique veut dire monstrueux : « un projet tératologique ».",
+    origine: "Du grec « teras », le monstre.",
+  },
+  "Camaïeu": {
+    scene: "Un salon tout en bleus : bleu ciel, bleu canard, bleu nuit. Une seule couleur, toutes ses nuances. C'est un camaïeu.",
+  },
+  "Déclivité": {
+    scene: "La rue descend si fort vers le port que les vélos dévalent sans pédaler. La déclivité est impressionnante : la pente.",
+  },
+  "Désagrégation": {
+    scene: "La vieille statue de grès s'effrite, grain par grain, sous la pluie. Et le groupe d'amis, lui, se défait petit à petit. C'est la désagrégation.",
+  },
+  "Vicissitude": {
+    scene: "La faillite, puis la fortune, puis la maladie, puis la guérison. Il a connu toutes les vicissitudes de la vie : ses hauts, et surtout ses bas.",
+    piege: "Presque toujours au pluriel.",
+  },
+  "Noroît": {
+    scene: "Sur le port breton, le vieux marin lève le nez : « Le noroît se lève, on rentre. » Le vent du nord-ouest, qui annonce le gros temps.",
+  },
+  "Isthme": {
+    scene: "Une bande de terre étroite entre deux mers, comme un pont naturel. Le canal de Panama a été creusé à travers un isthme.",
+    piege: "On ne prononce ni le h ni le t : « isme ».",
+  },
+  "Fondrière": {
+    scene: "Le chemin de campagne après l'orage : des trous remplis de boue où la voiture s'enfonce jusqu'aux essieux. Des fondrières.",
+  },
+  "Misanthrope": {
+    scene: "Il vit seul au bout du chemin, ne répond pas au bonjour, trouve les gens hypocrites et bruyants. Il fuit le genre humain : c'est un misanthrope.",
+    origine: "Molière en a fait une comédie : « Le Misanthrope », avec Alceste qui ne supporte pas les mensonges des salons.",
+  },
+  "Fongible": {
+    scene: "Tu prêtes un billet de dix euros à un ami. Il ne te rendra pas ce billet-là, mais un autre, et ça revient au même. L'argent est fongible : remplaçable par l'identique.",
+    aussi: "Les NFT ont fait connaître le contraire : « non fongible », un objet numérique unique.",
+  },
+  "Syzygie": {
+    scene: "La Terre, la Lune et le Soleil parfaitement alignés, comme trois perles sur un fil. C'est la syzygie, le moment des éclipses et des grandes marées.",
+    degainer: "Un des mots les plus étranges de la langue française : de quoi briller au Scrabble.",
+  },
+  "Maraude": {
+    scene: "Des enfants qui se glissent dans le verger du voisin pour chaparder des pommes : c'est la maraude.",
+    aussi: "Un taxi en maraude roule à la recherche de clients. Et les « maraudes » sont aussi les tournées des bénévoles auprès des sans-abri.",
+  },
+  "Innervé": {
+    scene: "Le bout des doigts est l'une des parties les plus innervées du corps : des milliers de terminaisons nerveuses, c'est pour ça qu'une coupure au doigt fait si mal.",
+  },
+  "Épiphénomène": {
+    scene: "Les journaux en parlent comme d'une révolution, mais dans trois mois plus personne n'y pensera. C'est un épiphénomène : un fait secondaire, de surface.",
+  },
+  "Amphigouri": {
+    scene: "« Dans une perspective de transversalité systémique, l'enjeu est de recontextualiser le paradigme… » Personne n'a rien compris, et peut-être même pas lui. C'est de l'amphigouri.",
+  },
+  "Vindicatif": {
+    scene: "Tu lui as pris sa place de parking il y a trois ans. Il s'en souvient, et il attend son heure. Il est vindicatif : il aime se venger.",
+  },
+  "Parachever": {
+    scene: "Le tableau est fini. Ou presque : un dernier reflet dans l'œil, une ombre à adoucir. Le peintre parachève son œuvre.",
+  },
+  "Épiphonème": {
+    scene: "Après avoir raconté toute l'histoire, le conteur conclut d'une phrase qui claque, comme une morale : c'est l'épiphonème.",
+    degainer: "« Tant de fiel entre-t-il dans l'âme des dévots ? » : Boileau termine ainsi un récit, par une exclamation qui résume tout.",
+  },
+  "Avilir": {
+    scene: "Mentir pour une promotion, écraser les autres pour un peu de pouvoir. Il s'avilit : il se rend méprisable, il se rabaisse.",
+  },
+  "Flegme": {
+    scene: "La maison brûle, tout le monde court. Lui prend son manteau, son chapeau, et sort tranquillement en disant : « Il fait un peu chaud, non ? » Quel flegme !",
+    degainer: "« Le flegme britannique » : le calme légendaire des Anglais.",
+  },
+  "Assonance": {
+    scene: "« Tout s'en va, tout s'efface » : le même son de voyelle revient et donne une musique à la phrase. C'est une assonance.",
+    piege: "L'assonance répète des voyelles ; l'allitération répète des consonnes.",
+  },
+  "Abhorrer": {
+    scene: "Les endives, le bruit des couverts sur l'assiette, les gens qui arrivent en retard. Il abhorre tout ça : il le déteste profondément.",
+  },
+  "Menuiser": {
+    scene: "Dans l'atelier, l'odeur de la sciure, le rabot qui glisse, une table qui prend forme. Menuiser, c'est travailler le bois.",
+    aussi: "Au figuré, un écrivain menuise ses phrases : il les façonne avec patience.",
+  },
+  "Jurisprudence": {
+    scene: "Le juge hésite. Mais un autre tribunal a déjà tranché un cas presque identique il y a dix ans. Cette décision fait jurisprudence : elle sert de référence.",
+  },
+  "Quorum": {
+    scene: "Assemblée générale de l'association : il faut au moins la moitié des membres pour voter. Il en manque deux. Le quorum n'est pas atteint, on reporte.",
+  },
+  "S'enquérir": {
+    scene: "Elle passe chez la voisine pour s'enquérir de sa santé : demander de ses nouvelles.",
+    piege: "Ça se conjugue comme « acquérir » : je m'enquiers, il s'est enquis.",
+  },
+  "Asynchrone": {
+    scene: "Tu laisses un message vocal, il répond trois heures plus tard. Vous ne parlez pas en même temps : la conversation est asynchrone.",
+  },
+  "Agraire": {
+    scene: "Les champs, les fermes, la terre qu'on cultive, et qui la possède. Une réforme agraire redistribue les terres agricoles.",
+  },
+  "Rétrocession": {
+    scene: "La commune avait acheté le terrain pour y faire un parc. Le projet est abandonné, et le terrain est rendu à son ancien propriétaire. C'est une rétrocession.",
+  },
+  "Ambages": {
+    scene: "« Je vais te le dire sans ambages : ton gâteau est raté. » Sans détour, franchement, sans tourner autour du pot.",
+    piege: "Le mot ne s'emploie plus que dans « sans ambages ».",
+  },
+  "Paganisme": {
+    scene: "Zeus, Odin, Isis : avant l'arrivée des grandes religions monothéistes, les peuples honoraient de nombreux dieux. Les chrétiens ont appelé ça le paganisme.",
+    origine: "Du latin « paganus », le paysan : c'est dans les campagnes que les anciens cultes ont résisté le plus longtemps.",
+  },
+  "Véniel": {
+    scene: "Un mensonge pour ne pas vexer quelqu'un, un dernier carré de chocolat volé. Des péchés véniels : légers, faciles à pardonner.",
+  },
+  "Consubstantialité": {
+    scene: "Un mot de théologien : être d'une seule et même substance. Il a été au cœur des grands débats de l'Église sur le Père et le Fils.",
+    degainer: "Au figuré, pour deux choses inséparables : « la consubstantialité de l'auteur et de son œuvre ».",
+  },
+  "Métempsycose": {
+    scene: "Et si, après la mort, ton âme passait dans le corps d'un chat, d'un aigle, d'un autre humain ? C'est la métempsycose : la réincarnation d'un corps à l'autre.",
+    origine: "Pythagore y croyait, dit-on : il aurait reconnu la voix d'un ami dans les cris d'un chien battu.",
+  },
+  "Antonomase": {
+    scene: "« C'est un vrai Harpagon » pour un avare, « un Apollon » pour un bel homme, « un don Juan » pour un séducteur. L'antonomase, c'est un nom propre devenu nom commun.",
+  },
+  "Misopédie": {
+    scene: "Le restaurant interdit aux enfants, le voisin qui soupire à chaque cri du parc. La misopédie, c'est l'aversion pour les enfants.",
+  },
+  "Impermanence": {
+    scene: "Les fleurs de cerisier tombent après une semaine, la vague efface le château de sable. Rien ne dure : c'est l'impermanence.",
+    origine: "Une idée au cœur du bouddhisme : accepter que tout change apaise la souffrance.",
+  },
+  "Affliction": {
+    scene: "Le jour de l'enterrement, la famille est accablée, silencieuse. Une affliction profonde : un chagrin qui écrase.",
+  },
+  "Lithophanie": {
+    scene: "Une plaque de porcelaine blanche, sans rien de particulier. Puis tu la places devant une bougie, et un paysage apparaît, tout en nuances de lumière. C'est une lithophanie.",
+  },
+  "Moribond": {
+    scene: "Le vieux café du coin, plus de clients, plus de lumière, plus de musique. Il est moribond : sur le point de mourir.",
+    aussi: "Au sens propre, un malade moribond vit ses dernières heures.",
+  },
+  "Moult": {
+    scene: "« Après moult hésitations, il a enfin commandé. » Un mot de chevalier pour dire « beaucoup », qu'on emploie aujourd'hui pour sourire.",
+    piege: "On prononce le t : « moulte ».",
+  },
+  "Cosmogonique": {
+    scene: "Au commencement, un œuf cosmique, un géant découpé, un dieu qui sépare la lumière des ténèbres. Chaque peuple a son récit cosmogonique : son histoire de la naissance du monde.",
+  },
+  "Indolence": {
+    scene: "Allongé dans un hamac, un bras qui pend, il regarde passer les nuages sans la moindre intention de bouger. Quelle douce indolence.",
+  },
+  "Guigne": {
+    scene: "Pneu crevé, parapluie oublié, train annulé, le tout le même jour. Il a la guigne : la malchance lui colle aux baskets.",
+    aussi: "Une guigne, c'est aussi une petite cerise sucrée. Et « je m'en soucie comme d'une guigne » : je m'en fiche complètement.",
+  },
+  "Agrégateur": {
+    scene: "Une seule appli, et tous tes journaux, blogs et podcasts au même endroit. C'est un agrégateur : il rassemble des contenus venus de partout.",
+  },
+  "Pérorer": {
+    scene: "Au dîner, il pérore depuis une heure sur l'économie mondiale, en citant des chiffres approximatifs et sans laisser personne en placer une.",
+  },
+  "Anamorphose": {
+    scene: "Dans un tableau de Holbein, une forme étrange flotte aux pieds de deux ambassadeurs. Place-toi sur le côté, et la forme devient un crâne. C'est une anamorphose.",
+  },
+  "Contumace": {
+    scene: "L'accusé a fui à l'étranger. Le procès a lieu quand même, sans lui : il est jugé par contumace.",
+  },
+  "Colliger": {
+    scene: "Pendant des années, il a recopié chaque proverbe entendu dans son village, dans un grand cahier. Il a colligé tout un trésor de sagesse populaire.",
+  },
+  "Élégie": {
+    scene: "Un poème qui pleure : un amour perdu, un ami mort, une jeunesse envolée. C'est une élégie.",
+  },
+  "Tripot": {
+    scene: "Une arrière-salle enfumée, des cartes poisseuses, des types louches qui misent leur paie. Un tripot : une maison de jeu mal famée.",
+  },
+  "Corporation": {
+    scene: "Les boulangers, les menuisiers, les tailleurs de pierre : au Moyen Âge, chaque métier avait sa corporation, avec ses règles, ses fêtes et ses secrets.",
+  },
+  "Rupestre": {
+    scene: "Dans la grotte de Lascaux, des chevaux, des taureaux et des cerfs dessinés sur la paroi il y a dix-sept mille ans. C'est l'art rupestre.",
+  },
+  "S'enorgueillir": {
+    scene: "Le petit village s'enorgueillit d'avoir vu naître un champion du monde : il en tire une immense fierté, et l'a écrit en grand sur un panneau à l'entrée.",
+  },
+  "Agréer": {
+    scene: "« Veuillez agréer, Madame, Monsieur, l'expression de mes salutations distinguées. » Agréer, c'est accepter, bien recevoir.",
+    aussi: "Un artisan « agréé » a reçu l'approbation officielle.",
+  },
+  "Nachave": {
+    scene: "« Allez, on nachave ! » Un mot d'argot venu des Manouches : partir, s'en aller, filer.",
+  },
+  "Frise chronologique": {
+    scene: "Sur le mur de la classe, une longue bande de papier : la préhistoire, l'Antiquité, le Moyen Âge… Chaque événement à sa place. C'est la frise chronologique.",
+  },
+  "Bon an mal an": {
+    scene: "Certaines années sont bonnes, d'autres mauvaises, mais en moyenne la vigne donne deux mille bouteilles, bon an mal an.",
+  },
+  "Servile": {
+    scene: "Il rit à toutes les blagues du patron, même les mauvaises, et lui porte son café sans qu'on le demande. Il est servile : soumis, sans dignité.",
+    aussi: "Une « imitation servile » copie sans aucune originalité.",
+  },
+  "Obséquieux": {
+    scene: "« Mais bien sûr, Monsieur ! Tout de suite, Monsieur ! Quel honneur, Monsieur ! » Le serveur est obséquieux : poli à l'excès, surtout pour son pourboire.",
+  },
+  "Promptement": {
+    scene: "À peine la sonnette a-t-elle retenti que le majordome est déjà à la porte. Il a répondu promptement : sans perdre une seconde.",
+  },
+  "Se départir de": {
+    scene: "Même au milieu de la tempête, le capitaine ne se départait jamais de son calme. Il ne l'abandonnait pas.",
+    piege: "Se conjugue comme « partir » : il ne se départ pas (et non « départit »).",
+  },
+  "Autocratique": {
+    scene: "Une seule personne décide de tout, pas de parlement, pas de justice indépendante, pas de presse libre. Le régime est autocratique.",
+  },
+  "Fiacre": {
+    scene: "Paris, 1880 : un cheval, un cocher en chapeau haut-de-forme, une voiture qu'on hèle dans la rue. Le fiacre, l'ancêtre du taxi.",
+    origine: "Les premières voitures de louage stationnaient devant une auberge à l'enseigne de saint Fiacre.",
+  },
+  "Acéré": {
+    scene: "La lame du couteau, la griffe du chat, la plume d'un critique : tout ce qui est acéré coupe, pointe et blesse.",
+  },
+  "Léonin": {
+    scene: "Une crinière léonine, une démarche léonine : ce qui rappelle le lion.",
+    aussi: "Une « clause léonine », dans un contrat, donne tout à un seul : la part du lion.",
+  },
+  "Hémistiche": {
+    scene: "« Rodrigue, as-tu du cœur ? » : six syllabes, un souffle, puis la seconde moitié du vers. Chacune de ces moitiés est un hémistiche.",
+  },
+  "Corinthien": {
+    scene: "Lève les yeux vers le haut d'une colonne grecque : si son chapiteau est couvert de feuilles d'acanthe sculptées, comme un bouquet de pierre, il est corinthien.",
+  },
+  "Dussé-je": {
+    scene: "« Je finirai ce roman, dussé-je y passer mes nuits ! » Une tournure d'un autre siècle qui veut dire « même si je devais ».",
+    degainer: "Pour donner un ton de serment à une promesse, avec un peu d'humour.",
+  },
+  "Pertinacité": {
+    scene: "Vingt refus d'éditeurs, et elle envoie son manuscrit une vingt et unième fois. Sa pertinacité force le respect : une obstination qui ne lâche rien.",
+  },
+  "Opiniâtreté": {
+    scene: "Chaque matin, la même vague revient contre le même rocher. Et des siècles plus tard, elle l'a creusé. C'est l'opiniâtreté : une persévérance acharnée.",
+    aussi: "Parfois, c'est aussi de l'entêtement.",
+  },
+  "Rembruni": {
+    scene: "Il souriait encore. Puis il a lu le message, et son visage s'est rembruni : l'ombre est passée dessus.",
+  },
+  "Houri": {
+    scene: "Dans la tradition islamique, les houris sont des compagnes célestes promises au paradis. Les poètes d'Orient en ont fait une image de la beauté.",
+    aussi: "Dans la littérature française, « une houri » désigne parfois, au figuré, une femme d'une grande beauté.",
+  },
+  "Axiome": {
+    scene: "« Par deux points passe une seule droite. » On ne le démontre pas : on part de là. C'est un axiome, le premier pas d'un raisonnement.",
+    degainer: "Pour une règle de vie qu'on pose sans discuter : « Mon axiome : jamais de réunion avant dix heures. »",
+  },
+  "Détirer": {
+    scene: "À la sortie du lavoir, deux femmes tiennent chacune un bout du drap et tirent dessus pour le défroisser. Elles le détirent.",
+  },
+  "Moucheture": {
+    scene: "Le pelage du léopard, les ailes d'un papillon, une robe à petits points : toutes ces petites taches sont des mouchetures.",
+  },
+  "Métaphysiquement": {
+    scene: "Physiquement, tu es dans ton lit. Métaphysiquement, tu te demandes pourquoi il y a quelque chose plutôt que rien. Au-delà de la matière, du côté des grandes questions.",
+  },
 };
