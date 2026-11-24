@@ -3281,4 +3281,338 @@ const fiches = {
   "Esquisse": {
     scene: "Quelques traits de crayon, rapides, qui donnent déjà l'idée du tableau à venir. C'est l'esquisse.",
   },
+
+  // Série 10
+  "Sellier": {
+    scene: "Dans son atelier qui sent le cuir, il coud à la main une selle pour un cheval de course, point par point. C'est le sellier.",
+    degainer: "Les grandes maisons de luxe sont nées dans des ateliers de selliers.",
+  },
+  "Sédition": {
+    scene: "Des soldats refusent d'obéir, des tracts appellent à marcher sur le palais. La ville est au bord de la sédition : la révolte contre l'autorité.",
+  },
+  "Ode": {
+    scene: "Un poème qui chante, qui célèbre : une ode à la mer, à l'amitié, à une ville aimée. Ronsard en écrivait à sa belle.",
+    degainer: "Avec humour : « Ce plat de pâtes est une ode à la simplicité. »",
+  },
+  "Abîme": {
+    scene: "Au bord de la falaise, tu regardes en bas et tu ne vois pas le fond. Un abîme.",
+    aussi: "La « mise en abyme », avec l'ancienne graphie, c'est une image dans l'image : le tableau qui contient un petit tableau, qui contient un tableau encore plus petit…",
+  },
+  "Rimailleur": {
+    scene: "« Mon amour, tu es mon toujours, comme un tambour qui fait des tours. » Il aligne les rimes sans aucun talent. C'est un rimailleur.",
+  },
+  "Auvent": {
+    scene: "La pluie se met à tomber : tout le monde se serre sous le petit toit au-dessus de la porte de la boulangerie. Sous l'auvent.",
+  },
+  "Pochade": {
+    scene: "Quelques coups de pinceau rapides, au bord de la Seine, en une heure, pour saisir la lumière. Une pochade.",
+    aussi: "En littérature, une pochade est une œuvre légère, écrite vite, pour s'amuser.",
+  },
+  "Fourbu": {
+    scene: "Après la randonnée de vingt kilomètres, il s'effondre sur le canapé, les jambes en coton. Il est fourbu.",
+  },
+  "Ténuité": {
+    scene: "Un fil de soie d'araignée, à peine visible dans la lumière du matin. Sa ténuité est stupéfiante.",
+  },
+  "Frai": {
+    scene: "Au printemps, les saumons remontent la rivière pour pondre. C'est le temps du frai.",
+  },
+  "Cavatine": {
+    scene: "À l'opéra, l'héroïne s'avance seule sur scène et chante un air court, tendre, qui fait frissonner la salle. Une cavatine.",
+  },
+  "Schlague": {
+    scene: "Dans les vieilles armées, le soldat qui désobéissait recevait des coups de baguette. La schlague. Et « vivre sous la schlague », c'est subir une discipline brutale.",
+  },
+  "Heiduque": {
+    scene: "Dans les grandes maisons du XVIIIe siècle, un laquais habillé à la hongroise, avec moustache et dolman brodé : le heiduque.",
+  },
+  "Encan": {
+    scene: "Les meubles du château vendus un par un au plus offrant, sous le marteau du commissaire-priseur. Tout est à l'encan.",
+    degainer: "« Mettre à l'encan » : vendre au plus offrant, y compris ce qui ne devrait pas se vendre (son honneur, sa conscience).",
+  },
+  "Désargenté": {
+    scene: "Un nom à rallonge, un château qui tombe en ruine, et plus un sou en poche. Le jeune aristocrate désargenté.",
+  },
+  "Égrapper": {
+    scene: "Pendant les vendanges, on détache les grains de raisin de leur rafle avant de les presser. On les égrappe.",
+  },
+  "Chansonnier": {
+    scene: "Sur la scène d'un petit cabaret, il chante l'actualité de la semaine en se moquant des puissants. C'est un chansonnier.",
+  },
+  "S'épancher": {
+    scene: "Après minuit, autour d'une tasse de thé, elle s'épanche : tout ce qu'elle gardait depuis des mois sort enfin.",
+  },
+  "Outrager": {
+    scene: "Insulter un juge en pleine audience, cracher sur un monument aux morts. Ce n'est pas une offense, c'est un outrage.",
+  },
+  "Complaisamment": {
+    scene: "Il raconte complaisamment ses exploits de jeunesse, en s'écoutant parler, ravi de lui-même.",
+  },
+  "Réséda": {
+    scene: "Dans le jardin de la grand-mère, de petites fleurs discrètes qui embaument tout le soir. Le réséda.",
+  },
+  "Ottomane": {
+    scene: "Dans le salon oriental, un canapé bas et profond, couvert de coussins brodés, sur lequel on s'allonge pour fumer le narghilé. Une ottomane.",
+  },
+  "Insidieusement": {
+    scene: "Le doute s'est installé insidieusement : une petite remarque, puis une autre, et un jour tu ne fais plus confiance à personne.",
+  },
+  "Airain": {
+    scene: "Les cloches, les statues antiques, les canons d'autrefois : de l'airain, l'ancien nom du bronze.",
+    degainer: "« Un cœur d'airain » : un cœur dur, que rien ne touche.",
+  },
+  "Boudoir": {
+    scene: "Au XVIIIe siècle, un petit salon intime, tendu de soie rose, où une dame recevait ses amis proches. Le boudoir.",
+    origine: "De « bouder » : c'est là qu'on allait se retirer quand on boudait.",
+  },
+  "Aiguillon": {
+    scene: "Le bouvier pique ses bœufs avec un bâton à pointe pour les faire avancer. Et l'aiguillon de la jalousie pousse à faire des folies.",
+  },
+  "Flegmatique": {
+    scene: "La maison est en feu, l'alarme hurle, et lui termine tranquillement sa tasse de thé. Il est flegmatique.",
+  },
+  "Perfidie": {
+    scene: "Il l'embrasse sur la joue en public, et l'a dénoncée la veille au patron. Quelle perfidie !",
+  },
+  "Cou-de-pied": {
+    scene: "La danseuse tend le pied, et la partie bombée sur le dessus forme une courbe parfaite. C'est le cou-de-pied.",
+    piege: "Rien à voir avec un coup de pied !",
+  },
+  "Ménechme": {
+    scene: "Dans la rue, tu croises ton propre visage : même nez, même sourire, même démarche. Ton ménechme : ton sosie parfait.",
+    origine: "D'après « Les Ménechmes », une comédie de Plaute sur deux jumeaux qu'on confond.",
+  },
+  "Rançonner": {
+    scene: "Les brigands arrêtent la diligence et exigent de l'or pour laisser repartir les voyageurs. Ils les rançonnent.",
+  },
+  "Relater": {
+    scene: "Le journaliste relate les faits un par un, dans l'ordre, sans rien oublier.",
+  },
+  "Tiquer": {
+    scene: "Quand le vendeur a annoncé le prix, il a tiqué : un petit mouvement de sourcil, à peine visible.",
+  },
+  "Fricassée": {
+    scene: "Des morceaux de poulet qui mijotent dans une sauce crémeuse aux champignons, comme chez la grand-mère. Une fricassée.",
+  },
+  "Receleur": {
+    scene: "Dans une arrière-boutique, il achète les bijoux volés à moitié prix et les revend plus loin. C'est le receleur.",
+  },
+  "Componction": {
+    scene: "Les mains jointes, la tête baissée, la voix grave : il prend un air de componction pour faire la morale, mais personne n'y croit.",
+  },
+  "Fortin": {
+    scene: "Au bord du désert, un petit fort de pierre avec une poignée de soldats qui guettent l'horizon. Un fortin.",
+  },
+  "Impie": {
+    scene: "Pour les dévots, celui qui se moque de Dieu, rit pendant la messe et mange gras le vendredi est un impie.",
+  },
+  "Homélie": {
+    scene: "À la messe, après la lecture, le prêtre parle aux fidèles : c'est l'homélie.",
+    degainer: "Au figuré, une homélie est un long sermon moralisateur : « Épargne-moi ton homélie. »",
+  },
+  "Anthropophage": {
+    scene: "Dans les vieux récits d'explorateurs, les naufragés redoutaient les peuples anthropophages : mangeurs de chair humaine.",
+  },
+  "Janissaire": {
+    scene: "L'infanterie d'élite de l'Empire ottoman, redoutée dans toute l'Europe, avec ses grands bonnets blancs. Les janissaires.",
+  },
+  "Supplétif": {
+    scene: "L'armée régulière ne suffit plus : on recrute des troupes supplétives, qui viennent en renfort.",
+  },
+  "Intestin": {
+    scene: "Comme adjectif, intestin veut dire « à l'intérieur ». Des guerres intestines déchirent un pays de l'intérieur.",
+  },
+  "Cocagne": {
+    scene: "Un pays imaginaire où les rivières sont de vin, où les maisons sont en gâteau et où il suffit d'ouvrir la bouche pour qu'une alouette rôtie y tombe. Le pays de Cocagne.",
+    aussi: "Le mât de cocagne est un poteau glissant au sommet duquel on accroche des prix à décrocher.",
+  },
+  "Gondolier": {
+    scene: "À Venise, debout à l'arrière de sa gondole noire, il manie sa longue rame en chantant. Le gondolier.",
+  },
+  "Avanie": {
+    scene: "Insulté devant tout le monde, renvoyé sans un merci, moqué dans le journal. Il a subi avanie sur avanie.",
+  },
+  "Éraillé": {
+    scene: "Après le concert, il a hurlé toute la nuit : le lendemain, sa voix est éraillée, cassée, rauque.",
+  },
+  "Credo": {
+    scene: "« Ne jamais remettre au lendemain ce qu'on peut faire le jour même. » C'est son credo : le principe auquel il croit.",
+    origine: "Du latin « je crois », le premier mot de la prière chrétienne.",
+  },
+  "Exhortation": {
+    scene: "« Levez-vous ! Battez-vous ! N'abandonnez jamais ! » Le discours de l'entraîneur à la mi-temps est une exhortation.",
+  },
+  "Épistémologique": {
+    scene: "« Comment savons-nous ce que nous savons ? Qu'est-ce qu'une preuve ? » Ce sont des questions épistémologiques.",
+  },
+  "Productiviste": {
+    scene: "Produire plus, plus vite, toujours plus, comme si c'était un but en soi. Une logique productiviste.",
+  },
+  "Antiroman": {
+    scene: "Pas d'intrigue, pas de héros, pas de fin : un livre qui refuse toutes les règles du roman. Un antiroman.",
+  },
+  "Métaroman": {
+    scene: "Le narrateur s'adresse à toi, le lecteur, et commente le livre que tu es en train de lire. Calvino l'a fait dans « Si par une nuit d'hiver un voyageur ». C'est un métaroman.",
+  },
+  "Démentir": {
+    scene: "Le lendemain de la rumeur, le ministre publie un communiqué : « C'est faux. » Il dément.",
+  },
+  "Polyphonique": {
+    scene: "Un roman où chaque chapitre est raconté par un personnage différent, avec sa voix, sa vérité. Un roman polyphonique.",
+  },
+  "Rabelaisien": {
+    scene: "Des banquets énormes, des rires gras, des mots inventés, une joie de vivre débordante. Un esprit rabelaisien.",
+  },
+  "Ménippée": {
+    scene: "Un mélange de prose et de vers, de sérieux et de bouffonnerie, pour se moquer des puissants. La satire ménippée.",
+  },
+  "Anglophilie": {
+    scene: "Thé à cinq heures, humour pince-sans-rire et pluie adorée. Son anglophilie ne connaît pas de limites.",
+  },
+  "Picaresque": {
+    scene: "Un jeune vagabond rusé, sans un sou, qui traverse le pays de maître en maître, en survivant grâce à ses tours. Le roman picaresque est né en Espagne.",
+  },
+  "Paraphraser": {
+    scene: "Au lieu de donner son avis, il répète la question de l'examen avec d'autres mots, en plus long. Il paraphrase.",
+  },
+  "Effusion": {
+    scene: "À l'aéroport, des embrassades, des larmes, des cris de joie : des effusions de retrouvailles.",
+    aussi: "« Sans effusion de sang » : sans qu'une goutte de sang soit versée.",
+  },
+  "Maestria": {
+    scene: "Le pianiste joue sans partition, les mains volent sur le clavier. Quelle maestria !",
+  },
+  "Caracoler": {
+    scene: "Le cavalier fait tourner son cheval en petits cercles devant la foule, pour le plaisir de se montrer. Il caracole.",
+    degainer: "« Caracoler en tête des sondages » : être loin devant, avec aisance.",
+  },
+  "Apologue": {
+    scene: "Le lièvre trop sûr de lui, la tortue qui avance sans s'arrêter. Une petite histoire, une grande leçon : c'est un apologue.",
+  },
+  "Irréfutable": {
+    scene: "Une vidéo, trois témoins, ses empreintes partout. La preuve est irréfutable.",
+  },
+  "Sérénissime": {
+    scene: "Venise, ses canaux, ses palais et ses doges, s'appelait autrefois la Sérénissime République.",
+  },
+  "Péremptoire": {
+    scene: "« C'est comme ça, et pas autrement. » Un ton péremptoire, qui n'admet aucune réponse.",
+  },
+  "Arithmomanie": {
+    scene: "Il compte les marches de chaque escalier, les fenêtres de chaque immeuble, les carreaux de chaque sol. C'est de l'arithmomanie : le besoin de tout compter.",
+  },
+  "Feindre": {
+    scene: "Elle feint la surprise devant le cadeau, alors qu'elle l'a trouvé dans le placard la semaine dernière.",
+  },
+  "Copernicien": {
+    scene: "Pendant des siècles, la Terre était au centre. Copernic y a mis le Soleil. Une révolution copernicienne, c'est un renversement complet du point de vue.",
+  },
+  "Ecclésiastique": {
+    scene: "Prêtres, évêques, moines : ce sont des ecclésiastiques, des membres du clergé.",
+  },
+  "Eudémonisme": {
+    scene: "Le but de la vie ? Être heureux, et tout le reste en découle. C'est l'eudémonisme.",
+    origine: "Du grec « eudaimonia », le bonheur.",
+  },
+  "Bourru": {
+    scene: "Il grogne, il ne dit jamais merci, mais il est le premier à venir réparer ta voiture un dimanche. Bourru, mais en or.",
+  },
+  "Avaliser": {
+    scene: "Le projet était prêt depuis des mois. Il ne manquait que la signature du directeur pour l'avaliser : le valider officiellement.",
+  },
+  "Sociobiologie": {
+    scene: "Pourquoi les fourmis se sacrifient pour la colonie ? Pourquoi les singes se toilettent ? La sociobiologie cherche les racines biologiques des comportements sociaux.",
+  },
+  "Typologie": {
+    scene: "Le gros dormeur, le lève-tôt, l'insomniaque : une typologie des dormeurs, un classement par types.",
+  },
+  "Asocialité": {
+    scene: "Il ne répond pas aux invitations, ne salue pas ses voisins, fuit toute conversation. Une asocialité assumée.",
+  },
+  "Infinitésimal": {
+    scene: "Une goutte d'encre dans l'océan. Une différence infinitésimale : infiniment petite.",
+  },
+  "Dilettante": {
+    scene: "Un peu de piano, un peu de peinture, un peu de poterie, et tout ça pour le plaisir, sans jamais se prendre au sérieux. Un dilettante.",
+  },
+  "Polygraphe": {
+    scene: "Des romans, des essais, des articles sur la cuisine, l'histoire et les étoiles. Il écrit sur tout : c'est un polygraphe.",
+  },
+  "Paradigme": {
+    scene: "Pendant des siècles, on pensait que la Terre était plate. Puis le modèle a changé, et toute la pensée a basculé. Un changement de paradigme.",
+  },
+  "Protéiforme": {
+    scene: "Musicien, peintre, cuisinier, acteur : un artiste protéiforme, qui change sans cesse de forme.",
+    origine: "Protée, dieu marin grec, se transformait en lion, en serpent, en eau pour échapper à ceux qui voulaient l'interroger.",
+  },
+  "Synoptique": {
+    scene: "Un grand tableau qui montre toutes les étapes du projet d'un seul coup d'œil. Un tableau synoptique.",
+  },
+  "Limitrophe": {
+    scene: "La Belgique, le Luxembourg, l'Allemagne, la Suisse, l'Italie, l'Espagne… Les pays limitrophes de la France touchent sa frontière.",
+  },
+  "Pulvisculaire": {
+    scene: "Un bonheur fait de mille petites choses : une odeur, un rayon de soleil, un mot gentil. Un bonheur pulvisculaire, en fine poussière.",
+  },
+  "Hypermétrope": {
+    scene: "Il lit les panneaux au loin sans problème, mais tient le menu à bout de bras. Il est hypermétrope.",
+  },
+  "Gemme": {
+    scene: "Rubis, saphir, émeraude : des gemmes, des pierres précieuses.",
+    aussi: "Le sel gemme, lui, est extrait des mines, et non de la mer.",
+  },
+  "Crible": {
+    scene: "Au jardin, on secoue la terre dans un grand tamis pour en retirer les cailloux. Le crible.",
+    degainer: "« Passer au crible » : examiner dans les moindres détails.",
+  },
+  "Indocile": {
+    scene: "Le cheval refuse la selle, se cabre, mord. Il est indocile : il n'obéit pas.",
+  },
+  "Choyer": {
+    scene: "Couvertures chaudes, soupe maison, petits mots tendres : sa grand-mère la choie quand elle est malade.",
+  },
+  "Vortex": {
+    scene: "L'eau qui tourbillonne en descendant dans le lavabo. Et sur les réseaux, un vortex de vidéos qui t'aspire pendant des heures.",
+  },
+  "Indiciaire": {
+    scene: "Le détective remonte au coupable à partir d'un mégot, d'une trace de boue, d'un mot de travers. Une méthode indiciaire : fondée sur des indices.",
+  },
+  "Sémiotique": {
+    scene: "Pourquoi le rouge veut dire « stop » ? Pourquoi une colombe veut dire « paix » ? La sémiotique étudie les signes et leur sens.",
+  },
+  "Superfétatoire": {
+    scene: "Après trois explications claires, une quatrième serait superfétatoire : inutile, en trop.",
+  },
+  "Compacité": {
+    scene: "Une boule de neige bien tassée, qui ne s'effrite pas. Sa compacité la rend redoutable.",
+  },
+  "Missel": {
+    scene: "À la messe, la grand-mère ouvre un petit livre usé aux pages dorées, où sont écrites toutes les prières. Son missel.",
+  },
+  "Marâtre": {
+    scene: "Dans les contes, la nouvelle femme du père qui maltraite Cendrillon : la marâtre.",
+  },
+  "Intrication": {
+    scene: "Des fils emmêlés si serrés qu'on ne sait plus où commence l'un et où finit l'autre. Une intrication.",
+    aussi: "En physique quantique, deux particules intriquées restent liées, même à des années-lumière l'une de l'autre.",
+  },
+  "Prosaïsme": {
+    scene: "Il lui offre des fleurs et un poème… et elle répond : « Tu as pensé à acheter du pain ? » Le prosaïsme de la vie quotidienne.",
+  },
+  "Livide": {
+    scene: "En apprenant la nouvelle, il devient livide : d'une pâleur grise, presque bleutée.",
+  },
+  "Égotisme": {
+    scene: "Il ne parle que de lui, analyse chacune de ses émotions, et s'étonne que les autres ne s'y intéressent pas autant. L'égotisme : le culte de soi.",
+    origine: "Stendhal a adopté le mot pour ses « Souvenirs d'égotisme ».",
+  },
+  "Mesquinerie": {
+    scene: "Il compte au centime près qui a bu combien de bières pour partager l'addition. Quelle mesquinerie !",
+  },
+  "Snob": {
+    scene: "Il ne boit que du café d'Éthiopie, n'écoute que des vinyles et lève les yeux au ciel quand tu cites une chanson connue. Il est snob.",
+  },
+  "Centrifuge": {
+    scene: "Le manège tourne de plus en plus vite, et tu te sens plaqué contre la paroi. C'est la force centrifuge, qui pousse loin du centre.",
+  },
 };
