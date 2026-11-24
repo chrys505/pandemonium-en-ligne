@@ -3615,4 +3615,356 @@ const fiches = {
   "Centrifuge": {
     scene: "Le manège tourne de plus en plus vite, et tu te sens plaqué contre la paroi. C'est la force centrifuge, qui pousse loin du centre.",
   },
+
+  // Série 11
+  "Affleurer": {
+    scene: "À marée basse, des rochers affleurent à la surface de l'eau. Et dans un roman, une tristesse affleure sous chaque phrase drôle : elle apparaît à peine, à fleur.",
+  },
+  "Sulfureux": {
+    scene: "Une odeur d'œuf pourri près des sources volcaniques : c'est le soufre. Et un écrivain sulfureux sent le soufre lui aussi : il fait scandale.",
+  },
+  "Pathos": {
+    scene: "Violons, larmes, ralenti, enfant perdu sous la pluie : le film en fait trop. Trop de pathos, tout ce qui cherche à émouvoir, jusqu'à l'excès.",
+  },
+  "Punctiforme": {
+    scene: "Vue de très loin, une étoile n'a pas de taille : c'est juste un point lumineux. Une source punctiforme.",
+  },
+  "Canonique": {
+    scene: "La recette de la vraie carbonara, sans crème, celle qui fait référence : la version canonique.",
+    aussi: "En religion, le droit canonique est celui de l'Église. Et « l'âge canonique », c'est un âge respectable.",
+  },
+  "Immédiateté": {
+    scene: "Un message envoyé, une réponse attendue dans la seconde, une vidéo qui démarre sans attendre. Nous vivons dans l'immédiateté : sans délai, sans intermédiaire.",
+  },
+  "S'estomper": {
+    scene: "Les années passent, et le visage de ce premier amour s'estompe : les contours deviennent flous, comme une photo au soleil.",
+  },
+  "Entropie": {
+    scene: "Ta chambre se met en désordre toute seule. Ton café refroidit tout seul. Jamais l'inverse. C'est l'entropie : la tendance de tout à se défaire.",
+  },
+  "Équidistant": {
+    scene: "Pour que personne ne fasse plus de route que l'autre, ils choisissent un village pile au milieu, équidistant de leurs deux villes.",
+  },
+  "Patrouiller": {
+    scene: "Comme verbe ancien, patrouiller voulait dire tripoter sans précaution : « Ne patrouille pas les pêches, tu vas les abîmer ! »",
+    aussi: "Aujourd'hui, une patrouille fait des rondes pour surveiller : les soldats patrouillent dans les rues.",
+  },
+  "Ampoulé": {
+    scene: "« En cette aube radieuse de notre glorieuse entreprise commune… » pour annoncer la réunion de lundi. Le style est ampoulé : gonflé comme une ampoule.",
+  },
+  "Corrélatif": {
+    scene: "La chaleur monte, et les ventes de glaces montent avec. Les deux vont de pair : elles sont corrélatives.",
+  },
+  "Transversal": {
+    scene: "Savoir parler en public, s'organiser, travailler en équipe : ça sert dans tous les métiers. Ce sont des compétences transversales.",
+  },
+  "Contingent": {
+    scene: "Chaque région a reçu son contingent de vaccins : sa part, son nombre.",
+    aussi: "Comme adjectif, contingent veut dire « qui aurait pu ne pas arriver », comme la contingence.",
+  },
+  "Iconographique": {
+    scene: "Pour le livre, elle a cherché pendant des mois les tableaux, les gravures et les photos d'époque. Un énorme travail iconographique.",
+  },
+  "Abasourdi": {
+    scene: "Il a gagné au loto. Il fixe le ticket, puis l'écran, puis le ticket. Il est abasourdi, comme assommé.",
+  },
+  "Radiesthésiste": {
+    scene: "Un pendule au bout des doigts, il arpente le champ en disant qu'il va trouver l'eau sous la terre. C'est un radiesthésiste.",
+    piege: "Aucune étude sérieuse n'a jamais confirmé ses pouvoirs.",
+  },
+  "Étatiste": {
+    scene: "Les trains, l'énergie, la santé : pour l'étatiste, l'État doit tout gérer lui-même. Un mot de science politique, qui décrit une doctrine.",
+  },
+  "Vivandière": {
+    scene: "Sur les champs de bataille de Napoléon, une femme suivait la troupe avec son tonnelet d'eau-de-vie et son panier de pain. La vivandière.",
+  },
+  "Trépidation": {
+    scene: "Le métro qui vibre sous tes pieds, la ville qui ne dort jamais, la vie à cent à l'heure. La trépidation.",
+  },
+  "Stridence": {
+    scene: "Le cri d'une alarme, une craie sur le tableau, un sifflet d'arbitre dans l'oreille. Une stridence qui transperce.",
+  },
+  "Impondérable": {
+    scene: "Tout était prévu : le vol, l'hôtel, les visites. Puis une grève, un volcan, une valise perdue. Les impondérables.",
+  },
+  "Soutane": {
+    scene: "Une longue robe noire boutonnée du col jusqu'aux pieds, que portaient les prêtres. La soutane.",
+  },
+  "Hypergamie": {
+    scene: "Dans les romans de Balzac, l'ambitieux épouse une héritière plus riche et mieux née que lui. Un mariage d'ascension sociale : l'hypergamie.",
+  },
+  "Tyranneau": {
+    scene: "Chef du club de pétanque, il fait la loi, distribue les punitions et adore donner des ordres. Un tyranneau : un petit tyran sur un petit royaume.",
+  },
+  "Jacobin": {
+    scene: "En 1789, dans un ancien couvent de moines jacobins à Paris, des révolutionnaires se réunissent. Ils veulent une République forte et centralisée. Ce sont les Jacobins.",
+    aussi: "Aujourd'hui, on dit « jacobin » de quelqu'un qui préfère que tout soit décidé depuis Paris.",
+  },
+  "Zélé": {
+    scene: "Le stagiaire arrive à 7 heures, repart à 22 heures, et propose de laver la voiture du patron. Il est zélé : peut-être un peu trop.",
+  },
+  "Imminent": {
+    scene: "Le ciel devient noir, le vent se lève, les premières gouttes tombent. L'orage est imminent.",
+    piege: "Ne pas confondre avec « éminent » (remarquable).",
+  },
+  "Retors": {
+    scene: "Il te sourit, te fait signer, et tu découvres trois mois plus tard la petite clause qui te coûte cher. Un homme d'affaires retors.",
+  },
+  "Cataclysme": {
+    scene: "Un séisme, un raz-de-marée, une ville rasée en quelques minutes. Un cataclysme.",
+    degainer: "Avec humour : « La disparition de ma tasse préférée : un cataclysme. »",
+  },
+  "Omnipotence": {
+    scene: "Il contrôle la télé, les juges, l'armée. Son omnipotence fait peur : la toute-puissance.",
+  },
+  "Démiurge": {
+    scene: "Chez Platon, un artisan divin façonne le monde à partir du chaos. Le démiurge.",
+    aussi: "Aujourd'hui, un architecte qui dessine une ville entière ou un romancier qui crée tout un univers est un démiurge.",
+  },
+  "Remontrance": {
+    scene: "« Tu rentres trop tard, tu ne ranges rien, tu ne m'écoutes jamais… » Chaque soir, les mêmes remontrances.",
+  },
+  "Fastueux": {
+    scene: "Des lustres de cristal, une fontaine de champagne, des musiciens en habit. Un mariage fastueux.",
+  },
+  "Déclamatoire": {
+    scene: "Il parle de son chat comme on lit une tragédie de Racine, la main sur le cœur. Un ton déclamatoire.",
+  },
+  "Ossianique": {
+    scene: "Des landes écossaises noyées de brume, des héros morts au combat, des bardes qui pleurent. Un paysage ossianique.",
+    origine: "D'après Ossian, un barde légendaire dont un poète du XVIIIe siècle prétendait avoir retrouvé les chants : Napoléon en raffolait.",
+  },
+  "Giroflée": {
+    scene: "Sur les vieux murs, des fleurs jaunes et pourpres au parfum doux de miel. Les giroflées.",
+    degainer: "« Une giroflée à cinq feuilles » : une gifle, la main laissant cinq doigts sur la joue.",
+  },
+  "Méandre": {
+    scene: "Vue d'avion, la rivière dessine des boucles qui reviennent sur elles-mêmes. Ce sont des méandres.",
+    aussi: "Au figuré, les méandres de l'administration sont ses détours interminables.",
+  },
+  "Triptyque": {
+    scene: "Dans l'église, un tableau en trois panneaux : le centre, et deux volets qu'on peut refermer. Un triptyque.",
+  },
+  "Apothéose": {
+    scene: "Le feu d'artifice monte, monte, et la dernière gerbe illumine tout le ciel. C'est l'apothéose.",
+    origine: "À l'origine, l'élévation d'un héros ou d'un empereur au rang des dieux.",
+  },
+  "Enchevêtrement": {
+    scene: "Les câbles derrière la télé : on ne sait plus lequel va où. Un enchevêtrement.",
+  },
+  "Tamiser": {
+    scene: "Le pâtissier fait passer la farine au tamis. Et un abat-jour tamise la lumière : il l'adoucit.",
+  },
+  "Chaland": {
+    scene: "Sur le canal, un bateau plat et lourd, chargé de sable, avance lentement. Un chaland.",
+    aussi: "Autrefois, le chaland était aussi le client d'une boutique, d'où « achalandé ».",
+  },
+  "Pommadé": {
+    scene: "Des cheveux plaqués et brillants comme dans les films des années 30. Il est pommadé.",
+    aussi: "Au figuré : affecté, trop soigné pour être sincère.",
+  },
+  "Spectral": {
+    scene: "Dans le brouillard, une silhouette pâle, floue, qui semble flotter. Une apparition spectrale.",
+  },
+  "Édulcoré": {
+    scene: "Le conte original finissait très mal. La version pour enfants est édulcorée : adoucie au point de perdre sa force.",
+  },
+  "Tare": {
+    scene: "Le menteur, le colérique, le paresseux : chacun a sa tare, son défaut grave.",
+    aussi: "Sur une balance, « faire la tare », c'est retirer le poids du récipient.",
+  },
+  "Mansuétude": {
+    scene: "Le juge aurait pu être sévère. Il a choisi la douceur, l'indulgence. Il a fait preuve de mansuétude.",
+  },
+  "Déréliction": {
+    scene: "Seul, sans personne vers qui se tourner, avec le sentiment que même le ciel l'a oublié. La déréliction : un abandon total.",
+  },
+  "Douairière": {
+    scene: "Une vieille dame très digne, avec perles et canne, qui règne sur le salon familial. La douairière.",
+  },
+  "Se draper": {
+    scene: "Elle se drape dans un grand châle de soie. Et lui, accusé, se drape dans sa dignité : il prend un air noble pour ne pas répondre.",
+  },
+  "Objecter": {
+    scene: "« C'est une super idée ! — Je peux objecter une chose ? On n'a pas d'argent. » Objecter, c'est opposer un argument.",
+  },
+  "Condescendance": {
+    scene: "« C'est mignon, ce que tu fais. » Un sourire, une petite tape sur l'épaule, et le message est clair : il se croit au-dessus. Quelle condescendance !",
+  },
+  "Convexe": {
+    scene: "Le dos d'une cuillère, bombé vers toi. Il est convexe. Le creux, de l'autre côté, est concave.",
+  },
+  "Enserrer": {
+    scene: "Le lierre enserre le vieux chêne, de plus en plus fort, année après année.",
+  },
+  "Fourrager": {
+    scene: "Elle fourrage dans son sac à la recherche de ses clés : tout sort, rien ne se trouve.",
+  },
+  "Érudit": {
+    scene: "Il cite de mémoire Homère, Montaigne et un traité chinois du IVe siècle. Un érudit : son savoir est immense, nourri de lectures.",
+  },
+  "Enluminé": {
+    scene: "Dans le vieux livre d'heures, chaque première lettre est peinte d'or et de bleu, entourée de fleurs et de petits personnages. Un manuscrit enluminé.",
+  },
+  "Zoomorphe": {
+    scene: "Des cruches en forme de chouette, des chapiteaux sculptés de lions, des nuages qui ressemblent à des chats. Tout ce qui a forme animale est zoomorphe.",
+  },
+  "Tolstoïen": {
+    scene: "Un roman immense, des familles entières, des guerres, et une question morale au cœur de tout. Une fresque tolstoïenne.",
+  },
+  "Bamboche": {
+    scene: "Musique jusqu'à l'aube, bouteilles qui se vident, danses sur les tables. Une nuit de bamboche.",
+  },
+  "Féodalité": {
+    scene: "Le seigneur donne une terre et sa protection ; le vassal lui jure fidélité et le sert à la guerre. Toute une société bâtie ainsi : la féodalité.",
+  },
+  "Fanfaron": {
+    scene: "« Moi, je l'aurais battu les yeux fermés ! » Il bombe le torse, mais il n'a jamais rien fait. Un fanfaron.",
+  },
+  "Dilapidateur": {
+    scene: "Héritier d'une fortune, il a tout dépensé en trois ans : voitures, fêtes, casino. Un dilapidateur.",
+  },
+  "Gruger": {
+    scene: "Un faux artisan, un devis gonflé, un chèque encaissé, et plus de nouvelles. Elle s'est fait gruger.",
+  },
+  "Hussard": {
+    scene: "Des cavaliers rapides au dolman brodé, sabre au clair, qui chargent en tête. Les hussards.",
+    degainer: "« À la hussarde » : brutalement, sans délicatesse.",
+  },
+  "Matrone": {
+    scene: "À Rome, la mère de famille respectée qui régnait sur la maison. Aujourd'hui, une femme d'âge mûr, imposante, qui ne se laisse pas faire.",
+  },
+  "Spéculaire": {
+    scene: "Un reflet, un double, une image qui renvoie l'autre comme dans un miroir. Un jeu spéculaire.",
+    origine: "Du latin « speculum », le miroir.",
+  },
+  "Caravansérail": {
+    scene: "Sur la route de la soie, une grande auberge fortifiée où les caravanes de chameaux s'arrêtent pour la nuit. Un caravansérail.",
+    aussi: "Au figuré, un lieu où se croisent des gens venus de partout.",
+  },
+  "Contemporanéité": {
+    scene: "Molière et Louis XIV vivaient à la même époque : leur contemporanéité explique bien des choses dans ses pièces.",
+  },
+  "Bougonner": {
+    scene: "Il range la vaisselle en marmonnant des reproches entre ses dents. Il bougonne.",
+  },
+  "Équivoque": {
+    scene: "« Je te verrai ce soir. » Une promesse ou une menace ? Le ton est équivoque : il peut s'entendre de deux façons.",
+  },
+  "Condottiere": {
+    scene: "Dans l'Italie de la Renaissance, les villes payaient des chefs de mercenaires pour faire leurs guerres. Les condottieri.",
+  },
+  "Didactique": {
+    scene: "Un livre qui explique, un musée qui enseigne en jouant, un professeur qui veut que tu comprennes. Didactique.",
+  },
+  "Philistinisme": {
+    scene: "« La peinture, ça sert à rien. Les livres, ça sert à rien. » L'indifférence fière à toute forme de culture. Le philistinisme.",
+  },
+  "Corporéité": {
+    scene: "Ton cœur qui bat, tes mains qui ont froid, ta fatigue du soir. Tu n'es pas qu'un esprit : c'est ta corporéité.",
+  },
+  "Incorruptibilité": {
+    scene: "On lui a offert de l'argent, des places, des honneurs. Il a tout refusé. Son incorruptibilité est légendaire.",
+    origine: "Robespierre était surnommé « l'Incorruptible ».",
+  },
+  "Coryphée": {
+    scene: "Dans le théâtre grec, devant le chœur, un acteur parle au nom de tous. Le coryphée.",
+    aussi: "Au figuré, le meneur d'un groupe, d'un mouvement.",
+  },
+  "Rigorisme": {
+    scene: "Pas de dessert, pas de rire à table, pas de sortie le dimanche : une morale appliquée sans aucune souplesse. Le rigorisme.",
+  },
+  "Puritanisme": {
+    scene: "Un regard sévère sur tous les plaisirs, la danse, le vin, les baisers. Le puritanisme.",
+  },
+  "Émancipé": {
+    scene: "À dix-huit ans, elle a quitté la maison, trouvé un travail, pris son propre appartement. La voilà émancipée : libre de toute tutelle.",
+  },
+  "Inhérent": {
+    scene: "La fatigue fait partie du métier de jeune parent. Elle lui est inhérente : elle en fait partie par nature.",
+  },
+  "Cancans": {
+    scene: "« Tu as vu qui sort avec qui ? » Au marché, sur le palier, à la sortie de l'école : les cancans vont bon train.",
+  },
+  "Convenances": {
+    scene: "Ne pas parler la bouche pleine, ne pas arriver les mains vides, ne pas poser de questions sur le salaire. Les convenances.",
+  },
+  "Piètre": {
+    scene: "Il voulait impressionner au karaoké. Il a chanté faux, oublié les paroles et fait piètre figure.",
+  },
+  "Promiscuité": {
+    scene: "Dans le métro aux heures de pointe, collé contre des inconnus, le nez dans un sac à dos. La promiscuité.",
+  },
+  "Aseptique": {
+    scene: "Au bloc opératoire, tout est stérilisé, sans un seul microbe. Aseptique.",
+    aussi: "Au figuré, un bureau aseptique est froid, impersonnel, sans vie.",
+  },
+  "Impalpable": {
+    scene: "Une poussière si fine qu'on ne la sent pas entre les doigts. Une tristesse qu'on ne peut nommer. Impalpables.",
+  },
+  "Holocauste": {
+    scene: "Dans l'Antiquité, un sacrifice où l'animal offert aux dieux était entièrement brûlé.",
+    aussi: "Le mot désigne aussi l'extermination des Juifs d'Europe par les nazis ; on emploie aussi le mot hébreu Shoah.",
+  },
+  "Incongru": {
+    scene: "Un éclat de rire pendant un enterrement, un maillot de bain à un entretien d'embauche. Incongru : déplacé.",
+  },
+  "Misanthropie": {
+    scene: "Il trouve les gens bruyants, hypocrites, égoïstes, et préfère la compagnie de son chien. La misanthropie.",
+  },
+  "Misogyne": {
+    scene: "« Les femmes ne savent pas conduire. » Ce n'est pas une blague, c'est du mépris. Misogyne.",
+  },
+  "Présupposer": {
+    scene: "En disant « Tu as arrêté de fumer ? », tu présupposes qu'il fumait : tu le tiens pour acquis sans le dire.",
+  },
+  "Épier": {
+    scene: "Derrière le rideau, la voisine épie le moindre va-et-vient de la rue.",
+  },
+  "Juxtaposition": {
+    scene: "Une église gothique à côté d'un gratte-ciel de verre. Une juxtaposition saisissante : côte à côte, sans lien.",
+  },
+  "Byronien": {
+    scene: "Un héros sombre, beau, tourmenté, révolté contre le monde et ses règles. Un héros byronien.",
+    origine: "D'après le poète anglais Lord Byron, mort de fièvre en Grèce, où il était venu soutenir la guerre d'indépendance.",
+  },
+  "Conjuration": {
+    scene: "Une nuit, dans une cave, des conjurés jurent de renverser le prince. C'est une conjuration.",
+    aussi: "C'est aussi une formule pour chasser les démons.",
+  },
+  "Carbonari": {
+    scene: "Dans l'Italie du XIXe siècle, une société secrète se réunissait en se disant charbonniers, pour libérer et unifier le pays. Les carbonari.",
+  },
+  "Crisser": {
+    scene: "Des pneus qui freinent sur l'asphalte, la neige sous les bottes, un ongle sur un tableau. Ça crisse.",
+  },
+  "Vocatif": {
+    scene: "« Ô Rome, unique objet de mon ressentiment ! » Quand on appelle quelqu'un ou quelque chose directement, on emploie le vocatif.",
+  },
+  "Contrit": {
+    scene: "La tête basse, les yeux sur ses chaussures, il bredouille des excuses. Il a l'air contrit : il regrette vraiment.",
+  },
+  "Ledit": {
+    scene: "« Le locataire s'engage à entretenir le jardin. Ledit jardin comprend un potager. » Ledit : celui dont on vient de parler.",
+  },
+  "Autocompassion": {
+    scene: "Tu as raté ton examen. Au lieu de te traiter d'idiot, tu te parles comme tu parlerais à un ami. C'est l'autocompassion.",
+  },
+  "Tabou": {
+    scene: "L'argent, la mort, la santé mentale : dans certaines familles, on n'en parle jamais. Ce sont des tabous.",
+    origine: "Un mot polynésien, rapporté par l'explorateur Cook : ce qui est sacré et interdit.",
+  },
+  "Consteller": {
+    scene: "Une nuit d'été à la campagne : le ciel constellé d'étoiles. Et sa robe de soirée, constellée de petites perles.",
+    degainer: "Pour un parcours semé d'épreuves : « Une vie constellée d'obstacles. »",
+  },
+  "Germer": {
+    scene: "La graine se fend, une petite pousse verte apparaît. Elle germe. Et dans ta tête, une idée commence à germer.",
+  },
+  "Pictural": {
+    scene: "La lumière sur la mer à six heures du soir, les couleurs du marché : une scène très picturale, on dirait un tableau.",
+  },
+  "Revêtir": {
+    scene: "Le juge revêt sa robe noire avant d'entrer dans la salle. Et l'affaire, elle, revêt une importance capitale : elle prend cet aspect.",
+  },
 };
