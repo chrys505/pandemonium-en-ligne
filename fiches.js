@@ -1845,4 +1845,385 @@ const fiches = {
   "Métaphysiquement": {
     scene: "Physiquement, tu es dans ton lit. Métaphysiquement, tu te demandes pourquoi il y a quelque chose plutôt que rien. Au-delà de la matière, du côté des grandes questions.",
   },
+
+  // Série 6
+  "Frac": {
+    scene: "Le chef d'orchestre monte sur l'estrade, se retourne, et deux longues basques noires dansent derrière lui. Il porte le frac, l'habit de cérémonie à queue-de-pie.",
+  },
+  "Probe": {
+    scene: "Le caissier aurait pu garder la différence, personne ne l'aurait su. Il a couru dans la rue pour rendre la monnaie. Un homme probe : honnête jusqu'au scrupule.",
+    degainer: "Le nom, c'est la probité.",
+  },
+  "Expédient": {
+    scene: "Plus d'argent pour le loyer ? Il vend sa guitare, emprunte à un cousin, fait des petits boulots au noir. Il vit d'expédients : des solutions de fortune pour s'en sortir au jour le jour.",
+  },
+  "Entériner": {
+    scene: "Tout le monde s'était déjà organisé comme ça depuis des mois. La réunion n'a fait qu'entériner la décision : la rendre officielle.",
+  },
+  "Mansarde": {
+    scene: "Sous les toits de Paris, une chambre aux murs penchés, une lucarne sur les cheminées. C'est la mansarde de l'étudiant, du poète pauvre, du peintre qui commence.",
+    origine: "D'après l'architecte François Mansart, qui a rendu ces toits à pans brisés célèbres.",
+  },
+  "Fallacieux": {
+    scene: "« Tu ne peux pas critiquer le chef, tu n'as jamais été chef. » L'argument sonne bien, mais il est fallacieux : il cherche à te tromper.",
+  },
+  "Dogmatique": {
+    scene: "Il ne discute pas : il annonce. « C'est comme ça, point. » Toute objection est une hérésie. Il est dogmatique.",
+  },
+  "Bocager": {
+    scene: "Des haies bocagères bordent les prés normands, pleines de mûres en septembre et d'oiseaux toute l'année. Bocager : qui appartient au bocage.",
+  },
+  "Patelin": {
+    scene: "« Mais oui, mon petit, faites-moi confiance… » Une voix pateline : douce, mielleuse, et pas du tout sincère.",
+    aussi: "En familier, un patelin, c'est aussi un petit village : rien à voir.",
+    origine: "Maître Pathelin, avocat rusé d'une farce du Moyen Âge, qui embobinait ses clients.",
+  },
+  "Inflexion": {
+    scene: "Au milieu de la phrase, sa voix change légèrement, plus douce. Cette inflexion en dit plus que les mots.",
+    aussi: "En politique, une inflexion, c'est un léger changement de direction.",
+  },
+  "Se sustenter": {
+    scene: "Après six heures de randonnée, on s'arrête au refuge pour se sustenter : un bout de pain, du fromage, et les forces reviennent.",
+    degainer: "Pour dire « manger » avec un sourire : « Il est temps de se sustenter. »",
+  },
+  "Substanter": {
+    scene: "Un vieux mot pour nourrir quelqu'un, lui donner de quoi subsister. On le croise surtout dans les vieux livres.",
+    piege: "Aujourd'hui, on dit plutôt « sustenter ».",
+  },
+  "Entrave": {
+    scene: "Au pré, on attache une corde aux pattes du cheval pour qu'il ne s'enfuie pas : c'est une entrave. Au bureau, une procédure de quinze pages peut devenir une entrave tout aussi efficace.",
+  },
+  "Thaumaturge": {
+    scene: "Au Moyen Âge, on disait que les rois de France guérissaient les malades en les touchant. On les croyait thaumaturges : faiseurs de miracles.",
+    aussi: "Au figuré, un thaumaturge est un magicien qui accomplit l'impossible.",
+  },
+  "Paladin": {
+    scene: "Roland et ses compagnons, chevaliers de Charlemagne, sans peur et sans reproche, qui combattent pour une noble cause. Ce sont les paladins.",
+    aussi: "Au figuré, un paladin est un défenseur ardent : « le paladin des causes perdues ».",
+  },
+  "Basilic": {
+    scene: "Dans les bestiaires du Moyen Âge, un serpent couronné dont un seul regard suffit à tuer. On combattait le basilic avec un miroir, pour qu'il se foudroie lui-même.",
+    aussi: "Et dans ta cuisine, le basilic, c'est l'herbe du pesto. Même nom, autre destin.",
+  },
+  "Mandragore": {
+    scene: "Sa racine ressemble à un petit corps humain. Selon la légende, elle hurle quand on l'arrache, et son cri rend fou. Les sorciers la recherchaient pour leurs philtres.",
+    origine: "La plante existe vraiment : elle est toxique, ce qui a nourri toutes ces légendes.",
+  },
+  "Hippogriffe": {
+    scene: "La tête et les ailes d'un aigle, le corps d'un cheval. Dans les romans de chevalerie de la Renaissance, des héros chevauchaient l'hippogriffe jusqu'à la Lune.",
+    origine: "Inventé par le poète italien l'Arioste, dans le Roland furieux.",
+  },
+  "Phénix": {
+    scene: "Quand il sent la mort venir, l'oiseau de feu s'embrase dans son nid. Et de ses cendres renaît un nouveau phénix, plus beau que le premier.",
+    aussi: "Au figuré, un phénix est une personne exceptionnelle, unique. Et « renaître de ses cendres », c'est se relever après une catastrophe.",
+  },
+  "Cerbère": {
+    scene: "Aux portes des Enfers grecs, un chien à trois têtes veille : personne n'entre vivant, personne ne sort mort.",
+    degainer: "La secrétaire qui filtre tous les appels du directeur ? Un vrai cerbère.",
+  },
+  "Némésis": {
+    scene: "Dans chaque histoire de super-héros, il y a l'ennemi juré, celui qui revient toujours, qui le connaît par cœur. C'est sa némésis.",
+    origine: "Némésis était la déesse grecque de la vengeance, qui punissait l'orgueil démesuré.",
+  },
+  "Léviathan": {
+    scene: "Dans la Bible, un monstre marin colossal, qu'aucun homme ne peut vaincre.",
+    aussi: "Le philosophe Hobbes a donné ce nom à l'État tout-puissant, qui protège les gens en échange de leur obéissance.",
+  },
+  "Arcanes": {
+    scene: "Les couloirs du ministère, les dîners discrets, les décisions prises avant les réunions. Les arcanes du pouvoir : des secrets réservés à quelques initiés.",
+    aussi: "Dans le tarot, les cartes sont aussi des arcanes : majeurs et mineurs.",
+  },
+  "Titan": {
+    scene: "Avant les dieux de l'Olympe, il y avait les Titans, des géants qui régnaient sur le monde. Zeus les a vaincus et enfermés sous la terre.",
+    aussi: "Au figuré, un titan est quelqu'un d'une puissance hors norme : « un titan de l'industrie ».",
+  },
+  "Régicide": {
+    scene: "21 janvier 1793 : Louis XVI monte sur l'échafaud. Tuer un roi, c'est un régicide, et ceux qui ont voté sa mort ont été appelés les régicides.",
+  },
+  "Usurpateur": {
+    scene: "Le roi légitime est en exil. Sur le trône siège un autre, qui a pris la couronne par la ruse ou la force. C'est l'usurpateur.",
+  },
+  "Graal": {
+    scene: "Les chevaliers de la Table ronde ont passé leur vie à chercher le Graal, la coupe sacrée. Seuls les plus purs pouvaient l'approcher.",
+    degainer: "Au figuré, le Graal, c'est le but ultime d'une longue quête : « Ce contrat, c'est le Graal. »",
+  },
+  "Oracle": {
+    scene: "À Delphes, une prêtresse assise sur un trépied rendait les réponses du dieu Apollon, toujours énigmatiques. On venait de toute la Grèce consulter l'oracle.",
+    aussi: "Aujourd'hui, on appelle « oracle » quelqu'un dont l'avis fait autorité.",
+  },
+  "Pandémonium": {
+    scene: "Dans « Le Paradis perdu » de Milton, les anges déchus bâtissent leur capitale au fond de l'Enfer : Pandémonium, le palais de tous les démons. Depuis, le mot désigne un lieu de chaos bruyant, une cohue infernale.",
+    degainer: "C'est le nom de cette appli : un joyeux chaos de mots, où chacun peut trouver le sien.",
+    origine: "Inventé par Milton en 1667, à partir du grec : « pan », tout, et « daimon », démon.",
+  },
+  "Alchimiste": {
+    scene: "Dans une cave enfumée, entre les alambics et les vieux grimoires, il cherche à changer le plomb en or et à distiller l'élixir de longue vie.",
+    origine: "Newton lui-même a écrit plus de pages sur l'alchimie que sur la physique.",
+  },
+  "Chimère": {
+    scene: "Une tête de lion, un corps de chèvre, une queue de serpent, et du feu qui sort de sa gueule. La Chimère des Grecs.",
+    aussi: "Au figuré, une chimère est un rêve impossible : « courir après des chimères ».",
+  },
+  "Hydre": {
+    scene: "Hercule tranche une tête du serpent de Lerne. Deux repoussent à la place. C'est l'hydre : plus on la combat, plus elle grandit.",
+    degainer: "Pour un problème qui renaît sans cesse : « l'hydre de la corruption ».",
+  },
+  "Avatar": {
+    scene: "Dans l'hindouisme, le dieu Vishnou descend sur Terre sous différentes formes : un poisson, une tortue, un prince. Chacune est un avatar.",
+    aussi: "Aujourd'hui, ton avatar, c'est ton personnage dans un jeu vidéo ou ta photo de profil.",
+  },
+  "Sosie": {
+    scene: "Dans le métro, tu croises quelqu'un qui ressemble trait pour trait à ton prof de maths. Même nez, même moustache. C'est son sosie.",
+    origine: "Sosie est le serviteur d'Amphitryon : le dieu Mercure prend son apparence pour le tromper.",
+  },
+  "Tartuffe": {
+    scene: "Il prie à voix haute, parle de vertu, condamne les autres, et pendant ce temps, il essaie de prendre la maison et la femme de son hôte. C'est un tartuffe : un hypocrite qui joue la piété.",
+    origine: "Le personnage de Molière, dont la pièce a été interdite pendant cinq ans.",
+  },
+  "Harpagon": {
+    scene: "Il compte les morceaux de sucre, éteint la lumière dès que tu sors d'une pièce, et cache son argent dans le jardin. Un vrai Harpagon.",
+    origine: "Le héros de « L'Avare » de Molière, qui crie « Au voleur ! » quand on lui prend sa cassette.",
+  },
+  "Rodomontade": {
+    scene: "« Moi, je l'aurais mis au tapis en dix secondes ! » Il n'a jamais mis les pieds dans une salle de boxe. Ce sont des rodomontades : de la vantardise.",
+    origine: "Rodomont, un guerrier fanfaron du Roland furieux de l'Arioste.",
+  },
+  "Gargantuesque": {
+    scene: "Un sandwich de cinquante centimètres, un plateau de fruits de mer pour deux qui nourrirait dix personnes. Une portion gargantuesque.",
+    origine: "Gargantua, le géant de Rabelais, qui buvait le lait de dix-sept mille vaches.",
+  },
+  "Ubuesque": {
+    scene: "Pour obtenir le formulaire A, il faut le formulaire B, qui exige le formulaire A. C'est ubuesque : absurde, grotesque et un peu cruel.",
+    origine: "Ubu roi, la pièce d'Alfred Jarry, qui fit scandale en 1896 dès le premier mot.",
+  },
+  "Lilliputien": {
+    scene: "Une maison de poupée avec des tasses grandes comme un ongle. Tout y est lilliputien.",
+    origine: "Lilliput, le pays des tout petits hommes dans « Les Voyages de Gulliver », de Swift.",
+  },
+  "Cassandre": {
+    scene: "Elle avait prévenu que l'entreprise allait couler. Personne ne l'a écoutée. Elle a joué les Cassandre.",
+    origine: "Apollon avait donné à Cassandre le don de prédire l'avenir, puis l'a maudite : personne ne la croirait jamais. Elle avait annoncé la chute de Troie.",
+  },
+  "Pygmalion": {
+    scene: "Il l'a découverte dans un petit bar, lui a appris à chanter, à tenir la scène, et en a fait une star. C'était son Pygmalion.",
+    origine: "Dans la mythologie, Pygmalion sculpte une statue si belle qu'il en tombe amoureux, et la déesse Aphrodite lui donne vie.",
+  },
+  "Mécène": {
+    scene: "Sans lui, le jeune peintre serait mort de faim. Il lui paie un atelier, achète ses toiles, le présente aux galeries. C'est son mécène.",
+    origine: "Mécène était un riche ami de l'empereur Auguste, qui protégeait les poètes Virgile et Horace.",
+  },
+  "Faustien": {
+    scene: "Le savoir absolu, la jeunesse éternelle, le pouvoir sans limite, et en échange, ton âme. Un pacte faustien.",
+    origine: "Faust, le savant de la légende allemande, qui vend son âme au diable Méphistophélès.",
+  },
+  "Prométhéen": {
+    scene: "Voler le feu aux dieux pour le donner aux hommes, quitte à être enchaîné à un rocher pour l'éternité. Une ambition prométhéenne défie les limites humaines.",
+  },
+  "Bovarysme": {
+    scene: "Elle s'imagine une vie de roman, des bals, des amants, des voyages, et trouve son quotidien d'une platitude insupportable. C'est le bovarysme.",
+    origine: "Emma Bovary, l'héroïne de Flaubert, nourrie de romans sentimentaux, qui ne supporte pas sa vie de province.",
+  },
+  "Donquichottesque": {
+    scene: "Il se bat seul contre une multinationale, avec une pétition et beaucoup de courage. Généreux, naïf, un peu fou : c'est donquichottesque.",
+    origine: "Don Quichotte, le chevalier de Cervantès, qui charge des moulins à vent en les prenant pour des géants.",
+  },
+  "Byzantin": {
+    scene: "Trois heures à débattre pour savoir si la virgule va avant ou après les guillemets. Une discussion byzantine : subtile à l'excès, et parfaitement inutile.",
+    origine: "On raconte que pendant le siège de Constantinople, en 1453, les théologiens débattaient du sexe des anges.",
+  },
+  "Immanentisme": {
+    scene: "Dieu n'est pas un vieux barbu au-dessus des nuages : il est dans les arbres, les étoiles, en toi. Tout ce qui est divin est dans le monde lui-même. C'est l'immanentisme.",
+    origine: "Spinoza le résumait en trois mots : « Dieu, c'est-à-dire la Nature. »",
+  },
+  "Dépraver": {
+    scene: "Les mauvaises fréquentations, l'argent facile, et peu à peu, le jeune homme honnête se perd. On l'a dépravé : corrompu.",
+    aussi: "On peut aussi dépraver le goût : « Trop de sucre a dépravé son palais. »",
+  },
+  "Subdivision": {
+    scene: "Le livre est divisé en parties, les parties en chapitres, les chapitres en sections. Chaque section est une subdivision.",
+  },
+  "Fantasmatique": {
+    scene: "Le voisin qu'il imagine espion, la fortune qui l'attend à Las Vegas : tout ça est fantasmatique, ça n'existe que dans sa tête.",
+  },
+  "Gnostique": {
+    scene: "Aux premiers siècles de notre ère, des groupes croyaient détenir un savoir secret, capable de libérer l'esprit prisonnier de la matière. Les gnostiques.",
+  },
+  "Ancillaire": {
+    scene: "Dans les romans du XIXe siècle, les « amours ancillaires », ce sont les liaisons des maîtres avec leurs servantes.",
+    aussi: "Aujourd'hui, ancillaire veut dire secondaire : « une tâche ancillaire ».",
+  },
+  "Enjôleur": {
+    scene: "Un sourire en coin, un compliment bien placé, une voix qui caresse. Il est enjôleur : il te séduit avec des mots doux… et tu te méfies un peu.",
+  },
+  "Laconique": {
+    scene: "Tu lui envoies un long message plein d'émotion. Il répond : « Ok. » Une réponse laconique.",
+    origine: "Les Spartiates venaient de Laconie. Philippe de Macédoine leur écrivit : « Si j'entre en Laconie, je raserai Sparte. » Ils répondirent : « Si. »",
+  },
+  "Enchâsser": {
+    scene: "Le joaillier fixe le diamant dans sa monture d'or, griffe par griffe. Il l'enchâsse.",
+    aussi: "On enchâsse aussi une citation dans un texte, comme une pierre précieuse.",
+  },
+  "Dispendieux": {
+    scene: "Un mariage dans un château, trois cents invités, un feu d'artifice. C'est dispendieux : ça coûte très cher.",
+    piege: "Ce qui est cher est dispendieux ; la personne qui dépense trop est dépensière.",
+  },
+  "Anticlérical": {
+    scene: "Il ne s'en prend pas à la foi des gens, mais refuse que les curés se mêlent de l'école ou de la politique. Il est anticlérical.",
+  },
+  "Fureter": {
+    scene: "Dans la brocante, elle ouvre chaque tiroir, soulève chaque carton, regarde sous chaque table. Elle furète, comme un furet dans son terrier.",
+  },
+  "Superlatif": {
+    scene: "« Le plus beau », « très grand », « extrêmement drôle » : tout ce qui monte au plus haut degré est un superlatif.",
+    aussi: "Au figuré : « Il parle toujours en superlatifs », tout est le meilleur ou le pire.",
+  },
+  "Épigramme": {
+    scene: "Quatre vers, une pointe à la fin, et la victime est ridiculisée dans tout Paris. Voltaire en était le maître.",
+  },
+  "Saillie": {
+    scene: "En plein dîner un peu ennuyeux, elle lance une remarque si drôle et si inattendue que toute la table éclate de rire. Une saillie : un trait d'esprit qui jaillit.",
+    aussi: "C'est aussi ce qui dépasse d'un mur : une saillie de pierre.",
+  },
+  "Rondo": {
+    scene: "Un refrain, un couplet, le refrain, un autre couplet, le refrain encore. La musique fait la ronde : c'est un rondo.",
+  },
+  "Emmiellé": {
+    scene: "« Ma chère amie, vous êtes si charmante aujourd'hui… » Des paroles emmiellées : sucrées en surface, et pas forcément sincères.",
+  },
+  "Jeter sa gourme": {
+    scene: "À vingt ans, il a fait la fête, des voyages fous, des amours de trois semaines. Il a jeté sa gourme : ses premières folies de jeunesse, avant de se poser.",
+    origine: "La gourme était une maladie des jeunes chevaux : une fois passée, ils étaient tranquilles.",
+  },
+  "Sophistique": {
+    scene: "« Rien n'existe, et si quelque chose existait, on ne pourrait pas le connaître. » Un raisonnement brillant, habile, et pourtant faux. C'est un raisonnement sophistique.",
+    origine: "Les sophistes, dans la Grèce antique, enseignaient l'art de convaincre. Socrate les accusait de défendre n'importe quoi pour de l'argent.",
+  },
+  "Épris": {
+    scene: "Il ne pense qu'à elle, il relit ses messages, il sourit tout seul dans le bus. Il est épris.",
+    aussi: "On peut aussi être épris d'une idée : « épris de liberté ».",
+  },
+  "Cassolette": {
+    scene: "Dans les temples anciens, de petits vases où brûlaient des encens. Et dans les restaurants, une cassolette de Saint-Jacques arrive bouillante dans son petit plat.",
+  },
+  "Cothurne": {
+    scene: "Les acteurs tragiques de la Grèce antique portaient de hautes chaussures pour paraître plus grands que les mortels. Ce sont les cothurnes.",
+    degainer: "« Chausser le cothurne » : prendre un ton tragique et solennel.",
+  },
+  "Épanchement": {
+    scene: "Tard dans la nuit, après une bouteille de vin, il raconte tout : son enfance, ses peurs, son chagrin. Un épanchement : un cœur qui déborde.",
+  },
+  "Albâtre": {
+    scene: "Une pierre blanche, si fine qu'on voit la lumière au travers. Les poètes parlent d'un « teint d'albâtre » pour une peau très pâle.",
+  },
+  "Recrudescence": {
+    scene: "L'épidémie semblait finie. Puis, en novembre, les cas remontent d'un coup. C'est une recrudescence : un retour en force.",
+  },
+  "Odalisque": {
+    scene: "Allongée sur des coussins de soie, de dos, le visage tourné vers nous : la Grande Odalisque, d'Ingres, au Louvre. Une femme du harem, telle que l'imaginaient les peintres européens.",
+  },
+  "Sérail": {
+    scene: "Le palais du sultan à Istanbul, ses jardins, ses appartements secrets. C'était le sérail.",
+    aussi: "Au figuré, le sérail, c'est le milieu fermé du pouvoir : « Il a grandi dans le sérail ».",
+  },
+  "Anachorète": {
+    scene: "Seul dans une grotte au milieu du désert, il prie, jeûne et ne parle à personne pendant des années. C'est un anachorète.",
+    degainer: "Pour quelqu'un qui ne sort jamais de chez lui : « Il vit en anachorète. »",
+  },
+  "Thébaïde": {
+    scene: "Une maison isolée dans la montagne, pas de réseau, pas de voisins, juste le silence. Sa thébaïde : un refuge pour se retirer du monde.",
+    origine: "La Thébaïde était une région du désert d'Égypte où vivaient les premiers ermites chrétiens.",
+  },
+  "Ficher": {
+    scene: "Un poignard fiché dans la porte, une flèche fichée dans un arbre : planté par la pointe.",
+    aussi: "Être « fiché » par la police, c'est être inscrit sur un fichier. Et en familier, « fiche-moi la paix ».",
+  },
+  "Cabrioler": {
+    scene: "Les chevreaux dans le pré sautent, se retournent en l'air, retombent et repartent. Ils cabriolent.",
+  },
+  "Derechef": {
+    scene: "Il trébucha, se releva, et trébucha derechef. De nouveau, une deuxième fois.",
+    degainer: "Un mot littéraire qui fait sourire dans un texto : « Je t'écris derechef. »",
+  },
+  "S'adonner": {
+    scene: "Le week-end, elle s'adonne à la poterie : elle y consacre tout son temps, toute son attention.",
+  },
+  "Prompt": {
+    scene: "Un mot de travers, et il s'emporte. Il est prompt à la colère : rapide à réagir.",
+    degainer: "« Prompt rétablissement ! » : guéris vite.",
+  },
+  "Abdication": {
+    scene: "Le roi renonce au trône, signe le document, et rend sa couronne. C'est l'abdication.",
+    aussi: "Au figuré, abdiquer, c'est renoncer, abandonner la lutte.",
+  },
+  "Glossaire": {
+    scene: "À la fin du manuel, une liste de mots difficiles avec leur explication. C'est le glossaire.",
+  },
+  "Babillard": {
+    scene: "Elle parle de tout, de rien, du temps, de la voisine, sans jamais s'arrêter. Babillarde comme un oiseau dans un buisson.",
+    aussi: "Au Québec, un babillard, c'est un panneau d'affichage.",
+  },
+  "Fronder": {
+    scene: "Dans les couloirs, ils critiquent la direction, contestent chaque décision, font circuler des pétitions. Ils frondent.",
+    origine: "La Fronde fut une révolte contre le pouvoir royal, quand Louis XIV était enfant.",
+  },
+  "Vicié": {
+    scene: "Une pièce fermée depuis des jours, l'air lourd et confiné. L'air est vicié.",
+    aussi: "Un raisonnement vicié est faussé dès le départ.",
+  },
+  "Brocarder": {
+    scene: "Les humoristes s'en donnent à cœur joie : chaque soir, le ministre est brocardé à la télévision. Moqué, raillé, tourné en ridicule.",
+  },
+  "Péristyle": {
+    scene: "Autour de la cour intérieure de la villa romaine, une rangée de colonnes abrite une galerie du soleil. C'est le péristyle.",
+  },
+  "Sigisbée": {
+    scene: "À Venise, au XVIIIe siècle, une dame mariée sortait accompagnée d'un gentilhomme galant qui portait son éventail, l'escortait au théâtre, lui faisait la conversation. C'était son sigisbée.",
+  },
+  "Néologisme": {
+    scene: "« Courriel », « divulgâcher », « procrastiner » à une époque : des mots tout neufs, inventés pour nommer quelque chose de nouveau. Ce sont des néologismes.",
+  },
+  "Scission": {
+    scene: "Le groupe de rock se sépare en deux : le chanteur part fonder un nouveau groupe avec le batteur. C'est une scission.",
+  },
+  "Transiger": {
+    scene: "Il veut vendre sa voiture deux mille euros, l'acheteur en propose mille cinq cents. Ils transigent à mille sept cent cinquante.",
+    degainer: "« Je ne transige pas sur mes principes » : je ne ferai aucune concession.",
+  },
+  "Répugner": {
+    scene: "L'odeur de poisson pourri lui répugne : elle le dégoûte.",
+    aussi: "« Répugner à » faire quelque chose, c'est être réticent : « Il répugne à demander de l'aide. »",
+  },
+  "Flétrir": {
+    scene: "Le bouquet de roses oublié sur la table, les pétales qui noircissent et pendent. Les fleurs sont flétries.",
+    aussi: "Au figuré, flétrir quelqu'un, c'est le condamner publiquement, le déshonorer.",
+  },
+  "Sentine": {
+    scene: "Tout au fond du navire, sous les cales, l'eau sale, la vase et les rats s'accumulent. C'est la sentine.",
+    aussi: "Au figuré, une sentine est un lieu de corruption : « la sentine de tous les vices ».",
+  },
+  "Anoblir": {
+    scene: "Le roi frappe l'épaule du marchand du plat de son épée : le voici chevalier. Il est anobli.",
+    aussi: "Au figuré, une belle action anoblit celui qui la fait.",
+  },
+  "Soufflet": {
+    scene: "Dans les romans de cape et d'épée, une insulte, un soufflet, et le duel est fixé au lendemain. Le soufflet, c'est la gifle.",
+    aussi: "Le soufflet, c'est aussi l'instrument en cuir qui attise le feu dans la cheminée.",
+  },
+  "Paralytique": {
+    scene: "Depuis son accident, il ne peut plus bouger les jambes. Il est paralytique.",
+  },
+  "Madrier": {
+    scene: "Sur le chantier, deux ouvriers portent une poutre épaisse, lourde, posée sur leurs épaules. C'est un madrier.",
+  },
+  "Fange": {
+    scene: "Les chevaux s'enfoncent jusqu'aux genoux dans la boue épaisse du chemin. C'est la fange.",
+    aussi: "Au figuré, « tomber dans la fange », c'est tomber dans la bassesse, l'abjection.",
+  },
+  "Pourceau": {
+    scene: "Un mot littéraire pour le porc. On l'entend surtout dans les vieilles fables et les jurons d'antan.",
+    degainer: "« Jeter des perles aux pourceaux » : offrir quelque chose de précieux à quelqu'un qui ne saura pas l'apprécier.",
+  },
+  "Liard": {
+    scene: "Une pièce de cuivre de rien du tout, sous l'Ancien Régime. « Il n'a pas un traître liard » : il n'a pas un sou.",
+  },
 };
