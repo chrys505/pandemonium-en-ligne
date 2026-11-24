@@ -4303,4 +4303,348 @@ const fiches = {
   "Carillonner": {
     scene: "Dimanche matin, les cloches de l'église carillonnent pour le mariage. Et la voisine carillonne la nouvelle à tout le quartier.",
   },
+
+  // Série 13
+  "Castagne": {
+    scene: "« Ça va finir en castagne ! » À la sortie du bal, les esprits s'échauffent et les poings partent. La bagarre, en argot.",
+  },
+  "Cénacle": {
+    scene: "Chaque jeudi soir, dans l'arrière-salle d'un café, les mêmes six poètes se lisent leurs vers. Un cénacle : un petit cercle d'initiés.",
+    origine: "Le Cénacle était la salle où Jésus partagea son dernier repas avec ses apôtres.",
+  },
+  "Chipoter": {
+    scene: "Il pousse les petits pois sur le bord de l'assiette, goûte un bout de viande, soupire. Il chipote.",
+    aussi: "On chipote aussi sur des détails : « On ne va pas chipoter pour cinq minutes. »",
+  },
+  "Circonspection": {
+    scene: "Il examine le champignon, le sent, consulte son livre, demande l'avis d'un voisin. Il le mange avec circonspection : avec une prudence réfléchie.",
+  },
+  "Clinquant": {
+    scene: "Des chaînes en or massif, une montre énorme, une voiture dorée. Tout brille, mais rien n'a de goût. C'est clinquant.",
+  },
+  "Concasser": {
+    scene: "Dans le mortier, le cuisinier écrase grossièrement les grains de poivre. Il les concasse.",
+  },
+  "Conciliant": {
+    scene: "« Tu veux le film d'action ? D'accord, et on regarde ta comédie demain. » Elle est conciliante : elle cherche l'accord.",
+  },
+  "Concis": {
+    scene: "« Je suis venu, j'ai vu, j'ai vaincu. » César résume une guerre en six mots. Concis.",
+  },
+  "Congénère": {
+    scene: "Le chien aboie dès qu'il croise un de ses congénères au parc : un autre chien.",
+    degainer: "Souvent avec ironie : « Il se méfie de ses congénères humains. »",
+  },
+  "Connotation": {
+    scene: "« Mère » et « maman » désignent la même personne. Mais « maman » a une connotation de tendresse que « mère » n'a pas : un sens second, une couleur.",
+  },
+  "Conscientiser": {
+    scene: "Une campagne d'affiches, une vidéo choc, un témoignage : on cherche à conscientiser les gens, à leur faire prendre conscience.",
+  },
+  "Consterner": {
+    scene: "La nouvelle tombe : l'usine ferme. Silence dans la salle, regards baissés. Tout le monde est consterné.",
+  },
+  "Controversé": {
+    scene: "La moitié de la salle l'adore, l'autre veut le faire taire. Un auteur controversé.",
+  },
+  "Courbettes": {
+    scene: "Il se plie en deux devant le directeur, rit à toutes ses blagues et lui porte sa mallette. Il fait des courbettes.",
+  },
+  "Crémaillère": {
+    scene: "Autrefois, on accrochait la marmite dans la cheminée à une tige crantée : la crémaillère. La pendre, c'était le dernier geste de l'emménagement, qu'on fêtait avec les amis.",
+    degainer: "« Pendre la crémaillère » : fêter son nouveau logement.",
+  },
+  "Créationnisme": {
+    scene: "Pour les créationnistes, chaque animal a été créé tel quel par Dieu, et l'évolution n'existe pas. Une croyance, pas une théorie scientifique.",
+  },
+  "Cryptologue": {
+    scene: "Pendant la guerre, dans un manoir anglais, des cryptologues ont passé des nuits à casser le code secret des Allemands.",
+  },
+  "Cultuel": {
+    scene: "Une église, une mosquée, une synagogue : ce sont des lieux cultuels, consacrés au culte.",
+    piege: "Ne pas confondre avec « culturel ».",
+  },
+  "Dardé": {
+    scene: "Elle tourne la tête, et son regard noir est dardé sur lui, comme une flèche.",
+  },
+  "Déchanter": {
+    scene: "Il pensait que vivre à Paris, ce serait les cafés et les musées. Puis il a vu le loyer. Il a vite déchanté.",
+  },
+  "Déconcertant": {
+    scene: "Il répond à chaque question par une autre question, en souriant. Déconcertant : ça te déroute.",
+  },
+  "Décousu": {
+    scene: "Il commence par sa grand-mère, passe au foot, revient à ses impôts. Son discours est décousu : sans fil logique.",
+  },
+  "Dédaigner": {
+    scene: "On lui offre un poste, il hausse les épaules et dédaigne la proposition, trop fier pour l'accepter.",
+  },
+  "Dédouaner": {
+    scene: "« Ce n'est pas ma faute, c'est le système. » Il cherche à se dédouaner : à se libérer de sa responsabilité.",
+    aussi: "Au sens propre, dédouaner une marchandise, c'est payer les droits de douane.",
+  },
+  "Se défausser": {
+    scene: "Aux cartes, tu te débarrasses de ta carte la plus faible. Tu te défausses. Et au bureau, il se défausse du dossier sur son collègue.",
+  },
+  "Déférent": {
+    scene: "Il se lève quand la vieille dame entre, l'appelle « madame », lui tend la meilleure chaise. Il est déférent.",
+  },
+  "Déferlement": {
+    scene: "Les portes du magasin s'ouvrent pour les soldes : un déferlement de clients, comme une vague.",
+  },
+  "Défrichement": {
+    scene: "Couper les ronces, arracher les souches, rendre la terre cultivable : le défrichement.",
+    aussi: "Au figuré, c'est le premier travail sur un sujet nouveau.",
+  },
+  "Démanteler": {
+    scene: "La police a démantelé le réseau : arrêté les chefs, saisi l'argent, fermé les planques. Tout est détruit.",
+  },
+  "Dénigrer": {
+    scene: "Il ne rate jamais une occasion de dire que le travail de sa collègue est médiocre. Il la dénigre.",
+  },
+  "Dépeindre": {
+    scene: "En quelques lignes, l'écrivain dépeint le village : les toits rouges, l'odeur de pain, le vieux chien sur la place.",
+  },
+  "Dépit": {
+    scene: "Battu au dernier moment, il jette sa raquette par terre. Du chagrin mêlé de colère : du dépit.",
+    degainer: "« En dépit de » : malgré. « Il est sorti en dépit de la pluie. »",
+  },
+  "Dépotoir": {
+    scene: "Derrière le hangar, des vieux frigos, des pneus, des sacs éventrés. Un dépotoir.",
+  },
+  "Désillusion": {
+    scene: "Il croyait que l'artiste qu'il admirait était un modèle de gentillesse. Puis il l'a rencontré. Quelle désillusion !",
+  },
+  "Désolation": {
+    scene: "Après l'incendie, la forêt noire et fumante à perte de vue. Un paysage de désolation.",
+  },
+  "Discutailler": {
+    scene: "Une heure à discutailler pour savoir si on met la nappe rouge ou la bleue. Des discussions sans fin sur des riens.",
+  },
+  "Dislocation": {
+    scene: "Après la guerre, l'empire se défait, morceau par morceau. C'est la dislocation.",
+    aussi: "En médecine, une épaule disloquée est sortie de son articulation.",
+  },
+  "Dissociation": {
+    scene: "Séparer l'homme de l'œuvre, le travail de la vie privée, l'huile de l'eau. Une dissociation.",
+  },
+  "Dixit": {
+    scene: "« La vie, c'est comme une bicyclette : il faut avancer pour ne pas perdre l'équilibre. » Einstein dixit : comme l'a dit Einstein.",
+  },
+  "Dudit": {
+    scene: "« Le propriétaire dudit terrain s'engage… » Du terrain dont on vient de parler. La langue des notaires.",
+  },
+  "Écrouelles": {
+    scene: "Le jour du sacre, le roi de France touchait les malades en disant : « Le roi te touche, Dieu te guérit. » Il était censé guérir les écrouelles, une maladie des ganglions.",
+  },
+  "Elliptique": {
+    scene: "« Et alors ? — Et alors, rien. » Une réponse elliptique : elle laisse beaucoup de choses sous-entendues.",
+    aussi: "En géométrie, une forme elliptique est un ovale. La Terre tourne autour du Soleil sur une orbite elliptique.",
+  },
+  "Émanation": {
+    scene: "Une odeur qui monte des égouts, une chaleur qui sort de la terre. Des émanations.",
+    aussi: "Au figuré, ce comité est l'émanation du peuple : il en provient.",
+  },
+  "Émasculer": {
+    scene: "Au sens propre, castrer. Au figuré, émasculer une loi, c'est lui retirer tout ce qui faisait sa force.",
+  },
+  "Emblématique": {
+    scene: "La tour Eiffel, emblématique de Paris : elle la symbolise mieux que n'importe quel monument.",
+  },
+  "Éminemment": {
+    scene: "Un sujet éminemment sensible : au plus haut point.",
+  },
+  "Enchâssement": {
+    scene: "Le diamant serti dans sa monture d'or. Et dans « Les Mille et Une Nuits », des histoires dans les histoires, comme des poupées russes. L'enchâssement.",
+  },
+  "Enchatonner": {
+    scene: "Le bijoutier place la pierre dans le petit logement en or de la bague, le chaton, et referme les griffes. Il l'enchatonne.",
+  },
+  "Encyclique": {
+    scene: "Une lettre solennelle du pape, envoyée aux évêques du monde entier sur une grande question. Une encyclique.",
+  },
+  "Enflure": {
+    scene: "Après la piqûre de guêpe, le bras gonfle. L'enflure.",
+    aussi: "Au figuré, l'enflure du style, c'est l'emphase. Et en familier, « espèce d'enflure ! » est une insulte.",
+  },
+  "Enguirlander": {
+    scene: "Pour Noël, on enguirlande le sapin. Et quand il rentre à trois heures du matin, sa mère l'enguirlande : elle le réprimande vertement.",
+  },
+  "Ensorceleur": {
+    scene: "Un sourire, une voix, un regard dont on ne peut se détacher. Un charme ensorceleur.",
+  },
+  "Entacher": {
+    scene: "Une seule tache de vin sur la nappe blanche. Et une seule erreur peut entacher une carrière parfaite.",
+  },
+  "Escampette": {
+    scene: "Le chat a renversé le vase. Il a pris la poudre d'escampette : il s'est enfui à toutes pattes.",
+  },
+  "Esquiver": {
+    scene: "Le boxeur penche la tête, et le coup passe à côté. Il esquive. Et toi, tu esquives la question de ta tante sur tes projets.",
+  },
+  "Esthétisme": {
+    scene: "Chez lui, chaque objet est choisi pour sa beauté, chaque livre aligné par couleur. Un culte de l'esthétisme.",
+  },
+  "Exécration": {
+    scene: "Le traître est maudit par tout le village. Il est l'objet de l'exécration générale : une haine violente.",
+  },
+  "Exhaler": {
+    scene: "Les roses exhalent leur parfum dans la chaleur du soir. Et le mourant exhale son dernier soupir.",
+  },
+  "Exhausser": {
+    scene: "La maison est trop basse : on l'exhausse d'un étage.",
+    piege: "Exhausser (rendre plus haut) ≠ exaucer (réaliser un vœu).",
+  },
+  "Exhaustivité": {
+    scene: "Le dictionnaire veut tous les mots, sans exception. Il vise l'exhaustivité.",
+  },
+  "Exorbitant": {
+    scene: "Vingt euros pour un café sur la place Saint-Marc ! Un prix exorbitant.",
+    origine: "Littéralement : qui sort de l'orbite.",
+  },
+  "Exsangue": {
+    scene: "Après l'accident, il est blanc comme un linge, vidé de son sang. Exsangue.",
+    aussi: "Au figuré, un pays exsangue a été épuisé par la guerre.",
+  },
+  "Extase": {
+    scene: "Devant le coucher de soleil sur la mer, elle oublie tout : le temps, le lieu, elle-même. L'extase.",
+  },
+  "Fastidieux": {
+    scene: "Recopier à la main deux cents adresses, une par une. Une tâche fastidieuse : longue et monotone.",
+  },
+  "Farandole": {
+    scene: "Au mariage, quelqu'un prend une main, puis une autre, et toute la salle se met à serpenter entre les tables. Une farandole.",
+  },
+  "Fioriture": {
+    scene: "Des volutes, des dorures, des petits anges partout. Trop de fioritures.",
+    degainer: "« Sans fioritures » : simplement, sans ornement.",
+  },
+  "Folichon": {
+    scene: "Un dimanche de pluie, rien à la télé, le frigo vide. Ce n'est pas folichon.",
+  },
+  "Foisonnement": {
+    scene: "Dans la jungle, des fleurs, des lianes, des insectes partout. Un foisonnement de vie.",
+  },
+  "Forceps": {
+    scene: "Au sens propre, une pince pour aider un bébé à naître. Au figuré, un accord obtenu au forceps : avec énormément de peine.",
+  },
+  "Fourvoyer": {
+    scene: "Un faux panneau, un GPS qui se trompe, et le voilà fourvoyé dans un chemin de terre. Égaré.",
+  },
+  "Fragmentaire": {
+    scene: "Des pages manquantes, des phrases coupées. Le manuscrit retrouvé est fragmentaire.",
+  },
+  "Funeste": {
+    scene: "Ce jour funeste où le navire a sombré. Une décision funeste, qui a mené au désastre.",
+  },
+  "Futile": {
+    scene: "Des disputes futiles pour la place sur le canapé : sans importance.",
+  },
+  "Galéjer": {
+    scene: "« Il a attrapé un poisson grand comme le bateau ! » Il galèje, à la marseillaise : il raconte des histoires inventées pour faire rire.",
+  },
+  "Geôlier": {
+    scene: "Un trousseau de clés à la ceinture, il ferme les cellules chaque soir. Le geôlier.",
+  },
+  "Girouette": {
+    scene: "Sur le toit de la ferme, un coq de fer qui tourne au gré du vent. Une girouette.",
+    aussi: "Au figuré, une personne qui change d'avis au moindre souffle.",
+  },
+  "Niaque": {
+    scene: "Score défavorable, deux minutes à jouer, et elle ne lâche rien. Elle a la niaque : la rage de gagner.",
+  },
+  "Goret": {
+    scene: "Un petit cochon rose qui se roule dans la boue. Un goret.",
+    aussi: "En familier, « espèce de goret ! » : un sale, un malpropre.",
+  },
+  "Goule": {
+    scene: "Dans les légendes arabes, un démon qui rôde dans les cimetières la nuit et dévore les cadavres. La goule.",
+  },
+  "Héraut": {
+    scene: "Sur la place du marché, un homme en livrée sonne la trompette et proclame la nouvelle loi du roi. Le héraut.",
+    piege: "Ne pas confondre avec « héros ».",
+  },
+  "Hérésie": {
+    scene: "Au Moyen Âge, contester un dogme de l'Église pouvait mener au bûcher. C'était une hérésie.",
+    degainer: "Avec humour : « Mettre de la crème dans une carbonara ? Une hérésie ! »",
+  },
+  "Hybride": {
+    scene: "Une voiture qui roule à l'essence et à l'électricité, une rose croisée de deux variétés. Hybride.",
+  },
+  "Idiomatique": {
+    scene: "« It's raining cats and dogs » : il pleut des chats et des chiens, en anglais. Une expression idiomatique : propre à une langue, intraduisible mot à mot.",
+  },
+  "Idyllique": {
+    scene: "Une petite maison au bord d'un lac, des montagnes au loin, le silence. Un cadre idyllique.",
+  },
+  "Illusionniste": {
+    scene: "Il fait disparaître une colombe dans son chapeau et réapparaître ta montre dans ta poche. Un illusionniste.",
+  },
+  "Impotent": {
+    scene: "Depuis sa chute, le vieil homme ne peut plus marcher qu'avec peine, aidé de deux cannes. Il est impotent.",
+  },
+  "Imputer": {
+    scene: "On impute l'accident au mauvais temps : on lui en attribue la faute.",
+  },
+  "Inaltérable": {
+    scene: "L'or ne rouille jamais, même après mille ans sous la terre. Inaltérable. Comme leur amitié.",
+  },
+  "Incomber": {
+    scene: "« Il vous incombe de prévenir les familles. » Cette charge vous revient, à vous.",
+  },
+  "Inconduite": {
+    scene: "Dans les romans anciens, un fils renvoyé de l'école pour inconduite : une mauvaise conduite morale.",
+  },
+  "Induire": {
+    scene: "Un panneau mal placé peut induire les automobilistes en erreur : les tromper.",
+  },
+  "Inébranlable": {
+    scene: "Les vagues frappent, la tempête souffle : le phare reste debout. Inébranlable. Comme sa confiance en toi.",
+  },
+  "Inquisiteur": {
+    scene: "Au Moyen Âge, le juge de l'Inquisition interrogeait les suspects d'hérésie. L'inquisiteur.",
+    aussi: "« Un regard inquisiteur » fouille et soupçonne.",
+  },
+  "Insaisissable": {
+    scene: "La police le traque depuis des années, il change de nom, de ville, de visage. Un voleur insaisissable.",
+  },
+  "Insubordonné": {
+    scene: "Le soldat refuse l'ordre, tourne le dos à l'officier. Il est insubordonné.",
+  },
+  "Insuffler": {
+    scene: "L'entraîneur insuffle du courage à son équipe : il le leur fait passer, comme un souffle.",
+  },
+  "Insurrection": {
+    scene: "Des barricades dans les rues, la foule qui marche sur le palais. Une insurrection : un soulèvement contre le pouvoir.",
+  },
+  "Intercaler": {
+    scene: "Entre deux rendez-vous, elle intercale un café avec une amie : elle le glisse entre les deux.",
+  },
+  "Intransitif": {
+    scene: "« Il dort. » Pas besoin de complément. Dormir est un verbe intransitif. « Il mange une pomme » : manger, lui, est transitif.",
+  },
+  "Intrigant": {
+    scene: "Il flatte l'un, trahit l'autre, glisse un mot à l'oreille du patron. Un intrigant qui manœuvre pour arriver à ses fins.",
+    piege: "Ne pas confondre avec « intriguant » (le participe : en intriguant).",
+  },
+  "Irruption": {
+    scene: "En pleine réunion, la porte s'ouvre à la volée et un livreur entre en criant. Une irruption.",
+    piege: "Irruption (entrer brusquement) ≠ éruption (sortir brusquement, comme un volcan).",
+  },
+  "Jalonner": {
+    scene: "Des cailloux blancs marquent le chemin du randonneur. Et sa vie a été jalonnée d'épreuves.",
+  },
+  "Jongleur": {
+    scene: "Au Moyen Âge, il allait de château en château, chantait, racontait des histoires et lançait des balles en l'air. Le jongleur.",
+  },
+  "Jubiler": {
+    scene: "Son rival a raté son examen. Il ne dit rien, mais intérieurement, il jubile.",
+  },
+  "Lapidaire": {
+    scene: "« Non. » Une réponse lapidaire : brève et frappante, comme gravée dans la pierre.",
+    aussi: "Le lapidaire, c'est aussi l'artisan qui taille les pierres précieuses.",
+  },
+  "Lichette": {
+    scene: "« Juste une lichette de gâteau, pas plus ! » Un tout petit morceau.",
+  },
 };
