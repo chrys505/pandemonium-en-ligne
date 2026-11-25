@@ -2522,3 +2522,34 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 body.sorcellerie #ecran-aujourdhui { filter: hue-rotate(-25deg) saturate(1.4) brightness(.7); transition: filter 1s; }
 @keyframes oeuf-entree { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes oeuf-flamme { from { opacity: .65; transform: translateY(1px); } to { opacity: 1; transform: translateY(-1px); } }
+
+/* ---------- La porte qui s'ouvre en grinçant (2026-11-25) ---------- */
+.porte { position: fixed; inset: 0; z-index: 8000; display: flex; perspective: 1100px; pointer-events: none; }
+.porte[hidden] { display: none; }
+.battant { position: relative; width: 50%; height: 100%; backface-visibility: hidden;
+  background:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, .18) 0 2px, transparent 2px 46px),
+    linear-gradient(180deg, rgba(255, 255, 255, .05), transparent 30%, rgba(0, 0, 0, .25)),
+    linear-gradient(90deg, #3b2414, #5a3820 50%, #3b2414);
+  box-shadow: inset 0 0 0 10px #2a190d, inset 0 0 0 12px rgba(214, 170, 92, .55), inset 0 0 60px rgba(0, 0, 0, .55); }
+.battant::before { content: ""; position: absolute; left: 18%; right: 18%; top: 12%; height: 30%; border: 2px solid rgba(214, 170, 92, .4); border-radius: 8px 8px 2px 2px; }
+.battant::after { content: ""; position: absolute; left: 18%; right: 18%; bottom: 10%; height: 34%; border: 2px solid rgba(214, 170, 92, .4); border-radius: 2px; }
+.battant-gauche { transform-origin: left center; }
+.battant-droit { transform-origin: right center; }
+.poignee { position: absolute; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffe3a3, #b07a2a 60%, #5a3a10); box-shadow: 0 2px 6px rgba(0, 0, 0, .6); }
+.battant-gauche .poignee { right: 16px; }
+.battant-droit .poignee { left: 16px; }
+.porte-cabinet .battant { background:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, .2) 0 2px, transparent 2px 46px),
+    linear-gradient(180deg, rgba(255, 255, 255, .05), transparent 30%, rgba(0, 0, 0, .3)),
+    linear-gradient(90deg, #26142e, #43244f 50%, #26142e); }
+.porte.ouverte .battant-gauche { animation: battant-gauche 1.2s cubic-bezier(.5, 0, .7, .4) forwards; }
+.porte.ouverte .battant-droit { animation: battant-droit 1.2s cubic-bezier(.5, 0, .7, .4) forwards; }
+@keyframes battant-gauche {
+  0% { transform: rotateY(0); } 12% { transform: rotateY(-6deg); } 22% { transform: rotateY(-4deg); }
+  85% { opacity: 1; } 100% { transform: rotateY(-108deg); opacity: 0; } }
+@keyframes battant-droit {
+  0% { transform: rotateY(0); } 12% { transform: rotateY(6deg); } 22% { transform: rotateY(4deg); }
+  85% { opacity: 1; } 100% { transform: rotateY(108deg); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .porte { display: none; } }
