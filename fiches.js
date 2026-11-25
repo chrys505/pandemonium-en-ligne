@@ -5664,4 +5664,309 @@ const fiches = {
   "Luth": {
     scene: "Un instrument au dos bombé comme une poire, aux cordes pincées, roi des cours de la Renaissance. Le luth.",
   },
+
+  // Série 17, la dernière
+  "Poitevin": {
+    scene: "Les marais aux canaux verts, le chabichou, le Futuroscope : tout ce qui vient du Poitou est poitevin.",
+  },
+  "Impudent": {
+    scene: "Pris en train de mentir, il te regarde droit dans les yeux et recommence. Impudent : insolent, sans la moindre honte.",
+  },
+  "Pistole": {
+    scene: "« Deux pistoles pour ce cheval ! » Dans les romans de cape et d'épée, on paie en pièces d'or : des pistoles.",
+  },
+  "Croquignole": {
+    scene: "Une pichenette sur le bout du nez, pour taquiner. Une croquignole.",
+    aussi: "C'est aussi un petit biscuit sec. Et en familier, « croquignolet » veut dire mignon.",
+  },
+  "Céans": {
+    scene: "« Le maître de céans vous attend au salon. » Ici, dans cette maison, dans la langue de Molière.",
+  },
+  "Se dédire": {
+    scene: "Hier, il avait promis de venir. Aujourd'hui, il se dédit : il revient sur sa parole.",
+    degainer: "Dans Molière : « Je me dédis de tout ce que je disais. »",
+  },
+  "Mander": {
+    scene: "« Mandez le notaire ! » Le roi fait venir quelqu'un, le convoque. Il le mande.",
+  },
+  "Révérer": {
+    scene: "Dans le village, on révère la vieille institutrice : on l'honore avec un profond respect.",
+  },
+  "Héliotrope": {
+    scene: "Le matin face à l'est, le soir face à l'ouest : ses fleurs suivent le soleil toute la journée. L'héliotrope.",
+    origine: "Du grec : « qui se tourne vers le soleil ».",
+  },
+  "Dorénavant": {
+    scene: "« Dorénavant, je me lèverai à six heures. » À partir de maintenant… au moins jusqu'à lundi.",
+  },
+  "Appendre": {
+    scene: "Dans le temple, le guerrier vainqueur suspend son bouclier en offrande aux dieux. Il l'append.",
+  },
+  "Augurer": {
+    scene: "Un beau soleil le jour du mariage : de quoi bien augurer de l'avenir. Prévoir d'après des signes.",
+    origine: "À Rome, les augures lisaient l'avenir dans le vol des oiseaux.",
+  },
+  "Mièvre": {
+    scene: "Des cœurs roses, des petits chats et des phrases sucrées. Un film mièvre : d'une gentillesse fade.",
+    aussi: "Chez Molière, mièvre voulait dire au contraire vif et malicieux : un enfant « mièvre et éveillé ».",
+  },
+  "Régent": {
+    scene: "Louis XV n'a que cinq ans quand il devient roi. Philippe d'Orléans, un prince de la famille, gouverne à sa place : c'est le Régent.",
+    aussi: "Dans les collèges d'autrefois, le régent était le professeur.",
+  },
+  "Gnoséologique": {
+    scene: "« Comment pouvons-nous connaître le monde ? » Une question gnoséologique, qui porte sur la connaissance elle-même.",
+  },
+  "Phénoménologie": {
+    scene: "Ne te demande pas ce qu'est vraiment une tasse de café : décris comment elle t'apparaît, sa chaleur, son odeur, sa couleur. C'est la démarche de la phénoménologie.",
+  },
+  "Vectoriel": {
+    scene: "Une flèche qui a une direction et une force : le vent qui pousse le voilier vers le nord-est. Un vecteur.",
+    aussi: "Une image vectorielle peut s'agrandir à l'infini sans devenir floue.",
+  },
+  "Monade": {
+    scene: "Pour Leibniz, l'univers est fait de petites unités simples, sans parties, chacune reflétant le monde entier à sa façon. Les monades.",
+  },
+  "Réfraction": {
+    scene: "Plonge une paille dans un verre d'eau : elle a l'air cassée à la surface. C'est la réfraction : la lumière dévie en changeant de milieu.",
+  },
+  "Bipartition": {
+    scene: "La cellule se divise en deux cellules identiques. Une bipartition.",
+  },
+  "Anthropologique": {
+    scene: "Pourquoi tous les peuples racontent-ils des histoires, fêtent-ils les morts, partagent-ils la nourriture ? Des questions anthropologiques.",
+  },
+  "Égratigner": {
+    scene: "Le chat t'égratigne la main en jouant. Et le critique égratigne gentiment le film : une petite pique, pas plus.",
+  },
+  "Bidimensionnel": {
+    scene: "Une feuille de papier, un dessin, un écran : hauteur et largeur, pas de profondeur. Bidimensionnel.",
+  },
+  "Tâtonner": {
+    scene: "La lumière est coupée : il avance dans le noir, la main sur le mur, à la recherche de l'interrupteur. Il tâtonne.",
+    aussi: "Au figuré, on tâtonne avant de trouver la bonne méthode.",
+  },
+  "Substituer": {
+    scene: "Pas de beurre ? Elle substitue de l'huile d'olive : elle la met à la place.",
+  },
+  "Vélocité": {
+    scene: "Les doigts du pianiste courent sur les touches à une vitesse folle. Une vélocité impressionnante.",
+  },
+  "Cachet": {
+    scene: "Sur l'enveloppe, la cire rouge et le sceau du roi : le cachet.",
+    aussi: "Une vieille maison qui « a du cachet » a un charme bien à elle. Un cachet d'aspirine, c'est un comprimé. Et le cachet d'un artiste, c'est sa paie.",
+  },
+  "Chauler": {
+    scene: "Dans les vergers, au printemps, on peint le bas des troncs en blanc pour les protéger. On les chaule.",
+  },
+  "Cognassier": {
+    scene: "Au fond du jardin, un arbre aux fruits jaunes, durs, au parfum incroyable, qu'on ne mange qu'en gelée. Le cognassier, l'arbre des coings.",
+  },
+  "Se cabrer": {
+    scene: "Un serpent sur le chemin, et le cheval se dresse sur ses pattes arrière. Il se cabre.",
+    aussi: "Au figuré, quelqu'un se cabre quand il refuse brusquement.",
+  },
+  "Étrille": {
+    scene: "À l'écurie, une brosse en fer à dents courtes pour nettoyer le poil du cheval. L'étrille.",
+    aussi: "C'est aussi un petit crabe des côtes bretonnes.",
+  },
+  "Proue": {
+    scene: "À l'avant du navire, la pointe qui fend les vagues. La proue.",
+    piege: "L'arrière, c'est la poupe.",
+  },
+  "Ténu": {
+    scene: "Un fil de soie, un murmure, un espoir. Si fin qu'on le perçoit à peine : ténu.",
+  },
+  "Prosodie": {
+    scene: "La musique d'une phrase : où on appuie, où on monte, où on ralentit. Un Québécois et un Marseillais disent les mêmes mots avec une autre prosodie.",
+  },
+  "Esplanade": {
+    scene: "Devant le château, un immense espace plat et dégagé, où l'on se promène le dimanche. L'esplanade.",
+  },
+  "Encapuchonné": {
+    scene: "Sous la pluie, une silhouette encapuchonnée traverse la place, la tête cachée sous un capuchon.",
+  },
+  "Labile": {
+    scene: "Un parfum qui s'évapore, une humeur qui change d'une minute à l'autre, une trace qui s'efface. Labile : instable.",
+  },
+  "Crécerelle": {
+    scene: "Au bord de l'autoroute, un petit faucon roux reste immobile dans le ciel, battant des ailes sur place, avant de plonger. La crécerelle.",
+  },
+  "Photogramme": {
+    scene: "Un film, c'est vingt-quatre images fixes par seconde. Chacune d'elles est un photogramme.",
+  },
+  "Crânerie": {
+    scene: "Il traverse le champ de tir en sifflotant, les mains dans les poches. Une bravoure un peu provocante : de la crânerie.",
+  },
+  "Promptitude": {
+    scene: "Le serveur remplit ton verre avant même qu'il soit vide. Quelle promptitude !",
+  },
+  "Inclination": {
+    scene: "Dès l'enfance, il avait une inclination pour la musique : un penchant naturel.",
+    degainer: "Chez Molière : « avoir de l'inclination pour quelqu'un », c'est être attiré par lui.",
+  },
+  "Dannunzien": {
+    scene: "Des capes, des poèmes enflammés, des amours théâtrales, des vols au-dessus de Vienne en pleine guerre. Un style dannunzien.",
+    origine: "Gabriele D'Annunzio, poète italien flamboyant du début du XXe siècle.",
+  },
+  "Phalangiste": {
+    scene: "Dans l'Espagne des années 1930, un mouvement fasciste en chemises bleues, qui soutint Franco. Ses membres étaient les phalangistes.",
+  },
+  "Understatement": {
+    scene: "Sous un déluge, un Anglais lève les yeux et dit : « Un peu humide, aujourd'hui. » Dire moins qu'on ne pense, avec flegme : l'understatement.",
+  },
+  "Pléiade": {
+    scene: "Une pléiade de stars sur le tapis rouge : un groupe de personnes remarquables.",
+    aussi: "La Pléiade, au XVIe siècle, c'étaient sept poètes réunis autour de Ronsard et Du Bellay.",
+  },
+  "Néopositivisme": {
+    scene: "« Si on ne peut pas le vérifier par l'expérience ou la logique, ça n'a pas de sens. » La règle stricte des néopositivistes de Vienne, au XXe siècle.",
+  },
+  "Érotomane": {
+    scene: "En psychiatrie, l'érotomane est persuadé qu'une personne, souvent célèbre, est secrètement amoureuse de lui.",
+  },
+  "Soûlard": {
+    scene: "Accoudé au comptoir dès dix heures du matin, il ne sait plus très bien qui il est. Un soûlard.",
+  },
+  "Vacuité": {
+    scene: "Trois heures de discours, et pas une idée. La vacuité du propos : le vide.",
+  },
+  "Parturiente": {
+    scene: "À la maternité, la sage-femme encourage la parturiente : la femme en train d'accoucher.",
+  },
+  "Ethnologue": {
+    scene: "Elle a vécu deux ans dans un village d'Amazonie, à noter les rites, les mythes, les gestes du quotidien. C'est une ethnologue.",
+  },
+  "Se ramifier": {
+    scene: "La rivière se ramifie en mille bras dans le delta. Et un réseau criminel se ramifie dans tout le pays.",
+  },
+  "Techniciste": {
+    scene: "« Une appli réglera le problème. » Pour lui, la technique résout tout. Une vision techniciste.",
+  },
+  "Symbolisme": {
+    scene: "« Il pleure dans mon cœur comme il pleut sur la ville. » Verlaine ne décrit pas sa tristesse, il la suggère. C'est le symbolisme.",
+  },
+  "Philologie": {
+    scene: "Comparer les vieux manuscrits, retrouver le texte original, comprendre chaque mot dans sa langue d'époque. La philologie.",
+  },
+  "Rudesse": {
+    scene: "La rudesse d'un hiver en montagne. Et celle d'un vieux paysan, qui cache souvent un cœur tendre.",
+  },
+  "S'enclore": {
+    scene: "Il s'enclôt dans son jardin, derrière de hauts murs, et ne voit plus personne. Il se retranche.",
+  },
+  "Luire": {
+    scene: "Dans la nuit, les yeux du chat luisent. Et une lueur d'espoir luit au bout du tunnel.",
+  },
+  "Voirie": {
+    scene: "Les rues, les trottoirs, les égouts, les poubelles : tout ce que la mairie entretient. La voirie.",
+    aussi: "Jadis, la voirie était aussi le dépôt d'ordures.",
+  },
+  "S'appesantir": {
+    scene: "« Je ne vais pas m'appesantir sur les détails. » Je ne vais pas insister longuement.",
+  },
+  "Poreux": {
+    scene: "Une éponge, une brique, une pierre ponce : pleines de petits trous qui laissent passer l'eau. Poreuses.",
+    aussi: "Au figuré, une frontière poreuse laisse tout passer.",
+  },
+  "Bariolé": {
+    scene: "Un châle mexicain aux rayures rouges, jaunes, vertes, bleues, toutes mélangées. Bariolé.",
+  },
+  "Exégète": {
+    scene: "Il passe sa vie à expliquer chaque phrase d'un seul livre, mot par mot, depuis quarante ans. Un exégète.",
+  },
+  "Anthropomorphe": {
+    scene: "Une racine de mandragore qui ressemble à un petit bonhomme, un robot à deux bras et deux jambes. Anthropomorphe : en forme humaine.",
+  },
+  "Appendice": {
+    scene: "À la fin du livre, des cartes et des documents en plus : l'appendice.",
+    aussi: "Dans le ventre, un petit prolongement de l'intestin qui peut s'enflammer : l'appendicite.",
+  },
+  "Cantique": {
+    scene: "À Noël, dans l'église, toute l'assemblée chante ensemble un chant religieux. Un cantique.",
+  },
+  "Borgésien": {
+    scene: "Une bibliothèque infinie, un livre dont les pages se multiplient, un labyrinthe de miroirs. Un récit borgésien.",
+    origine: "Jorge Luis Borges, écrivain argentin, maître des paradoxes et des labyrinthes.",
+  },
+  "Prosateur": {
+    scene: "Victor Hugo était poète, mais aussi un immense prosateur : il écrivait en prose, comme dans « Les Misérables ».",
+  },
+  "Régir": {
+    scene: "Les lois de la gravité régissent le mouvement des planètes. Et un règlement régit la vie de l'immeuble.",
+  },
+  "Ontologique": {
+    scene: "« Pourquoi y a-t-il quelque chose plutôt que rien ? » La question ontologique par excellence : celle de l'être.",
+  },
+  "Contigu": {
+    scene: "Deux chambres contiguës, séparées par une simple porte. Juste à côté.",
+  },
+  "Confluent": {
+    scene: "À Lyon, le Rhône et la Saône se rejoignent à la pointe de la ville. Le confluent.",
+  },
+  "Écheveau": {
+    scene: "Un fil de laine enroulé en boucle, que le chat a emmêlé dans tout le salon. Un écheveau.",
+    aussi: "Au figuré, l'enquêteur démêle l'écheveau d'une affaire.",
+  },
+  "Inanition": {
+    scene: "Perdus dans le désert depuis dix jours, sans vivres. Ils meurent d'inanition.",
+    aussi: "Dans « L'Enfer » de Dante, le comte Ugolin, enfermé dans une tour, meurt de faim avec ses fils.",
+  },
+  "Fructifier": {
+    scene: "Les arbres fructifient à la fin de l'été. Et l'argent placé fructifie : il rapporte.",
+  },
+  "Polyèdre": {
+    scene: "Un dé, une pyramide, un diamant taillé : des volumes aux faces planes. Des polyèdres.",
+  },
+  "Lourdaud": {
+    scene: "Il marche sur les pieds de sa cavalière, renverse son verre et rit trop fort. Quel lourdaud !",
+  },
+  "Corpus": {
+    scene: "Tous les poèmes de Baudelaire réunis pour être étudiés en classe. Le corpus.",
+  },
+  "Cosmogonie": {
+    scene: "Au début, le chaos. Puis la nuit pond un œuf, d'où naît l'amour, qui crée le monde. Chaque peuple a sa cosmogonie : son récit de la naissance de l'univers.",
+  },
+  "Morcelé": {
+    scene: "Un territoire morcelé en mille petites parcelles, un récit morcelé en fragments. Divisé en petits morceaux.",
+  },
+  "Épars": {
+    scene: "Après la tempête, des branches éparses dans le jardin. Dispersées çà et là.",
+  },
+  "Marmoréen": {
+    scene: "Une peau d'une blancheur parfaite, un visage froid, immobile. Marmoréen, comme une statue de marbre.",
+  },
+  "Démotique": {
+    scene: "Les Égyptiens avaient l'écriture sacrée des hiéroglyphes, et une écriture plus simple, de tous les jours. Le démotique.",
+    aussi: "En Grèce, le démotique est la langue parlée par le peuple.",
+  },
+  "Vernaculaire": {
+    scene: "Au Moyen Âge, les savants écrivent en latin, mais au marché, on parle la langue du pays. La langue vernaculaire.",
+  },
+  "S'ossifier": {
+    scene: "Le cartilage du bébé se durcit peu à peu et devient de l'os. Il s'ossifie.",
+    aussi: "Au figuré, une institution qui ne change plus s'ossifie : elle se fige.",
+  },
+  "Diaspora": {
+    scene: "Des familles parties il y a des générations, qui vivent à Montréal, à Paris ou à Dakar, et gardent la langue et les recettes du pays. Une diaspora.",
+  },
+  "Débauchard": {
+    scene: "Fêtes, alcool, nuits blanches, et rien d'autre. Dans les romans d'autrefois, un vieux débauchard.",
+  },
+  "Cautériser": {
+    scene: "Sur le champ de bataille, on brûlait la plaie au fer rouge pour arrêter le sang. On la cautérisait.",
+    aussi: "Au figuré, le temps cautérise les blessures du cœur.",
+  },
+  "Prosélytisme": {
+    scene: "Il veut absolument te convertir à son régime, à sa religion, à son groupe de musique. Du prosélytisme.",
+  },
+  "Tchi": {
+    scene: "« T'as rien compris ? — Non, tchi. » Rien du tout, en argot.",
+  },
+  "Bougre": {
+    scene: "« C'est un bon bougre » : un brave type. « Bougre d'idiot ! » : espèce d'idiot. Et « Bougre ! » : un juron à l'ancienne.",
+  },
+  "Se débrider": {
+    scene: "Timide toute la soirée, il monte sur la table au dernier morceau et danse comme un fou. Il se débride : il se lâche.",
+  },
 };
