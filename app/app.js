@@ -2329,7 +2329,7 @@ function sonPorte() {
   if (typeof grincement !== "function") return;
   note(ctx, t, "square", 180, 90, 0.05, 0.05);
   souffle(ctx, t, "highpass", 2500, 1800, 0.04, 0.05, 0.7);
-  grincement(ctx, t + 0.3, etat.porteCrypte || "crypte");
+  grincement(ctx, t + 0.3, etat.porteCrypte || "crypteDouce"); // la crypte adoucie, choisie à l'écoute (2026-11-25)
 }
 // On prépare le bruitage dès le premier toucher, pour qu'il parte sans attendre
 document.addEventListener("pointerdown", function prep() {
