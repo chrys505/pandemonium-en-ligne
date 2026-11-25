@@ -632,6 +632,7 @@ const TITRES = [
   ["quintessence", "🌟", "Quintessence pure", "Distiller un élixir légendaire", 4, "elixirsLegendaires", 1],
   ["lecteur", "📜", "Lecteur de feuilleton", "Vivre le premier épisode du Roman de l'Alchimiste", 1, "roman", 1],
   ["heros1", "🏛️", "Héros du Livre I", "Terminer le Livre I du Roman de l'Alchimiste", 3, "roman", 10],
+  ["heros2", "🗝️", "Gardien des Quatre Mots", "Terminer le Livre II du Roman de l'Alchimiste", 4, "roman", 20],
   ["allie", "🔗", "Faiseur d'alliances", "Relier 15 alliances en une partie", 2, "alliances", 15],
   ["entremetteur", "💍", "Grand entremetteur des mots", "Relier 25 alliances en une partie", 4, "alliances", 25],
   ["grimpeur", "🧗", "Grimpeur de la Tour", "Atteindre l'étage 5 de la Tour", 2, "tourRecord", 5],
@@ -1315,23 +1316,33 @@ function episodeDispo() {
   return r.dernierJour === aujourdhui ? null : r.lus;
 }
 
+// Les livres du roman (Livre I, Livre II…) se suivent dans une seule liste d'épisodes
+function livresRoman() { return romanDispo.livres || [{ titre: romanDispo.livre, debut: 0 }]; }
+function numLivre(i) { let k = 0; livresRoman().forEach(function (l, j) { if (i >= l.debut) k = j; }); return k; }
+function bornesLivre(k) { const L = livresRoman(); return { debut: L[k].debut, fin: k + 1 < L.length ? L[k + 1].debut : romanDispo.episodes.length }; }
+function finDeLivre(i) { return i === bornesLivre(numLivre(i)).fin - 1; }
+function nomCourt(k) { return livresRoman()[k].titre.split(" · ")[0]; }
+
 function widgetRoman() {
   if (!romanDispo) return "";
-  const r = etatRoman(), n = romanDispo.episodes.length, i = episodeDispo();
+  const r = etatRoman(), n = romanDispo.episodes.length, i = episodeDispo(), L = livresRoman();
+  const k = numLivre(Math.min(r.lus, n - 1)), b = bornesLivre(k);
   let corps;
-  if (r.lus >= n) corps = '<p class="grimoire-titre">Livre I terminé</p><p class="petit">Le Livre II se distille… Relis ton roman en attendant.</p>';
+  if (r.lus >= n) corps = '<p class="grimoire-titre">' + echapper(nomCourt(L.length - 1)) + ' terminé</p><p class="petit">Le livre suivant se distille… Relis ton roman en attendant.</p>';
   else if (i !== null) {
     const ep = romanDispo.episodes[i];
-    corps = '<p class="roman-w-ep">Épisode ' + (i + 1) + " · " + echapper(ep.titre) + "</p>" +
+    corps = (i === b.debut && k > 0 ? '<p class="grimoire-titre">✨ Nouveau : ' + echapper(L[k].titre) + "</p>" : "") +
+      '<p class="roman-w-ep">Épisode ' + (i - b.debut + 1) + " · " + echapper(ep.titre) + "</p>" +
       '<p class="texte-doux gauche roman-w-extrait">' + echapper(ep.texte[0].slice(0, 120)) + "…</p>" +
-      '<button class="bouton principal" type="button" data-roman="lire">📖 Lire l\'épisode ' + (i + 1) + "</button>";
+      '<button class="bouton principal" type="button" data-roman="lire">📖 Lire l\'épisode ' + (i - b.debut + 1) + "</button>";
   } else {
     const prochain = romanDispo.episodes[r.lus];
-    corps = '<p class="roman-w-ep">Épisode ' + (r.lus + 1) + " · " + echapper(prochain.titre) + "</p>" +
+    corps = '<p class="roman-w-ep">' + (r.lus === b.debut && k > 0 ? echapper(nomCourt(k)) + " · " : "") + "Épisode " + (r.lus - b.debut + 1) + " · " + echapper(prochain.titre) + "</p>" +
       '<p class="petit">⏳ La suite paraît dans <b class="roman-rebours">' + reboursMinuit() + "</b></p>";
   }
+  const lusDuLivre = Math.min(Math.max(r.lus - b.debut, 0), b.fin - b.debut);
   return '<article class="widget widget-roman" id="widget-roman">' +
-    '<p class="etiquette">📜 Le Roman de l\'Alchimiste · ' + Math.min(r.lus, n) + " / " + n + "</p>" + corps +
+    '<p class="etiquette">📜 Le Roman de l\'Alchimiste · ' + echapper(nomCourt(k)) + " · " + lusDuLivre + " / " + (b.fin - b.debut) + "</p>" + corps +
     (r.lus ? '<button class="bouton petit-bouton" type="button" data-roman="relire">Relire ton roman</button>' : "") + "</article>";
 }
 setInterval(function () { document.querySelectorAll(".roman-rebours").forEach(function (x) { x.textContent = reboursMinuit(); }); }, 1000);
@@ -1357,8 +1368,8 @@ function lireEpisode(i) {
       '<button class="bouton principal large" type="button" id="roman-signer" disabled>🪶 Signer ma réplique</button>';
   }
   $("roman").innerHTML =
-    '<p class="etiquette">' + echapper(romanDispo.livre) + "</p>" +
-    '<p class="roman-titre">Épisode ' + (i + 1) + " · " + echapper(ep.titre) + "</p>" +
+    '<p class="etiquette">' + echapper(livresRoman()[numLivre(i)].titre) + "</p>" +
+    '<p class="roman-titre">Épisode ' + (i - bornesLivre(numLivre(i)).debut + 1) + " · " + echapper(ep.titre) + "</p>" +
     paragraphesEpisode(ep, r.voie) + '<div class="roman-action">' + action + "</div>";
   $("fenetre-roman").querySelector(".fenetre").scrollTop = 0;
 }
@@ -1369,14 +1380,17 @@ function finirEpisode(i, contenu) {
   else r.repliques[i] = contenu;
   r.lus = i + 1; r.dernierJour = aujourdhui;
   etat.xp += 15; sauver(); $("xp").textContent = etat.xp;
-  sonBoire(i === romanDispo.episodes.length - 1);
-  if (i === romanDispo.episodes.length - 1) feterAvecDesBraises();
+  const fin = finDeLivre(i), k = numLivre(i);
+  sonBoire(fin);
+  if (fin) feterAvecDesBraises();
   $("roman").querySelector(".roman-action").innerHTML =
     (ep.choix ? '<p class="roman-ta-replique voie-' + contenu + '">' + echapper(r.repliques[i]) + "</p>" : '<p class="roman-ta-replique">« ' + echapper(contenu) + " »</p>") +
     '<p class="roman-suspense">' + echapper(ep.suspense) + "</p>" +
-    (i + 1 < romanDispo.episodes.length
-      ? '<p class="petit">À suivre… L\'épisode ' + (i + 2) + ' paraît dans <b class="roman-rebours">' + reboursMinuit() + "</b></p>"
-      : '<p class="petit">Le Livre II se distille. Merci d\'avoir vécu le Livre I.</p>') +
+    (!fin
+      ? '<p class="petit">À suivre… L\'épisode ' + (i - bornesLivre(k).debut + 2) + ' paraît dans <b class="roman-rebours">' + reboursMinuit() + "</b></p>"
+      : i + 1 < romanDispo.episodes.length
+        ? '<p class="petit">Merci d\'avoir vécu le ' + echapper(nomCourt(k)) + '. Le ' + echapper(livresRoman()[k + 1].titre) + ' commence dans <b class="roman-rebours">' + reboursMinuit() + "</b>.</p>"
+        : '<p class="petit">Merci d\'avoir vécu le ' + echapper(nomCourt(k)) + ". Le livre suivant se distille.</p>") +
     '<button class="bouton large" type="button" data-roman="fermer">Refermer le livre</button>';
   setTimeout(verifierTitres, 1800);
 }
@@ -1384,9 +1398,11 @@ function finirEpisode(i, contenu) {
 function relireRoman() {
   const r = etatRoman();
   $("roman").innerHTML =
-    '<p class="etiquette">📖 Ton roman · ' + echapper(romanDispo.livre) + "</p>" +
+    '<p class="etiquette">📖 Ton roman de l\'Alchimiste</p>' +
     romanDispo.episodes.slice(0, r.lus).map(function (ep, i) {
-      return '<details class="roman-relu"><summary>Épisode ' + (i + 1) + " · " + echapper(ep.titre) + "</summary>" +
+      const k = numLivre(i), b = bornesLivre(k);
+      return (i === b.debut ? '<p class="roman-titre">' + echapper(livresRoman()[k].titre) + "</p>" : "") +
+        '<details class="roman-relu"><summary>Épisode ' + (i - b.debut + 1) + " · " + echapper(ep.titre) + "</summary>" +
         ep.texte.map(function (p) { return '<p class="roman-p fixe">' + echapper(p) + "</p>"; }).join("") +
         '<p class="roman-ta-replique">' + echapper(r.repliques[i] || "") + "</p>" +
         '<p class="roman-suspense">' + echapper(ep.suspense) + "</p></details>";
@@ -1792,7 +1808,7 @@ $("fermer-galejade").addEventListener("click", fermerGalejade);
 $("fenetre-galejade").addEventListener("click", function (e) { if (e.target === $("fenetre-galejade")) fermerGalejade(); });
 
 function majWidgets() {
-  $("widgets").innerHTML = widgetRoman() + widgetMystere() +widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetLivre() + widgetFil();
+  $("widgets").innerHTML = widgetRoman() + widgetMystere() +widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetPhrase() + widgetLivre() + widgetFil();
   majFil();
 }
 
@@ -4982,6 +4998,30 @@ $("fenetre-livres").addEventListener("click", function (e) {
   } else return;
   sauver();
   rendreLivres();
+});
+
+// ===== La belle phrase du jour (phrases.js) : une tournure élégante, la scène où la placer, son secret =====
+var decalPhrase = 0; // var : le widget peut être dessiné avant cette ligne
+function widgetPhrase() {
+  const liste = typeof bellesPhrases !== "undefined" ? bellesPhrases : [];
+  if (!liste.length) return "";
+  const p = liste[(numeroJour + (decalPhrase || 0)) % liste.length];
+  return '<article class="widget widget-phrase" id="widget-phrase">' +
+    '<p class="etiquette">🖋️ La belle phrase ' + (decalPhrase ? "à placer" : "du jour") + "</p>" +
+    '<p class="phrase-belle">« ' + echapper(p.phrase) + " »</p>" +
+    '<p class="fiche-part"><b>🎯 À dégainer</b> ' + echapper(p.quand) + "</p>" +
+    '<p class="fiche-part"><b>✨ Son secret</b> ' + echapper(p.secret) + "</p>" +
+    '<div class="actions-carte"><button class="bouton petit-bouton" type="button" data-phrase="ecouter">🔊 Écouter</button>' +
+    '<button class="bouton petit-bouton" type="button" data-phrase="autre">🎲 Une autre</button></div></article>';
+}
+$("widgets").addEventListener("click", function (e) {
+  const b = e.target.closest("[data-phrase]");
+  if (!b) return;
+  const liste = bellesPhrases;
+  if (b.dataset.phrase === "ecouter") { parler(liste[(numeroJour + (decalPhrase || 0)) % liste.length].phrase, "fr-FR"); return; }
+  decalPhrase = (decalPhrase + 1 + Math.floor(Math.random() * (liste.length - 1))) % liste.length || 1;
+  const w = $("widget-phrase");
+  if (w) { w.insertAdjacentHTML("afterend", widgetPhrase()); w.remove(); }
 });
 appliquerVersion();
 chercherPeintre();

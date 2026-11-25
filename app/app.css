@@ -2409,3 +2409,7 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 .livre-accroche { margin: 0 0 12px; font-family: var(--serif); font-size: 1.02rem; line-height: 1.6; }
 .livre-lien { padding: 3px 10px; font-size: 0.78rem; }
 .widget-livre { cursor: pointer; text-align: left; }
+
+/* La belle phrase du jour */
+.widget-phrase { text-align: left; }
+.phrase-belle { margin: 6px 0 14px; font-family: var(--serif); font-size: 1.25rem; font-style: italic; line-height: 1.5; }

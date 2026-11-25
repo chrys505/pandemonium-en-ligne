@@ -876,6 +876,11 @@ const sortileges = [
 //   replique: « à qui on répond » (il faut y placer le mot du jour) OU choix: [{ voie, texte }] }
 const feuilleton = {
   livre: "Livre I · La Fiole de l'Arsenal",
+  // Les livres du roman, à la suite : chaque livre commence à l'épisode « debut » (compté à partir de 0)
+  livres: [
+    { titre: "Livre I · La Fiole de l'Arsenal", debut: 0 },
+    { titre: "Livre II · Les Quatre Mots", debut: 10 }
+  ],
   episodes: [
     { titre: "La fiole sous la pluie",
       texte: [
@@ -977,6 +982,106 @@ const feuilleton = {
         rouge: "Tu es venu seul. Une colère froide monte en toi, et la fiole, dans ta main, vire lentement au rouge sang."
       },
       suspense: "La fiole se met à briller entre tes doigts, toute seule, de plus en plus fort. Le comte recule d'un pas. Pour la première fois, il a peur. FIN DU LIVRE I.",
-      replique: "Que réponds-tu au comte de Valmorne, la fiole brûlante à la main ?" }
+      replique: "Que réponds-tu au comte de Valmorne, la fiole brûlante à la main ?" },
+
+    // ===== Livre II · Les Quatre Mots =====
+    { titre: "La lumière noire",
+      texte: [
+        "La fiole ne s'ouvre pas. Elle éclate de lumière, une lumière si blanche qu'elle en devient noire, et le laboratoire tout entier disparaît dans l'éclair. Quand tu rouvres les yeux, le comte de Valmorne est à genoux, les mains sur le visage. Il hurle qu'il ne voit plus rien.",
+        "Tu brises les chaînes de ton oncle avec une barre de fer arrachée à un alambic. Il est léger comme un fagot de bois mort, mais ses yeux brillent. « Elle t'a reconnu, souffle-t-il. La fiole t'a reconnu. Viens, vite, avant qu'il ne recouvre la vue. »",
+        "Dehors, Paris brûle encore. Au coin de la rue du Bac, une barricade de pavés et de charrettes renversées. Ses défenseurs vous laissent passer : un vieil homme enchaîné, ça se respecte, les soirs de révolution."
+      ],
+      suspense: "Dans une cave de la rue Mouffetard, ton oncle te prend les mains : « Il manque quatre mots. L'eau, la terre, le souffle… et le dernier, que personne n'a jamais trouvé. »",
+      replique: "Ton oncle, épuisé, te demande comment tu as eu le courage de venir jusqu'à lui. Que lui réponds-tu ?" },
+    { titre: "Les trois cartes de l'oncle",
+      texte: [
+        "Ézéchiel Morvan dort deux jours entiers. Le troisième, il se réveille avec une faim de loup et trois feuilles de papier jaune cousues dans la doublure de sa veste. Trois cartes, couvertes de son écriture minuscule.",
+        "« Hydor, l'eau. Gê, la terre. Pneuma, le souffle. Chacun de ces mots dort quelque part dans Paris, gardé par quelqu'un, ou par quelque chose. » Il pose un doigt tremblant sur la première carte : un pont, une île, une flèche dessinée sous la surface de la Seine.",
+        "Clémence fronce les sourcils : « Et le quatrième ? » Ton oncle détourne les yeux. « Le quatrième, aucune carte ne le donne. Il faudra que vous le trouviez en vous. »"
+      ],
+      suspense: "Ce soir-là, Gaspard rentre en courant : sur le quai, il a vu le comte de Valmorne, des lunettes noires sur le nez, guidé par un valet. Il recouvre la vue.",
+      choix: [
+        { voie: "or", texte: "🗝️ Faire confiance à ton oncle et suivre ses cartes à la lettre" },
+        { voie: "rouge", texte: "🔥 Suivre ton instinct et chercher seul les mots, sans attendre personne" }
+      ] },
+    { titre: "L'ondine du pont Marie",
+      texte: [
+        "À minuit, la Seine est noire comme de l'encre. Sous la troisième arche du pont Marie, là où l'eau tourne en tourbillons, la carte indique une marque. Tu te penches. Dans l'eau, un visage te regarde, et ce n'est pas le tien.",
+        "Elle sort à demi de la rivière, des cheveux longs comme des algues, une peau couleur de lune. Une ondine. Sa voix ressemble au clapotis contre les quais : « Depuis mille ans, les hommes me jettent des pièces et des promesses. Je n'en veux plus. Fais rire l'eau, petit alchimiste, et je te donnerai son nom. »",
+        "Derrière toi, Gaspard pouffe nerveusement. Clémence lui écrase le pied."
+      ],
+      voie: {
+        or: "Ton oncle t'a appris, sur le chemin, que les ondines aiment les mots qui font des ricochets. Tu as un plan.",
+        rouge: "Tu es venu sans plan, seul face à l'eau noire. Mais tu sens que la colère ne te servira à rien ici : il va falloir de l'esprit."
+      },
+      suspense: "L'ondine rit, d'un rire qui fait danser toute la Seine, puis elle dépose dans ta main une perle d'eau qui ne coule pas. À l'intérieur, un mot : « Hydor ». Le quatrième des sept.",
+      replique: "Que dis-tu à l'ondine pour faire rire l'eau ?" },
+    { titre: "Le cabinet de curiosités",
+      texte: [
+        "La deuxième carte mène au Jardin des Plantes. Derrière les serres, au fond d'un vieux bâtiment du Muséum, un savant garde un cabinet que personne ne visite plus : des tiroirs par centaines, des pierres étiquetées, du jaspe, de l'opale, de la malachite, des fossiles de bêtes antédiluviennes.",
+        "Le savant s'appelle le professeur Anselme Brizard. Il est sourd comme un pot et parle aux pierres comme à de vieilles amies. « La terre ne donne son nom qu'à ceux qui savent attendre », dit-il en te tendant un tiroir vide. « Revenez quand vous aurez compris ce qu'il contient. »",
+        "Un tiroir vide. Tu le retournes. Au fond, une fine couche de poussière dessine des lettres."
+      ],
+      suspense: "Pendant que tu déchiffres la poussière, des pas résonnent dans la galerie. Des capes noires. Une broche en forme de cornue. Et Gaspard, qui faisait le guet dehors, a disparu.",
+      replique: "Le professeur Brizard te demande ce que tu as vu au fond du tiroir. Que lui réponds-tu ?" },
+    { titre: "Le secret de Clémence",
+      texte: [
+        "Le mot de la poussière est « Gê », la terre. Le cinquième. Mais personne n'a envie de fêter quoi que ce soit : sur la porte de la cave de la rue Mouffetard, un billet est cloué avec un poignard. « Le gamin contre la fiole. Demain, minuit, à Notre-Dame. V. »",
+        "Clémence s'assoit lentement. Elle enlève ses lunettes, les essuie longtemps, puis parle sans te regarder. « Je connais leur façon d'écrire. J'ai appartenu à la Société de la Cornue Noire. J'avais dix-sept ans, et ils m'avaient promis que les mots changeraient le monde. »",
+        "Elle relève les yeux. « J'ai fui le jour où j'ai compris qu'ils voulaient seulement que le monde leur obéisse. Je ne te l'ai pas dit parce que j'avais honte. »"
+      ],
+      voie: {
+        or: "Tu repenses à tout ce qu'elle a fait pour toi depuis le premier jour. Ton oncle pose une main sur son épaule, sans un mot.",
+        rouge: "Une vieille méfiance remonte en toi. Si elle a menti une fois, pourquoi pas deux ? La fiole, dans ta poche, se refroidit."
+      },
+      suspense: "Dans la nuit, ton oncle vous réveille : la troisième carte vient de changer. Le souffle, Pneuma, dort justement à Notre-Dame. Dans le grand orgue.",
+      replique: "Que dis-tu à Clémence, après son aveu ?" },
+    { titre: "Le souffle de l'orgue",
+      texte: [
+        "Notre-Dame, une heure avant minuit. La cathédrale est vide, immense, glacée. La lune passe à travers la grande rosace et pose des taches de couleur sur les dalles. Vous montez dans la tribune de l'orgue, entre des milliers de tuyaux d'étain, certains plus hauts que des arbres.",
+        "Ton oncle actionne les soufflets. Un grondement monte des profondeurs, si grave qu'il fait trembler les vitraux. Puis une seule note, pure, interminable, et dans cette note, comme un murmure porté par l'air, un mot : « Pneuma ». Le souffle. Le sixième.",
+        "Il ne manque plus qu'un mot. Celui qu'aucune carte ne donne."
+      ],
+      suspense: "Minuit sonne. En bas, dans la nef, une silhouette élégante s'avance, des lunettes noires sur les yeux. Devant elle, les mains liées, Gaspard. Et derrière, une vingtaine de capes noires.",
+      replique: "Du haut de la tribune, tu lances un mot à Gaspard pour lui donner du courage. Lequel ?" },
+    { titre: "L'échange",
+      texte: [
+        "Le comte de Valmorne n'élève jamais la voix, même dans une cathédrale. « Descendez, monsieur Morvan. La fiole contre l'enfant. Un marché d'honnête homme, comme la dernière fois. »",
+        "Tu descends l'escalier de pierre, marche après marche. La fiole, dans ta main, est brûlante, et tu sens qu'elle attend quelque chose de toi. Gaspard te regarde, le menton levé, en essayant de ne pas trembler. Il a une égratignure sur la joue et beaucoup de fierté dans les yeux.",
+        "Derrière une colonne, Clémence a sorti son pistolet de duel. Ton oncle, là-haut, a gardé les mains sur les soufflets de l'orgue."
+      ],
+      suspense: "Le comte tend la main. Ses doigts gantés frôlent déjà le verre de la fiole.",
+      choix: [
+        { voie: "or", texte: "🎭 Lui tendre une fausse fiole, et compter sur tes amis" },
+        { voie: "rouge", texte: "⚔️ Refuser l'échange et l'affronter, ici, devant tous" }
+      ] },
+    { titre: "Le Logos",
+      texte: [
+        "Tout se passe en un battement de cœur. L'orgue hurle, une seule note gigantesque qui fait vaciller les cierges. Les capes noires se plaquent les mains sur les oreilles. Clémence tire en l'air. Gaspard mord la main de son gardien et file comme une belette.",
+        "Quand le silence revient, vous êtes face à face, le comte et toi, au milieu de la nef. Il ne sourit plus. « Vous ne comprenez pas, dit-il. Le septième mot, c'est Logos. Le Verbe. Celui qui boit la Quintessence n'a plus jamais besoin de chercher ses mots : ils viennent tout seuls, et ils sont irrésistibles. »",
+        "Ton oncle descend lentement de la tribune. « Il a raison sur le mot, dit-il. Et il a tort sur tout le reste. Le Logos ne se boit pas. Il se mérite. La fiole ne donne le mot juste qu'à celui qui dit vrai. »"
+      ],
+      voie: {
+        or: "Gaspard s'est faufilé à côté de toi. Clémence vous couvre. Vous êtes trois, quatre avec ton oncle : une petite armée de mots.",
+        rouge: "Tu es seul au milieu de la nef, mais tu n'as jamais été aussi calme. La fiole, dans ta main, est d'un rouge profond, comme un cœur qui bat."
+      },
+      suspense: "Le comte ôte ses lunettes noires. Ses yeux sont encore voilés, mais il te fixe. « Alors battons-nous avec des mots. Demain, à l'aube, sur le pont des Arts. Un duel. Le vainqueur ouvre la fiole. »",
+      replique: "Que réponds-tu au comte, qui vient de te provoquer en duel ?" },
+    { titre: "Le duel du pont des Arts",
+      texte: [
+        "L'aube se lève sur la Seine, rose et grise. Sur le pont des Arts, une petite foule s'est rassemblée : des bouquinistes, des insurgés encore noirs de poudre, des lavandières, le professeur Brizard qui n'entendra rien, et même, dit-on, l'ondine, quelque part sous les arches.",
+        "Les règles sont simples, et anciennes. Pas d'épée. Chacun son tour, une botte de mots : une pique, une vérité, une réplique. Celui qui reste sans voix a perdu. Le comte commence. Sa phrase est parfaite, polie comme un miroir, et elle te glace jusqu'aux os.",
+        "Puis c'est ton tour. La foule retient son souffle. Dans ta poche, la fiole est tiède, attentive. Elle écoute."
+      ],
+      suspense: "Le comte ouvre la bouche pour répondre. Rien ne sort. Il essaie encore. Ses lèvres bougent, mais sa voix s'est éteinte. Pour la première fois de sa vie, Valmorne reste coi.",
+      replique: "Lance ta botte au comte de Valmorne, celle qui doit le laisser sans voix." },
+    { titre: "La fiole ouverte",
+      texte: [
+        "Les capes noires se dispersent dans les ruelles comme des corbeaux après un coup de fusil. Le comte, muet, s'éloigne sur le quai, appuyé sur sa canne, sans se retourner. La Société de la Cornue Noire ne s'en relèvera pas.",
+        "Ton oncle te fait signe : il est temps. Tu brises la cire noire du bouchon. Il n'en sort ni fumée ni éclair. Juste un parfum de pluie d'été, de vieux papier et de pain chaud. Et, dans ta tête, une évidence douce : chaque fois que tu chercheras le mot juste, désormais, tu sauras qu'il existe, et qu'il faut seulement aller le chercher.",
+        "« C'est tout ? demande Gaspard, déçu. — C'est tout, sourit ton oncle. C'est énorme. » Le soir même, il te remet les clés de la boutique de la rue de la Huchette, et Clémence accroche une nouvelle enseigne au-dessus de la porte : « Au Pandémonium des mots »."
+      ],
+      suspense: "Cette nuit-là, seul dans la boutique, tu ouvres le grimoire rouge. Les sept lignes sont pleines. Mais en bas de la page, une huitième ligne est en train de s'écrire toute seule, à l'encre verte. FIN DU LIVRE II.",
+      replique: "Dans le livre d'or de la boutique, tu écris la première phrase. Laquelle ?" }
   ]
 };

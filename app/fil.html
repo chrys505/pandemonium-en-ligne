@@ -96,6 +96,7 @@
   <script src="../citations-plus.js"></script>
   <script src="../contenus.js"></script>
   <script src="../maudit.js"></script>
+  <script src="../phrases.js"></script>
   <script src="../pictos.js"></script>
   <script>
   // ===== Le Fil : un scroll culture infini, carte après carte =====
@@ -153,10 +154,13 @@
       '<p class="etiquette">🎭 La tirade · ' + echapper(t.personnage) + '</p><p class="citation">' + echapper(t.texte).replace(/\n/g, "<br>") + '</p><p class="auteur">' + echapper(t.oeuvre) + " · " + echapper(t.auteur) + "</p>", partage: t.texte.split("\n")[0] + " — " + t.auteur }; },
     film: function () { const f = auHasard(dispo("filmsHorreur") || []); return { lueur: "rgba(255,40,40,0.16)", html:
       '<p class="etiquette">🎬 Le film d\'horreur</p><p class="moyen">' + echapper(f[0]) + '</p><p class="texte">' + echapper(f[1]) + "</p>" +
-      '<button class="reveler" type="button" data-reveler="' + echapper(f[2]) + '">🕯️ En coulisse</button>', partage: f[0] + " : " + f[1] }; }
+      '<button class="reveler" type="button" data-reveler="' + echapper(f[2]) + '">🕯️ En coulisse</button>', partage: f[0] + " : " + f[1] }; },
+    phrase: function () { const p = auHasard(dispo("bellesPhrases") || []); return { lueur: "rgba(232,194,122,0.16)", html:
+      '<p class="etiquette">🖋️ La belle phrase à placer</p><p class="citation">« ' + echapper(p.phrase) + ' »</p><p class="doux">🎯 ' + echapper(p.quand) + "</p>" +
+      '<button class="reveler" type="button" data-reveler="' + echapper(p.secret) + '">✨ Son secret</button>', partage: p.phrase }; }
   };
   // Le dosage du fil : beaucoup de mots, des concepts, des surprises
-  const DOSAGE = ["mot", "mot", "mot", "concept", "concept", "citation", "expression", "pensee", "creature", "sort", "vraifaux", "vraifaux", "tirade"].concat(maudit ? ["film", "film"] : ["film"]);
+  const DOSAGE = ["mot", "mot", "mot", "concept", "concept", "citation", "expression", "pensee", "creature", "sort", "vraifaux", "vraifaux", "tirade", "phrase"].concat(maudit ? ["film", "film"] : ["film"]);
   let dernierType = "";
 
   function nouvelleCarte() {
