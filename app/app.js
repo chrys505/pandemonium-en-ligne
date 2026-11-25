@@ -363,9 +363,9 @@ function salutation(d) {
   const t = d.getHours() * 60 + d.getMinutes();
   // [version claire, version sombre]
   const m = etat.maudit ? 1 : 0;
-  if (t >= s.lever - 30 && t < s.lever + 30) return ["Belle aurore.", "Sale aurore."][m];
+  if (t >= s.lever - 30 && t < s.lever + 30) return ["Douce aube.", "Sale aube."][m];
   if (t >= s.lever + 30 && t < 12 * 60) return ["Le jour point, belle matinée.", "Le jour point, sale matinée."][m];
-  if (t >= 12 * 60 && t < s.coucher - 30) return ["Bel après-midi.", "Sale journée."][m];
+  if (t >= 12 * 60 && t < s.coucher - 30) return ["Belle après-midi.","Sale journée."][m];
   if (t >= s.coucher - 30 && t < s.coucher + 30) return ["Beau crépuscule.", "Sale crépuscule."][m];
   if (t >= s.coucher + 30 && t < 23 * 60) return ["Belle soirée.", "Sale soirée."][m];
   return ["Belle nuit.", "Sale nuit."][m];
@@ -5195,3 +5195,82 @@ majFormulaire();
 majCompteurs();
 // On ouvre sur le mot du jour : quelqu'un qui découvre l'appli comprend tout de suite (2026-11-25)
 allerA("aujourdhui");
+
+// ---------- Les œufs cachés : des surprises selon l'heure ou la date (2026-11-25) ----------
+var oeufsVus = {};
+function motOeuf(liste) {
+  const ok = liste.filter(function (m) { return fiches[m]; });
+  return ok[Math.floor(Math.random() * ok.length)] || liste[0];
+}
+function lienOeuf(m) { return '<button class="oeuf-mot" type="button" data-oeuf-mot="' + echapper(m) + '">' + echapper(m) + "</button>"; }
+function quelOeuf(d) {
+  const h = d.getHours(), mn = d.getMinutes(), jour = d.getDate(), mois = d.getMonth() + 1;
+  if (h === 3 && mn === 33) return "sorcieres";
+  if (h === 0 && mn === 0) return "minuit";
+  if (h === mn && h > 0) return "miroir";
+  if (jour === 1 && mois === 4) return "avril";
+  if (jour === 31 && mois === 10) return "halloween";
+  return null;
+}
+function montrerOeuf(type, d) {
+  d = d || new Date();
+  const heure = String(d.getHours()).padStart(2, "0") + " h " + String(d.getMinutes()).padStart(2, "0");
+  let html = "";
+  if (type === "sorcieres") {
+    html = '<p class="oeuf-icone">🕯️ 🕯️ 🕯️</p><p class="oeuf-titre">3 h 33</p><p class="oeuf-sous">L’heure des sorcières</p>' +
+      '<p class="oeuf-texte">Tu ne devrais pas être debout à cette heure-ci. Les mots non plus. Celui-ci s’est échappé du grimoire :</p>' +
+      lienOeuf(motOeuf(["Méphitique", "Spectral", "Funeste", "Sabbat", "Goule", "Fantasmagorie"])) +
+      '<p class="oeuf-petit">Ferme les yeux. Compte jusqu’à trois. Il est encore là.</p>';
+  } else if (type === "minuit") {
+    const noms = Object.keys(fiches);
+    html = '<p class="oeuf-icone">✨🍯✨</p><p class="oeuf-titre">Minuit pile</p><p class="oeuf-sous">L’élixir des noctambules</p>' +
+      '<p class="oeuf-texte">Pendant une minute, la fiole se remplit d’or. Le mot légendaire de minuit :</p>' +
+      lienOeuf(noms[Math.floor(Math.random() * noms.length)]) +
+      '<p class="oeuf-petit">À minuit et une, il aura disparu. Garde-le bien.</p>';
+  } else if (type === "miroir") {
+    html = '<p class="oeuf-icone">🪞</p><p class="oeuf-titre">' + heure + '</p><p class="oeuf-sous">Heure miroir</p>' +
+      '<p class="oeuf-texte">L’univers te fait un clin d’œil. Fais un vœu, mais fais-le avec un mot rare :</p>' +
+      lienOeuf(motOeuf(typeof vibesAstro !== "undefined" ? vibesAstro : ["Sibyllin"])) +
+      '<p class="oeuf-petit">Dis-le à voix haute. Les vœux précis se réalisent mieux.</p>';
+  } else if (type === "avril") {
+    html = '<p class="oeuf-icone">📜</p><p class="oeuf-titre">Éberluture</p><p class="oeuf-sous">Mot du jour exceptionnel</p>' +
+      '<p class="oeuf-texte">Nom féminin. L’état de stupeur délicieuse qui suit la découverte d’un mot trop beau. « Elle resta dans une éberluture profonde devant le dictionnaire. »</p>' +
+      '<p class="oeuf-revele" hidden>🐟 <b>Poisson d’avril !</b> Ce mot n’existe pas… mais <b>éberlué</b>, lui, existe bien :</p>' +
+      '<div class="oeuf-revele" hidden>' + lienOeuf("Éberlué") + "</div>";
+  } else if (type === "halloween") {
+    html = '<p class="oeuf-icone">🎃</p><p class="oeuf-titre">Nuit de Samain</p><p class="oeuf-sous">31 octobre</p>' +
+      '<p class="oeuf-texte">Cette nuit, les mots d’antan sortent de leurs tombes. L’un d’eux rôde près de toi :</p>' +
+      lienOeuf(motOeuf(["Goule", "Sabbat", "Spectral", "Fantasmagorie", "Funeste"])) +
+      '<p class="oeuf-petit">Prononce-le trois fois devant un miroir. (Ou pas.)</p>';
+  }
+  if (!html) return;
+  const o = $("oeuf");
+  o.className = "oeuf oeuf-" + type;
+  o.innerHTML = '<div class="oeuf-carte">' + html + '<button class="bouton oeuf-fermer" type="button">Fermer</button></div>';
+  o.hidden = false;
+  document.body.classList.toggle("sorcellerie", type === "sorcieres");
+  etat.oeufs = etat.oeufs || {};
+  if (!etat.oeufs[type]) { etat.oeufs[type] = true; etat.xp += 5; $("xp").textContent = etat.xp; sauver(); }
+  if (typeof sonFiole === "function") sonFiole();
+  if (type === "avril") setTimeout(function () { o.querySelectorAll(".oeuf-revele").forEach(function (e) { e.hidden = false; }); }, 4000);
+}
+function fermerOeuf() { $("oeuf").hidden = true; document.body.classList.remove("sorcellerie"); }
+$("oeuf").addEventListener("click", function (e) {
+  const m = e.target.closest("[data-oeuf-mot]");
+  if (m) { fermerOeuf(); chercherDansLeDico(m.dataset.oeufMot); return; }
+  if (e.target.closest(".oeuf-fermer") || e.target === $("oeuf")) fermerOeuf();
+});
+function guetterOeuf() {
+  if (document.hidden) return;
+  const d = new Date();
+  const type = quelOeuf(d);
+  if (!type) return;
+  // Une fois par minute magique (heures), une fois par jour (dates)
+  const cle = (type === "avril" || type === "halloween") ? type + d.toDateString() : type + d.toDateString() + d.getHours() + ":" + d.getMinutes();
+  if (oeufsVus[cle]) return;
+  oeufsVus[cle] = true;
+  montrerOeuf(type, d);
+}
+setTimeout(guetterOeuf, 1500);
+setInterval(guetterOeuf, 15000);
+document.addEventListener("visibilitychange", function () { if (!document.hidden) setTimeout(guetterOeuf, 800); });

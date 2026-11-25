@@ -2494,3 +2494,31 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 .portes-accueil .bouton-conversation { min-height: 112px; }
 .porte-cabinet { background: linear-gradient(150deg, rgba(120, 60, 150, .22), rgba(200, 90, 140, .14)); }
 #fenetre-cabinet .widgets { margin-top: 12px; }
+
+/* ---------- Les œufs cachés (2026-11-25) ---------- */
+.oeuf { position: fixed; inset: 0; z-index: 9000; display: flex; align-items: center; justify-content: center; padding: 24px;
+  background: rgba(8, 6, 4, .82); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: oeuf-entree .6s ease-out; }
+.oeuf[hidden] { display: none; }
+.oeuf-carte { max-width: 340px; width: 100%; text-align: center; padding: 28px 22px 22px; border-radius: 22px; color: #fbefe6;
+  background: linear-gradient(160deg, #2a1d12, #120c08); border: 1px solid rgba(230, 190, 120, .45); box-shadow: 0 20px 60px rgba(0, 0, 0, .6); }
+.oeuf-icone { font-size: 34px; margin: 0 0 6px; }
+.oeuf-titre { font-family: var(--titre, serif); font-size: 34px; margin: 0; letter-spacing: .02em; }
+.oeuf-sous { text-transform: uppercase; letter-spacing: .18em; font-size: 12px; opacity: .75; margin: 4px 0 16px; }
+.oeuf-texte { font-size: 15px; line-height: 1.5; margin: 0 0 14px; }
+.oeuf-petit { font-size: 13px; font-style: italic; opacity: .7; margin: 14px 0 0; }
+.oeuf-mot { font: inherit; font-family: var(--titre, serif); font-size: 26px; font-style: italic; color: #f3c97a; background: none;
+  border: none; border-bottom: 1px dashed rgba(243, 201, 122, .6); padding: 2px 4px; cursor: pointer; }
+.oeuf-fermer { margin-top: 20px; }
+.oeuf-sorcieres .oeuf-carte { background: linear-gradient(160deg, #2b0b12, #0a0306); border-color: rgba(200, 40, 60, .55); }
+.oeuf-sorcieres .oeuf-mot { color: #ff6b7d; }
+.oeuf-sorcieres .oeuf-icone { animation: oeuf-flamme 1.2s ease-in-out infinite alternate; }
+.oeuf-minuit .oeuf-carte { background: radial-gradient(circle at 50% 0%, #5a4210, #1a1206 70%); border-color: rgba(255, 210, 110, .8); box-shadow: 0 0 50px rgba(255, 200, 90, .35); }
+.oeuf-miroir .oeuf-carte { background: linear-gradient(160deg, #1c2a3a, #0b121b); border-color: rgba(170, 210, 255, .5); }
+.oeuf-miroir .oeuf-titre { display: inline-block; }
+.oeuf-miroir .oeuf-mot { color: #bfe0ff; }
+.oeuf-halloween .oeuf-carte { background: linear-gradient(160deg, #3a1d05, #120802); border-color: rgba(255, 140, 30, .6); }
+.oeuf-halloween .oeuf-mot { color: #ff9a2e; }
+.oeuf-avril p.oeuf-revele:not([hidden]) { color: #f3c97a; }
+body.sorcellerie #ecran-aujourdhui { filter: hue-rotate(-25deg) saturate(1.4) brightness(.7); transition: filter 1s; }
+@keyframes oeuf-entree { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes oeuf-flamme { from { opacity: .65; transform: translateY(1px); } to { opacity: 1; transform: translateY(-1px); } }
