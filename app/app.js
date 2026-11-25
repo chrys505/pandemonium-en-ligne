@@ -5078,11 +5078,64 @@ function etatOracle() {
   if (!etat.oracle || etat.oracle.jour !== aujourdhui) etat.oracle = { jour: aujourdhui, vues: [], recompense: false };
   return etat.oracle;
 }
+// ----- L'horoscope des mots (astro.js) : ton signe, la vraie Lune du jour, ton horoscope façon influenceuse astro -----
+function luneDuJour() {
+  const jd = Date.UTC(maintenant.getFullYear(), maintenant.getMonth(), maintenant.getDate(), 12) / 86400000 + 2440587.5;
+  const age = ((jd - 2451550.1) % 29.530588853 + 29.530588853) % 29.530588853;
+  return lunes[Math.floor(age / 29.530588853 * 8 + 0.5) % 8];
+}
+function motAstro(liste, rnd) {
+  const ok = liste.filter(function (m) { return typeof fiches === "undefined" || fiches[m]; });
+  return ok[Math.floor(rnd() * ok.length)];
+}
+function horoscopeDuJour(i) {
+  const s = signes[i], rnd = hasardGraine(numeroJour * 104729 + i * 7907 + 3), lune = luneDuJour();
+  const vibe = motAstro(vibesAstro, rnd), red = motAstro(redflagsAstro, rnd);
+  const cartes = tirageOracle(), mot = cartes[1].mot.mot;
+  const remplir = function (t) { return t.replace(/\{signe\}/g, s.nom).replace(/\{vibe\}/g, vibe).replace(/\{redflag\}/g, red).replace(/\{mot\}/g, mot).replace(/\{lune\}/g, lune.nom.toLowerCase()); };
+  const pioche = function (l) { return l[Math.floor(rnd() * l.length)]; };
+  const amis = signes.filter(function (x, k) { return k !== i && affinites[s.element].indexOf(x.element) !== -1; });
+  const etoiles = function () { return 2 + Math.floor(rnd() * 4); };
+  return { signe: s, lune: lune, vibe: vibe, red: red, mot: mot, match: pioche(amis),
+    intro: remplir(pioche(horoscopes.intro)), amour: remplir(pioche(horoscopes.amour)), taf: remplir(pioche(horoscopes.taf)),
+    scores: [["💞 Amour", etoiles()], ["💼 Taf", etoiles()], ["⚡ Énergie", etoiles()]] };
+}
+function lienMotAstro(m) { return '<button class="lien-mot" type="button" data-oracle-mot="' + echapper(m) + '">' + echapper(m) + "</button>"; }
+function blocHoroscope() {
+  if (typeof signes === "undefined") return "";
+  if (etat.signe === undefined || etat.signe === null || etat.choixSigne) {
+    return '<p class="petit">Dis-moi ton signe, et chaque jour je te tire ton horoscope… avec nos mots.</p>' +
+      '<div class="astro-signes">' + signes.map(function (s, k) {
+        return '<button class="astro-signe' + (etat.signe === k ? " actif" : "") + '" type="button" data-signe="' + k + '"><span class="astro-glyphe">' + s.icone + "︎</span><span>" + s.nom + '</span><span class="astro-dates">' + s.dates + "</span></button>";
+      }).join("") + "</div>";
+  }
+  const h = horoscopeDuJour(etat.signe), s = h.signe;
+  return '<div class="astro-carte">' +
+      '<p class="astro-entete"><span class="astro-glyphe-grand">' + s.icone + "︎</span><span><b>" + s.nom + "</b><br><span class=\"astro-dates\">" + dateLisible(aujourdhui) + " · " + h.lune.icone + " " + h.lune.nom + "</span></span></p>" +
+      '<p class="astro-intro">' + echapper(h.intro) + "</p>" +
+      '<div class="astro-scores">' + h.scores.map(function (x) { return '<span class="astro-score">' + x[0] + " " + "✦".repeat(x[1]) + '<span class="astro-vide">' + "✦".repeat(5 - x[1]) + "</span></span>"; }).join("") + "</div>" +
+      '<p class="astro-ligne"><b>💞 Amour</b> ' + echapper(h.amour) + "</p>" +
+      '<p class="astro-ligne"><b>💼 Taf</b> ' + echapper(h.taf) + "</p>" +
+      '<div class="astro-puces">' +
+        '<p>💅 <b>Ta vibe</b><br>' + lienMotAstro(h.vibe) + "</p>" +
+        '<p>🚩 <b>Red flag</b><br>' + lienMotAstro(h.red) + "</p>" +
+        '<p>🍀 <b>Porte-bonheur</b><br>' + lienMotAstro(h.mot) + "</p>" +
+        '<p>💫 <b>Ton match</b><br>' + h.match.icone + " " + h.match.nom + "</p>" +
+      "</div>" +
+      '<p class="astro-ligne"><b>' + h.lune.icone + " Rituel de la lune</b> " + echapper(h.lune.rituel) + "</p>" +
+    "</div>" +
+    '<details class="astro-portrait"><summary>' + s.icone + " Ton portrait " + s.nom + "</summary><p>" + echapper(s.portrait) + "</p>" +
+      '<p class="petit gauche">Ton mot totem : ' + lienMotAstro(s.totem) + " · ton red flag signature : " + lienMotAstro(s.redflag) + "</p>" +
+      '<button class="bouton large" type="button" data-signe-changer="1">Changer de signe</button></details>' +
+    '<p class="petit astro-rappel">🌙 Pour jouer : les astres ne décident de rien. Les mots, si.</p>';
+}
 function widgetOracle() {
   if (typeof arcanes === "undefined") return "";
   const o = etatOracle(), cartes = tirageOracle(), toutes = o.vues.length === 3;
   return '<article class="widget widget-oracle" id="widget-oracle">' +
-    '<p class="etiquette">🔮 L\'oracle des mots</p>' +
+    '<p class="etiquette">🔮 Ton horoscope des mots</p>' +
+    blocHoroscope() +
+    '<p class="etiquette-petite astro-titre-tirage">🃏 Ton tirage du jour</p>' +
     '<p class="petit">' + (toutes ? "Les cartes ont parlé. Reviens demain pour un nouveau tirage." : "Trois cartes t'attendent, face cachée. Touche-les pour les retourner.") + "</p>" +
     '<div class="oracle-cartes">' + cartes.map(function (c, k) {
       const vue = o.vues.indexOf(k) !== -1;
@@ -5102,6 +5155,13 @@ function widgetOracle() {
 $("widgets").addEventListener("click", function (e) {
   const mot = e.target.closest("[data-oracle-mot]");
   if (mot) { const m = tousLesMots().filter(function (x) { return x.mot === mot.dataset.oracleMot; })[0]; if (m) ouvrirFiche(m); return; }
+  const sg = e.target.closest("[data-signe]"), ch = e.target.closest("[data-signe-changer]");
+  if (sg || ch) {
+    if (sg) { etat.signe = Number(sg.dataset.signe); etat.choixSigne = false; sonFiole(); } else etat.choixSigne = true;
+    sauver();
+    const w = $("widget-oracle"); if (w) { w.insertAdjacentHTML("afterend", widgetOracle()); w.remove(); }
+    return;
+  }
   const b = e.target.closest("[data-oracle]");
   if (!b) return;
   const o = etatOracle(), k = Number(b.dataset.oracle);

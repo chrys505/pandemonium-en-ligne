@@ -2451,3 +2451,37 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 .lien-mot { padding: 0; border: 0; background: none; font: inherit; font-weight: 700; color: var(--jaune); text-decoration: underline; cursor: pointer; }
 @keyframes oracle-souffle { 50% { box-shadow: 0 6px 24px color-mix(in srgb, var(--jaune) 30%, transparent); } }
 @media (prefers-reduced-motion: reduce) { .oracle-carte { transition: none; } .oracle-dos { animation: none; } }
+
+/* 🔮 L'horoscope des mots : esthétique « influenceuse astro » */
+.astro-signes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 0 4px; }
+.astro-signe {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 4px; border-radius: 14px; cursor: pointer;
+  border: 1px solid color-mix(in srgb, #d9a6ff 40%, transparent); color: var(--creme); font: inherit; font-size: 0.82rem;
+  background: linear-gradient(160deg, color-mix(in srgb, #ff9ec7 16%, transparent), color-mix(in srgb, #9b7bff 16%, transparent));
+}
+.astro-signe.actif { border-color: var(--jaune); }
+.astro-glyphe { font-size: 1.5rem; line-height: 1; }
+.astro-dates { font-size: 0.66rem; opacity: 0.75; }
+.astro-carte {
+  margin: 10px 0 6px; padding: 14px; border-radius: 20px; color: #fbefe6;
+  background: radial-gradient(circle at 85% 0%, color-mix(in srgb, #ffd38a 22%, transparent), transparent 45%),
+              linear-gradient(155deg, #4a2147, #2a1a4d 55%, #16122e);
+  box-shadow: 0 8px 28px color-mix(in srgb, #b07bff 25%, transparent);
+}
+.astro-entete { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; line-height: 1.3; }
+.astro-glyphe-grand {
+  display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; font-size: 1.6rem;
+  background: linear-gradient(135deg, #ff9ec7, #b48cff); color: #1a1030; flex: none;
+}
+.astro-intro { font-family: var(--serif); font-style: italic; font-size: 1.05rem; line-height: 1.5; margin: 6px 0 10px; }
+.astro-scores { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.astro-score { padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; background: rgba(255, 255, 255, 0.08); color: #ffd38a; }
+.astro-score .astro-vide { opacity: 0.25; }
+.astro-ligne { margin: 8px 0; font-size: 0.92rem; line-height: 1.5; }
+.astro-puces { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.astro-puces p { margin: 0; padding: 8px 10px; border-radius: 14px; background: rgba(255, 255, 255, 0.07); font-size: 0.8rem; line-height: 1.5; }
+.astro-carte .lien-mot { color: #ffb3d4; font-weight: 700; }
+.astro-portrait { margin: 8px 0; font-size: 0.92rem; }
+.astro-portrait summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
+.astro-rappel { opacity: 0.7; }
+.astro-titre-tirage { margin-top: 14px; }
