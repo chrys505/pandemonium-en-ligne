@@ -412,8 +412,58 @@
   </div>
   <!-- ===== La porte qui s'ouvre en grinçant sur Jeux et défis / le cabinet des curiosités ===== -->
   <div class="porte" id="porte" hidden aria-hidden="true">
-    <div class="battant battant-gauche"><i class="poignee"></i></div>
-    <div class="battant battant-droit"><i class="poignee"></i></div>
+    <div class="porte-scene">
+      <div class="porte-cadre">
+        <!-- Derrière la porte : la lumière chaude de la pièce -->
+        <div class="porte-ouverture"><i class="porte-rayon"></i><i class="porte-poussiere"></i><i class="porte-poussiere"></i><i class="porte-poussiere"></i><i class="porte-poussiere"></i><i class="porte-poussiere"></i><i class="porte-poussiere"></i></div>
+        <!-- Le battant : bois veiné, ferrures, clous et heurtoir -->
+        <div class="porte-battant">
+          <svg viewBox="0 0 200 320" preserveAspectRatio="none">
+            <defs>
+              <clipPath id="porte-arche"><path d="M0,320 V100 A100,100 0 0 1 200,100 V320 Z"/></clipPath>
+              <filter id="porte-grain" x="0" y="0" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.009 0.24" numOctaves="4" seed="7"/>
+                <feColorMatrix values="0 0 0 0 0.09  0 0 0 0 0.04  0 0 0 0 0.01  3 0 0 0 -1.05"/>
+              </filter>
+              <linearGradient id="porte-ombre" x1="0" x2="1">
+                <stop offset="0" stop-color="#000" stop-opacity=".55"/>
+                <stop offset=".18" stop-color="#000" stop-opacity="0"/>
+                <stop offset=".82" stop-color="#000" stop-opacity="0"/>
+                <stop offset="1" stop-color="#000" stop-opacity=".6"/>
+              </linearGradient>
+              <linearGradient id="porte-reflet" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd9a0" stop-opacity=".12"/>
+                <stop offset=".5" stop-color="#ffd9a0" stop-opacity="0"/>
+                <stop offset="1" stop-color="#000" stop-opacity=".35"/>
+              </linearGradient>
+            </defs>
+            <g clip-path="url(#porte-arche)">
+              <rect width="200" height="320" fill="#4e2c13"/>
+              <rect x="50" width="50" height="320" fill="#5e3818"/>
+              <rect x="100" width="50" height="320" fill="#45260f"/>
+              <rect x="150" width="50" height="320" fill="#573215"/>
+              <rect width="200" height="320" filter="url(#porte-grain)"/>
+              <rect width="200" height="320" filter="url(#porte-grain)" transform="translate(200 0) scale(-1 1)" opacity=".6"/>
+              <g stroke="#1e0f06" stroke-width="2.2" opacity=".85"><path d="M50,0V320M100,0V320M150,0V320"/></g>
+              <g stroke="#a8724a" stroke-width=".8" opacity=".25"><path d="M52,0V320M102,0V320M152,0V320"/></g>
+              <rect width="200" height="320" fill="url(#porte-reflet)"/>
+              <rect width="200" height="320" fill="url(#porte-ombre)"/>
+              <g fill="#17110d" stroke="#3a2e25" stroke-width="1">
+                <rect x="-2" y="92" width="150" height="15" rx="2"/>
+                <rect x="-2" y="238" width="150" height="15" rx="2"/>
+              </g>
+              <g fill="#6b5a48"><circle cx="14" cy="99.5" r="2.6"/><circle cx="50" cy="99.5" r="2.6"/><circle cx="86" cy="99.5" r="2.6"/><circle cx="122" cy="99.5" r="2.6"/>
+                <circle cx="14" cy="245.5" r="2.6"/><circle cx="50" cy="245.5" r="2.6"/><circle cx="86" cy="245.5" r="2.6"/><circle cx="122" cy="245.5" r="2.6"/></g>
+              <circle cx="166" cy="180" r="9" fill="#2a1d12" stroke="#7a5a2a" stroke-width="1.5"/>
+              <circle cx="166" cy="198" r="13" fill="none" stroke="#c89a45" stroke-width="3.4"/>
+              <circle cx="166" cy="198" r="13" fill="none" stroke="#fff0c0" stroke-width=".8" opacity=".5" stroke-dasharray="10 72"/>
+              <ellipse cx="166" cy="232" rx="3" ry="6" fill="#0b0705"/>
+            </g>
+            <path d="M1.5,320 V100 A98.5,98.5 0 0 1 198.5,100 V320" fill="none" stroke="#1a0e06" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- ===== Les œufs cachés : surprises selon l'heure ou la date ===== -->
   <div class="oeuf" id="oeuf" hidden></div>
@@ -580,6 +630,7 @@
   <script src="../phrases.js"></script>
   <script src="../oracle.js"></script>
   <script src="../astro.js"></script>
+  <script src="../grincement.js"></script>
   <script src="../tableaux.js"></script>
   <script src="../niveaux.js"></script>
   <script src="../illustrations.js"></script>

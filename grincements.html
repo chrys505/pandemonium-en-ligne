@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choisir le grincement</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, #2a1a10, #0a0604 75%); color: #fbefe6;
+    font-family: Georgia, "Times New Roman", serif; display: flex; flex-direction: column; align-items: center; padding: 32px 16px; box-sizing: border-box; }
+  h1 { font-weight: normal; font-size: 26px; margin: 0 0 6px; text-align: center; }
+  p { opacity: .75; text-align: center; max-width: 420px; line-height: 1.5; margin: 0 0 24px; font-size: 15px; }
+  button { display: block; width: 100%; max-width: 360px; margin: 0 0 14px; padding: 18px 20px; border-radius: 16px; cursor: pointer;
+    background: linear-gradient(160deg, #4a2c17, #24150b); color: #fbefe6; border: 1px solid rgba(214, 170, 92, .5);
+    font: inherit; font-size: 18px; text-align: left; }
+  button span { display: block; font-size: 13px; opacity: .7; margin-top: 4px; font-family: system-ui, sans-serif; }
+  button:active { transform: scale(.98); }
+  .lettre { font-size: 22px; color: #f3c97a; margin-right: 8px; }
+</style>
+</head>
+<body>
+  <h1>🚪 Choisis ton grincement</h1>
+  <p>Monte le son, touche chaque porte, puis dis à ton mentor laquelle tu préfères (A, B ou C).</p>
+  <button type="button" data-porte="manoir"><b class="lettre">A</b>La porte du manoir<span>Lente et profonde, elle hésite en s'ouvrant</span></button>
+  <button type="button" data-porte="grenier"><b class="lettre">B</b>La porte du grenier<span>Plus courte et plus aiguë, elle couine</span></button>
+  <button type="button" data-porte="crypte"><b class="lettre">C</b>La porte de la crypte<span>Très grave et longue, elle gémit</span></button>
+  <script src="grincement.js"></script>
+  <script>
+    var ctx = null;
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-porte]");
+      if (!b) return;
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!ctx) ctx = new AC();
+      if (ctx.state === "suspended") ctx.resume();
+      grincement(ctx, ctx.currentTime + 0.05, b.dataset.porte);
+    });
+  </script>
+</body>
+</html>

@@ -1826,7 +1826,7 @@ function pousserPorte(nom) {
   p.classList.add("ouverte");
   sonPorte();
   clearTimeout(pousserPorte.minuteur);
-  pousserPorte.minuteur = setTimeout(function () { p.hidden = true; p.classList.remove("ouverte"); }, 1300);
+  pousserPorte.minuteur = setTimeout(function () { p.hidden = true; p.classList.remove("ouverte"); }, 2450);
 }
 $("ouvrir-jeux").addEventListener("click", function () { $("fenetre-jeux").hidden = false; pousserPorte("jeux"); });
 $("ouvrir-cabinet").addEventListener("click", function () { majWidgets(); $("fenetre-cabinet").hidden = false; pousserPorte("cabinet"); });
@@ -2298,40 +2298,14 @@ function souffle(ctx, t, type, f1, f2, duree, volume, q) {
   s.start(t); s.stop(t + duree + 0.02);
 }
 
-// Le grincement d'une vieille porte : le bois qui « accroche et glisse » des centaines de fois par seconde,
-// passé dans les résonances du battant (plus grave et plus long dans la version sombre)
+// Le grincement d'une porte en bois façon film (fabriqué dans grincement.js) : le loquet claque, puis la porte grince.
+// La porte de la crypte dans la version sombre.
 function sonPorte() {
-  const ctx = audio(); if (!ctx) return;
-  const t = ctx.currentTime + 0.01, grave = !!etat.maudit;
-  const duree = grave ? 1.25 : 0.95, sr = ctx.sampleRate;
-  const tampon = ctx.createBuffer(1, Math.floor(sr * duree), sr);
-  const d = tampon.getChannelData(0);
-  let phase = 0;
-  for (let k = 0; k < d.length; k++) {
-    const x = k / d.length;
-    // La hauteur du grincement monte, hésite, puis retombe (comme une porte qu'on pousse)
-    const f = (grave ? 26 : 38) + (grave ? 40 : 70) * Math.sin(Math.PI * Math.pow(x, 0.7)) + 12 * Math.sin(x * 37) + (Math.random() - 0.5) * 18;
-    phase += f / sr;
-    if (phase >= 1) { phase -= 1; for (let j = 0; j < 24 && k + j < d.length; j++) d[k + j] += (1 - j / 24) * (Math.random() < 0.5 ? 0.9 : -0.9); }
-    // On fait accrocher le bois par moments (petits silences)
-    if (Math.sin(x * 23) > 0.93) d[k] *= 0.25;
-  }
-  const s = ctx.createBufferSource(); s.buffer = tampon;
-  const g = ctx.createGain();
-  g.gain.setValueAtTime(0.0001, t);
-  g.gain.exponentialRampToValueAtTime(grave ? 0.55 : 0.45, t + 0.08);
-  g.gain.setValueAtTime(grave ? 0.55 : 0.45, t + duree * 0.7);
-  g.gain.exponentialRampToValueAtTime(0.0001, t + duree);
-  [[grave ? 520 : 760, 7, 1], [grave ? 1050 : 1500, 9, 0.7], [grave ? 2100 : 2900, 10, 0.35]].forEach(function (r) {
-    const filtre = ctx.createBiquadFilter(), gr = ctx.createGain();
-    filtre.type = "bandpass"; filtre.frequency.value = r[0]; filtre.Q.value = r[1]; gr.gain.value = r[2];
-    s.connect(filtre); filtre.connect(gr); gr.connect(g);
-  });
-  g.connect(ctx.destination);
-  s.start(t); s.stop(t + duree + 0.02);
-  // Le loquet qui se défait, juste avant le grincement
+  const ctx = audio(); if (!ctx || typeof grincement !== "function") return;
+  const t = ctx.currentTime + 0.01;
   note(ctx, t, "square", 180, 90, 0.05, 0.05);
   souffle(ctx, t, "highpass", 2500, 1800, 0.04, 0.05, 0.7);
+  grincement(ctx, t + 0.3, etat.maudit ? "crypte" : (etat.porteSon || "manoir"));
 }
 
 // Le petit tintement de verre de chaque bouton (une goutte sourde dans la version sombre)
