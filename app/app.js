@@ -2298,15 +2298,44 @@ function souffle(ctx, t, type, f1, f2, duree, volume, q) {
   s.start(t); s.stop(t + duree + 0.02);
 }
 
-// Le grincement d'une porte en bois façon film (fabriqué dans grincement.js) : le loquet claque, puis la porte grince.
-// La porte de la crypte dans la version sombre.
+// La porte qui grince.
+// Version claire : un vrai bruitage de porte en bois (« Scary wooden door opening », Mixkit, licence gratuite Mixkit Sound Effects).
+// Version sombre : la porte de la crypte, fabriquée par l'appli (grincement.js).
+const bruitagePorte = { fichier: "../sons/porte-bois.mp3", tampon: null, enCours: null };
+function chargerBruitagePorte(ctx) {
+  if (bruitagePorte.tampon || bruitagePorte.enCours) return bruitagePorte.enCours;
+  bruitagePorte.enCours = fetch(bruitagePorte.fichier)
+    .then(function (r) { return r.arrayBuffer(); })
+    .then(function (a) { return new Promise(function (ok, ko) { ctx.decodeAudioData(a, ok, ko); }); })
+    .then(function (b) { bruitagePorte.tampon = b; return b; })
+    .catch(function () { bruitagePorte.enCours = null; return null; });
+  return bruitagePorte.enCours;
+}
+function jouerBruitagePorte(ctx, b) {
+  const s = ctx.createBufferSource(), g = ctx.createGain();
+  s.buffer = b; g.gain.value = 0.9;
+  s.connect(g); g.connect(ctx.destination);
+  s.start(ctx.currentTime + 0.02);
+}
 function sonPorte() {
-  const ctx = audio(); if (!ctx || typeof grincement !== "function") return;
+  const ctx = audio(); if (!ctx) return;
   const t = ctx.currentTime + 0.01;
+  if (!etat.maudit) {
+    if (bruitagePorte.tampon) { jouerBruitagePorte(ctx, bruitagePorte.tampon); return; }
+    const p = chargerBruitagePorte(ctx);
+    if (p) p.then(function (b) { if (b) jouerBruitagePorte(ctx, b); });
+    return;
+  }
+  if (typeof grincement !== "function") return;
   note(ctx, t, "square", 180, 90, 0.05, 0.05);
   souffle(ctx, t, "highpass", 2500, 1800, 0.04, 0.05, 0.7);
-  grincement(ctx, t + 0.3, etat.maudit ? "crypte" : (etat.porteSon || "manoir"));
+  grincement(ctx, t + 0.3, etat.porteCrypte || "crypte");
 }
+// On prépare le bruitage dès le premier toucher, pour qu'il parte sans attendre
+document.addEventListener("pointerdown", function prep() {
+  const ctx = audio(); if (ctx && !etat.maudit) chargerBruitagePorte(ctx);
+  document.removeEventListener("pointerdown", prep);
+}, { once: true });
 
 // Le petit tintement de verre de chaque bouton (une goutte sourde dans la version sombre)
 function sonClic() {

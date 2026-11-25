@@ -7,6 +7,13 @@ var portesGrincantes = {
   grenier: { titre: "La porte du grenier", duree: 1.3, corps: 0.0035, volume: 0.8,
     hauteurs: [[0, 380], [0.2, 700], [0.45, 620], [0.7, 880], [1, 540]] },
   crypte:  { titre: "La porte de la crypte", duree: 2.4, corps: 0.008, volume: 1.15,
+    hauteurs: [[0, 110], [0.2, 190], [0.5, 260], [0.7, 210], [0.9, 150], [1, 120]] },
+  // La même crypte, sans grésillement : frottement plus doux, aigus coupés, moins d'écho, pas de compresseur
+  crypteDouce: { titre: "La crypte, adoucie", duree: 2.4, corps: 0.008, volume: 1.2, attaque: 0.1, extinction: 3.5,
+    coupe: 2200, retourCorps: 0.3, sansLimiteur: true,
+    hauteurs: [[0, 110], [0.2, 190], [0.5, 260], [0.7, 210], [0.9, 150], [1, 120]] },
+  crypteFeutree: { titre: "La crypte, feutrée", duree: 2.4, corps: 0.009, volume: 1.5, attaque: 0.18, extinction: 2.5,
+    coupe: 1400, retourCorps: 0.2, sansLimiteur: true,
     hauteurs: [[0, 110], [0.2, 190], [0.5, 260], [0.7, 210], [0.9, 150], [1, 120]] }
 };
 
@@ -39,7 +46,8 @@ function grincement(ctx, t, nom) {
       if (Math.random() < 0.006 && x > 0.05 && x < 0.92) colle = Math.floor(sr * (0.03 + 0.05 * Math.random()));
     }
     // Une impulsion qui claque puis s'éteint : riche en harmoniques, comme un frottement
-    d[k] = amp * Math.exp(-phase * 6) * (phase < 0.02 ? phase / 0.02 : 1);
+    var att = p.attaque || 0.02;
+    d[k] = amp * Math.exp(-phase * (p.extinction || 6)) * (phase < att ? phase / att : 1);
   }
   var src = ctx.createBufferSource(); src.buffer = tampon;
   var passeHaut = ctx.createBiquadFilter(); passeHaut.type = "highpass"; passeHaut.frequency.value = 150;
@@ -54,7 +62,7 @@ function grincement(ctx, t, nom) {
   var sec = ctx.createGain(); sec.gain.value = 0.25; passeHaut.connect(sec); sec.connect(melange);
   // Le corps creux de la porte : un écho très court qui se répète
   var retard = ctx.createDelay(0.05), retour = ctx.createGain(), assourdi = ctx.createBiquadFilter(), sortieCorps = ctx.createGain();
-  retard.delayTime.value = p.corps; retour.gain.value = 0.45; assourdi.type = "lowpass"; assourdi.frequency.value = 3000; sortieCorps.gain.value = 0.6;
+  retard.delayTime.value = p.corps; retour.gain.value = p.retourCorps || 0.45; assourdi.type = "lowpass"; assourdi.frequency.value = 3000; sortieCorps.gain.value = 0.6;
   melange.connect(retard); retard.connect(assourdi); assourdi.connect(retour); retour.connect(retard); assourdi.connect(sortieCorps);
   // Le volume : la porte démarre, grince, puis s'arrête
   var env = ctx.createGain(), v = 0.9 * p.volume;
@@ -63,9 +71,10 @@ function grincement(ctx, t, nom) {
   env.gain.setValueAtTime(v, t + p.duree * 0.8);
   env.gain.exponentialRampToValueAtTime(0.0001, t + p.duree);
   melange.connect(env); sortieCorps.connect(env);
-  var limiteur = ctx.createDynamicsCompressor();
-  limiteur.threshold.value = -10; limiteur.ratio.value = 8;
-  env.connect(limiteur); limiteur.connect(ctx.destination);
+  var fin = env;
+  if (p.coupe) { var doux = ctx.createBiquadFilter(); doux.type = "lowpass"; doux.frequency.value = p.coupe; doux.Q.value = 0.5; env.connect(doux); fin = doux; }
+  if (p.sansLimiteur) fin.connect(ctx.destination);
+  else { var limiteur = ctx.createDynamicsCompressor(); limiteur.threshold.value = -10; limiteur.ratio.value = 8; fin.connect(limiteur); limiteur.connect(ctx.destination); }
   src.start(t); src.stop(t + p.duree + 0.05);
   return p.duree;
 }
