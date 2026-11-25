@@ -2485,3 +2485,12 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 .astro-portrait summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
 .astro-rappel { opacity: 0.7; }
 .astro-titre-tirage { margin-top: 14px; }
+
+/* ---------- Les deux portes de l'accueil et leurs fenêtres (tri du 2026-11-25) ---------- */
+#fenetre-jeux .fenetre, #fenetre-cabinet .fenetre { max-height: 92vh; overflow-y: auto; text-align: left; }
+#fenetre-jeux .etiquette-petite { margin: 16px 0 4px; }
+.liste-jeux { display: flex; flex-direction: column; }
+.liste-jeux .ligne-programme { width: 100%; }
+.portes-accueil .bouton-conversation { min-height: 112px; }
+.porte-cabinet { background: linear-gradient(150deg, rgba(120, 60, 150, .22), rgba(200, 90, 140, .14)); }
+#fenetre-cabinet .widgets { margin-top: 12px; }

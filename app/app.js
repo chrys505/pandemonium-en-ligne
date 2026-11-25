@@ -1816,7 +1816,22 @@ function majWidgets() {
 setInterval(function () { if (!document.hidden && !$("ecran-aujourdhui").hidden) majFil(); }, 8000);
 setInterval(function () { const r = $("mystere-rebours"); if (r) r.textContent = reboursMinuit(); }, 1000);
 
+// Les deux portes de l'accueil (tri du 2026-11-25) : les bonus d'un côté, les curiosités de l'autre
+$("ouvrir-jeux").addEventListener("click", function () { $("fenetre-jeux").hidden = false; });
+$("ouvrir-cabinet").addEventListener("click", function () { majWidgets(); $("fenetre-cabinet").hidden = false; });
+["jeux", "cabinet"].forEach(function (n) {
+  $("fermer-" + n).addEventListener("click", function () { $("fenetre-" + n).hidden = true; });
+  $("fenetre-" + n).addEventListener("click", function (e) { if (e.target === $("fenetre-" + n)) $("fenetre-" + n).hidden = true; });
+});
+$("fenetre-jeux").addEventListener("click", function (e) {
+  const b = e.target.closest("[data-relais], [data-relais-ecran]");
+  if (!b) return;
+  $("fenetre-jeux").hidden = true;
+  if (b.dataset.relais) $(b.dataset.relais).click(); else allerA(b.dataset.relaisEcran);
+});
+
 function chercherDansLeDico(q) {
+  $("fenetre-cabinet").hidden = true;
   allerA("reviser");
   $("dico-recherche").value = q;
   majDico();
@@ -5178,4 +5193,5 @@ appliquerVersion();
 chercherPeintre();
 majFormulaire();
 majCompteurs();
-allerA("fil");
+// On ouvre sur le mot du jour : quelqu'un qui découvre l'appli comprend tout de suite (2026-11-25)
+allerA("aujourdhui");

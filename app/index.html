@@ -61,16 +61,6 @@
           <button class="lien-image" id="ouvrir-image" type="button">📸 En faire une image à partager</button>
         </article>
 
-        <!-- La quintessence : six gouttes d'esprit, dans les deux versions -->
-        <button class="bouton-quintessence" id="ouvrir-quintessence" type="button">
-          <i aria-hidden="true">⚗️</i>
-          <b id="qb-titre">La quintessence du soir</b>
-          <span id="qb-sous">Six gouttes d'esprit pour briller ce soir</span>
-        </button>
-
-        <!-- Les widgets : la fiole mystère, la bibliothèque de nos savoirs, le fil des savoirs -->
-        <div class="widgets" id="widgets"></div>
-
         <!-- La version sombre : le grimoire du jour -->
         <div class="seulement-maudit" id="grimoire"></div>
 
@@ -82,13 +72,14 @@
         <h2 class="titre-2">Au programme</h2>
         <div class="programme" id="programme"></div>
 
-        <h2 class="titre-2">Pour briller ce soir</h2>
-        <div class="duo-conversation">
-          <button class="bouton-conversation" id="ouvrir-panne" type="button"><i>💬</i><b>Panne de conversation ?</b><span>Un sujet qui surprend, tout de suite</span></button>
-          <button class="bouton-conversation" id="ouvrir-rdv" type="button"><i>🗓️</i><b>Avant ton rendez-vous</b><span>3 sujets à retenir en chemin</span></button>
+        <div class="teaser" id="teaser"></div>
         </div>
 
-        <div class="teaser" id="teaser"></div>
+        <!-- Les deux portes : les bonus d'un côté, les curiosités de l'autre (tri du 2026-11-25) -->
+        <h2 class="titre-2">Et pour aller plus loin</h2>
+        <div class="duo-conversation portes-accueil">
+          <button class="bouton-conversation porte-jeux" id="ouvrir-jeux" type="button"><i>🎲</i><b>Jeux et défis</b><span>Jouer, briller, écrire</span></button>
+          <button class="bouton-conversation porte-cabinet" id="ouvrir-cabinet" type="button"><i>🔮</i><b>Le cabinet des curiosités</b><span>Horoscope, roman, mystères…</span></button>
         </div>
       </div>
 
@@ -321,8 +312,8 @@
 
     <!-- ===== Barre de navigation ===== -->
     <nav class="navigation">
-      <button class="nav actif" data-ecran="fil" type="button"><span>🌀</span>Fil</button>
-      <button class="nav" data-ecran="aujourdhui" type="button"><span>☀️</span>Aujourd'hui</button>
+      <button class="nav actif" data-ecran="aujourdhui" type="button"><span>☀️</span>Aujourd'hui</button>
+      <button class="nav" data-ecran="fil" type="button"><span>🌀</span>Fil</button>
       <button class="nav" data-ecran="reviser" type="button"><span>🧠</span>Réviser</button>
       <button class="nav" data-ecran="collection" type="button"><span>✍️</span>Atelier</button>
       <button class="nav" data-ecran="soiree" type="button"><span>🎉</span>Soirée</button>
@@ -417,6 +408,46 @@
       <button class="fermer" id="fermer-pendu" type="button" aria-label="Fermer">✕</button>
       <p class="etiquette">🪢 Le pendu de la potence</p>
       <div class="pendu" id="pendu"></div>
+    </div>
+  </div>
+  <!-- ===== Les bonus : jeux, conversation, écriture ===== -->
+  <div class="voile" id="fenetre-jeux" hidden>
+    <div class="fenetre">
+      <button class="fermer" id="fermer-jeux" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">🎲 Jeux et défis</p>
+      <p class="etiquette-petite">🧠 Jouer avec tes mots</p>
+      <div class="liste-jeux">
+        <button class="ligne-programme" type="button" data-relais="ouvrir-tour"><span class="icone-programme">🏰</span><span class="texte-programme"><b>La Tour du Pandémonium</b><span>Terrasse les créatures avec tes mots</span></span><span class="fleche">›</span></button>
+        <button class="ligne-programme" type="button" data-relais="ouvrir-pendu"><span class="icone-programme">🪢</span><span class="texte-programme"><b>Le pendu de la potence</b><span>Un mot rare, lettre par lettre</span></span><span class="fleche">›</span></button>
+        <button class="ligne-programme" type="button" data-relais="ouvrir-galejade"><span class="icone-programme">🎭</span><span class="texte-programme"><b>Vrai ou galéjade ?</b><span>5 secondes pour démasquer le faux</span></span><span class="fleche">›</span></button>
+        <button class="ligne-programme" type="button" data-relais="ouvrir-paires"><span class="icone-programme">🔗</span><span class="texte-programme"><b>Les alliances</b><span>60 secondes pour relier mots et définitions</span></span><span class="fleche">›</span></button>
+      </div>
+      <p class="etiquette-petite">✨ Briller ce soir</p>
+      <div class="liste-jeux">
+        <button class="ligne-programme" type="button" data-relais="ouvrir-quintessence"><span class="icone-programme">⚗️</span><span class="texte-programme"><b id="qb-titre">La quintessence du soir</b><span id="qb-sous">Six gouttes d'esprit pour briller ce soir</span></span><span class="fleche">›</span></button>
+        <button class="ligne-programme" type="button" data-relais="ouvrir-panne"><span class="icone-programme">💬</span><span class="texte-programme"><b>Panne de conversation ?</b><span>Un sujet qui surprend, tout de suite</span></span><span class="fleche">›</span></button>
+        <button class="ligne-programme" type="button" data-relais="ouvrir-rdv"><span class="icone-programme">🗓️</span><span class="texte-programme"><b>Avant ton rendez-vous</b><span>3 sujets à retenir en chemin</span></span><span class="fleche">›</span></button>
+      </div>
+      <p class="etiquette-petite">✍️ Écrire et jouer à plusieurs</p>
+      <div class="liste-jeux">
+        <button class="ligne-programme" type="button" data-relais-ecran="collection"><span class="icone-programme">✒️</span><span class="texte-programme"><b>L'atelier</b><span>Sublimer, l'alambic, les rimes</span></span><span class="fleche">›</span></button>
+        <button class="ligne-programme" type="button" data-relais-ecran="soiree"><span class="icone-programme">🎉</span><span class="texte-programme"><b>Le mode soirée</b><span>Pyramide, duel d'insultes, loup-garou</span></span><span class="fleche">›</span></button>
+      </div>
+      <!-- Boutons d'origine, cachés : la fenêtre les « appuie » à ta place -->
+      <div hidden>
+        <button id="ouvrir-quintessence" type="button"></button>
+        <button id="ouvrir-panne" type="button"></button>
+        <button id="ouvrir-rdv" type="button"></button>
+      </div>
+    </div>
+  </div>
+  <!-- ===== Le cabinet des curiosités : horoscope, roman, fiole mystère, fil des savoirs… ===== -->
+  <div class="voile" id="fenetre-cabinet" hidden>
+    <div class="fenetre fenetre-cabinet">
+      <button class="fermer" id="fermer-cabinet" type="button" aria-label="Fermer">✕</button>
+      <p class="etiquette">🔮 Le cabinet des curiosités</p>
+      <p class="petit gauche">Les à-côtés du Pandémonium : pour flâner quand tu as fini ton mot du jour.</p>
+      <div class="widgets" id="widgets"></div>
     </div>
   </div>
   <div class="voile" id="fenetre-galejade" hidden>
