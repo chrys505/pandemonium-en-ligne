@@ -2418,3 +2418,36 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 .element-carnet { border-left: 3px solid var(--jaune); border-radius: 4px 16px 16px 4px; }
 .carnet-contexte { display: block; margin-top: 8px; font-family: var(--serif); font-size: 0.95rem; color: var(--creme); opacity: 0.9; }
 .element small.carnet-date { font-family: var(--serif); font-style: italic; }
+
+/* 🔮 L'oracle des mots : trois cartes qui se retournent */
+.widget-oracle { text-align: left; }
+.oracle-cartes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0 6px; perspective: 900px; }
+.oracle-carte {
+  position: relative; aspect-ratio: 2 / 3; padding: 0; border: 0; background: none; cursor: pointer;
+  transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+}
+.oracle-carte.retournee { transform: rotateY(180deg); cursor: default; }
+.oracle-dos, .oracle-face {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px; border-radius: 12px; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border: 1px solid color-mix(in srgb, var(--jaune) 55%, transparent);
+}
+.oracle-dos {
+  background:
+    radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--jaune) 25%, transparent), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 6px, transparent 6px 12px), #1b1020;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  animation: oracle-souffle 3s ease-in-out infinite;
+}
+.oracle-sceau { font-size: 1.6rem; color: var(--jaune); text-shadow: 0 0 12px var(--jaune); }
+.oracle-pos { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--creme); opacity: 0.8; }
+.oracle-face { transform: rotateY(180deg); background: color-mix(in srgb, var(--jaune) 10%, #120a10); text-align: center; }
+.oracle-icone { font-size: 1.6rem; }
+.oracle-arcane { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--jaune); }
+.oracle-mot { font-family: var(--serif); font-size: 0.95rem; font-weight: 700; color: var(--creme); line-height: 1.2; word-break: break-word; }
+.oracle-ligne { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--bord); }
+.oracle-parole { margin: 4px 0; font-family: var(--serif); font-style: italic; font-size: 1.02rem; line-height: 1.5; }
+.oracle-mission { margin: 14px 0 0; padding: 10px 12px; border-radius: 12px; background: color-mix(in srgb, var(--jaune) 12%, transparent); font-size: 0.92rem; }
+.lien-mot { padding: 0; border: 0; background: none; font: inherit; font-weight: 700; color: var(--jaune); text-decoration: underline; cursor: pointer; }
+@keyframes oracle-souffle { 50% { box-shadow: 0 6px 24px color-mix(in srgb, var(--jaune) 30%, transparent); } }
+@media (prefers-reduced-motion: reduce) { .oracle-carte { transition: none; } .oracle-dos { animation: none; } }

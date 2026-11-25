@@ -1808,7 +1808,7 @@ $("fermer-galejade").addEventListener("click", fermerGalejade);
 $("fenetre-galejade").addEventListener("click", function (e) { if (e.target === $("fenetre-galejade")) fermerGalejade(); });
 
 function majWidgets() {
-  $("widgets").innerHTML = widgetRoman() + widgetMystere() +widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetPhrase() + widgetLivre() + widgetFil();
+  $("widgets").innerHTML = widgetRoman() + widgetMystere() +widgetSort() + widgetCreature() + widgetTitre() + widgetBibliotheque() + widgetOracle() + widgetPhrase() + widgetLivre() + widgetFil();
   majFil();
 }
 
@@ -5050,6 +5050,67 @@ $("widgets").addEventListener("click", function (e) {
   decalPhrase = (decalPhrase + 1 + Math.floor(Math.random() * (liste.length - 1))) % liste.length || 1;
   const w = $("widget-phrase");
   if (w) { w.insertAdjacentHTML("afterend", widgetPhrase()); w.remove(); }
+});
+
+// ===== 🔮 L'oracle des mots (oracle.js) : trois cartes du jour, passé, présent, avenir =====
+// Le tirage est le même toute la journée ; il pioche d'abord dans TES mots (carnet, favoris), puis dans le dictionnaire.
+var POSITIONS_ORACLE = [["passe", "Le passé"], ["present", "Le présent"], ["avenir", "L'avenir"]];
+function tirageOracle() {
+  const rnd = hasardGraine(numeroJour * 7919 + 13);
+  const tous = tousLesMots().filter(function (m) { return m.definition && m.mot.length <= 22; });
+  const miens = tous.filter(function (m) { return m.perso || (etat.favoris || []).indexOf(m.mot) !== -1; });
+  const rares = motsRaresDispo().filter(function (m) { return m.definition && m.mot.length <= 22; });
+  const pris = [], cartes = [];
+  POSITIONS_ORACLE.forEach(function (p, k) {
+    const source = (k === 1 && miens.length) ? miens : (rares.length > 10 ? rares : tous);
+    let m, essai = 0;
+    do { m = source[Math.floor(rnd() * source.length)]; essai++; } while (pris.indexOf(m.mot) !== -1 && essai < 20);
+    pris.push(m.mot);
+    const a = arcanes[Math.floor(rnd() * arcanes.length)];
+    const o = oracles[p[0]][Math.floor(rnd() * oracles[p[0]].length)];
+    cartes.push({ pos: p[1], arcane: a, mot: m, oracle: o.replace("{mot}", "« " + m.mot + " »") });
+  });
+  return cartes;
+}
+function etatOracle() {
+  if (!etat.oracle || etat.oracle.jour !== aujourdhui) etat.oracle = { jour: aujourdhui, vues: [], recompense: false };
+  return etat.oracle;
+}
+function widgetOracle() {
+  if (typeof arcanes === "undefined") return "";
+  const o = etatOracle(), cartes = tirageOracle(), toutes = o.vues.length === 3;
+  return '<article class="widget widget-oracle" id="widget-oracle">' +
+    '<p class="etiquette">🔮 L\'oracle des mots</p>' +
+    '<p class="petit">' + (toutes ? "Les cartes ont parlé. Reviens demain pour un nouveau tirage." : "Trois cartes t'attendent, face cachée. Touche-les pour les retourner.") + "</p>" +
+    '<div class="oracle-cartes">' + cartes.map(function (c, k) {
+      const vue = o.vues.indexOf(k) !== -1;
+      return '<button class="oracle-carte' + (vue ? " retournee" : "") + '" type="button" data-oracle="' + k + '" aria-label="' + c.pos + '">' +
+        '<span class="oracle-dos"><span class="oracle-sceau">✦</span><span class="oracle-pos">' + c.pos + "</span></span>" +
+        '<span class="oracle-face"><span class="oracle-icone">' + c.arcane.icone + '</span><span class="oracle-arcane">' + echapper(c.arcane.nom) + '</span><span class="oracle-mot">' + echapper(c.mot.mot) + "</span></span>" +
+        "</button>";
+    }).join("") + "</div>" +
+    '<div class="oracle-lecture">' + cartes.map(function (c, k) {
+      return o.vues.indexOf(k) === -1 ? "" :
+        '<div class="oracle-ligne"><p class="fiche-part"><b>' + c.arcane.icone + " " + c.pos + " · " + echapper(c.arcane.nom) + "</b> " + echapper(c.arcane.sens) + "</p>" +
+        '<p class="oracle-parole">' + echapper(c.oracle) + "</p>" +
+        '<p class="petit gauche"><button class="lien-mot" type="button" data-oracle-mot="' + echapper(c.mot.mot) + '">' + echapper(c.mot.mot) + "</button> : " + echapper(c.mot.definition) + "</p></div>";
+    }).join("") +
+    (toutes ? '<p class="oracle-mission">✨ Ta mission du jour : placer « ' + echapper(cartes[1].mot.mot) + " » dans une conversation avant ce soir.</p>" : "") + "</div></article>";
+}
+$("widgets").addEventListener("click", function (e) {
+  const mot = e.target.closest("[data-oracle-mot]");
+  if (mot) { const m = tousLesMots().filter(function (x) { return x.mot === mot.dataset.oracleMot; })[0]; if (m) ouvrirFiche(m); return; }
+  const b = e.target.closest("[data-oracle]");
+  if (!b) return;
+  const o = etatOracle(), k = Number(b.dataset.oracle);
+  if (o.vues.indexOf(k) !== -1) return;
+  o.vues.push(k);
+  sonFiole();
+  const r = b.getBoundingClientRect(); etincellesAuToucher(r.left + r.width / 2, r.top + r.height / 2, 14);
+  if (o.vues.length === 3 && !o.recompense) { o.recompense = true; etat.xp += 3; $("xp").textContent = etat.xp; }
+  sauver();
+  b.classList.add("retournee");
+  setTimeout(function () { const w = $("widget-oracle"); if (w) { w.insertAdjacentHTML("afterend", widgetOracle()); w.remove(); } }, 650);
 });
 appliquerVersion();
 chercherPeintre();
