@@ -3387,6 +3387,8 @@ $("lancer-revision").addEventListener("click", function () {
 
 // ---------- Onglet Collection ----------
 const LIMITE_GRATUITE = 10;
+// Les mots du carnet ne comptent pas : seuls les autres ajouts (citations, pensées, inventions, punchlines) sont limités
+function ajoutsLimites() { return etat.collection.filter(function (el) { return el.type !== "mot"; }).length; }
 
 function majFormulaire() {
   const type = document.querySelector('input[name="type"]:checked').value;
@@ -3410,8 +3412,8 @@ document.querySelectorAll('input[name="type"]').forEach(function (r) {
 
 $("formulaire").addEventListener("submit", function (e) {
   e.preventDefault();
-  if (etat.collection.length >= LIMITE_GRATUITE) { ouvrirPremium(); return; }
   const type = document.querySelector('input[name="type"]:checked').value;
+  if (type !== "mot" && ajoutsLimites() >= LIMITE_GRATUITE) { ouvrirPremium(); return; }
   const element = {
     type: type,
     titre: $("champ-titre").value.trim(),
@@ -3434,7 +3436,7 @@ $("formulaire").addEventListener("submit", function (e) {
 });
 
 function majCollection() {
-  $("limite-collection").textContent = etat.collection.length + " / " + LIMITE_GRATUITE + " ajouts gratuits · illimité avec Premium";
+  $("limite-collection").textContent = "📓 Mots du carnet : sans limite · autres ajouts : " + ajoutsLimites() + " / " + LIMITE_GRATUITE + " gratuits";
   const liste = $("liste-collection");
   liste.innerHTML = "";
   if (!etat.collection.length) {
@@ -3512,7 +3514,7 @@ function jouerCreer() {
   $("garder-phrase").addEventListener("click", function () {
     const texte = $("ma-phrase").value.trim();
     if (!texte) { $("phrase-gardee").textContent = "Écris d'abord ta phrase 🙂"; return; }
-    if (etat.collection.length >= LIMITE_GRATUITE) { ouvrirPremium(); return; }
+    if (ajoutsLimites() >= LIMITE_GRATUITE) { ouvrirPremium(); return; }
     etat.collection.unshift({ type: "pensee", titre: "", texte: texte, auteur: "Mon image poétique", date: aujourdhui });
     etat.xp += 10;
     sauver();
@@ -3580,7 +3582,7 @@ function chercherRimes() {
   $("garder-punchline").addEventListener("click", function () {
     const texte = $("ma-punchline").value.trim();
     if (!texte) { $("punchline-gardee").textContent = "Écris d'abord ta punchline 🙂"; return; }
-    if (etat.collection.length >= LIMITE_GRATUITE) { ouvrirPremium(); return; }
+    if (ajoutsLimites() >= LIMITE_GRATUITE) { ouvrirPremium(); return; }
     etat.collection.unshift({ type: "punchline", titre: mots.join(", "), texte: texte, auteur: "", date: aujourdhui });
     etat.xp += 10;
     sauver();

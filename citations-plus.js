@@ -92,7 +92,12 @@ const citationsPlus = [
   ["On aime mieux paraître savant que de reconnaître ce qu'on ignore.", "Jean-Jacques Rousseau (formulation à confirmer)"],
   ["Quand un maître ne songe pas à ce qu'il fait, une servante bien sensée est en droit de le redresser.", "Molière, Le Malade imaginaire (Toinette)"],
   ["Les arbres tardifs sont ceux qui portent les meilleurs fruits.", "Molière, Le Malade imaginaire (Monsieur Diafoirus)"],
-  ["On grave sur le marbre bien plus malaisément que sur le sable ; mais les choses y sont conservées bien plus longtemps.", "Molière, Le Malade imaginaire (Monsieur Diafoirus)"]
+  ["On grave sur le marbre bien plus malaisément que sur le sable ; mais les choses y sont conservées bien plus longtemps.", "Molière, Le Malade imaginaire (Monsieur Diafoirus)"],
+  // Note du 2026-11-25
+  ["Toute l'excellence de leur art consiste en un pompeux galimatias, en un spécieux babil, qui vous donne des mots pour des raisons et des promesses pour des effets.", "Molière, Le Malade imaginaire (Béralde)"],
+  ["Il en est comme de ces beaux songes qui ne vous laissent au réveil que le déplaisir de les avoir crus.", "Molière, Le Malade imaginaire (Béralde)"],
+  ["Voilà mon petit doigt pourtant qui sait tout, et qui me dira si vous mentez.", "Molière, Le Malade imaginaire (Argan)"],
+  ["Ceux qui mégotent ou qui se mentent à eux-mêmes se privent de bien belles histoires.", ""]
 ];
 
 // Expressions : [expression, sens]

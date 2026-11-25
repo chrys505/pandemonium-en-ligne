@@ -5969,4 +5969,580 @@ const fiches = {
   "Se débrider": {
     scene: "Timide toute la soirée, il monte sur la table au dernier morceau et danse comme un fou. Il se débride : il se lâche.",
   },
+  // Série 18 (note du 25 novembre : Calvino, Voltaire, Le Malade imaginaire)
+  "Mégoter": {
+    scene: "Au resto entre amis, il sort sa calculette pour savoir qui a pris un café de plus. Il mégote : il chipote sur des centimes.",
+    degainer: "« Ne mégotons pas sur notre plaisir. » Parfait pour commander le dessert sans culpabiliser.",
+    origine: "Vient de « mégot » : au départ, ramasser les bouts de cigarette pour en tirer encore deux bouffées. L'image de l'économie de bouts de chandelle est restée.",
+  },
+  "Harnachement": {
+    scene: "Selle, bride, mors, sangles, étriers : tout ce qu'on met sur un cheval avant de partir. Et quand ton pote part en randonnée avec trois sacs, deux bâtons et une lampe frontale, c'est aussi un harnachement.",
+  },
+  "Hégélien": {
+    scene: "Deux amis se disputent : l'un veut la mer, l'autre la montagne. Ils finissent en Corse, où il y a les deux. Un hégélien te dirait que la contradiction a été dépassée.",
+    piege: "Le fameux « thèse, antithèse, synthèse » est presque toujours attribué à Hegel, mais lui-même ne l'a quasiment jamais formulé ainsi : c'est plutôt Fichte et des commentateurs qui l'ont figé en recette.",
+  },
+  "Malignité": {
+    scene: "Il te complimente sur ta coupe devant tout le monde, avec un petit sourire qui veut dire le contraire. Ce n'est pas une méchanceté franche : c'est de la malignité.",
+    aussi: "En médecine, on parle de la malignité d'une tumeur : sa capacité à s'étendre.",
+  },
+  "Condisciple": {
+    scene: "Vingt ans après, tu croises quelqu'un qui avait le même prof de philo que toi, au même lycée. Pas forcément un ami : un condisciple, quelqu'un qui a appris à la même école.",
+  },
+  "Professer": {
+    scene: "« Il professe une admiration sans bornes pour Molière » : il le dit haut et fort, à qui veut l'entendre.",
+    aussi: "Professer, c'est aussi enseigner : d'où le « professeur ».",
+  },
+  "Culbute": {
+    scene: "Le gamin fait une culbute dans l'herbe, les pieds par-dessus la tête. Et l'entreprise qui fait la culbute, elle, a la tête dans le mur.",
+    aussi: "Chez les commerçants, « faire la culbute », c'est revendre au double du prix d'achat. Le même mot pour la faillite et pour le jackpot.",
+  },
+  "Humorisme": {
+    scene: "Pendant deux mille ans, les médecins ont cru que tout se jouait entre quatre liquides : le sang, le flegme, la bile jaune et la bile noire. Trop de l'un, et tu tombais malade. C'était l'humorisme.",
+    origine: "Il en reste des mots qu'on emploie tous les jours : sanguin, flegmatique, colérique (la bile) et mélancolique (« bile noire » en grec). Et « être de bonne humeur », c'est avoir ses liquides bien dosés.",
+    aussi: "Chez Calvino et d'autres écrivains, l'humorisme désigne aussi une manière de regarder le monde avec humour.",
+  },
+  "Pars construens": {
+    scene: "Tu critiques le plan de tes amis pendant dix minutes. Puis quelqu'un te dit : « D'accord, et toi, tu proposes quoi ? » Il te demande ta pars construens : la partie qui construit.",
+    origine: "Expression de Francis Bacon, au XVIIe siècle : d'abord la pars destruens (démolir les idées fausses), puis la pars construens (bâtir à la place).",
+  },
+  "Cosmologue": {
+    scene: "Elle passe ses journées à se demander quelle forme a l'univers, d'où il vient et comment il finira. Elle est cosmologue.",
+    aussi: "À ne pas confondre avec l'astronome, qui observe les astres, ni avec le cosmonaute, qui y va.",
+  },
+  "Axiomatique": {
+    scene: "Au Monopoly, on ne discute pas le fait de toucher 200 en passant par la case départ : c'est une règle de base. L'ensemble de ces règles de départ, c'est l'axiomatique du jeu.",
+  },
+  "Maboule": {
+    scene: "« Il a fait 300 kilomètres pour une crêpe ? Il est complètement maboule ! »",
+    origine: "De l'arabe « mahbûl », fou, ramené d'Afrique du Nord par les soldats au XIXe siècle.",
+  },
+  "Pataphysique": {
+    scene: "Pourquoi la tartine tombe-t-elle toujours côté beurre ? Un pataphysicien prendrait la question très au sérieux et inventerait une solution parfaitement absurde.",
+    origine: "Inventée par Alfred Jarry (le père d'Ubu roi) : « la science des solutions imaginaires ». Un Collège de 'Pataphysique existe vraiment depuis 1948, et c'est en son sein qu'est né l'Oulipo.",
+  },
+  "Circularité": {
+    scene: "« Pourquoi faut-il lui faire confiance ? — Parce qu'il est honnête. — Comment tu le sais ? — Il me l'a dit. » Le raisonnement tourne en rond : c'est de la circularité.",
+  },
+  "Téméraire": {
+    scene: "Sauter du plongeoir de dix mètres le premier jour où tu sais nager : c'est courageux, mais surtout téméraire.",
+    origine: "Charles le Téméraire, duc de Bourgogne, a mérité son surnom : il est mort en 1477 en attaquant Nancy en plein hiver avec une armée épuisée.",
+  },
+  "Universaux": {
+    scene: "Tu as vu des milliers de chats. Mais « le chat » en général, celui qui n'est ni roux ni tigré, existe-t-il quelque part ? Au Moyen Âge, des philosophes se sont écharpés là-dessus pendant des siècles : la querelle des universaux.",
+  },
+  "Gnose": {
+    scene: "Certains groupes antiques promettaient que tu serais sauvé non par tes actes, mais parce qu'on t'aurait révélé un savoir secret. Cette connaissance réservée aux initiés, c'est la gnose.",
+    origine: "Du grec « gnôsis », connaissance. Quand le savant Thomas Huxley a voulu dire en 1869 qu'on ne peut pas savoir si Dieu existe, il a inventé le mot « agnostique » : celui qui est sans gnose.",
+  },
+  "Paradoxal": {
+    scene: "Plus tu as de choix au restaurant, moins tu arrives à choisir. C'est paradoxal : ça va contre le bon sens, et pourtant c'est vrai.",
+  },
+  "Insuppressible": {
+    scene: "Le fou rire en plein enterrement : tu essaies de le retenir, il revient. Il est insuppressible.",
+  },
+  "Calembour": {
+    scene: "« Le comble pour un électricien ? Ne pas être au courant. » Un jeu sur deux sens du même son : c'est un calembour.",
+    degainer: "Victor Hugo trouvait que c'était « la fiente de l'esprit qui vole ». Utile pour accueillir le calembour d'un ami en levant les yeux au ciel.",
+  },
+  "Algébriser": {
+    scene: "Transformer « j'ai trois fois plus de billes que toi, plus deux » en « y = 3x + 2 », c'est algébriser : mettre le monde en formules.",
+    origine: "Algèbre vient de l'arabe « al-jabr », remettre en place. En Espagne, un « algebrista » était aussi celui qui remettait les os déboîtés.",
+  },
+  "Antithétique": {
+    scene: "Le jour et la nuit, la cigale et la fourmi, Jean qui rit et Jean qui pleure : des paires qui s'opposent point par point. Elles sont antithétiques.",
+  },
+  "Mathématisable": {
+    scene: "La trajectoire d'un ballon, oui. Le chagrin d'une rupture, beaucoup moins. La question de ce qui est mathématisable passionnait Calvino.",
+  },
+  "Sizain": {
+    scene: "Six vers, et c'est fini : une petite strophe ramassée, qu'on peut apprendre par cœur en marchant. C'est un sizain.",
+    aussi: "Ses voisins : le quatrain (4 vers), le quintil (5), le huitain (8), le dizain (10).",
+  },
+  "Désopilant": {
+    scene: "Ton oncle imite la voisine au repas de Noël, et toute la table pleure de rire. Il était désopilant.",
+    origine: "« Désopiler », c'était déboucher : on disait « désopiler la rate », parce qu'on croyait que le rire débouchait cet organe et chassait la mélancolie.",
+  },
+  "Sans heurt": {
+    scene: "Le déménagement s'est fait sans heurt : pas un carton cassé, pas une dispute. Tout a glissé.",
+  },
+  "Analogiquement": {
+    scene: "« Le cœur est une pompe » : on comprend le cœur analogiquement, en le comparant à une chose qu'on connaît déjà.",
+  },
+  "Se heurter à": {
+    scene: "Tu proposes ton idée, sûr de toi, et tu te heurtes à un « non » poli mais ferme. Comme une porte vitrée que tu n'avais pas vue.",
+  },
+  "Oulipo": {
+    scene: "Écrire un roman entier sans jamais utiliser la lettre « e » : Georges Perec l'a fait (La Disparition, 1969). C'est l'esprit de l'Oulipo : s'imposer une contrainte pour inventer.",
+    origine: "OUvroir de LIttérature POtentielle, fondé en 1960 par Raymond Queneau et François Le Lionnais. Italo Calvino en est devenu membre.",
+    degainer: "Raymond Queneau a écrit Cent mille milliards de poèmes : 10 sonnets découpés en bandes, qu'on peut combiner. Il faudrait plus de 190 millions d'années pour tous les lire.",
+  },
+  "Rire homérique": {
+    scene: "Un fou rire si énorme qu'on ne peut plus s'arrêter, à en avoir mal au ventre : un rire homérique.",
+    origine: "Dans l'Iliade d'Homère, les dieux de l'Olympe sont pris d'un « rire inextinguible » en voyant Héphaïstos, le dieu boiteux, faire le service en clopinant.",
+  },
+  "Incommunicable": {
+    scene: "L'odeur de la maison de ta grand-mère, ce qu'elle te fait : tu peux essayer de l'expliquer, ça ne passera jamais tout à fait. C'est incommunicable.",
+  },
+  "Réticence": {
+    scene: "« J'émets quelques réticences » : je ne dis pas non, mais je traîne des pieds.",
+    aussi: "En rhétorique, la réticence, c'est s'arrêter au milieu d'une phrase pour laisser deviner la suite : « Si je n'étais pas si bien élevé… »",
+  },
+  "Prodigalité": {
+    scene: "Il paie la tournée à tout le bar, offre des fleurs à des inconnues et finit le mois avec des pâtes. Sa prodigalité est légendaire.",
+    aussi: "Le « fils prodigue » de la parabole est celui qui a dilapidé sa part d'héritage, puis est revenu.",
+  },
+  "Annexer": {
+    scene: "Ton frère part en voyage, et à son retour tu as annexé sa chambre : ta console, ton linge, tes posters. Tu l'as rattachée à ton territoire.",
+    aussi: "On annexe aussi un document à un dossier : c'est l'annexe, à la fin.",
+  },
+  "Fenil": {
+    scene: "Dans les vieilles fermes, on grimpait par une échelle au-dessus de l'étable : c'était le fenil, où l'on gardait le foin bien au sec.",
+    origine: "Du latin « fenum », le foin. Le foin lui-même vient du même mot.",
+  },
+  "Mythico-rituel": {
+    scene: "Le gâteau d'anniversaire : une histoire (on grandit d'un an), un geste répété (souffler les bougies), un vœu secret. Un petit moment mythico-rituel, mi-récit, mi-cérémonie.",
+  },
+  "Aux antipodes": {
+    scene: "Lui se lève à 5 heures pour courir, elle se couche à 5 heures en rentrant de soirée. Leurs vies sont aux antipodes.",
+    origine: "Du grec « pieds opposés » : les antipodes, ce sont les gens qui vivent de l'autre côté de la Terre et marchent, en quelque sorte, pieds contre nos pieds.",
+  },
+  "Point de suture": {
+    scene: "Chez le médecin, c'est le fil qui referme une plaie. Au figuré, c'est ce qui recoud deux mondes : un livre peut être le point de suture entre la science et la poésie.",
+  },
+  "Atemporel": {
+    scene: "Une chemise blanche, une chanson de Brassens, un conte de fées : ça ne date d'aucune époque. C'est atemporel.",
+  },
+  "Charrier": {
+    scene: "Après l'orage, le fleuve charrie des branches, de la boue, parfois une chaise de jardin. Il emporte tout dans son courant.",
+    aussi: "« Faut pas charrier ! » : faut pas exagérer. Et « charrier quelqu'un », c'est le taquiner.",
+  },
+  "En aval": {
+    scene: "Si tu jettes un bateau en papier dans la rivière, tu le retrouveras en aval : plus bas, là où va le courant. En amont, c'est vers la source.",
+    origine: "« À val », c'est vers la vallée. Et « avaler » voulait d'abord dire « faire descendre » : on avalait un tonneau dans la cave avant d'avaler sa soupe.",
+  },
+  "Remous": {
+    scene: "Derrière le pilier du pont, l'eau tourne sur elle-même : ce sont des remous. Et l'annonce d'un mariage surprise provoque, elle, des remous dans la famille.",
+  },
+  "Sarment": {
+    scene: "En hiver, le vigneron taille la vigne et ramasse les jeunes branches coupées : les sarments. Ils brûlent vite et très chaud, parfaits pour griller des côtelettes.",
+  },
+  "Agronome": {
+    scene: "Pourquoi ce champ donne moins de blé que celui d'à côté ? Le sol, l'eau, les semences : l'agronome mène l'enquête.",
+    aussi: "Antoine Parmentier, agronome, a fait accepter la pomme de terre en France au XVIIIe siècle.",
+  },
+  "Dissidence": {
+    scene: "Dans le groupe de randonnée, trois personnes refusent l'itinéraire et prennent un autre chemin. Une petite dissidence : on se sépare du groupe parce qu'on n'est plus d'accord avec sa ligne.",
+  },
+  "Diptyque": {
+    scene: "Deux films qui se répondent, deux livres qui racontent la même histoire de deux côtés : c'est un diptyque.",
+    origine: "Du grec « plié en deux » : au départ, deux tablettes de bois reliées par une charnière, comme un livre de deux pages.",
+  },
+  "Tantième": {
+    scene: "« Rendez-vous au tantième du mois » : tel jour, à préciser. C'est le « tant » des comptes, quand on ne veut pas dire le chiffre.",
+  },
+  "Pusillanime": {
+    scene: "Il voulait demander une augmentation, puis s'est dit que ce n'était pas le moment. Ni la semaine suivante. Ni l'année d'après. Il est pusillanime : il manque d'audace.",
+    origine: "Du latin « petite âme ». Son contraire, c'est « magnanime » : une grande âme.",
+  },
+  "Alléguer": {
+    scene: "En retard, il allègue une grève de bus. Il avance une raison pour se justifier, vraie ou non.",
+  },
+  "Plagiaire": {
+    scene: "Il recopie le devoir de sa voisine, change trois mots et signe. C'est un plagiaire.",
+    origine: "À Rome, le « plagiarius » était celui qui enlevait des enfants ou des esclaves pour les revendre. Le poète Martial a traité ainsi un homme qui récitait ses vers comme s'ils étaient les siens : un voleur d'enfants de l'esprit.",
+  },
+  "Pentateuque": {
+    scene: "La Genèse, l'Exode, le Lévitique, les Nombres et le Deutéronome : les cinq premiers livres de la Bible, que la tradition juive appelle la Torah.",
+    origine: "Du grec « cinq étuis » : les rouleaux étaient rangés dans des étuis.",
+  },
+  "Quadrige": {
+    scene: "Quatre chevaux de front tirant un char : c'est un quadrige. Il y en a un en bronze tout en haut de l'arc de triomphe du Carrousel, à Paris, et un autre sur la porte de Brandebourg, à Berlin.",
+  },
+  "Frugalité": {
+    scene: "Du pain, un fruit, un peu de fromage, et elle est heureuse. Sa frugalité n'est pas de la privation : c'est le goût du peu.",
+    origine: "Du latin « frux », les fruits de la terre.",
+  },
+  "Transmigration": {
+    scene: "L'âme qui quitte un corps à la mort pour aller vivre dans un autre, humain ou animal : c'est la transmigration, qu'on appelle aussi métempsycose.",
+    aussi: "Le mot désigne aussi le déplacement de tout un peuple vers un autre pays.",
+  },
+  "Guère": {
+    scene: "« Je ne le connaissais guère » : à peine, presque pas.",
+    origine: "Paradoxe savoureux : « guère » vient d'un mot germanique qui voulait dire « beaucoup ». « Ne… guère », c'est donc « pas beaucoup ».",
+  },
+  "Dévot": {
+    scene: "Tous les matins à la messe, chapelet à la main : elle est dévote, très attachée à sa religion.",
+    piege: "Chez Molière, le « faux dévot » (Tartuffe) affiche sa piété pour mieux manipuler. Selon le ton, le mot peut donc piquer.",
+  },
+  "Samaritain": {
+    scene: "Ta voiture tombe en panne sous la pluie, et un inconnu s'arrête pour t'aider à pousser. C'est un bon samaritain.",
+    origine: "Dans une parabole de l'Évangile, un homme blessé est ignoré par deux passants respectés, puis secouru par un habitant de Samarie, peuple alors méprisé.",
+  },
+  "Roitelet": {
+    scene: "Un minuscule oiseau à crête jaune, l'un des plus petits d'Europe. Et un roi d'un tout petit pays, qui se croit puissant : un roitelet.",
+  },
+  "Triumvir": {
+    scene: "César, Pompée et Crassus se partagent Rome. Chacun des trois est un triumvir.",
+    aussi: "Leur alliance à trois, c'est le triumvirat.",
+  },
+  "Brigandage": {
+    scene: "Des hommes armés guettaient les diligences sur les routes de forêt pour les dévaliser : c'était le brigandage.",
+    origine: "Un « brigand », à l'origine, c'était simplement un soldat à pied d'une brigade. Certains ont mal tourné.",
+  },
+  "Impiété": {
+    scene: "Rire pendant une cérémonie religieuse, profaner un lieu de culte : pour les croyants, c'est une impiété, un manque de respect envers le sacré.",
+  },
+  "Déplorable": {
+    scene: "Après la fête, l'appartement est dans un état déplorable : on ne peut que le regretter.",
+  },
+  "Pharisien": {
+    scene: "Il fait la morale à tout le monde sur l'honnêteté, puis triche aux impôts. Un pharisien : vertueux en façade.",
+    origine: "Les pharisiens étaient un courant juif très attaché à la Loi. Les Évangiles les montrent souvent en conflit avec Jésus, et le mot a pris au figuré le sens d'hypocrite.",
+  },
+  "Épiscopal": {
+    scene: "Le palais épiscopal, l'anneau épiscopal : tout ce qui touche à l'évêque.",
+    origine: "Du grec « episkopos », surveillant. C'est le même mot qui a donné « évêque », après des siècles d'usure.",
+  },
+  "Presbytérien": {
+    scene: "En Écosse, une grande Église protestante n'a pas d'évêques : elle est dirigée par des « anciens » élus. Ce sont les presbytériens.",
+    origine: "Du grec « presbyteros », ancien. Le mot « prêtre » vient de la même racine.",
+  },
+  "Interpoler": {
+    scene: "Un copiste glisse dans un vieux texte une phrase qui n'y était pas, et tout le monde finit par croire qu'elle est de l'auteur. Le passage a été interpolé.",
+  },
+  "Énergumène": {
+    scene: "Il crie dans le bus, gesticule et apostrophe tout le monde. Un vrai énergumène.",
+    origine: "En grec, l'« energoumenos » était un possédé : quelqu'un « travaillé » par un démon.",
+  },
+  "Prosélyte": {
+    scene: "Il vient de découvrir le jeûne intermittent, et il en parle à chaque repas. Un prosélyte : un nouveau converti, plein de zèle.",
+  },
+  "Faction": {
+    scene: "Dans le club, un petit groupe se réunit en douce pour renverser le président. C'est une faction.",
+    aussi: "« Être de faction », c'est monter la garde, comme une sentinelle devant sa guérite.",
+  },
+  "Rapine": {
+    scene: "Les pillards passent, prennent les récoltes, le bétail, l'argent. La rapine, c'est le vol par la force.",
+  },
+  "Pythagoricien": {
+    scene: "Pour les pythagoriciens, tout est nombre : la musique, les astres, l'âme.",
+    aussi: "Ils avaient des règles étranges : ne pas manger de fèves, ne pas ramasser ce qui était tombé, ne pas tisonner le feu avec un couteau.",
+  },
+  "Stoïcien": {
+    scene: "Ton train est annulé. Tu ne t'énerves pas : tu ne peux rien y changer, alors tu sors un livre. Un vrai stoïcien.",
+    origine: "Du grec « stoa », portique : Zénon enseignait sous un portique peint d'Athènes. On dit encore « rester stoïque ».",
+  },
+  "Essénien": {
+    scene: "Une communauté juive de l'Antiquité qui vivait à l'écart, dans le désert, en mettant tout en commun.",
+    aussi: "En 1947, des bergers ont découvert dans des grottes de Qumrân, près de la mer Morte, des manuscrits que beaucoup d'historiens attribuent à ce groupe.",
+  },
+  "Fripon": {
+    scene: "Il a piqué le dernier biscuit et fait semblant de rien, avec un sourire en coin. Petit fripon !",
+    aussi: "Chez Molière, « friponne » se dit tendrement à une petite fille espiègle, et « un sot fripon » est un coquin bête.",
+  },
+  "Prodige": {
+    scene: "À six ans, il jouait du Mozart au piano : un enfant prodige. Et une source qui jaillit d'un rocher sec, c'est un prodige au sens de miracle.",
+  },
+  "Sectateur": {
+    scene: "Il cite son maître à chaque phrase et défend sa doctrine bec et ongles. C'est un sectateur, un partisan très fervent.",
+  },
+  "Généalogie": {
+    scene: "Ta tante a passé l'hiver dans les archives et remonté la famille jusqu'en 1720. Elle a dressé votre généalogie.",
+  },
+  "Fadaise": {
+    scene: "Il t'a servi une heure de compliments creux et de banalités : des fadaises.",
+    degainer: "« Que de fadaises ! » : pour balayer un discours sans intérêt.",
+  },
+  "La lie du peuple": {
+    scene: "Vieilles expressions méprisantes pour désigner les plus pauvres et les plus humbles : « né dans la lie du peuple ».",
+    origine: "La lie, c'est le dépôt au fond d'une bouteille de vin. D'où aussi « boire le calice jusqu'à la lie » : endurer jusqu'au bout.",
+    piege: "C'est méprisant : à reconnaître dans un vieux texte, pas à employer pour parler de quelqu'un.",
+  },
+  "Subsister": {
+    scene: "De l'ancien château, il ne subsiste qu'une tour : c'est tout ce qui reste debout.",
+    aussi: "Subsister, c'est aussi arriver à vivre : « Il subsistait de petits boulots. »",
+  },
+  "Conjecturer": {
+    scene: "Des miettes sur la table, la boîte de gâteaux vide, ton frère qui évite ton regard : tu peux conjecturer ce qui s'est passé.",
+  },
+  "Parvis": {
+    scene: "La grande place devant Notre-Dame, où les touristes prennent leurs photos : c'est le parvis.",
+    origine: "Du latin « paradisus », le paradis : c'était le jardin qui précédait les églises.",
+  },
+  "Répréhensible": {
+    scene: "Garder la monnaie quand la caissière s'est trompée en ta faveur : ce n'est pas un crime, mais c'est répréhensible.",
+  },
+  "Réfuter": {
+    scene: "« La Terre est plate. » Tu sors une photo prise depuis l'espace : tu réfutes, tu prouves que c'est faux.",
+    piege: "Réfuter, ce n'est pas juste contester : c'est démontrer. Dire « je réfute ces accusations » sans preuve, c'est seulement les nier.",
+  },
+  "Transfigurer": {
+    scene: "Quand elle parle de son métier, son visage change, elle s'illumine. Sa passion la transfigure.",
+  },
+  "Sépulcre blanchi": {
+    scene: "Costume impeccable, sourire parfait, discours vertueux, et des comptes cachés partout. Un sépulcre blanchi : beau dehors, pourri dedans.",
+    origine: "Dans l'Évangile de Matthieu, Jésus compare ainsi les hypocrites à des tombeaux peints en blanc, beaux à voir, mais pleins d'ossements.",
+  },
+  "Daigner": {
+    scene: "Après trois messages sans réponse, il daigne enfin répondre : « ok ». Comme s'il te faisait une faveur.",
+  },
+  "Déroger": {
+    scene: "Elle a toujours refusé de travailler le dimanche, mais pour ton anniversaire elle déroge à sa règle.",
+    origine: "Sous l'Ancien Régime, un noble qui faisait du commerce ou travaillait de ses mains « dérogeait » : il pouvait perdre sa noblesse.",
+  },
+  "Panégyriste": {
+    scene: "Au pot de départ, un collègue fait un discours si élogieux qu'on croirait parler d'un saint. Le panégyriste du jour.",
+    origine: "Le panégyrique, en grec, était le discours prononcé devant l'assemblée de tout le peuple, à l'occasion d'une grande fête.",
+  },
+  "Ameuter": {
+    scene: "Il crie au voleur dans la rue et, en deux minutes, il a ameuté tout le quartier.",
+    origine: "De « meute » : rassembler les chiens pour la chasse. Ameuter une foule, c'est la lancer comme une meute.",
+  },
+  "En butte à": {
+    scene: "Nouveau dans la classe, il est en butte aux moqueries : c'est sur lui que tout le monde tire.",
+    origine: "La butte, c'était le tertre de terre derrière la cible, sur lequel les archers s'exerçaient.",
+  },
+  "Sacerdotal": {
+    scene: "La soutane, le col blanc, les gestes de la messe : tout ce qui appartient au prêtre et à sa fonction est sacerdotal.",
+  },
+  "Gibet": {
+    scene: "Sur une colline à l'entrée des villes, on pendait les condamnés et on les laissait là, pour l'exemple. C'était le gibet.",
+    aussi: "Le gibet de Montfaucon, à Paris, pouvait accrocher des dizaines de corps à la fois. Le poète François Villon, condamné à la pendaison puis gracié, a écrit la Ballade des pendus.",
+  },
+  "Inférer": {
+    scene: "Ses chaussures sont pleines de sable et il a un coup de soleil : tu en infères qu'il revient de la plage.",
+  },
+  "Inepte": {
+    scene: "« Mettre de l'eau dans l'essence pour économiser ? » Une idée inepte : absurde de bout en bout.",
+    origine: "Du latin « ineptus », qui n'est pas apte, pas adapté.",
+  },
+  "Galimatias": {
+    scene: "La notice du meuble en kit, traduite trois fois par un logiciel : un pur galimatias.",
+    degainer: "Molière, dans Le Malade imaginaire, se moque des médecins dont l'art consiste en « un pompeux galimatias ».",
+    origine: "Origine inconnue. Une légende parle d'un avocat qui, plaidant en latin pour un certain Mathias, se serait emmêlé et aurait dit « galli Mathias » au lieu de « gallus Mathiae ».",
+  },
+  "Deutéronome": {
+    scene: "Le cinquième livre de la Bible, où Moïse, avant de mourir, rappelle au peuple toute la loi.",
+    origine: "Du grec « deuxième loi » : la loi redite une seconde fois.",
+  },
+  "Bélial": {
+    scene: "Dans les vieux textes religieux et les grimoires, Bélial est le nom d'un démon, figure de la perversité.",
+    origine: "De l'hébreu, avec l'idée de « sans valeur ».",
+  },
+  "Proditoirement": {
+    scene: "Il t'a serré la main en souriant, puis t'a dénoncé dans ton dos. Il a agi proditoirement : en traître.",
+    origine: "Du latin « proditor », le traître.",
+  },
+  "Païen": {
+    scene: "Les dieux de l'Olympe, les esprits des forêts, les fêtes du solstice : ce qui vient des religions anciennes, avant le christianisme, est païen.",
+    origine: "Du latin « paganus », paysan : c'est dans les campagnes que les vieux cultes ont résisté le plus longtemps.",
+  },
+  "Copiste": {
+    scene: "Avant l'imprimerie, des moines passaient des mois à recopier un livre à la plume, lettre après lettre. C'étaient les copistes.",
+    aussi: "On leur doit des fautes célèbres, que les spécialistes traquent encore en comparant les manuscrits.",
+  },
+  "Rustique": {
+    scene: "Une table en chêne brut, un pain de campagne, un vin du coin : un repas rustique, simple et robuste.",
+    origine: "Du latin « rus », la campagne.",
+  },
+  "Supplicié": {
+    scene: "Les gravures anciennes montrent les suppliciés sur la place publique, face à la foule.",
+  },
+  "Fatras": {
+    scene: "Le tiroir de la cuisine : élastiques, piles mortes, clés de nulle part, notices. Un fatras. Et un discours mal préparé peut aussi être un fatras d'idées.",
+  },
+  "Saducéen": {
+    scene: "Un courant juif de l'Antiquité, lié aux prêtres du Temple de Jérusalem.",
+    aussi: "Contrairement aux pharisiens, les saducéens ne croyaient pas à la résurrection des morts.",
+  },
+  "Conférer": {
+    scene: "Le jury lui confère le titre de docteur : il le lui accorde officiellement.",
+    aussi: "Le petit « cf. » dans les livres est l'abréviation du latin « confer » : compare, va voir.",
+  },
+  "Oint": {
+    scene: "Les rois de France étaient oints à Reims : on leur versait de l'huile sainte sur le front pour les consacrer.",
+    origine: "« Messie » (en hébreu) et « Christ » (en grec) veulent tous deux dire « l'oint ».",
+  },
+  "Schisme": {
+    scene: "Le groupe de musique se divise en deux camps qui ne se parlent plus. Un vrai schisme.",
+    origine: "Du grec « schisma », fente, déchirure. Le plus célèbre : en 1054, l'Église de Rome et celle de Constantinople se séparent.",
+  },
+  "Ramas": {
+    scene: "Un ramas de vieux journaux dans la cave. Et, avec mépris, « un ramas de brigands » : une bande de gens peu recommandables.",
+  },
+  "Diacre": {
+    scene: "Pendant la messe, à côté du prêtre, celui qui lit l'Évangile et l'aide : c'est le diacre.",
+    origine: "Du grec « diakonos », serviteur.",
+  },
+  "Concile": {
+    scene: "Tous les évêques réunis pour trancher les grandes questions de l'Église : c'est un concile. Celui de Nicée, en 325, a fixé le credo chrétien.",
+  },
+  "Traditeur": {
+    scene: "Sous les persécutions romaines, certains chrétiens livraient leurs livres saints aux autorités pour avoir la vie sauve. On les appelait les traditeurs.",
+    origine: "Du latin « tradere », livrer. Le même mot a donné « traître »… et « tradition », ce qu'on livre aux générations suivantes.",
+  },
+  "Récognition": {
+    scene: "Le moment où Ulysse, revenu déguisé, est reconnu par sa vieille nourrice grâce à une cicatrice : c'est une scène de récognition.",
+  },
+  "De même farine": {
+    scene: "« Lui et ses copains, c'est de même farine » : des gens du même genre, et pas du meilleur.",
+  },
+  "Prose cadencée": {
+    scene: "Ce n'est pas de la poésie, pas de rimes, pas de vers, et pourtant ça se lit comme une musique. C'est de la prose cadencée.",
+  },
+  "Apprêts": {
+    scene: "Les apprêts de la fête : guirlandes, plats, chaises à déplacer. Tout ce qu'on prépare avant le grand moment.",
+  },
+  "Assujettir": {
+    scene: "« Un père à ses vœux vous veut assujettir », écrit Molière : il veut vous soumettre à sa volonté.",
+    aussi: "Aujourd'hui, on est surtout « assujetti à la TVA » : soumis à cet impôt.",
+  },
+  "Appas": {
+    scene: "Chez les auteurs classiques, une belle personne fait valoir ses appas : ses charmes.",
+    origine: "« Appas » et « appât » étaient le même mot. Au XVIIe siècle, on les a séparés : l'appât pour la pêche, les appas pour la séduction.",
+  },
+  "Tantôt": {
+    scene: "« Vous eussiez été ici tantôt » : vous auriez dû être là tout à l'heure.",
+    aussi: "Dans le Nord et en Belgique, « à tantôt » veut dire « à cet après-midi » ou « à tout à l'heure ». Et « tantôt il rit, tantôt il pleure » : parfois l'un, parfois l'autre.",
+  },
+  "Ma mie": {
+    scene: "« Ma mie, apportez-moi mon chapeau. » Une façon ancienne et tendre de dire « mon amie, ma chère ».",
+    origine: "On disait « m'amie », comme « m'amour ». L'oreille a mal coupé, et c'est devenu « ma mie ».",
+  },
+  "Distinguo": {
+    scene: "« Je ne mens pas : je ne dis pas toute la vérité. » Il fait un distinguo, une distinction subtile.",
+    degainer: "Thomas Diafoirus, dans Le Malade imaginaire, répond à tout par « Distinguo » : la parodie du savant qui coupe les cheveux en quatre.",
+  },
+  "Nego consequentiam": {
+    scene: "« Tu as raté ton bus, donc ta journée est fichue. — Nego consequentiam ! » Je nie la conséquence : l'un n'entraîne pas l'autre.",
+    aussi: "Une formule des débats en latin des vieilles écoles, que Molière met dans la bouche du pédant Thomas Diafoirus.",
+  },
+  "Frais émoulu": {
+    scene: "Frais émoulu de son école de commerce, il veut déjà tout réorganiser dans l'entreprise.",
+    origine: "« Émoudre », c'est aiguiser sur la meule. Une lame frais émoulue sort tout juste de chez le rémouleur : neuve et bien tranchante.",
+  },
+  "Douaire": {
+    scene: "Autrefois, le mari réservait une part de ses biens pour que sa femme puisse vivre s'il mourait avant elle. C'était le douaire.",
+    aussi: "D'où la « douairière » : la veuve qui en profitait, puis, par moquerie, une vieille dame à l'air hautain.",
+  },
+  "S'ôter de la vue": {
+    scene: "« Si tu me le permets, j'aimerais m'ôter de ta vue et vaquer à différentes occupations variées et équilibrées. » La façon la plus élégante de dire « je m'en vais ».",
+  },
+  "Se mettre en peine": {
+    scene: "« Ne vous mettez pas en peine pour moi » : ne vous inquiétez pas, ne vous donnez pas tout ce mal.",
+  },
+  "Prendre congé": {
+    scene: "Il se lève, salue chacun, remercie l'hôtesse : il prend congé.",
+    aussi: "« Je ne puis me dispenser de prendre congé de vous » : le grand style de Molière pour dire au revoir.",
+  },
+  "Duriuscule": {
+    scene: "Le jeune médecin prend le pouls d'Argan et déclare, très sérieux, qu'il est « duriuscule, pour ne pas dire dur ».",
+    aussi: "Faux latin de Molière pour se moquer des médecins qui habillent des banalités en latin.",
+  },
+  "Parenchyme": {
+    scene: "Le tissu qui fait le vrai travail d'un organe, la chair du foie ou du poumon : c'est le parenchyme.",
+    degainer: "Les Diafoirus du Malade imaginaire parlent doctement du « parenchyme splénique » : du jargon pour impressionner.",
+  },
+  "Splénique": {
+    scene: "Tout ce qui concerne la rate est splénique.",
+    origine: "Du grec « splên », la rate. Les Anglais en ont tiré « spleen », et Baudelaire l'a pris pour nommer sa mélancolie : on croyait la rate siège de l'humeur noire.",
+  },
+  "Pylore": {
+    scene: "La petite porte musclée au bas de l'estomac, qui s'ouvre pour laisser passer la nourriture vers l'intestin.",
+    origine: "Du grec « pylôros », le gardien de la porte.",
+  },
+  "Cholédoque": {
+    scene: "Le canal qui conduit la bile du foie jusqu'à l'intestin. Les médecins de Molière en font un mot savant pour éblouir.",
+    origine: "Du grec : « qui reçoit la bile ».",
+  },
+  "Désennuyer": {
+    scene: "Un jeu de cartes, une histoire, une chanson pour désennuyer le malade : le distraire, chasser l'ennui.",
+  },
+  "Contrefaire": {
+    scene: "Elle contrefait la voix de sa mère au téléphone pour excuser son absence. Contrefaire, c'est imiter pour tromper ; ou feindre, faire semblant.",
+    aussi: "D'où la contrefaçon : le faux sac de luxe.",
+  },
+  "Langueur": {
+    scene: "Un dimanche d'été, la chaleur, les volets mi-clos : une douce langueur, on n'a envie de rien.",
+    aussi: "Chez les auteurs classiques, les « douces langueurs » sont celles de l'amour.",
+  },
+  "Une prise de casse": {
+    scene: "Chez Molière, l'apothicaire prescrit « une prise de casse » : une dose de laxatif.",
+    origine: "La casse est le fruit d'un arbre, le cassier : une longue gousse noire dont la pulpe purge.",
+  },
+  "Embéguiné": {
+    scene: "« Toujours embéguiné de ses apothicaires » : Argan ne jure que par eux, il en est entiché.",
+    origine: "De « béguin », un petit bonnet. Être embéguiné, c'est avoir la tête coiffée d'une idée. D'où aussi « avoir le béguin ».",
+  },
+  "Ne voir goutte": {
+    scene: "Coupure de courant en pleine nuit : on n'y voit goutte.",
+    origine: "Comme « ne… pas » (un pas) ou « ne… point » (un point), le vieux français disait « ne… goutte » ou « ne… mie » (une miette) : pas même une goutte.",
+  },
+  "Si fait": {
+    scene: "« Tu n'as pas fini tes devoirs ? — Si fait ! » Une façon ancienne de dire « mais si ».",
+  },
+  "Spécieux": {
+    scene: "« Si tu m'aimais vraiment, tu me prêterais ta voiture. » Ça a l'air logique, mais ça ne tient pas : un argument spécieux.",
+    origine: "Du latin « speciosus », beau à voir. Il a gardé la belle apparence et perdu la vérité.",
+  },
+  "Babil": {
+    scene: "Le babil d'un bébé, le gazouillis des oiseaux le matin : un bavardage léger qui ne s'arrête pas.",
+    degainer: "Molière parle d'« un spécieux babil, qui vous donne des mots pour des raisons et des promesses pour des effets ».",
+  },
+  "Impétuosité": {
+    scene: "Il se jette dans la discussion avec impétuosité : sans réfléchir, emporté comme un torrent.",
+  },
+  "Purgation": {
+    scene: "Saignées, lavements, purgations : la médecine du XVIIe siècle vidait les malades pour les soigner.",
+    aussi: "Au figuré, une purgation, c'est une purification de l'âme.",
+  },
+  "Avoir une dent contre": {
+    scene: "Depuis qu'il lui a volé sa place de parking, elle a une dent contre lui : elle lui en veut, pour longtemps.",
+  },
+  "Rabattre le caquet": {
+    scene: "Il se vantait d'être imbattable aux échecs. Ta petite sœur l'a battu en dix coups : ça lui a rabattu le caquet.",
+    origine: "Le caquet, c'est le gloussement de la poule. On dit aussi « rabaisser le caquet ».",
+  },
+  "Prendre à tâche de": {
+    scene: "Elle a pris à tâche de lire un classique par mois : elle s'y applique comme à une mission.",
+  },
+  "Nigaud": {
+    scene: "Il cherche ses lunettes depuis dix minutes, alors qu'il les a sur le nez. Gros nigaud !",
+  },
+  "Malavisé": {
+    scene: "Envoyer un message énervé à son patron à deux heures du matin : malavisé. Il a agi sans réfléchir.",
+  },
+  "Jaser": {
+    scene: "Il rentre à l'aube avec une inconnue : demain, tout le village va jaser.",
+  },
+  "Lèse-majesté": {
+    scene: "Insulter le roi, c'était un crime de lèse-majesté. Aujourd'hui, dire à un fan de foot que son équipe joue mal, c'en est presque un.",
+    origine: "« Lèse » vient du latin « laesa », blessée : la majesté blessée. Molière invente même « un crime de lèse-Faculté », quand on désobéit à son médecin.",
+  },
+  "Rompre commerce": {
+    scene: "« Je romps commerce avec vous » : le médecin furieux, dans Le Malade imaginaire, cesse toute relation avec Argan.",
+    aussi: "« Commerce », dans la vieille langue, c'est la fréquentation : « d'un commerce agréable » veut dire « agréable à fréquenter ».",
+  },
+  "Carabistouilles": {
+    scene: "« Pas de carabistouilles ! » : pas d'histoires, pas de balivernes.",
+    aussi: "Un mot de Belgique et du Nord de la France, qui sonne déjà comme une farce.",
+  },
+  "Vaquer": {
+    scene: "« Je vous laisse vaquer à vos occupations » : je vous laisse à ce que vous avez à faire.",
+    origine: "Du latin « vacare », être vide, être libre. Les « vacances » viennent du même mot.",
+  },
+  "Lewis-carrollien": {
+    scene: "Un chat qui disparaît en laissant son sourire, une reine qui veut la sentence avant le verdict : c'est absurde, et pourtant ça suit une logique. C'est lewis-carrollien.",
+    aussi: "Lewis Carroll, l'auteur d'Alice au pays des merveilles, était aussi professeur de mathématiques à Oxford.",
+  },
+  "Loi de Murphy": {
+    scene: "Tu laves ta voiture, il pleut. Tu changes de file au péage, l'autre avance. La loi de Murphy : tout ce qui peut mal tourner finira par mal tourner.",
+    origine: "Edward Murphy était un ingénieur de l'armée de l'air américaine. En 1949, des capteurs installés à l'envers sur un test de décélération lui auraient inspiré la formule.",
+  },
+  "Neutrino": {
+    scene: "Une particule si fuyante qu'elle traverse ton corps, les murs et la Terre entière sans rien toucher.",
+    origine: "En 1930, Wolfgang Pauli imagine cette particule et s'excuse presque : il a inventé une chose qu'on ne pourra peut-être jamais détecter. Enrico Fermi la baptise en italien : « le petit neutre ». On l'a détectée en 1956.",
+    aussi: "Certains physiciens pensent que c'est grâce à lui qu'il reste de la matière dans l'univers : va voir la notion « Le milliardième de trop ».",
+  },
 };
