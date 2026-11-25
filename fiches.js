@@ -4992,4 +4992,347 @@ const fiches = {
   "Trois-mâts": {
     scene: "Toutes voiles dehors, un grand voilier à trois mâts fend l'océan. Un trois-mâts.",
   },
+
+  // Série 15
+  "Unilatéral": {
+    scene: "Il a décidé seul de rompre le contrat, sans demander l'avis de l'autre partie. Une décision unilatérale : d'un seul côté.",
+  },
+  "Va-tout": {
+    scene: "Il ne lui reste qu'une poignée de jetons. Il les pousse tous au centre de la table. Il joue son va-tout : il risque tout.",
+  },
+  "Verticalité": {
+    scene: "Les gratte-ciel de New York, tout en hauteur. Leur verticalité donne le vertige.",
+    aussi: "Dans une entreprise, la verticalité, c'est une hiérarchie où les ordres descendent d'en haut.",
+  },
+  "Vitupération": {
+    scene: "Le critique publie trois pages de reproches furieux contre le film. Une vitupération : un blâme violent.",
+  },
+  "Volage": {
+    scene: "Une semaine avec l'une, la suivante avec l'autre, jamais de promesse. Un cœur volage.",
+  },
+  "Volatil": {
+    scene: "Ouvre un flacon de parfum, et l'odeur se répand puis disparaît : le parfum est volatil, il s'évapore.",
+    aussi: "Au figuré, un marché volatil change brutalement d'un jour à l'autre.",
+  },
+  "Martingale": {
+    scene: "Au casino, il double sa mise à chaque perte, persuadé qu'il finira forcément par gagner. Sa martingale le ruine en une soirée.",
+    aussi: "C'est aussi la demi-ceinture cousue au dos d'un manteau.",
+  },
+  "Corrélat": {
+    scene: "La liberté a un corrélat : la responsabilité. L'une ne va pas sans l'autre.",
+  },
+  "Inusité": {
+    scene: "« Gourgandine », « vespasienne », « ribaude » : des mots que plus personne n'emploie. Ils sont inusités.",
+  },
+  "Rétrospectivement": {
+    scene: "Sur le moment, il trouvait ce job horrible. Rétrospectivement, c'est là qu'il a tout appris.",
+  },
+  "Pêle-mêle": {
+    scene: "Dans la valise, chaussettes, livres, chargeur et brosse à dents, jetés pêle-mêle.",
+  },
+  "Synapse": {
+    scene: "Entre deux neurones, un minuscule espace où passe le message nerveux. Chaque fois que tu apprends un mot, de nouvelles synapses se renforcent.",
+  },
+  "Archétype": {
+    scene: "Le vieux sage, le héros qui part à l'aventure, le mentor qui meurt : des personnages qu'on retrouve dans toutes les histoires. Des archétypes.",
+  },
+  "Comptine": {
+    scene: "« Am, stram, gram, pic et pic et colégram… » Le doigt qui passe d'un enfant à l'autre pour désigner celui qui « l'est ». Une comptine.",
+  },
+  "Balbutiant": {
+    scene: "Les premiers mots d'un bébé, hésitants. Et l'aviation en 1905 : une science encore balbutiante, à ses tout débuts.",
+  },
+  "Continuum": {
+    scene: "Le passé, le présent, le futur forment une ligne sans coupure. Un continuum.",
+    aussi: "Einstein parle du continuum espace-temps.",
+  },
+  "Objectiver": {
+    scene: "Elle écrit sa colère sur une feuille, puis la relit comme si c'était celle d'une autre. Elle objective son émotion pour mieux la comprendre.",
+  },
+  "Précariser": {
+    scene: "Des contrats d'un mois, renouvelés ou pas au dernier moment. On précarise les salariés : on rend leur vie instable.",
+  },
+  "Atypique": {
+    scene: "Ancien boulanger devenu astronaute, puis peintre : un parcours atypique.",
+  },
+  "S'étioler": {
+    scene: "La plante oubliée dans le placard pâlit, s'allonge, se fane. Elle s'étiole. Et une amitié qu'on n'entretient pas aussi.",
+  },
+  "Paupérisation": {
+    scene: "Un quartier où les commerces ferment un à un, où les familles s'appauvrissent année après année. La paupérisation.",
+  },
+  "Écumer": {
+    scene: "La mer en furie écume contre les rochers. Et lui écume les brocantes chaque dimanche, pour tout rafler.",
+  },
+  "Repu": {
+    scene: "Après le repas de Noël, il se cale dans le fauteuil, déboutonne sa ceinture et soupire : « Je suis repu. »",
+  },
+  "Joute": {
+    scene: "Deux chevaliers en armure se lancent l'un contre l'autre au galop, lance en avant. Une joute.",
+    degainer: "« Une joute verbale » : un duel de mots, comme dans le duel d'insultes de l'appli.",
+  },
+  "Podagre": {
+    scene: "Le gros orteil gonflé, brûlant, impossible à poser par terre. La podagre, la goutte du pied, maladie des gourmets d'autrefois.",
+    origine: "Lucien de Samosate, auteur grec du IIe siècle, en a fait une tragédie comique.",
+  },
+  "Comédon": {
+    scene: "Devant le miroir, un petit point noir sur le nez. Un comédon.",
+  },
+  "Docte": {
+    scene: "D'une voix docte, il explique l'histoire de la fourchette depuis l'Antiquité. Savant, avec une pointe de pédanterie.",
+  },
+  "Dais": {
+    scene: "Au-dessus du trône, un toit de velours brodé d'or, soutenu par quatre colonnes. Le dais.",
+  },
+  "Combinatoire": {
+    scene: "Avec cinq chemises et quatre pantalons, combien de tenues ? Vingt. C'est de la combinatoire : l'art de compter les combinaisons.",
+  },
+  "Aristotélicien": {
+    scene: "Classer, définir, raisonner pas à pas, chercher la juste mesure entre deux excès. Une démarche aristotélicienne.",
+  },
+  "Immutabilité": {
+    scene: "Les lois de la physique ne changent pas, ici ou à l'autre bout de l'univers. Leur immutabilité est rassurante.",
+  },
+  "Jaspe": {
+    scene: "Une pierre dure aux veines rouges, vertes ou jaunes, qu'on polissait pour en faire des coupes et des bijoux. Le jaspe.",
+  },
+  "Péripatéticien": {
+    scene: "Aristote enseignait en marchant sous les arcades du Lycée, ses élèves derrière lui. Ses disciples étaient appelés les péripatéticiens.",
+    piege: "Au féminin, « péripatéticienne » est devenu, par plaisanterie, un mot pour prostituée.",
+  },
+  "Subversion": {
+    scene: "Des affiches détournées, des chansons moqueuses, des idées qui sapent l'autorité de l'intérieur. La subversion.",
+  },
+  "Atomisme": {
+    scene: "Il y a vingt-cinq siècles, Démocrite affirme que tout est fait de grains invisibles et de vide. L'atomisme, deux mille ans avant le microscope.",
+  },
+  "Onguent": {
+    scene: "Dans un petit pot de faïence, une pommade à l'odeur de plantes que la guérisseuse étale sur la brûlure. Un onguent.",
+  },
+  "Salace": {
+    scene: "À la fin du banquet, l'oncle se lance dans une blague grivoise qui fait rougir toute la table. Une plaisanterie salace.",
+  },
+  "Empyrée": {
+    scene: "Pour les Anciens, au-dessus de tous les cieux, la sphère de feu pur où vivaient les dieux. L'empyrée.",
+  },
+  "Badin": {
+    scene: "Un ton léger, une plaisanterie par-ci par-là, rien de sérieux. Une conversation badine.",
+  },
+  "Camus": {
+    scene: "Un nez court et aplati, comme celui d'un carlin. Un nez camus.",
+  },
+  "Pendeloque": {
+    scene: "Les gouttes de cristal qui pendent du lustre et tintent au moindre courant d'air. Des pendeloques.",
+  },
+  "Spadassin": {
+    scene: "Dans une ruelle sombre de Venise, un homme payé pour tuer attend, la main sur son épée. Un spadassin.",
+  },
+  "Frontispice": {
+    scene: "Tu ouvres un vieux livre, et face au titre, une gravure représente l'auteur entouré d'allégories. Le frontispice.",
+    aussi: "C'est aussi la façade principale d'un grand bâtiment.",
+  },
+  "Pamphlet": {
+    scene: "Quelques pages imprimées en secret, distribuées sous le manteau, qui ridiculisent le ministre. Un pamphlet.",
+  },
+  "Occultisme": {
+    scene: "Tarot, alchimie, séances de spiritisme, livres de magie : le monde des forces cachées. L'occultisme.",
+  },
+  "Prêche": {
+    scene: "Du haut de la chaire, le prêtre fait son prêche du dimanche. Et ton frère te fait le sien sur ton alimentation.",
+  },
+  "Édifiant": {
+    scene: "La vie d'un saint, racontée pour donner l'exemple : une histoire édifiante.",
+    degainer: "Avec ironie : « Le reportage sur le gaspillage était édifiant. » Très instructif, et pas rassurant.",
+  },
+  "Hâtif": {
+    scene: "Il l'a vue sourire à un autre, et il en a conclu qu'elle le trompait. Une conclusion hâtive : faite trop vite.",
+  },
+  "Psychorigide": {
+    scene: "Dîner à 19 h 00 précises, pas 19 h 05. Le même chemin, les mêmes habitudes, et la panique au moindre changement. Il est psychorigide.",
+  },
+  "Préjudice": {
+    scene: "Le voisin a abattu son arbre par erreur. Il a subi un préjudice et demande réparation.",
+  },
+  "Grog": {
+    scene: "Un soir d'hiver, enrhumé, une tasse fumante de rhum, d'eau chaude, de citron et de miel entre les mains. Un grog.",
+    origine: "D'après le surnom d'un amiral anglais du XVIIIe siècle, qui fit couper d'eau le rhum de ses marins.",
+  },
+  "Dissoner": {
+    scene: "Deux notes qui grincent ensemble au milieu de la chanson. Elles dissonent.",
+  },
+  "Dépérir": {
+    scene: "Privé de soleil, le rosier perd ses feuilles une à une. Il dépérit. Et le petit commerce aussi, sans clients.",
+  },
+  "Belek": {
+    scene: "« Fais belek, le bus arrive ! » Attention, en argot.",
+    origine: "De l'arabe.",
+  },
+  "Gratter": {
+    scene: "« Il me gratte toujours une clope. » Soutirer quelque chose, en argot.",
+    aussi: "Et « gratter », c'est aussi gagner un peu, grappiller : « gratter quelques minutes de sommeil ».",
+  },
+  "Reliure": {
+    scene: "Un vieux livre aux tranches dorées, la couverture en cuir patiné qui craque quand on l'ouvre. Sous la reliure, trois siècles de lecteurs.",
+  },
+  "Esthète": {
+    scene: "Il choisit sa tasse selon la couleur du thé et refait trois fois le bouquet sur la table. Un esthète, pour qui la beauté passe avant tout.",
+  },
+  "Abysses": {
+    scene: "À des milliers de mètres sous la mer, dans le noir complet, des poissons lumineux et des créatures jamais vues. Les abysses.",
+    aussi: "Au figuré, les abysses de l'âme sont ses gouffres les plus profonds.",
+  },
+  "Abyssal": {
+    scene: "Une fosse océanique abyssale, sans fond visible. Et, avec humour, une ignorance abyssale.",
+  },
+  "Déclin": {
+    scene: "Les colonnes effondrées, les routes envahies d'herbe : l'empire romain en déclin. Il perd sa force, lentement.",
+  },
+  "Illustre": {
+    scene: "« Nous avons ce soir à notre table un hôte illustre. » Tout le monde se retourne : un grand écrivain, célèbre et admiré.",
+    degainer: "Avec humour : « un illustre inconnu ».",
+  },
+  "Habitus": {
+    scene: "La façon de tenir sa fourchette, de parler, ce qu'on trouve beau ou vulgaire : tout ça, on l'a appris sans s'en rendre compte, dans son milieu. L'habitus.",
+    origine: "Le sociologue Pierre Bourdieu a rendu ce mot célèbre.",
+  },
+  "Osciller": {
+    scene: "Le pendule de l'horloge oscille, de gauche à droite. Et lui oscille entre rire et larmes.",
+  },
+  "Complaisance": {
+    scene: "Il se regarde dans chaque vitrine, se raconte ses propres succès. Une complaisance envers soi-même.",
+    aussi: "C'est aussi une indulgence trop grande : « un certificat de complaisance ».",
+  },
+  "Âpreté": {
+    scene: "Le vent glacé qui coupe le visage, le goût d'un vin trop jeune : de l'âpreté, de la rudesse.",
+    degainer: "« L'âpreté au gain » : l'avidité acharnée pour l'argent.",
+  },
+  "Desperado": {
+    scene: "Dans les westerns, le hors-la-loi recherché partout, qui n'a plus rien à perdre et tire le premier. Un desperado.",
+  },
+  "S'arc-bouter": {
+    scene: "La voiture est en panne au milieu de la côte. Il s'arc-boute contre le coffre, les pieds bien plantés, et pousse de toutes ses forces.",
+  },
+  "Prévarication": {
+    scene: "Un fonctionnaire qui accepte de l'argent pour fermer les yeux sur un dossier. Une prévarication : il trahit les devoirs de sa charge.",
+  },
+  "Triumvirat": {
+    scene: "À Rome, César, Pompée et Crassus se partagent le pouvoir à trois. Un triumvirat.",
+    degainer: "Pour trois amis qui décident de tout : « le triumvirat du bureau ».",
+  },
+  "Apologie": {
+    scene: "Dans son discours, il fait l'apologie de la lenteur : il la défend, en fait l'éloge.",
+    piege: "En anglais, « apology » veut dire excuse : faux ami.",
+  },
+  "Girandole": {
+    scene: "Sur la table du banquet, un grand chandelier à plusieurs branches couvertes de bougies. Une girandole.",
+    aussi: "C'est aussi une guirlande de lumières, ou une gerbe de feu d'artifice qui tourne.",
+  },
+  "Dix-neuviémisme": {
+    scene: "De grandes fresques familiales, des héros ambitieux, des descriptions de salons : un roman d'aujourd'hui marqué par le goût du XIXe siècle. Du dix-neuviémisme.",
+  },
+  "Tardif": {
+    scene: "Des pommes qui mûrissent en novembre, un premier amour à soixante ans. Tardifs, mais pas moins doux.",
+  },
+  "Primo, secundo": {
+    scene: "« Primo, tu ranges ta chambre. Secundo, tu fais tes devoirs. » Premièrement, deuxièmement, avec une touche de latin.",
+  },
+  "Entrelacs": {
+    scene: "Sur la pierre celtique, des lignes qui se croisent et se recroisent sans fin. Des entrelacs.",
+  },
+  "Romanesquement": {
+    scene: "Ils se sont rencontrés sous la pluie, en ramassant le même livre tombé. Romanesquement : comme dans un roman.",
+  },
+  "Interrelation": {
+    scene: "Les abeilles, les fleurs, le pommier, les oiseaux : tout dépend de tout dans le verger. Des interrelations.",
+  },
+  "Épilogue": {
+    scene: "Le roman est fini, mais une dernière page raconte ce que sont devenus les personnages dix ans plus tard. L'épilogue.",
+  },
+  "Altérité": {
+    scene: "Voyager, rencontrer quelqu'un qui pense, vit, croit autrement, et accepter qu'il soit différent sans vouloir le changer. L'altérité.",
+  },
+  "Aphorisme": {
+    scene: "« Connais-toi toi-même. » Trois mots, une vérité. Un aphorisme : une pensée brève qui frappe.",
+  },
+  "Religiosité": {
+    scene: "Il ne va jamais à l'église, mais allume une bougie avant chaque examen. Une religiosité vague, plus sentie que pratiquée.",
+  },
+  "Esthétisant": {
+    scene: "Des images magnifiques, des couleurs parfaites… et une histoire vide. Un film esthétisant : la forme avant le fond.",
+  },
+  "Vitalisme": {
+    scene: "La vie n'est pas qu'une machine faite de matière : il y a en elle un élan, une force. C'est la pensée du vitalisme.",
+  },
+  "Intelligentsia": {
+    scene: "Les écrivains, les professeurs, les philosophes qui débattent dans les journaux : l'intelligentsia d'un pays.",
+    origine: "Le mot est né en Russie au XIXe siècle.",
+  },
+  "Idylle": {
+    scene: "Un été, deux adolescents, des promenades au bord du lac et des lettres le soir. Une idylle : un amour tendre et naïf.",
+  },
+  "Potentialité": {
+    scene: "Dans une graine, il y a tout l'arbre à venir, en puissance. Une potentialité.",
+  },
+  "Prépondérant": {
+    scene: "Dans la décision, l'avis du médecin a été prépondérant : il a pesé plus que tous les autres.",
+  },
+  "Bureaucratique": {
+    scene: "Trois formulaires, quatre guichets, six semaines d'attente pour un tampon. Un enfer bureaucratique.",
+  },
+  "Forcené": {
+    scene: "Barricadé chez lui, il hurle et menace la police. Un forcené : fou furieux.",
+    aussi: "« Un travail forcené » est acharné, sans pause.",
+  },
+  "Inintelligible": {
+    scene: "Une ordonnance griffonnée, un message brouillé par le vent. Inintelligible : impossible à comprendre.",
+  },
+  "Cocaïnomane": {
+    scene: "Sherlock Holmes, dans les romans de Conan Doyle, était cocaïnomane : dépendant à la cocaïne.",
+  },
+  "Pope": {
+    scene: "Une longue barbe, une robe noire, un grand chapeau cylindrique. Le pope, prêtre de l'Église orthodoxe, en Russie ou en Grèce.",
+  },
+  "Rédemption": {
+    scene: "Ancien voleur, il consacre sa vie aux enfants des rues. Il cherche sa rédemption : racheter ses fautes.",
+  },
+  "Comparse": {
+    scene: "Le chef de la bande fait le coup, et son comparse surveille la rue. Un complice de second plan.",
+    aussi: "Au théâtre, un comparse est un figurant.",
+  },
+  "Univoque": {
+    scene: "« Non. » Pas d'interprétation possible. Une réponse univoque : un seul sens.",
+    piege: "Son contraire : équivoque.",
+  },
+  "Ennoblir": {
+    scene: "Son courage dans l'épreuve l'a ennobli : il l'a rendu plus grand moralement.",
+    piege: "Ennoblir (donner de la grandeur) ≠ anoblir (donner un titre de noblesse).",
+  },
+  "Tsariste": {
+    scene: "Des palais d'or, une police secrète, un empereur tout-puissant : la Russie tsariste, avant la révolution de 1917.",
+  },
+  "Prolétarien": {
+    scene: "Les ouvriers des usines, des mines, des docks : le monde prolétarien.",
+  },
+  "Partisan": {
+    scene: "Il est partisan de la semaine de quatre jours : il prend parti pour elle.",
+    aussi: "Pendant la guerre, les partisans se cachaient dans les forêts pour résister.",
+  },
+  "Ruisseler": {
+    scene: "La pluie ruisselle sur les vitres, la sueur ruisselle sur son front. Couler à flots.",
+  },
+  "Ébauche": {
+    scene: "Quelques traits de fusain sur la toile, une silhouette à peine dessinée. L'ébauche du tableau.",
+  },
+  "Sibyllin": {
+    scene: "« Tu comprendras le moment venu. » Et il part sans rien ajouter. Une réponse sibylline : mystérieuse.",
+    origine: "Les sibylles, prêtresses de l'Antiquité, rendaient des oracles obscurs.",
+  },
+  "Rejeton": {
+    scene: "Au pied du vieux tronc coupé, une jeune pousse verte. Un rejeton.",
+    aussi: "En familier : « Elle est venue avec ses trois rejetons. » Ses enfants.",
+  },
+  "Décantation": {
+    scene: "On laisse reposer le vin, et le dépôt tombe doucement au fond. C'est la décantation.",
+    aussi: "Au figuré, laisser une idée en décantation, c'est la laisser mûrir avant de décider.",
+  },
 };
