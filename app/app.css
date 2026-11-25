@@ -2413,3 +2413,8 @@ body.maudit .alliance-carte.choisie { background: rgba(255, 40, 30, 0.2); }
 /* La belle phrase du jour */
 .widget-phrase { text-align: left; }
 .phrase-belle { margin: 6px 0 14px; font-family: var(--serif); font-size: 1.25rem; font-style: italic; line-height: 1.5; }
+
+/* Mon carnet : les mots notés de ta main */
+.element-carnet { border-left: 3px solid var(--jaune); border-radius: 4px 16px 16px 4px; }
+.carnet-contexte { display: block; margin-top: 8px; font-family: var(--serif); font-size: 0.95rem; color: var(--creme); opacity: 0.9; }
+.element small.carnet-date { font-family: var(--serif); font-style: italic; }

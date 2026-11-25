@@ -2789,9 +2789,29 @@ function vuDansLeMot(mot) {
 // La fiche « faite main » (fiches.js) : une scène plutôt qu'une définition, puis, selon le mot,
 // quand le dégainer, l'autre sens, le piège, d'où il vient, et le jour où il est entré au carnet (carnet.js)
 const PARTIES_FICHE = [["aussi", "↪", "Et aussi"], ["degainer", "🎯", "À dégainer"], ["piege", "⚠️", "Le piège"], ["origine", "🌿", "D'où il vient"]];
+// Une date du carnet (« 2026-11-25 ») écrite comme dans un journal : « 25 novembre 2026 »
+const MOIS_CARNET = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+function dateLisible(cle) {
+  const p = String(cle || "").split("-");
+  if (p.length !== 3) return "";
+  const j = Number(p[2]);
+  return (j === 1 ? "1er" : j) + " " + MOIS_CARNET[Number(p[1]) - 1] + " " + p[0];
+}
+
+// La fiche d'un mot de ton carnet : ta phrase, là où tu l'as croisé, le jour où tu l'as noté
+function fichePerso(mot) {
+  const e = (etat.collection || []).filter(function (x) { return x.type === "mot" && x.titre === mot; })[0];
+  if (!e || !(e.contexte || e.source)) return "";
+  return '<div class="fiche-riche">' +
+    (e.contexte ? '<p class="fiche-scene">« ' + echapper(e.contexte) + " »</p>" : "") +
+    (e.source ? '<p class="fiche-part"><b>📖 Croisé dans</b> ' + echapper(e.source) + "</p>" : "") +
+    '<p class="fiche-carnet">📓 Noté de ta main' + (e.date ? " le " + dateLisible(e.date) : "") + "</p>" +
+    "</div>";
+}
+
 function ficheDuMot(mot) {
   const f = typeof fiches !== "undefined" && fiches[mot];
-  if (!f) return "";
+  if (!f) return fichePerso(mot);
   const date = typeof carnet !== "undefined" && carnet[mot];
   return '<div class="fiche-riche">' +
     '<p class="fiche-scene">' + echapper(f.scene) + "</p>" +
@@ -3377,6 +3397,8 @@ function majFormulaire() {
   titre.hidden = !avecTitre;
   titre.required = avecTitre;
   auteur.hidden = type === "mot";
+  $("champ-source").hidden = type !== "mot";
+  $("champ-contexte").hidden = type !== "mot";
   titre.placeholder = type === "invention" ? "Ton mot inventé (ex. : hydraulique)" : "Le mot (ex. : Pantois)";
   texte.placeholder = type === "mot" ? "Sa définition" : (type === "invention" ? "Ce qu'il veut dire (ex. : qui fait pleurer)" : (type === "citation" ? "La citation" : "Ta pensée"));
   auteur.placeholder = type === "invention" ? "Une phrase d'exemple (facultatif)" : (type === "citation" ? "Auteur (facultatif)" : "Signature (facultatif)");
@@ -3397,6 +3419,10 @@ $("formulaire").addEventListener("submit", function (e) {
     auteur: $("champ-auteur").value.trim(),
     date: aujourdhui
   };
+  if (type === "mot") {
+    element.source = $("champ-source").value.trim();
+    element.contexte = $("champ-contexte").value.trim();
+  }
   if (!element.texte || ((type === "mot" || type === "invention") && !element.titre)) return;
   etat.collection.unshift(element);
   etat.xp += 5;
@@ -3418,9 +3444,11 @@ function majCollection() {
   const noms = { mot: "Mot", citation: "Citation", pensee: "Pensée", invention: "Invention 🎨", punchline: "Punchline 🎤" };
   etat.collection.forEach(function (el, i) {
     const bloc = document.createElement("div");
-    bloc.className = "element";
+    bloc.className = "element" + (el.type === "mot" ? " element-carnet" : "");
     bloc.innerHTML = "<b>" + noms[el.type] + (el.type === "mot" || el.type === "invention" || el.type === "punchline" ? " · " + echapper(el.titre) : "") + "</b>" +
       "<span>" + echapper(el.texte) + "</span>" +
+      (el.contexte ? '<em class="carnet-contexte">« ' + echapper(el.contexte) + " »</em>" : "") +
+      (el.type === "mot" && (el.source || el.date) ? '<small class="carnet-date">📓 ' + (el.date ? dateLisible(el.date) : "") + (el.source ? " · " + echapper(el.source) : "") + "</small>" : "") +
       (el.auteur ? "<small>— " + echapper(el.auteur) + "</small>" : "") +
       '<small><button class="bouton petit-bouton" data-supprimer="' + i + '" type="button">Retirer</button></small>';
     liste.appendChild(bloc);

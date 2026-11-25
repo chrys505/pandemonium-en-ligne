@@ -212,8 +212,8 @@
         <div class="zone-atelier" id="zone-rimes"></div>
       </article>
 
-      <h2 class="titre-2">Ma collection</h2>
-      <p class="petit gauche">Ajoute tes mots, citations, pensées et inventions : ils entrent dans tes sessions.</p>
+      <h2 class="titre-2">📓 Mon carnet</h2>
+      <p class="petit gauche">Un mot croisé dans un livre, un film, une conversation ? Note-le ici avec la phrase où tu l'as trouvé : il entre dans ton dictionnaire, tes jeux et tes révisions, avec sa propre fiche.</p>
 
       <form class="carte formulaire" id="formulaire">
         <div class="onglets-type" role="radiogroup">
@@ -224,8 +224,10 @@
         </div>
         <input class="champ" id="champ-titre" placeholder="Le mot (ex. : Pantois)" maxlength="120" required>
         <textarea class="champ" id="champ-texte" placeholder="Sa définition" maxlength="400" rows="3" required></textarea>
+        <input class="champ" id="champ-source" placeholder="📖 Où l'as-tu croisé ? (ex. : La Peau de chagrin, un film, ma grand-mère…)" maxlength="120">
+        <textarea class="champ" id="champ-contexte" placeholder="✍️ La phrase où tu l'as trouvé (facultatif)" maxlength="400" rows="2"></textarea>
         <input class="champ" id="champ-auteur" placeholder="Auteur (facultatif)" maxlength="80">
-        <button class="bouton principal large" type="submit">Ajouter à ma collection</button>
+        <button class="bouton principal large" type="submit" id="bouton-carnet">Ajouter à mon carnet</button>
         <p class="petit" id="limite-collection"></p>
       </form>
 
