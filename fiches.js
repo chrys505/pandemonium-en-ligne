@@ -4647,4 +4647,349 @@ const fiches = {
   "Lichette": {
     scene: "« Juste une lichette de gâteau, pas plus ! » Un tout petit morceau.",
   },
+
+  // Série 14
+  "Loquace": {
+    scene: "D'habitude, il répond par oui ou par non. Mais ce soir, après deux verres, il raconte toute sa vie. Il est loquace.",
+  },
+  "Locution": {
+    scene: "« Au fur et à mesure », « tout à coup », « à cause de » : des mots soudés ensemble, qu'on ne sépare pas. Des locutions.",
+  },
+  "Latent": {
+    scene: "Personne ne dit rien, mais le conflit est là, sous la surface, prêt à éclater. Un conflit latent.",
+  },
+  "Liturgique": {
+    scene: "Les chants, les couleurs des habits du prêtre, l'ordre des prières : tout ce qui est liturgique concerne les rites du culte.",
+  },
+  "Mandibule": {
+    scene: "Sous la loupe, la fourmi serre une miette entre ses deux pinces. Ses mandibules.",
+  },
+  "Manigancer": {
+    scene: "Ils se taisent dès que tu entres, et échangent des regards complices. Qu'est-ce qu'ils manigancent ?",
+  },
+  "Marsouin": {
+    scene: "Au large de la Bretagne, un petit dauphin gris sort la tête de l'eau. Un marsouin.",
+    aussi: "Les soldats de l'infanterie de marine sont surnommés les marsouins.",
+  },
+  "Médisance": {
+    scene: "« Tu sais ce qu'on dit sur elle ? » Les ragots malveillants qui courent de bouche en bouche. La médisance.",
+    piege: "La médisance dit du mal de quelqu'un, même si c'est vrai ; la calomnie invente.",
+  },
+  "Mélopée": {
+    scene: "Dans le désert, un chamelier chante, toujours sur les mêmes notes, une mélodie lente et triste. Une mélopée.",
+  },
+  "Ménagerie": {
+    scene: "Deux chats, un chien, un lapin, trois poissons et un perroquet qui parle. Chez eux, c'est une vraie ménagerie.",
+  },
+  "Minaudier": {
+    scene: "Petite voix, battements de cils, moue boudeuse pour obtenir ce qu'il veut. Il est minaudier.",
+  },
+  "Monocorde": {
+    scene: "Le conférencier parle sans aucune variation de ton, comme une seule corde de violon. Une voix monocorde.",
+  },
+  "Mosaïque": {
+    scene: "À Ravenne, des milliers de petits cubes de verre et de pierre forment le visage d'un empereur. Une mosaïque.",
+    aussi: "Au figuré, une ville est une mosaïque de cultures.",
+  },
+  "Mystification": {
+    scene: "Le faux Vermeer exposé dans un grand musée pendant des années. Une mystification magistrale.",
+  },
+  "Narguer": {
+    scene: "Il a eu la dernière part de gâteau, et il la mange lentement devant toi en souriant. Il te nargue.",
+  },
+  "Néfaste": {
+    scene: "Les écrans avant de dormir ont un effet néfaste sur le sommeil : nuisible.",
+  },
+  "Obnubilé": {
+    scene: "Il ne parle que de son nouveau téléphone, ne pense qu'à lui, n'entend plus rien d'autre. Il est obnubilé.",
+  },
+  "Obsolète": {
+    scene: "Les disquettes, le Minitel, le fax : des technologies obsolètes, hors d'usage.",
+  },
+  "Octosyllabe": {
+    scene: "« Maître Corbeau, sur un arbre perché » : huit syllabes. Un octosyllabe.",
+  },
+  "Officieux": {
+    scene: "« Ce n'est pas encore annoncé, mais c'est sûr à 99 %. » Une information officieuse.",
+  },
+  "Oisif": {
+    scene: "Pas de travail, pas de projet, pas d'obligation : il passe ses journées à regarder passer les nuages. Il est oisif.",
+  },
+  "Olfactif": {
+    scene: "L'odeur du pain chaud, du chlore, de l'herbe coupée : ta mémoire olfactive te ramène des années en arrière.",
+  },
+  "Onéreux": {
+    scene: "Un week-end à Venise en plein carnaval : onéreux. Ça coûte cher.",
+  },
+  "Opulence": {
+    scene: "Des lustres de cristal, une piscine intérieure, trois voitures de luxe. Ils vivent dans l'opulence.",
+  },
+  "Orfèvre": {
+    scene: "Penché sur son établi, l'artisan cisèle un calice d'argent. L'orfèvre.",
+    degainer: "« Être orfèvre en la matière » : s'y connaître parfaitement.",
+  },
+  "Ostentation": {
+    scene: "Il sort sa montre en or toutes les cinq minutes pour regarder l'heure. Quelle ostentation !",
+  },
+  "Outrance": {
+    scene: "Maquillage à outrance, gestes à outrance, cris à outrance. L'excès en tout.",
+  },
+  "Pacotille": {
+    scene: "Des bijoux qui noircissent après deux jours, des souvenirs en plastique made in ailleurs. De la pacotille.",
+  },
+  "Panard": {
+    scene: "« Aïe, il m'a marché sur le panard ! » Le pied, en argot.",
+    degainer: "« C'est le panard ! » : c'est le pied, un grand plaisir.",
+  },
+  "Papoter": {
+    scene: "Sur le banc du parc, deux voisines papotent depuis une heure : le temps, les petits-enfants, la recette de la tarte.",
+  },
+  "Parabole": {
+    scene: "Le fils qui dilapide tout, revient, et que son père accueille en fête. Une histoire simple pour une grande leçon : une parabole.",
+    aussi: "En maths, une parabole est une courbe. Et sur le toit, l'antenne parabolique en a la forme.",
+  },
+  "Parages": {
+    scene: "« Tu es dans les parages ? Passe prendre un café ! » Dans le coin, les environs.",
+  },
+  "Parasitisme": {
+    scene: "Le gui qui pousse sur l'arbre et se nourrit de sa sève. Et le colocataire qui vide ton frigo sans jamais rien acheter. Du parasitisme.",
+  },
+  "Parodique": {
+    scene: "Un faux journal télévisé où le présentateur annonce que les pigeons ont pris le pouvoir. Une émission parodique.",
+  },
+  "Pâtir": {
+    scene: "Ses notes ont pâti de ses nuits de jeux vidéo : elles en ont souffert.",
+  },
+  "Patois": {
+    scene: "Sa grand-mère parle encore le patois du village, des mots que ses petits-enfants ne comprennent plus.",
+  },
+  "Se pavaner": {
+    scene: "Nouvelle veste, lunettes de soleil, il traverse la terrasse lentement pour qu'on le voie. Il se pavane, comme un paon.",
+  },
+  "Pépère": {
+    scene: "Un dimanche pépère : canapé, plaid et série. Tranquille, sans souci.",
+    aussi: "En familier, c'est aussi le grand-père.",
+  },
+  "Pépite": {
+    scene: "Dans la rivière, le chercheur d'or secoue son tamis, et un petit éclat jaune brille. Une pépite.",
+    aussi: "Au figuré, une pépite est un trésor caché : un petit restaurant, un livre méconnu.",
+  },
+  "Péripétie": {
+    scene: "Le train annulé, le chauffeur perdu, l'hôtel complet : notre voyage a connu bien des péripéties.",
+  },
+  "Personnification": {
+    scene: "« Le vent hurle », « la ville s'éveille », « la mort frappe à la porte ». On donne une vie humaine à ce qui n'en a pas. C'est la personnification.",
+  },
+  "Pestilence": {
+    scene: "Les poubelles en plein été, après une grève de dix jours. Une pestilence.",
+    aussi: "Autrefois, une pestilence était aussi une épidémie, comme la peste.",
+  },
+  "Pétoche": {
+    scene: "Une porte qui grince dans le noir, et il se cache sous la couette. Il a la pétoche : la peur.",
+  },
+  "Phylogénie": {
+    scene: "L'homme et le chimpanzé, cousins ; la baleine et l'hippopotame, aussi. La phylogénie dessine l'arbre de famille de tous les êtres vivants.",
+  },
+  "Piastre": {
+    scene: "Une vieille pièce dans un coffre de pirate. Et au Québec, « une piasse », c'est un dollar.",
+  },
+  "Piédestal": {
+    scene: "La statue du général, perchée sur son socle de marbre. Le piédestal.",
+    degainer: "« Mettre quelqu'un sur un piédestal » : l'idolâtrer.",
+  },
+  "Pinailler": {
+    scene: "« Tu as écrit 3,5 alors que c'est 3,49. » On ne va pas pinailler pour un centime ! Ergoter sur des détails.",
+  },
+  "Platonique": {
+    scene: "Ils s'écrivent des lettres passionnées depuis des années, sans jamais s'être embrassés. Un amour platonique.",
+  },
+  "Plénitude": {
+    scene: "Assis au sommet de la montagne après cinq heures de marche, le soleil qui se lève, plus rien ne manque. La plénitude.",
+  },
+  "Plérôme": {
+    scene: "Pour les gnostiques des premiers siècles, au-delà de notre monde imparfait existe un royaume de lumière pure, la plénitude divine. Le plérôme.",
+  },
+  "Pognon": {
+    scene: "« T'as du pognon pour le resto ? » De l'argent, en argot.",
+  },
+  "Pointilleux": {
+    scene: "Il vérifie que les couverts sont parfaitement alignés et que le pli de la serviette est droit. Pointilleux.",
+  },
+  "Poseur": {
+    scene: "Il cite des philosophes qu'il n'a pas lus et prend des airs pensifs devant les tableaux. Un poseur.",
+  },
+  "Potasser": {
+    scene: "La veille de l'examen, elle potasse ses fiches jusqu'à minuit : elle révise avec acharnement.",
+  },
+  "Prémices": {
+    scene: "Les premiers bourgeons en février, les prémices du printemps. Les tout premiers signes.",
+    piege: "Prémices (les débuts) ≠ prémisses (les points de départ d'un raisonnement).",
+  },
+  "Prémunir": {
+    scene: "Un vaccin avant le voyage, une assurance avant l'hiver : on se prémunit contre les ennuis.",
+  },
+  "Prestidigitateur": {
+    scene: "Une pièce passe d'une main à l'autre, disparaît, réapparaît derrière ton oreille. Le prestidigitateur.",
+    origine: "« Doigts prestes » : des doigts rapides.",
+  },
+  "Primeur": {
+    scene: "« Je te réserve la primeur de la nouvelle ! » Tu es le premier à la savoir.",
+    aussi: "Les primeurs, ce sont aussi les premiers fruits et légumes de la saison.",
+  },
+  "Prisme": {
+    scene: "Un rayon de soleil traverse le bloc de verre et ressort en arc-en-ciel sur le mur. Un prisme.",
+    aussi: "Au figuré, voir le monde à travers le prisme de ses peurs, c'est le voir déformé.",
+  },
+  "Proscrire": {
+    scene: "Dans la cuisine du chef, le micro-ondes est proscrit : interdit. Et sous la Terreur, les ennemis de la Révolution étaient proscrits : bannis.",
+  },
+  "Psaume": {
+    scene: "« Le Seigneur est mon berger, je ne manque de rien. » Un chant sacré de la Bible. Un psaume.",
+  },
+  "Putréfaction": {
+    scene: "Dans le compost, les épluchures se décomposent, lentement. La putréfaction.",
+  },
+  "Quémander": {
+    scene: "Le chien s'assoit près de la table, la tête penchée, les yeux humides, et quémande un bout de viande.",
+  },
+  "Raboter": {
+    scene: "La porte frotte contre le sol : le menuisier passe le rabot pour enlever quelques millimètres de bois.",
+    aussi: "Au figuré, on rabote un budget : on le réduit.",
+  },
+  "Ravissement": {
+    scene: "Elle ouvre la boîte, et découvre le petit chiot. Ses yeux s'illuminent : le ravissement.",
+  },
+  "Rebelotte": {
+    scene: "À la belote, le joueur pose la reine d'atout après le roi et annonce : « Rebelotte ! »",
+    degainer: "« Et rebelotte ! » : et ça recommence.",
+  },
+  "Reliquaire": {
+    scene: "Dans la cathédrale, une petite boîte en or, couverte de pierres précieuses, contient un os de saint. Le reliquaire.",
+  },
+  "Reluire": {
+    scene: "Les chaussures cirées, l'argenterie astiquée, la voiture lavée. Tout reluit.",
+    degainer: "« Passer la brosse à reluire » : flatter.",
+  },
+  "Remembrement": {
+    scene: "Autrefois, un paysan avait vingt petits champs dispersés. On les a regroupés en un seul grand. Le remembrement.",
+  },
+  "Résignation": {
+    scene: "Le train est annulé, il n'y en a pas d'autre avant demain. Il soupire et s'assoit. La résignation.",
+  },
+  "Ressasser": {
+    scene: "Cette dispute d'il y a trois ans, il la ressasse encore chaque soir : il y repense sans cesse.",
+  },
+  "Rétorquer": {
+    scene: "« Tu es toujours en retard ! — Et toi, toujours en avance ! » rétorque-t-il. Il renvoie l'argument.",
+  },
+  "Rétribuer": {
+    scene: "Trois jours de travail pour le déménagement, et il refuse d'être rétribué. Il ne veut pas être payé.",
+  },
+  "Réverbère": {
+    scene: "Dans la rue pavée, la nuit, les lampes de fer forgé jettent des cercles de lumière jaune. Les réverbères.",
+  },
+  "Roublard": {
+    scene: "Il connaît tous les trucs pour ne jamais payer sa tournée. Un vieux roublard : rusé et malin.",
+  },
+  "Roupillon": {
+    scene: "Après le déjeuner, vingt minutes sur le canapé : un petit roupillon.",
+  },
+  "Rugissement": {
+    scene: "Dans la savane, un rugissement fait trembler l'air : le lion. Et le moteur de la moto de sport aussi.",
+  },
+  "Sacramentel": {
+    scene: "« Je vous déclare mari et femme. » Les mots qu'on prononce toujours, à l'identique, au moment solennel. Une formule sacramentelle.",
+  },
+  "Sagouin": {
+    scene: "Un petit singe d'Amérique du Sud. Et en familier, celui qui mange en mettant de la sauce partout : un sagouin.",
+  },
+  "Salvateur": {
+    scene: "Après trois heures de marche au soleil, une source d'eau fraîche. Salvatrice : elle sauve.",
+  },
+  "Sanctuariser": {
+    scene: "Cette forêt est protégée pour toujours, personne ne pourra jamais y construire. On l'a sanctuarisée.",
+    aussi: "Au figuré : « Je sanctuarise mon dimanche : pas de travail. »",
+  },
+  "Savourer": {
+    scene: "La première bouchée de fraise de l'été : tu fermes les yeux et tu prends ton temps. Tu la savoures.",
+  },
+  "Sédentarité": {
+    scene: "Assis au bureau, assis dans la voiture, assis devant la télé. La sédentarité : vivre sans presque bouger.",
+  },
+  "Séminal": {
+    scene: "Ce premier album a inspiré tous les groupes qui sont venus après. Une œuvre séminale : fondatrice.",
+  },
+  "Servilement": {
+    scene: "Il répète servilement chaque mot du patron, sans jamais oser donner son avis.",
+  },
+  "Servitude": {
+    scene: "Le serf ne pouvait ni quitter sa terre, ni se marier sans l'accord du seigneur. La servitude.",
+  },
+  "Somptuosité": {
+    scene: "Les plafonds dorés, les miroirs, les tapisseries : la somptuosité de Versailles.",
+  },
+  "Souillon": {
+    scene: "Dans les vieux contes, la petite servante de cuisine couverte de suie, qu'on appelait par mépris la souillon.",
+  },
+  "Stridulation": {
+    scene: "Une après-midi d'été en Provence : le chant des cigales, sans fin. Leur stridulation.",
+  },
+  "Succinct": {
+    scene: "« Résume-moi le film en trois mots. » Une réponse succincte : brève.",
+    piege: "On prononce « suk-sin ».",
+  },
+  "Surélever": {
+    scene: "La maison est inondable : on la surélève d'un mètre sur des pilotis.",
+  },
+  "Tarauder": {
+    scene: "Est-ce qu'il a eu raison de partir ? La question le taraude, le ronge, nuit après nuit.",
+  },
+  "Tarir": {
+    scene: "En plein été, la source finit par tarir : plus une goutte.",
+    degainer: "« Ne pas tarir d'éloges » : faire des compliments sans fin.",
+  },
+  "Tarpin": {
+    scene: "« Il fait tarpin chaud ! » À Marseille, tarpin veut dire très, beaucoup.",
+  },
+  "Tartarinade": {
+    scene: "Il raconte avoir chassé le lion en Afrique… alors qu'il n'a jamais quitté son village. Une tartarinade.",
+    origine: "Tartarin de Tarascon, le héros vantard d'Alphonse Daudet.",
+  },
+  "Taxinomie": {
+    scene: "Règne, embranchement, classe, ordre, famille, genre, espèce. Le rangement du vivant en tiroirs. La taxinomie.",
+    piege: "On dit aussi « taxonomie ».",
+  },
+  "Télégraphique": {
+    scene: "« Arrivé. Fatigué. Rappelle demain. » Pas un mot de trop. Un style télégraphique.",
+    origine: "Au temps du télégraphe, chaque mot coûtait cher.",
+  },
+  "Tendancieux": {
+    scene: "Le journal ne cite que les témoins qui vont dans son sens. Un article tendancieux : il cache mal son parti pris.",
+  },
+  "Terreau": {
+    scene: "Une terre noire et riche où tout pousse. Le terreau.",
+    aussi: "Au figuré, la misère est le terreau de la révolte : le milieu où elle grandit.",
+  },
+  "Titulariser": {
+    scene: "Après des années de contrats précaires, elle est enfin titularisée : son poste devient définitivement le sien.",
+  },
+  "Tollé": {
+    scene: "L'annonce de la hausse des prix déclenche un tollé : des cris d'indignation de partout.",
+  },
+  "Transcendantalisme": {
+    scene: "Thoreau part vivre seul deux ans dans une cabane au bord d'un lac, pour écouter la nature et lui-même. C'est l'esprit du transcendantalisme américain.",
+  },
+  "Transgressif": {
+    scene: "Un artiste qui expose ce qu'on n'ose pas montrer, qui brise les tabous de son époque. Une œuvre transgressive.",
+  },
+  "Trimer": {
+    scene: "Douze heures par jour sur le chantier, sous la pluie, pour un petit salaire. Il trime.",
+  },
+  "Trinquer": {
+    scene: "« À ta santé ! » Les verres s'entrechoquent. On trinque.",
+    aussi: "En familier, trinquer, c'est aussi subir les conséquences : « Ce sont toujours les mêmes qui trinquent. »",
+  },
+  "Trois-mâts": {
+    scene: "Toutes voiles dehors, un grand voilier à trois mâts fend l'océan. Un trois-mâts.",
+  },
 };
