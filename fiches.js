@@ -5335,4 +5335,333 @@ const fiches = {
     scene: "On laisse reposer le vin, et le dépôt tombe doucement au fond. C'est la décantation.",
     aussi: "Au figuré, laisser une idée en décantation, c'est la laisser mûrir avant de décider.",
   },
+
+  // Série 16
+  "Soubresaut": {
+    scene: "Endormi dans le train, il sursaute soudain, tout le corps secoué. Un soubresaut.",
+    aussi: "Au figuré : « des soubresauts d'envie », de brusques accès qui reviennent.",
+  },
+  "Verve": {
+    scene: "Il raconte son voyage avec tant d'esprit et d'entrain que toute la table pleure de rire. Quelle verve !",
+    degainer: "« Ma spécialité, ce n'est pas la verve, c'est la nourriture » : à chacun son talent.",
+  },
+  "Gastrique": {
+    scene: "Trop de fête, trop de fromage, trop de vin : le lendemain, de petits nœuds dans l'estomac. Des troubles gastriques.",
+  },
+  "Affairiste": {
+    scene: "Il achète, revend, fait des montages compliqués, et ferme les yeux sur tout ce qui rapporte. Un affairiste : le profit avant les scrupules.",
+  },
+  "Réfractaire": {
+    scene: "Les briques du four résistent à des milliers de degrés : elles sont réfractaires.",
+    aussi: "Une personne réfractaire résiste, refuse. « Je ne suis pas réfractaire à l'idée » : je ne suis pas contre.",
+  },
+  "Ramification": {
+    scene: "Le tronc se divise en branches, les branches en rameaux, les rameaux en brindilles. Des ramifications.",
+    aussi: "Une affaire peut avoir des ramifications jusqu'à l'étranger.",
+  },
+  "Allégorie": {
+    scene: "Une femme aux yeux bandés, une balance à la main : c'est la Justice. Une idée abstraite qui prend corps. Une allégorie.",
+  },
+  "Lyrique": {
+    scene: "Un poème où le poète crie son amour, son chagrin, sa joie à la première personne. Lyrique.",
+    aussi: "L'art lyrique, c'est aussi l'opéra.",
+  },
+  "Aliénation": {
+    scene: "Huit heures par jour à faire le même geste, sans savoir à quoi il sert, et le soir on ne se reconnaît plus. L'aliénation : devenir étranger à soi-même.",
+  },
+  "Solennité": {
+    scene: "Le silence dans la salle, les robes noires, le juge qui se lève. Toute la solennité d'un procès.",
+  },
+  "Assomption": {
+    scene: "En philosophie, l'assomption, c'est le fait d'accepter, d'assumer pleinement : l'assomption du négatif, c'est regarder le pire en face.",
+    aussi: "Le 15 août, les catholiques fêtent l'Assomption : la montée de Marie au ciel.",
+  },
+  "Hérissé": {
+    scene: "Le chat face au chien : le dos rond, les poils dressés. Hérissé.",
+    aussi: "Au figuré, une réalité hérissée de difficultés.",
+  },
+  "Chérir": {
+    scene: "Une vieille lettre de sa mère, gardée dans un tiroir depuis trente ans, relue les soirs de tristesse. Il la chérit.",
+  },
+  "Fourmillement": {
+    scene: "Vue d'en haut, la place du marché : des gens partout, qui vont, viennent, se croisent. Un fourmillement.",
+    aussi: "Et après être resté assis en tailleur, des fourmillements dans les jambes.",
+  },
+  "Esquisser": {
+    scene: "En trois coups de crayon, elle esquisse un visage. Et lui esquisse un sourire : il le commence à peine.",
+  },
+  "Terminologie": {
+    scene: "« Myocarde », « tachycardie », « infarctus » : chaque métier a ses mots. La terminologie médicale.",
+  },
+  "Encéphale": {
+    scene: "Le cerveau, le cervelet, le tronc cérébral : tout ce qui loge dans la boîte crânienne. L'encéphale.",
+  },
+  "Névrosé": {
+    scene: "Il vérifie dix fois que la porte est fermée, s'inquiète de tout, ne dort pas. En familier, on le dit névrosé.",
+  },
+  "Converger": {
+    scene: "Toutes les routes de la région convergent vers la grande ville. Et tous les indices convergent vers le jardinier.",
+  },
+  "Surabondance": {
+    scene: "Trois cents chaînes de télé, et rien à regarder. Une surabondance qui étouffe.",
+  },
+  "Congestionné": {
+    scene: "Après avoir crié, il a le visage rouge et gonflé. Congestionné.",
+    aussi: "Les routes du vendredi soir aussi sont congestionnées : bouchées.",
+  },
+  "Méridional": {
+    scene: "L'accent qui chante, les cigales, les platanes : la France méridionale, celle du sud.",
+  },
+  "Melting-pot": {
+    scene: "Dans une rue de New York, on entend dix langues, on mange vingt cuisines. Un melting-pot.",
+  },
+  "Dialectal": {
+    scene: "Un mot que seuls les gens de la vallée emploient. Un mot dialectal, d'un parler régional.",
+  },
+  "Plébéien": {
+    scene: "À Rome, d'un côté les patriciens, les grandes familles ; de l'autre, la plèbe, le peuple. Les plébéiens.",
+  },
+  "Va-nu-pieds": {
+    scene: "Un gamin des rues, pieds nus sur les pavés, vêtements trop grands. Un va-nu-pieds.",
+  },
+  "Braillard": {
+    scene: "Au fond du bus, un groupe chante à tue-tête et parle si fort que tout le monde les entend. Des braillards.",
+  },
+  "Néoréalisme": {
+    scene: "Rome, après la guerre : des films tournés dans la rue, avec de vrais ouvriers et de vrais enfants, sur la misère de tous les jours. Le néoréalisme italien.",
+  },
+  "Sabbat": {
+    scene: "Dans le judaïsme, du vendredi soir au samedi soir, le jour de repos. Le sabbat.",
+    aussi: "Dans les légendes, le sabbat est aussi l'assemblée des sorcières à minuit, autour d'un feu.",
+  },
+  "Gynécée": {
+    scene: "Dans la maison grecque antique, la partie réservée aux femmes. Le gynécée.",
+    aussi: "Par extension, un lieu où vivent surtout des femmes.",
+  },
+  "Fausset": {
+    scene: "Il imite sa tante avec une petite voix aiguë et forcée. Une voix de fausset.",
+  },
+  "Grotesque": {
+    scene: "Un clown avec un nez énorme, des chaussures géantes, qui se prend pour un roi. Ridicule et bizarre : grotesque.",
+  },
+  "Flaubertien": {
+    scene: "Chaque phrase relue à voix haute, chaque mot pesé, des jours sur un paragraphe. Un perfectionnisme flaubertien.",
+    origine: "Flaubert passait ses phrases au « gueuloir » : il les hurlait pour vérifier leur rythme.",
+  },
+  "Marteler": {
+    scene: "Le forgeron martèle le fer rouge. Et le professeur martèle chaque mot de la règle, pour qu'elle rentre bien.",
+  },
+  "S'enliser": {
+    scene: "La voiture s'enfonce dans le sable, les roues tournent dans le vide. Elle s'enlise. Comme les négociations, qui n'avancent plus.",
+  },
+  "Breloque": {
+    scene: "Sur son bracelet, un petit cœur, une tour Eiffel, un fer à cheval. Des breloques.",
+  },
+  "Opale": {
+    scene: "Une pierre laiteuse qui, quand on la tourne, s'allume de reflets bleus, verts, roses. Une opale.",
+  },
+  "Plutonien": {
+    scene: "Le granit s'est formé dans les profondeurs brûlantes de la Terre, lentement refroidi. Une roche plutonienne.",
+    origine: "Pluton, dieu des Enfers.",
+  },
+  "Raptus": {
+    scene: "Calme d'ordinaire, il est pris soudain d'un accès de colère incontrôlable, puis retombe. Un raptus.",
+  },
+  "Saphique": {
+    scene: "Un poème d'amour d'une femme pour une autre femme. Saphique.",
+    origine: "Sappho, poétesse grecque de l'île de Lesbos, au VIIe siècle avant notre ère.",
+  },
+  "Amoralité": {
+    scene: "Le bien, le mal ? Il ne se pose même pas la question. Ce n'est pas de la méchanceté : c'est de l'amoralité, l'absence de morale.",
+    piege: "Amoral (sans morale) ≠ immoral (contre la morale).",
+  },
+  "Coercition": {
+    scene: "Menaces, amendes, prison : tous les moyens pour forcer quelqu'un à obéir. La coercition.",
+  },
+  "Émaner": {
+    scene: "Une grande douceur émane d'elle : elle s'en dégage, comme une lumière.",
+  },
+  "Mezouzah": {
+    scene: "À l'entrée d'une maison juive, fixé au montant de la porte, un petit étui contient un parchemin avec un verset de la Torah. La mezouzah.",
+  },
+  "Aride": {
+    scene: "Un désert de cailloux, pas une goutte d'eau. Aride.",
+    aussi: "Au figuré, un sujet aride est austère et sans charme.",
+  },
+  "Sédimenter": {
+    scene: "Au fond du lac, la boue se dépose, couche après couche, depuis des siècles. Elle sédimente.",
+    aussi: "Au figuré, les souvenirs sédimentent dans la mémoire.",
+  },
+  "Oscillation": {
+    scene: "Le balancier de l'horloge qui va et vient. Et l'humeur qui passe du rire aux larmes. Des oscillations.",
+  },
+  "Se camper": {
+    scene: "Il se plante au milieu du salon, les mains sur les hanches, le menton levé. Il se campe, prêt à en découdre.",
+  },
+  "Coi": {
+    scene: "La question l'a pris de court : il reste coi, sans un mot.",
+    degainer: "« Je m'en irai coi » : je partirai sans rien dire.",
+  },
+  "Immanent": {
+    scene: "La justice ne vient pas d'en haut : elle est dans les choses mêmes. Une justice immanente.",
+  },
+  "Mnémonique": {
+    scene: "« Mais où est donc Ornicar ? » pour retenir mais, ou, et, donc, or, ni, car. Un moyen mnémonique.",
+  },
+  "Métrique": {
+    scene: "Compter les syllabes, les accents, les rimes d'un vers. La métrique.",
+    aussi: "Le système métrique, lui, c'est le mètre, le litre, le kilo.",
+  },
+  "Paroxyton": {
+    scene: "En espagnol, « casa » se prononce en appuyant sur l'avant-dernière syllabe. Un mot paroxyton.",
+  },
+  "Proparoxyton": {
+    scene: "« Música », « teléfono » : en espagnol, l'accent tombe sur la troisième syllabe en partant de la fin. Des mots proparoxytons.",
+  },
+  "Ostraciser": {
+    scene: "Plus personne ne lui adresse la parole, on l'exclut des repas, des sorties. On l'ostracise.",
+  },
+  "Déléguer": {
+    scene: "Elle ne peut pas tout faire seule : elle confie les courses à l'un, les invitations à l'autre. Elle délègue.",
+  },
+  "Ormeau": {
+    scene: "Dans les vieux poèmes, les bergers se reposent à l'ombre d'un tendre ormeau, un jeune orme.",
+    aussi: "En Bretagne, l'ormeau est aussi un coquillage nacré très recherché.",
+  },
+  "Délasser": {
+    scene: "Après la semaine, un bain chaud et un livre pour se délasser : se reposer.",
+  },
+  "Languir": {
+    scene: "« Languirai-je encore longtemps ? » Attendre, s'impatienter, en perdant ses forces.",
+  },
+  "Ritournelle": {
+    scene: "Le petit refrain qui revient entre les couplets. Et la même plainte qu'il répète sans cesse : toujours la même ritournelle.",
+  },
+  "La nue": {
+    scene: "Dans les poèmes, le ciel et les nuages s'appellent la nue. « La nue enflammée » d'un coucher de soleil.",
+    degainer: "« Porter aux nues » : couvrir d'éloges. « Tomber des nues » : être stupéfait.",
+  },
+  "Déblatérer": {
+    scene: "Depuis une heure, il déblatère contre son voisin : le bruit, la haie, la voiture. Dire du mal, longuement.",
+  },
+  "Clystère": {
+    scene: "Dans « Le Malade imaginaire », l'apothicaire arrive avec sa grosse seringue pour soigner Argan par l'arrière. Un clystère : un lavement.",
+  },
+  "Détersif": {
+    scene: "« Un petit clystère détersif », écrit l'apothicaire de Molière sur sa facture : un lavement qui nettoie.",
+  },
+  "Catholicon": {
+    scene: "Un remède miracle qui guérirait tout, de la fièvre à la mélancolie. Les médecins de Molière le prescrivaient : le catholicon.",
+  },
+  "Rhubarbe": {
+    scene: "En compote, ses tiges roses sont acidulées. Mais chez Molière, la rhubarbe était surtout un remède purgatif.",
+  },
+  "Rosat": {
+    scene: "Du miel parfumé aux pétales de rose : du miel rosat, remède doux des apothicaires.",
+  },
+  "Julep": {
+    scene: "Une potion sucrée, parfumée, pour calmer les nerfs avant de dormir. Le julep.",
+  },
+  "Soporatif": {
+    scene: "« Un julep soporatif et somnifère » : chez Molière, l'apothicaire invente un mot pour dire qu'il fait dormir.",
+  },
+  "Purgatif": {
+    scene: "Un remède pour vider l'intestin, le grand traitement des médecins de Molière. Purgatif.",
+  },
+  "Corroboratif": {
+    scene: "« Une potion purgative et corroborative » : qui purge, puis qui donne des forces. Le jargon des médecins du XVIIe siècle.",
+  },
+  "Séné": {
+    scene: "Une plante venue d'Orient, laxative, que les apothicaires prescrivaient à tour de bras. Le séné.",
+  },
+  "Astringent": {
+    scene: "Une lotion qui resserre les pores de la peau, un fruit vert qui assèche la bouche. Astringent.",
+  },
+  "Carminatif": {
+    scene: "Une tisane de fenouil après un repas trop lourd, pour chasser les gaz. Un remède carminatif.",
+  },
+  "Dulcorer": {
+    scene: "Une potion trop amère : l'apothicaire ajoute du sirop pour la dulcorer, l'adoucir en sucrant.",
+  },
+  "Lénifier": {
+    scene: "Un baume qui apaise la brûlure. Et des paroles qui calment, parfois trop : des propos lénifiants.",
+  },
+  "Bézoard": {
+    scene: "Une petite boule dure trouvée dans l'estomac de certaines chèvres, qu'on croyait capable de neutraliser les poisons. Le bézoard.",
+  },
+  "Carogne": {
+    scene: "« Carogne ! » crie Argan à sa servante qui lui tient tête. Une vieille injure de Molière pour une femme qu'on juge méchante.",
+  },
+  "Carne": {
+    scene: "Un steak dur comme une semelle : de la carne. Et un vieux cheval fatigué, aussi.",
+    aussi: "Dans la vieille langue, la carne, c'est aussi l'angle, le coin d'une pierre ou d'un volet.",
+  },
+  "S'égosiller": {
+    scene: "Il crie le prénom de son chien dans tout le parc, jusqu'à en perdre la voix. Il s'égosille.",
+  },
+  "Ouïr": {
+    scene: "« Je suis prêt à vous ouïr. » Entendre, écouter, dans la langue d'autrefois.",
+    degainer: "Il survit dans « par ouï-dire » et dans « l'ouïe ».",
+  },
+  "S'aheurter": {
+    scene: "Elle s'est aheurtée à cette idée et rien ne l'en fera démordre. S'obstiner, en vieux français.",
+  },
+  "Invective": {
+    scene: "« Menteur ! Incapable ! Traître ! » Des paroles violentes lancées à la figure. Des invectives.",
+  },
+  "Démordre": {
+    scene: "Il a dit que la Terre était plate, et il n'en démordra pas, même devant les photos de la NASA.",
+  },
+  "Bagatelle": {
+    scene: "« Ce cadeau ? Une bagatelle ! » Une chose de peu de valeur.",
+    degainer: "Avec ironie : « Il a dépensé la bagatelle de dix mille euros. »",
+  },
+  "Effronterie": {
+    scene: "Pris la main dans le sac, il demande en plus qu'on lui rende la monnaie. Quelle effronterie !",
+  },
+  "Impertinence": {
+    scene: "La servante de Molière répond à son maître, le contredit, se moque de lui. Une impertinence délicieuse.",
+  },
+  "Doucereux": {
+    scene: "« Mais oui, ma chérie, tout ce que tu voudras… » Un ton doucereux, sucré en surface, et faux.",
+  },
+  "Complaire": {
+    scene: "« Je ne songe qu'à vous complaire. » Chercher à faire plaisir, en tout.",
+    aussi: "« Se complaire dans » : y prendre plaisir, parfois un peu trop.",
+  },
+  "Tressaillir": {
+    scene: "Une porte claque dans le silence, et elle tressaille, le cœur battant.",
+  },
+  "Aplanir": {
+    scene: "Le bulldozer aplanit le terrain. Et un bon médiateur aplanit les difficultés entre deux familles.",
+  },
+  "Quérir": {
+    scene: "« Allez quérir le médecin, vite ! » Aller chercher, dans la langue de Molière.",
+  },
+  "Usurier": {
+    scene: "Il te prête cent euros, et en exige deux cents à la fin du mois. Un usurier.",
+  },
+  "Polichinelle": {
+    scene: "Un personnage de théâtre bossu, au nez crochu, qui fait rire les enfants. Polichinelle.",
+    degainer: "« Un secret de Polichinelle » : un secret que tout le monde connaît.",
+  },
+  "Intermède": {
+    scene: "Entre deux actes de la pièce, des danseurs et des musiciens viennent divertir le public. Un intermède.",
+    aussi: "Plus largement, une pause entre deux moments : « un intermède ensoleillé entre deux averses ».",
+  },
+  "Sérénade": {
+    scene: "Sous le balcon, à la nuit tombée, un amoureux joue de la guitare pour sa belle. Une sérénade.",
+  },
+  "Négoce": {
+    scene: "Du vin, des épices, des étoffes achetés ici, revendus là. Le négoce.",
+  },
+  "Dragonne": {
+    scene: "La boucle de cuir au bout du bâton de ski, qu'on passe au poignet pour ne pas le perdre. La dragonne.",
+  },
+  "Inexorable": {
+    scene: "Les grains du sablier qui tombent, un par un, sans qu'on puisse rien y faire. La marche inexorable du temps.",
+  },
+  "Luth": {
+    scene: "Un instrument au dos bombé comme une poire, aux cordes pincées, roi des cours de la Renaissance. Le luth.",
+  },
 };
