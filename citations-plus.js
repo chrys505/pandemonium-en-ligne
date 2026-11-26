@@ -97,7 +97,13 @@ const citationsPlus = [
   ["Toute l'excellence de leur art consiste en un pompeux galimatias, en un spécieux babil, qui vous donne des mots pour des raisons et des promesses pour des effets.", "Molière, Le Malade imaginaire (Béralde)"],
   ["Il en est comme de ces beaux songes qui ne vous laissent au réveil que le déplaisir de les avoir crus.", "Molière, Le Malade imaginaire (Béralde)"],
   ["Voilà mon petit doigt pourtant qui sait tout, et qui me dira si vous mentez.", "Molière, Le Malade imaginaire (Argan)"],
-  ["Ceux qui mégotent ou qui se mentent à eux-mêmes se privent de bien belles histoires.", ""]
+  ["Ceux qui mégotent ou qui se mentent à eux-mêmes se privent de bien belles histoires.", ""],
+  // Note du 2026-11-26 (onglet retrouvé)
+  ["Vous n'avez qu'à parler avec une robe et un bonnet, tout galimatias devient savant, et toute sottise devient raison.", "Molière, Le Malade imaginaire (Béralde)"],
+  ["Il vit une jeune personne qui versait des larmes, qu'il trouva les plus belles du monde.", "Molière, Le Malade imaginaire (Cléante)"],
+  ["Son respect et la présence de son père l'empêchent de lui rien dire que des yeux.", "Molière, Le Malade imaginaire (Cléante)"],
+  ["Mais un père à ses vœux vous veut assujettir.", "Molière, Le Malade imaginaire (Cléante)"],
+  ["Ne dites point qu'il faut tromper les hommes au nom de Dieu : ce serait le discours d'un diable, s'il y avait des diables.", "Voltaire"]
 ];
 
 // Expressions : [expression, sens]

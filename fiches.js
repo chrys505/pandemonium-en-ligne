@@ -6545,4 +6545,360 @@ const fiches = {
     origine: "En 1930, Wolfgang Pauli imagine cette particule et s'excuse presque : il a inventé une chose qu'on ne pourra peut-être jamais détecter. Enrico Fermi la baptise en italien : « le petit neutre ». On l'a détectée en 1956.",
     aussi: "Certains physiciens pensent que c'est grâce à lui qu'il reste de la matière dans l'univers : va voir la notion « Le milliardième de trop ».",
   },
+  // Série 19 : note du 2026-11-26 (Voltaire, Le Malade imaginaire, onglet retrouvé)
+  "Apostolique": {
+    scene: "Le représentant du pape dans un pays s'appelle le « nonce apostolique » : un ambassadeur, mais en soutane.",
+    origine: "Du grec « apostolos », l'envoyé. Les apôtres sont, au sens propre, des envoyés en mission.",
+  },
+  "Impudence": {
+    scene: "Il arrive avec une heure de retard, se sert le dernier morceau de gâteau et demande pourquoi on ne l'a pas attendu : quelle impudence !",
+    origine: "Du latin « pudere », avoir honte, comme « pudeur ». L'impudent est celui à qui la honte ne rend jamais visite.",
+  },
+  "Sibylle": {
+    scene: "Ta tante qui prédit, à chaque repas de famille, qui va divorcer et qui va déménager : la sibylle du clan.",
+    origine: "Dans l'Antiquité, les sibylles rendaient des oracles en transe, comme celle de Cumes, près de Naples. Leurs réponses étaient si obscures qu'elles ont donné un autre mot : « sibyllin ».",
+  },
+  "Fourberie": {
+    scene: "Faire croire à son père qu'on a été enlevé par des pirates pour lui soutirer de l'argent : la fourberie dans toute sa splendeur.",
+    aussi: "C'est l'intrigue des Fourberies de Scapin (Molière, 1671), et sa réplique culte : « Que diable allait-il faire dans cette galère ? »",
+  },
+  "Prophétesse": {
+    scene: "Cassandre annonce la chute de Troie, personne ne la croit, et Troie tombe. Le destin des prophétesses : avoir raison trop tôt.",
+    origine: "Apollon lui avait donné le don de prophétie, puis, vexé qu'elle le repousse, l'avait condamnée à ne jamais être crue.",
+  },
+  "Iniquité": {
+    scene: "Punir toute la classe pour la bêtise d'un seul : une iniquité que tout le monde a vécue au moins une fois.",
+    origine: "Du latin « iniquus », pas égal, pas juste. C'est le contraire exact de l'équité.",
+  },
+  "Décréditer": {
+    scene: "Une seule rumeur bien placée suffit à décréditer quelqu'un dans tout le village.",
+    origine: "Mot du temps de Voltaire, remplacé depuis par « discréditer ». Il sent la poudre et les perruques.",
+  },
+  "Poix": {
+    scene: "Dans les films de siège, on renverse de la poix brûlante du haut des remparts sur les assaillants.",
+    origine: "La poix, résine de pin, servait à rendre étanches les tonneaux et les coques des bateaux. Elle nous a laissé « poisseux » : collant comme de la poix.",
+  },
+  "Pilorier": {
+    scene: "Un tweet maladroit, et le voilà pilorié par des milliers d'inconnus avant midi.",
+    origine: "Le pilori était un poteau ou une tour où l'on exposait les condamnés aux moqueries de la foule. Celui des Halles, à Paris, était le plus célèbre.",
+  },
+  "Subjuguer": {
+    scene: "Elle a chanté trois notes et toute la salle était subjuguée, sans un bruit.",
+    origine: "Du latin « sub jugum », sous le joug : le vaincu passait courbé sous des lances croisées. Aujourd'hui, on subjugue plutôt par le charme.",
+  },
+  "Proscription": {
+    scene: "En 43 avant J.-C., Octave, Antoine et Lépide affichent des listes de noms à abattre : la tête de Cicéron y figure.",
+    origine: "Du latin « proscribere », afficher publiquement. Les proscriptions romaines étaient des listes placardées : quiconque tuait un nom inscrit touchait une récompense.",
+  },
+  "Facétie": {
+    scene: "Remplacer le sucre par du sel le 1er avril : une facétie qui ne fait rire que celui qui l'a faite.",
+    origine: "Du latin « facetus », élégant, spirituel. La facétie, à l'origine, était une plaisanterie fine, pas un coussin péteur.",
+  },
+  "Rémunérateur": {
+    scene: "Un petit boulot rémunérateur, c'est celui qui paie assez pour qu'on oublie un peu l'ennui.",
+    aussi: "Voltaire parlait d'un « Dieu rémunérateur et vengeur » : un Dieu qui récompense les bons et punit les méchants, utile selon lui pour que les gens restent honnêtes.",
+  },
+  "Putatif": {
+    scene: "Dans les feuilletons, il y a toujours un père putatif qui découvre au dernier épisode que l'enfant n'est pas de lui.",
+    origine: "Du latin « putare », croire, estimer. Le père putatif est celui que l'on croit être le père. Joseph est le plus célèbre d'entre eux.",
+  },
+  "Disert": {
+    scene: "Interrogé à l'improviste, il a parlé dix minutes sans une hésitation, clair et brillant : un orateur disert.",
+    origine: "Du latin « disertus », habile à parler. Un compliment rare, à garder pour quelqu'un qui le mérite vraiment.",
+  },
+  "Logos": {
+    scene: "Pour les Grecs, le monde n'est pas un chaos : une raison l'organise, et cette raison parle. C'est le logos.",
+    origine: "En grec, « logos » veut dire à la fois la parole et la raison. Il se cache dans tous nos « -logie » : biologie, psychologie, la science qui parle de la vie, de l'âme.",
+    aussi: "L'Évangile de Jean commence par « Au commencement était le Logos », que l'on traduit par « le Verbe ».",
+  },
+  "Expier": {
+    scene: "Il a oublié l'anniversaire de sa compagne : il expie en faisant la vaisselle pendant un mois.",
+    origine: "Du latin « expiare », purifier par un sacrifice. On expiait ses fautes devant les dieux ; aujourd'hui, plutôt devant les gens qu'on a vexés.",
+  },
+  "Isiaque": {
+    scene: "À Pompéi, on visite encore un petit temple isiaque : des Romains venaient y prier une déesse égyptienne.",
+    origine: "D'Isis, la grande déesse d'Égypte. Son culte s'est répandu dans tout l'Empire romain, jusqu'à Paris : une vieille légende fait même venir le nom de Paris d'Isis, mais c'est une fausse étymologie.",
+  },
+  "Extirper": {
+    scene: "Extirper un aveu à son petit frère, c'est comme arracher une mauvaise herbe : il faut tirer doucement, jusqu'à la racine.",
+    origine: "Du latin « stirps », la souche, la racine. Extirper, c'est arracher avec la racine, pour que ça ne repousse pas.",
+  },
+  "Consubstantiel": {
+    scene: "Pour certains, l'humour et la tristesse sont consubstantiels : l'un ne va jamais sans l'autre.",
+    origine: "En 325, le concile de Nicée déclare le Fils « consubstantiel » au Père. Le débat portait sur un seul mot grec, « homoousios » (même substance) contre « homoiousios » (substance semblable) : une seule lettre, le iota.",
+    aussi: "C'est de là que viendrait l'expression « ne pas changer d'un iota ».",
+  },
+  "Codex": {
+    scene: "Tu tournes les pages de ton livre de poche ? Tu tiens un codex, l'invention qui a remplacé les rouleaux.",
+    origine: "En latin, « codex » désignait un tronc d'arbre, puis des tablettes de bois reliées. Les Romains ont fini par coudre des pages ensemble, et le livre moderne est né.",
+  },
+  "Hérétique": {
+    scene: "Mettre de l'ananas sur une pizza, en Italie, c'est presque hérétique.",
+    origine: "Du grec « hairesis », le choix. L'hérétique, c'est d'abord celui qui choisit par lui-même au lieu de suivre la doctrine.",
+  },
+  "Anathématiser": {
+    scene: "Le chef cuisinier a anathématisé la crème dans la carbonara : interdite, maudite, à jamais.",
+    origine: "Du grec « anathema », ce qui est mis à part. Le mot désignait d'abord une offrande déposée au temple, puis ce qu'on écarte avec horreur : la malédiction.",
+  },
+  "Quaternité": {
+    scene: "Trois mousquetaires qui sont quatre : c'est la quaternité d'Athos, Porthos, Aramis et d'Artagnan.",
+    origine: "Mot savant forgé sur la Trinité. Dans les querelles de théologie, accuser quelqu'un d'adorer une « quaternité », c'était l'accuser d'avoir ajouté une quatrième personne à Dieu.",
+    aussi: "Le psychanalyste Carl Jung aimait ce mot : pour lui, le nombre quatre symbolisait la totalité.",
+  },
+  "Transsubstantiation": {
+    scene: "Le mot le plus long de ta collection, peut-être. Il décrit ce que croient les catholiques à la messe : le pain et le vin changent de substance.",
+    origine: "Du latin « trans », au-delà, et « substantia », la substance. Le dogme est fixé au concile de Latran en 1215.",
+  },
+  "Talapoin": {
+    scene: "Chez Voltaire, le talapoin est un moine lointain qu'il met en scène pour montrer que chaque peuple croit détenir la seule vérité.",
+    origine: "Du portugais « talapão », emprunté à une langue de Birmanie. Le mot désignait les moines bouddhistes du Siam et de Birmanie.",
+    aussi: "C'est aussi le nom d'un tout petit singe d'Afrique.",
+  },
+  "Santon": {
+    scene: "À Noël, en Provence, on installe les santons dans la crèche : le berger, le meunier, le boulanger, même le maire du village.",
+    origine: "Le provençal « santoun » veut dire « petit saint ». Le même mot désigne aussi, chez les voyageurs d'autrefois, un ermite musulman vénéré.",
+  },
+  "Marabout": {
+    scene: "Au zoo, ce grand oiseau chauve au long bec, immobile et sérieux, c'est un marabout.",
+    origine: "De l'arabe « murabit », l'homme du couvent fortifié : un saint homme musulman. L'oiseau tiendrait son nom de son allure grave et solitaire, comme un ermite en méditation.",
+  },
+  "Épithète": {
+    scene: "« Achille aux pieds légers », « l'Aurore aux doigts de rose » : chez Homère, chaque héros a son épithète, comme une signature.",
+    origine: "Du grec « epitheton », ce qui est ajouté. Les rois de France en collectionnaient : le Bel, le Hardi, le Bien-Aimé.",
+  },
+  "Parricide": {
+    scene: "Œdipe tue son père sans savoir qui il est : le parricide le plus célèbre de la littérature.",
+    origine: "Du latin « parricida ». À Rome, le parricide était cousu dans un sac avec un chien, un coq, une vipère et un singe, puis jeté au fleuve.",
+  },
+  "Iconolâtre": {
+    scene: "À Byzance, aux VIIIe et IXe siècles, on s'est battu pour savoir s'il fallait détruire les images saintes. En face des iconoclastes, les iconolâtres les défendaient.",
+    origine: "Du grec « eikôn », l'image, et « latreia », l'adoration. Le mot était souvent lancé comme un reproche par leurs adversaires.",
+  },
+  "Supputer": {
+    scene: "Avant de proposer un rendez-vous, il suppute ses chances : deux sur dix, trois si elle a bien dormi.",
+    origine: "Du latin « supputare », calculer. On y retrouve « putare », compter, comme dans l'anglais « computer », l'ordinateur : la machine qui suppute.",
+  },
+  "S'amender": {
+    scene: "Après trois retards, il promet de s'amender : réveil à 6 h, deux alarmes, et un café prêt la veille.",
+    origine: "Du latin « emendare », corriger une faute. L'amende que l'on paie vient de la même famille : on corrige sa faute en payant.",
+  },
+  "Renchérir": {
+    scene: "Tu dis que le film était long ; ton ami renchérit : « Long ? J'ai eu le temps de vieillir. »",
+    origine: "De « cher » : renchérir, c'est d'abord faire monter le prix. On a gardé l'idée d'en rajouter, avec des mots.",
+  },
+  "Surplis": {
+    scene: "Les enfants de chœur portent un surplis blanc, léger et plissé, par-dessus leur aube.",
+    origine: "Du latin « superpellicium », par-dessus la pelisse. Dans les églises glaciales du Moyen Âge, les prêtres portaient une fourrure, et le surplis se mettait par-dessus.",
+  },
+  "Étole": {
+    scene: "Les stars des années 1950 portaient une étole de vison sur les épaules pour monter les marches.",
+    origine: "Du latin « stola », la longue robe des matrones romaines. Le prêtre en porte une aussi, une bande de tissu brodée autour du cou.",
+  },
+  "Chanoine": {
+    scene: "« Mener une vie de chanoine » : se lever tard, bien manger, et ne pas trop se fatiguer.",
+    origine: "Du grec « kanôn », la règle : les chanoines vivaient selon une règle, près de la cathédrale. Leur réputation de confort est restée dans l'expression.",
+  },
+  "Sophisme": {
+    scene: "« Tout ce qui est rare est cher ; un cheval bon marché est rare ; donc un cheval bon marché est cher. » Un sophisme : ça a l'air logique, et c'est faux.",
+    origine: "Des sophistes grecs, professeurs d'éloquence payés pour apprendre à gagner n'importe quel débat. Socrate et Platon les ont accusés de préférer la victoire à la vérité.",
+  },
+  "Socinien": {
+    scene: "Voltaire, qui se méfiait des Églises, avait un faible pour les sociniens : des croyants qui voulaient une foi raisonnable.",
+    origine: "De Fausto Sozzini, dit Socin, un théologien italien du XVIe siècle qui refusait la Trinité. Ses disciples se sont surtout installés en Pologne.",
+  },
+  "Anabaptiste": {
+    scene: "Pour un anabaptiste, un bébé ne peut pas choisir sa foi : on se fait baptiser adulte, en connaissance de cause.",
+    origine: "Du grec « ana », de nouveau, et « baptizein », plonger dans l'eau : ceux qui rebaptisent. Les Amish et les mennonites en sont les héritiers.",
+  },
+  "Piétiste": {
+    scene: "Au XVIIe siècle, en Allemagne, des luthériens lassés des grands sermons se réunissent chez eux pour lire la Bible et prier simplement : ce sont les piétistes.",
+    origine: "De « piété ». Le mouvement a marqué Bach, dont beaucoup de textes de cantates en sont imprégnés.",
+  },
+  "Poularde": {
+    scene: "Le menu de Noël du grand-père : une poularde de Bresse, des marrons, et un silence religieux autour de la table.",
+    origine: "De « poule ». La plus célèbre recette lyonnaise s'appelle la « poularde demi-deuil » : des lamelles de truffe noire glissées sous la peau blanche.",
+  },
+  "Inviolablement": {
+    scene: "Deux amis d'enfance qui se sont juré de garder un secret, et qui l'ont gardé inviolablement pendant quarante ans.",
+    origine: "De « violer », au sens ancien d'enfreindre : un serment inviolable est un serment que rien ne peut briser.",
+  },
+  "Clameur": {
+    scene: "Le but à la dernière minute, et une clameur monte du stade jusqu'à la ville.",
+    origine: "Du latin « clamare », crier. En Normandie, la « clameur de haro » permettait à quiconque subissait une injustice de crier « Haro ! » pour faire tout arrêter. D'où « crier haro sur quelqu'un ».",
+  },
+  "Mâchelière": {
+    scene: "Le dentiste de 1750 aurait parlé de vos dents mâchelières : vos molaires, celles du fond, qui écrasent tout.",
+    origine: "De « mâcher ». Un mot simple et imagé, que la médecine a remplacé par le latin « molaire » (la meule).",
+  },
+  "Coagulé": {
+    scene: "La sauce oubliée au frigo : un bloc coagulé qu'on n'ose plus toucher.",
+    origine: "Du latin « coagulum », la présure, ce qui fait cailler le lait. Coaguler, c'est d'abord faire du fromage.",
+  },
+  "Séculaire": {
+    scene: "Un chêne séculaire au milieu du village : il a vu passer plus de générations que le cimetière.",
+    origine: "Du latin « saeculum », le siècle. À Rome, les Jeux séculaires ne revenaient qu'une fois par siècle : personne ne pouvait les voir deux fois. Horace écrivit un chant pour ceux de 17 avant J.-C.",
+  },
+  "Harangue": {
+    scene: "Le capitaine qui harangue son équipe dans le vestiaire, à la mi-temps, quand on perd 2 à 0.",
+    origine: "Probablement d'un mot germanique désignant le cercle, l'assemblée : on haranguait la foule réunie en rond.",
+  },
+  "Imposture": {
+    scene: "Le faux médecin qui exerçait depuis dix ans sans diplôme : une imposture découverte par hasard.",
+    aussi: "Molière en a fait une pièce : Tartuffe ou l'Imposteur, interdite pendant cinq ans parce qu'elle dérangeait les dévots.",
+  },
+  "Spinoziste": {
+    scene: "Quand Einstein disait croire au « Dieu de Spinoza », il parlait en spinoziste : un Dieu qui est la nature elle-même, pas un juge dans le ciel.",
+    origine: "De Baruch Spinoza, philosophe d'Amsterdam du XVIIe siècle, qui polissait des lentilles de lunettes pour vivre. Sa formule : « Dieu, c'est-à-dire la Nature ».",
+  },
+  "Théiste": {
+    scene: "Voltaire se disait théiste : il croyait en un grand horloger de l'univers, mais pas aux Églises.",
+    origine: "Du grec « theos », dieu. Le théiste croit en Dieu ; l'athée (a-theos), non.",
+  },
+  "Équité": {
+    scene: "Partager une pizza entre quatre, quand l'un a faim et l'autre pas : l'égalité donne quatre parts égales, l'équité donne à chacun ce qu'il lui faut.",
+    origine: "Du latin « aequus », égal, juste. La même racine que « équilibre » et « équateur ».",
+  },
+  "Friponnerie": {
+    scene: "Faire passer son frère devant soi dans la file pour garder la meilleure place au cinéma : une petite friponnerie.",
+    origine: "De « fripon », qui viendrait de « friper », chiffonner, et plus anciennement « dévorer goulûment » : le fripon était d'abord un gourmand qui chipe.",
+  },
+  "Janséniste": {
+    scene: "Un régime sans sucre, sans alcool, sans dessert et sans sortie : c'est un mode de vie janséniste.",
+    origine: "De Jansénius, évêque d'Ypres. Les jansénistes du XVIIe siècle, autour de l'abbaye de Port-Royal, pensaient que seule la grâce de Dieu sauve. Pascal les a défendus dans Les Provinciales.",
+  },
+  "Moliniste": {
+    scene: "Jansénistes contre molinistes : la grande querelle du XVIIe siècle, entre ceux qui croient que tout est décidé d'avance et ceux qui croient au libre choix.",
+    origine: "De Luis de Molina, jésuite espagnol, qui défendait la liberté humaine face à la grâce divine. Voltaire se moquait des deux camps.",
+  },
+  "Calcédoine": {
+    scene: "Dans la boutique de minéraux, une pierre laiteuse et bleutée qui laisse passer la lumière : une calcédoine.",
+    origine: "De Chalcédoine, ancienne ville grecque en face de Byzance, sur le Bosphore. Une pierre qui porte le nom d'un port.",
+  },
+  "Volupté": {
+    scene: "Le premier bain chaud après une journée de randonnée sous la pluie : la volupté à l'état pur.",
+    origine: "Du latin « voluptas », le plaisir. Épicure en faisait le but de la vie, mais un plaisir calme, loin des excès : un verre d'eau, du pain et des amis.",
+  },
+  "Indubitable": {
+    scene: "Il est indubitable qu'un lundi matin sans café est une épreuve.",
+    origine: "Du latin « dubitare », douter. Un mot élégant pour éviter de dire « c'est sûr ».",
+  },
+  "Âcreté": {
+    scene: "L'âcreté de la fumée d'un feu de pneus, qui pique les yeux et la gorge.",
+    origine: "Du latin « acer », piquant, aigu. Au figuré, on parle aussi de l'âcreté d'une remarque, qui laisse un goût amer.",
+  },
+  "Féculence": {
+    scene: "Monsieur Purgon reproche à Argan « la féculence de ses humeurs » : un corps plein de dépôts troubles, à purger d'urgence.",
+    origine: "Du latin « faecula », la lie du vin. Les « féculents » de nos assiettes (pâtes, riz, pommes de terre) viennent de la même famille : la fécule, c'est ce qui se dépose au fond.",
+  },
+  "Bradypepsie": {
+    scene: "Le premier palier de la malédiction de Monsieur Purgon, dans Le Malade imaginaire : « Je veux que vous tombiez dans la bradypepsie… »",
+    origine: "Du grec « bradus », lent, et « pepsis », digestion. Purgon fait ensuite dégringoler Argan, marche après marche : dyspepsie, apepsie, lienterie, dysenterie, hydropisie… jusqu'à la mort.",
+  },
+  "Dyspepsie": {
+    scene: "Le repas de mariage trop riche, et la nuit d'après passée à soupirer : une dyspepsie de compétition.",
+    origine: "Du grec « dys », mal, et « pepsis », digestion. Deuxième marche de l'escalier de malédictions de Monsieur Purgon.",
+  },
+  "Apepsie": {
+    scene: "Troisième marche de la malédiction de Purgon : après la digestion lente, puis difficile, plus de digestion du tout.",
+    origine: "Du grec « a- », sans, et « pepsis », digestion. Molière aligne les termes savants comme un médecin qui prononce une sentence.",
+  },
+  "Lienterie": {
+    scene: "Dans la bouche de Monsieur Purgon, le mot sonne comme une menace solennelle. En réalité, il désigne un banal et très peu glorieux dérangement intestinal.",
+    origine: "Du grec « leios », lisse, et « enteron », intestin : les aliments glissent sans être digérés. Tout le comique de Molière est là : de grands mots pour de petites misères.",
+  },
+  "Hydropisie": {
+    scene: "Dernière marche avant la mort dans la malédiction de Purgon : « …et de l'hydropisie dans la privation de la vie ».",
+    origine: "Du grec « hudôr », l'eau. Le corps gonfle d'eau : on parle aujourd'hui d'œdème. Beethoven en souffrait à la fin de sa vie.",
+  },
+  "Trépas": {
+    scene: "« Passer de vie à trépas » : une façon poétique, presque douce, de dire mourir.",
+    origine: "De « trépasser », passer au-delà (« tres », au-delà, et « passer »). Le trépas, c'est la frontière qu'on franchit.",
+  },
+  "Fluxion": {
+    scene: "Une rage de dents et la joue qui enfle : votre grand-mère aurait dit que vous aviez une fluxion.",
+    origine: "Du latin « fluere », couler : on croyait que les humeurs du corps coulaient vers l'endroit malade. La « fluxion de poitrine » était le nom ancien de la pneumonie.",
+  },
+  "Fiévrotte": {
+    scene: "Toinette, déguisée en médecin, méprise les petites maladies : « je dédaigne de m'amuser à ces fiévrottes ». Elle veut du sérieux, de la vraie fièvre.",
+    origine: "Diminutif de « fièvre », comme « menotte » pour « main ». Un mot délicieux pour une maladie de rien.",
+  },
+  "Pleurésie": {
+    scene: "Les romans du XIXe siècle sont pleins d'héroïnes qui meurent de pleurésie après avoir pris froid sous la pluie.",
+    origine: "Du grec « pleura », le côté, les côtes : la plèvre enveloppe les poumons. Rien à voir avec les pleurs, malgré les apparences.",
+  },
+  "Néphrétique": {
+    scene: "Une colique néphrétique : une douleur dans le dos si violente qu'on la compare souvent à un accouchement.",
+    origine: "Du grec « nephros », le rein. Les néphrologues, médecins des reins, portent la même racine.",
+  },
+  "Conglutiner": {
+    scene: "Le riz trop cuit qui se conglutine au fond de la casserole en une seule masse.",
+    origine: "Du latin « gluten », la colle. Le gluten du pain, qui rend la pâte élastique, vient de la même famille.",
+  },
+  "Oraison funèbre": {
+    scene: "« Madame se meurt ! Madame est morte ! » : le cri de Bossuet, en 1670, au début de l'oraison funèbre d'Henriette d'Angleterre, fit pleurer toute la cour.",
+    origine: "Du latin « oratio », le discours. Bossuet en a fait un art : on les étudie encore comme des chefs-d'œuvre d'éloquence.",
+  },
+  "Panégyrique": {
+    scene: "Au pot de départ, le chef fait le panégyrique de son collègue : trente ans de génie, de dévouement et de bonne humeur. Les collègues se regardent.",
+    origine: "Du grec « panêguris », l'assemblée de tout le peuple : le panégyrique était le discours prononcé devant la foule réunie pour une grande fête.",
+  },
+  "Surcroît": {
+    scene: "Il a perdu ses clés, et de surcroît il pleut.",
+    origine: "De « croître », grandir : le surcroît, c'est ce qui pousse en plus. « Pour un surcroît de désespoir », dit-on chez Molière, quand le malheur en rajoute.",
+  },
+  "Inopiné": {
+    scene: "Une visite inopinée de ta belle-mère un dimanche à 9 h : le salon n'a jamais été rangé aussi vite.",
+    origine: "Du latin « opinari », penser, avoir une opinion : l'inopiné est ce qu'on n'avait pas pensé du tout.",
+  },
+  "Hégélianisme": {
+    scene: "Une dispute, puis une réconciliation, et un couple plus fort qu'avant : c'est presque de l'hégélianisme appliqué.",
+    origine: "De Hegel, philosophe allemand mort en 1831, pour qui l'histoire avance en dépassant ses contradictions.",
+    aussi: "La célèbre formule « thèse, antithèse, synthèse » n'est presque jamais employée par Hegel lui-même : elle vient surtout de ses commentateurs.",
+  },
+  "Maboul": {
+    scene: "« Il veut traverser la Manche à la nage en janvier ? Il est complètement maboul ! »",
+    origine: "De l'arabe maghrébin « mahbul », fou, rapporté par les soldats français d'Algérie au XIXe siècle. Comme « toubib » ou « kif-kif ».",
+  },
+  "Manichéisme": {
+    scene: "Dans les dessins animés, il y a les gentils et les méchants : un monde manichéen, sans aucune zone grise.",
+    origine: "De Mani, prophète perse du IIIe siècle, pour qui le monde était un combat entre la Lumière et les Ténèbres. Saint Augustin a été manichéen pendant près de dix ans avant de se convertir.",
+  },
+  "Homérique": {
+    scene: "La chaise qui se dérobe sous l'oncle au milieu de son discours : un rire homérique, impossible à arrêter.",
+    origine: "Dans l'Iliade, les dieux de l'Olympe sont pris d'un « rire inextinguible » en voyant Héphaïstos, le dieu boiteux, leur servir à boire en se dandinant. Le premier fou rire de la littérature.",
+  },
+  "Antipodes": {
+    scene: "Son frère vit en Nouvelle-Zélande : quand il se couche, elle se lève. Ils sont littéralement aux antipodes.",
+    origine: "Du grec « anti », contre, et « pous, podos », le pied : ceux qui ont les pieds contre les nôtres, de l'autre côté de la Terre.",
+    aussi: "Près de la Nouvelle-Zélande, il existe de vraies îles des Antipodes, à peu près à l'opposé de la Normandie.",
+  },
+  "Contiguïté": {
+    scene: "La contiguïté des appartements parisiens : on entend le voisin éternuer, et on lui dit « à vos souhaits ».",
+    origine: "Du latin « contingere », toucher. Deux choses contiguës se touchent, sans rien entre elles.",
+  },
+  "Cadencé": {
+    scene: "Le pas cadencé des soldats au défilé du 14 Juillet, tous en même temps, comme une seule machine.",
+    origine: "Du latin « cadere », tomber : la cadence, c'est la façon dont les sons ou les pas retombent, régulièrement. Molière parle de « prose cadencée » pour un texte qui sonne comme une musique.",
+  },
+  "Émoulu": {
+    scene: "Frais émoulu de son école de commerce, il voulait déjà tout réorganiser dès le premier jour.",
+    origine: "D'« émoudre », aiguiser sur la meule. Une épée frais émoulue sortait de chez le rémouleur, toute neuve et bien tranchante. Le jeune diplômé aussi : brillant, mais pas encore éprouvé.",
+  },
+  "Effronté": {
+    scene: "L'enfant de cinq ans qui répond à sa grand-mère : « T'as qu'à le faire toi-même. » Petit effronté !",
+    origine: "De « front », qui désignait autrefois la honte, la pudeur (« avoir le front de… »). L'effronté est celui qui n'a plus de front : plus de honte.",
+  },
+  "Casse": {
+    scene: "Chez Molière, Argan avale sa « prise de casse » comme d'autres prennent un café : le purgatif du matin.",
+    origine: "Du grec « kassia ». C'est une longue gousse noire d'un arbre tropical, dont la pulpe purgeait les malades du XVIIe siècle.",
+    aussi: "L'expression « passe-moi la rhubarbe, je te passerai le séné » vient de ces vieux remèdes : deux purgatifs qu'on s'échange, comme deux complices qui se rendent service.",
+  },
+  "Caquet": {
+    scene: "Le vantard de la soirée explique qu'il a couru un marathon. Quelqu'un lui demande son temps. Ça lui a rabattu le caquet.",
+    origine: "Du bruit de la poule qui caquette après avoir pondu, très fière d'elle. Rabattre le caquet, c'est faire taire la poule.",
+  },
+  "Carabistouille": {
+    scene: "« Arrête tes carabistouilles, tu n'as jamais serré la main de Zidane ! »",
+    origine: "Un mot belge, joyeux et sonore, qui veut dire bêtises, balivernes. Il s'est fait connaître en France grâce aux Belges, qui ont le chic pour les mots savoureux.",
+  },
 };
