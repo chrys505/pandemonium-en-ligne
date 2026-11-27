@@ -1096,4 +1096,5 @@ const carnet = {
   "Casse": "26 novembre 2026",
   "Caquet": "26 novembre 2026",
   "Carabistouille": "26 novembre 2026",
+  "Vocable": "27 novembre 2026",
 };

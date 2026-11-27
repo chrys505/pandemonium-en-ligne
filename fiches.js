@@ -6901,4 +6901,8 @@ const fiches = {
     scene: "« Arrête tes carabistouilles, tu n'as jamais serré la main de Zidane ! »",
     origine: "Un mot belge, joyeux et sonore, qui veut dire bêtises, balivernes. Il s'est fait connaître en France grâce aux Belges, qui ont le chic pour les mots savoureux.",
   },
+  "Vocable": {
+    scene: "« Parle normalement ! » « Pardon, j'ai dit procrastiner : c'est juste un vocable un peu chic pour dire que je remets à demain. »",
+    origine: "Du latin vocabulum, « nom, appellation », qui vient de vox, la voix : un vocable, c'est d'abord un mot qu'on fait sonner. La même famille a donné vocabulaire, vocation et voyelle. Et une église « sous le vocable de saint Michel » porte son nom comme un mot qu'on prononce sur elle.",
+  },
 };

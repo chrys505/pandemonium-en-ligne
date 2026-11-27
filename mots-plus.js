@@ -1924,5 +1924,7 @@ const motsPlus = [
   ["Effronté", "Qui n'a honte de rien, insolent.", "cheeky", "descarado"],
   ["Casse", "Fruit d'un arbre tropical, autrefois utilisé comme purgatif.", "cassia", "cañafístula"],
   ["Caquet", "Bavardage prétentieux ; rabattre le caquet : faire taire un vantard.", "cackle", "cacareo"],
-  ["Carabistouille", "Bêtise, baliverne (belgicisme).", "nonsense", "tontería"]
+  ["Carabistouille", "Bêtise, baliverne (belgicisme).", "nonsense", "tontería"],
+  // Ajout du 2026-11-27
+  ["Vocable", "Mot, terme, considéré pour sa forme ou son sens (« un vocable savant »). En religion : nom du saint à qui une église est dédiée.", "term, word", "vocablo"]
 ];
