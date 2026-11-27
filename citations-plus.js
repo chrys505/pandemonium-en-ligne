@@ -103,7 +103,9 @@ const citationsPlus = [
   ["Il vit une jeune personne qui versait des larmes, qu'il trouva les plus belles du monde.", "Molière, Le Malade imaginaire (Cléante)"],
   ["Son respect et la présence de son père l'empêchent de lui rien dire que des yeux.", "Molière, Le Malade imaginaire (Cléante)"],
   ["Mais un père à ses vœux vous veut assujettir.", "Molière, Le Malade imaginaire (Cléante)"],
-  ["Ne dites point qu'il faut tromper les hommes au nom de Dieu : ce serait le discours d'un diable, s'il y avait des diables.", "Voltaire"]
+  ["Ne dites point qu'il faut tromper les hommes au nom de Dieu : ce serait le discours d'un diable, s'il y avait des diables.", "Voltaire"],
+  // Note du 2026-11-27
+  ["Car j'ai de chaque chose extrait la quintessence, / Tu m'as donné ta boue et j'en ai fait de l'or.", "Charles Baudelaire, projet d'épilogue des Fleurs du mal"]
 ];
 
 // Expressions : [expression, sens]

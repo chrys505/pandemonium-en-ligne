@@ -6905,4 +6905,982 @@ const fiches = {
     scene: "« Parle normalement ! » « Pardon, j'ai dit procrastiner : c'est juste un vocable un peu chic pour dire que je remets à demain. »",
     origine: "Du latin vocabulum, « nom, appellation », qui vient de vox, la voix : un vocable, c'est d'abord un mot qu'on fait sonner. La même famille a donné vocabulaire, vocation et voyelle. Et une église « sous le vocable de saint Michel » porte son nom comme un mot qu'on prononce sur elle.",
   },
+  // Série 20 : note du 2026-11-27 (Grande Guerre, Notre-Dame de Paris et Viollet-le-Duc, souvenirs de Jung)
+  "Bourgade": {
+    scene: "Une boulangerie, une église, un bar-tabac et trois chiens qui connaissent tout le monde : bienvenue dans la bourgade.",
+    origine: "De « bourg », lui-même venu du germanique « burg », la place forte. Les bourgeois étaient, au départ, les habitants du bourg.",
+  },
+  "Technocrate": {
+    scene: "« Votre village a perdu sa gare, mais selon nos tableaux, la mobilité a progressé de 3 % » : voix typique du technocrate.",
+    origine: "Du grec « tekhnê », l'art, le savoir-faire, et « kratos », le pouvoir : le pouvoir des techniciens. Le mot naît aux États-Unis dans les années 1930.",
+  },
+  "Allégorique": {
+    scene: "Sur le tableau, une femme aux seins nus brandit un drapeau sur une barricade : ce n'est pas une Parisienne, c'est la Liberté, en version allégorique.",
+    origine: "Du grec « allos », autre, et « agoreuein », parler en public : dire une chose pour en faire entendre une autre.",
+  },
+  "Chienlit": {
+    scene: "Trois enfants, un chien et une boîte de céréales renversée : en dix minutes, le salon est devenu une chienlit.",
+    origine: "À l'origine, le « chie-en-lit », un personnage de carnaval à la chemise souillée. Le mot s'est poli avec le temps, mais il garde son odeur de pagaille.",
+  },
+  "Sanatorium": {
+    scene: "Au début du XXᵉ siècle, on envoyait les tuberculeux respirer l'air des montagnes, allongés des heures sur les balcons du sanatorium.",
+    origine: "Du latin « sanare », guérir. Thomas Mann en a fait le décor de La Montagne magique, où un séjour de trois semaines dure sept ans.",
+  },
+  "Faire son trou": {
+    scene: "Arrivé à Paris sans contacts ni argent, il a fait son trou : dix ans plus tard, c'est lui qu'on appelle pour avoir une table.",
+    origine: "L'image du terrier : on creuse sa place, comme un lapin ou comme un soldat qui creuse sa tranchée.",
+  },
+  "Babillarde": {
+    scene: "Dans la tranchée, le vaguemestre arrive avec le sac du courrier : « Les babillardes sont là ! » Tout le monde se précipite.",
+    origine: "De « babiller », bavarder. La lettre, c'est le papier qui babille à la place de celui qui est loin. Les poilus l'ont rendue célèbre.",
+  },
+  "Avoir du poil au cœur": {
+    scene: "Sauter du plongeoir de dix mètres le premier, devant toute la piscine : il faut avoir du poil au cœur.",
+    origine: "Depuis longtemps, le poil est le signe de la force et de la virilité. En avoir jusque sur le cœur, c'est être brave jusqu'au fond de soi.",
+  },
+  "Poilu": {
+    scene: "Sur le monument du village, un poilu de bronze, casque sur la tête et fusil à la main, veille sur la place depuis cent ans.",
+    origine: "Avant 14-18, « un poilu », c'était déjà un homme courageux (voir « avoir du poil au cœur »). La guerre a fait du mot le surnom de tous les soldats français.",
+  },
+  "Gueules cassées": {
+    scene: "Après 1918, des milliers d'hommes revinrent le visage détruit. Ils se nommèrent eux-mêmes les gueules cassées, et fondèrent une association pour s'entraider.",
+    origine: "Le nom est venu d'eux, avec un humour noir et une fierté immense. Pour financer leur association, ils ont lancé une loterie, la « Dette », ancêtre de la Loterie nationale : ils sont encore aujourd'hui actionnaires de la Française des jeux.",
+  },
+  "Cénotaphe": {
+    scene: "Le marin a disparu en mer ; sa famille a fait graver son nom sur un cénotaphe, au cimetière, face à l'océan.",
+    origine: "Du grec « kenos », vide, et « taphos », tombeau : un tombeau vide. On honore le mort là où son corps n'est pas.",
+  },
+  "Nécropole": {
+    scene: "À Douaumont, des milliers de croix blanches alignées jusqu'à l'horizon : la nécropole donne le vertige.",
+    origine: "Du grec « nekros », mort, et « polis », ville : la ville des morts.",
+  },
+  "Mercantile": {
+    scene: "Vendre des bouteilles d'eau à dix euros pendant la canicule : un esprit franchement mercantile.",
+    origine: "De l'italien « mercante », marchand, venu du latin « merx », la marchandise, comme « mercerie » et Mercure, le dieu du commerce.",
+  },
+  "Charnier": {
+    scene: "Les archéologues ont mis au jour un charnier médiéval : les victimes d'une épidémie, enterrées à la hâte.",
+    origine: "Du latin « carnarium », le lieu où l'on garde la viande. Au Moyen Âge, le charnier était la galerie du cimetière où l'on entassait les ossements.",
+  },
+  "Tête-bêche": {
+    scene: "Deux enfants, un seul lit : on les couche tête-bêche, et les pieds de l'un chatouillent le nez de l'autre.",
+    origine: "De l'ancien « béchevet », double chevet : un lit à deux têtes. On a fini par ajouter « tête » devant, sans plus comprendre le reste.",
+  },
+  "Exorcisme": {
+    scene: "Écrire sur ce qui nous a fait peur, c'est une forme d'exorcisme : le monstre, une fois sur le papier, rapetisse.",
+    origine: "Du grec « exorkizein », faire prêter serment, conjurer. L'exorciste ordonne au démon, au nom de Dieu, de quitter le corps.",
+  },
+  "Régression au service du moi": {
+    scene: "Le peintre griffonne comme un enfant, rêvasse, joue avec les couleurs, puis revient en adulte trier ce qui vaut quelque chose : régression au service du moi.",
+    origine: "Une idée du psychanalyste Ernst Kris (1952) : l'artiste redescend volontairement dans la pensée enfantine, mais garde la main sur la barre.",
+  },
+  "Dépôt lapidaire": {
+    scene: "Derrière la cathédrale, dans le dépôt lapidaire, dorment des gargouilles décapitées et des saints sans nez, remplacés par des copies.",
+    origine: "Du latin « lapis », la pierre, comme « lapider ». Le dépôt lapidaire, c'est le grenier des monuments.",
+  },
+  "Orant": {
+    scene: "Sur le tombeau, le roi et la reine, en marbre, sont agenouillés mains jointes : deux orants qui prient pour l'éternité.",
+    origine: "Du latin « orare », prier, comme « oraison ». L'orant est figé dans l'instant de sa prière.",
+  },
+  "Nef": {
+    scene: "En entrant dans la nef, on lève les yeux vers la voûte, et on comprend qu'on a été bâti petit.",
+    origine: "Du latin « navis », le navire. Retournez la voûte d'une cathédrale : c'est une coque de bateau.",
+  },
+  "Revival": {
+    scene: "Les vinyles, les appareils photo jetables, les pantalons pattes d'éph : chaque génération a son revival.",
+    origine: "Mot anglais, « renaissance, retour à la vie ». Au XIXᵉ siècle, le Gothic revival a couvert l'Europe de fausses cathédrales.",
+  },
+  "Badigeon": {
+    scene: "Au XVIIIᵉ siècle, on passait un badigeon blanc sur les fresques des églises : des siècles de peintures disparaissaient sous la chaux.",
+    origine: "D'origine incertaine. Viollet-le-Duc et Hugo se sont battus contre ce badigeon qui effaçait l'histoire.",
+  },
+  "Patine": {
+    scene: "Ne nettoie pas ce vieux bronze ! Toute sa beauté est dans sa patine verte.",
+    origine: "De l'italien « patina », vernis, d'abord la couche sombre qui recouvrait les poêles. Le temps, lui aussi, vernit les choses.",
+  },
+  "Ocre": {
+    scene: "À Roussillon, les maisons ont la couleur des falaises d'ocre : du jaune, de l'orange, du rouge sang.",
+    origine: "Du grec « ôkhros », jaune pâle. Les peintres de Lascaux utilisaient déjà l'ocre, il y a 20 000 ans.",
+  },
+  "Mission héliographique": {
+    scene: "En 1851, cinq photographes partent sur les routes de France photographier églises et châteaux avant qu'ils ne s'écroulent.",
+    origine: "Du grec « hêlios », le soleil, et « graphein », écrire : écrire avec la lumière. C'est le premier inventaire photographique du patrimoine.",
+  },
+  "Corollaire": {
+    scene: "Plus de touristes, et son corollaire : des loyers qui montent.",
+    origine: "Du latin « corollarium », la petite couronne offerte en prime. Le corollaire est le petit bonus qui découle d'une vérité.",
+  },
+  "Ogive": {
+    scene: "Lève les yeux dans une cathédrale : ces arcs pointus qui se croisent tout là-haut, ce sont des ogives.",
+    origine: "D'origine discutée, peut-être de l'espagnol « algibe », citerne voûtée. L'ogive a permis de monter haut et d'ouvrir de grandes fenêtres.",
+  },
+  "Plein cintre": {
+    scene: "Les églises romanes aiment le plein cintre : des arcs ronds et sages, comme des sourires de pierre.",
+    origine: "Le cintre est la charpente courbe qui soutient l'arc pendant sa construction. Plein : il fait un demi-cercle complet.",
+  },
+  "Bigarrure": {
+    scene: "La foule du marché, ses épices, ses tissus, ses accents : une joyeuse bigarrure.",
+    origine: "De l'ancien « bigarrer », bariolé, peut-être de « bis », deux fois, et « garre », de deux couleurs.",
+  },
+  "Parapet": {
+    scene: "Accoudé au parapet du pont, il regarde la Seine filer, comme si elle emportait ses soucis.",
+    origine: "De l'italien « parapetto », ce qui protège la poitrine (« petto »). Le parapet arrive pile à hauteur de cœur.",
+  },
+  "Menue monnaie": {
+    scene: "Au fond de ma poche : un ticket, deux élastiques et de la menue monnaie.",
+    origine: "« Menu » vient du latin « minutus », tout petit, comme « minute » et « menuisier », celui qui travaille le petit bois.",
+  },
+  "Déparer": {
+    scene: "Un parking géant au pied du château : de quoi déparer le plus beau paysage.",
+    origine: "Le contraire de « parer », orner : on retire la parure.",
+  },
+  "Antre": {
+    scene: "La chambre de l'adolescent : rideaux fermés, odeur de chaussettes et écran allumé. N'entre pas dans l'antre sans y être invité.",
+    origine: "Du latin « antrum », la caverne. C'est le repaire du lion, de l'ogre et du sorcier.",
+  },
+  "Lorgnette": {
+    scene: "Au théâtre, elle sort sa lorgnette, et observe moins la scène que les loges d'en face.",
+    origine: "De « lorgner », regarder du coin de l'œil. Regarder « par le petit bout de la lorgnette », c'est ne voir qu'un détail.",
+  },
+  "Kaléidoscope": {
+    scene: "Tourne le tube d'un millimètre : les éclats de verre se recomposent en une rosace nouvelle. Le kaléidoscope ne montre jamais deux fois la même chose.",
+    origine: "Inventé en 1816 par l'Écossais David Brewster, du grec « kalos », beau, « eidos », forme, et « skopein », regarder : voir de belles formes.",
+  },
+  "Diorama": {
+    scene: "Au musée, derrière la vitre, un ours empaillé pêche un saumon dans une rivière peinte : c'est un diorama.",
+    origine: "Inventé par Daguerre, le père de la photographie, en 1822 : un spectacle de grandes toiles qui changeaient avec la lumière.",
+  },
+  "Panoptique": {
+    scene: "Une prison ronde, une tour au centre : le gardien voit toutes les cellules, les prisonniers ne le voient jamais. C'est le panoptique.",
+    origine: "Du grec « pan », tout, et « optikos », qui voit. Imaginé par le philosophe Jeremy Bentham vers 1790.",
+  },
+  "Interfolier": {
+    scene: "Le romancier a fait interfolier son manuscrit : une page blanche entre chaque page, pour noter ses corrections.",
+    origine: "De « inter », entre, et « folium », la feuille : glisser une feuille entre les feuilles.",
+  },
+  "Dédale": {
+    scene: "Sans GPS, impossible de sortir du dédale des ruelles de Venise.",
+    origine: "Dédale est l'architecte grec qui construisit le labyrinthe du Minotaure, puis s'en échappa avec des ailes de cire.",
+  },
+  "Venelle": {
+    scene: "Une venelle si étroite qu'on peut toucher les deux murs en tendant les bras.",
+    origine: "Diminutif de l'ancien « veine » au sens de chemin : une toute petite veine de la ville.",
+  },
+  "Bure": {
+    scene: "Capuche sur la tête, robe de bure, sandales en plein hiver : le moine traverse le cloître sans un mot.",
+    origine: "Du latin « burra », la bourre de laine. C'est le tissu le plus grossier, celui des pauvres et des humbles.",
+  },
+  "Onomastique": {
+    scene: "Pourquoi tant de Lefebvre dans le Nord ? L'onomastique répond : c'était le forgeron, le « fèvre ».",
+    origine: "Du grec « onoma », le nom. L'onomastique hugolienne, ce sont tous ces noms inventés par Hugo : Quasimodo, Esmeralda, Frollo.",
+  },
+  "Échevin": {
+    scene: "Au Moyen Âge, les échevins de Paris se réunissaient pour décider des fêtes, des taxes et des pendaisons.",
+    origine: "Du francique « skapin », juge. Le mot existe encore en Belgique pour les adjoints au maire.",
+  },
+  "Protonotaire": {
+    scene: "Dans Notre-Dame de Paris, Hugo fait défiler les dignitaires : le cardinal, le prévôt, le protonotaire…",
+    origine: "Du grec « prôtos », premier, et du latin « notarius », le secrétaire : le premier secrétaire du pape.",
+  },
+  "Mascaron": {
+    scene: "Lève les yeux dans les vieilles rues de Bordeaux : au-dessus des fenêtres, des visages de pierre grimacent, tirent la langue ou rient. Ce sont des mascarons.",
+    origine: "De l'italien « mascherone », grand masque. On en mettait pour éloigner le mauvais œil.",
+  },
+  "Badaud": {
+    scene: "Un accrochage sans gravité, et déjà vingt badauds s'attroupent, téléphone levé.",
+    origine: "Du provençal « badar », bayer, regarder bouche bée. Le badaud, c'est celui qui bâille aux corneilles.",
+  },
+  "Argotique": {
+    scene: "« Se faire la malle », « avoir la dalle », « être chtarbé » : un vocabulaire bien argotique.",
+    origine: "De « argot », d'abord la confrérie des gueux et des mendiants. Hugo jouait sur les mots : de l'art gothique à l'art « argotique ».",
+  },
+  "Gueux": {
+    scene: "Dans le roman, les gueux de la Cour des miracles marchent sur Notre-Dame pour délivrer Esmeralda.",
+    origine: "Peut-être du néerlandais « guit », coquin. Les Hollandais révoltés contre l'Espagne ont fièrement repris l'insulte : les « Gueux ».",
+  },
+  "Cour des miracles": {
+    scene: "Le jour, l'aveugle mendie, le paralytique tend la main ; le soir, à la Cour des miracles, l'un ouvre les yeux, l'autre se met à danser.",
+    origine: "Le nom vient de ces guérisons quotidiennes de faux infirmes. Hugo l'a rendue immortelle dans Notre-Dame de Paris.",
+  },
+  "Drolatique": {
+    scene: "Un chat en costume trois pièces qui joue du violon sur un toit : une scène drolatique.",
+    origine: "De « drôle ». Balzac a écrit des Contes drolatiques, à la manière de Rabelais, avec une orthographe à l'ancienne.",
+  },
+  "Écolerie": {
+    scene: "Le jour de la fête, toute l'écolerie hurle, siffle et lance des pommes sur les dignitaires.",
+    origine: "Un mot ancien, remis en scène par Hugo, pour désigner la foule turbulente des écoliers et des étudiants du Moyen Âge.",
+  },
+  "Cuistre": {
+    scene: "« En vérité, c'est une tautologie épistémique » : le cuistre vient de tuer la conversation.",
+    origine: "De l'ancien « coistre », le valet de cuisine des collèges. Le serviteur qui singeait le savant est devenu le pédant.",
+  },
+  "Précieuses ridicules": {
+    scene: "« Voiturez-nous ici les commodités de la conversation » : pour dire « apportez des chaises », les précieuses ridicules ne reculent devant rien.",
+    origine: "Molière, en 1659, se moque des salons où l'on raffinait la langue jusqu'à l'absurde.",
+  },
+  "Bédieu": {
+    scene: "« Bédieu ! » s'écrie le bonhomme en voyant le carrosse renversé.",
+    origine: "Déformation de « par Dieu », comme « pardi » ou « parbleu » : on adoucissait le juron pour ne pas jurer tout à fait.",
+  },
+  "Mahoîtres": {
+    scene: "Au XVᵉ siècle, les élégants gonflaient leurs épaules avec des mahoîtres : les épaulettes des années 80 n'ont rien inventé.",
+    origine: "Mot ancien, d'origine obscure, que Hugo a déterré pour habiller ses personnages.",
+  },
+  "Doreloterie": {
+    scene: "Rubans, galons, franges et passementeries : toute la doreloterie d'une boutique du Moyen Âge.",
+    origine: "De « dorelot », ruban, bijou mignon, qui a aussi donné « dorloter » : choyer quelqu'un comme on soigne un ruban précieux.",
+  },
+  "Treillissé": {
+    scene: "Derrière la fenêtre treillissée du couvent, on devine un visage.",
+    origine: "De « treillis », le croisillon de bois ou de fer, venu du latin « trilix », à trois fils.",
+  },
+  "Néogothique": {
+    scene: "Le Parlement de Londres a l'air médiéval, mais il date du XIXᵉ siècle : c'est du néogothique.",
+    origine: "Du grec « neos », nouveau, et de « gothique ». Le XIXᵉ siècle, nostalgique, a rebâti un Moyen Âge rêvé.",
+  },
+  "Ingrisme": {
+    scene: "Peau de porcelaine, contours parfaits, aucune trace de pinceau : ce portrait sent l'ingrisme.",
+    origine: "D'Ingres, peintre de La Grande Odalisque, qui disait que « le dessin est la probité de l'art ».",
+  },
+  "Bonnet phrygien": {
+    scene: "Dans chaque mairie, Marianne porte un bonnet rouge à pointe tombante : le bonnet phrygien.",
+    origine: "Il vient de Phrygie, en Turquie actuelle. À Rome, on le donnait aux esclaves affranchis : il est devenu le bonnet de la liberté.",
+  },
+  "Ferrure": {
+    scene: "La porte de la vieille église est couverte de ferrures en volutes, comme des arabesques de fer.",
+    origine: "De « fer ». Les ferrures tenaient les planches ensemble, et les forgerons en faisaient des dentelles.",
+  },
+  "Ciselé": {
+    scene: "Une phrase ciselée, où chaque mot est à sa place comme une pierre sur une bague.",
+    origine: "De « ciseau », l'outil de l'orfèvre et du sculpteur.",
+  },
+  "Trumeau": {
+    scene: "Au portail de la cathédrale d'Amiens, le Christ se tient sur le trumeau, ce pilier qui sépare les deux portes.",
+    origine: "Du francique « thrum », le morceau. En ancien français, le trumeau, c'était le gras de la jambe.",
+  },
+  "Estampe": {
+    scene: "Sur le mur du salon, une estampe japonaise : la grande vague d'Hokusai, prête à engloutir trois barques.",
+    origine: "De l'italien « stampa », l'impression, de « stampare », presser, frapper.",
+  },
+  "Proustien": {
+    scene: "L'odeur de la crème solaire, et le voilà revenu à ses sept ans, sur une plage de Bretagne : un moment très proustien.",
+    origine: "De Marcel Proust, qui fait renaître toute son enfance d'une madeleine trempée dans du thé.",
+  },
+  "Polyptyque": {
+    scene: "L'Agneau mystique de Gand : un polyptyque de vingt panneaux qui s'ouvrent et se ferment comme un livre de bois.",
+    origine: "Du grec « poly », plusieurs, et « ptukhê », le pli. Deux volets font un diptyque, trois un triptyque.",
+  },
+  "Keepsake": {
+    scene: "Pour les étrennes de 1830, on offrait un keepsake : un beau livre doré sur tranche, plein de poèmes et de gravures.",
+    origine: "Mot anglais, « to keep for the sake of », garder en souvenir de. Un souvenir qu'on feuillette.",
+  },
+  "Étrennes": {
+    scene: "Chaque fin d'année, le facteur passe avec son calendrier, et on lui donne ses étrennes.",
+    origine: "Du latin « strena », le présent de bon augure, du nom de Strenia, déesse romaine qui offrait des rameaux pour la nouvelle année.",
+  },
+  "Lettrine": {
+    scene: "Le manuscrit s'ouvre sur un immense L doré, où se cache un petit dragon : la lettrine.",
+    origine: "De l'italien « letterina », petite lettre, par une drôle d'ironie, car la lettrine est la plus grande de la page.",
+  },
+  "Lithographie": {
+    scene: "Toulouse-Lautrec dessinait ses affiches sur la pierre, et la lithographie les imprimait en série pour les murs de Paris.",
+    origine: "Du grec « lithos », la pierre, et « graphein », écrire : écrire sur la pierre. Invention d'Aloys Senefelder, en 1796.",
+  },
+  "Serpentine": {
+    scene: "Le soir du carnaval, des serpentines volent de balcon en balcon et s'enroulent autour des lampadaires.",
+    origine: "Du latin « serpens », le serpent. Au XVIᵉ siècle, c'était aussi un canon long et fin, qui crachait comme un serpent.",
+  },
+  "Bombarde": {
+    scene: "Au fest-noz, la bombarde lance son cri aigu, et le biniou lui répond.",
+    origine: "Du latin « bombus », le bourdonnement. La bombarde a d'abord été un canon, avant de devenir un instrument : dans les deux cas, ça fait du bruit.",
+  },
+  "Octogone": {
+    scene: "Le panneau STOP est un octogone : huit côtés, pour qu'on le reconnaisse même de dos.",
+    origine: "Du grec « oktô », huit, et « gônia », l'angle.",
+  },
+  "Suavité": {
+    scene: "La suavité d'une voix de violoncelle, à la tombée du jour.",
+    origine: "Du latin « suavis », doux, de la même famille que « suave » et que l'anglais « sweet ».",
+  },
+  "Démagogique": {
+    scene: "« Moi élu, il fera beau tous les week-ends ! » : une promesse franchement démagogique.",
+    origine: "Du grec « dêmos », le peuple, et « agein », conduire. Le démagogue mène le peuple en lui disant ce qu'il veut entendre.",
+  },
+  "Syncrétique": {
+    scene: "Noël mêle la naissance de Jésus, le sapin des Germains et la fête du solstice : une fête très syncrétique.",
+    origine: "Du grec « synkrêtismos », l'union des Crétois : les cités de Crète, toujours en guerre, s'unissaient contre l'ennemi commun.",
+  },
+  "Gueuserie": {
+    scene: "Promettre de rembourser et changer de numéro : une vraie gueuserie.",
+    origine: "De « gueux » : la misère, puis la bassesse qu'on prêtait aux misérables.",
+  },
+  "Transmutation": {
+    scene: "Le rêve de l'alchimiste : la transmutation du plomb en or. Celui du poète : la transmutation de la boue en poème.",
+    origine: "Du latin « trans », au-delà, et « mutare », changer. Baudelaire disait : « Tu m'as donné ta boue et j'en ai fait de l'or. »",
+  },
+  "Nitreux": {
+    scene: "Les murs nitreux de la vieille cave se couvrent d'une poudre blanche qui pique la gorge.",
+    origine: "Du grec « nitron », le salpêtre, qui a donné aussi « nitrate » et « nitroglycérine ».",
+  },
+  "Quintessence": {
+    scene: "Trois notes de piano, un silence, et toute la mélancolie du monde : la quintessence du blues.",
+    origine: "Du latin « quinta essentia », la cinquième essence. Après la terre, l'eau, l'air et le feu, les anciens imaginaient un cinquième élément, le plus pur, dont étaient faits les astres.",
+  },
+  "Dédicataire": {
+    scene: "Le dédicataire du livre ? Son chat, « sans qui ce livre aurait été écrit deux fois plus vite ».",
+    origine: "Du latin « dedicare », consacrer. Baudelaire avait rêvé Paris comme la ville dédicataire de son épilogue des Fleurs du mal.",
+  },
+  "Dru": {
+    scene: "Après la pluie, l'herbe repousse drue, verte et serrée comme un tapis neuf.",
+    origine: "Du gaulois « druto », fort, vigoureux. Il pleut dru : la pluie tombe serrée et forte.",
+  },
+  "Anguleux": {
+    scene: "Un visage anguleux, des pommettes comme des falaises : la caméra l'adore.",
+    origine: "Du latin « angulus », l'angle, le coin.",
+  },
+  "Cristallisation": {
+    scene: "Elle a un rire un peu fort ? Il le trouve adorable. Elle est en retard ? Quelle liberté ! C'est la cristallisation.",
+    origine: "Stendhal compare l'amour à un rameau jeté dans une mine de sel : quelques mois plus tard, il ressort couvert de cristaux qui brillent. L'amoureux fait pareil avec l'être aimé.",
+  },
+  "Empirique": {
+    scene: "Sa méthode pour la pâte à crêpes est purement empirique : « Tu mets de la farine jusqu'à ce que ça fasse la bonne tête. »",
+    origine: "Du grec « empeiria », l'expérience. Dans l'Antiquité, les médecins empiriques soignaient d'après ce qu'ils avaient vu marcher.",
+  },
+  "Analogue": {
+    scene: "J'ai vécu une situation analogue : moi aussi, j'ai envoyé un message à la mauvaise personne.",
+    origine: "Du grec « analogos », proportionné, qui suit le même rapport (« logos »).",
+  },
+  "Apodictique": {
+    scene: "« C'est comme ça, point. » Son ton apodictique ne laisse aucune place au débat.",
+    origine: "Du grec « apodeiktikos », démonstratif. Pour Kant, une vérité apodictique est nécessaire, impossible à nier.",
+  },
+  "Attenter": {
+    scene: "Couper ce chêne de trois cents ans, c'est attenter à la mémoire du village.",
+    origine: "Du latin « attentare », tenter contre, attaquer. Il a donné « attentat ».",
+  },
+  "Endiguer": {
+    scene: "Trois chansons d'affilée de son groupe préféré : impossible d'endiguer son enthousiasme.",
+    origine: "De « digue », venu du néerlandais « dijk ». Aux Pays-Bas, on sait mieux que personne ce que c'est de retenir la mer.",
+  },
+  "Scinder": {
+    scene: "Le groupe d'amis s'est scindé en deux : les pro-ananas sur la pizza et les autres.",
+    origine: "Du latin « scindere », fendre, déchirer, comme « scission ».",
+  },
+  "Psyché": {
+    scene: "Pour Jung, les rêves sont des messages que la psyché s'adresse à elle-même, dans une langue d'images.",
+    origine: "Du grec « psukhê », le souffle, l'âme. Psyché est aussi la belle mortelle aimée d'Éros, qui finit par devenir déesse.",
+  },
+  "Rhizome": {
+    scene: "Arrache un pied de bambou : les rhizomes courent sous tout le jardin, et il repousse chez le voisin.",
+    origine: "Du grec « rhiza », la racine. Jung disait que la vie est comme un rhizome : ce qu'on voit fleurit et fane, le rhizome demeure.",
+  },
+  "Basalte": {
+    scene: "Sur la Chaussée des Géants, en Irlande, des milliers de colonnes de basalte forment un escalier pour géants.",
+    origine: "Du latin « basaltes », mot que Pline a peut-être mal recopié d'un mot grec. C'est de la lave refroidie.",
+  },
+  "Indélébile": {
+    scene: "Le premier jour d'école de son enfant : un souvenir indélébile, plus durable que l'encre du stylo.",
+    origine: "Du latin « delere », effacer, comme « délébile ». In-délébile : qu'on ne peut effacer.",
+  },
+  "Presbytère": {
+    scene: "Le presbytère, à côté de l'église, a un jardin plein de roses et un curé qui fait sa propre confiture.",
+    origine: "Du grec « presbuteros », le plus âgé, l'ancien. Le prêtre, c'est l'ancien de la communauté (même mot).",
+  },
+  "Matrimonial": {
+    scene: "L'agence matrimoniale promettait l'âme sœur en trois rendez-vous.",
+    origine: "Du latin « matrimonium », le mariage, de « mater », la mère. Le patrimoine allait au père, le matrimoine à la mère.",
+  },
+  "Heurt": {
+    scene: "Deux caractères forts dans la même cuisine : les heurts étaient inévitables.",
+    origine: "Du verbe « heurter », peut-être du francique « hurt », le bélier.",
+  },
+  "Haletant": {
+    scene: "Arrivé haletant en haut des escaliers, il découvre que le métro vient de partir.",
+    origine: "Du latin « halare », souffler, comme « haleine » et « exhaler ».",
+  },
+  "Angelot": {
+    scene: "Au plafond de l'église, des angelots joufflus soufflent dans des trompettes en faisant de gros yeux.",
+    origine: "Diminutif d'« ange », du grec « angelos », le messager.",
+  },
+  "Redingote": {
+    scene: "Dans les films sur Napoléon, les officiers portent de longues redingotes qui battent aux mollets.",
+    origine: "De l'anglais « riding coat », le manteau pour monter à cheval. Les Français l'ont entendu et réécrit à leur oreille.",
+  },
+  "Rumination": {
+    scene: "Trois heures du matin, et il repense encore à cette phrase maladroite : la rumination tourne en boucle.",
+    origine: "Du latin « ruminare », ruminer, comme la vache qui remâche son herbe.",
+  },
+  "Dialecte": {
+    scene: "Sa grand-mère parle le dialecte alsacien : elle peut dire des secrets devant tout le monde.",
+    origine: "Du grec « dialektos », la conversation, la façon de parler.",
+  },
+  "Concussion": {
+    scene: "L'agent des impôts majorait les taxes et gardait la différence : condamné pour concussion.",
+    origine: "Du latin « concutere », secouer : on secoue le contribuable pour faire tomber les pièces.",
+  },
+  "Dévoyer": {
+    scene: "Une belle idée de solidarité, dévoyée en machine à faire de l'argent.",
+    origine: "De « voie » : sortir quelqu'un de son chemin. Le dévoyé a perdu la bonne route.",
+  },
+  "Rétropantouflage": {
+    scene: "Après dix ans dans une grande banque, l'ancien haut fonctionnaire revient diriger un ministère : un rétropantouflage.",
+    origine: "Le « pantouflage », c'est quitter la fonction publique pour le privé, comme on enfile ses pantoufles dans un poste confortable. Le « rétro », c'est le retour.",
+  },
+  "Primat": {
+    scene: "Pour lui, la musique a le primat sur tout : il mange, dort et parle en rythme.",
+    origine: "Du latin « primas », qui est au premier rang. L'évêque primat est le premier des évêques d'un pays.",
+  },
+  "Péréquation": {
+    scene: "Les villes riches versent une part de leurs recettes aux villes pauvres : c'est la péréquation.",
+    origine: "Du latin « peraequare », égaliser complètement, de « aequus », égal.",
+  },
+  "Jésuite": {
+    scene: "Saint Ignace a fondé les jésuites en 1540 ; ils ont ouvert des collèges sur tous les continents.",
+    origine: "De Jésus. Leurs ennemis les accusaient d'une habileté rusée, d'où le sens péjoratif : « un argument jésuite ».",
+  },
+  "À toute bride": {
+    scene: "Le messager traverse la plaine à toute bride : la reine doit savoir avant la nuit.",
+    origine: "La bride relâchée en entier, le cheval galope de toutes ses forces.",
+  },
+  "Naguère": {
+    scene: "Ce quartier, naguère si calme, est devenu le rendez-vous des noctambules.",
+    origine: "De « n'a guère », il n'y a pas beaucoup de temps. À ne pas confondre avec jadis, qui remonte bien plus loin.",
+  },
+  "Jadis": {
+    scene: "Jadis, ici, il y avait une forêt où les loups venaient boire.",
+    origine: "De « ja a dis », il y a déjà des jours. Villon chantait les « dames du temps jadis ».",
+  },
+  "Ityphallique": {
+    scene: "Dans les ruines de Pompéi, les statuettes ityphalliques du dieu Priape faisaient rougir les visiteurs du XIXᵉ siècle.",
+    origine: "Du grec « ithus », droit, et « phallos ». Ces figures étaient des porte-bonheur de fécondité. Jung raconte en avoir rêvé enfant, sur un trône souterrain.",
+  },
+  "En un tournemain": {
+    scene: "Elle a monté l'armoire suédoise en un tournemain, pendant qu'il cherchait encore la notice.",
+    origine: "Le temps de tourner la main, c'est-à-dire presque rien.",
+  },
+  "Anthropophagie": {
+    scene: "Les récits d'explorateurs du XVIᵉ siècle sont pleins d'anthropophagie, souvent inventée pour faire frissonner.",
+    origine: "Du grec « anthrôpos », l'homme, et « phagein », manger. Montaigne, dans Des cannibales, retourne l'accusation contre les Européens.",
+  },
+  "Ignorantin": {
+    scene: "Au XVIIIᵉ siècle, on appelait par moquerie « ignorantins » les frères qui faisaient la classe aux enfants pauvres.",
+    origine: "Les Frères de saint Jean de Dieu se disaient eux-mêmes ignorantins, par humilité. Les moqueurs l'ont pris au mot.",
+  },
+  "Limoneux": {
+    scene: "Après la crue, le fleuve roule des eaux limoneuses, couleur café au lait.",
+    origine: "Du latin « limus », la boue. Le limon du Nil rendait l'Égypte fertile.",
+  },
+  "Effroi": {
+    scene: "Au milieu de la nuit, un craquement dans l'escalier : il se redresse, glacé d'effroi.",
+    origine: "De l'ancien « esfreer », troubler, peut-être du francique « fridu », la paix : l'effroi chasse la paix.",
+  },
+  "Prélude": {
+    scene: "Un ciel d'encre, une odeur de terre mouillée : prélude à l'orage.",
+    origine: "Du latin « praeludere », jouer avant. Le musicien essayait son instrument avant le vrai morceau.",
+  },
+  "Croup": {
+    scene: "La nuit, l'enfant tousse comme un petit phoque : le médecin parle de faux croup.",
+    origine: "Mot écossais imitant la toux rauque. Le vrai croup, c'est la diphtérie, presque disparue grâce aux vaccins.",
+  },
+  "Psychogène": {
+    scene: "Des maux de ventre chaque dimanche soir, avant l'école : une douleur psychogène, réelle mais née de l'angoisse.",
+    origine: "Du grec « psukhê », l'âme, et « genos », la naissance : qui naît de l'esprit.",
+  },
+  "Aliéner": {
+    scene: "À force de jouer un rôle pour plaire à tout le monde, il s'est aliéné à lui-même : il ne sait plus ce qu'il aime.",
+    origine: "Du latin « alienus », qui appartient à un autre. Aliéner, c'est rendre étranger.",
+  },
+  "Espièglerie": {
+    scene: "Cacher les clés de papi dans le frigo : une espièglerie qu'il a mis une heure à découvrir.",
+    origine: "De Till Eulenspiegel, farceur des légendes allemandes. Son nom a été francisé en Ulespiègle, puis en espiègle.",
+  },
+  "Sujet à caution": {
+    scene: "Un article qui commence par « une source anonyme affirme » : une information sujette à caution.",
+    origine: "La caution est une garantie. Une chose sujette à caution est une chose dont il faudrait d'abord qu'on se porte garant.",
+  },
+  "Irrépressible": {
+    scene: "Au milieu de la cérémonie, un fou rire irrépressible.",
+    origine: "Du latin « reprimere », repousser, retenir. Ce qu'on ne peut réprimer.",
+  },
+  "Seoir": {
+    scene: "« Ce chapeau vous sied à ravir, madame ! » dit le vendeur, qui l'aurait dit de n'importe quel chapeau.",
+    origine: "Du latin « sedere », être assis, comme « séant » : ce qui est bien assis sur vous vous va bien.",
+  },
+  "À bon escient": {
+    scene: "L'humour noir, c'est comme le piment : à utiliser à bon escient.",
+    origine: "Du latin « me sciente », moi le sachant : en connaissance de cause.",
+  },
+  "Vermoulu": {
+    scene: "La marche vermoulue craque sous son pied, et il se retrouve à la cave plus vite que prévu.",
+    origine: "De « ver » et « moulu » : du bois réduit en poudre par les vers.",
+  },
+  "À la dérobée": {
+    scene: "Pendant tout le dîner, il la regarde à la dérobée, au-dessus de son verre.",
+    origine: "De « dérober », voler : un regard volé.",
+  },
+  "Annexion": {
+    scene: "Le chat a procédé à l'annexion du canapé : nous n'avons plus que l'accoudoir.",
+    origine: "Du latin « annectere », attacher à, nouer.",
+  },
+  "Anima": {
+    scene: "Pour Jung, l'homme porte en lui une femme intérieure, l'anima, qui lui parle dans ses rêves et ses humeurs.",
+    origine: "Du latin « anima », le souffle, l'âme, qui a donné « animal » et « animer ».",
+  },
+  "Nolens volens": {
+    scene: "Nolens volens, il a fallu se lever à cinq heures pour prendre l'avion.",
+    origine: "Latin : « ne voulant pas, voulant ». Qu'on le veuille ou non.",
+  },
+  "Chancelant": {
+    scene: "Sa détermination, si ferme le matin, devient chancelante devant la vitrine du pâtissier.",
+    origine: "Du latin « cancellare », faire des zigzags comme les barreaux d'une grille.",
+  },
+  "Vêler": {
+    scene: "À trois heures du matin, le fermier reste dans l'étable : la vache va vêler.",
+    origine: "De l'ancien « veel », veau. Les glaciers aussi « vêlent », quand un bloc de glace tombe à la mer.",
+  },
+  "Diffamatoire": {
+    scene: "Le chanteur a porté plainte : l'article était, selon lui, purement diffamatoire.",
+    origine: "Du latin « diffamare », répandre de mauvais bruits, de « fama », la réputation.",
+  },
+  "Criaillerie": {
+    scene: "Les criailleries des mouettes au-dessus du port couvrent la voix du marchand de glaces.",
+    origine: "De « criailler », crier sans cesse et pour peu de chose.",
+  },
+  "Accoutré": {
+    scene: "Accoutré d'un poncho fluo et d'un chapeau de cow-boy, il est venu au mariage.",
+    origine: "De l'ancien « acoustrer », coudre ensemble. On disait d'abord accoutrer pour habiller, sans moquerie.",
+  },
+  "Bigarré": {
+    scene: "Une foule bigarrée envahit la plage : parasols rayés, serviettes à fleurs, maillots fluo.",
+    origine: "De « bigarrer », voir « bigarrure ».",
+  },
+  "Paraphrase": {
+    scene: "« Je paraphrase, mais en gros, il a dit qu'on était tous des incapables. »",
+    origine: "Du grec « paraphrasis », dire à côté : on dit la même chose, mais avec ses propres mots.",
+  },
+  "Panorama": {
+    scene: "Du haut de la colline, le panorama s'étend sur toute la vallée, jusqu'aux montagnes.",
+    origine: "Du grec « pan », tout, et « horama », le spectacle. Inventé en 1787 pour une immense peinture circulaire qu'on regardait depuis le centre.",
+  },
+  // Série 20, suite : lecture de 1984 et autres
+  "Envoyer paître": {
+    scene: "Le vendeur au téléphone en était à sa troisième relance : elle l'a envoyé paître, poliment mais fermement.",
+    origine: "On envoyait les bêtes paître au loin, dans les champs. Envoyer quelqu'un paître, c'est le traiter comme une vache qu'on éloigne.",
+  },
+  "Hégémonique": {
+    scene: "Une seule appli pour discuter, une seule pour acheter, une seule pour chercher : des géants hégémoniques.",
+    origine: "Du grec « hêgemôn », celui qui guide, le chef. Athènes exerçait l'hégémonie sur les cités grecques.",
+  },
+  "Titre honorifique": {
+    scene: "Il est « président d'honneur » du club : un titre honorifique, qui lui donne droit à une écharpe et à la première part de galette.",
+    origine: "Du latin « honorificus », qui fait honneur. Le titre est un honneur, pas un pouvoir.",
+  },
+  "Transcendance": {
+    scene: "Certains la cherchent dans la prière, d'autres dans la musique ou face à l'océan : la transcendance, ce sentiment d'être soulevé au-delà de soi.",
+    origine: "Du latin « transcendere », franchir en montant, de « scandere », grimper. Monter au-delà.",
+  },
+  "Gravillonneux": {
+    scene: "Le chemin gravillonneux crisse sous les roues du vélo.",
+    origine: "De « gravillon », petit gravier, venu du gaulois « grava », le caillou.",
+  },
+  "Variqueux": {
+    scene: "Station debout toute la journée, jambes variqueuses le soir : le métier de vendeur use les veines.",
+    origine: "Du latin « varix », la veine dilatée.",
+  },
+  "Dévider": {
+    scene: "Au téléphone, la voix dévide la liste de ses griefs sans reprendre son souffle.",
+    origine: "D'abord : dérouler le fil d'un écheveau pour faire une pelote. On dévide un discours comme on dévide la laine.",
+  },
+  "Oblong": {
+    scene: "Une table oblongue, assez longue pour toute la famille et même le cousin qu'on n'avait pas invité.",
+    origine: "Du latin « oblongus », allongé.",
+  },
+  "Triennal": {
+    scene: "Le plan triennal promettait des merveilles ; trois ans plus tard, on en a lancé un autre.",
+    origine: "Du latin « triennium », période de trois ans (« tres » et « annus »).",
+  },
+  "Étayer": {
+    scene: "Le vieux mur penche : on l'étaie avec des poutres. Ton argument penche aussi : étaie-le avec des chiffres.",
+    origine: "De « étai », la pièce de bois qui soutient, venu du francique « staka », le pieu.",
+  },
+  "De guingois": {
+    scene: "La maison de la sorcière, toute de guingois, semble tenir par miracle.",
+    origine: "D'origine incertaine, peut-être de l'ancien « giguer », gigoter : quelque chose qui danse de travers.",
+  },
+  "In-quarto": {
+    scene: "Les grands dictionnaires du XVIIIᵉ siècle étaient en in-quarto : impossible de les lire au lit.",
+    origine: "Latin : « en quart ». La grande feuille d'imprimerie est pliée deux fois, ce qui donne quatre feuillets.",
+  },
+  "Crémeux": {
+    scene: "Un risotto crémeux, qui nappe la cuillère.",
+    origine: "De « crème », venu du gaulois « crama », mêlé au latin « chrisma », l'huile sainte.",
+  },
+  "En catimini": {
+    scene: "Il est parti en catimini, avant le discours du directeur.",
+    origine: "Peut-être du grec « katamênia », les règles des femmes, qu'on cachait. Ce qu'on fait en catimini, on le fait en douce.",
+  },
+  "Se tarir": {
+    scene: "Les compliments se sont taris le jour où il a demandé une augmentation.",
+    origine: "Du francique « tharrjan », sécher. Une source se tarit quand elle cesse de couler.",
+  },
+  "S'égrener": {
+    scene: "Dans la salle d'attente, les secondes s'égrènent, lentes comme des gouttes.",
+    origine: "De « grain » : égrener un chapelet, c'est faire passer les grains un à un entre ses doigts.",
+  },
+  "Griserie": {
+    scene: "La griserie de la vitesse, cheveux au vent, au premier tour de grand huit.",
+    origine: "De « gris », au sens de un peu ivre : dans le brouillard du vin, tout devient gris et joyeux.",
+  },
+  "Gondoler": {
+    scene: "Le livre est tombé dans le bain : ses pages ont gondolé comme des vagues.",
+    origine: "De « gondole », la barque vénitienne à la coque courbée. Au sens familier, se gondoler, c'est se tordre de rire.",
+  },
+  "Hardi": {
+    scene: "Un marsouin hardi suit le bateau, saute dans les vagues et nargue les touristes.",
+    origine: "Du francique « hardjan », rendre dur. On criait « hardi ! » pour donner du courage.",
+  },
+  "Opulent": {
+    scene: "Une opulente chevelure rousse, si abondante qu'elle semble avoir sa propre météo.",
+    origine: "Du latin « opulentus », riche, de « opes », les ressources.",
+  },
+  "Hygiénisme": {
+    scene: "Au XIXᵉ siècle, l'hygiénisme a percé les grands boulevards, installé les égouts et ouvert les fenêtres des écoles.",
+    origine: "De « hygiène », du grec « hugieinos », bon pour la santé, et d'Hygie, déesse de la santé, fille d'Asclépios.",
+  },
+  "Ourdir": {
+    scene: "Dans l'ombre des couloirs du palais, le duc ourdit son complot.",
+    origine: "Du latin « ordiri », commencer une trame. Le tisserand ourdit les fils ; le traître ourdit sa trahison.",
+  },
+  "Émacié": {
+    scene: "Après trois mois de randonnée, il est revenu le visage émacié, la barbe longue et l'œil brillant.",
+    origine: "Du latin « emaciare », amaigrir, de « macies », la maigreur.",
+  },
+  "Sénile": {
+    scene: "« Je ne suis pas sénile, je cherchais mes lunettes ! » dit grand-père, qui les avait sur le nez.",
+    origine: "Du latin « senex », le vieillard, qui a donné aussi « sénat », le conseil des anciens.",
+  },
+  "Bêlant": {
+    scene: "« Mais c'est pas jusse… » d'une voix bêlante, et il espère attendrir tout le monde.",
+    origine: "De « bêler », le cri du mouton, une onomatopée.",
+  },
+  "Sempiternel": {
+    scene: "Chaque repas de famille, l'oncle ressort sa sempiternelle histoire du service militaire.",
+    origine: "Du latin « semper », toujours, et « aeternus », éternel : toujours éternel, le comble de la répétition.",
+  },
+  "Diatribe": {
+    scene: "Le chroniqueur s'est lancé dans une diatribe de vingt minutes contre les trottinettes électriques.",
+    origine: "Du grec « diatribê », le passe-temps, la discussion d'école. Le mot a pris de la violence avec les siècles.",
+  },
+  "Outrancier": {
+    scene: "Un maquillage outrancier, des faux cils comme des ailes de corbeau : on la voit de l'autre bout de la salle.",
+    origine: "De « outrance », l'excès, d'« outre », au-delà. Combattre à outrance, c'est jusqu'à la mort.",
+  },
+  "Tribun": {
+    scene: "Un vrai tribun : trois phrases, et la salle entière est debout.",
+    origine: "À Rome, les tribuns de la plèbe défendaient le peuple contre les puissants. Le mot vient de « tribus », la tribu.",
+  },
+  "Mot-valise": {
+    scene: "« Adulescent », « courriel », « alicament » : des mots-valises, où deux mots voyagent dans la même valise.",
+    origine: "Lewis Carroll, l'auteur d'Alice, a inventé le principe et l'a comparé à un « portmanteau », une valise à deux compartiments.",
+  },
+  "Élucubration": {
+    scene: "Selon ses élucubrations, les pigeons seraient des drones espions.",
+    origine: "Du latin « elucubrare », travailler à la lueur de la lampe (« lucubrum »). Au départ, c'était un travail patient, fait la nuit ; aujourd'hui, ce sont des idées de trois heures du matin.",
+  },
+  "Honni": {
+    scene: "Honni soit qui mal y pense ! est la devise de l'ordre de la Jarretière, en Angleterre.",
+    origine: "Du francique « haunjan », mépriser, couvrir de honte, comme « honte ».",
+  },
+  "Battre en brèche": {
+    scene: "Une seule photo a suffi à battre en brèche sa belle théorie.",
+    origine: "La brèche, c'est le trou que les canons ouvrent dans une muraille. Battre en brèche, c'est tirer jusqu'à ce que le mur cède.",
+  },
+  "S'empourprer": {
+    scene: "Quand on lui demande qui lui a offert ces fleurs, son visage s'empourpre jusqu'aux oreilles.",
+    origine: "De « pourpre », la couleur des rois, tirée d'un coquillage, le murex.",
+  },
+  "Abject": {
+    scene: "Se moquer d'un enfant qui bégaie : un comportement abject.",
+    origine: "Du latin « abjectus », jeté au loin, rejeté. L'abject, c'est ce qu'on rejette avec dégoût.",
+  },
+  "Vindicte": {
+    scene: "Son nom affiché sur les réseaux, il est livré à la vindicte populaire.",
+    origine: "Du latin « vindicta », la vengeance, la punition, de « vindex », le vengeur.",
+  },
+  "Se muer": {
+    scene: "La chenille se mue en papillon ; sa timidité, elle, se mue en audace dès qu'il monte sur scène.",
+    origine: "Du latin « mutare », changer, comme « muter » et la mue du serpent.",
+  },
+  "Eurasien": {
+    scene: "Le continent eurasien s'étend de Lisbonne à Vladivostok.",
+    origine: "Mot-valise : « Europe » et « Asie ». Dans 1984, d'Orwell, l'Eurasia est l'une des trois superpuissances en guerre perpétuelle.",
+  },
+  "Effigie": {
+    scene: "Sur les pièces de monnaie romaines, l'effigie de l'empereur voyageait jusqu'au bout de l'Empire.",
+    origine: "Du latin « effigies », la représentation, de « fingere », façonner.",
+  },
+  "Rémanence": {
+    scene: "Fixe une ampoule, puis ferme les yeux : une tache colorée flotte encore. C'est une rémanence rétinienne.",
+    origine: "Du latin « remanere », rester, demeurer.",
+  },
+  "Bribe": {
+    scene: "Dans le train, des bribes de conversation : « … et là, elle a jeté la bague dans la fontaine. » Le reste, on ne le saura jamais.",
+    origine: "D'abord : un morceau de pain donné au mendiant. Puis tout petit morceau de quelque chose.",
+  },
+  "Louvoyer": {
+    scene: "« Vous avez cassé le vase ? » « C'est-à-dire que… le chat… le vent… » : il louvoie.",
+    origine: "De « lof », le côté du bateau face au vent. Le voilier louvoie quand il zigzague pour avancer contre le vent.",
+  },
+  "Couru d'avance": {
+    scene: "Le favori contre un débutant ? C'était couru d'avance.",
+    origine: "Une image des courses de chevaux : une course dont on connaît le gagnant avant le départ.",
+  },
+  "Annihiler": {
+    scene: "Un seul mot méprisant peut annihiler des mois d'efforts.",
+    origine: "Du latin « ad », vers, et « nihil », rien : réduire à rien.",
+  },
+  "Oblitérer": {
+    scene: "Le temps a oblitéré l'inscription sur la tombe : on ne lit plus qu'une date.",
+    origine: "Du latin « oblitterare », effacer les lettres. On oblitère aussi un timbre pour qu'il ne serve qu'une fois.",
+  },
+  "Maculer": {
+    scene: "Il n'ose pas écrire sur le beau carnet neuf, de peur de maculer le papier crème.",
+    origine: "Du latin « macula », la tache, comme « immaculé », sans tache.",
+  },
+  "Tracasserie": {
+    scene: "Trois formulaires, deux tampons, un justificatif de moins de trois mois : les tracasseries administratives.",
+    origine: "De « tracasser », s'agiter, aller et venir, de « traquer ».",
+  },
+  "Vétuste": {
+    scene: "Un ascenseur vétuste qui gémit à chaque étage : on prend l'escalier.",
+    origine: "Du latin « vetustus », ancien, de « vetus », vieux, comme « vétéran ».",
+  },
+  "S'écailler": {
+    scene: "Sur les volets de la vieille maison, la peinture bleue s'écaille au soleil.",
+    origine: "De « écaille », la plaque du poisson. La peinture tombe en petites écailles.",
+  },
+  "Décati": {
+    scene: "Un vieux canapé décati, mais où toute la famille veut s'asseoir.",
+    origine: "D'abord, un tissu « décati » a perdu son apprêt brillant, son « cati ». Puis le mot s'est appliqué aux gens.",
+  },
+  "Effluve": {
+    scene: "En passant devant la boulangerie, un effluve de croissants chauds le fait changer de trottoir.",
+    origine: "Du latin « effluvium », l'écoulement, de « fluere », couler.",
+  },
+  "Âcre": {
+    scene: "L'odeur âcre du pneu brûlé pique la gorge.",
+    origine: "Du latin « acer », piquant, aigu, comme « aigre » et « acide ».",
+  },
+  "Éperdu": {
+    scene: "Éperdue, elle cherche son enfant dans la foule, jusqu'à ce qu'elle l'entende rire près du marchand de glaces.",
+    origine: "De l'ancien « esperdre », perdre complètement : on a perdu la tête.",
+  },
+  "Subalterne": {
+    scene: "Il ne supporte pas d'être traité en subalterne par quelqu'un qui a dix ans de moins que lui.",
+    origine: "Du latin « sub », sous, et « alternus », l'un après l'autre : celui qui vient en dessous.",
+  },
+  "Sillage": {
+    scene: "Elle traverse le hall, laissant dans son sillage un parfum de jasmin.",
+    origine: "De « siller », fendre les flots. Le sillage est la trace du bateau sur l'eau.",
+  },
+  "Batifoler": {
+    scene: "Les chiots batifolent dans l'herbe, se roulent, se mordillent, et tombent endormis d'un coup.",
+    origine: "De l'italien « battifolle », le moulin à vent, ou le rempart où les jeunes allaient jouer.",
+  },
+  "Fronde": {
+    scene: "David, armé de sa seule fronde, abat le géant Goliath.",
+    origine: "Du latin « funda ». Sous Louis XIV enfant, la révolte contre Mazarin s'appela la Fronde, parce que les gamins de Paris jouaient à la fronde malgré les interdictions.",
+  },
+  "Beugler": {
+    scene: "Il beugle « Allez les bleus ! » à chaque passe, même quand c'est l'équipe adverse.",
+    origine: "De « bugle », l'ancien mot pour le jeune bœuf. Beugler, c'est crier comme un bovin.",
+  },
+  "Grisâtre": {
+    scene: "Un ciel grisâtre de novembre, qui hésite entre la pluie et l'ennui.",
+    origine: "De « gris », avec le suffixe « -âtre », qui rend les couleurs ternes : verdâtre, rougeâtre…",
+  },
+  "Délectation": {
+    scene: "Il lit les mauvaises critiques de son rival avec une délectation non dissimulée.",
+    origine: "Du latin « delectare », charmer, plaire, comme « délicieux ».",
+  },
+  "Orthodoxie": {
+    scene: "Dans 1984, d'Orwell, la moindre pensée hors de l'orthodoxie du Parti est un crime.",
+    origine: "Du grec « orthos », droit, et « doxa », l'opinion : l'opinion droite.",
+  },
+  "Embrigader": {
+    scene: "Dès l'école, on les embrigade : uniformes, slogans et chants obligatoires.",
+    origine: "De « brigade » : enrôler quelqu'un dans une troupe.",
+  },
+  "Malabar": {
+    scene: "Le videur, un malabar de deux mètres, fait reculer la file d'un regard.",
+    origine: "Du Malabar, région du sud de l'Inde : les matelots de là-bas avaient la réputation d'être très costauds.",
+  },
+  "Malléabilité": {
+    scene: "La malléabilité de l'or : on peut en faire une feuille si fine qu'elle laisse passer la lumière.",
+    origine: "Du latin « malleus », le marteau : ce qu'on peut façonner au marteau.",
+  },
+  "Uniformité": {
+    scene: "Les mêmes boutiques dans toutes les villes : l'uniformité des centres commerciaux.",
+    origine: "Du latin « uniformis », d'une seule forme.",
+  },
+  "Se mettre en devoir de": {
+    scene: "Il retroussa ses manches et se mit en devoir de réparer le robinet. Trois heures plus tard, on appelait le plombier.",
+    origine: "Se placer dans la position de celui qui doit faire quelque chose.",
+  },
+  "Zélateur": {
+    scene: "Un zélateur du rangement : chez lui, même les épices sont classées par ordre alphabétique.",
+    origine: "Du latin « zelator », celui qui est plein de zèle, du grec « zêlos », l'ardeur.",
+  },
+  "Fouinard": {
+    scene: "Le voisin fouinard sait qui reçoit quel colis avant même les destinataires.",
+    origine: "De « fouine », la petite bête qui fourre son museau partout.",
+  },
+  "À qui de droit": {
+    scene: "« Je transmettrai votre réclamation à qui de droit », dit le standardiste, qui ne transmettra rien.",
+    origine: "À la personne qui a le droit, la compétence, de traiter la demande.",
+  },
+  "Granuleux": {
+    scene: "Un vieux savon granuleux, qui gratte autant qu'il lave.",
+    origine: "Du latin « granulum », le petit grain.",
+  },
+  "Sculptural": {
+    scene: "Une silhouette sculpturale, comme taillée par Rodin.",
+    origine: "De « sculpture », du latin « sculpere », tailler la pierre.",
+  },
+  "Glauque": {
+    scene: "Un parking souterrain, néons qui grésillent, flaques d'huile : une ambiance glauque.",
+    origine: "Du grec « glaukos », vert-bleu, la couleur de la mer. La déesse Athéna avait les yeux glauques, et c'était un compliment !",
+  },
+  "Diurne": {
+    scene: "La chouette est nocturne ; l'écureuil, lui, est diurne et travaille aux heures de bureau.",
+    origine: "Du latin « diurnus », de « dies », le jour, comme « journal ».",
+  },
+  "Taupinière": {
+    scene: "Dans le jardin, une ligne de taupinières trahit le passage d'un tunnelier invisible.",
+    origine: "De « taupe », du latin « talpa ».",
+  },
+  "Orme": {
+    scene: "Sous le grand orme de la place, les anciens rendaient la justice et les amoureux se donnaient rendez-vous.",
+    origine: "Du latin « ulmus ». « Attendez-moi sous l'orme » voulait dire : vous m'attendrez longtemps.",
+  },
+  "Chevesne": {
+    scene: "Dans le ruisseau clair, un chevesne remonte lentement le courant, immobile comme une ombre.",
+    origine: "Du latin « capito », qui a une grosse tête, de « caput », la tête.",
+  },
+  "Altier": {
+    scene: "D'un geste altier, elle rejette ses cheveux en arrière et quitte la pièce sans un regard.",
+    origine: "De l'italien « altiero », de « alto », haut : celui qui se tient haut.",
+  },
+  "Défraîchi": {
+    scene: "Un maillot de corps défraîchi, qui a connu des jours meilleurs et des machines à 90 degrés.",
+    origine: "De « frais » : qui a perdu sa fraîcheur.",
+  },
+  "Flageolant": {
+    scene: "En descendant du manège, les jambes flageolantes, il jure de ne plus jamais remonter.",
+    origine: "Peut-être de « flageolet », la petite flûte fine : des jambes maigres et qui tremblent.",
+  },
+  "Japper": {
+    scene: "Le petit chien jappe derrière la porte, persuadé d'être un loup.",
+    origine: "Une onomatopée, comme le « jap, jap » du chiot.",
+  },
+  "Autohypnose": {
+    scene: "Il ferme les yeux, compte à rebours et se répète « je suis calme » : sa petite séance d'autohypnose avant chaque oral.",
+    origine: "Du grec « autos », soi-même, et « hupnos », le sommeil. Hypnos était le dieu du Sommeil.",
+  },
+  "Mégère": {
+    scene: "Dans La Mégère apprivoisée, Shakespeare met en scène une femme qui refuse de se laisser dompter.",
+    origine: "Mégère est l'une des trois Furies, les déesses de la vengeance. Son nom grec veut dire « la jalouse ».",
+  },
+  "Collationner": {
+    scene: "Avant de publier le texte de Pascal, l'éditeur a collationné toutes les copies des manuscrits.",
+    origine: "Du latin « collatio », la comparaison. La « collation », le petit repas, vient des moines qui mangeaient après la lecture comparée des textes.",
+  },
+  "A contrario": {
+    scene: "Il est interdit de marcher sur la pelouse ; a contrario, on peut s'y asseoir ?",
+    origine: "Latin : « par le contraire ». Un raisonnement qui tire une conclusion de l'idée inverse.",
+  },
+  "Desservir": {
+    scene: "Son arrogance l'a desservi pendant l'entretien d'embauche.",
+    origine: "De « servir » : le contraire de rendre service. Aussi : retirer ce qui a servi, comme les plats.",
+  },
+  "Palimpseste": {
+    scene: "Sous la prière d'un moine du XIIIᵉ siècle, on a retrouvé, grâce aux rayons X, un texte d'Archimède effacé : un palimpseste.",
+    origine: "Du grec « palin », de nouveau, et « psên », gratter : un parchemin gratté pour être réécrit. Le papier coûtait cher.",
+  },
+  "Caduc": {
+    scene: "Ce passeport est caduc depuis trois ans : vous ne prendrez pas l'avion aujourd'hui.",
+    origine: "Du latin « caducus », qui tombe. Les arbres à feuilles caduques perdent leurs feuilles en hiver.",
+  },
+  "D'arrache-pied": {
+    scene: "Ils ont travaillé d'arrache-pied tout le week-end pour finir la maquette.",
+    origine: "Comme si on devait arracher ses pieds du sol pour continuer à avancer, sans s'arrêter.",
+  },
+  "Placide": {
+    scene: "Le chat placide regarde le chien s'agiter, sans même bouger une moustache.",
+    origine: "Du latin « placidus », paisible, de « placere », plaire, comme « plaisir ».",
+  },
+  "Expurgé": {
+    scene: "La version expurgée du conte pour enfants : le loup ne mange plus personne, il part en vacances.",
+    origine: "Du latin « expurgare », nettoyer, purger.",
+  },
+  "Abécédaire": {
+    scene: "A comme âne, B comme baleine, C comme crocodile : le vieil abécédaire de la classe.",
+    origine: "De A, B, C, D. Un mot qui récite l'alphabet tout seul.",
+  },
+  "Rengaine": {
+    scene: "Toujours la même rengaine : « De mon temps, on respectait les anciens. »",
+    origine: "De « rengainer », remettre l'épée dans son fourreau : une chanson qu'on ressort et range sans cesse.",
+  },
+  "Versificateur": {
+    scene: "Un versificateur aligne les rimes, mais un poète fait trembler les mots.",
+    origine: "Du latin « versificator », celui qui fait des vers. Dans 1984, d'Orwell, une machine fabrique des chansons sentimentales pour le peuple.",
+  },
+  "Se bidonner": {
+    scene: "Les deux copains se bidonnent devant une vidéo de chat qui tombe d'une étagère.",
+    origine: "De « bidon », le ventre en argot : rire à s'en tenir le ventre.",
+  },
+  "Consularité": {
+    scene: "Sous la République romaine, la consularité était le sommet d'une carrière : deux consuls, élus pour un an seulement.",
+    origine: "Du latin « consul », peut-être de « consulere », délibérer.",
+  },
+  "Consororité": {
+    scene: "Entre infirmières de nuit, une vraie consororité : on se couvre, on se relaie, on se raconte tout.",
+    origine: "Du latin « soror », la sœur, sur le modèle de « confraternité », de « frater », le frère.",
+  },
+  "Clamser": {
+    scene: "« Mon vieux téléphone a clamsé en pleine conversation. »",
+    origine: "Argot du XIXᵉ siècle, peut-être de l'allemand « klemmen », serrer, pincer.",
+  },
+  "Mystique": {
+    scene: "Thérèse d'Avila, la grande mystique espagnole, décrivait ses extases comme une flèche de feu dans le cœur.",
+    origine: "Du grec « mustikos », qui concerne les mystères, de « muein », fermer les yeux et la bouche.",
+  },
+  "Bionique": {
+    scene: "Une main bionique, qui obéit aux muscles du bras et peut tenir un œuf sans le casser.",
+    origine: "Mot-valise anglais : « biology » et « electronics ».",
+  },
+  "Nirvana": {
+    scene: "Hamac, livre, glace à la pistache : le nirvana du dimanche après-midi.",
+    origine: "Du sanskrit « nirvāṇa », l'extinction, comme une flamme qu'on souffle. Le désir s'éteint, la souffrance aussi.",
+  },
+  "Oscilloscope": {
+    scene: "À l'hôpital, l'écran montre de petites montagnes vertes qui défilent : c'est le cœur, dessiné par une sorte d'oscilloscope.",
+    origine: "Du latin « oscillare », se balancer, et du grec « skopein », observer : voir les oscillations.",
+  },
+  "Prunelle": {
+    scene: "Il tient à ce vieux vélo comme à la prunelle de ses yeux.",
+    origine: "Petite prune, la prunelle est le fruit noir du prunellier. La pupille, sombre et ronde, lui ressemble.",
+  },
+  "Dérogation": {
+    scene: "Collégien, il avait obtenu une dérogation pour aller dans l'école de l'autre quartier, avec ses copains.",
+    origine: "Du latin « derogare », retirer quelque chose à une loi.",
+  },
+  "Arborer": {
+    scene: "Il arbore fièrement le pull de Noël tricoté par sa grand-mère, renne clignotant compris.",
+    origine: "De « arbre » : dresser haut comme un mât, d'abord un drapeau.",
+  },
+  "Requérir": {
+    scene: "Cette recette requiert de la patience : trois heures de cuisson et pas question d'ouvrir le four.",
+    origine: "Du latin « requirere », rechercher, réclamer. Le procureur, lui, « requiert » une peine.",
+  },
 };
